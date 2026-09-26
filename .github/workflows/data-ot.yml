@@ -1,0 +1,75 @@
+name: OT data (Hebrew Bible)
+
+on:
+  push:
+    branches: [data-ot]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-ot
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data-ot
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run OT data build (fetch + build hebrew/lexicon/witnesses/coverage/sources)
+        run: node scripts/ot/run-all.mjs
+
+      - name: Show output sizes
+        run: |
+          echo "---- data/bible/hebrew ----"
+          ls -la data/bible/hebrew | head -50
+          echo "---- data/bible/lex-hebrew.json ----"
+          ls -la data/bible/lex-hebrew.json
+          echo "---- data/evidence/ot ----"
+          ls -la data/evidence/ot
+          echo "---- git status ----"
+          git status --porcelain
+
+      - name: Validate JSON
+        run: |
+          for f in data/bible/hebrew/*.json; do
+            node -e "const d=JSON.parse(require('fs').readFileSync('$f','utf8')); if(!d.book||!d.lang||!d.versification||!Array.isArray(d.chapters)) throw new Error('bad schema: $f')"
+          done
+          node -e "JSON.parse(require('fs').readFileSync('data/bible/lex-hebrew.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('data/evidence/ot/witnesses.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('data/evidence/ot/coverage-summary.json','utf8'))"
+          echo "All JSON valid."
+
+      - name: Show SOURCES-OT.md (generated, not committed by this workflow)
+        run: |
+          echo "---- data/bible/SOURCES-OT.md (full content follows; committed separately after review) ----"
+          cat data/bible/SOURCES-OT.md
+          echo "---- witnesses fetch log ----"
+          cat scripts/ot/.cache/witnesses-fetch-log.json || true
+          echo "---- morphhb/TAHOT alignment mismatch count ----"
+          wc -l scripts/ot/.cache/tahot-mismatches.txt || true
+
+      - name: Commit and push data (hebrew, lexicon, evidence only)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/bible/hebrew data/bible/lex-hebrew.json data/evidence/ot
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Build OT Hebrew Bible data (morphhb + STEPBible TAHOT/TBESH; witnesses + coverage)"
+            git push origin HEAD:data-ot
+          fi
