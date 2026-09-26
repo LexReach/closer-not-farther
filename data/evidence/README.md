@@ -3,14 +3,14 @@
 Manuscript-evidence data for every New Testament verse, built by `.github/workflows/data-evidence.yml`
 running scripts in `scripts/evidence/`. See SOURCES.md for provenance/licensing per dataset.
 
-Generated: 2026-09-26T22:15:28.163Z
+Generated: 2026-09-26T22:23:20.380Z
 
 ## Coverage (`coverage/<BOOK>.json`, `coverage/summary.json`)
 
 - Books with a coverage file: 27 / 27
 - Page-verified hits listed (real NTVMR page-level index): 0
 - Catalogue-level hits listed (fallback, marked `"c"`, priority manuscripts only — see the
-  sizing note in `scripts/evidence/build-coverage.mjs`): 1814178
+  sizing note in `scripts/evidence/build-coverage.mjs`): 17917975
 - `summary.json`'s per-verse `count` reflects the FULL catalogue roster for that verse's
   corpus (every classified manuscript in data/library/catalog.json), not just the manuscripts
   individually listed in the per-book file.
