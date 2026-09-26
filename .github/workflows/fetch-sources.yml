@@ -4,6 +4,12 @@ on:
   push:
     branches: [sources-data]
   workflow_dispatch:
+    inputs:
+      dump_full_text:
+        description: "Print each apocryphal source's stripped text to the job log (diagnostic only; never committed)"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -26,6 +32,8 @@ jobs:
 
       - name: Fetch sources
         run: node scripts/fetch-sources.mjs
+        env:
+          DUMP_FULL_TEXT: ${{ github.event.inputs.dump_full_text || 'false' }}
 
       - name: Show what changed
         run: |

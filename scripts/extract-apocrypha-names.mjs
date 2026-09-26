@@ -177,6 +177,13 @@ export async function run({ log = console.log } = {}) {
     const text = htmlToText(used.body);
     const counts = countNames(text, CANDIDATE_NAMES);
     const review = reviewCapitalizedWords(text, CANDIDATE_NAMES);
+    // Diagnostic only: prints the stripped text to the JOB LOG (never written
+    // to a committed file) so a human reviewer can tell real body-text
+    // occurrences apart from site-chrome contamination (nav bars, translator
+    // bylines, footers) before trusting the counts above.
+    if (process.env.DUMP_FULL_TEXT === 'true') {
+      log(`[apocrypha] ${t.key} FULL STRIPPED TEXT (diagnostic, not committed) >>>\n${text}\n<<< END ${t.key}`);
+    }
     out.texts[t.key] = {
       source_url: used.url,
       translation: used.translation,
