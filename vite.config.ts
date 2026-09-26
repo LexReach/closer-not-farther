@@ -1,5 +1,5 @@
 import { defineConfig, type Plugin } from 'vite';
-import { cpSync, existsSync, readFileSync as readFile } from 'node:fs';
+import { cpSync, existsSync, readFileSync as readFile, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { execSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
@@ -32,6 +32,7 @@ function dataDirs(): Plugin {
       });
     },
     closeBundle() {
+      writeFileSync(join('dist', 'version.json'), JSON.stringify({ commit }));
       for (const [name, dir] of Object.entries(dirs)) {
         if (existsSync(dir)) cpSync(dir, join('dist', name), { recursive: true, filter: (src) => !src.endsWith('.md') });
       }

@@ -33,6 +33,12 @@ function buildSlides(): Slide[] {
     out.push({ id: c.id, kicker: c.num === '7' ? 'Coda' : `Chapter ${c.num}`, title: c.title, sentence: c.sentence, mount: c.mount });
   }
   out.push({
+    id: 'read',
+    kicker: 'Now read it',
+    title: 'The Bible, with the manuscripts that carry it.',
+    sentence: 'Four English versions beside the Greek and Hebrew, with the meaning of every word one tap away. /read',
+  });
+  out.push({
     id: 'end',
     kicker: 'And the honest part',
     title: 'Every chart has a “What skeptics say.”',

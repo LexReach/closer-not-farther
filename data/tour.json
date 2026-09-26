@@ -312,6 +312,22 @@
       ]
     },
     {
+      "id": "read",
+      "title": "Read it yourself",
+      "route": "/read#john.1",
+      "steps": [
+        {
+          "caption": "All of this is about a text you can read. The Reader sets the Berean Standard Bible beside the Greek it translates, with the meaning of every word one tap away.",
+          "ms": 9000,
+          "actions": [
+            {
+              "do": "scrollTop"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "closing",
       "title": "The honest part",
       "route": "/why",

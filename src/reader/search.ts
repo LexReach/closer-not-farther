@@ -73,10 +73,11 @@ export function openSearch(opts: { version: string; query?: string; onGo: (p: Po
       if (strong) {
         const words = await loadOriginal(b);
         const id = `${strong[1].toUpperCase()}${Number(strong[2])}`;
+        const normStrong = (x: string) => x.replace(/^([GH])0*(\d+)[a-z]?$/i, (_, l: string, n: string) => `${l.toUpperCase()}${Number(n)}`);
         const eng = await adapter.loadBook(b.id).catch(() => null);
         words?.forEach((ch, ci) =>
           ch.forEach((verse, vi) => {
-            if (verse.some((w) => w[1].replace(/[a-z]$/i, '') === id || w[1] === id)) {
+            if (verse.some((w) => normStrong(w[1]) === id)) {
               total++;
               if (hits.length < MAX) hits.push({ pos: { book: b.id, chapter: ci + 1, verse: vi + 1 }, text: eng ? verseText(eng.chapters[ci]?.[vi] ?? null) : verse.map((w) => w[0]).join(' '), before: '', after: '' });
             }

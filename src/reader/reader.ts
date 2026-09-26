@@ -53,6 +53,8 @@ export interface EvidenceLayer {
   open(pos: Pos, ctx: { version: VersionId }): void;
   close(): void;
   hint?: string;
+  /** Set by the Reader: called when the panel is closed from inside. */
+  onClose?: (() => void) | null;
 }
 let evidenceLoader: (() => Promise<EvidenceLayer | null>) | null = null;
 export function registerEvidence(loader: () => Promise<EvidenceLayer | null>) {
@@ -297,11 +299,13 @@ export function render(root: HTMLElement) {
     const b = book();
     const lang = langOf(b);
     bookBtn.textContent = `${b.name} ${st.pos.chapter}`;
-    bookBtn.setAttribute('aria-label', `${b.name} chapter ${st.pos.chapter}. Choose book and chapter`);
+    bookBtn.setAttribute('aria-label', `${bookBtn.textContent}, choose book and chapter`);
     document.title = `${b.name} ${st.pos.chapter} · Read · Closer, Not Farther`;
     drawStrip();
     const cols = st.versions;
-    const needOrig = cols.includes('orig') || cols.includes('bsb');
+    // The original text is awaited only when it is shown; for the BSB's
+    // long-press alignment it loads after the English has rendered.
+    const needOrig = cols.includes('orig');
     const [texts, orig] = await Promise.all([
       Promise.all(
         cols.map((id) =>
@@ -316,6 +320,12 @@ export function render(root: HTMLElement) {
     ]);
     if (my !== renderToken) return;
     origWords = orig?.[st.pos.chapter - 1] ?? null;
+    if (!needOrig && cols.includes('bsb')) {
+      const ch = st.pos.chapter;
+      loadOriginal(b).then((o) => {
+        if (my === renderToken) origWords = o?.[ch - 1] ?? null;
+      });
+    }
     const n = Math.max(...texts.map((t) => t?.verses.length ?? 0), origWords?.length ?? 0, b.verses?.[st.pos.chapter - 1] ?? 0);
     root.style.setProperty('--rd-cols', String(cols.length));
     root.classList.toggle('rd--multi', cols.length > 1);
@@ -375,7 +385,16 @@ export function render(root: HTMLElement) {
   }
 
   async function shadeGutter(b: Book, c: number, n: number, my: number) {
-    if (!evidence && evidenceLoader) evidence = await evidenceLoader().catch(() => null);
+    if (!evidence && evidenceLoader) {
+      evidence = await evidenceLoader().catch(() => null);
+      if (evidence)
+        evidence.onClose = () => {
+          body.querySelectorAll('.rd-row.is-sel').forEach((r) => r.classList.remove('is-sel'));
+          st.pos = { ...st.pos, verse: null };
+          history.replaceState(history.state, '', `${location.pathname}${posHash(st.pos)}`);
+          persist();
+        };
+    }
     if (!evidence || my !== renderToken) return;
     if (evidence.hint && !saved.hinted) {
       hint.textContent = evidence.hint;
@@ -390,7 +409,7 @@ export function render(root: HTMLElement) {
       const s = shades[i];
       const g = row.querySelector<HTMLElement>('.rd-gutter')!;
       if (s) {
-        g.style.background = s;
+        g.style.setProperty('--dot', s);
         g.classList.add('is-on');
       }
     });

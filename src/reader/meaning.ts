@@ -79,7 +79,7 @@ export async function openMeaning(o: MeaningOpts) {
     o.onSearchLemma?.(strong, e.lemma ?? surface);
   });
   body.append(
-    h('p', { class: 'mc__gloss' }, gloss || e.gloss || '—'),
+    h('p', { class: 'mc__gloss' }, gloss || e.gloss || (strong ? '—' : 'No analysis is recorded for this word in the tagged text.')),
     h(
       'dl',
       { class: 'mc__dl' },

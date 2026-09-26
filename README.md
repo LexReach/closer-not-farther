@@ -1,12 +1,14 @@
 # Closer, Not Farther
 
-An interactive web app that makes the "why trust the New Testament text" case, following Wesley Huff's talk ([YouTube](https://www.youtube.com/watch?v=qYsBvzmdxQY)), with evidence and visuals instead of prose. Every module ends with a fair "What skeptics say" section.
+A Bible reader that shows the manuscript evidence behind the text, alongside an interactive case for why the New Testament text can be trusted, following Wesley Huff's talk ([YouTube](https://www.youtube.com/watch?v=qYsBvzmdxQY)), with evidence and visuals instead of prose. Every module ends with a fair "What skeptics say" section.
 
 Live site: https://lexreach.github.io/closer-not-farther/
 
 | Route | Module |
 |---|---|
-| `/` | Home: the argument as a scroll narrative (live Module 1 hero, seven chapters with live excerpts, the film, skeptics and sources) |
+| `/` | The Reader, opening at John 1 (same as `/read`) |
+| `/read` | The Reader: BSB, WEB, KJV, ASV, ESV (when connected) and the Greek or Hebrew, up to three columns, with search and a meaning card for every original-language word. URLs like `/read#john.1.1` |
+| `/why` | The argument as a scroll narrative (live Module 1 hero, chapters with live excerpts, the film, skeptics and sources) |
 | `/telephone` | 1. Telephone vs. Tree: a seeded transmission simulator with majority-vote reconstruction |
 | `/timeline` | 2. Closer, Not Farther: manuscript discovery timeline, plus the comparison with classical authors |
 | `/p66` | 3. Read P66 yourself: papyrus facsimile synchronized with modern Greek and English |
@@ -24,12 +26,23 @@ Stack: Vite + vanilla TypeScript, D3 v7 for charts (loaded per route), OpenSeadr
 ```sh
 npm install
 npm run dev        # http://localhost:5173/closer-not-farther/
-npm test           # simulator checks: determinism, speed at max settings, expected behavior
+npm test           # simulator checks, plus Reader checks (ESV adapter against a mocked proxy, parsing, IIIF page choice)
 npm run build      # type-check, build to dist/, then write per-route pages
 npm run preview    # serve dist/ at http://localhost:4173/closer-not-farther/
 ```
 
 To build for a root path instead of `/closer-not-farther/`, set `BASE=/` (for example `BASE=/ npm run build`).
+
+## The Reader
+
+- Navigation is Read · Library · Why · About. "Why" holds the six modules, present mode and the film.
+- Keys: ← / → chapter, j / k verse, `/` search, `b` books, `v` versions, `m` reading mode, Esc close.
+- Texts live in `data/bible/` (format in `data/bible/SCHEMA.md`, sources in `data/bible/SOURCES.md` and `data/SOURCES.md`). They are built by `.github/workflows/data-bible.yml` on the `data-bible` branch from bereanbible.com, ebible.org, MorphGNT/SBLGNT and STEPBible. After merging, run `node scripts/bible/fill-boundaries.mjs`.
+- Files are fetched per book and cached by the service worker (`public/sw.js`), so repeat visits render in well under 200 ms.
+
+### Connecting the ESV
+
+The ESV text is never stored in the repository. The site owner deploys the small Cloudflare Worker in `proxy/` (steps in `proxy/README.md`), which holds the API key, and puts its URL in `data/config.json` as `esvProxyUrl`. Until then the picker shows "ESV (connect)".
 
 ## Where the data lives
 
@@ -49,7 +62,7 @@ All figures come from `data/*.json`. Pages import these files at build time and 
 
 ## Present mode, the tour and the film
 
-- **Present mode** (`/present`): → / PageDown next, ← / PageUp back, Space play/pause the live chart, F full screen, `?` key list, Esc exit. Slides deep-link by id: `#title`, `#telephone`, `#timeline`, `#p66`, `#variants`, `#names`, `#twelve`, `#coincidences`, `#library`, `#end`.
+- **Present mode** (`/present`): → / PageDown next, ← / PageUp back, Space play/pause the live chart, F full screen, `?` key list, Esc exit. Slides deep-link by id: `#title`, `#telephone`, `#timeline`, `#p66`, `#variants`, `#names`, `#twelve`, `#coincidences`, `#library`, `#read`, `#end`.
 - **Guided tour**: the "Play the argument live" button on the home page (or `?tour=1` on any URL) runs the whole argument in about three minutes. It navigates and moves the real controls. Captions and actions are in `data/tour.json`: edit a `caption` or its `ms` duration, or add actions (`scroll`, `slider`, `click`, `toggle`, `hoverSeq`, `key`, `wait`). There are pause, skip and voice controls; voice uses the browser's Web Speech API and is off by default.
 - **The film**: `public/film/closer-not-farther.mp4` (1920×1080 H.264, captions burned in), `teaser.mp4` (20 s) and `poster.jpg` are recordings of the tour. To regenerate after changing the site or `tour.json`:
 

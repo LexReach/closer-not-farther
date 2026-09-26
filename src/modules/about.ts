@@ -11,6 +11,17 @@ import variants from '../../data/variants.json';
 import coincidences from '../../data/coincidences.json';
 import p66 from '../../data/p66.json';
 
+const TEXTS: [string, string, string][] = [
+  ['Berean Standard Bible (BSB)', 'public domain (dedicated 2023), with its Greek word alignment', 'https://berean.bible'],
+  ['World English Bible (WEB)', 'public domain', 'https://worldenglish.bible'],
+  ['King James Version (KJV)', 'public domain outside the United Kingdom', 'https://ebible.org/kjv/'],
+  ['American Standard Version (ASV)', 'public domain', 'https://ebible.org/asv/'],
+  ['SBL Greek New Testament (SBLGNT)', 'CC BY 4.0, Society of Biblical Literature and Logos Bible Software', 'https://github.com/LogosBible/SBLGNT'],
+  ['MorphGNT (parsing and lemmas for the SBLGNT)', 'CC BY-SA 3.0', 'https://github.com/morphgnt/sblgnt'],
+  ['STEPBible TAGNT and TAHOT (glosses, Strong’s numbers)', 'CC BY 4.0, Tyndale House Cambridge', 'https://github.com/STEPBible/STEPBible-Data'],
+  ['Westminster Leningrad Codex with Open Scriptures morphology', 'text public domain, morphology CC BY 4.0', 'https://github.com/openscriptures/morphhb'],
+];
+
 // The reference works the spec asks the UI to cite (SPEC.md section 4).
 const CORE_SOURCES = [
   'Tal Ilan, Lexicon of Jewish Names in Late Antiquity, Part I: Palestine 330 BCE–200 CE (2002)',
@@ -134,6 +145,24 @@ export function render(root: HTMLElement) {
           h('ul', { class: 'about-src' }, d.sources.map((x) => h('li', null, linkify(x)))),
         ),
       ),
+    ),
+    h(
+      'section',
+      { class: 'about-sec', id: 'texts' },
+      h('h2', null, 'Bible texts and licences'),
+      h('p', null, 'The Reader’s texts are stored in the repository as one file per book and cached on your device after the first visit. Full provenance, with retrieval dates, is in ', h('code', null, 'data/SOURCES.md'), '.'),
+      h(
+        'ul',
+        { class: 'about-src' },
+        TEXTS.map(([name, lic, url]) => h('li', null, h('strong', null, name), `: ${lic}. `, h('a', { href: url, target: '_blank', rel: 'noopener' }, url.replace(/^https?:\/\//, '')))),
+      ),
+      h('p', null, 'ESV: Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. The ESV text is never stored here; when the site owner connects it, it is fetched per chapter through a proxy that holds the API key, and shown with this notice and a link to ', h('a', { href: 'https://www.esv.org', target: '_blank', rel: 'noopener' }, 'esv.org'), '.'),
+    ),
+    h(
+      'section',
+      { class: 'about-sec', id: 'evidence' },
+      h('h2', null, 'Manuscript evidence'),
+      h('p', null, 'Which manuscripts carry each verse, and their transcriptions, come from the Institute for New Testament Textual Research (INTF, Münster) through its New Testament Virtual Manuscript Room, and from the International Greek New Testament Project. They are used for non-commercial study with attribution under the terms quoted in ', h('code', null, 'data/SOURCES.md'), '. Photographs are never copied here: they stream from the libraries that hold the manuscripts.'),
     ),
     h(
       'section',
