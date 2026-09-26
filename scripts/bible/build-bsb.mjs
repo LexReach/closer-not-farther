@@ -122,18 +122,25 @@ if (tableRows) {
   for (const book of NT_BOOKS) {
     const greek = JSON.parse(fs.readFileSync(path.join(greekDir, `${book.id}.json`), "utf8"));
     const plainChapters = plain.get(book.id) || [];
-    // bsb.txt sometimes has verses (or whole trailing material) our Greek
-    // source doesn't - e.g. Romans 16:25-27 (a doxology SBLGNT only carries
-    // in its textual apparatus) - so the loop bounds must be the max of the
-    // two, not just the Greek array's own size, or those verses are simply
-    // never visited and silently dropped.
-    const numChapters = Math.max(greek.chapters.length, plainChapters.length);
+    // bsb.txt is the authoritative source for which chapters/verses exist at
+    // all (matching the OT, and what books.json/spot-check.mjs expect): loop
+    // bounds come only from it, never from the Greek array's own size.
+    // Two mismatches this corrects, in opposite directions:
+    //  - bsb.txt has verses our Greek source doesn't (e.g. Romans 16:25-27,
+    //    a doxology SBLGNT only carries in its textual apparatus) - bsb.txt's
+    //    own array already extends that far (its build isn't Greek-bounded),
+    //    so simply following its length includes them.
+    //  - our Greek source has verses bsb.txt doesn't (e.g. MorphGNT's 3 John
+    //    1 runs to v15, Revelation 12 to v18, vs. bsb.txt's v14/v17 - a
+    //    versification difference) - these must NOT extend the BSB array, or
+    //    it ends up longer than bsb.txt's own per-chapter verse count.
+    const numChapters = plainChapters.length;
     const chapters = [];
     for (let c = 0; c < numChapters; c++) {
       const chapterOut = [];
       const greekChapterArr = greek.chapters[c] || [];
       const plainChapterArr = plainChapters[c] || [];
-      const numVerses = Math.max(greekChapterArr.length, plainChapterArr.length);
+      const numVerses = plainChapterArr.length;
       for (let v = 0; v < numVerses; v++) {
         const gWords = greekChapterArr[v];
         const canonicalText = plainChapterArr[v] ?? null;
