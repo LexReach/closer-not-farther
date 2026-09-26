@@ -1,0 +1,683 @@
+{
+  "witnesses": [
+    {
+      "id": "leningrad-codex",
+      "name": "Leningrad Codex",
+      "siglum": "L (MS B19a)",
+      "date": "1008/9 AD",
+      "year": 1009,
+      "lang": "hbo",
+      "institution": "National Library of Russia, St. Petersburg (Firkovich Collection B 19 A)",
+      "contents": [
+        "GEN.1.1-GEN.50.26",
+        "EXO.1.1-EXO.40.38",
+        "LEV.1.1-LEV.27.34",
+        "NUM.1.1-NUM.36.13",
+        "DEU.1.1-DEU.34.12",
+        "JOS.1.1-JOS.24.33",
+        "JDG.1.1-JDG.21.25",
+        "RUT.1.1-RUT.4.22",
+        "1SA.1.1-1SA.31.13",
+        "2SA.1.1-2SA.24.25",
+        "1KI.1.1-1KI.22.53",
+        "2KI.1.1-2KI.25.30",
+        "1CH.1.1-1CH.29.30",
+        "2CH.1.1-2CH.36.23",
+        "EZR.1.1-EZR.10.44",
+        "NEH.1.1-NEH.13.31",
+        "EST.1.1-EST.10.3",
+        "JOB.1.1-JOB.42.17",
+        "PSA.1.1-PSA.150.6",
+        "PRO.1.1-PRO.31.31",
+        "ECC.1.1-ECC.12.14",
+        "SNG.1.1-SNG.8.14",
+        "ISA.1.1-ISA.66.24",
+        "JER.1.1-JER.52.34",
+        "LAM.1.1-LAM.5.22",
+        "EZK.1.1-EZK.48.35",
+        "DAN.1.1-DAN.12.13",
+        "HOS.1.1-HOS.14.9",
+        "JOL.1.1-JOL.3.21",
+        "AMO.1.1-AMO.9.15",
+        "OBA.1.1-OBA.1.21",
+        "JON.1.1-JON.4.11",
+        "MIC.1.1-MIC.7.20",
+        "NAM.1.1-NAM.3.19",
+        "HAB.1.1-HAB.3.19",
+        "ZEP.1.1-ZEP.3.20",
+        "HAG.1.1-HAG.2.23",
+        "ZEC.1.1-ZEC.14.21",
+        "MAL.1.1-MAL.4.6"
+      ],
+      "links": {
+        "images": "https://commons.wikimedia.org/wiki/Category:Leningrad_Codex",
+        "info": "https://en.wikipedia.org/wiki/Leningrad_Codex",
+        "images_archive_org": "https://archive.org/details/languageimageryi0000unse"
+      },
+      "embed": false,
+      "terms": "Public-domain manuscript (dated 1008/9 AD); reproduction terms depend on the specific facsimile host and were not independently confirmed as embeddable.",
+      "compiled": true,
+      "note": "The base text of the Westminster Leningrad Codex (WLC) transcription used for data/bible/hebrew.",
+      "verified": {
+        "links_archive_org": true
+      }
+    },
+    {
+      "id": "aleppo-codex",
+      "name": "Aleppo Codex",
+      "siglum": "A (Keter Aram Tsova)",
+      "date": "c. 930 AD",
+      "year": 930,
+      "lang": "hbo",
+      "institution": "Israel Museum, Jerusalem (Shrine of the Book)",
+      "contents": [
+        "DEU.28.17-MAL.4.6"
+      ],
+      "links": {
+        "images": "https://www.aleppocodex.org",
+        "info": "https://en.wikipedia.org/wiki/Aleppo_Codex"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Approximately 40% of the codex (essentially the whole Torah, Gen.1.1-Deu.28.16) has been missing since 1947-48; a few other leaves (part of the opening of Song of Songs, etc.) are also lost.",
+      "verified": {
+        "coverage_mentions_torah_gap": false
+      }
+    },
+    {
+      "id": "cairo-genizah",
+      "name": "Cairo Genizah fragments",
+      "siglum": "Genizah (various)",
+      "date": "c. 870 AD - 19th c. AD (deposits span many centuries)",
+      "year": 870,
+      "lang": "hbo",
+      "institution": "Ben Ezra Synagogue, Fustat (Old Cairo); fragments now chiefly at Cambridge University Library (Taylor-Schechter Collection) and other libraries",
+      "contents": [],
+      "links": {
+        "images": "https://cudl.lib.cam.ac.uk/collections/genizah/1",
+        "info": "https://en.wikipedia.org/wiki/Cairo_Geniza"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Not a single manuscript: a store of c. 300,000+ fragments (biblical, liturgical, documentary) accumulated from the 9th to 19th centuries; includes some of the oldest dated biblical codex fragments (Cairo Codex of the Prophets tradition) and early Masoretic witnesses. `contents` is left empty (too heterogeneous to give as verse ranges) and it is excluded from coverage-summary.json accordingly."
+    },
+    {
+      "id": "samaritan-pentateuch",
+      "name": "Samaritan Pentateuch (representative MSS; Abisha Scroll)",
+      "siglum": "SP",
+      "date": "oldest extant MSS c. 12th-14th c. AD (the Abisha Scroll's core is traditionally claimed far earlier by the Samaritan community; independent codicological dating is much later); the SP as a textual tradition is ancient (attested distinctively by the 2nd century BC, e.g. in proto-Samaritan Qumran texts)",
+      "year": 1200,
+      "lang": "hbo",
+      "institution": "Samaritan community, Mount Gerizim/Nablus (Abisha Scroll kept by the Samaritan high priest); other SP MSS in the British Library, Cambridge UL, John Rylands Library",
+      "contents": [
+        "GEN.1.1-GEN.50.26",
+        "EXO.1.1-EXO.40.38",
+        "LEV.1.1-LEV.27.34",
+        "NUM.1.1-NUM.36.13",
+        "DEU.1.1-DEU.34.12"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Samaritan_Pentateuch"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Covers only the five books of the Torah (the sole canon of the Samaritans). The Abisha Scroll's own great age is a traditional Samaritan claim, not an independently verified codicological date; other Samaritan Pentateuch MSS are more securely dated to the medieval period. Textual affinities with 'proto-Samaritan' Qumran manuscripts (e.g. 4QpaleoExodm) show the tradition itself long predates any surviving copy."
+    },
+    {
+      "id": "1QIsaa",
+      "name": "Great Isaiah Scroll",
+      "siglum": "1QIsaa",
+      "date": "c. 125 BC",
+      "year": -125,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "ISA.1.1-ISA.66.24"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Great_Isaiah_Scroll"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "The only complete biblical scroll from Qumran; virtually the entire Book of Isaiah is preserved intact on 17 sheets.",
+      "verified": {
+        "leon_levy_link_confirmed": false
+      }
+    },
+    {
+      "id": "1QIsab",
+      "name": "Isaiah Scroll b",
+      "siglum": "1QIsab",
+      "date": "1st c. BC - 1st c. AD (c. 50 BC-50 AD)",
+      "year": -50,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "ISA.7.22-ISA.66.24"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Isaiah_Scroll_b"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Substantial but incomplete; closer to the Masoretic consonantal text than 1QIsaa. Several columns are lost or fragmentary."
+    },
+    {
+      "id": "4QIsab",
+      "name": "Isaiah Scroll (4Q56)",
+      "siglum": "4QIsab",
+      "date": "1st half of 1st c. BC",
+      "year": -75,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "ISA.7.17-ISA.66.24"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Isaiah_Scroll_(4Q56)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Fragmentary; one of ~21 Isaiah manuscripts found at Qumran."
+    },
+    {
+      "id": "4QpaleoExodm",
+      "name": "paleo-Hebrew Exodus (4Q22)",
+      "siglum": "4QpaleoExodm",
+      "date": "c. 100 BC",
+      "year": -100,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "EXO.6.25-EXO.37.16"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/paleo-Hebrew_Exodus_(4Q22)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Written in the archaic paleo-Hebrew script; closely related to the Samaritan Pentateuch's textual tradition (minus its sectarian expansions)."
+    },
+    {
+      "id": "4QpaleoDeutr",
+      "name": "paleo-Hebrew Deuteronomy (4Q45)",
+      "siglum": "4QpaleoDeutr",
+      "date": "c. 125 BC",
+      "year": -125,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "DEU.4.24-DEU.11.9"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/paleo-Hebrew_Deuteronomy_(4Q45)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Written in the paleo-Hebrew script."
+    },
+    {
+      "id": "4QNumb",
+      "name": "Numbers b (4Q27)",
+      "siglum": "4QNumb",
+      "date": "c. 30 BC - 20 AD",
+      "year": -30,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "NUM.11.4-NUM.36.13"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Numbers_b_(4Q27)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Extensive Numbers manuscript with a text-form closer to the Samaritan tradition and LXX than to the Masoretic Text in places."
+    },
+    {
+      "id": "4QDeutq",
+      "name": "Deuteronomy q (4Q44)",
+      "siglum": "4QDeutq",
+      "date": "c. 50-25 BC",
+      "year": -50,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "DEU.32.1-DEU.32.43"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Deuteronomy_q_(4Q44)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Preserves the Song of Moses (Deut 32) in a text-form close to that presupposed by the Septuagint."
+    },
+    {
+      "id": "4QSamb",
+      "name": "Samuel b (4Q52)",
+      "siglum": "4QSamb",
+      "date": "c. 250 BC",
+      "year": -250,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "1SA.16.1-1SA.23.9"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Samuel_b_(4Q52)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "One of the very oldest Qumran biblical manuscripts (3rd century BC)."
+    },
+    {
+      "id": "4QSama",
+      "name": "Samuel a (4Q51)",
+      "siglum": "4QSama",
+      "date": "c. 50-25 BC",
+      "year": -50,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "1SA.1.1-2SA.24.20"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Samuel_a_(4Q51)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "The most extensive Samuel manuscript from Qumran; often agrees with the Septuagint's Vorlage against the (shorter) Masoretic Text, e.g. at 1 Samuel 11."
+    },
+    {
+      "id": "4QKgs",
+      "name": "Kings (4Q54)",
+      "siglum": "4QKgs",
+      "date": "c. 150 BC",
+      "year": -150,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "1KI.7.20-1KI.7.51"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Kings_(4Q54)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Small fragment of 1 Kings."
+    },
+    {
+      "id": "4QJera",
+      "name": "Jeremiah a (4Q70)",
+      "siglum": "4QJera",
+      "date": "c. 200 BC",
+      "year": -200,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "JER.7.30-JER.22.16"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Jeremiah_a_(4Q70)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Close to the Masoretic Text's (longer) edition of Jeremiah."
+    },
+    {
+      "id": "4QJerb",
+      "name": "Jeremiah b (4Q71)",
+      "siglum": "4QJerb",
+      "date": "c. 200-150 BC",
+      "year": -200,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "JER.9.22-JER.10.21"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Jeremiah_b_(4Q71)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Reflects the shorter Hebrew edition of Jeremiah that underlies the Septuagint, roughly 1/8 shorter than the Masoretic Text."
+    },
+    {
+      "id": "4QEzeka",
+      "name": "Ezekiel a (4Q73)",
+      "siglum": "4QEzeka",
+      "date": "c. 20-50 AD",
+      "year": 20,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "EZK.10.6-EZK.11.11"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Ezekiel_a_(4Q73)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Fragmentary."
+    },
+    {
+      "id": "1QDana",
+      "name": "Daniel a (1Q71)",
+      "siglum": "1QDana",
+      "date": "c. 100-50 BC",
+      "year": -100,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "DAN.1.10-DAN.2.6"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Daniel_a_(1Q71)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Fragmentary; one of the earliest Daniel manuscripts, close in time to the book's composition."
+    },
+    {
+      "id": "4QDanc",
+      "name": "Daniel c (4Q114)",
+      "siglum": "4QDanc",
+      "date": "late 2nd c. BC (c. 125 BC)",
+      "year": -125,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "DAN.10.5-DAN.11.29"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Daniel_c_(4Q114)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Paleographically among the very oldest copies of Daniel, within decades of the book's composition."
+    },
+    {
+      "id": "MurXII",
+      "name": "Minor Prophets scroll (Wadi Murabba'at)",
+      "siglum": "MurXII",
+      "date": "c. 115-135 AD",
+      "year": 115,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "HOS.1.1-MAL.4.6"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Minor_Prophets_scroll_(Wadi_Murabba'at)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "From Wadi Murabba'at (Bar Kokhba period), not Qumran proper; a nearly complete Book of the Twelve very close to the Masoretic consonantal text, showing the MT tradition's stability by the early 2nd century AD."
+    },
+    {
+      "id": "4QXIIc",
+      "name": "Minor Prophets c (4Q78)",
+      "siglum": "4QXIIc",
+      "date": "c. 75-50 BC",
+      "year": -75,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "HOS.1.1-ZEC.14.18"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Minor_Prophets_c_(4Q78)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Fragmentary Book of the Twelve manuscript."
+    },
+    {
+      "id": "11QPsa",
+      "name": "Great Psalms Scroll (11Q5)",
+      "siglum": "11QPsa",
+      "date": "c. 30-50 AD",
+      "year": 30,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "PSA.101.1-PSA.150.6"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Great_Psalms_Scroll_(11Q5)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Covers roughly the last third of the Psalter but in a different order from the Masoretic Text and with additional compositions (e.g. Psalm 151, Sirach 51, 'Apostrophe to Zion'); its status (an alternate edition vs. a liturgical collection) is debated."
+    },
+    {
+      "id": "4QQoha",
+      "name": "Ecclesiastes a (4Q109)",
+      "siglum": "4QQoha",
+      "date": "c. 175-150 BC",
+      "year": -175,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "ECC.5.13-ECC.7.9"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Ecclesiastes_a_(4Q109)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "One of the earliest surviving copies of any Hebrew Bible book by absolute date, and important evidence for how early Ecclesiastes' final form existed."
+    },
+    {
+      "id": "4QCantb",
+      "name": "Song of Songs b (4Q107)",
+      "siglum": "4QCantb",
+      "date": "c. 30 BC-30 AD",
+      "year": -30,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "SNG.2.9-SNG.5.1"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Song_of_Songs_b_(4Q107)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Preserves a shorter text-form of Song of Songs, missing verses found in the Masoretic Text."
+    },
+    {
+      "id": "2QRutha",
+      "name": "Ruth a (2Q16)",
+      "siglum": "2QRutha",
+      "date": "1st half of 1st c. AD",
+      "year": 25,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "RUT.2.13-RUT.3.18"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Ruth_a_(2Q16)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Fragmentary."
+    },
+    {
+      "id": "5QLama",
+      "name": "Lamentations a (5Q6)",
+      "siglum": "5QLama",
+      "date": "c. 50 BC-50 AD",
+      "year": -25,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "LAM.4.5-LAM.4.22"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Lamentations_a_(5Q6)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Fragmentary."
+    },
+    {
+      "id": "4QGenb",
+      "name": "Genesis b (4Q1)",
+      "siglum": "4QGenb",
+      "date": "c. 125-100 BC",
+      "year": -125,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "GEN.1.18-GEN.26.32"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Genesis_b_(4Q1)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Fragmentary, non-contiguous."
+    },
+    {
+      "id": "4QLevb",
+      "name": "Leviticus b (4Q24)",
+      "siglum": "4QLevb",
+      "date": "c. 100 BC",
+      "year": -100,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "LEV.1.11-LEV.26.2"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Leviticus_b_(4Q24)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Fragmentary."
+    },
+    {
+      "id": "4QJudga",
+      "name": "Judges a (4Q49)",
+      "siglum": "4QJudga",
+      "date": "c. 50 BC",
+      "year": -50,
+      "lang": "hbo",
+      "institution": "Dead Sea Scrolls; Israel Antiquities Authority (Shrine of the Book, Israel Museum, Jerusalem, unless otherwise excavated/housed)",
+      "contents": [
+        "JDG.6.2-JDG.6.13"
+      ],
+      "links": {
+        "images": null,
+        "info": "https://en.wikipedia.org/wiki/Judges_a_(4Q49)"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Small fragment; may lack the section of Judges 6 found in later texts, of interest for the book's growth."
+    },
+    {
+      "id": "codex-vaticanus",
+      "name": "Codex Vaticanus",
+      "siglum": "B / 03",
+      "date": "c. 300-325 AD",
+      "year": 325,
+      "lang": "grc",
+      "institution": "Vatican Apostolic Library (Vat. gr. 1209)",
+      "contents": [
+        "GEN.46.29-GEN.50.26",
+        "EXO.1.1-PSA.105.45",
+        "PSA.139.1-MAL.4.6"
+      ],
+      "links": {
+        "images": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "info": "https://en.wikipedia.org/wiki/Codex_Vaticanus"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Original 4th-century hand lacks Gen.1.1-46.28 (supplied by a 15th-century restorer) and Psalm 106-138 (English numbering; a quire is missing); order and chapter/verse boundaries follow the Septuagint, only approximately mapped here onto the 39-book Hebrew-canon versification used elsewhere in this dataset.",
+      "verified": {
+        "links_images": true
+      }
+    },
+    {
+      "id": "codex-sinaiticus",
+      "name": "Codex Sinaiticus",
+      "siglum": "א (Aleph) / 01",
+      "date": "c. 330-360 AD",
+      "year": 345,
+      "lang": "grc",
+      "institution": "Split between the British Library (London), Leipzig University Library, National Library of Russia, and Saint Catherine's Monastery (Sinai)",
+      "contents": [
+        "1CH.9.27-2CH.36.23",
+        "EZR.1.1-MAL.4.6"
+      ],
+      "links": {
+        "images": "https://codexsinaiticus.org",
+        "info": "https://en.wikipedia.org/wiki/Codex_Sinaiticus"
+      },
+      "embed": false,
+      "terms": null,
+      "compiled": true,
+      "note": "Almost the entire Torah and Former Prophets (Genesis-2 Kings, and most of 1 Chronicles) are lost from the surviving OT portion; extant text effectively begins mid-1-Chronicles. Coverage given here is approximate at the whole-book level for the remaining books (Ezra onward), which themselves have further internal gaps not tracked individually.",
+      "verified": {
+        "links_images": true
+      }
+    }
+  ]
+}
