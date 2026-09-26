@@ -334,6 +334,9 @@ async function fetchVerifyManuscripts() {
     const title = `Minuscule ${n}`;
     const { found, source_url, extract, resolved_title } = await wikiExtract(title);
     const sentences = found ? splitSentences(extract).filter((s) => CATALOG_KEYWORD_RE.test(s) && YEAR_RE.test(s)) : [];
+    if (process.env.DUMP_FULL_TEXT === 'true' && found) {
+      log(`[verify] ${title} FULL EXTRACT (diagnostic, not committed) >>>\n${extract}\n<<< END ${title}`);
+    }
     out.manuscripts[n] = {
       ga: n,
       wikipedia_title: title,
@@ -352,6 +355,9 @@ async function fetchVerifyManuscripts() {
   const bTitle = 'Jesus and the Eyewitnesses';
   const { found, source_url, extract, resolved_title } = await wikiExtract(bTitle);
   const sentences = found ? splitSentences(extract).filter((s) => /\b(79|18|Table\s*6|onomastic|Ilan|name recall|Palestin)/i.test(s)) : [];
+  if (process.env.DUMP_FULL_TEXT === 'true' && found) {
+    log(`[verify] ${bTitle} FULL EXTRACT (diagnostic, not committed) >>>\n${extract}\n<<< END ${bTitle}`);
+  }
   out.bauckham = {
     wikipedia_title: bTitle,
     resolved_title: resolved_title || null,
