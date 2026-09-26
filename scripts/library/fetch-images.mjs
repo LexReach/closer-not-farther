@@ -18,9 +18,11 @@
  *      take the first canvas's image service.
  *   2. Vatican Library (DigiVatLib) shelfmark pattern guess, e.g. "Vat. gr. 1209"
  *      -> https://digi.vatlib.it/iiif/MSS_Vat.gr.1209/manifest.json
- *   3. A short hand-verified list of other institutional IIIF endpoints for a
+ *   3. A short best-guess list of other institutional IIIF endpoints for a
  *      handful of especially famous manuscripts (Cambridge Digital Library,
- *      e-codices / Fondation Bodmer, ...).
+ *      e-codices / Fondation Bodmer, ...); each entry may list a fallback URL
+ *      or two, and like everything else here, whatever doesn't resolve is
+ *      simply dropped.
  *   4. Commons (row.commons: either a bare file name from Wikidata P18, or
  *      "Category:X" from Wikidata P373) - record file name + license + size for
  *      a thumbnail/simple-image view.
@@ -69,11 +71,20 @@ function vaticanManifestGuess(shelf) {
   return `https://digi.vatlib.it/iiif/MSS_${compact}/manifest.json`;
 }
 
-// Hand-picked, individually verified (in CI - unreachable candidates are dropped
-// automatically) IIIF manifests for a few famous manuscripts not otherwise covered.
+// Hand-picked candidate IIIF manifests for a few famous manuscripts not
+// otherwise covered, each with a fallback guess or two. None of this is more
+// than a best-effort guess at each host's URL scheme - unreachable or
+// unparsable candidates are dropped automatically by tryManifest(), same as
+// any other manifest URL.
 const HARDCODED_IIIF = {
-  P66: 'https://www.e-codices.unifr.ch/metadata/iiif/fmb-pb-ii/manifest.json',
-  '05': 'https://cudl.lib.cam.ac.uk/iiif/MS-NN-00002-00041/manifest',
+  P66: [
+    'https://www.e-codices.unifr.ch/metadata/iiif/fmb-pb-ii/manifest.json',
+    'https://www.e-codices.unifr.ch/metadata/iiif/fmb-pb-ii/fmb-pb-ii.json',
+  ],
+  '05': [
+    'https://cudl.lib.cam.ac.uk/iiif/MS-NN-00002-00041',
+    'https://cudl.lib.cam.ac.uk/iiif/MS-NN-00002-00041/manifest.json',
+  ],
 };
 
 // ---------------------------------------------------------------------------
@@ -229,43 +240,58 @@ async function main() {
     if (r.iiif) candidates.push(r.iiif);
     const vatGuess = vaticanManifestGuess(r.shelf);
     if (vatGuess && !candidates.includes(vatGuess)) candidates.push(vatGuess);
-    if (HARDCODED_IIIF[r.ga] && !candidates.includes(HARDCODED_IIIF[r.ga])) candidates.push(HARDCODED_IIIF[r.ga]);
+    for (const url of HARDCODED_IIIF[r.ga] ?? []) {
+      if (!candidates.includes(url)) candidates.push(url);
+    }
     if (candidates.length) manifestCandidates.push({ row: r, candidates });
   }
   note(`Manifest candidates to try: ${manifestCandidates.length}`);
 
-  await runPool(
-    manifestCandidates,
-    async ({ row, candidates }) => {
-      for (const url of candidates) {
-        iiifTried++;
-        try {
-          const result = await tryManifest(url);
-          if (result) {
-            items[row.ga] = {
-              ...result,
-              institution: row.inst ?? null,
-              link: null,
-            };
-            iiifCount++;
-            const instKey = row.inst || new URL(url).hostname;
-            byInstitution[instKey] = (byInstitution[instKey] ?? 0) + 1;
-            return;
-          }
-          iiifFailed++;
-          note(`  [${row.ga}] manifest had no usable canvas: ${url}`);
-        } catch (err) {
-          iiifFailed++;
-          note(`  [${row.ga}] manifest failed: ${url} (${err.message})`);
+  const manifestWorker = async ({ row, candidates }) => {
+    for (const url of candidates) {
+      iiifTried++;
+      try {
+        const result = await tryManifest(url);
+        if (result) {
+          items[row.ga] = {
+            ...result,
+            institution: row.inst ?? null,
+            link: null,
+          };
+          iiifCount++;
+          const instKey = row.inst || new URL(url).hostname;
+          byInstitution[instKey] = (byInstitution[instKey] ?? 0) + 1;
+          return;
         }
+        iiifFailed++;
+        note(`  [${row.ga}] manifest had no usable canvas: ${url}`);
+      } catch (err) {
+        iiifFailed++;
+        note(`  [${row.ga}] manifest failed: ${url} (${err.message})`);
       }
-    },
-    {
+    }
+  };
+
+  // Gallica (BnF) is by far our biggest single source of Wikidata-supplied
+  // manifests, and also the host most prone to 429-ing us under the default
+  // concurrency. Give it its own gentler pool, run alongside everyone else's.
+  const isGallica = (c) => c.candidates.some((u) => u.includes('gallica.bnf.fr'));
+  const gallicaCandidates = manifestCandidates.filter(isGallica);
+  const otherCandidates = manifestCandidates.filter((c) => !isGallica(c));
+  note(`  (of which ${gallicaCandidates.length} touch Gallica, throttled separately)`);
+
+  await Promise.all([
+    runPool(gallicaCandidates, manifestWorker, {
+      concurrency: 2,
+      delayMs: 700,
+      onError: (item, err) => note(`  [${item.row.ga}] unexpected error: ${err.message}`),
+    }),
+    runPool(otherCandidates, manifestWorker, {
       concurrency: 4,
       delayMs: 150,
       onError: (item, err) => note(`  [${item.row.ga}] unexpected error: ${err.message}`),
-    },
-  );
+    }),
+  ]);
   note(`Phase 1 done: ${iiifCount} IIIF services resolved, ${iiifFailed}/${iiifTried} attempts failed.`);
 
   // --- Phase 2: Commons fallback for everything still unresolved ---
