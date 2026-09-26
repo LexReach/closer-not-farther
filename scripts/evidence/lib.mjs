@@ -11,22 +11,34 @@ import crypto from 'node:crypto';
 export const USER_AGENT =
   'closer-not-farther-evidence/1.0 (+https://github.com/LexReach/closer-not-farther; manuscript-evidence data build; contact: repo issues)';
 
-export async function fetchWithRetry(url, { headers = {}, timeoutMs = 60000, retries = 3, label = url } = {}) {
+// IMPORTANT: the AbortController must stay live (not cleared) until the response BODY has
+// also been fully read, not just until the response headers arrive. `fetch(url, {signal})`
+// only covers connecting + receiving headers; a server that sends headers promptly but then
+// streams (or stalls on) a slow/large body is otherwise completely unbounded by `timeoutMs`,
+// which is exactly what made earlier versions of this pipeline hang far past their intended
+// time budgets. `readBody` (default: `(res) => res.text()`) runs BEFORE the timer clears.
+export async function fetchWithRetry(url, { headers = {}, timeoutMs = 60000, retries = 3, label = url, readBody = (res) => res.text() } = {}) {
   let lastErr;
   for (let attempt = 0; attempt <= retries; attempt++) {
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), timeoutMs);
     try {
       const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT, ...headers }, signal: ctrl.signal });
-      clearTimeout(timer);
       if (res.status === 429 || res.status >= 500) {
+        clearTimeout(timer);
         lastErr = new Error(`HTTP ${res.status} for ${label}`);
         const wait = 1500 * Math.pow(2, attempt);
         console.warn(`  [retry] ${label} -> ${res.status}, waiting ${wait}ms (attempt ${attempt + 1}/${retries + 1})`);
         await sleep(wait);
         continue;
       }
-      return res;
+      if (!res.ok) {
+        clearTimeout(timer);
+        throw new Error(`HTTP ${res.status} for ${label}`);
+      }
+      const body = await readBody(res); // still under the same abort timer
+      clearTimeout(timer);
+      return body;
     } catch (err) {
       clearTimeout(timer);
       lastErr = err;
@@ -39,15 +51,12 @@ export async function fetchWithRetry(url, { headers = {}, timeoutMs = 60000, ret
 }
 
 export async function fetchJSON(url, opts = {}) {
-  const res = await fetchWithRetry(url, opts);
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${opts.label ?? url}`);
-  return res.json();
+  const text = await fetchWithRetry(url, opts);
+  return JSON.parse(text);
 }
 
 export async function fetchText(url, opts = {}) {
-  const res = await fetchWithRetry(url, opts);
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${opts.label ?? url}`);
-  return res.text();
+  return fetchWithRetry(url, opts);
 }
 
 /** Run async tasks with a concurrency cap and an optional per-task delay. Never throws. */
