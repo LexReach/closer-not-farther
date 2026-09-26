@@ -31,12 +31,8 @@ jobs:
           echo "Working dir: $(pwd)"
           ls -la data/evidence || true
 
-      - name: Build coverage (catalogue baseline + best-effort NTVMR page-level enrichment)
+      - name: Build coverage (NTVMR page-level indexContent + restricted catalogue fallback)
         run: node scripts/evidence/build-coverage.mjs
-
-      - name: Build apparatus (SBLGNT, github.com/LogosBible/SBLGNT)
-        run: node scripts/evidence/build-apparatus.mjs
-        continue-on-error: true
 
       - name: Build transcriptions (NTVMR TEI, best-effort, time-boxed)
         run: node scripts/evidence/build-transcriptions.mjs

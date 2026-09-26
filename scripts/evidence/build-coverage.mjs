@@ -5,32 +5,40 @@
  * Builds data/evidence/coverage/<BOOK>.json + coverage/summary.json: for every
  * verse in the New Testament, the list of manuscripts whose pages contain it.
  *
- * Two-phase, so the run always produces a complete, valid baseline even if the
- * network phase fails or is only partly successful:
+ * Priority (per coordinator direction): real NTVMR page-level coverage, via
+ * the metadata/liste/search "indexContent" (OSIS ref) search, matters most —
+ * catalogue-level fallback is a last resort, not the main event, and must
+ * never overstate a fragmentary manuscript's actual coverage:
  *
- *  Phase A (no network): catalogue-level coverage. For every verse, every
- *    catalogued manuscript (data/library/catalog.json) whose `contents` field
- *    includes that verse's corpus letter (e/a/p/c/r) is listed as a hit,
- *    marked catalogue-level: ["<GA>", null, "c"].
+ *  Phase B (network, INTF NTVMR, primary): for each NT book, query
+ *    metadata/liste/search/?indexContent=<osis>&detail=page&format=json to get
+ *    every page (any manuscript) whose transcribed/indexed content intersects
+ *    that book, then place each page's verse range into every verse it
+ *    covers, as page-verified hits ["<GA>", "<pageId>", "<range or single c:v>"].
  *
- *  Phase B (network, best-effort, INTF NTVMR): for a priority subset of
- *    manuscripts (every one dated wholly before 900 AD, plus the 25 featured
- *    manuscripts), look up real page-level "index content" (which verses each
- *    page carries) from the NTVMR API and upgrade matching entries to
- *    page-verified hits ["<GA>", "<pageId>"] (no "c" flag). Manuscripts we
- *    could not page-verify (API miss, no transcription/index, or simply not
- *    in the priority subset) keep their catalogue-level entry.
+ *  Phase A (no network, restricted fallback): catalogue-level coverage is
+ *    added ONLY for minuscules ('m') and lectionaries ('L') NOT already
+ *    page-verified for that verse, marked ["<GA>", null, "c"]. It is NEVER
+ *    applied to papyri ('P') or majuscules ('M'): those catalogue rows carry
+ *    no reliable "this is a complete, unbroken copy" guarantee (many papyri
+ *    are single small fragments), so claiming corpus-wide coverage for them
+ *    from the 'contents' letter alone would be misleading. If page-level hits
+ *    already cover most of a book's verses (>= FALLBACK_DROP_THRESHOLD), the
+ *    catalogue fallback is dropped for that book entirely.
+ *
+ * summary.json's per-verse `count` is the number of manuscripts actually
+ * listed for that verse (not the size of the whole catalogue corpus roster).
  *
  * Network access only works from GitHub Actions (see .github/workflows/data-evidence.yml);
- * phase B is skipped (with a log line) if fetches fail, and phase A output is kept.
+ * phase B is skipped (with a log line) if fetches fail, and phase A alone is kept.
  */
 
 import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { NT_BOOKS } from './nt-books.mjs';
-import { setCacheDir, runPool } from './lib.mjs';
-import { discover, fetchPageIndex } from './ntvmr.mjs';
+import { NT_BOOKS, iterVerses } from './nt-books.mjs';
+import { setCacheDir } from './lib.mjs';
+import { discover } from './ntvmr.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..', '..');
@@ -56,15 +64,6 @@ async function loadCatalog() {
   }));
 }
 
-async function loadFeatured() {
-  try {
-    const raw = JSON.parse(await readFile(path.join(ROOT, 'data', 'library', 'featured.json'), 'utf8'));
-    return new Set(raw.manuscripts.map((m) => m.ga));
-  } catch {
-    return new Set();
-  }
-}
-
 // ---------------------------------------------------------------------------
 // Phase A: catalogue-level baseline
 // ---------------------------------------------------------------------------
@@ -84,132 +83,134 @@ function buildCatalogueBaseline(catalog) {
   return byCorpus;
 }
 
+// A book's catalogue fallback is dropped entirely once page-verified hits
+// already reach this fraction of its verses (coordinator direction: "if
+// page-level coverage exists for most of a book, drop the fallback for that
+// book entirely").
+const FALLBACK_DROP_THRESHOLD = 0.5;
+
 async function main() {
   await mkdir(OUT_DIR, { recursive: true });
   const catalog = await loadCatalog();
-  const featured = await loadFeatured();
-  log(`Loaded ${catalog.length} catalog rows, ${featured.size} featured GAs.`);
+  log(`Loaded ${catalog.length} catalog rows.`);
 
   const byCorpus = buildCatalogueBaseline(catalog);
+  // Catalogue-level fallback is restricted to minuscules ('m') and lectionaries
+  // ('L') only: papyri and majuscules are frequently small fragments, and the
+  // catalogue's corpus-letter classification carries no "this copy is complete"
+  // guarantee, so applying it to them would overstate their actual coverage
+  // (e.g. claiming P104, a single scrap, attests all of Matthew).
+  const fallbackByCorpus = {};
   for (const l of Object.keys(byCorpus)) {
-    log(`  corpus ${l}: ${byCorpus[l].length} catalogued manuscripts`);
+    fallbackByCorpus[l] = byCorpus[l].filter((r) => r.cat === 'm' || r.cat === 'L');
+    log(`  corpus ${l}: ${byCorpus[l].length} catalogued (all cats), ${fallbackByCorpus[l].length} eligible for fallback (m/L only)`);
   }
 
-  // Priority subset for phase B: pre-900 AD (c0 <= 9) plus every featured GA.
-  const priority = catalog.filter((r) => (r.c0 != null && r.c0 <= 9) || featured.has(r.ga));
-  log(`Priority (pre-900 or featured) manuscripts for page-level lookup: ${priority.length}`);
-
-  const pageIndex = new Map(); // ga -> Map("c:v" -> pageId)
-  let workingShape = null;
+  const catalogByGA = new Map(catalog.map((r) => [r.ga, r]));
+  let shape = null;
   let phaseBAttempted = false;
-  let phaseBHits = 0;
-
   if (!SKIP_NETWORK) {
     phaseBAttempted = true;
-    const sample = priority.find((r) => r.ga === 'P52') || priority[0];
-    workingShape = sample ? await discover(sample.ga) : null;
-
-    if (workingShape) {
-      log(`--- fetching page indexes for ${priority.length} priority manuscripts (concurrency 3) ---`);
-      await runPool(
-        priority,
-        async (row) => {
-          const idx = await fetchPageIndex(row.ga, workingShape);
-          if (idx && idx.size) {
-            pageIndex.set(row.ga, idx);
-            phaseBHits++;
-          }
-        },
-        { concurrency: 3, delayMs: 350, onError: (row, err) => log(`  [ntvmr] ${row.ga} failed: ${err.message}`) },
-      );
-      log(`Page-level index obtained for ${pageIndex.size}/${priority.length} priority manuscripts.`);
-    } else {
-      log('No working NTVMR page-index endpoint discovered this run; using catalogue-level coverage only.');
-    }
+    shape = await discover('P52');
+    if (!shape) log('No confirmed NTVMR page-index shape this run; using catalogue-level (m/L) coverage only.');
   } else {
     log('EVIDENCE_SKIP_NETWORK=1: skipping NTVMR phase B, catalogue-level only.');
   }
 
-  // ---------------------------------------------------------------------------
-  // Assemble per-book coverage files
-  //
-  // Sizing note: a literal "every verse lists every catalogue member of its
-  // corpus" enumeration is not compact — corpus 'e' (Gospels) alone has 4365
-  // catalogued manuscripts x 3779 Gospel verses = ~16.5M entries. Since a
-  // catalogue-level ("c") hit is, by construction, the *same* claim (this
-  // manuscript's corpus classification includes this verse's book) repeated
-  // near-identically for almost every verse in the corpus, the per-verse
-  // "verses" listing below is bounded to: (a) real NTVMR page-verified hits
-  // (any manuscript), plus (b) catalogue-level hits for the priority subset
-  // (pre-900 AD + the 25 featured manuscripts) — the manuscripts a reader
-  // actually cares about seeing named at a given verse. The FULL catalogue
-  // count for the verse's whole corpus (every classified manuscript, not just
-  // the priority subset) is preserved losslessly in summary.json's `count`,
-  // so "how many manuscripts total" stays accurate even though the per-verse
-  // listing itself only names the priority ones.
-  // ---------------------------------------------------------------------------
-  const priorityGA = new Set(priority.map((r) => r.ga));
-  const catalogByGA = new Map(catalog.map((r) => [r.ga, r]));
   const summary = {}; // "BOOK.c:v" -> [count, oldestGA, oldestCentury]
   let totalVerses = 0;
   let totalPageVerified = 0;
+  let totalCatalogueFallback = 0;
+  let booksWithPageData = 0;
 
+  // Processed one book at a time (not merged into one global structure): verse
+  // keys ("c:v") are only unique WITHIN a book, so a single flat ga->"c:v" map
+  // spanning every book would silently collide (nearly every book has a "1:1").
   for (const book of NT_BOOKS) {
-    const roster = byCorpus[book.corpus]; // full catalogue roster for this book's corpus, oldest first
-    const fullCount = roster.length;
-    const oldestRosterGA = roster.length ? roster[0].ga : null;
-    const oldestRosterC0 = roster.length && roster[0].c0 != null ? roster[0].c0 : null;
+    const fallbackRoster = fallbackByCorpus[book.corpus];
+    const verseKeys = [...iterVerses(book)];
 
-    const verses = {};
-    for (let c = 1; c <= book.verses.length; c++) {
-      const n = book.verses[c - 1];
-      for (let v = 1; v <= n; v++) {
-        const key = `${c}:${v}`;
-        const hits = [];
-        const seen = new Set();
-        // Page-verified hits first (any manuscript found via NTVMR).
-        let oldestHitC0 = Infinity;
-        let oldestHitGA = null;
-        for (const [ga, idx] of pageIndex) {
-          const pageId = idx.get(key);
-          if (pageId !== undefined) {
-            hits.push([ga, pageId]);
-            seen.add(ga);
-            totalPageVerified++;
-            const row = catalogByGA.get(ga);
-            const c0 = row && row.c0 != null ? row.c0 : Infinity;
-            if (c0 < oldestHitC0) {
-              oldestHitC0 = c0;
-              oldestHitGA = ga;
-            }
-          }
+    // pageData: ga -> Map("c:v" -> {pageId, range}), scoped to this book only.
+    const pageData = new Map();
+    if (shape) {
+      try {
+        const rows = await shape.fetchBookPages(book); // [{ga, pageId, folio, verseKeys:["c:v",...], range}]
+        for (const row of rows) {
+          if (!pageData.has(row.ga)) pageData.set(row.ga, new Map());
+          const m = pageData.get(row.ga);
+          for (const vk of row.verseKeys) m.set(vk, { pageId: row.pageId, range: row.range });
         }
-        // Catalogue-level fallback, priority subset only (see sizing note above).
-        for (const row of roster) {
-          if (seen.has(row.ga) || !priorityGA.has(row.ga)) continue;
-          hits.push([row.ga, null, 'c']);
-        }
-        verses[key] = hits;
-        totalVerses++;
-
-        // Oldest witness for this verse: prefer an actual page-verified hit;
-        // otherwise fall back to the oldest manuscript in the whole catalogue
-        // roster for this corpus (accurate even though not individually listed).
-        const oldestGA = Number.isFinite(oldestHitC0) ? oldestHitGA : oldestRosterGA;
-        const oldestC0 = Number.isFinite(oldestHitC0) ? oldestHitC0 : oldestRosterC0;
-        summary[`${book.id}.${key}`] = [fullCount, oldestGA, oldestC0];
+        log(`  ${book.id}: ${rows.length} page rows from indexContent, ${pageData.size} distinct manuscripts`);
+      } catch (err) {
+        log(`  ${book.id}: indexContent fetch failed: ${err.message}`);
       }
     }
-    const basis = pageIndex.size > 0 ? 'ntvmr-index' : 'catalog-contents';
+    if (pageData.size) booksWithPageData++;
+
+    // Decide whether page-level coverage already reaches "most" of this
+    // book's verses; if so, drop the catalogue fallback for the whole book.
+    let versesWithPageHit = 0;
+    for (const key of verseKeys) {
+      for (const m of pageData.values()) {
+        if (m.has(key)) {
+          versesWithPageHit++;
+          break;
+        }
+      }
+    }
+    const pageFraction = verseKeys.length ? versesWithPageHit / verseKeys.length : 0;
+    const useFallback = pageFraction < FALLBACK_DROP_THRESHOLD;
+
+    const verses = {};
+    for (const key of verseKeys) {
+      const hits = [];
+      const seen = new Set();
+      let oldestC0 = Infinity;
+      let oldestGA = null;
+      for (const [ga, m] of pageData) {
+        const hit = m.get(key);
+        if (!hit) continue;
+        hits.push(hit.range ? [ga, hit.pageId, hit.range] : [ga, hit.pageId]);
+        seen.add(ga);
+        totalPageVerified++;
+        const row = catalogByGA.get(ga);
+        const c0 = row && row.c0 != null ? row.c0 : Infinity;
+        if (c0 < oldestC0) {
+          oldestC0 = c0;
+          oldestGA = ga;
+        }
+      }
+      if (useFallback) {
+        for (const row of fallbackRoster) {
+          if (seen.has(row.ga)) continue;
+          hits.push([row.ga, null, 'c']);
+          totalCatalogueFallback++;
+          const c0 = row.c0 != null ? row.c0 : Infinity;
+          if (c0 < oldestC0) {
+            oldestC0 = c0;
+            oldestGA = row.ga;
+          }
+        }
+      }
+      verses[key] = hits;
+      totalVerses++;
+      // count = manuscripts actually listed for this verse (not the whole corpus roster).
+      summary[`${book.id}.${key}`] = [hits.length, oldestGA, Number.isFinite(oldestC0) ? oldestC0 : null];
+    }
+    const basis = pageData.size > 0 ? 'ntvmr-index' : 'catalog-contents';
     const payload = { book: book.id, basis, verses };
     await writeFile(path.join(OUT_DIR, `${book.id}.json`), JSON.stringify(payload));
-    log(`Wrote coverage/${book.id}.json (${Object.keys(verses).length} verses, basis=${basis}, corpus roster=${fullCount})`);
+    log(
+      `Wrote coverage/${book.id}.json (${Object.keys(verses).length} verses, basis=${basis}, ` +
+        `pageFraction=${pageFraction.toFixed(2)}, fallbackUsed=${useFallback})`,
+    );
   }
 
   await writeFile(path.join(OUT_DIR, 'summary.json'), JSON.stringify(summary));
   log(`Wrote coverage/summary.json (${Object.keys(summary).length} verse entries)`);
   log(
-    `Totals: ${totalVerses} verse-slots, ${totalPageVerified} page-verified hits, phaseBAttempted=${phaseBAttempted}, phaseBHits(manuscripts)=${phaseBHits}`,
+    `Totals: ${totalVerses} verse-slots, ${totalPageVerified} page-verified hits, ` +
+      `${totalCatalogueFallback} catalogue-fallback hits, phaseBAttempted=${phaseBAttempted}, booksWithPageData=${booksWithPageData}/${NT_BOOKS.length}`,
   );
 }
 
