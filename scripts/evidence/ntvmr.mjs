@@ -200,9 +200,15 @@ export const CONFIRMED_SHAPE = {
           indexContent: `${book.osis}.${chapter}`,
           detail: 'page',
           format: 'json',
-          limit: '0',
+          // Bounded, not unlimited (limit=0): an unbounded chapter-wide query made the
+          // server enumerate every matching document to completion, which for a popular
+          // chapter (hundreds/thousands of manuscripts) took long enough per-request to
+          // blow the whole workflow's time budget in testing. 1500 pages already captures
+          // far more real manuscripts per chapter than the catalogue fallback ever would;
+          // this bound is about request latency, not the output-size limit (none set).
+          limit: '1500',
         })}`;
-        const text = await cachedFetchText(url, { label: `${book.id}.${chapter}`, timeoutMs: 60000, retries: 2 });
+        const text = await cachedFetchText(url, { label: `${book.id}.${chapter}`, timeoutMs: 30000, retries: 1 });
         let json;
         try {
           json = JSON.parse(text);

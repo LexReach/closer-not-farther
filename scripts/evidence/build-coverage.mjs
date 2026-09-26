@@ -45,11 +45,20 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const OUT_DIR = path.join(ROOT, 'data', 'evidence', 'coverage');
 const CACHE_DIR = path.join(ROOT, '.cache-evidence', 'ntvmr-raw');
 const SKIP_NETWORK = process.env.EVIDENCE_SKIP_NETWORK === '1';
+// Wall-clock budget for the NTVMR fetch phase (books are processed oldest/most-attested
+// first isn't guaranteed, but every book's file is written as soon as it's computed, so
+// running out of time here still leaves a valid, committable result — just with fewer
+// books enriched with real page-level data this run; the rest keep their previous file).
+const COVERAGE_BUDGET_MS = Number(process.env.EVIDENCE_COVERAGE_BUDGET_MS || 20 * 60 * 1000);
+const START = Date.now();
 
 setCacheDir(CACHE_DIR);
 
 function log(...args) {
   console.log(...args);
+}
+function timeLeft() {
+  return COVERAGE_BUDGET_MS - (Date.now() - START);
 }
 
 async function loadCatalog() {
@@ -123,16 +132,29 @@ async function main() {
   let totalCatalogueFallback = 0;
   let booksWithPageData = 0;
 
+  // Fetch order: John first (the most-discussed book throughout this build, and where
+  // P52/P66/P75 etc. matter most), then the rest of the Gospels + Acts, then everything
+  // else in canonical order — so if the time budget runs out partway, the books most
+  // people will actually look at are the ones most likely to have finished.
+  const FETCH_PRIORITY = ['JHN', 'MAT', 'MRK', 'LUK', 'ACT'];
+  const fetchOrder = [
+    ...FETCH_PRIORITY.map((id) => NT_BOOKS.find((b) => b.id === id)),
+    ...NT_BOOKS.filter((b) => !FETCH_PRIORITY.includes(b.id)),
+  ];
+
   // Processed one book at a time (not merged into one global structure): verse
   // keys ("c:v") are only unique WITHIN a book, so a single flat ga->"c:v" map
   // spanning every book would silently collide (nearly every book has a "1:1").
-  for (const book of NT_BOOKS) {
+  for (const book of fetchOrder) {
     const fallbackRoster = fallbackByCorpus[book.corpus];
     const verseKeys = [...iterVerses(book)];
 
     // pageData: ga -> Map("c:v" -> {pageId, range}), scoped to this book only.
     const pageData = new Map();
-    if (shape) {
+    if (shape && timeLeft() <= 0) {
+      log(`  ${book.id}: coverage time budget (${COVERAGE_BUDGET_MS}ms) exhausted; writing catalogue-fallback-only for this book.`);
+    }
+    if (shape && timeLeft() > 0) {
       try {
         const rows = await shape.fetchBookPages(book); // [{ga, pageId, folio, verseKeys:["c:v",...], range}]
         for (const row of rows) {
