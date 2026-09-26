@@ -52,7 +52,7 @@
       "links": {
         "images": "https://commons.wikimedia.org/wiki/Category:Leningrad_Codex",
         "info": "https://en.wikipedia.org/wiki/Leningrad_Codex",
-        "images_archive_org": "https://archive.org/details/languageimageryi0000unse"
+        "images_archive_org": "https://archive.org/details/Leningrad_Codex_Color_Images"
       },
       "embed": false,
       "terms": "Public-domain manuscript (dated 1008/9 AD); reproduction terms depend on the specific facsimile host and were not independently confirmed as embeddable.",
@@ -139,7 +139,7 @@
         "ISA.1.1-ISA.66.24"
       ],
       "links": {
-        "images": null,
+        "images": "https://www.deadseascrolls.org.il/explore-the-archive/manuscript/Isaiaha-1",
         "info": "https://en.wikipedia.org/wiki/Great_Isaiah_Scroll"
       },
       "embed": false,
@@ -147,7 +147,7 @@
       "compiled": true,
       "note": "The only complete biblical scroll from Qumran; virtually the entire Book of Isaiah is preserved intact on 17 sheets.",
       "verified": {
-        "leon_levy_link_confirmed": false
+        "leon_levy_link_confirmed": true
       }
     },
     {
