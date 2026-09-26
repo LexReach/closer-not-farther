@@ -405,7 +405,8 @@ function build(root: HTMLElement, lib: LibraryData): () => void {
         body.insertBefore(viewer.el, body.querySelector('.lib-meta'));
       });
     }
-    if (!dialog.open) dialog.showModal();
+    // During the guided tour the dialog opens non-modally so the caption card stays on top.
+    if (!dialog.open) document.body.classList.contains('is-touring') ? dialog.show() : dialog.showModal();
     writeHash(f, ga);
   }
 
