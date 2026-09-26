@@ -111,6 +111,27 @@ async function probeSearchGrid(sampleGA) {
   return results;
 }
 
+/** Fetch a route's own auto-generated help page: calling it with ONLY format=json and no
+ * recognized filter param returns its usage/parameter-table HTML (confirmed for
+ * metadata/liste/search/ in a real CI run). Logged in full (not truncated) so the real
+ * parameter set can be read straight from the CI log. */
+async function logHelp(url, label) {
+  const r = await rawGet(`${url}?format=json`);
+  console.log(`--- help for ${label} (${url}) -> HTTP ${r.status ?? 'ERR'} ---`);
+  if (r.text) console.log(r.text);
+  await sleepMs(350);
+}
+
+async function probeIndexContent(osisRefs) {
+  for (const ref of osisRefs) {
+    const url = `${SEARCH_URL}?${new URLSearchParams({ indexContent: ref, format: 'json' })}`;
+    const r = await rawGet(url, { timeoutMs: 25000 });
+    console.log(`  [indexContent=${ref}] -> HTTP ${r.status ?? 'ERR'}${r.error ? ' ' + r.error : ''}`);
+    if (r.text) console.log(`    body (first 4000 chars): ${r.text.slice(0, 4000)}`);
+    await sleepMs(400);
+  }
+}
+
 /**
  * Runs discovery: logs directory listings under api/metadata/ and
  * api/transcript/, then probes a parameter grid against the one confirmed-live
@@ -123,16 +144,22 @@ export async function discover(sampleGA = 'P52') {
     console.log('[ntvmr] Using CONFIRMED_SHAPE (skipping discovery probe).');
     return CONFIRMED_SHAPE;
   }
-  console.log('--- NTVMR discovery: directory listings ---');
-  await logDir('/community/vmr/api/metadata/');
-  await logDir('/community/vmr/api/transcript/');
-  await sleepMs(300);
+  console.log('--- NTVMR discovery: help pages (own usage/parameter docs) ---');
+  await logHelp(SEARCH_URL, 'metadata/liste/search');
+  await logHelp(`${NTVMR_BASE}/community/vmr/api/transcript/get/`, 'transcript/get');
+  await logHelp(`${NTVMR_BASE}/community/vmr/api/transcript/show/`, 'transcript/show');
+  await logHelp(`${NTVMR_BASE}/community/vmr/api/transcript/search/`, 'transcript/search');
+  await logHelp(`${NTVMR_BASE}/community/vmr/api/transcript/export/`, 'transcript/export');
 
-  console.log(`--- NTVMR discovery: parameter grid against ${SEARCH_URL} (sample ${sampleGA}) ---`);
-  await probeSearchGrid(sampleGA);
+  console.log('--- NTVMR discovery: indexContent (per-verse) search — the real "index-content search" ---');
+  // Confirmed working param names so far: indexContent (OSIS ref, e.g. "John.1.1"), format.
+  // docID takes a bare internal numeric id (NOT the GA number itself — docID=52 matched 11
+  // manuscripts/51 pages, so "52" is not P52's own id). GAno/ga/list/listNr/liste/q/search all
+  // 400 "invalid parameter": the route validates against a strict allow-list.
+  await probeIndexContent(['John.18.31', 'John.1.1']);
 
-  console.log('[ntvmr] No verified parser wired yet (see grid results above). Falling back to catalogue-level coverage this run.');
-  console.log('[ntvmr] ACTION: once the log shows a param set with count>0 (or a real docID/page list under transcript/),');
+  console.log('[ntvmr] No verified parser wired yet (see help/indexContent output above). Falling back to catalogue-level coverage this run.');
+  console.log('[ntvmr] ACTION: once the log shows indexContent\'s real response shape (does it carry docID/pageID per hit?),');
   console.log('[ntvmr] set CONFIRMED_SHAPE in scripts/evidence/ntvmr.mjs to a real implementation and re-run.');
   return null;
 }

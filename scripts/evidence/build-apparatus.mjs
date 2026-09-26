@@ -101,73 +101,96 @@ function pickApparatusFiles(paths) {
   return paths.filter((p) => /(^|\/)sblgntapp\//i.test(p) && /\.(txt|xml)$/i.test(p));
 }
 
+// Confirmed edition sigla (from a real fetched sblgntapp/text/*.txt file, e.g. Titus.txt,
+// 1John.txt): WH, Treg, NA28, RP, NIV always; NA27, Holmes, WHmarg, SBLGNT, em occasionally
+// (Holmes/WHmarg/em can appear as a token before other sigla, e.g. "Holmes WHmarg ] ...").
+const EDITION_TOKEN = 'WH|Treg|NIV|RP|NA27|NA28|Holmes|WHmarg|SBLGNT|em';
+const EDS_TAIL_RE = new RegExp(`\\s+((?:${EDITION_TOKEN})(?:\\s+(?:${EDITION_TOKEN}))*)\\s*$`);
+
 /**
- * Parse the SBLGNT apparatus plain-text format. Expected shape (one variation
- * unit per logical entry, verse references repeated as needed):
- *   "<Book> <chapter>:<verse> <reading text> WH Treg NIV RP] <alt reading text> RP"
- * or, since each source file is already scoped to one book (data/sblgntapp/text/<Book>.txt),
- * possibly without the leading book name at all:
- *   "<chapter>:<verse> <reading text> WH Treg NIV RP] <alt reading text> RP"
- * Both are handled; when no book name is found on the line, `bookHint` (from
- * the filename) is used. Multiple units for the same verse may appear as
- * separate lines; we treat each regex match independently and group by verse.
+ * Parse the real SBLGNT apparatus plain-text format (confirmed against
+ * data/sblgntapp/text/Titus.txt etc. in a live CI run). Each verse is a block:
+ *
+ *   Titus 1:4
+ *   1:4 καὶ WH Treg NA28 ] ἔλεος RP
+ *   • Χριστοῦ Ἰησοῦ WH Treg NA28 ] κυρίου Ἰησοῦ χριστοῦ RP
+ *   <blank line>
+ *   Titus 1:5
+ *   5 ἀπέλιπόν Treg NA28 ] ἀπέλειπόν WH; κατέλιπόν RP
+ *   <blank line>
+ *
+ * - A "header" line is exactly "<Book name> <chapter>:<verse>" with nothing
+ *   else — that's what marks a new verse (reliable; unlike the content line
+ *   right after it, which sometimes repeats "<chapter>:<verse>" and sometimes
+ *   just "<verse>" when the chapter hasn't changed).
+ * - Each subsequent non-blank line up to the next header is one variation
+ *   unit for that verse: optionally prefixed with "<chapter>:<verse>",
+ *   "<verse>", or "• ", then "<reading> <eds...> ] <reading> <eds...>[; <reading> <eds...>]+".
+ *   ";" inside a bracketed group separates 3+-way variants (not just 2-way).
+ *
  * Returns Map<"BOOK", Map<"c:v", entries[]>>.
  */
-function parseApparatusText(text, sourceLabel, bookHint) {
+export function parseApparatusText(text, sourceLabel, bookHint) {
   const byBookVerse = new Map();
-  const lines = text.split(/\r?\n/);
-  let matched = 0;
-  // Build a reverse lookup: name variant (lowercased) -> BOOK id, longest first.
+  const lines = text.split(/\r?\n/).map((l) => l.trim());
+
   const variantList = [];
   for (const [book, variants] of Object.entries(BOOK_NAME_VARIANTS)) {
     for (const v of variants) variantList.push([v.toLowerCase(), book]);
   }
   variantList.sort((a, b) => b[0].length - a[0].length);
 
-  const refRe = /^(?:([1-3]?\s?[A-Za-z][A-Za-z. ]*?)\s+)?(\d+):(\d+)\s+(.*)$/;
+  const headerRe = /^([1-3]?\s?[A-Za-z][A-Za-z.]*)\s+(\d+):(\d+)$/;
+  const contentPrefixRe = /^(?:(?:\d+:)?\d+\s+|•\s*)/;
 
-  for (const rawLine of lines) {
-    const line = rawLine.trim();
-    if (!line) continue;
-    const m = line.match(refRe);
-    if (!m) continue;
-    let book = bookHint || null;
-    if (m[1]) {
-      const namePart = m[1].trim().toLowerCase().replace(/\.$/, '');
-      book = variantList.find(([v]) => namePart === v || namePart.startsWith(v))?.[1] || book;
-    }
-    if (!book) continue;
-    const chapter = m[2];
-    const verse = m[3];
-    const rest = m[4];
-    // Split "reading EDS] reading EDS] reading EDS" into 2+ reading groups.
-    const groups = rest.split(']').map((s) => s.trim()).filter(Boolean);
-    if (groups.length < 2) continue; // no "]" => not a recognizable variant line
+  function parseUnit(unitText) {
+    const groups = unitText.split(']').map((s) => s.trim()).filter(Boolean);
+    if (groups.length < 2) return null; // no "]" => not a recognizable variant line
     const readings = [];
     for (const g of groups) {
-      // Trailing token run of known edition sigla (WH, Treg, NIV, RP, NA, SBL, ]).
-      const edsMatch = g.match(/\s+((?:WH|Treg|NIV|RP|NA|SBL)(?:\s+(?:WH|Treg|NIV|RP|NA|SBL))*)$/);
-      if (!edsMatch) {
-        readings.push({ text: g, eds: [] });
-        continue;
+      // A bracketed group can itself hold 2+ readings separated by ";" (3+-way variants).
+      for (const sub of g.split(';').map((s) => s.trim()).filter(Boolean)) {
+        const edsMatch = sub.match(EDS_TAIL_RE);
+        if (!edsMatch) {
+          readings.push({ text: sub, eds: [] });
+          continue;
+        }
+        readings.push({ text: sub.slice(0, edsMatch.index).trim(), eds: edsMatch[1].split(/\s+/) });
       }
-      const text2 = g.slice(0, edsMatch.index).trim();
-      const eds = edsMatch[1].split(/\s+/);
-      readings.push({ text: text2, eds });
     }
+    return readings;
+  }
+
+  let book = null;
+  let chapter = null;
+  let verse = null;
+  let matched = 0;
+
+  for (const line of lines) {
+    if (!line) continue;
+    const h = line.match(headerRe);
+    if (h) {
+      const namePart = h[1].trim().toLowerCase().replace(/\.$/, '');
+      book = variantList.find(([v]) => namePart === v || namePart.startsWith(v))?.[1] || bookHint || book;
+      chapter = h[2];
+      verse = h[3];
+      continue;
+    }
+    if (!book || chapter == null) continue; // content line before any header seen; skip
+    const rest = line.replace(contentPrefixRe, '');
+    const readings = parseUnit(rest);
+    if (!readings) continue;
     matched++;
-    const key = `${book}`;
-    if (!byBookVerse.has(key)) byBookVerse.set(key, new Map());
-    const verseMap = byBookVerse.get(key);
+    if (!byBookVerse.has(book)) byBookVerse.set(book, new Map());
+    const verseMap = byBookVerse.get(book);
     const vk = `${chapter}:${verse}`;
     if (!verseMap.has(vk)) verseMap.set(vk, []);
-    // No separately-attested "lemma" (base-text word being varied) in this
-    // plain-text apparatus format without the running SBLGNT text to diff
-    // against; omit it rather than guess. `readings` alone (first = base text
-    // per WH/Treg/NIV/RP as applicable) still carries the full variant.
+    // No separately-attested "lemma" (base-text word being varied) beyond the
+    // readings themselves in this plain-text apparatus format; omit it rather
+    // than guess. `readings` alone still carries the full variant.
     verseMap.get(vk).push({ readings });
   }
-  log(`[${sourceLabel}] matched ${matched} apparatus lines across ${byBookVerse.size} books`);
+  log(`[${sourceLabel}] matched ${matched} apparatus units across ${byBookVerse.size} books`);
   return byBookVerse;
 }
 
@@ -222,7 +245,9 @@ async function main() {
   log(`Total: ${totalVerseEntries} verses with apparatus entries across ${merged.size} books.`);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exitCode = 1;
-});
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch((err) => {
+    console.error(err);
+    process.exitCode = 1;
+  });
+}
