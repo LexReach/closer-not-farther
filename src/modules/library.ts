@@ -247,7 +247,7 @@ function build(root: HTMLElement, lib: LibraryData): () => void {
   const resultLine = h('p', { class: 'lib-result', 'aria-live': 'polite' });
 
   /* ----- Virtualized grid ----- */
-  const grid = h('div', { class: 'lib-grid', role: 'list', 'aria-label': 'Manuscripts' });
+  const grid = h('div', { class: 'lib-grid', role: 'region', 'aria-label': 'Manuscripts matching the filters' });
   const live = new Map<number, HTMLElement>();
   let cols = 4;
   let tileW = 200;
@@ -271,7 +271,7 @@ function build(root: HTMLElement, lib: LibraryData): () => void {
     const img = thumbUrl(src, 400);
     const a = h(
       'a',
-      { class: `lib-tile ${img ? 'has-img' : ''} lib-tile--${m.cat}`, href: `#ms=${encodeURIComponent(m.ga)}`, role: 'listitem', 'data-ga': m.ga },
+      { class: `lib-tile ${img ? 'has-img' : ''} lib-tile--${m.cat}`, href: `#ms=${encodeURIComponent(m.ga)}`, 'data-ga': m.ga },
       h(
         'div',
         { class: 'lib-tile__media' },
