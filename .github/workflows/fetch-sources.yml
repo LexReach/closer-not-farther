@@ -33,7 +33,7 @@ jobs:
       - name: Fetch sources
         run: node scripts/fetch-sources.mjs
         env:
-          DUMP_FULL_TEXT: ${{ github.event.inputs.dump_full_text || 'false' }}
+          DUMP_FULL_TEXT: "true"
 
       - name: Show what changed
         run: |
