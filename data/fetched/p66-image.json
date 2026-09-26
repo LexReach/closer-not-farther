@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-26T08:26:01.228Z",
+  "fetched_at": "2026-09-26T08:28:26.372Z",
   "api": "https://commons.wikimedia.org/w/api.php",
   "candidates_considered": [
     {
@@ -50,6 +50,16 @@
       "score": 4,
       "width": 732,
       "height": 943,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:John Denver (1975-04-14)(Gerald Ford Library) (cropped).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:John_Denver_(1975-04-14)(Gerald_Ford_Library)_(cropped).jpg",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 4,
+      "width": 600,
+      "height": 900,
       "mime": "image/jpeg"
     },
     {
@@ -450,16 +460,6 @@
       "score": -1,
       "width": 1023,
       "height": 437,
-      "mime": "image/jpeg"
-    },
-    {
-      "title": "File:John Denver plaque in Moccasin Lake Nature Park, Clearwater, Florida, 19 March 2024.jpg",
-      "description_url": "https://commons.wikimedia.org/wiki/File:John_Denver_plaque_in_Moccasin_Lake_Nature_Park,_Clearwater,_Florida,_19_March_2024.jpg",
-      "license": "CC BY-SA 4.0",
-      "is_public_domain": false,
-      "score": -1,
-      "width": 2592,
-      "height": 4608,
       "mime": "image/jpeg"
     },
     {

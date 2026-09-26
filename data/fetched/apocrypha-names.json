@@ -1,10 +1,10 @@
 {
-  "fetched_at": "2026-09-26T08:25:59.109Z",
+  "fetched_at": "2026-09-26T08:28:24.242Z",
   "texts": {
     "Gospel of Thomas": {
       "source_url": "http://gnosis.org/naghamm/gthlamb.html",
       "translation": "Thomas O. Lambdin (Nag Hammadi Library, Coptic NHC II,2), hosted by the Gnostic Society Library",
-      "fetch_date": "2026-09-26T08:25:59.109Z",
+      "fetch_date": "2026-09-26T08:28:24.242Z",
       "text_length_chars": 28895,
       "name_counts": {
         "Jesus": 110,
@@ -109,7 +109,7 @@
     "Gospel of Philip": {
       "source_url": "http://gnosis.org/naghamm/gop.html",
       "translation": "Wesley W. Isenberg (Nag Hammadi Library, Coptic NHC II,3), hosted by the Gnostic Society Library",
-      "fetch_date": "2026-09-26T08:25:59.109Z",
+      "fetch_date": "2026-09-26T08:28:24.242Z",
       "text_length_chars": 49225,
       "name_counts": {
         "Jesus": 20,
@@ -222,7 +222,7 @@
     "Gospel of Mary": {
       "source_url": "http://gnosis.org/library/marygosp.htm",
       "translation": "Nag Hammadi Library / Berlin Codex (BG 8502) translation, hosted by the Gnostic Society Library",
-      "fetch_date": "2026-09-26T08:25:59.109Z",
+      "fetch_date": "2026-09-26T08:28:24.242Z",
       "text_length_chars": 11975,
       "name_counts": {
         "Jesus": 5,
@@ -341,7 +341,7 @@
     "Protevangelium of James": {
       "source_url": "https://www.newadvent.org/fathers/0847.htm",
       "translation": "Alexander Walker, Ante-Nicene Fathers vol. 8, hosted by New Advent",
-      "fetch_date": "2026-09-26T08:25:59.109Z",
+      "fetch_date": "2026-09-26T08:28:24.242Z",
       "text_length_chars": 29041,
       "name_counts": {
         "Jesus": 4,
