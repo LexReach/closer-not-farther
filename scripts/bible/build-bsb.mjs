@@ -236,7 +236,11 @@ async function loadBsbTables() {
       }
       return -1;
     };
-    const refIdx = findCol("verse", "reference", "ref");
+    // "VerseId" holds the full "Genesis 1:1"-style reference (only on each
+    // verse's first row - blank/carried-forward after); a bare "Verse"
+    // column is just a running word-position number, not a reference, so it
+    // must lose to "verseid" when both are present.
+    const refIdx = findCol("verseid", "verse id", "reference", "verse", "ref");
     const strongIdx = findCol("str grk", "strong grk", "grk strong", "strongs grk", "strong");
     const englishIdx = findCol("version", "translation", "english", "bsb");
     const greekIdx = findCol("greek", "grk", "hebrew", "original");
