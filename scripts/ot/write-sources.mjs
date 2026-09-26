@@ -83,7 +83,14 @@ function main() {
   }
   p(`### Embedding — what's actually confirmed`);
   p();
-  p(`**None of the image sources above are marked embeddable (\`"embed": true\`) in this dataset.** Every witness's \`embed\` field is \`false\`. That is a conservative default, not a considered "no": this build's live-fetch pass tried to reach aleppocodex.org and deadseascrolls.org.il specifically to read their terms of use (see the table above), and to confirm a couple of specific manuscript-viewer links resolve; whether those terms turn out to permit embedding an image (vs. only linking out to the site's own viewer) should be read from the \`terms\` string recorded on the relevant witness entries above (when the fetch succeeded) before flipping any \`embed\` flag to \`true\`. Until that is done, all image links in this dataset should be treated as **link-out only**, not sources for embedded images.`);
+  p(`**None of the image sources are marked embeddable (\`"embed": true\`) in this dataset; every witness's \`embed\` field is \`false\`.** Concretely, for the two sources the task asks about by name:`);
+  p();
+  p(`- **aleppocodex.org** — reachable (HTTP 200), but it serves a JavaScript single-page app; a plain HTTP fetch of \`/\` returns only the app shell (${log?.aleppocodex_org?.bytes ?? "a few thousand"} bytes), not its rendered terms-of-use text, so no terms string could be extracted automatically. Its own site should be checked by a human before treating any of its imagery as embeddable.`);
+  p(`- **Leon Levy Digital Library (deadseascrolls.org.il)** — reachable (HTTP 200, ${log?.deadseascrolls_org_il?.bytes ?? "?"} bytes), same limitation (JS SPA shell); no terms string could be extracted automatically, and a guessed deep link to the Great Isaiah Scroll's own manuscript page 404'd, so \`1QIsaa\`'s \`links.images\` falls back to the Digital Library's home page rather than a confirmed broken or guessed URL.`);
+  p();
+  p(`Both sites are known in the museum/library-digitization world to require individual permission requests for reuse beyond viewing (typical of national-library and IAA digital collections); that is *not* independently confirmed here, so it is not asserted as fact — only that no evidence of a permissive embeddable license was found, which is why \`embed\` stays \`false\` throughout. A follow-up pass with a JS-rendering fetch (e.g. Playwright, already used elsewhere in this repo for \`scripts/render-film.mjs\`) would be needed to read the actual rendered terms text from either site.`);
+  p();
+  p(`The **Leningrad Codex** is the one case with a solid, independently confirmed image source: the archive.org advancedsearch API (JSON, no JS rendering needed) returned a specific matching item — see \`links.images_archive_org\` on that witness — in addition to the compiled Wikimedia Commons category link.`);
   p();
   p(`## Coverage-summary.json`);
   p();

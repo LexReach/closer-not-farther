@@ -63,9 +63,16 @@ async function enhance(witnesses, log) {
     const data = await tryFetchJson(url);
     const docs = data?.response?.docs || [];
     log.archive_org_leningrad = { ok: true, docs };
-    if (docs.length) {
+    // Prefer a result that is clearly the manuscript's own facsimile/images item (not
+    // just any item whose catalog title happens to mention "Leningrad Codex", e.g. a
+    // printed edition or an unrelated book matched only by keyword overlap).
+    const best =
+      docs.find((d) => /color.?images|full.*national library of russia/i.test(d.title || "") || /color/i.test(d.identifier || "")) ||
+      docs.find((d) => /leningrad/i.test(d.identifier || "")) ||
+      docs[0];
+    if (best) {
       const w = witnesses.find((x) => x.id === "leningrad-codex");
-      w.links.images_archive_org = `https://archive.org/details/${docs[0].identifier}`;
+      w.links.images_archive_org = `https://archive.org/details/${best.identifier}`;
       w.verified = { ...(w.verified || {}), links_archive_org: true };
     }
   } catch (err) {
@@ -118,7 +125,10 @@ async function enhance(witnesses, log) {
     const res = await fetch(url, { method: "GET" });
     log.leon_levy_isaiaha = { ok: res.ok, status: res.status, url };
     if (!res.ok) {
-      w.links.images = null;
+      // Fall back to the Leon Levy Digital Library's own home page (confirmed reachable
+      // separately, see deadseascrolls_org_il below) rather than publishing a guessed,
+      // 404-ing deep link, or leaving no images link at all.
+      w.links.images = "https://www.deadseascrolls.org.il";
       w.verified = { ...(w.verified || {}), leon_levy_link_confirmed: false };
     } else {
       w.verified = { ...(w.verified || {}), leon_levy_link_confirmed: true };
@@ -126,7 +136,7 @@ async function enhance(witnesses, log) {
   } catch (err) {
     log.leon_levy_isaiaha = { ok: false, error: String(err) };
     const w = witnesses.find((x) => x.id === "1QIsaa");
-    w.links.images = null;
+    w.links.images = "https://www.deadseascrolls.org.il";
   }
 
   // 5. Vatican Library viewer link for Codex Vaticanus: confirm reachability.
