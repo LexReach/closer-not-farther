@@ -411,9 +411,21 @@ function cellText(el) {
 
 function mapColumns(headerCells) {
   const map = {};
+  // GA-number column: a table often has BOTH a "Sign"/siglum column (ℵ, A, B...
+  // ambiguous across Gospels/Acts/Paul) and a "Number"/"Gregory-Aland" column
+  // (unambiguous). Prefer the latter: scan for the high-priority keywords
+  // first across the whole header row, and only fall back to sign/siglum-style
+  // headers if nothing more specific was found.
+  const GA_STRONG = /(gregory[- ]?aland|\bnumber\b|\bno\.?\b|\bga\b)/i;
+  const GA_WEAK = /(siglum|\bsign\b|papyrus|uncial|minuscule|lectionary)/i;
+  headerCells.forEach((h, i) => {
+    if (map.ga == null && GA_STRONG.test(h)) map.ga = i;
+  });
+  headerCells.forEach((h, i) => {
+    if (map.ga == null && GA_WEAK.test(h)) map.ga = i;
+  });
   headerCells.forEach((h, i) => {
     const hl = h.toLowerCase();
-    if (map.ga == null && /(gregory|siglum|\bsign\b|\bno\.?\b|number|papyrus|uncial|minuscule|lectionary)/.test(hl)) map.ga = i;
     if (map.name == null && /\bname\b/.test(hl)) map.name = i;
     if (map.date == null && /date|century|age/.test(hl)) map.date = i;
     if (map.contents == null && /content|text\b/.test(hl)) map.contents = i;
@@ -422,7 +434,7 @@ function mapColumns(headerCells) {
       /location|library|now at|housed|present|kept|held|repository|institution|collection/.test(hl)
     )
       map.location = i;
-    if (map.shelf == null && /shelf|call\s?no|inventory|catalog|number/.test(hl) && map.ga !== i) map.shelf = i;
+    if (map.shelf == null && /shelf|call\s?no|inventory|catalog/.test(hl) && map.ga !== i) map.shelf = i;
   });
   return map;
 }
@@ -446,14 +458,21 @@ function parseTable(table, catKey) {
   }
   if (headerIdx === -1) return [];
   const colMap = mapColumns(headerCells);
+  if (catKey === 'uncials') {
+    note(`  [uncials] table headers: ${JSON.stringify(headerCells)} -> colMap ${JSON.stringify(colMap)}`);
+  }
   const out = [];
+  const skippedSamples = [];
   for (let i = headerIdx + 1; i < trs.length; i++) {
     const tds = trs[i].querySelectorAll('td');
     if (!tds.length) continue;
     const cells = tds.map(cellText);
     const gaRaw = colMap.ga != null ? cells[colMap.ga] : cells[0];
     const parsed = normalizeGA(gaRaw);
-    if (!parsed) continue;
+    if (!parsed) {
+      if (catKey === 'uncials' && skippedSamples.length < 8) skippedSamples.push(gaRaw);
+      continue;
+    }
     let dateRaw = colMap.date != null ? cells[colMap.date] : null;
     if (dateRaw == null) dateRaw = cells.find((c, i2) => i2 !== colMap.ga && DATE_HINT_RE.test(c));
     let contentsRaw = colMap.contents != null ? cells[colMap.contents] : null;
@@ -471,6 +490,11 @@ function parseTable(table, catKey) {
       shelfRaw: shelfRaw || null,
       nameRaw: nameRaw || null,
     });
+  }
+  if (catKey === 'uncials') {
+    note(`  [uncials] table: ${out.length} parsed, ${skippedSamples.length}+ skipped (unparseable GA), samples: ${JSON.stringify(skippedSamples)}`);
+    const found01to09 = out.filter((r) => /^0[1-9]$/.test(r.ga)).map((r) => r.ga);
+    note(`  [uncials] table: GA 01-09 found in this table: ${JSON.stringify(found01to09)}`);
   }
   return out;
 }
