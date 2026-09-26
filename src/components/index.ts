@@ -23,7 +23,7 @@ export function Card(o: CardOpts): HTMLAnchorElement {
       'div',
       { class: 'card__body' },
       o.eyebrow ? h('p', { class: 'eyebrow' }, o.eyebrow) : null,
-      h('h3', { class: 'card__title' }, o.title),
+      h('h2', { class: 'card__title' }, o.title),
       h('p', { class: 'card__hook' }, o.hook),
     ),
   );
@@ -83,7 +83,7 @@ export function SourceList(sources: string[], title = 'Sources'): HTMLElement {
   return h(
     'aside',
     { class: 'sources' },
-    h('h4', { class: 'sources__title' }, title),
+    h('h2', { class: 'sources__title' }, title),
     h('ul', { class: 'sources__list' }, sources.map((src) => h('li', null, sourceText(src)))),
   );
 }

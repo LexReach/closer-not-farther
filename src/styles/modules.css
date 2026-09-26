@@ -425,3 +425,4 @@
 .about-ds h3 { font-family: var(--font-ui); font-size: 0.9rem; margin-top: 16px; }
 .about-src { font-family: var(--font-ui); font-size: 0.85rem; }
 .about-src a { word-break: break-all; }
+.iw[class*="is-"] .iw__en { color: var(--ink); }

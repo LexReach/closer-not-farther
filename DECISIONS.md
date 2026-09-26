@@ -54,3 +54,9 @@ Every judgment call made during the unattended build, in the order it was made.
 - **Line breaks are approximate.** Published line-by-line transcriptions (IGNTP, NTVMR) were unreachable. `p66.json` gives 14 plausible lines of 23–24 letters carrying the standard wording of John 1:1–7, with nomina sacra ΘΝ/ΘΣ/ΘΥ, and says so in `line_breaks_source`. The page says the papyrus row is a reading guide, not a transcription, and makes no claim about P66's specific readings.
 - **Word boxes** are computed at runtime from the line boxes and letter offsets, so a word that wraps across two lines gets a box on each line.
 - **Title line** ("ΕΥΑΓΓΕΛΙΟΝ ΚΑΤΑ ΙΩΑΝΝΗΝ") is drawn above the text because P66 preserves the book title.
+
+## Finish
+- **Accessibility.** Lighthouse 12 (accessibility category, headless Chromium, light mode) scores **100 on all 8 routes**, after fixing heading order (source lists and cards use `h2`), the tree SVG role, ARIA roles on the count-chart points, and the contrast of glosses inside highlighted words.
+- **Checks.** Every route was screenshotted at 1280px and 400px, light and dark, with no console errors apart from font requests the sandbox proxy refused. `npm test` passes.
+- **Deploy.** The workflow builds, tests and uploads the site, but the deploy fails until Pages is enabled: the workflow token gets "Resource not accessible by integration" when it tries to create the Pages site. Pushing a built `gh-pages` branch from the sandbox was refused by the session's permission policy as a production deploy, so it was not attempted again. The owner needs to flip one setting (Settings → Pages → Source: GitHub Actions) and re-run the workflow.
+- **Spend** could not be measured from inside the session. Four data subagents ran on Sonnet; the rest ran in the main session.

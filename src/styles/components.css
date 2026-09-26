@@ -306,3 +306,5 @@
 /* ---------- Stub ---------- */
 
 .stub { padding: 40px; border: 1px dashed var(--rule); border-radius: var(--radius); color: var(--muted); font-family: var(--font-ui); }
+.sources__title { font-family: var(--font-ui); font-weight: 600; }
+.card__title { font-size: 1.15rem; font-variation-settings: "opsz" 24; }

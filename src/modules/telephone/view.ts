@@ -437,7 +437,7 @@ export function render(root: HTMLElement) {
       width: size,
       height: size,
       viewBox: `${-size / 2} ${-size / 2} ${size} ${size}`,
-      role: 'tree',
+      role: 'group',
       tabindex: 0,
       'aria-label': `Copying tree with ${total} copies. Arrow keys move between copies: up to the parent, down to the first child, left and right between siblings.`,
     });

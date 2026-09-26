@@ -178,7 +178,7 @@ function scatter(wrap: HTMLElement, getYear: () => number): ChartApi {
       width: W,
       height: countH,
       viewBox: `0 0 ${W} ${countH}`,
-      role: 'img',
+      role: 'group',
       'aria-label': `Approximate number of catalogued Greek New Testament manuscripts: ${points.map((p) => `${p.year}, ${p.count}`).join('; ')}.`,
     });
     yc = d3.scaleLinear().domain([0, d3.max(points, (p) => p.count)! * 1.08]).range([countH - cm.bottom, cm.top]);
@@ -204,7 +204,7 @@ function scatter(wrap: HTMLElement, getYear: () => number): ChartApi {
     countFill = s('path', { d: area(ext) ?? '', class: 'tl-count__fill' });
     csvg.append(countFill, s('path', { d: stepLine(ext) ?? '', class: 'tl-count__line' }));
     for (const p of points) {
-      const c = s('circle', { cx: x(p.year), cy: yc(p.count), r: 3.2, class: 'tl-count__pt', tabindex: 0, 'aria-label': `${p.year}: about ${fmtInt(p.count)}, ${p.label}` });
+      const c = s('circle', { cx: x(p.year), cy: yc(p.count), r: 3.2, class: 'tl-count__pt', tabindex: 0, role: 'img', 'aria-label': `${p.year}: about ${fmtInt(p.count)}, ${p.label}` });
       const tip = () => h('div', null, h('p', null, h('strong', null, `${p.year}: about ${fmtInt(p.count)}`)), h('p', { class: 'tt-muted' }, p.label));
       c.addEventListener('pointermove', (e) => Tooltip.show(tip(), e.clientX, e.clientY));
       c.addEventListener('pointerleave', () => Tooltip.hide());
