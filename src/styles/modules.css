@@ -274,3 +274,68 @@
   .uc-node__label { font-size: 15px; }
   .uc-col { font-size: 16px; }
 }
+
+/* ================= Module 4: Variants ================= */
+
+:root { --wit-no: color-mix(in srgb, var(--accent-2) 55%, var(--surface)); }
+.var-layout { display: grid; grid-template-columns: 260px 1fr; gap: 24px; align-items: start; }
+.var-picker { display: flex; flex-direction: column; gap: 6px; }
+.var-pick {
+  text-align: left; cursor: pointer;
+  display: flex; flex-direction: column; gap: 1px;
+  padding: 8px 12px;
+  border: 1px solid var(--rule); border-radius: var(--radius);
+  background: var(--surface); color: var(--ink);
+}
+.var-pick:hover { border-color: var(--accent); }
+.var-pick[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.var-pick__ref { font-family: var(--font-ui); font-size: 0.75rem; font-weight: 600; color: var(--muted); }
+.var-pick[aria-pressed="true"] .var-pick__ref { color: var(--accent); }
+.var-pick__t { font-size: 0.95rem; line-height: 1.3; }
+.var-detail { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.var-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; flex-wrap: wrap; }
+.var-head h2 { margin: 0; }
+.var-head .eyebrow { margin-bottom: 4px; }
+.var-cat { white-space: normal; }
+.var-text { font-size: 1.15rem; line-height: 1.7; margin: 0; padding: 14px 16px; background: var(--bg); border-radius: var(--radius); border: 1px solid var(--rule); max-width: none; }
+.var-ctx { color: var(--ink); }
+.var-ctx-ref { color: var(--muted); font-family: var(--font-ui); font-size: 0.85rem; }
+.var-disputed { background: color-mix(in srgb, var(--e-gloss) 30%, transparent); color: var(--ink); padding: 1px 3px; border-radius: 3px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.var-gap { display: inline-block; color: var(--accent-2); font-family: var(--font-ui); font-weight: 600; padding: 0 4px; border-bottom: 2px dotted var(--accent-2); }
+.var-sub { font-family: var(--font-ui); font-size: 0.9rem; font-weight: 600; margin: 6px 0 2px; }
+.var-cols { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
+.var-cols p { margin: 0; }
+.var-doctrine { font-weight: 600; }
+.wit { outline: none; }
+.wit:hover .namebar__hit, .wit:focus-visible .namebar__hit { fill: var(--accent-soft); }
+.chart .wit__label { fill: var(--ink); font-size: 12px; }
+.wit__stem { stroke: var(--rule); stroke-dasharray: 2 3; }
+.wit__dot { stroke-width: 2; }
+.wit--yes .wit__dot { fill: var(--accent); stroke: var(--accent); }
+.wit--no .wit__dot { fill: var(--wit-no); stroke: var(--wit-no); }
+.wit--na .wit__dot { fill: var(--surface); stroke: var(--rule); stroke-dasharray: 2 2; }
+.chart .wit__state { font-size: 11px; }
+.chart .wit--yes .wit__state { fill: var(--accent); font-weight: 600; }
+
+.var-cats { display: grid; grid-template-columns: 240px 1fr; gap: 16px; align-items: start; }
+.var-cats .stat__value { font-size: 2rem; }
+.tm__cell { outline: none; }
+.tm__cell rect { stroke: var(--surface); }
+.tm__cell:hover rect, .tm__cell:focus-visible rect { stroke: var(--ink); stroke-width: 2; }
+.tm--none, .tm--none rect { fill: color-mix(in srgb, var(--muted) 30%, var(--surface)); background: color-mix(in srgb, var(--muted) 30%, var(--surface)); }
+.tm--v, .tm--v rect { fill: color-mix(in srgb, var(--accent) 30%, var(--surface)); background: color-mix(in srgb, var(--accent) 30%, var(--surface)); }
+.tm--m, .tm--m rect { fill: color-mix(in srgb, var(--accent-2) 45%, var(--surface)); background: color-mix(in srgb, var(--accent-2) 45%, var(--surface)); }
+.tm--mv, .tm--mv rect { fill: var(--accent-2); background: var(--accent-2); }
+.chart .tm__pct { fill: var(--ink); font-size: 18px; font-weight: 600; }
+.chart .tm__pct--sm { font-size: 11px; }
+.chart .tm__label { fill: var(--ink); font-size: 11.5px; }
+.tm-key { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 4px; font-family: var(--font-ui); font-size: 0.82rem; }
+.tm-key li { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.tm-key__sw { width: 12px; height: 12px; border-radius: 2px; flex: none; }
+
+@media (max-width: 900px) {
+  .var-layout, .var-cats { grid-template-columns: 1fr; }
+  .var-picker { flex-direction: row; flex-wrap: wrap; }
+  .var-pick { flex: 1 1 160px; }
+  .var-cols { grid-template-columns: 1fr; gap: 12px; }
+}

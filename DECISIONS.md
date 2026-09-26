@@ -42,3 +42,9 @@ Every judgment call made during the unattended build, in the order it was made.
 - **Graph layout:** fixed, one column per Gospel (Acts sits with Luke), nodes ordered by chapter. Each item links its first reference (the question) to each later reference. Shared passages (John 6:4) become shared nodes, which shows the interlock.
 - **Map inset** is schematic, with approximate coordinates stored in `coincidences.json` → `map_geo`. Bethsaida is placed at et-Tell and labelled as one of two proposed sites.
 - The featured Bethsaida example opens fully expanded; other questions open at step 1 and reveal one step at a time.
+
+## Module 4: The 110% puzzle
+- **Witness data corrections** (checked against Metzger's commentary and apparatus knowledge; the apparatus sites were blocked): Mark 16:9-20, Bezae changed from true to null (its Greek leaf for the end of Mark is lost); John 7:53-8:11, Alexandrinus changed from false to null (lacuna John 6:50-8:52). Every passage now has a `verified` basis and `witness_notes` for split or corrected witnesses (marked † in the chart).
+- **Two readings instead of include/exclude.** Romans 5:1 and John 1:18 are choices between two readings, not insertions, so they carry an explicit `readings` array and `printed` (the reading in NA28/SBLGNT), and the toggle switches between the two readings.
+- **Bezae in John 5:3b-4** has 3b but not v. 4; it counts as including the disputed span, with a note.
+- **Witness chart** places each witness in its century band (P66 at "2.9", late 2nd/about 200). The treemap shares come from `categories.breakdown`, and the 400,000 figure is shown as a headline number, as the skeptics note requires.

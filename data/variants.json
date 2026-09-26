@@ -66,7 +66,7 @@
         "05": "Codex Bezae (D) includes v3b (‘waiting for the moving of the water’) but omits v4 (the angel-stirring explanation) entirely. Counted here as 'true' because it attests part of the disputed span, not the full angel clause.",
         "02": "Alexandrinus (A) has the full angel explanation of v4, unlike the earliest papyri and great uncials."
       },
-      "verified": "NA28/SBLGNT apparatus and Metzger, Textual Commentary (2nd ed.), ad loc.: P66 P75 01 03 lack all of 3b-4; 02 (A) has v4 in full; 05 (D) has 3b but not 4 (nuanced, see witness_notes); Byz has the full gloss."
+      "verified": "NA28/SBLGNT apparatus and Metzger, Textual Commentary (2nd ed.), ad loc.: P66 P75 01 03 lack all of 3b-4; 02 (A) has v4 in full; 05 (D) has 3b but not 4 (see the note on that witness); Byz has the full gloss."
     },
     {
       "id": "mark-16",
@@ -225,7 +225,22 @@
         "P66": "Papyrus 66 does not contain Romans (it is a Gospel of John papyrus), so it is null.",
         "P75": "Papyrus 75 does not contain Romans (it contains Luke and John), so it is null."
       },
-      "verified": "NA28 apparatus, Metzger Textual Commentary (2nd ed.), p. 452, and standard critical editions: 01* 02(A) 03* 05(D) read the subjunctive ἔχωμεν; correctors of 01 and 03 (and minuscules F G P) read the indicative ἔχομεν; Byz is genuinely mixed/split with the indicative more common in the later manuscript stream (recorded as false here, an approximation, see witness_notes). Despite the subjunctive's stronger and earlier manuscript support, UBS/NA and most translations print the indicative 'we have' on internal/exegetical grounds. P66 and P75 do not contain Romans and are null."
+      "verified": "NA28 apparatus, Metzger Textual Commentary (2nd ed.), p. 452, and standard critical editions: 01* 02(A) 03* 05(D) read the subjunctive ἔχωμεν; correctors of 01 and 03 (and minuscules F G P) read the indicative ἔχομεν; Byz is genuinely mixed/split with the indicative more common in the later manuscript stream (recorded as false here, an approximation, see the witness notes). Despite the subjunctive's stronger and earlier manuscript support, UBS/NA and most translations print the indicative 'we have' on internal/exegetical grounds. P66 and P75 do not contain Romans and are null.",
+      "readings": [
+        {
+          "key": true,
+          "greek": "ἔχωμεν",
+          "english": "let us have peace",
+          "label": "Let us have"
+        },
+        {
+          "key": false,
+          "greek": "ἔχομεν",
+          "english": "we have peace",
+          "label": "We have"
+        }
+      ],
+      "printed": false
     },
     {
       "id": "spelling-2",
@@ -250,7 +265,22 @@
       "witness_notes": {
         "05": "Codex Bezae (D) has a lacuna in John covering this region (John 1:16-3:26 is lost), so it cannot attest either reading; marked null."
       },
-      "verified": "NA28 apparatus and Metzger, Textual Commentary (2nd ed.), pp. 169-170: P66 P75 01 03 read θεός (the earliest and now generally preferred reading, adopted in NA28/UBS5 and modern critical texts); 02 (A) and Byz read υἱός; 05 (D) is lacunose here (missing leaves, John 1:16-3:26) and is null. The two nomina sacra ΘΣ and ΥΣ differ by one stroke, which along with theological sensitivities likely drove the variation."
+      "verified": "NA28 apparatus and Metzger, Textual Commentary (2nd ed.), pp. 169-170: P66 P75 01 03 read θεός (the earliest and now generally preferred reading, adopted in NA28/UBS5 and modern critical texts); 02 (A) and Byz read υἱός; 05 (D) is lacunose here (missing leaves, John 1:16-3:26) and is null. The two nomina sacra ΘΣ and ΥΣ differ by one stroke, which along with theological sensitivities likely drove the variation.",
+      "readings": [
+        {
+          "key": true,
+          "greek": "μονογενὴς θεός",
+          "english": "the only God",
+          "label": "Only God"
+        },
+        {
+          "key": false,
+          "greek": "μονογενὴς υἱός",
+          "english": "the only Son",
+          "label": "Only Son"
+        }
+      ],
+      "printed": true
     }
   ],
   "categories": {
@@ -282,5 +312,6 @@
         "meaningful": true
       }
     ]
-  }
+  },
+  "_readings_note": "For passages with 'readings', contains=true means the witness has the reading whose key is true (see contains_label). 'printed' = the key of the reading printed in NA28/SBLGNT."
 }
