@@ -32,6 +32,8 @@ jobs:
           ls -la data/evidence || true
 
       - name: Build coverage (NTVMR page-level indexContent + restricted catalogue fallback)
+        # A commit whose message contains [transcripts-only] keeps the committed coverage.
+        if: ${{ !contains(github.event.head_commit.message, '[transcripts-only]') }}
         run: node scripts/evidence/build-coverage.mjs
         env:
           EVIDENCE_COVERAGE_BUDGET_MS: "720000"
@@ -40,7 +42,8 @@ jobs:
       - name: Build transcriptions (NTVMR TEI, best-effort, time-boxed)
         run: node scripts/evidence/build-transcriptions.mjs
         env:
-          EVIDENCE_TRANSCRIPTS_BUDGET_MS: "720000"
+          EVIDENCE_TRANSCRIPTS_BUDGET_MS: "1800000"
+          EVIDENCE_TX_FIRST: "P66,01,03"
         continue-on-error: true
 
       - name: Finalize docs (NTVMR terms probe + README counts)
@@ -58,6 +61,14 @@ jobs:
           echo "--- summary sample ---"
           head -c 500 data/evidence/coverage/summary.json || true
           echo
+          echo "--- transcription samples (P66 John 1:1, 01 John 18, 03 Mark 16) ---"
+          head -c 1500 data/evidence/transcriptions/P66/10.json || true
+          echo
+          head -c 1500 data/evidence/transcriptions/01/1170.json || true
+          echo
+          head -c 1500 data/evidence/transcriptions/03/720.json || true
+          echo
+          du -sh data/evidence/transcriptions data/evidence/tei || true
           echo "--- git status ---"
           git status --porcelain
 
