@@ -25,19 +25,20 @@ for (const [w, hgt, tag] of [[400, 860, 'phone'], [1280, 900, 'desktop']]) {
   const page = await browser.newPage({ viewport: { width: w, height: hgt } });
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
-  await page.goto(base + 'read/#john.1', { waitUntil: 'networkidle' });
-  const rows = await page.locator('.rd-row').count();
-  check(rows === 51, `${tag}: John 1 shows ${rows} verses (expect 51)`);
+  const rowsFor = async (hash, n) => {
+    await page.goto(base + 'read/' + hash, { waitUntil: 'networkidle' });
+    return page.waitForFunction((k) => document.querySelectorAll('.rd-row').length === k, n, { timeout: 15000 }).then(() => n, async () => page.locator('.rd-row').count());
+  };
+  check((await rowsFor('#john.1', 51)) === 51, `${tag}: John 1 shows 51 verses`);
   const t0 = Date.now();
-  await page.goto(base + 'read/#romans.8', { waitUntil: 'networkidle' });
-  check((await page.locator('.rd-row').count()) === 39, `${tag}: Romans 8 shows 39 verses`);
-  await page.goto(base + 'read/#genesis.1', { waitUntil: 'networkidle' });
-  check((await page.locator('.rd-row').count()) === 31, `${tag}: Genesis 1 shows 31 verses`);
+  check((await rowsFor('#romans.8', 39)) === 39, `${tag}: Romans 8 shows 39 verses`);
+  check((await rowsFor('#genesis.1', 31)) === 31, `${tag}: Genesis 1 shows 31 verses`);
   console.log(`     chapter switches took ${Date.now() - t0} ms`);
-  await page.goto(base + 'read/#john.1.1', { waitUntil: 'networkidle' });
+  await rowsFor('#john.1.1', 51);
+  await page.waitForTimeout(1500);
   await page.screenshot({ path: `smoke/read-${tag}.png` });
   // Evidence panel, when the build has one.
-  const ev = await page.locator('.ev').count();
+  const ev = await page.waitForSelector('.ev .ev-title', { timeout: 8000 }).then(() => 1, () => 0);
   if (ev) {
     check((await page.locator('.ev-title').innerText()).length > 0, `${tag}: evidence panel opens for John 1:1`);
     await page.screenshot({ path: `smoke/evidence-${tag}.png` });
