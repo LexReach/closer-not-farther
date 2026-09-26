@@ -1,0 +1,654 @@
+{
+  "fetched_at": "2026-09-26T08:21:47.600Z",
+  "api": "https://commons.wikimedia.org/w/api.php",
+  "candidates_considered": [
+    {
+      "title": "File:Geneva, Bodmer Lab Ms Papyrus 66 (P.Bodmer II - PB 2) fol. 1r.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Geneva,_Bodmer_Lab_Ms_Papyrus_66_(P.Bodmer_II_-_PB_2)_fol._1r.jpg",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 8,
+      "width": 6796,
+      "height": 5817,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:P66-Joh-19.8-11-19.13-15.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:P66-Joh-19.8-11-19.13-15.jpg",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 8,
+      "width": 451,
+      "height": 480,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Annie's Song by John Denver US vinyl single Side-A.tif",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Annie%27s_Song_by_John_Denver_US_vinyl_single_Side-A.tif",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 4,
+      "width": 791,
+      "height": 787,
+      "mime": "image/tiff"
+    },
+    {
+      "title": "File:Aspen John Denver Park.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Aspen_John_Denver_Park.jpg",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 4,
+      "width": 800,
+      "height": 533,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Doris Day John Denver 1975.JPG",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Doris_Day_John_Denver_1975.JPG",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 4,
+      "width": 732,
+      "height": 943,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:John Denver 1973.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:John_Denver_1973.jpg",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 4,
+      "width": 723,
+      "height": 932,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:John Denver 1974.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:John_Denver_1974.jpg",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 4,
+      "width": 1106,
+      "height": 1424,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:John Denver 1975.JPG",
+      "description_url": "https://commons.wikimedia.org/wiki/File:John_Denver_1975.JPG",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 4,
+      "width": 958,
+      "height": 1260,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:John denver with fat city Poems Prayers and Promises B-side US vinyl single.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:John_denver_with_fat_city_Poems_Prayers_and_Promises_B-side_US_vinyl_single.jpg",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 4,
+      "width": 600,
+      "height": 600,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Lily Tomlin John Denver 1974.JPG",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Lily_Tomlin_John_Denver_1974.JPG",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 4,
+      "width": 667,
+      "height": 869,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Papyrus 66.pdf",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Papyrus_66.pdf",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 4,
+      "width": 1275,
+      "height": 1650,
+      "mime": "application/pdf"
+    },
+    {
+      "title": "File:Sunshine on My Shoulders by John Denver 1974 US vinyl.tif",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Sunshine_on_My_Shoulders_by_John_Denver_1974_US_vinyl.tif",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 4,
+      "width": 594,
+      "height": 591,
+      "mime": "image/tiff"
+    },
+    {
+      "title": "File:Annie's Song by John Denver US vinyl single Side-A.png",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Annie%27s_Song_by_John_Denver_US_vinyl_single_Side-A.png",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 3,
+      "width": 791,
+      "height": 787,
+      "mime": "image/png"
+    },
+    {
+      "title": "File:Sunshine on My Shoulders by John Denver 1974 US vinyl.png",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Sunshine_on_My_Shoulders_by_John_Denver_1974_US_vinyl.png",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 3,
+      "width": 594,
+      "height": 591,
+      "mime": "image/png"
+    },
+    {
+      "title": "File:Papyrus 66 (GA).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Papyrus_66_(GA).jpg",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 2,
+      "width": 572,
+      "height": 654,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Papyrus66.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Papyrus66.jpg",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 2,
+      "width": 600,
+      "height": 674,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Il Ruwenzori, 1908 - BEIC IE7203615 - pagina 66 - papirie nintee.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Il_Ruwenzori,_1908_-_BEIC_IE7203615_-_pagina_66_-_papirie_nintee.jpg",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 1,
+      "width": 929,
+      "height": 744,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Papyrus column (wadj) amulet MET 04.2.66 EGDP018785.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Papyrus_column_(wadj)_amulet_MET_04.2.66_EGDP018785.jpg",
+      "license": "CC0",
+      "is_public_domain": true,
+      "score": 1,
+      "width": 2896,
+      "height": 3620,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Papyrus fragments, Book of the Dead MET LC-28 3 300 EGDP024459.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Papyrus_fragments,_Book_of_the_Dead_MET_LC-28_3_300_EGDP024459.jpg",
+      "license": "CC0",
+      "is_public_domain": true,
+      "score": 1,
+      "width": 3144,
+      "height": 2694,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Planche 66 Thèbes, Hypogées. Manuscrit Sur Papyrus. Antiquites Tome Deuxieme. (IA dr planche-66-thbes-hypoges-manuscrit-sur-papyrus-antiquites-tome-deuxiem-10404175).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Planche_66_Th%C3%A8bes,_Hypog%C3%A9es._Manuscrit_Sur_Papyrus._Antiquites_Tome_Deuxieme._(IA_dr_planche-66-thbes-hypoges-manuscrit-sur-papyrus-antiquites-tome-deuxiem-10404175).jpg",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 1,
+      "width": 1536,
+      "height": 1065,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Books from the Library of Congress (IA foundationlibrar06unse).pdf",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Books_from_the_Library_of_Congress_(IA_foundationlibrar06unse).pdf",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 0,
+      "width": 1464,
+      "height": 2293,
+      "mime": "application/pdf"
+    },
+    {
+      "title": "File:Dictionnaire du Papyrus Harris no. 1 (IA dictionnairedupa00pieh).pdf",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Dictionnaire_du_Papyrus_Harris_no._1_(IA_dictionnairedupa00pieh).pdf",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 0,
+      "width": 908,
+      "height": 1406,
+      "mime": "application/pdf"
+    },
+    {
+      "title": "File:Gautier - Khou-n-Atonou (Fragments d'un papyrus), 1898.djvu",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Gautier_-_Khou-n-Atonou_(Fragments_d%27un_papyrus),_1898.djvu",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 0,
+      "width": 2581,
+      "height": 4212,
+      "mime": "image/vnd.djvu"
+    },
+    {
+      "title": "File:Nature (IA naturelo52londuoft).pdf",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Nature_(IA_naturelo52londuoft).pdf",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 0,
+      "width": 1141,
+      "height": 1606,
+      "mime": "application/pdf"
+    },
+    {
+      "title": "File:Papyrus d'Orbiney (British Museum), the hieroglyphic transcription (IA papyrusdorbineyb00britrich).pdf",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Papyrus_d%27Orbiney_(British_Museum),_the_hieroglyphic_transcription_(IA_papyrusdorbineyb00britrich).pdf",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 0,
+      "width": 820,
+      "height": 1154,
+      "mime": "application/pdf"
+    },
+    {
+      "title": "File:Papyrus Ebers - the earliest medical work extant (IA 101705945.nlm.nih.gov).pdf",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Papyrus_Ebers_-_the_earliest_medical_work_extant_(IA_101705945.nlm.nih.gov).pdf",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 0,
+      "width": 595,
+      "height": 1045,
+      "mime": "application/pdf"
+    },
+    {
+      "title": "File:Papyrus Erzherzog Rainer. Führer durch die Ausstellung (IA papyruserzherzog00kara).pdf",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Papyrus_Erzherzog_Rainer._F%C3%BChrer_durch_die_Ausstellung_(IA_papyruserzherzog00kara).pdf",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 0,
+      "width": 1185,
+      "height": 1731,
+      "mime": "application/pdf"
+    },
+    {
+      "title": "File:The papyrus of Ani - a reproduction in facsimile (IA papyrusofanirepr01budg).pdf",
+      "description_url": "https://commons.wikimedia.org/wiki/File:The_papyrus_of_Ani_-_a_reproduction_in_facsimile_(IA_papyrusofanirepr01budg).pdf",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 0,
+      "width": 920,
+      "height": 1510,
+      "mime": "application/pdf"
+    },
+    {
+      "title": "File:The papyrus of Ani; a reproduction in facsimile (IA papyrusanireprod01budg).pdf",
+      "description_url": "https://commons.wikimedia.org/wiki/File:The_papyrus_of_Ani;_a_reproduction_in_facsimile_(IA_papyrusanireprod01budg).pdf",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 0,
+      "width": 812,
+      "height": 1431,
+      "mime": "application/pdf"
+    },
+    {
+      "title": "File:The Rhind Mathematical Papyrus, Volume I.pdf",
+      "description_url": "https://commons.wikimedia.org/wiki/File:The_Rhind_Mathematical_Papyrus,_Volume_I.pdf",
+      "license": "Public domain",
+      "is_public_domain": true,
+      "score": 0,
+      "width": 997,
+      "height": 1458,
+      "mime": "application/pdf"
+    },
+    {
+      "title": "File:A pensive John Denver (46369940351).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:A_pensive_John_Denver_(46369940351).jpg",
+      "license": "CC BY-SA 2.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 2100,
+      "height": 3072,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Annie's Song, John Denver Sanctuary (27808144296).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Annie%27s_Song,_John_Denver_Sanctuary_(27808144296).jpg",
+      "license": "CC BY-SA 2.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 5809,
+      "height": 3872,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Aspen John Denver Memorial Park.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Aspen_John_Denver_Memorial_Park.jpg",
+      "license": "CC BY-SA 3.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 7360,
+      "height": 4912,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Aspen John Denver Memorial Rocky Mountain High.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Aspen_John_Denver_Memorial_Rocky_Mountain_High.jpg",
+      "license": "CC BY-SA 3.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 4912,
+      "height": 7360,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Collections of the Papyrus Museum (Syracuse) 02.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Collections_of_the_Papyrus_Museum_(Syracuse)_02.jpg",
+      "license": "CC BY 4.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 4032,
+      "height": 1964,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Cyperus papyrus kz04.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Cyperus_papyrus_kz04.jpg",
+      "license": "CC BY-SA 4.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 2905,
+      "height": 4067,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Estaurograma--Juan19-6.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Estaurograma--Juan19-6.jpg",
+      "license": "CC BY-SA 3.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 406,
+      "height": 324,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Flower at the John Denver Sanctuary (27745848632).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Flower_at_the_John_Denver_Sanctuary_(27745848632).jpg",
+      "license": "CC BY-SA 2.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 3264,
+      "height": 2176,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Flower at the John Denver Sanctuary (27847076925).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Flower_at_the_John_Denver_Sanctuary_(27847076925).jpg",
+      "license": "CC BY-SA 2.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 3264,
+      "height": 2176,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Full time job signing autographs for John Denver (48592036662).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Full_time_job_signing_autographs_for_John_Denver_(48592036662).jpg",
+      "license": "CC BY-SA 2.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 1565,
+      "height": 1037,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Johannesevangelium (Papyrus 66).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Johannesevangelium_(Papyrus_66).jpg",
+      "license": "CC BY-SA 3.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 1212,
+      "height": 226,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:John Denver 'Spirit' Statue.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:John_Denver_%27Spirit%27_Statue.jpg",
+      "license": "CC BY-SA 3.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 720,
+      "height": 960,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:John Denver \"Spirit\" statue, Red Rocks Park, Morrison, Colorado.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:John_Denver_%22Spirit%22_statue,_Red_Rocks_Park,_Morrison,_Colorado.jpg",
+      "license": "CC BY-SA 4.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 3024,
+      "height": 4032,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:John Denver (BBW).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:John_Denver_(BBW).jpg",
+      "license": "CC BY-SA 4.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 1065,
+      "height": 772,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:John Denver bench.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:John_Denver_bench.jpg",
+      "license": "CC BY 3.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 1023,
+      "height": 437,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:John Denver plaque in Moccasin Lake Nature Park, Clearwater, Florida, 19 March 2024.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:John_Denver_plaque_in_Moccasin_Lake_Nature_Park,_Clearwater,_Florida,_19_March_2024.jpg",
+      "license": "CC BY-SA 4.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 2592,
+      "height": 4608,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:John Denver serenades the crowd (48591893031).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:John_Denver_serenades_the_crowd_(48591893031).jpg",
+      "license": "CC BY-SA 2.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 938,
+      "height": 1083,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:John Denver.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:John_Denver.jpg",
+      "license": "CC BY-SA 2.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 692,
+      "height": 1024,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Leiden - Rijksmuseum van Oudheden - Papyrus van Qenna 20220724 vel 08.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Leiden_-_Rijksmuseum_van_Oudheden_-_Papyrus_van_Qenna_20220724_vel_08.jpg",
+      "license": "CC BY-SA 4.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 2341,
+      "height": 1834,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Orman Garden - Cyperus papyrus 01.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Orman_Garden_-_Cyperus_papyrus_01.jpg",
+      "license": "CC BY-SA 4.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 4000,
+      "height": 2248,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Orman Garden - Cyperus papyrus 02.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Orman_Garden_-_Cyperus_papyrus_02.jpg",
+      "license": "CC BY-SA 4.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 4000,
+      "height": 2248,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Papyrus (Cyperus papyrus) (7079191471).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Papyrus_(Cyperus_papyrus)_(7079191471).jpg",
+      "license": "CC BY-SA 2.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 2560,
+      "height": 1920,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Papyrus 66 Leaf 35v.png",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Papyrus_66_Leaf_35v.png",
+      "license": "CC BY-SA 4.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 741,
+      "height": 853,
+      "mime": "image/png"
+    },
+    {
+      "title": "File:Papyrus Wilbour Spalten 66-68 Brooklyn Museum Egyptian Collection Acc. No. 34.5596.26 Licenz CC-BY-3.0 CUR.34.5596.26 front IMLS PS5.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Papyrus_Wilbour_Spalten_66-68_Brooklyn_Museum_Egyptian_Collection_Acc._No._34.5596.26_Licenz_CC-BY-3.0_CUR.34.5596.26_front_IMLS_PS5.jpg",
+      "license": "CC BY 3.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 1334,
+      "height": 1500,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Perhaps Love, John Denver Sanctuary (27812512246).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Perhaps_Love,_John_Denver_Sanctuary_(27812512246).jpg",
+      "license": "CC BY-SA 2.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 3264,
+      "height": 2176,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Rocky Mountain High, John Denver Sanctuary (27766479481).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Rocky_Mountain_High,_John_Denver_Sanctuary_(27766479481).jpg",
+      "license": "CC BY-SA 2.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 5942,
+      "height": 3961,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Rocky Mountain High, John Denver Sanctuary (27842743505).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Rocky_Mountain_High,_John_Denver_Sanctuary_(27842743505).jpg",
+      "license": "CC BY-SA 2.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 3193,
+      "height": 2128,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:The dawn of civilization- Egypt and Chaldaea (1897) (14577194517).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:The_dawn_of_civilization-_Egypt_and_Chaldaea_(1897)_(14577194517).jpg",
+      "license": "No restrictions",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 2752,
+      "height": 1456,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:The John Denver Sanctuary in Rio Grande Park, Aspen, Colorado.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:The_John_Denver_Sanctuary_in_Rio_Grande_Park,_Aspen,_Colorado.jpg",
+      "license": "CC BY-SA 4.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 4160,
+      "height": 3120,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Untitled Hawker Hunter F58 HB-RVS J-4015 \"Papyrus\" (29970628212).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Untitled_Hawker_Hunter_F58_HB-RVS_J-4015_%22Papyrus%22_(29970628212).jpg",
+      "license": "CC BY 2.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 1600,
+      "height": 1067,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:Utsikt över papyrus från Störtfjället.jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:Utsikt_%C3%B6ver_papyrus_fr%C3%A5n_St%C3%B6rtfj%C3%A4llet.jpg",
+      "license": "CC BY-SA 3.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 5634,
+      "height": 3753,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:You might say, John Denver Sanctuary (27808143106).jpg",
+      "description_url": "https://commons.wikimedia.org/wiki/File:You_might_say,_John_Denver_Sanctuary_(27808143106).jpg",
+      "license": "CC BY-SA 2.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 6000,
+      "height": 4000,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "File:道路真理生命莎草書六十六號.png",
+      "description_url": "https://commons.wikimedia.org/wiki/File:%E9%81%93%E8%B7%AF%E7%9C%9F%E7%90%86%E7%94%9F%E5%91%BD%E8%8E%8E%E8%8D%89%E6%9B%B8%E5%85%AD%E5%8D%81%E5%85%AD%E8%99%9F.png",
+      "license": "CC BY-SA 4.0",
+      "is_public_domain": false,
+      "score": -1,
+      "width": 1394,
+      "height": 364,
+      "mime": "image/png"
+    }
+  ],
+  "chosen": {
+    "title": "File:Geneva, Bodmer Lab Ms Papyrus 66 (P.Bodmer II - PB 2) fol. 1r.jpg",
+    "description_page_url": "https://commons.wikimedia.org/wiki/File:Geneva,_Bodmer_Lab_Ms_Papyrus_66_(P.Bodmer_II_-_PB_2)_fol._1r.jpg",
+    "direct_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Geneva%2C_Bodmer_Lab_Ms_Papyrus_66_%28P.Bodmer_II_-_PB_2%29_fol._1r.jpg/3840px-Geneva%2C_Bodmer_Lab_Ms_Papyrus_66_%28P.Bodmer_II_-_PB_2%29_fol._1r.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Geneva%2C_Bodmer_Lab_Ms_Papyrus_66_%28P.Bodmer_II_-_PB_2%29_fol._1r.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author",
+    "credit": "https://bodmerlab.unige.ch/fr/constellations/papyri/mirador/1072205287?page=006",
+    "image_description": "Folio 1 recto from Papyrus 66 containing much of the Gospel of John lying on the other folios of the first four quires and some of the fifth quire",
+    "width": 2400,
+    "height": 2054,
+    "original_width": 6796,
+    "original_height": 5817,
+    "mime": "image/jpeg",
+    "bytes_downloaded": 1266278,
+    "saved_to": "public/p66/p66-page1.jpg"
+  },
+  "downloaded": true
+}
