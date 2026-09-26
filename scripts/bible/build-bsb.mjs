@@ -201,7 +201,7 @@ async function loadBsbTables() {
       }
       const ws = peek.Sheets[sheetName];
       if (!ws || !ws["!ref"]) continue;
-      const peekRows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: "", raw: false });
+      const peekRows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: "" });
       const header = (peekRows[0] || []).map((h) => String(h).toLowerCase().trim());
       console.log(`bsb_tables.xlsx: sheet "${sheetName}" header=${JSON.stringify(header)}`);
       const hasRef = header.some((h) => h.includes("verse") || h.includes("reference") || h.includes("ref"));
@@ -215,7 +215,7 @@ async function loadBsbTables() {
     for (const sheetName of candidateSheets) {
       const wb = XLSX.readFile(xlsxPath, { sheets: sheetName });
       const ws = wb.Sheets[sheetName];
-      const sheetRows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: "", raw: false });
+      const sheetRows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: "" });
       console.log(`bsb_tables.xlsx: sheet "${sheetName}" fully parsed, rows=${sheetRows.length}`);
       if (sheetRows.length < 2) continue;
       const header = sheetRows[0].map((h) => String(h).toLowerCase().trim());
