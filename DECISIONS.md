@@ -121,3 +121,11 @@ Every judgment call made during the unattended build, in the order it was made.
 - **Cross-links:** timeline dots and variant-witness rows open the manuscript in the Library, and P66's page links to it. The Library's detail view links back to the timeline, the variant explorer and Module 3 where they apply.
 - **Featured shelf** (25, stories written by hand, 84–98 words each): at the top of the Library, as the home page's closing chapter "Here they are", as a present-mode slide, and in the tour, which opens Codex Ephraemi (04) from Gallica and zooms in.
 - The sandbox cannot load any of these images, so the image paths were checked only for correct URL construction and error handling (the viewer shows a plain message and the links when a server does not answer).
+
+## Section 6: checks
+- **Pages.** `gh api repos/LexReach/closer-not-farther/pages` cannot be called from the sandbox: the GitHub proxy returns "Access to this GitHub API path is not permitted", and there is no `gh` CLI. Pages is enabled with source GitHub Actions: `has_pages: true`, and every "Deploy to GitHub Pages" run on `main` since run 8 has succeeded. No attempt to enable it was needed.
+- **Screenshots.** A Sonnet helper captured and reviewed 210 scrolling viewport shots (9 routes × 1280/400 × light/dark) and the ten present-mode slides at 1920×1080, and found no console errors. It found three problems, all fixed: the variant bar squeezed at 400px (a later CSS rule overrode the mobile breakpoint); the home Library counters sometimes captured at 0; and the pulled-slice note clipped at 400px. The Library and its present slide were then checked by hand, which turned up missing styles for the shelf excerpt outside the Library route; also fixed.
+- **Lighthouse 12** (headless Chromium, local preview):
+  - Mobile preset: performance 94–97 on every route, accessibility 100, CLS 0–0.016 after two fixes (the main area reserves the viewport height so late content never pushes the footer into view, and the three first-paint fonts are preloaded).
+  - Desktop preset: performance 92–100 and accessibility 100 on every route. The lowest is present mode at 92 (CLS 0.17 from the stage fonts).
+- **Library scroll performance:** 60 fps at 400px with 4× CPU throttling (see section 5b).
