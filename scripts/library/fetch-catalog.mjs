@@ -163,18 +163,46 @@ SELECT ?item ?time ?prec WHERE {
   }
 }
 
+async function fetchTimeProperty(prop, label) {
+  const query = `
+SELECT ?item ?time ?prec WHERE {
+  ?item wdt:P1577 [] .
+  ?item p:${prop} ?st .
+  ?st psv:${prop} ?val .
+  ?val wikibase:timeValue ?time ;
+       wikibase:timePrecision ?prec .
+}`;
+  try {
+    const bindings = await sparql(query, label);
+    const map = new Map();
+    for (const b of bindings) {
+      const qid = qidOf(b.item?.value);
+      if (!qid || map.has(qid)) continue;
+      map.set(qid, { time: b.time?.value, prec: b.prec?.value });
+    }
+    note(`  ${label}: ${bindings.length} bindings, ${map.size} distinct items.`);
+    return map;
+  } catch (err) {
+    note(`  ${label} FAILED: ${err.message}`);
+    return new Map();
+  }
+}
+
 async function fetchWikidataRows() {
   note('Querying Wikidata for all items with P1577 (Gregory-Aland number)...');
-  const [gaBindings, inceptions, collections, locations, shelfmarks, images, commonscats, iiifs] = await Promise.all([
-    fetchGaAndLabels(),
-    fetchInceptionTimes(),
-    fetchSimpleProperty('P195', 'wikidata: collection (P195)'),
-    fetchSimpleProperty('P276', 'wikidata: location (P276)'),
-    fetchSimpleProperty('P217', 'wikidata: inventory number (P217)'),
-    fetchSimpleProperty('P18', 'wikidata: image (P18)'),
-    fetchSimpleProperty('P373', 'wikidata: Commons category (P373)'),
-    fetchSimpleProperty('P6108', 'wikidata: IIIF manifest (P6108)'),
-  ]);
+  const [gaBindings, inceptions, earliestDates, latestDates, collections, locations, shelfmarks, images, commonscats, iiifs] =
+    await Promise.all([
+      fetchGaAndLabels(),
+      fetchInceptionTimes(),
+      fetchTimeProperty('P1319', 'wikidata: earliest date (P1319)'),
+      fetchTimeProperty('P1326', 'wikidata: latest date (P1326)'),
+      fetchSimpleProperty('P195', 'wikidata: collection (P195)'),
+      fetchSimpleProperty('P276', 'wikidata: location (P276)'),
+      fetchSimpleProperty('P217', 'wikidata: inventory number (P217)'),
+      fetchSimpleProperty('P18', 'wikidata: image (P18)'),
+      fetchSimpleProperty('P373', 'wikidata: Commons category (P373)'),
+      fetchSimpleProperty('P6108', 'wikidata: IIIF manifest (P6108)'),
+    ]);
 
   const rows = new Map(); // ga -> row
   const institutionQids = new Set();
@@ -194,7 +222,21 @@ async function fetchWikidataRows() {
     if (instQid) institutionQids.add(instQid);
 
     const inc = inceptions.get(qid);
-    const century = inc ? parseCenturyFromWikidataTime(inc.time, inc.prec) : null;
+    let century = inc ? parseCenturyFromWikidataTime(inc.time, inc.prec) : null;
+    if (!century) {
+      // No single P571 inception (or too coarse a precision): some manuscript
+      // items instead give an uncertain date as a P1319/P1326 earliest/latest
+      // pair. Combine whichever of those we have into a century range.
+      const early = earliestDates.get(qid);
+      const late = latestDates.get(qid);
+      const earlyC = early ? parseCenturyFromWikidataTime(early.time, early.prec) : null;
+      const lateC = late ? parseCenturyFromWikidataTime(late.time, late.prec) : null;
+      if (earlyC || lateC) {
+        const c0 = earlyC?.c0 ?? lateC?.c0;
+        const c1 = lateC?.c1 ?? earlyC?.c1;
+        century = { c0: Math.min(c0, c1), c1: Math.max(c0, c1) };
+      }
+    }
 
     const iiifRaw = iiifs.get(qid) || null;
     const commonsCat = commonscats.get(qid) || null;
@@ -451,8 +493,17 @@ function splitLocation(raw) {
   const dictHit = lookupInstitutionDict(s);
   const parts = s.split(',').map((p) => p.trim()).filter(Boolean);
   const inst = parts[0] || s;
-  let city = dictHit?.city ?? (parts.length > 1 ? parts[1] : null);
+  // "National Library, Grec 14" etc.: the second comma-part is often a
+  // shelfmark, not a city, once there's no dedicated shelf column. Treat it as
+  // a city only if it doesn't look like a shelfmark itself.
+  const looksLikeShelf = (p) =>
+    !p ||
+    /\d/.test(p) ||
+    /^(gr|suppl|add|ms|cod|fonds|ottob|vat|pal|barb|urb|reg|chig|ross|borg|misc|canon|auct|arch|laud|holkham)\.?\s/i.test(p);
+  const part1 = parts.length > 1 ? parts[1] : null;
+  let city = dictHit?.city ?? (part1 && !looksLikeShelf(part1) ? part1 : null);
   let country = dictHit?.country ?? (parts.length > 2 ? parts[parts.length - 1] : null);
+  if (!shelf && part1 && looksLikeShelf(part1)) shelf = part1;
   return { inst, city, country, shelf };
 }
 
@@ -477,7 +528,7 @@ async function fetchWikipediaRows() {
       for (const r of parsedRows) {
         const century = parseCenturyFromText(r.dateRaw);
         const loc = splitLocation(r.locRaw);
-        wpRows.set(r.ga, {
+        const candidate = {
           ga: r.ga,
           cat: r.cat,
           name: r.nameRaw || null,
@@ -488,7 +539,21 @@ async function fetchWikipediaRows() {
           city: loc.city,
           country: loc.country,
           shelf: r.shelfRaw || loc.shelf || null,
-        });
+        };
+        // A page like the uncials list has several tables (the full list, plus
+        // narrower ones such as a text-type breakdown covering just the famous
+        // majuscules). The same GA number can show up more than once with very
+        // different column sets, so merge field-by-field: whichever table saw
+        // a given field first wins, and a later, sparser table only fills gaps
+        // rather than blanking out data a fuller table already gave us.
+        const existing = wpRows.get(r.ga);
+        if (existing) {
+          for (const k of Object.keys(candidate)) {
+            if (existing[k] == null && candidate[k] != null) existing[k] = candidate[k];
+          }
+        } else {
+          wpRows.set(r.ga, candidate);
+        }
       }
     }
     note(`  [${key}] extracted ${rowCount} rows (${wpRows.size} cumulative distinct GA so far)`);
