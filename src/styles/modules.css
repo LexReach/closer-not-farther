@@ -339,3 +339,47 @@
   .var-pick { flex: 1 1 160px; }
   .var-cols { grid-template-columns: 1fr; gap: 12px; }
 }
+
+/* ================= Module 3: P66 ================= */
+
+:root { --papyrus: #D9C08E; --papyrus-ink: #4A2C12; }
+@media (prefers-color-scheme: dark) { :root { --papyrus: #B69A66; --papyrus-ink: #3A220E; } }
+.p66-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 32px; align-items: start; }
+.p66-fig { margin: 0; position: sticky; top: 24px; }
+.p66-fig figcaption { font-family: var(--font-ui); font-size: 0.78rem; color: var(--muted); margin-top: 8px; }
+.p66-fac { width: 100%; height: auto; display: block; }
+.p66-fac__page { fill: var(--papyrus); }
+.p66-fac__fibres { fill: var(--papyrus); }
+.p66-fac__ink text { fill: var(--papyrus-ink); font-family: var(--font-greek); font-size: 25px; }
+.p66-fac__title { fill: var(--papyrus-ink); font-family: var(--font-greek); font-size: 19px; letter-spacing: 3px; opacity: 0.85; }
+.p66-fac__ns { stroke: var(--papyrus-ink); stroke-width: 2; }
+.p66-box { fill: rgba(31, 78, 121, 0.18); stroke: #1F4E79; stroke-width: 2.5; }
+.p66-photo { position: relative; }
+.p66-photo img { width: 100%; display: block; }
+.p66-photo svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.p66-ns-sample { text-decoration: overline; }
+
+.p66-rows { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.p66-meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 16px; margin: 0; font-family: var(--font-ui); font-size: 0.85rem; }
+.p66-meta dt { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.p66-meta dd { margin: 0; }
+.p66-row { border-top: 1px solid var(--rule); padding-top: 12px; }
+.p66-row__head { display: flex; justify-content: space-between; align-items: center; gap: 8px 16px; flex-wrap: wrap; margin-bottom: 8px; }
+.p66-row__head h2 { font-family: var(--font-ui); font-size: 0.9rem; font-weight: 600; margin: 0; }
+.p66-row__text { line-height: 1.9; }
+.p66-pap { font-family: var(--font-greek); font-size: 1.05rem; letter-spacing: 0.06em; word-break: break-all; color: var(--papyrus-ink); background: color-mix(in srgb, var(--papyrus) 40%, var(--surface)); padding: 10px 12px; border-radius: var(--radius); }
+@media (prefers-color-scheme: dark) { .p66-pap { color: var(--ink); background: var(--surface-2); } }
+.p66-pap .p66-ln { font-family: var(--font-ui); font-size: 0.65rem; color: var(--muted); display: inline-block; width: 1.8em; letter-spacing: 0; }
+.p66-after { opacity: 0.45; }
+.p66-gk { font-family: var(--font-greek); font-size: 1.15rem; }
+.p66-en { font-family: var(--font-ui); font-size: 0.95rem; }
+.p66-w { border-radius: 3px; padding: 1px 0; cursor: default; outline: none; transition: background 0.1s; }
+.p66-w.is-ns { text-decoration: overline; }
+.p66-w.is-on { background: var(--accent); color: var(--accent-ink); box-shadow: 0 0 0 2px var(--accent); }
+.p66-w:focus-visible { box-shadow: 0 0 0 2px var(--accent); }
+.p66-w.is-untr { color: var(--muted); }
+
+@media (max-width: 900px) {
+  .p66-grid { grid-template-columns: 1fr; }
+  .p66-fig { position: static; max-width: 460px; }
+}
