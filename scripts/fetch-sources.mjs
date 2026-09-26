@@ -39,24 +39,40 @@ async function fetchJSON(url, { ms = 20000 } = {}) {
   }
 }
 
-async function downloadBinary(url, destPath, { ms = 60000 } = {}) {
-  const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort(), ms);
-  try {
-    const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT }, redirect: 'follow', signal: ctrl.signal });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const buf = Buffer.from(await res.arrayBuffer());
-    await mkdir(path.dirname(destPath), { recursive: true });
-    await writeFile(destPath, buf);
-    return buf.length;
-  } finally {
-    clearTimeout(t);
-  }
-}
-
 function stripTags(html) {
   if (!html) return '';
   return html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+}
+
+// Minimal JPEG dimension reader (scans SOF0-SOF15 markers, skipping DHT/DAC/etc).
+// Used to verify the ACTUAL pixel size of a downloaded thumbnail: Wikimedia's
+// thumbnail service buckets very large source images to a fixed set of widths
+// (e.g. 1920/2560/3840) and can silently return a wider image than the
+// iiurlwidth requested, so we can't trust the request parameter alone.
+function jpegDimensions(buf) {
+  if (buf.length < 4 || buf[0] !== 0xff || buf[1] !== 0xd8) return null;
+  let offset = 2;
+  while (offset + 9 < buf.length) {
+    if (buf[offset] !== 0xff) {
+      offset++;
+      continue;
+    }
+    const marker = buf[offset + 1];
+    if (marker === 0xd8 || marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) {
+      offset += 2;
+      continue;
+    }
+    if (marker === 0xda) break; // start of scan: no more headers
+    const len = buf.readUInt16BE(offset + 2);
+    const isSOF = marker >= 0xc0 && marker <= 0xcf && marker !== 0xc4 && marker !== 0xc8 && marker !== 0xcc;
+    if (isSOF) {
+      const height = buf.readUInt16BE(offset + 5);
+      const width = buf.readUInt16BE(offset + 7);
+      return { width, height };
+    }
+    offset += 2 + len;
+  }
+  return null;
 }
 
 /* ---------------- Task B: P66 photograph via Commons API ---------------- */
@@ -82,10 +98,12 @@ async function commonsSearch(term) {
 }
 
 async function commonsImageInfo(titles) {
+  // No iiurlwidth here: this is for scoring/logging every candidate, where the
+  // ORIGINAL width/height (not a thumbnail bucket) is what we want to record.
   const out = [];
   for (let i = 0; i < titles.length; i += 50) {
     const batch = titles.slice(i, i + 50);
-    const url = `${COMMONS_API}?action=query&titles=${encodeURIComponent(batch.join('|'))}&prop=imageinfo&iiprop=url|size|mime|extmetadata&iiurlwidth=2400&iiurlheight=2400&format=json`;
+    const url = `${COMMONS_API}?action=query&titles=${encodeURIComponent(batch.join('|'))}&prop=imageinfo&iiprop=url|size|mime|extmetadata&format=json`;
     const { ok, status, json } = await fetchJSON(url);
     log(`[p66] GET imageinfo for ${batch.length} title(s) -> HTTP ${status}`);
     if (!ok || !json?.query?.pages) continue;
@@ -95,6 +113,55 @@ async function commonsImageInfo(titles) {
     }
   }
   return out;
+}
+
+// Wikimedia's thumbnail service serves a fixed set of bucket widths for very
+// large source images (observed: requesting iiurlwidth=2400 for a 6796px-wide
+// original came back as a 3840px-wide file, silently over budget). So: ask
+// for a thumb at each candidate width in turn, download it, and verify the
+// ACTUAL decoded JPEG dimensions are within the 2400px long-side budget;
+// fall back to the next smaller width if not.
+const THUMB_WIDTH_CANDIDATES = [2400, 1920, 1600, 1280, 1024, 800];
+
+async function fetchThumbInfo(title, iiurlwidth) {
+  const url = `${COMMONS_API}?action=query&titles=${encodeURIComponent(title)}&prop=imageinfo&iiprop=url|size|mime&iiurlwidth=${iiurlwidth}&format=json`;
+  const { ok, json } = await fetchJSON(url);
+  if (!ok || !json?.query?.pages) return null;
+  const page = Object.values(json.query.pages)[0];
+  return page?.imageinfo?.[0] ?? null;
+}
+
+async function downloadWithinBudget(title, longSideBudget = 2400) {
+  for (const w of THUMB_WIDTH_CANDIDATES) {
+    const info = await fetchThumbInfo(title, w);
+    const thumburl = info?.thumburl;
+    if (!thumburl) {
+      log(`[p66]   iiurlwidth=${w}: no thumburl returned, trying smaller`);
+      continue;
+    }
+    log(`[p66]   iiurlwidth=${w}: requesting ${thumburl}`);
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), 60000);
+    let buf;
+    try {
+      const res = await fetch(thumburl, { headers: { 'User-Agent': USER_AGENT }, redirect: 'follow', signal: ctrl.signal });
+      if (!res.ok) {
+        log(`[p66]     HTTP ${res.status}, trying smaller`);
+        continue;
+      }
+      buf = Buffer.from(await res.arrayBuffer());
+    } finally {
+      clearTimeout(t);
+    }
+    const dims = jpegDimensions(buf);
+    const longSide = dims ? Math.max(dims.width, dims.height) : null;
+    log(`[p66]     downloaded ${buf.length} bytes, actual JPEG dimensions ${dims ? `${dims.width}x${dims.height}` : 'unparseable'}`);
+    if (dims && longSide <= longSideBudget) {
+      return { buf, thumburl, requestedWidth: w, actualWidth: dims.width, actualHeight: dims.height };
+    }
+    log(`[p66]     long side ${longSide ?? '?'} exceeds ${longSideBudget}px budget, trying smaller width`);
+  }
+  return null;
 }
 
 function scoreCandidate(title, info) {
@@ -164,28 +231,55 @@ async function fetchP66Image() {
   }
 
   const meta = best.info.extmetadata || {};
-  const directUrl = best.info.thumburl || best.info.url;
-  log(`[p66] Chosen: ${best.title} (score ${best.score}). Downloading ${directUrl}`);
+  const longSide = Math.max(best.info.width, best.info.height);
+  log(`[p66] Chosen: ${best.title} (score ${best.score}). Original ${best.info.width}x${best.info.height}.`);
+  let result = null;
+  if (longSide <= 2400 && /^image\/jpeg$/i.test(best.info.mime)) {
+    // Already within budget: use the original file directly, no thumbnailing needed.
+    log(`[p66] Original is already <=2400px on the long side; downloading original.`);
+    try {
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), 60000);
+      const res = await fetch(best.info.url, { headers: { 'User-Agent': USER_AGENT }, redirect: 'follow', signal: ctrl.signal });
+      clearTimeout(t);
+      if (res.ok) {
+        const buf = Buffer.from(await res.arrayBuffer());
+        const dims = jpegDimensions(buf);
+        result = { buf, thumburl: best.info.url, requestedWidth: null, actualWidth: dims?.width ?? best.info.width, actualHeight: dims?.height ?? best.info.height };
+      }
+    } catch (err) {
+      log(`[p66] Original download failed: ${err.message}`);
+    }
+  } else {
+    try {
+      result = await downloadWithinBudget(best.title, 2400);
+    } catch (err) {
+      log(`[p66] Thumbnail download loop failed: ${err.message}`);
+    }
+  }
+
   let bytes = 0;
-  try {
-    bytes = await downloadBinary(directUrl, P66_OUT);
-    log(`[p66] Downloaded ${bytes} bytes -> ${P66_OUT}`);
+  if (result) {
+    await mkdir(path.dirname(P66_OUT), { recursive: true });
+    await writeFile(P66_OUT, result.buf);
+    bytes = result.buf.length;
+    log(`[p66] Saved ${bytes} bytes, ${result.actualWidth}x${result.actualHeight} (long side ${Math.max(result.actualWidth, result.actualHeight)}px) -> ${P66_OUT}`);
     out.downloaded = true;
-  } catch (err) {
-    log(`[p66] Download FAILED: ${err.message}`);
+  } else {
+    log(`[p66] Could not obtain a JPEG within the 2400px long-side budget for ${best.title}. Not downloading.`);
   }
 
   out.chosen = {
     title: best.title,
     description_page_url: best.info.descriptionurl,
-    direct_url: directUrl,
+    direct_url: result?.thumburl ?? null,
     original_url: best.info.url,
     license: best.license,
     artist: stripTags(meta.Artist?.value),
     credit: stripTags(meta.Credit?.value),
     image_description: stripTags(meta.ImageDescription?.value),
-    width: best.info.thumbwidth || best.info.width,
-    height: best.info.thumbheight || best.info.height,
+    width: result?.actualWidth ?? null,
+    height: result?.actualHeight ?? null,
     original_width: best.info.width,
     original_height: best.info.height,
     mime: best.info.mime,
