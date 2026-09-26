@@ -10,6 +10,7 @@ const SPAN_SKIP_TAGS = new Set(["f", "x", "fig", "va", "ca"]);
 
 function cleanupText(s) {
   return s
+    .replace(/¶\s*/g, "") // "¶" paragraph mark (e.g. KJV \p rendered inline) + any following whitespace
     .replace(/\s+/g, " ")
     .replace(/\s+([,.;:!?)’”])/g, "$1")
     .trim();

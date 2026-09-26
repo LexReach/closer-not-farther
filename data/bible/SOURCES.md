@@ -21,11 +21,16 @@ refresh the data from the same sources.
   at BereanBible.com [...]"
 - Retrieved: 2026-09-26 (by the `data-bible` branch's build workflow; re-run
   it to refresh).
-- NT verses are segment arrays `[text, greekIndex]` aligned to
-  `data/bible/greek/<BOOK>.json` by matching `bsb_tables` rows to Greek words
-  per verse on Strong's number, in the table's own reading order (see
-  `scripts/bible/build-bsb.mjs`); unmatched English segments carry
-  `greekIndex: null`. OT verses are plain strings.
+- Every verse's displayed text is always the exact bsb.txt string (OT and
+  NT); NT verses are additionally segment arrays `[text, greekIndex]`: each
+  `bsb_tables` row is linked to a Greek word in `data/bible/greek/<BOOK>.json`
+  by Strong's number (in the table's Greek-word order), then that row's
+  cleaned English fragment is located inside the verbatim bsb.txt verse
+  string (in the table's BSB/English-reading order) so the segment's text is
+  always an exact substring of bsb.txt; unmatched substrings (spacing,
+  punctuation, words the table didn't separately translate) carry
+  `greekIndex: null`. See `scripts/bible/build-bsb.mjs` and
+  `scripts/bible/lib/align-text.mjs`. OT verses are plain strings.
 
 ### World English Bible (WEB) — `data/bible/text/web/`
 - Source: ebible.org, `https://ebible.org/Scriptures/eng-web_usfm.zip`,

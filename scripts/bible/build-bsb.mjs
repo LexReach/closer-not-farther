@@ -1,13 +1,23 @@
 #!/usr/bin/env node
 // Builds data/bible/text/bsb/<BOOK>.json.
 //
-// Baseline (all 66 books, plain-string verses): bereanbible.com's bsb.txt.
-// NT enhancement (segmented [text, greekIndex] arrays aligned to
-// data/bible/greek/<BOOK>.json): bereanbible.com's bsb_tables interlinear
-// spreadsheet, matched onto the Greek word list per verse by Strong's number
-// (in the table's reading order), falling back to leaving a segment's
-// greekIndex null when no Strong's match is found nearby. Requires
-// build-greek.mjs to have already run.
+// The *displayed text* of every verse is always bereanbible.com's bsb.txt,
+// verbatim (OT and NT alike) - concatenating a verse's segments always
+// reconstructs its bsb.txt string exactly, by construction.
+//
+// For the NT, bsb_tables (the Greek-English interlinear spreadsheet) adds
+// [text, greekIndex] links on top of that text in two independent passes:
+//  1. Each interlinear row is linked to a Greek word in
+//     data/bible/greek/<BOOK>.json by Strong's number, walking rows and
+//     Greek words in the same order (the table's own Greek Sort column).
+//  2. In the table's BSB (English) reading order, each row's cleaned
+//     English fragment is located inside the verbatim bsb.txt verse string
+//     (case/punctuation-insensitively, sequentially from the previous
+//     match), and that span gets the Greek link from step 1. Gaps between
+//     matches (spacing, punctuation, words the table didn't separately
+//     translate) become unlinked segments, so nothing is dropped or
+//     reordered from the true BSB text.
+// Requires build-greek.mjs to have already run.
 import fs from "node:fs";
 import path from "node:path";
 import os from "node:os";
@@ -18,6 +28,7 @@ import { parseRef } from "./lib/bsb-ref.mjs";
 import { parseCsv } from "./lib/csv.mjs";
 import { baseStrong } from "./lib/strong.mjs";
 import { alignGreedy } from "./lib/align.mjs";
+import { alignRowsToText } from "./lib/align-text.mjs";
 
 const SCRATCH = process.env.BIBLE_SCRATCH || path.join(os.tmpdir(), "bible-src");
 const outDir = path.join(DATA_DIR, "text", "bsb");
@@ -104,8 +115,9 @@ try {
 
 if (tableRows) {
   const greekDir = path.join(DATA_DIR, "greek");
-  let totalSegments = 0;
-  let linkedSegments = 0;
+  let totalWords = 0;
+  let matchedWords = 0;
+  let mismatchedVerses = 0;
   for (const book of NT_BOOKS) {
     const greek = JSON.parse(fs.readFileSync(path.join(greekDir, `${book.id}.json`), "utf8"));
     const chapters = [];
@@ -113,33 +125,44 @@ if (tableRows) {
       const chapterOut = [];
       for (let v = 0; v < greek.chapters[c].length; v++) {
         const gWords = greek.chapters[c][v];
-        if (!gWords) {
+        const canonicalText = plain.get(book.id)?.[c]?.[v] ?? null;
+        if (!gWords || canonicalText == null) {
           chapterOut.push(null);
           continue;
         }
         const key = `${book.id}:${c + 1}:${v + 1}`;
         const rows = tableRows.get(key);
         if (!rows || !rows.length) {
-          // No interlinear row for this verse; fall back to the plain bsb.txt
-          // string for it, if we have one.
-          const plainText = plain.get(book.id)?.[c]?.[v] ?? null;
-          chapterOut.push(plainText);
+          // No interlinear row for this verse; the verse still has to be a
+          // segment array (BSB NT schema), just with one unlinked segment.
+          chapterOut.push([[canonicalText, null]]);
           continue;
         }
+
+        // Phase 1: link each row to a Greek word by Strong's number, walking
+        // rows and Greek words in the SAME (Greek) order.
         const gWithBase = gWords.map((w, i) => ({ index: i, strongBase: baseStrong(w[1]) }));
+        const byGreekOrder = [...rows].sort((a, b) => a.greekSortKey - b.greekSortKey);
         const aligned = alignGreedy(
-          rows,
+          byGreekOrder,
           gWithBase,
           (row, gw) => row.strongBase && gw.strongBase && row.strongBase === gw.strongBase
         );
-        const segments = [];
-        rows.forEach((row, i) => {
-          if (i > 0) segments.push([" ", null]);
-          const gw = aligned[i];
-          totalSegments++;
-          if (gw) linkedSegments++;
-          segments.push([row.english, gw ? gw.index : null]);
+        byGreekOrder.forEach((row, i) => {
+          row.greekIndex = aligned[i] ? aligned[i].index : null;
         });
+
+        // Phase 2: in BSB (English) reading order, find each row's cleaned
+        // English fragment inside the verbatim bsb.txt verse text.
+        const byBsbOrder = [...rows].sort((a, b) => a.bsbSortKey - b.bsbSortKey);
+        const { segments, matchedWords: mw, totalWords: tw } = alignRowsToText(byBsbOrder, canonicalText);
+        totalWords += tw;
+        matchedWords += mw;
+        const concatenated = segments.map((s) => s[0]).join("");
+        if (concatenated !== canonicalText) {
+          mismatchedVerses++;
+          console.warn(`MISMATCH ${key}: concatenation != bsb.txt\n  got: ${concatenated}\n  want: ${canonicalText}`);
+        }
         chapterOut.push(segments);
       }
       chapters.push(chapterOut);
@@ -150,8 +173,9 @@ if (tableRows) {
     );
   }
   console.log(
-    `bsb_tables alignment: ${linkedSegments}/${totalSegments} English segments linked to a Greek index (${((linkedSegments / totalSegments) * 100).toFixed(2)}%)`
+    `bsb_tables alignment: ${matchedWords}/${totalWords} NT English words linked to a Greek index (${((matchedWords / totalWords) * 100).toFixed(2)}%)`
   );
+  console.log(`bsb_tables alignment: ${mismatchedVerses} verses where segments didn't reconstruct bsb.txt exactly`);
 }
 
 async function loadBsbTables() {
@@ -244,13 +268,15 @@ async function loadBsbTables() {
     const strongIdx = findCol("str grk", "strong grk", "grk strong", "strongs grk", "strong");
     const englishIdx = findCol("version", "translation", "english", "bsb");
     const greekIdx = findCol("greek", "grk", "hebrew", "original");
-    // A dedicated "BSB Sort"-style column gives each row's position in
-    // natural English reading order, which can differ from the sheet's
-    // default (source-language) row order.
+    // "BSB Sort" gives each row's position in natural English reading order;
+    // "Greek Sort" gives its position in the original Greek word order
+    // (which is what data/bible/greek/<BOOK>.json follows). They can differ
+    // whenever English and Greek word order diverge.
     const bsbSortIdx = header.findIndex((h) => h.includes("bsb") && h.includes("sort"));
+    const greekSortIdx = header.findIndex((h) => h.includes("greek") && h.includes("sort"));
     if (refIdx === -1 || englishIdx === -1) continue;
     console.log(
-      `bsb_tables: columns ref=${refIdx} strong=${strongIdx} english=${englishIdx} greek=${greekIdx} bsbSort=${bsbSortIdx} (of ${header.length})`
+      `bsb_tables: columns ref=${refIdx} strong=${strongIdx} english=${englishIdx} greek=${greekIdx} bsbSort=${bsbSortIdx} greekSort=${greekSortIdx} (of ${header.length})`
     );
 
     let lastRef = null;
@@ -266,18 +292,17 @@ async function loadBsbTables() {
       const english = String(row[englishIdx] ?? "").trim();
       if (!english) continue;
       const strongBase = strongIdx !== -1 ? baseStrong(row[strongIdx]) : null;
-      const sortKey = bsbSortIdx !== -1 ? Number(row[bsbSortIdx]) || seq : seq;
+      const bsbSortKey = bsbSortIdx !== -1 ? Number(row[bsbSortIdx]) || seq : seq;
+      const greekSortKey = greekSortIdx !== -1 ? Number(row[greekSortIdx]) || seq : seq;
       const key = `${ref.book}:${ref.chapter}:${ref.verse}`;
       let arr = byVerse.get(key);
       if (!arr) {
         arr = [];
         byVerse.set(key, arr);
       }
-      arr.push({ english, strongBase, sortKey });
+      arr.push({ english, strongBase, bsbSortKey, greekSortKey, greekIndex: null });
     }
   }
-  for (const arr of byVerse.values()) arr.sort((a, b) => a.sortKey - b.sortKey);
   console.log(`bsb_tables: ${totalDataRows} data rows total, grouped into ${byVerse.size} verses`);
-  console.log(`bsb_tables: sample verse rows (JHN:1:1): ${JSON.stringify(byVerse.get("JHN:1:1"))}`);
   return byVerse;
 }
