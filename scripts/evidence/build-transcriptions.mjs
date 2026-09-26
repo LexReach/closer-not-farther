@@ -23,8 +23,8 @@
 import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { setCacheDir, cachedFetchText, sleepMs } from './lib.mjs';
-import { discover, fetchPageIndex, fetchTranscriptRaw } from './ntvmr.mjs';
+import { setCacheDir, sleepMs, runPool } from './lib.mjs';
+import { discover } from './ntvmr.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..', '..');
@@ -305,7 +305,7 @@ async function main() {
   const order = await buildPriorityList();
   log(`Transcription priority list: ${order.length} manuscripts (featured -> pre-900 -> imaged).`);
 
-  const shape = await discover(order.find((g) => g === 'P52') || order[0]);
+  const shape = await discover();
   if (!shape) {
     log('No working NTVMR endpoint discovered; cannot fetch any transcriptions this run.');
     return;
@@ -313,32 +313,41 @@ async function main() {
 
   let manuscriptsDone = 0;
   let pagesDone = 0;
-  for (const ga of order) {
-    if (timeLeft() <= 0) {
-      log(`Time budget exhausted after ${manuscriptsDone} manuscripts / ${pagesDone} pages; stopping.`);
-      break;
-    }
-    try {
-      const idx = await fetchPageIndex(ga, shape);
-      if (!idx || !idx.size) continue;
-      const pageIds = [...new Set(idx.values())];
+  let stopped = false;
+  await runPool(
+    order,
+    async (ga) => {
+      if (stopped || timeLeft() <= 0) {
+        stopped = true;
+        return;
+      }
+      const pages = await shape.fetchManuscriptPages(ga);
+      const transcribedPages = pages.filter((p) => p.transcribed);
+      if (!transcribedPages.length) return;
       const dir = path.join(OUT_DIR, ga);
       await mkdir(dir, { recursive: true });
-      for (const pageId of pageIds) {
-        if (timeLeft() <= 0) break;
-        const raw = await fetchTranscriptRaw(pageId, shape);
+      let done = 0;
+      for (const pg of transcribedPages) {
+        if (timeLeft() <= 0) {
+          stopped = true;
+          break;
+        }
+        const raw = await shape.fetchTranscript(ga, pg.pageId);
         if (!raw) continue;
-        if (pagesDone < 3) log(`[sample raw transcript ${ga}/${pageId}] ${raw.slice(0, 3000)}`);
-        const parsed = parseTEIPage(raw, { ga, pageId });
-        await writeFile(path.join(dir, `${pageId}.json`), JSON.stringify(parsed));
+        if (pagesDone < 3) log(`[sample raw transcript ${ga}/${pg.pageId}] ${raw.slice(0, 3000)}`);
+        const parsed = parseTEIPage(raw, { ga, pageId: pg.pageId });
+        if (!parsed.folio && pg.folio) parsed.folio = pg.folio;
+        await writeFile(path.join(dir, `${pg.pageId}.json`), JSON.stringify(parsed));
         pagesDone++;
-        await sleepMs(300);
+        done++;
+        await sleepMs(200);
       }
       manuscriptsDone++;
-    } catch (err) {
-      log(`  [transcript] ${ga} failed: ${err.message}`);
-    }
-  }
+      log(`  ${ga}: ${done}/${transcribedPages.length} pages transcribed (of ${pages.length} total pages)`);
+    },
+    { concurrency: 3, delayMs: 0, onError: (ga, err) => log(`  [transcript] ${ga} failed: ${err.message}`) },
+  );
+  if (stopped) log(`Time budget exhausted; stopped early.`);
   log(`Done: ${manuscriptsDone} manuscripts, ${pagesDone} pages transcribed.`);
 }
 
