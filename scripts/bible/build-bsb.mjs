@@ -181,29 +181,46 @@ async function loadBsbTables() {
     );
     const xlsx = await import("xlsx");
     const XLSX = xlsx.default ?? xlsx;
-    const wb = XLSX.readFile(xlsxPath, { cellFormula: false, cellHTML: false });
-    console.log(`bsb_tables.xlsx: sheets = ${JSON.stringify(wb.SheetNames)}`);
-    rows = [];
-    for (const sheetName of wb.SheetNames) {
-      const ws = wb.Sheets[sheetName];
-      if (!ws || !ws["!ref"]) {
-        console.log(`bsb_tables.xlsx: sheet "${sheetName}" is empty, skipping`);
+
+    // This workbook is tens of MB; a full readFile()+sheet_to_json() over
+    // every sheet (this task only needs the NT ones) is slow. First get
+    // sheet names cheaply, then peek at just a few rows of each sheet to
+    // find which one(s) are the interlinear table, then only fully parse
+    // those.
+    const namesOnly = XLSX.readFile(xlsxPath, { bookSheets: true });
+    console.log(`bsb_tables.xlsx: sheets = ${JSON.stringify(namesOnly.SheetNames)}`);
+
+    const candidateSheets = [];
+    for (const sheetName of namesOnly.SheetNames) {
+      let peek;
+      try {
+        peek = XLSX.readFile(xlsxPath, { sheets: sheetName, sheetRows: 3 });
+      } catch (e) {
+        console.log(`bsb_tables.xlsx: could not peek sheet "${sheetName}" (${e.message})`);
         continue;
       }
-      const sheetRows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: "", raw: false });
-      console.log(
-        `bsb_tables.xlsx: sheet "${sheetName}" range=${ws["!ref"]} rows=${sheetRows.length} header=${JSON.stringify(sheetRows[0])}`
-      );
-      if (sheetRows.length < 2) continue;
-      const header = sheetRows[0].map((h) => String(h).toLowerCase().trim());
+      const ws = peek.Sheets[sheetName];
+      if (!ws || !ws["!ref"]) continue;
+      const peekRows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: "", raw: false });
+      const header = (peekRows[0] || []).map((h) => String(h).toLowerCase().trim());
+      console.log(`bsb_tables.xlsx: sheet "${sheetName}" header=${JSON.stringify(header)}`);
       const hasRef = header.some((h) => h.includes("verse") || h.includes("reference") || h.includes("ref"));
       const hasEnglish = header.some((h) => h.includes("english") || h.includes("translation") || h.includes("bsb"));
-      if (!hasRef || !hasEnglish) {
-        console.log(`bsb_tables.xlsx: sheet "${sheetName}" doesn't look like the interlinear table, skipping`);
-        continue;
-      }
-      // Data rows only; header handled per-sheet since column order could
-      // vary slightly between sheets (e.g. an OT sheet vs an NT sheet).
+      if (hasRef && hasEnglish) candidateSheets.push(sheetName);
+    }
+    console.log(`bsb_tables.xlsx: candidate sheets = ${JSON.stringify(candidateSheets)}`);
+    if (!candidateSheets.length) throw new Error("No sheet looked like the interlinear table");
+
+    rows = [];
+    for (const sheetName of candidateSheets) {
+      const wb = XLSX.readFile(xlsxPath, { sheets: sheetName });
+      const ws = wb.Sheets[sheetName];
+      const sheetRows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: "", raw: false });
+      console.log(`bsb_tables.xlsx: sheet "${sheetName}" fully parsed, rows=${sheetRows.length}`);
+      if (sheetRows.length < 2) continue;
+      const header = sheetRows[0].map((h) => String(h).toLowerCase().trim());
+      console.log(`bsb_tables.xlsx: sheet "${sheetName}" sample row 1: ${JSON.stringify(sheetRows[1])}`);
+      console.log(`bsb_tables.xlsx: sheet "${sheetName}" sample row 2: ${JSON.stringify(sheetRows[2])}`);
       rows.push({ header, data: sheetRows.slice(1) });
     }
   }
@@ -220,19 +237,34 @@ async function loadBsbTables() {
   const byVerse = new Map();
   let totalDataRows = 0;
   for (const { header, data } of rows) {
-    const idx = (...keywords) => header.findIndex((h) => keywords.some((k) => h.includes(k)));
-    const refIdx = idx("verse", "reference", "ref");
-    const strongIdx = idx("strong");
-    const englishIdx = idx("english", "translation", "bsb");
-    const greekIdx = idx("greek", "hebrew", "original");
+    // Prefer a specific/exact-ish keyword over a looser one, and always skip
+    // a "sort order" column even if its name also contains the keyword (e.g.
+    // "BSB Sort" is a row-order index, not the English text).
+    const findCol = (...keywordGroups) => {
+      for (const k of keywordGroups) {
+        const i = header.findIndex((h) => h.includes(k) && !h.includes("sort"));
+        if (i !== -1) return i;
+      }
+      return -1;
+    };
+    const refIdx = findCol("verse", "reference", "ref");
+    const strongIdx = findCol("str grk", "strong grk", "grk strong", "strongs grk", "strong");
+    const englishIdx = findCol("version", "translation", "english", "bsb");
+    const greekIdx = findCol("greek", "grk", "hebrew", "original");
+    // A dedicated "BSB Sort"-style column gives each row's position in
+    // natural English reading order, which can differ from the sheet's
+    // default (source-language) row order.
+    const bsbSortIdx = header.findIndex((h) => h.includes("bsb") && h.includes("sort"));
     if (refIdx === -1 || englishIdx === -1) continue;
     console.log(
-      `bsb_tables: columns ref=${refIdx} strong=${strongIdx} english=${englishIdx} greek=${greekIdx} (of ${header.length})`
+      `bsb_tables: columns ref=${refIdx} strong=${strongIdx} english=${englishIdx} greek=${greekIdx} bsbSort=${bsbSortIdx} (of ${header.length})`
     );
 
     let lastRef = null;
+    let seq = 0;
     for (const row of data) {
       totalDataRows++;
+      seq++;
       if (!row || !row.length) continue;
       const refCell = row[refIdx];
       const ref = refCell ? parseRef(refCell) : lastRef;
@@ -241,15 +273,18 @@ async function loadBsbTables() {
       const english = String(row[englishIdx] ?? "").trim();
       if (!english) continue;
       const strongBase = strongIdx !== -1 ? baseStrong(row[strongIdx]) : null;
+      const sortKey = bsbSortIdx !== -1 ? Number(row[bsbSortIdx]) || seq : seq;
       const key = `${ref.book}:${ref.chapter}:${ref.verse}`;
       let arr = byVerse.get(key);
       if (!arr) {
         arr = [];
         byVerse.set(key, arr);
       }
-      arr.push({ english, strongBase });
+      arr.push({ english, strongBase, sortKey });
     }
   }
+  for (const arr of byVerse.values()) arr.sort((a, b) => a.sortKey - b.sortKey);
   console.log(`bsb_tables: ${totalDataRows} data rows total, grouped into ${byVerse.size} verses`);
+  console.log(`bsb_tables: sample verse rows (JHN:1:1): ${JSON.stringify(byVerse.get("JHN:1:1"))}`);
   return byVerse;
 }
