@@ -2,7 +2,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { DATA_DIR } from "./lib/paths.mjs";
-import { NT_BOOKS } from "./lib/books.mjs";
+import { BOOKS, NT_BOOKS } from "./lib/books.mjs";
 import { fetchFirst } from "./lib/fetch.mjs";
 import { parseRef } from "./lib/bsb-ref.mjs";
 import { tokenize } from "./lib/align-text.mjs";
@@ -113,6 +113,8 @@ try {
   );
   const lines = fs.readFileSync(bsbTxtPath, "utf8").split(/\r\n|\r|\n/);
   const canonical = new Map(); // "BOOK:c:v" -> text
+  const maxVerseInChapter = new Map(); // "BOOK:c" -> highest verse number seen
+  const maxChapterInBook = new Map(); // "BOOK" -> highest chapter number seen
   for (const line of lines) {
     const tab = line.indexOf("\t");
     if (tab === -1) continue;
@@ -121,6 +123,42 @@ try {
     const text = line.slice(tab + 1).trim();
     if (!text) continue;
     canonical.set(`${ref.book}:${ref.chapter}:${ref.verse}`, text);
+    const chKey = `${ref.book}:${ref.chapter}`;
+    maxVerseInChapter.set(chKey, Math.max(maxVerseInChapter.get(chKey) || 0, ref.verse));
+    maxChapterInBook.set(ref.book, Math.max(maxChapterInBook.get(ref.book) || 0, ref.chapter));
+  }
+
+  // Every NT and OT chapter's BSB verse count must equal bsb.txt's own count
+  // for that chapter (previously, NT chapters were silently truncated to
+  // the Greek array's verse count, dropping verses like Rom 16:25-27).
+  let chapterCountMismatches = [];
+  let addedVerseReport = [];
+  for (const book of BOOKS) {
+    const bsb = readJson(`text/bsb/${book.id}.json`);
+    const expectedChapters = maxChapterInBook.get(book.id) || 0;
+    if (bsb.chapters.length !== expectedChapters) {
+      chapterCountMismatches.push(`${book.id}: ${bsb.chapters.length} chapters, bsb.txt has ${expectedChapters}`);
+    }
+    for (let c = 0; c < bsb.chapters.length; c++) {
+      const expected = maxVerseInChapter.get(`${book.id}:${c + 1}`) || 0;
+      const actual = bsb.chapters[c].length;
+      if (actual !== expected) {
+        chapterCountMismatches.push(`${book.id} ${c + 1}: ${actual} verses, bsb.txt has ${expected}`);
+      }
+      for (let vi = actual; vi < expected; vi++) {
+        addedVerseReport.push(`${book.id} ${c + 1}:${vi + 1}`);
+      }
+    }
+  }
+  check(
+    "Every BSB chapter's verse count matches bsb.txt exactly (NT and OT)",
+    chapterCountMismatches.length === 0,
+    `${chapterCountMismatches.length} mismatches, e.g. ${chapterCountMismatches.slice(0, 10).join(" | ")}`
+  );
+  if (addedVerseReport.length) {
+    console.log(
+      `Verses bsb.txt has that BSB output was still missing (${addedVerseReport.length}): ${addedVerseReport.join(", ")}`
+    );
   }
 
   let checkedVerses = 0;

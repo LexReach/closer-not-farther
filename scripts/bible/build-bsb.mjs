@@ -118,14 +118,28 @@ if (tableRows) {
   let totalWords = 0;
   let matchedWords = 0;
   let mismatchedVerses = 0;
+  const addedVerses = []; // verses beyond the old Greek-array-bound loop that this fix now includes
   for (const book of NT_BOOKS) {
     const greek = JSON.parse(fs.readFileSync(path.join(greekDir, `${book.id}.json`), "utf8"));
+    const plainChapters = plain.get(book.id) || [];
+    // bsb.txt sometimes has verses (or whole trailing material) our Greek
+    // source doesn't - e.g. Romans 16:25-27 (a doxology SBLGNT only carries
+    // in its textual apparatus) - so the loop bounds must be the max of the
+    // two, not just the Greek array's own size, or those verses are simply
+    // never visited and silently dropped.
+    const numChapters = Math.max(greek.chapters.length, plainChapters.length);
     const chapters = [];
-    for (let c = 0; c < greek.chapters.length; c++) {
+    for (let c = 0; c < numChapters; c++) {
       const chapterOut = [];
-      for (let v = 0; v < greek.chapters[c].length; v++) {
-        const gWords = greek.chapters[c][v];
-        const canonicalText = plain.get(book.id)?.[c]?.[v] ?? null;
+      const greekChapterArr = greek.chapters[c] || [];
+      const plainChapterArr = plainChapters[c] || [];
+      const numVerses = Math.max(greekChapterArr.length, plainChapterArr.length);
+      for (let v = 0; v < numVerses; v++) {
+        const gWords = greekChapterArr[v];
+        const canonicalText = plainChapterArr[v] ?? null;
+        if (canonicalText != null && (c >= greek.chapters.length || v >= greekChapterArr.length)) {
+          addedVerses.push(`${book.id} ${c + 1}:${v + 1}`);
+        }
         if (canonicalText == null) {
           // bsb.txt itself has nothing here: a genuinely missing verse.
           chapterOut.push(null);
@@ -184,6 +198,9 @@ if (tableRows) {
     `bsb_tables alignment: ${matchedWords}/${totalWords} NT English words linked to a Greek index (${((matchedWords / totalWords) * 100).toFixed(2)}%)`
   );
   console.log(`bsb_tables alignment: ${mismatchedVerses} verses where segments didn't reconstruct bsb.txt exactly`);
+  console.log(
+    `bsb.txt verses beyond the Greek array's own bounds, now included (${addedVerses.length}): ${addedVerses.join(", ")}`
+  );
 }
 
 async function loadBsbTables() {
