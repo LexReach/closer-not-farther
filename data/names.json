@@ -16,7 +16,7 @@
     "male_occurrences": 79,
     "female_occurrences": 18,
     "verify": true,
-    "verify_note": "Could not confirm the exact Table 6 totals (79 male / 18 female) against the book itself in this session: WebFetch to gnosis.org/wikisource/sacred-texts/earlychristianwritings/wikipedia was blocked by the network egress proxy for every domain tried, and WebSearch results discuss Bauckham's onomastic argument and the underlying Ilan totals (2625/447 male, 328/74 female, which match this file's palestine_totals) but do not quote the Gospels+Acts sub-table's exact figures. Left unchanged; flagging for a follow-up check against a physical/library copy of ch. 4, Table 6 (2nd ed., p.84 per one secondary source)."
+    "verify_note": "The Table 6 totals (79 male / 18 female) are unverified: Wikipedia's 'Jesus and the Eyewitnesses' article (fetched via CI, data/fetched/verify-manuscripts.json) is a reception/awards summary of the book and does not reproduce Table 6 or any of its figures (it does note, without numbers, that Bauckham argues the Gospels+Acts name distribution matches Ilan's Palestinian corpus, and that Kamil Gregor and Brian Blais have critiqued this claim). Where to check: Bauckham, Jesus and the Eyewitnesses, 2nd ed., ch. 4, Table 6."
   },
   "male": [
     {
@@ -59,7 +59,7 @@
       "palestine": 71,
       "gospels_acts": 1,
       "verify": true,
-      "verify_note": "palestine:71 is confirmed by WebSearch snippets describing Bauckham's tally of Ilan's data (Jonathan as the 8th-ranked male name at 71 occurrences). gospels_acts:1 could not be independently confirmed against the book itself, but is plausible: Jonathan's only candidate occurrence in the Gospels+Acts corpus is the disputed textual variant at Acts 4:6, where most manuscripts read 'John' (son of Annas) but some (followed by e.g. NEB, Jerusalem Bible) read 'Jonathan' - matching Josephus's report that Annas's son Jonathan became high priest. Left unchanged; this is a judgment call, not a confirmed figure from the book."
+      "verify_note": "palestine:71 is confirmed by WebSearch snippets describing Bauckham's tally of Ilan's data (Jonathan as the 8th-ranked male name at 71 occurrences). gospels_acts:1 is unverified: Wikipedia's 'Jesus and the Eyewitnesses' article (fetched via CI) does not discuss individual name counts at all, so it neither confirms nor refutes this. It is plausible: Jonathan's only candidate occurrence in the Gospels+Acts corpus is the disputed textual variant at Acts 4:6, where most manuscripts read 'John' (son of Annas) but some (followed by e.g. NEB, Jerusalem Bible) read 'Jonathan' - matching Josephus's report that Annas's son Jonathan became high priest - but this is a judgment call, not a confirmed figure from the book. Where to check: Bauckham, Jesus and the Eyewitnesses, 2nd ed., ch. 4, Table 6."
     },
     {
       "name": "Mattathias / Matthew",

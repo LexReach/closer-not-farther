@@ -252,11 +252,10 @@
       "contents": "Complete NT (Gospels, Acts, Epistles, Revelation)",
       "date_low": 1400,
       "date_high": 1500,
-      "year_known": 1887,
-      "year_known_basis": "First full scholarly study, J. Rendel Harris, 'The Leicester Codex of the New Testament' (1887); the manuscript had been in England earlier but this monograph made its mixed, sometimes early text widely known to critics.",
+      "year_known": 1671,
+      "year_known_basis": "Wikipedia 'Minuscule 69': John Mill was permitted to use the manuscript at Oxford and collated it there in 1671 (as 'L'), for his 1707 Novum Testamentum; it had already been given to the Leicester Library by Thomas Hayne in 1641. Later re-collated by Tregelles (1852) and Scrivener (1855), and seen by Gregory (1883). Corrected from 1887 (J. Rendel Harris's later monograph on the codex, which was not the earliest scholarly use).",
       "found": "Leicestershire Record Office (deposited by the City of Leicester), England",
-      "added_by_build": true,
-      "verify": true
+      "added_by_build": true
     },
     {
       "ga": "81",
@@ -279,7 +278,8 @@
       "year_known_basis": "Colophon-dated to 1087. Part of the Harleian collection (Robert Harley); catalogued in the British Museum's 1759 printed catalogue of the Harleian manuscripts (Harley MS 5537).",
       "found": "British Library, Harley MS 5537, London",
       "added_by_build": true,
-      "verify": true
+      "verify": true,
+      "verify_note": "Wikipedia 'Minuscule 104' confirms it was purchased by John Covel, chaplain of the Levant Company at Constantinople, 1670-1676, and later examined by Mill, Griesbach, Bloomfield, Henri Omont (who described the British Museum's Harleian Greek manuscripts in 1884), and F.H.A. Scrivener -- but gives no single year for when it first entered scholarship, so this does not confirm or refute this dataset's 1759 (British Museum's printed Harleian catalogue) claim. Check the INTF Liste: https://ntvmr.uni-muenster.de/liste?docID=30104"
     },
     {
       "ga": "157",
@@ -287,11 +287,10 @@
       "contents": "Gospels",
       "date_low": 1122,
       "date_high": 1122,
-      "year_known": 1780,
-      "year_known_basis": "Colophon-dated to 1122; carries the 'Jerusalem Colophon' claiming descent from ancient Jerusalem exemplars, and was produced for the Byzantine imperial family. Examined among the Vatican Greek manuscripts during Andreas Birch's 1780s European collating tour (published 1788).",
+      "year_known": 1788,
+      "year_known_basis": "Wikipedia 'Minuscule 157': in 1788 the scholar Andreas Birch made a facsimile of the manuscript, calling it the most important New Testament manuscript except Codex Vaticanus; later examined by Johann Scholz, collated by Herman Hoskier, and seen by Gregory in 1886. (Refines this dataset's earlier 1780 estimate for the same Birch tour to the specific 1788 facsimile.)",
       "found": "Biblioteca Apostolica Vaticana, Vat. Urb. gr. 2, Rome",
-      "added_by_build": true,
-      "verify": true
+      "added_by_build": true
     },
     {
       "ga": "205",
@@ -303,7 +302,8 @@
       "year_known_basis": "Written by scribe John Rhosus for Cardinal Bessarion (with codices 354, 357); entered the Biblioteca Marciana via Bessarion's 1468 bequest and was first described in print in Anton Maria Zanetti's 1740 catalogue of the Marciana's Greek manuscripts.",
       "found": "Biblioteca Marciana, Venice",
       "added_by_build": true,
-      "verify": true
+      "verify": true,
+      "verify_note": "Wikipedia 'Minuscule 205' confirms it was written for Cardinal Bessarion and sent to his library in 1468, and says it 'was added to the list of New Testament manuscripts by Griesbach' and 'examined by Birch and Burgon' and 'seen [by] C. R. Gregory ... in 1886' -- but gives no year for Griesbach's or Birch/Burgon's work, so this does not confirm or refute this dataset's 1740 (Zanetti's catalogue) claim. Check the INTF Liste: https://ntvmr.uni-muenster.de/liste?docID=30205"
     },
     {
       "ga": "209",
@@ -311,11 +311,10 @@
       "contents": "Complete NT (Revelation quire added slightly later)",
       "date_low": 1300,
       "date_high": 1400,
-      "year_known": 1788,
-      "year_known_basis": "Also a Bessarion manuscript, present with him at the Council of Florence (1439); entered Western critical notice through Andreas Birch's 1788 published collations of Vatican/Venetian codices. Leading witness of family 1 (f1).",
+      "year_known": 1518,
+      "year_known_basis": "Wikipedia 'Minuscule 209': Hoskier reported that the printer/scholar Aldus used the manuscript to correct the Erasmian text in his Greek New Testament of 1518. It had earlier belonged to Cardinal Bessarion, present with him at the Council of Florence in 1439 (matching this dataset's 'found'); later examined by Birch, Engelbreth, Fleck, Rinck, and Burgon, and seen by Gregory in 1886. Corrected from 1788 (Birch's later published collations, superseded by the earlier 1518 use).",
       "found": "Biblioteca Marciana, Fondo antico 10, Venice",
-      "added_by_build": true,
-      "verify": true
+      "added_by_build": true
     },
     {
       "ga": "330",
@@ -323,11 +322,10 @@
       "contents": "NT except Revelation",
       "date_low": 1100,
       "date_high": 1200,
-      "year_known": 1864,
-      "year_known_basis": "Catalogued among the Greek manuscripts of the Imperial Public Library in de Muralt's 1864 catalogue.",
+      "year_known": 1715,
+      "year_known_basis": "Wikipedia 'Minuscule 330': described by Bernard de Montfaucon in his 1715 catalogue 'Bibliotheca Coisliniana olim Segueriana' (p. 249) of the Coislin collection it was then part of; later added to the list of NT manuscripts by Johann Scholz, and examined/collated by Paulin Martin and Eduard de Muralt. Corrected from 1864 (de Muralt's later catalogue, superseded by Montfaucon's earlier description).",
       "found": "National Library of Russia, St Petersburg",
-      "added_by_build": true,
-      "verify": true
+      "added_by_build": true
     },
     {
       "ga": "383",
@@ -347,10 +345,9 @@
       "date_low": 1000,
       "date_high": 1100,
       "year_known": 1690,
-      "year_known_basis": "Held in the Imperial (later Austrian National) Library, Vienna; described in the late-17th-century Lambeck/Nessel catalogues of the library's Greek manuscripts (Theol. gr. 302).",
+      "year_known_basis": "Wikipedia 'Minuscule 424' bibliography cites Andreas Christian Hwiid's 1785 monograph on the manuscript, titled with its Vienna imperial-library catalogue number 'Lambecii XXXIV' -- i.e. Peter Lambeck's catalogue (indexed by Nessel, 1690), consistent with this dataset's existing claim. Also examined by Treschow, Franz Karl Alter (whose 1786-87 Greek NT edition used it), Andreas Birch, and J.J. Griesbach; seen by Gregory in 1887.",
       "found": "Austrian National Library, Vienna",
-      "added_by_build": true,
-      "verify": true
+      "added_by_build": true
     },
     {
       "ga": "614",
@@ -362,7 +359,8 @@
       "year_known_basis": "Important 'Western'-type witness in Acts (Aland Category III); drawn into critical use through F.H.A. Scrivener's and later J.H. Ropes's collations of Acts manuscripts.",
       "found": "Biblioteca Ambrosiana, Milan",
       "added_by_build": true,
-      "verify": true
+      "verify": true,
+      "verify_note": "Wikipedia 'Minuscule 614' says 'The manuscript was added to the list of New Testament manuscripts by Johann Martin Augustin Scholz' (no year given) and that 'C.R. Gregory saw the manuscript in 1886' -- it credits Scholz, not Scrivener/Ropes as this dataset's prior year_known_basis assumed, and gives no year for that listing, so 1860 is not confirmed (and the Scrivener/Ropes attribution appears to be wrong). Check the INTF Liste: https://ntvmr.uni-muenster.de/liste?docID=30614"
     },
     {
       "ga": "700",
@@ -370,11 +368,10 @@
       "contents": "Gospels",
       "date_low": 1000,
       "date_high": 1100,
-      "year_known": 1875,
-      "year_known_basis": "Part of the British Museum's Egerton collection (Egerton MS 2610); examined by Burgon and collated by Simcox and Scrivener (who, with Hoskier, had listed it as no. 604 before Gregory renumbered it 700). Noted for a unique Lord's Prayer reading at Luke 11:2 shared only with minuscule 162.",
+      "year_known": 1882,
+      "year_known_basis": "Wikipedia 'Minuscule 700': 'The codex was bought on the 28th April, 1882 for the British Museum, through the auspices of Edward Maunde Thompson.' Examined by Dean Burgon and collated by W.H. Simcox, Scrivener, and Hoskier. Corrected from 1875 (an unsupported estimate).",
       "found": "British Library, Egerton MS 2610, London",
-      "added_by_build": true,
-      "verify": true
+      "added_by_build": true
     },
     {
       "ga": "892",
@@ -382,11 +379,10 @@
       "contents": "Gospels",
       "date_low": 800,
       "date_high": 900,
-      "year_known": 1890,
-      "year_known_basis": "Additional MS 33277 at the British Museum; Additional-series numbers in the low 33000s were assigned around 1890. Later studied intensively by Kirsopp and Silva Lake, who noted it still preserves the page/line divisions of its majuscule exemplar.",
+      "year_known": 1887,
+      "year_known_basis": "Wikipedia 'Minuscule 892': 'The codex was acquired by the British Museum in 1887 from H. L. Dupuis.' Studied by Dean Burgon, later by J. Rendel Harris. Corrected from 1890 (an approximate estimate from the Additional-manuscript number range).",
       "found": "British Library, Add MS 33277, London",
-      "added_by_build": true,
-      "verify": true
+      "added_by_build": true
     },
     {
       "ga": "1241",
@@ -421,7 +417,8 @@
       "year_known_basis": "Colophon-dated to 948, copied by the monk Ephraim (who also copied minuscule 1739 in the 10th c.). Identified as the leading witness of family 1 (f1) following Kirsopp Lake's 1902 study of the family (Texts and Studies VII.3, 'Codex 1 of the Gospels and Its Allies').",
       "found": "Vatopedi Monastery, Mount Athos, Greece",
       "added_by_build": true,
-      "verify": true
+      "verify": true,
+      "verify_note": "Wikipedia 'Minuscule 1582' says variants were cited in Hermann von Soden's apparatus (undated in this article) and that 'Burnett Hillman Streeter drew attention to the manuscript and its relationship with Family 1 ... in his [1924] book The Four Gospels: A Study of Origins' -- crediting Streeter (1924), not Kirsopp Lake's 1902 study of minuscule 1 (a different manuscript) as this dataset's prior year_known_basis assumed. The article otherwise says only that the manuscript 'came to scholarly notice in the early 20th century' without a precise year. Check the INTF Liste: https://ntvmr.uni-muenster.de/liste?docID=31582"
     },
     {
       "ga": "2053",
@@ -429,11 +426,10 @@
       "contents": "Revelation, with the commentary of Oecumenius",
       "date_low": 1200,
       "date_high": 1300,
-      "year_known": 1929,
-      "year_known_basis": "Drawn into NT textual scholarship through Herman C. Hoskier's 1929 collation of Apocalypse manuscripts, 'Concerning the Text of the Apocalypse'. Aland placed it in Category I for Revelation.",
+      "year_known": 1914,
+      "year_known_basis": "Wikipedia 'Minuscule 2053' bibliography: Herman C. Hoskier, 'Der Apokalypse Text in dem Kommentar-Codex Messina 99,' American Journal of Philology 35 (1914) -- a study specifically of this manuscript, earlier than this dataset's prior assumption of Hoskier's 1929 'Concerning the Text of the Apocalypse'.",
       "found": "Biblioteca Universitaria, Messina, Italy",
-      "added_by_build": true,
-      "verify": true
+      "added_by_build": true
     },
     {
       "ga": "2344",
@@ -445,7 +441,8 @@
       "year_known_basis": "Held at the Bibliothèque nationale de France; likely first catalogued in Henri Omont's 1888 'Inventaire sommaire des manuscrits grecs' of the BnF collection.",
       "found": "Bibliothèque nationale de France, Paris",
       "added_by_build": true,
-      "verify": true
+      "verify": true,
+      "verify_note": "Wikipedia 'Minuscule 2344' has almost no discovery/cataloguing history: it says only that 'the text was collated by J. Schmid' (bibliography: 'Unbeachtete [overlooked] Apokalypse-Handschriften,' 1939) with 'a new collation ... by M. Davies' (1968) -- no mention of Henri Omont or an 1888 Bibliothèque nationale catalogue, so this dataset's 1888 claim is neither confirmed nor refuted (Schmid's 1939 title suggests the manuscript's significance for NT criticism, as opposed to its mere physical cataloguing, may actually date to 1939). Check the INTF Liste: https://ntvmr.uni-muenster.de/liste?docID=32344"
     }
   ],
   "count_over_time": {
