@@ -2,7 +2,7 @@
 import { h, s, clear } from '../lib/dom';
 import { Disclosure, ModuleHeader, SourceList, Toggle } from '../components';
 import { skepticsFor, sourceText } from '../data';
-import { assetUrl } from '../lib/nav';
+import { assetUrl, href } from '../lib/nav';
 import p66 from '../../data/p66.json';
 
 interface Box {
@@ -301,7 +301,7 @@ export function render(root: HTMLElement) {
           { class: 'p66-meta' },
           h('div', null, h('dt', null, 'Manuscript'), h('dd', null, `${m.ga}, ${m.name}`)),
           h('div', null, h('dt', null, 'Date'), h('dd', null, 'c. 200 AD (range 150–250; some argue later)')),
-          h('div', null, h('dt', null, 'Held at'), h('dd', null, 'Fondation Martin Bodmer, Cologny')),
+          h('div', null, h('dt', null, 'Held at'), h('dd', null, 'Fondation Martin Bodmer, Cologny · ', h('a', { href: href('/library#ms=P66'), 'data-link': true }, 'Open in the Library'))),
           h('div', null, h('dt', null, 'Passage'), h('dd', null, `${sourceText.reference} (${tokens.length} words)`)),
         ),
         h('section', { class: 'p66-row' }, h('div', { class: 'p66-row__head' }, h('h2', null, 'On the papyrus'), breakToggle.el), rowPap),

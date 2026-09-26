@@ -1,6 +1,7 @@
 // Module 2: Closer, Not Farther.
 import * as d3 from 'd3';
 import { h, s, clear, fmtInt, reducedMotion } from '../lib/dom';
+import { navigate } from '../lib/nav';
 import { Disclosure, Legend, ModuleHeader, Slider, SourceList, StatTile, Tooltip } from '../components';
 import { skepticsFor } from '../data';
 import mss from '../../data/manuscripts.json';
@@ -54,7 +55,7 @@ export function earliest(year: number): Witness | null {
 export function intfUrl(ga: string): string {
   const n = (s: string) => parseInt(s.replace(/\D/g, ''), 10);
   const doc = ga.startsWith('P') ? 10000 + n(ga) : ga.startsWith('l') ? 40000 + n(ga) : ga.startsWith('0') ? 20000 + n(ga) : 30000 + n(ga);
-  return `https://ntvmr.uni-muenster.de/liste?docID=${doc}`;
+  return `https://ntvmr.uni-muenster.de/manuscript-workspace?docID=${doc}`;
 }
 
 export const dateRange = (w: Witness) => `c. ${w.date_low}–${w.date_high} AD`;
@@ -70,6 +71,7 @@ function witnessTip(w: Witness): HTMLElement {
     w.found ? h('p', { class: 'tt-muted' }, w.found) : null,
     w.note ? h('p', { class: 'tt-muted' }, w.note) : null,
     w.verify ? h('p', { class: 'tt-muted' }, `* Year known unconfirmed. ${w.verify_note ?? ''}`) : null,
+    h('p', { class: 'tt-muted' }, 'Select to open it in the Library.'),
     h('p', { class: 'tt-muted' }, `Source: INTF Liste; Metzger & Ehrman 2005${w.year_known_basis ? `. Year known: ${w.year_known_basis}` : ''}`),
   );
 }
@@ -173,6 +175,15 @@ export function scatter(wrap: HTMLElement, getYear: () => number, opts: { big?: 
         }
         const show = (e?: PointerEvent) => (e ? Tooltip.show(witnessTip(w), e.clientX, e.clientY) : Tooltip.showFor(witnessTip(w), g));
         g.addEventListener('pointermove', (e) => show(e));
+        if (!big) {
+          // Open the manuscript in the Library.
+          const ga = w.ga.replace(/^f13-/, '');
+          g.style.cursor = 'pointer';
+          g.addEventListener('click', () => navigate(`/library#ms=${encodeURIComponent(ga)}`));
+          g.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') navigate(`/library#ms=${encodeURIComponent(ga)}`);
+          });
+        }
         g.addEventListener('pointerleave', () => Tooltip.hide());
         g.addEventListener('focus', () => show());
         g.addEventListener('blur', () => Tooltip.hide());

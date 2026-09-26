@@ -3,11 +3,16 @@
 // it as 404.html so unknown paths still load the app and show "not found".
 // Each copy gets its own <title>, description and OpenGraph tags from
 // public/og/meta.json (written by scripts/render-og.mjs).
-import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
 
 const SITE = process.env.SITE_URL ?? 'https://lexreach.github.io/closer-not-farther/';
 const routes = ['telephone', 'timeline', 'p66', 'variants', 'names', 'coincidences', 'library', 'present', 'about'];
-const html = readFileSync('dist/index.html', 'utf8');
+let html = readFileSync('dist/index.html', 'utf8');
+// Preload the three fonts every page uses first (display, body, UI) so text
+// does not reflow when they arrive.
+const base = (html.match(/src="([^"]*)assets\//) ?? [])[1] ?? '/';
+const fonts = readdirSync('dist/assets').filter((f) => /^(fraunces-latin-opsz-normal|source-serif-4-latin-opsz-normal|ibm-plex-sans-latin-400-normal)-.*\.woff2$/.test(f));
+html = html.replace('<!--og-->', fonts.map((f) => `<link rel="preload" href="${base}assets/${f}" as="font" type="font/woff2" crossorigin />`).join('\n    ') + '\n    <!--og-->');
 const meta = existsSync('dist/og/meta.json') ? JSON.parse(readFileSync('dist/og/meta.json', 'utf8')) : {};
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 

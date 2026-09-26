@@ -1,6 +1,7 @@
 // Module 4: The 110% puzzle.
 import * as d3 from 'd3';
 import { h, s, clear, fmtInt, fmtPct } from '../lib/dom';
+import { navigate } from '../lib/nav';
 import { Disclosure, Legend, ModuleHeader, SourceList, StatTile, Toggle, Tooltip } from '../components';
 import { skepticsFor } from '../data';
 import data from '../../data/variants.json';
@@ -116,6 +117,13 @@ export function witnessChart(p: Passage, wrap: HTMLElement, opts: { big?: boolea
     g.addEventListener('pointerleave', () => Tooltip.hide());
     g.addEventListener('focus', () => Tooltip.showFor(tip(), g));
     g.addEventListener('blur', () => Tooltip.hide());
+    if (w.id !== 'Byz' && !big) {
+      g.style.cursor = 'pointer';
+      g.addEventListener('click', () => navigate(`/library#ms=${encodeURIComponent(w.id)}`));
+      g.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') navigate(`/library#ms=${encodeURIComponent(w.id)}`);
+      });
+    }
     svg.appendChild(g);
   });
   wrap.append(

@@ -338,3 +338,6 @@ body.is-bare .site-footer { display: none; }
 .verify-note { border-left: 2px solid var(--rule); padding-left: 10px; max-width: var(--measure); }
 .verify-note strong { color: var(--ink); }
 .disclosure--plain { margin-top: 16px; }
+/* Keep the footer below the fold while a route renders, so late content never shifts it into view. */
+.main { min-height: 100vh; min-height: 100svh; }
+.wstrip__seg .wstrip__n { color: var(--ink); opacity: 0.8; }
