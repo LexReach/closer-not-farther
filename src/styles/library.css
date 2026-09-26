@@ -109,3 +109,5 @@
 }
 .lib-dialog[open]:not(:modal) { position: fixed; inset: 16px; margin: auto; z-index: 50; overflow: auto; }
 .osd .openseadragon-message { display: none; }
+.ex-lib--big .shelf-card__media { aspect-ratio: 5 / 4; }
+.ex-lib--big .lib-counter__n { font-size: 64px; }

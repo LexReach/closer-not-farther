@@ -1,4 +1,5 @@
 // The featured shelf: 25 manuscripts that carry the argument. Used at the top
+import '../styles/library.css';
 // of the Library, as the home page's closing chapter and in present mode.
 import { h, reducedMotion } from '../lib/dom';
 import { href, navigate } from '../lib/nav';
