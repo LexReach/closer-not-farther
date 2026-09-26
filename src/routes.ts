@@ -10,6 +10,10 @@ export interface RouteDef {
   title: string;
   short: string;
   hook: string;
+  /** Hidden from the navigation rail. */
+  hidden?: boolean;
+  /** Full-bleed page without the rail (present mode). */
+  bare?: boolean;
   load: () => Promise<{ render: Render }>;
 }
 
@@ -69,6 +73,24 @@ export const routes: RouteDef[] = [
     short: 'Interlocks',
     hook: 'One Gospel raises a question in passing; another answers it without meaning to.',
     load: () => import('./modules/coincidences'),
+  },
+  {
+    path: '/library',
+    num: '7',
+    title: 'The Library',
+    short: 'Library',
+    hook: 'Every catalogued Greek New Testament manuscript, with page images streamed from the libraries that hold them.',
+    load: () => import('./modules/library'),
+  },
+  {
+    path: '/present',
+    num: '▶',
+    title: 'Present',
+    short: 'Present',
+    hook: '',
+    hidden: true,
+    bare: true,
+    load: () => import('./modules/present'),
   },
   {
     path: '/about',

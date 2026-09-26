@@ -65,9 +65,9 @@ export function drawNameChart(wrap: HTMLElement, sex: Sex, opts: NameChartOpts =
   const W = Math.max(300, wrap.clientWidth || 700);
   const narrow = W < 520 && !big;
   const labelW = big ? 360 : narrow ? 136 : 170;
-  const rowH = big ? 76 : narrow ? 34 : 36;
-  const barH = big ? 26 : narrow ? 11 : 12;
   const top = big ? 56 : 26;
+  const rowH = big ? Math.max(48, Math.min(76, Math.floor(((wrap.clientHeight || 640) - top - 8) / data.length))) : narrow ? 34 : 36;
+  const barH = big ? Math.round(rowH * 0.34) : narrow ? 11 : 12;
   const H = top + data.length * rowH + 6;
   const maxPct = d3.max(rows(sex), (d) => Math.max(d.palestine / t.pal, d.gospels_acts / t.gos)) ?? 0.1;
   const x = d3.scaleLinear().domain([0, Math.ceil(maxPct * 20) / 20]).range([labelW, W - (big ? 130 : narrow ? 34 : 44)]);

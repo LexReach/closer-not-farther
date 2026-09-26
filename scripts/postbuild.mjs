@@ -3,7 +3,7 @@
 // it as 404.html so unknown paths still load the app and show "not found".
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 
-const routes = ['telephone', 'timeline', 'p66', 'variants', 'names', 'coincidences', 'about'];
+const routes = ['telephone', 'timeline', 'p66', 'variants', 'names', 'coincidences', 'library', 'present', 'about'];
 const html = readFileSync('dist/index.html', 'utf8');
 for (const r of routes) {
   mkdirSync(`dist/${r}`, { recursive: true });

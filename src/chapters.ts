@@ -281,7 +281,12 @@ async function mountCoincidences(el: HTMLElement, opts: MountOpts = {}): Promise
   // All steps are laid out up front so the page does not jump; unrevealed ones are hidden.
   steps.append(c.stepsList(it, it.steps.length));
   const lis = [...steps.querySelectorAll<HTMLElement>('.uc-step')];
-  const draw = () => lis.forEach((li, i) => li.classList.toggle('is-pending', i >= shown));
+  const draw = () =>
+    lis.forEach((li, i) => {
+      li.classList.toggle('is-pending', i >= shown);
+      // On stage, earlier steps shrink to their reference so the current one has room.
+      li.classList.toggle('is-past', !!opts.big && i < shown - 1);
+    });
   if (reducedMotion()) shown = it.steps.length;
   draw();
   const tk = ticker(2600, () => {

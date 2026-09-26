@@ -27,7 +27,7 @@ const auto = mss.autographs;
 export const YEAR_MIN = 1500;
 export const YEAR_MAX = Math.max(...presets.map((p) => p.year), new Date().getFullYear());
 const LEFT_LABEL = new Set(['01', 'P46']);
-const BIG_LABELLED = new Set(['P52', 'P66', '01', '03', '2']);
+const BIG_LABELLED = new Set(['P52', '2']);
 const LABELLED = new Set(['P52', 'P66', 'P75', 'P46', '01', '03', '02', '05', '2', 'P1']);
 
 export const mid = (w: Witness) => (w.date_low + w.date_high) / 2;
@@ -109,7 +109,7 @@ export function scatter(wrap: HTMLElement, getYear: () => number, opts: { big?: 
 
     // Autograph band.
     svg.appendChild(s('rect', { x: m.left, y: y(auto.date_low), width: W - m.left - m.right, height: y(auto.date_high) - y(auto.date_low), class: 'tl-auto' }));
-    svg.appendChild(s('text', { x: W - m.right - 6, y: y(auto.date_low) + 13, 'text-anchor': 'end', class: 'tl-auto__label' }, narrow ? `NT written ${auto.date_low}–${auto.date_high}` : `${auto.label}, c. ${auto.date_low}–${auto.date_high} AD`));
+    svg.appendChild(s('text', { x: big ? m.left + 10 : W - m.right - 6, y: y(auto.date_low) + (big ? 26 : 13), 'text-anchor': big ? 'start' : 'end', class: 'tl-auto__label' }, narrow ? `NT written ${auto.date_low}–${auto.date_high}` : `${auto.label}, c. ${auto.date_low}–${auto.date_high} AD`));
 
     // Grid + axes.
     for (const t of y.ticks(big ? 5 : narrow ? 6 : 8)) {
@@ -258,7 +258,7 @@ export function scatter(wrap: HTMLElement, getYear: () => number, opts: { big?: 
         earliestG.style.transform = `translateY(${yy}px)`;
         earliestG.style.transitionDuration = slow ? '' : '0ms';
         earliestG.style.visibility = 'visible';
-        earliestLabel.textContent = narrowNow ? '' : `Earliest known in ${year}: ${e.name.split(' (')[0]} (${e.ga})`;
+        earliestLabel.textContent = narrowNow || big ? '' : `Earliest known in ${year}: ${e.name.split(' (')[0]} (${e.ga})`;
       } else {
         earliestG.style.visibility = 'hidden';
       }

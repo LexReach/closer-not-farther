@@ -108,7 +108,7 @@ export function mapInset(it: Item): SVGSVGElement {
   const lat0 = 32.64;
   const lat1 = 32.97;
   const lon0 = 35.4;
-  const lon1 = 35.76;
+  const lon1 = 35.8;
   const kx = Math.cos((32.8 * Math.PI) / 180);
   const sc = Hh / (lat1 - lat0);
   const W = Math.round((lon1 - lon0) * kx * sc);

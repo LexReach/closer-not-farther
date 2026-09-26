@@ -23,7 +23,7 @@ function buildShell(): HTMLElement {
   const nav = h(
     'ul',
     { class: 'nav' },
-    routes.map((r) => {
+    routes.filter((r) => !r.hidden).map((r) => {
       const a = h(
         'a',
         { href: href(r.path), 'data-link': true },
@@ -70,6 +70,7 @@ async function render(focus = false) {
   const page = h('div', { class: 'page' });
   main.appendChild(page);
   if (!route) {
+    document.body.classList.remove('is-bare');
     document.title = 'Not found · Closer, Not Farther';
     page.append(
       h('h1', null, 'Page not found'),
@@ -78,6 +79,7 @@ async function render(focus = false) {
     return;
   }
   document.title = route.path === '/' ? 'Closer, Not Farther' : `${route.title} · Closer, Not Farther`;
+  document.body.classList.toggle('is-bare', !!route.bare);
   const mod = await route.load();
   if (token !== renderToken) return;
   cleanup = mod.render(page);

@@ -65,11 +65,11 @@ export function witnessChart(p: Passage, wrap: HTMLElement, opts: { big?: boolea
   const big = !!opts.big;
   const W = Math.max(300, wrap.clientWidth || 700);
   const narrow = W < 520 && !big;
-  const labelW = big ? 340 : narrow ? 104 : 150;
+  const labelW = big ? 270 : narrow ? 104 : 150;
   const rowH = big ? 60 : 28;
   const top = big ? 70 : 42;
   const H = top + witnesses.length * rowH + 8;
-  const x = d3.scaleLinear().domain([2, 10]).range([labelW + 10, W - (big ? 260 : narrow ? 12 : 84)]);
+  const x = d3.scaleLinear().domain([2, 10]).range([labelW + 10, W - (big ? 200 : narrow ? 12 : 84)]);
   const reading = p.readings;
   const yes = reading ? reading.find((r) => r.key)!.label : 'Includes it';
   const no = reading ? reading.find((r) => !r.key)!.label : 'Lacks it';
@@ -84,10 +84,10 @@ export function witnessChart(p: Passage, wrap: HTMLElement, opts: { big?: boolea
   for (let c = 2; c <= 10; c++) {
     svg.append(
       s('line', { x1: x(c), x2: x(c), y1: top - 6, y2: H - 6, class: 'gridline' }),
-      c < 10 ? s('text', { x: (x(c) + x(c + 1)) / 2, y: top - 10, 'text-anchor': 'middle' }, narrow ? String(c) : centuryLabel(c)) : '',
+      c < 10 ? s('text', { x: (x(c) + x(c + 1)) / 2, y: top - 10, 'text-anchor': 'middle' }, narrow || x(3) - x(2) < (big ? 120 : 50) ? String(c) : centuryLabel(c)) : '',
     );
   }
-  svg.appendChild(s('text', { x: labelW + 10, y: 12, class: 'axis-label' }, narrow ? 'Century copied →' : 'Century the manuscript was copied →'));
+  svg.appendChild(s('text', { x: labelW + 10, y: big ? 28 : 12, class: 'axis-label' }, narrow ? 'Century copied →' : 'Century the manuscript was copied →'));
   witnesses.forEach((w, i) => {
     const v = p.contains[w.id];
     const y = top + i * rowH + rowH / 2;
