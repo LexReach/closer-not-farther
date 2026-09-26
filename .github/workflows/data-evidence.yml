@@ -34,13 +34,13 @@ jobs:
       - name: Build coverage (NTVMR page-level indexContent + restricted catalogue fallback)
         run: node scripts/evidence/build-coverage.mjs
         env:
-          EVIDENCE_COVERAGE_BUDGET_MS: "1500000"
+          EVIDENCE_COVERAGE_BUDGET_MS: "720000"
         continue-on-error: true
 
       - name: Build transcriptions (NTVMR TEI, best-effort, time-boxed)
         run: node scripts/evidence/build-transcriptions.mjs
         env:
-          EVIDENCE_TRANSCRIPTS_BUDGET_MS: "1200000"
+          EVIDENCE_TRANSCRIPTS_BUDGET_MS: "720000"
         continue-on-error: true
 
       - name: Finalize docs (NTVMR terms probe + README counts)

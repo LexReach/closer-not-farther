@@ -130,8 +130,12 @@ async function main() {
   const catalogByGA = new Map(catalog.map((r) => [r.ga, r]));
 
   // Priority subset for phase B: pre-900 AD (c0 <= 9) plus every featured GA.
-  const priority = catalog.filter((r) => (r.c0 != null && r.c0 <= 9) || featured.has(r.ga));
-  log(`Priority (pre-900 or featured) manuscripts for page-level lookup: ${priority.length}`);
+  // Featured manuscripts sort first (regardless of date) so a tight time
+  // budget still guarantees the 25 most-discussed manuscripts get done.
+  const priority = catalog
+    .filter((r) => (r.c0 != null && r.c0 <= 9) || featured.has(r.ga))
+    .sort((a, b) => Number(featured.has(b.ga)) - Number(featured.has(a.ga)) || (a.c0 ?? 99) - (b.c0 ?? 99));
+  log(`Priority (featured first, then pre-900 by century) manuscripts for page-level lookup: ${priority.length}`);
 
   // pageDataByBook: bookId -> Map(ga -> Map("c:v" -> {pageId, range}))
   const pageDataByBook = new Map(NT_BOOKS.map((b) => [b.id, new Map()]));
