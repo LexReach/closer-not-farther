@@ -1,0 +1,32 @@
+{
+  "_note": "NA28 (Nestle-Aland, 28th ed.) designates a set of manuscripts per corpus as \"staendige Zeugen\" (consistently cited witnesses), whose readings the apparatus reports at every variation unit for that corpus, not just where they diverge from the printed text. The complete lists are printed in the NA28 introduction (a copyrighted print volume, not available as fetchable data), so this file was NOT fetched: it is compiled here from general textual-criticism knowledge (standard manuscript handbooks and the well-known 'headline' names of the consistently-cited witnesses), deliberately kept to the manuscripts the compiler is confident about. It is a conservative, partial approximation, NOT a verified reproduction of the NA28 front matter, and it omits many second-order/partial witnesses and several less-famous first-order ones that a full transcription of NA28's introduction would include. Treat this as a rough guide only; consult NA28 (or NA28's companion volumes) directly for the authoritative, complete lists.",
+  "source": "Compiled from general knowledge of NA28's introduction (Nestle-Aland, Novum Testamentum Graece, 28th revised edition, Deutsche Bibelgesellschaft, Stuttgart), not fetched from any URL.",
+  "compiled": true,
+  "corpora": {
+    "e": {
+      "label": "Gospels",
+      "majuscules": ["01", "02", "03", "04", "05", "032", "038"],
+      "papyri": ["P1", "P4", "P5", "P37", "P39", "P45", "P52", "P53", "P64", "P66", "P67", "P69", "P70", "P75", "P77", "P80", "P90", "P95", "P101", "P102", "P104", "P106", "P108", "P109", "P111"]
+    },
+    "a": {
+      "label": "Acts",
+      "majuscules": ["01", "02", "03", "04", "048"],
+      "papyri": ["P29", "P38", "P45", "P48", "P50", "P53", "P56", "P57", "P74", "P91"]
+    },
+    "p": {
+      "label": "Pauline epistles (incl. Hebrews)",
+      "majuscules": ["01", "02", "03", "04", "06", "010", "012", "044", "048"],
+      "papyri": ["P10", "P13", "P15", "P16", "P27", "P30", "P32", "P40", "P46", "P49", "P51", "P61", "P65", "P92", "P99", "P113"]
+    },
+    "c": {
+      "label": "Catholic epistles",
+      "majuscules": ["01", "02", "03", "04", "048"],
+      "papyri": ["P9", "P20", "P23", "P72", "P74", "P78", "P81", "P100", "P125", "P126"]
+    },
+    "r": {
+      "label": "Revelation",
+      "majuscules": ["01", "02", "046", "047", "051", "052"],
+      "papyri": ["P18", "P24", "P43", "P47", "P85", "P98", "P115"]
+    }
+  }
+}

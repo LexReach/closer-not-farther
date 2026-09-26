@@ -1,0 +1,83 @@
+name: Build manuscript-evidence data
+
+on:
+  push:
+    branches: [data-evidence]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-evidence
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data-evidence
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Show environment
+        run: |
+          node --version
+          echo "Working dir: $(pwd)"
+          ls -la data/evidence || true
+
+      - name: Build coverage (catalogue baseline + best-effort NTVMR page-level enrichment)
+        run: node scripts/evidence/build-coverage.mjs
+
+      - name: Build apparatus (SBLGNT, github.com/LogosBible/SBLGNT)
+        run: node scripts/evidence/build-apparatus.mjs
+        continue-on-error: true
+
+      - name: Build transcriptions (NTVMR TEI, best-effort, time-boxed)
+        run: node scripts/evidence/build-transcriptions.mjs
+        env:
+          EVIDENCE_TRANSCRIPTS_BUDGET_MS: "1800000"
+        continue-on-error: true
+
+      - name: Finalize docs (NTVMR terms probe + README counts)
+        run: node scripts/evidence/finalize-docs.mjs
+        continue-on-error: true
+
+      - name: Show output sizes
+        run: |
+          echo "--- data/evidence ---"
+          find data/evidence -maxdepth 3 -type d | sort
+          du -sh data/evidence/* 2>/dev/null || true
+          echo "--- coverage sample ---"
+          head -c 500 data/evidence/coverage/JHN.json || true
+          echo
+          echo "--- summary sample ---"
+          head -c 500 data/evidence/coverage/summary.json || true
+          echo
+          echo "--- git status ---"
+          git status --porcelain
+
+      - name: Validate JSON
+        run: |
+          set -e
+          find data/evidence -name '*.json' -print0 | while IFS= read -r -d '' f; do
+            node -e "JSON.parse(require('fs').readFileSync(process.argv[1], 'utf8'))" "$f" || { echo "INVALID JSON: $f"; exit 1; }
+          done
+          echo "All data/evidence JSON files parse OK."
+
+      - name: Commit and push data/evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/evidence
+          if git diff --cached --quiet; then
+            echo "No changes to data/evidence, nothing to commit."
+            exit 0
+          fi
+          git commit -m "Build manuscript-evidence data ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+          git push origin HEAD:data-evidence
