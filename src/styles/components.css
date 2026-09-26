@@ -323,3 +323,15 @@
 .sk__framing { margin-top: 22px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); max-width: var(--measure); }
 .sk__framing p { margin: 0; }
 .sk__framing .sk__label { margin-bottom: 6px; }
+.tooltip .tt-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 4px 0 6px; }
+.tooltip .tt-pair div { display: flex; flex-direction: column; }
+.tooltip .tt-big { font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+
+/* Footer, 404 */
+.site-footer { margin-left: var(--rail-w); padding: 24px var(--gutter) 40px; border-top: 1px solid var(--rule); font-family: var(--font-ui); font-size: 0.78rem; color: var(--muted); }
+.site-footer p { max-width: var(--content-max); margin: 0 auto; }
+.site-footer a { color: var(--muted); }
+body.is-bare .site-footer { display: none; }
+@media (max-width: 860px) { .site-footer { margin-left: 0; padding-bottom: 96px; } }
+.nf-list { padding-left: 1.1em; max-width: var(--measure); }
+.nf-list li { margin-bottom: 8px; }

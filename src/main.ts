@@ -47,6 +47,11 @@ function buildShell(): HTMLElement {
       h('p', { class: 'rail__foot' }, 'All figures come from the data files cited on each page.'),
     ),
     main,
+    h(
+      'footer',
+      { class: 'site-footer' },
+      h('p', null, 'Closer, Not Farther · ', h('a', { href: href('/about'), 'data-link': true }, 'Method and sources'), ' · ', h('a', { href: 'https://github.com/LexReach/closer-not-farther' }, 'Code and data'), ' · ', h('span', { class: 'num' }, `v${__APP_VERSION__} · ${__COMMIT__}`)),
+    ),
   );
   return shell;
 }
@@ -73,8 +78,14 @@ async function render(focus = false) {
     document.body.classList.remove('is-bare');
     document.title = 'Not found · Closer, Not Farther';
     page.append(
-      h('h1', null, 'Page not found'),
-      h('p', null, 'That address is not part of this site. ', h('a', { href: href('/'), 'data-link': true }, 'Go to the start'), '.'),
+      h('p', { class: 'eyebrow' }, 'Error 404'),
+      h('h1', null, 'This page is not in the manuscript tradition.'),
+      h('p', { class: 'lede' }, 'No surviving copy has it. The address may be mistyped, or the page may have moved. These pages do exist:'),
+      h(
+        'ul',
+        { class: 'nf-list' },
+        routes.filter((r) => !r.hidden).map((r) => h('li', null, h('a', { href: href(r.path), 'data-link': true }, r.title), r.hook ? h('span', { class: 'muted' }, ` · ${r.hook}`) : '')),
+      ),
     );
     return;
   }
@@ -110,6 +121,7 @@ function init() {
   });
   window.addEventListener('popstate', () => render(false));
   render(false);
+  if (new URLSearchParams(location.search).get('tour') === '1') import('./tour/tour').then((m) => m.maybeAutostart());
 }
 
 init();

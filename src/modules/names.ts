@@ -33,7 +33,7 @@ const TAG_LABEL: Record<Tag, string> = {
 const TAG_VAR: Record<Tag, string> = {
   'canonical-overlap': 'var(--muted)',
   'palestinian-typical': 'var(--success)',
-  atypical: 'var(--accent-2)',
+  atypical: 'var(--r-rome)',
 };
 
 function totals(sex: Sex) {

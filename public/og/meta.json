@@ -1,0 +1,52 @@
+{
+  "/": {
+    "title": "Closer, Not Farther",
+    "description": "An interactive look at how the New Testament text was copied, found and checked, with what skeptics say at every step.",
+    "image": "og/home.png"
+  },
+  "/telephone": {
+    "title": "Telephone vs. Tree · Closer, Not Farther",
+    "description": "Copy a text through a single chain and through a branching tree, then try to recover the original by majority vote.",
+    "image": "og/telephone.png"
+  },
+  "/timeline": {
+    "title": "Closer, Not Farther · Closer, Not Farther",
+    "description": "Five centuries of manuscript discovery: the earliest copy scholars can read has moved back more than a thousand years since 1516.",
+    "image": "og/timeline.png"
+  },
+  "/p66": {
+    "title": "Read P66 yourself · Closer, Not Farther",
+    "description": "A papyrus of John from about 200 AD, lined up word by word with a modern Greek edition and an English translation.",
+    "image": "og/p66.png"
+  },
+  "/variants": {
+    "title": "The 110% puzzle · Closer, Not Farther",
+    "description": "The famous disputed passages are in your footnotes. See who supports them, and what the 400,000 variants really are.",
+    "image": "og/variants.png"
+  },
+  "/names": {
+    "title": "Names as fingerprints · Closer, Not Farther",
+    "description": "The Gospels use first-century Palestinian names at about the rates the population did, and qualify the common ones.",
+    "image": "og/names.png"
+  },
+  "/coincidences": {
+    "title": "Undesigned coincidences · Closer, Not Farther",
+    "description": "One Gospel raises a question in passing; another answers it without meaning to.",
+    "image": "og/coincidences.png"
+  },
+  "/library": {
+    "title": "Every Greek New Testament manuscript, in one place · Closer, Not Farther",
+    "description": "The catalogued manuscripts of the Greek New Testament, with page images streamed from the libraries that hold them.",
+    "image": "og/library.png"
+  },
+  "/present": {
+    "title": "The argument, on stage · Closer, Not Farther",
+    "description": "Full-screen, keyboard-driven presentation of the live charts.",
+    "image": "og/present.png"
+  },
+  "/about": {
+    "title": "Method, sources and limits · Closer, Not Farther",
+    "description": "Where every number comes from, what the site does not claim, and every skeptic point with its citation.",
+    "image": "og/about.png"
+  }
+}

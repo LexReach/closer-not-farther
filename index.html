@@ -5,12 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="An interactive look at how the New Testament text was transmitted, and why time has brought us closer to it, not farther." />
     <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#F7F5F0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#15140F" media="(prefers-color-scheme: dark)" />
+    <!--og-->
     <title>Closer, Not Farther</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231F4E79'/%3E%3Ctext x='16' y='23' font-family='serif' font-size='20' text-anchor='middle' fill='%23F7F5F0'%3E%CE%9B%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <div id="app"></div>
+    <noscript>
+      <main style="max-width:680px;margin:48px auto;padding:0 20px;font-family:Georgia,serif;line-height:1.6;color:#1E1B16;background:#F7F5F0">
+        <h1 style="font-weight:500;line-height:1.1">As time goes on, we&rsquo;re not getting farther from the text. We&rsquo;re getting closer.</h1>
+        <p>This site makes the case that the New Testament text has been transmitted reliably: it was copied through many independent lines rather than one chain; the earliest known copies have moved more than a thousand years closer to the originals since 1516; the famous disputed passages are few and are printed in the footnotes; the Gospels&rsquo; personal names fit first-century Palestine; and the Gospels interlock in ways no one arranged. Every chart also shows what skeptics say.</p>
+        <p>The interactive charts need JavaScript. The sources are:</p>
+        <ul>
+          <li>INTF Kurzgefasste Liste, <a href="https://ntvmr.uni-muenster.de/liste">ntvmr.uni-muenster.de/liste</a></li>
+          <li>Bruce Metzger &amp; Bart Ehrman, <i>The Text of the New Testament</i>, 4th ed. (2005)</li>
+          <li>Robert B. Stewart (ed.), <i>The Reliability of the New Testament: Ehrman and Wallace in Dialogue</i> (2011)</li>
+          <li>Tal Ilan, <i>Lexicon of Jewish Names in Late Antiquity</i> (2002); Richard Bauckham, <i>Jesus and the Eyewitnesses</i>, 2nd ed. (2017)</li>
+          <li>Lydia McGrew, <i>Hidden in Plain View</i> (2017); Bart Ehrman, <i>Misquoting Jesus</i> (2005)</li>
+          <li>Data files and code: <a href="https://github.com/LexReach/closer-not-farther">github.com/LexReach/closer-not-farther</a></li>
+        </ul>
+      </main>
+    </noscript>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

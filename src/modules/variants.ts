@@ -110,6 +110,7 @@ export function witnessChart(p: Passage, wrap: HTMLElement, opts: { big?: boolea
         h('p', null, h('strong', null, w.label), ` (${centuryLabel(w.century)})`),
         h('p', null, stateText),
         note ? h('p', { class: 'tt-muted' }, note) : null,
+        h('p', { class: 'tt-muted' }, 'Source: NA28 and SBLGNT apparatus; Metzger, Textual Commentary'),
       );
     g.addEventListener('pointermove', (e) => Tooltip.show(tip(), e.clientX, e.clientY));
     g.addEventListener('pointerleave', () => Tooltip.hide());
@@ -130,39 +131,44 @@ export function witnessChart(p: Passage, wrap: HTMLElement, opts: { big?: boolea
   );
 }
 
-function treemap(wrap: HTMLElement) {
+/** All ~400,000 variants as one bar, split by kind; the meaningful-and-viable
+ *  sliver is pulled out below and annotated, since it is the point. */
+export function variantBar(wrap: HTMLElement, opts: { big?: boolean } = {}) {
   clear(wrap);
+  const big = !!opts.big;
   const W = Math.max(300, wrap.clientWidth || 700);
-  const H = W < 520 ? 240 : 280;
-  const items = cats.breakdown.map((b) => ({ ...b }));
-  const root = d3
-    .hierarchy<{ children?: typeof items } & Partial<(typeof items)[number]>>({ children: items })
-    .sum((d) => d.share ?? 0)
-    .sort((a, b) => (b.value ?? 0) - (a.value ?? 0));
-  d3.treemap<typeof root.data>().size([W, H]).paddingInner(3).round(true)(root);
+  const narrow = W < 560 && !big;
+  const items = [...cats.breakdown].sort((a, b) => b.share - a.share);
+  const total = cats.total_variants_estimate;
+  const barY = big ? 70 : 44;
+  const barH = big ? 90 : narrow ? 46 : 56;
+  const pullY = barY + barH + (big ? 90 : 64);
+  const H = pullY + (big ? 150 : 96);
+  const x = d3.scaleLinear().domain([0, 1]).range([0, W]);
   const cls = (b: (typeof items)[number]) => (b.meaningful ? (b.viable ? 'tm--mv' : 'tm--m') : b.viable ? 'tm--v' : 'tm--none');
-  const svg = s('svg', { class: 'chart tm', width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'list', 'aria-label': 'Treemap of variant types by estimated share' });
-  for (const leaf of root.leaves() as d3.HierarchyRectangularNode<(typeof items)[number]>[]) {
-    const b = leaf.data;
-    const w = leaf.x1 - leaf.x0;
-    const hgt = leaf.y1 - leaf.y0;
-    const g = s('g', { class: `tm__cell ${cls(b)}`, tabindex: 0, role: 'listitem', 'aria-label': `${b.type}: about ${fmtPct(b.share)} (about ${fmtInt(b.share * cats.total_variants_estimate)} variants)` });
-    g.appendChild(s('rect', { x: leaf.x0, y: leaf.y0, width: w, height: hgt, rx: 3 }));
-    if (w > 90 && hgt > 40) {
-      g.append(
-        s('text', { x: leaf.x0 + 10, y: leaf.y0 + 22, class: 'tm__pct' }, `≈ ${fmtPct(b.share)}`),
-        b.type.split(' (')[0].length * 6.4 < w - 16 ? s('text', { x: leaf.x0 + 10, y: leaf.y0 + 40, class: 'tm__label' }, b.type.split(' (')[0]) : '',
-      );
-    } else if (w > 26 && hgt > 18) {
-      g.appendChild(s('text', { x: leaf.x0 + 5, y: leaf.y0 + 15, class: 'tm__pct tm__pct--sm' }, `${Math.round(b.share * 100)}%`));
+  const svg = s('svg', { class: `chart vbar ${big ? 'chart--big' : ''}`, width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'list', 'aria-label': `About ${fmtInt(total)} variants, by kind` });
+  svg.appendChild(s('text', { x: 0, y: big ? 34 : 18, class: 'axis-label' }, `≈ ${fmtInt(total)} variants (estimate)`));
+  let acc = 0;
+  let pulled: { x0: number; x1: number; b: (typeof items)[number] } | null = null;
+  for (const b of items) {
+    const x0 = x(acc);
+    const x1 = x(acc + b.share);
+    acc += b.share;
+    const w = x1 - x0;
+    const g = s('g', { class: `tm__cell ${cls(b)}`, tabindex: 0, role: 'listitem', 'aria-label': `${b.type}: about ${fmtPct(b.share)}, roughly ${fmtInt(b.share * total)} variants` });
+    g.appendChild(s('rect', { x: x0, y: barY, width: Math.max(1, w - 2), height: barH, rx: 2 }));
+    if (w > (big ? 150 : 70)) {
+      g.appendChild(s('text', { x: x0 + (big ? 16 : 10), y: barY + (big ? 38 : 24), class: 'tm__pct' }, `≈ ${fmtPct(b.share)}`));
+      if (w > (big ? 420 : 200)) g.appendChild(s('text', { x: x0 + (big ? 16 : 10), y: barY + (big ? 74 : 44), class: 'tm__label' }, b.type.split(' (')[0]));
     }
+    if (b.meaningful && b.viable) pulled = { x0, x1, b };
     const tip = () =>
       h(
         'div',
         null,
         h('p', null, h('strong', null, b.type)),
-        h('p', null, `About ${fmtPct(b.share)} of variants, roughly ${fmtInt(b.share * cats.total_variants_estimate)}`),
-        h('p', { class: 'tt-muted' }, `${b.meaningful ? 'Affects meaning' : 'Does not affect meaning'}; ${b.viable ? 'has a real claim to be original' : 'no real claim to be original'}. Estimate.`),
+        h('p', null, `About ${fmtPct(b.share)} of variants, roughly ${fmtInt(b.share * total)}`),
+        h('p', { class: 'tt-muted' }, `${b.meaningful ? 'Affects meaning' : 'Does not affect meaning'}; ${b.viable ? 'has a real claim to be original' : 'no real claim to be original'}. Estimate (Wallace).`),
       );
     g.addEventListener('pointermove', (e) => Tooltip.show(tip(), e.clientX, e.clientY));
     g.addEventListener('pointerleave', () => Tooltip.hide());
@@ -170,13 +176,24 @@ function treemap(wrap: HTMLElement) {
     g.addEventListener('blur', () => Tooltip.hide());
     svg.appendChild(g);
   }
+  if (pulled) {
+    // The 1% slice, pulled out below the bar and enlarged.
+    const pw = Math.min(W * 0.62, big ? 900 : 420);
+    const px = Math.max(0, Math.min(W - pw, pulled.x1 - pw));
+    svg.append(
+      s('path', { d: `M${pulled.x0},${barY + barH} L${px},${pullY} M${pulled.x1},${barY + barH} L${px + pw},${pullY}`, class: 'vbar__lead' }),
+      s('rect', { x: px, y: pullY, width: pw, height: big ? 64 : 34, rx: 3, class: 'vbar__pull tm--mv' }),
+      s('text', { x: px + (big ? 18 : 10), y: pullY + (big ? 44 : 23), class: 'vbar__pull-t' }, `≈ ${fmtPct(pulled.b.share)} · about ${fmtInt(pulled.b.share * total)}`),
+      s('text', { x: px, y: pullY + (big ? 110 : 56), class: 'vbar__note' }, narrow ? 'Change the meaning and could be original.' : 'Change the meaning and could be original. These are the ones in your footnotes.'),
+    );
+  }
   wrap.append(
     svg,
     h(
       'ul',
       { class: 'tm-key' },
       items.map((b) =>
-        h('li', null, h('span', { class: `tm-key__sw ${cls(b)}`, 'aria-hidden': 'true' }), h('span', null, b.type), h('span', { class: 'num muted' }, ` ≈ ${fmtPct(b.share)} · about ${fmtInt(b.share * cats.total_variants_estimate)}`)),
+        h('li', null, h('span', { class: `tm-key__sw ${cls(b)}`, 'aria-hidden': 'true' }), h('span', null, b.type), h('span', { class: 'num muted' }, ` ≈ ${fmtPct(b.share)} · about ${fmtInt(b.share * total)}`)),
       ),
     ),
   );
@@ -273,14 +290,14 @@ export function render(root: HTMLElement) {
     SourceList(data.sources),
   );
   renderPassage();
-  treemap(tmWrap);
+  variantBar(tmWrap);
 
   let lastW = witWrap.clientWidth;
   const ro = new ResizeObserver(() => {
     if (Math.abs(witWrap.clientWidth - lastW) > 8) {
       lastW = witWrap.clientWidth;
       witnessChart(cur, witWrap);
-      treemap(tmWrap);
+      variantBar(tmWrap);
     }
   });
   ro.observe(witWrap);

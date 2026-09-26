@@ -310,15 +310,30 @@ function compareChart(wrap: HTMLElement) {
           null,
           h('p', null, h('strong', null, w.author)),
           h('p', null, `Written ${w.written}`),
-          h('p', null, `${fmtInt(w.manuscripts)} manuscripts; earliest copy ${w.earliest_copy}`),
-          h('p', null, `Gap: about ${fmtInt(w.gap_years)} years`),
+          h('div', { class: 'tt-pair' }, h('div', null, h('span', { class: 'tt-muted' }, 'Manuscripts'), h('strong', { class: 'tt-big' }, fmtInt(w.manuscripts))), h('div', null, h('span', { class: 'tt-muted' }, 'Gap to earliest copy'), h('strong', { class: 'tt-big' }, `${fmtInt(w.gap_years)} yrs`))),
+          h('p', null, `Earliest copy: ${w.earliest_copy}`),
           w.gap_note ? h('p', { class: 'tt-muted' }, w.gap_note) : null,
           h('p', { class: 'tt-muted' }, 'Per Clay Jones 2013'),
         );
-      g.addEventListener('pointermove', (e) => Tooltip.show(tip(), e.clientX, e.clientY));
-      g.addEventListener('pointerleave', () => Tooltip.hide());
-      g.addEventListener('focus', () => Tooltip.showFor(tip(), g));
-      g.addEventListener('blur', () => Tooltip.hide());
+      // Hovering a work lights the same row in both charts: count and gap side by side.
+      g.dataset.work = w.author;
+      const hot = (on: boolean) => wrap.querySelectorAll(`.cmp-row[data-work="${CSS.escape(w.author)}"]`).forEach((r) => r.classList.toggle('is-hot', on));
+      g.addEventListener('pointermove', (e) => {
+        hot(true);
+        Tooltip.show(tip(), e.clientX, e.clientY);
+      });
+      g.addEventListener('pointerleave', () => {
+        hot(false);
+        Tooltip.hide();
+      });
+      g.addEventListener('focus', () => {
+        hot(true);
+        Tooltip.showFor(tip(), g);
+      });
+      g.addEventListener('blur', () => {
+        hot(false);
+        Tooltip.hide();
+      });
       svg.appendChild(g);
     });
     return svg;

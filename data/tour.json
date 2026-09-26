@@ -1,0 +1,173 @@
+{
+  "_note": "Guided tour ('Play the argument'). Each chapter navigates to a route and runs its steps in order; each step shows its caption for `ms` milliseconds while its actions move the real controls. Edit captions freely. Actions: scrollTop; scroll {selector}; slider {label, to, ms}; click {selector | text}; toggle {label, value}; hoverSeq {selector, from, to, every}; key {selector, key}; wait {ms}. The film (public/film/) is recorded from this tour by scripts/render-film.mjs.",
+  "chapters": [
+    {
+      "id": "intro",
+      "title": "The claim",
+      "route": "/",
+      "steps": [
+        {
+          "caption": "As time goes on, we are not getting farther from the text of the New Testament. We are getting closer. Here is the case, one piece of evidence at a time.",
+          "ms": 12500,
+          "actions": [{ "do": "scrollTop" }]
+        }
+      ]
+    },
+    {
+      "id": "telephone",
+      "title": "Telephone vs. Tree",
+      "route": "/telephone",
+      "steps": [
+        {
+          "caption": "The objection: copying is a game of telephone. So copy John 1:1–5 two ways: down a single chain, and across a branching tree.",
+          "ms": 7000,
+          "actions": [{ "do": "scroll", "selector": ".tel-split" }]
+        },
+        {
+          "caption": "Every copy makes mistakes, a few words in every hundred, and half the copies are then lost.",
+          "ms": 6000,
+          "actions": [
+            { "do": "slider", "label": "Error rate per copy", "to": 0.04, "ms": 1400 },
+            { "do": "click", "selector": ".tel-controls .btn--primary" }
+          ]
+        },
+        {
+          "caption": "Now vote, word by word, across whatever survives. The chain keeps the errors it inherited. The tree’s independent lines outvote them.",
+          "ms": 8000,
+          "actions": [{ "do": "click", "text": "Reconstruct" }]
+        },
+        {
+          "caption": "Take a single word. In the chain, every survivor inherited the same slip. In the tree, the slip is a small minority.",
+          "ms": 8000,
+          "actions": [{ "do": "scroll", "selector": ".tel-word" }]
+        }
+      ]
+    },
+    {
+      "id": "timeline",
+      "title": "Closer, not farther",
+      "route": "/timeline",
+      "steps": [
+        {
+          "caption": "In 1516 Erasmus edited the Greek New Testament from a handful of copies made about a thousand years after the originals.",
+          "ms": 6000,
+          "actions": [{ "do": "scroll", "selector": ".tl-panel" }, { "do": "click", "text": "1516 · Erasmus's Greek NT" }]
+        },
+        {
+          "caption": "Watch what scholars could read as the centuries pass. Each dot is a manuscript arriving; the dashed line is the earliest one known.",
+          "ms": 11000,
+          "actions": [{ "do": "slider", "label": "What scholars had in the year", "to": 2026, "ms": 9500 }]
+        },
+        {
+          "caption": "Today the earliest fragment sits about fifty years from the original. For other ancient authors the gap is centuries, with far fewer copies.",
+          "ms": 7500,
+          "actions": [{ "do": "scroll", "selector": ".cmp-grid" }]
+        }
+      ]
+    },
+    {
+      "id": "p66",
+      "title": "Read P66 yourself",
+      "route": "/p66",
+      "steps": [
+        {
+          "caption": "This is P66, a papyrus book of John copied around 200 AD. It is written in capitals, with no spaces.",
+          "ms": 6500,
+          "actions": [{ "do": "scrollTop" }]
+        },
+        {
+          "caption": "Follow it word by word against the Greek in a modern edition and the English under it.",
+          "ms": 8500,
+          "actions": [{ "do": "hoverSeq", "selector": ".p66-gk .p66-w", "from": 0, "to": 16, "every": 480 }]
+        }
+      ]
+    },
+    {
+      "id": "variants",
+      "title": "The 110% puzzle",
+      "route": "/variants",
+      "steps": [
+        {
+          "caption": "With so many copies, the problem is not missing text but extra text. The disputed passages are not hidden: they are in your footnotes.",
+          "ms": 7000,
+          "actions": [{ "do": "scrollTop" }]
+        },
+        {
+          "caption": "John 5:4, the angel stirring the water, is missing from the earliest manuscripts. Take it out, and the story still reads.",
+          "ms": 7000,
+          "actions": [{ "do": "wait", "ms": 1500 }, { "do": "toggle", "label": "Disputed text", "value": "out" }]
+        },
+        {
+          "caption": "There are hundreds of thousands of variants. Most are spelling. About one in a hundred both changes the meaning and could be original.",
+          "ms": 8000,
+          "actions": [{ "do": "scroll", "selector": ".var-cats" }]
+        }
+      ]
+    },
+    {
+      "id": "names",
+      "title": "Names as fingerprints",
+      "route": "/names",
+      "steps": [
+        {
+          "caption": "Names are hard to fake. The Gospels use the common names of first-century Palestine at about the rates the population did.",
+          "ms": 8000,
+          "actions": [{ "do": "scroll", "selector": ".names-chart" }]
+        },
+        {
+          "caption": "And they add a second name exactly where a common name would be ambiguous: Simon called Peter, James son of Zebedee. Rare names go without.",
+          "ms": 8500,
+          "actions": [{ "do": "scroll", "selector": ".twelve" }]
+        }
+      ]
+    },
+    {
+      "id": "coincidences",
+      "title": "Undesigned coincidences",
+      "route": "/coincidences",
+      "steps": [
+        {
+          "caption": "Why does Jesus ask Philip, of all people, where to buy bread? John never says.",
+          "ms": 6500,
+          "actions": [{ "do": "click", "selector": ".uc-list li:nth-child(1) .uc-q" }, { "do": "scroll", "selector": ".uc-walk" }]
+        },
+        {
+          "caption": "Luke puts the feeding near Bethsaida. John mentions, elsewhere, that Philip came from Bethsaida. Jesus asked the local.",
+          "ms": 9000,
+          "actions": [
+            { "do": "wait", "ms": 1200 },
+            { "do": "click", "text": "Next step" },
+            { "do": "wait", "ms": 2600 },
+            { "do": "click", "text": "Next step" },
+            { "do": "wait", "ms": 2600 },
+            { "do": "click", "text": "Show the answer" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "library",
+      "title": "Here they are",
+      "route": "/library",
+      "steps": [
+        {
+          "caption": "None of this is hearsay. Thousands of manuscripts are catalogued, and hundreds can be opened page by page from the libraries that hold them.",
+          "ms": 9000,
+          "actions": [{ "do": "scrollTop" }]
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "title": "The honest part",
+      "route": "/",
+      "steps": [
+        {
+          "caption": "Every piece of this has critics, and their strongest points are on the site next to each chart, with the sources. Check them.",
+          "ms": 8500,
+          "actions": [{ "do": "scroll", "selector": ".closing" }]
+        }
+      ]
+    }
+  ]
+}
