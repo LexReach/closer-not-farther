@@ -58,6 +58,8 @@ jobs:
           node-version: 22
       - run: npm i --no-save playwright@1.56.1 && npx playwright install --with-deps chromium
       - run: node scripts/smoke.mjs "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+      # The Witness view's typographic page for P66 John 1, Sinaiticus John 18 and Vaticanus Mark 16.
+      - run: node scripts/witness-check.mjs "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

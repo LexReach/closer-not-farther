@@ -13,11 +13,20 @@ export const EVD = `${import.meta.env.BASE_URL}evidence/`;
 export type Summary = [number, string | null, number | null, number];
 export type WitRow = [string, string | null, number, number, 'p' | 'c'];
 
+/**
+ * One run of letters on one line (scripts/evidence/tei.mjs on data-evidence).
+ * t: the first hand's letters; v: verse id "BOOK.c.v"; ns: a sacred name's
+ * full form; lac: lost from the page (restored letters, or a gap of `gap`
+ * letters); j: this token and the next are one word, split by a line break
+ * or a lacuna; corr: a later hand's reading.
+ */
 export interface Token {
   t: string;
   v?: string;
   ns?: string;
   lac?: boolean;
+  gap?: number;
+  j?: 1;
   corr?: { hand: string; t: string };
 }
 export interface TxPage {

@@ -46,7 +46,7 @@ export function renderPage(page: TxPage, o: RenderOpts): HTMLElement {
             { class: 'tx__text' },
             l.tokens.map((t) => {
               const text = o.corrected && t.corr ? t.corr.t : t.t;
-              if (t.lac) return h('span', { class: 'tx__lac', style: { width: `${Math.max(1, uncial(t.t).length || 3) * 0.72}em` }, title: 'Lost from the page', 'aria-label': 'lacuna' });
+              if (t.lac) return h('span', { class: 'tx__lac', style: { width: `${Math.min(24, Math.max(1, t.gap ?? (uncial(t.t).length || 3))) * 0.72}em` }, title: 'Lost from the page', 'aria-label': 'lacuna' });
               const el = h(
                 'span',
                 {
@@ -76,6 +76,34 @@ export function verseTokens(page: TxPage, verse: string): Token[] {
 }
 
 export const hasCorrections = (page: TxPage, verse: string) => verseTokens(page, verse).some((t) => t.corr);
+
+/** A word as written: the verse's tokens with split words joined again. `part` marks a word only partly preserved. */
+export interface MsWord extends Token {
+  part?: boolean;
+}
+export function verseWords(page: TxPage, verse: string): MsWord[] {
+  const out: MsWord[] = [];
+  let run: Token[] = [];
+  const close = () => {
+    if (!run.length) return;
+    const corr = run.find((t) => t.corr);
+    const lost = run.filter((t) => t.lac).length;
+    const w: MsWord = { t: run.map((t) => t.t).join(''), v: verse };
+    if (lost === run.length) w.lac = true;
+    else if (lost) w.part = true;
+    const ns = run.find((t) => t.ns)?.ns;
+    if (ns) w.ns = ns;
+    if (corr) w.corr = { hand: corr.corr!.hand, t: run.map((t) => (t.corr ? t.corr.t : t.t)).join('') };
+    out.push(w);
+    run = [];
+  };
+  for (const t of verseTokens(page, verse)) {
+    run.push(t);
+    if (!t.j) close();
+  }
+  close();
+  return out;
+}
 
 /** Normalized form for matching a manuscript's word against the edition. */
 export const norm = (s: string) =>

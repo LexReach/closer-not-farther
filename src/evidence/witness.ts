@@ -11,8 +11,8 @@ import type { Segment } from '../reader/adapters';
 import { openMeaning, closeMeaning } from '../reader/meaning';
 import { gaLabel, intfUrl, type LibraryData } from '../library/data';
 import { dateLabel } from './panel';
-import { loadTx, type AppEntry, type Token } from './data';
-import { alignWords, hasCorrections, renderPage, uncial, verseTokens } from './render';
+import { loadTx, type AppEntry } from './data';
+import { alignWords, hasCorrections, renderPage, uncial, verseWords, type MsWord } from './render';
 import { overlayFor } from './spotlight';
 
 export interface WitnessOpts {
@@ -39,7 +39,7 @@ export async function openWitness(o: WitnessOpts) {
   ]);
   const ed: Word[] = words?.[o.pos.chapter - 1]?.[v - 1] ?? [];
   const eng = (bsb?.verses[v - 1] ?? null) as Segment[] | string | null;
-  const tokens: Token[] = page ? verseTokens(page, vid) : [];
+  const tokens: MsWord[] = page ? verseWords(page, vid) : [];
   const readable = tokens.filter((t) => !t.lac);
   let corrected = false;
 
@@ -151,7 +151,9 @@ export async function openWitness(o: WitnessOpts) {
       ? tokens.map((t) => {
           if (t.lac) return h('span', { class: 'tx__lac tx__lac--inline', 'aria-label': 'lacuna', title: 'Lost from the page' });
           const i = readable.indexOf(t);
-          const w = h('button', { type: 'button', class: `wv__w${msToEd.has(i) ? '' : ' is-diff'}`, 'data-mi': String(i), title: t.ns ? `Sacred name, abbreviated: ${t.ns}` : null }, uncial(msWords[i]));
+          if (!msWords[i]) return '';
+          const title = t.ns ? `Sacred name, abbreviated: ${t.ns}` : t.part ? 'Partly lost from the page; the missing letters are restored by the editor' : t.corr ? `Corrected (${t.corr.hand})` : null;
+          const w = h('button', { type: 'button', class: `wv__w${msToEd.has(i) ? '' : ' is-diff'}${t.part ? ' is-part' : ''}`, 'data-mi': String(i), title }, uncial(msWords[i]));
           w.addEventListener('pointerenter', () => light(null, i));
           w.addEventListener('focus', () => light(null, i));
           w.addEventListener('click', () => {
