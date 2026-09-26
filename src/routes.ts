@@ -59,7 +59,7 @@ export const routes: RouteDef[] = [
     num: '5',
     title: 'Names as fingerprints',
     short: 'Names',
-    hook: 'The Gospels use first-century Palestinian names at about the rate the population did. Later gospels do not.',
+    hook: 'The Gospels use first-century Palestinian names at about the rates the population did, and qualify the common ones.',
     load: () => import('./modules/names'),
   },
   {
