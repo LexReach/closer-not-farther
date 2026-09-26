@@ -1,0 +1,57 @@
+{
+  "_note": "Curated landmark witnesses for the timeline scatter. date_low/date_high = estimated copying date (AD). year_known = when it entered scholarship (discovery or publication). Dates are conventional ranges; the build session should confirm each against the INTF Liste (ntvmr.uni-muenster.de/liste) and Wikipedia's per-manuscript pages, and add ~15 more medieval minuscules to fill the lower-right of the plot.",
+  "sources": [
+    "INTF Kurzgefasste Liste, https://ntvmr.uni-muenster.de/liste",
+    "Bruce Metzger & Bart Ehrman, The Text of the New Testament, 4th ed. (2005)",
+    "Daniel Wallace, CSNTM manuscript counts (2013 tally: 128 papyri, 322 majuscules, 2926 minuscules, 2462 lectionaries = 5838)"
+  ],
+  "witnesses": [
+    { "ga": "P52", "name": "Rylands Papyrus", "contents": "John 18:31-33, 37-38", "date_low": 125, "date_high": 175, "year_known": 1935, "found": "Egypt (acquired 1920)", "note": "Conventionally the earliest NT fragment; some date it later (2nd-3rd c.)" },
+    { "ga": "P90", "name": "P.Oxy. 3523", "contents": "John 18-19 fragment", "date_low": 150, "date_high": 200, "year_known": 1983, "found": "Oxyrhynchus" },
+    { "ga": "P104", "name": "P.Oxy. 4404", "contents": "Matthew 21 fragment", "date_low": 150, "date_high": 200, "year_known": 1997, "found": "Oxyrhynchus" },
+    { "ga": "P66", "name": "Bodmer II", "contents": "John (most of it)", "date_low": 175, "date_high": 225, "year_known": 1956, "found": "Egypt (Dishna/Bodmer)", "note": "The manuscript in Huff's talk" },
+    { "ga": "P75", "name": "Bodmer XIV-XV", "contents": "Luke 3-24, John 1-15", "date_low": 175, "date_high": 225, "year_known": 1961, "found": "Egypt (Bodmer)", "note": "Text very close to Vaticanus" },
+    { "ga": "P46", "name": "Chester Beatty II", "contents": "Pauline epistles", "date_low": 175, "date_high": 225, "year_known": 1931, "found": "Egypt (Fayum/Aphroditopolis)" },
+    { "ga": "P45", "name": "Chester Beatty I", "contents": "Gospels and Acts (portions)", "date_low": 200, "date_high": 250, "year_known": 1931, "found": "Egypt" },
+    { "ga": "P47", "name": "Chester Beatty III", "contents": "Revelation 9-17", "date_low": 225, "date_high": 300, "year_known": 1931, "found": "Egypt" },
+    { "ga": "P1", "name": "P.Oxy. 2", "contents": "Matthew 1", "date_low": 200, "date_high": 250, "year_known": 1897, "found": "Oxyrhynchus" },
+    { "ga": "P72", "name": "Bodmer VII-VIII", "contents": "1-2 Peter, Jude", "date_low": 250, "date_high": 350, "year_known": 1959, "found": "Egypt (Bodmer)" },
+    { "ga": "P115", "name": "P.Oxy. 4499", "contents": "Revelation fragments", "date_low": 225, "date_high": 275, "year_known": 1999, "found": "Oxyrhynchus" },
+    { "ga": "0189", "name": "Berlin P. 11765", "contents": "Acts 5", "date_low": 175, "date_high": 300, "year_known": 1927, "found": "Egypt" },
+    { "ga": "01", "name": "Codex Sinaiticus", "contents": "Complete NT + part OT", "date_low": 325, "date_high": 360, "year_known": 1859, "found": "St Catherine's, Sinai (Tischendorf 1844/1859)" },
+    { "ga": "03", "name": "Codex Vaticanus", "contents": "Nearly complete NT", "date_low": 300, "date_high": 350, "year_known": 1881, "found": "Vatican Library (catalogued 1475; usable photographic facsimile 1889-90; used by Westcott-Hort 1881)", "note": "year_known here = first serious critical use; adjust if you prefer 1475 or 1889" },
+    { "ga": "02", "name": "Codex Alexandrinus", "contents": "Complete NT (gaps)", "date_low": 400, "date_high": 450, "year_known": 1627, "found": "Gift to Charles I from Patriarch of Constantinople" },
+    { "ga": "04", "name": "Codex Ephraemi Rescriptus", "contents": "Palimpsest, most NT books", "date_low": 425, "date_high": 475, "year_known": 1843, "found": "Paris (deciphered by Tischendorf)" },
+    { "ga": "05", "name": "Codex Bezae", "contents": "Gospels, Acts (Greek-Latin)", "date_low": 375, "date_high": 425, "year_known": 1581, "found": "Lyon; given to Cambridge by Beza" },
+    { "ga": "032", "name": "Codex Washingtonianus", "contents": "Gospels", "date_low": 375, "date_high": 500, "year_known": 1906, "found": "Egypt (Freer)" },
+    { "ga": "038", "name": "Codex Koridethi", "contents": "Gospels", "date_low": 800, "date_high": 900, "year_known": 1853, "found": "Georgia (Caucasus)" },
+    { "ga": "1", "name": "Minuscule 1", "contents": "NT except Revelation", "date_low": 1100, "date_high": 1200, "year_known": 1516, "found": "Basel; used by Erasmus (sparingly)" },
+    { "ga": "2", "name": "Minuscule 2", "contents": "Gospels", "date_low": 1050, "date_high": 1150, "year_known": 1516, "found": "Basel; Erasmus's main Gospels text" },
+    { "ga": "2814", "name": "Minuscule 2814 (formerly 1r)", "contents": "Revelation (with commentary)", "date_low": 1100, "date_high": 1200, "year_known": 1516, "found": "Erasmus's only Revelation manuscript; last verses back-translated from Latin" },
+    { "ga": "33", "name": "Minuscule 33 (Queen of the cursives)", "contents": "NT except Revelation", "date_low": 800, "date_high": 900, "year_known": 1700, "found": "Paris" },
+    { "ga": "1739", "name": "Minuscule 1739", "contents": "Acts, Epistles", "date_low": 900, "date_high": 1000, "year_known": 1879, "found": "Mount Athos" },
+    { "ga": "565", "name": "Minuscule 565", "contents": "Gospels (purple parchment)", "date_low": 800, "date_high": 900, "year_known": 1829, "found": "Caucasus / St Petersburg" },
+    { "ga": "f13-13", "name": "Minuscule 13 (Ferrar group)", "contents": "Gospels", "date_low": 1200, "date_high": 1300, "year_known": 1750, "found": "Paris" }
+  ],
+  "count_over_time": {
+    "_note": "Approximate running totals of catalogued Greek NT manuscripts known to scholarship. Early points are rough; label the chart 'approximate'. Confirm/refine using Gregory (1908), Aland (1963/1994), Wallace (2013), INTF current.",
+    "points": [
+      { "year": 1516, "count": 6, "label": "Erasmus's working set" },
+      { "year": 1707, "count": 100, "label": "Mill's edition (~100 collated)" },
+      { "year": 1830, "count": 700, "label": "Scholz's list" },
+      { "year": 1908, "count": 4000, "label": "Gregory's list" },
+      { "year": 1963, "count": 4969, "label": "Aland's list" },
+      { "year": 1994, "count": 5487, "label": "Aland 2nd ed." },
+      { "year": 2013, "count": 5838, "label": "Wallace/INTF tally" },
+      { "year": 2024, "count": 5900, "label": "INTF Liste (approx.)" }
+    ]
+  },
+  "presets": [
+    { "year": 1516, "label": "Erasmus's Greek NT" },
+    { "year": 1611, "label": "King James Version" },
+    { "year": 1881, "label": "Westcott & Hort" },
+    { "year": 1935, "label": "P52 published" },
+    { "year": 1961, "label": "P75 published" },
+    { "year": 2026, "label": "Today" }
+  ]
+}

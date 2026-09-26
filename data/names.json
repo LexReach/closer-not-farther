@@ -1,0 +1,62 @@
+{
+  "_note": "Palestine figures are Bauckham's tally of Tal Ilan's Lexicon (Part I, 330 BCE-200 CE) as printed in Jesus and the Eyewitnesses, 2nd ed., ch. 4. Gospels+Acts counts follow Bauckham's Table 6; VERIFY each against the book before shipping (marked verify:true where less certain). Percentages must be computed at runtime from totals.",
+  "sources": [
+    "Tal Ilan, Lexicon of Jewish Names in Late Antiquity, Part I: Palestine 330 BCE-200 CE (Mohr Siebeck, 2002)",
+    "Richard Bauckham, Jesus and the Eyewitnesses, 2nd ed. (Eerdmans, 2017), ch. 4, tables 1-6",
+    "Counterpoint: 'Name Recall in the Synoptic Gospels', New Testament Studies (Cambridge, 2022)"
+  ],
+  "palestine_totals": { "male_occurrences": 2625, "male_distinct": 447, "female_occurrences": 328, "female_distinct": 74 },
+  "gospels_acts_totals": { "_note": "Bauckham's counts of named Palestinian Jews in Gospels+Acts, excluding Jesus, OT figures, and non-Palestinians. Fill from Table 6.", "male_occurrences": 79, "female_occurrences": 18, "verify": true },
+  "male": [
+    { "name": "Simon / Simeon", "palestine": 243, "gospels_acts": 8 },
+    { "name": "Joseph / Joses", "palestine": 218, "gospels_acts": 6 },
+    { "name": "Eleazar / Lazarus", "palestine": 166, "gospels_acts": 1 },
+    { "name": "Judah / Judas", "palestine": 164, "gospels_acts": 5 },
+    { "name": "Yohanan / John", "palestine": 122, "gospels_acts": 5 },
+    { "name": "Joshua / Jesus", "palestine": 99, "gospels_acts": 2 },
+    { "name": "Hananiah / Ananias", "palestine": 82, "gospels_acts": 2 },
+    { "name": "Jonathan", "palestine": 71, "gospels_acts": 1, "verify": true },
+    { "name": "Mattathias / Matthew", "palestine": 62, "gospels_acts": 2 },
+    { "name": "Menahem / Manaen", "palestine": 42, "gospels_acts": 1 },
+    { "name": "Jacob / James", "palestine": 40, "gospels_acts": 5 },
+    { "name": "Hanan / Annas", "palestine": 35, "gospels_acts": 1 }
+  ],
+  "female": [
+    { "name": "Mary / Mariam", "palestine": 70, "gospels_acts": 6 },
+    { "name": "Salome", "palestine": 58, "gospels_acts": 1 },
+    { "name": "Shelamzion", "palestine": 24, "gospels_acts": 0 },
+    { "name": "Martha", "palestine": 20, "gospels_acts": 1 },
+    { "name": "Joanna", "palestine": 12, "gospels_acts": 1 },
+    { "name": "Sapphira / Shiphra", "palestine": 12, "gospels_acts": 1 }
+  ],
+  "headline_stats": {
+    "_note": "Bauckham's summary comparison; recompute from data at runtime and show both.",
+    "top2_share_palestine": 0.156,
+    "top2_share_gospels_acts": 0.182,
+    "top9_share_palestine": 0.415,
+    "top9_share_gospels_acts": 0.403
+  },
+  "twelve": {
+    "source_text": "Matthew 10:2-4",
+    "entries": [
+      { "name": "Simon", "qualifier": "called Peter", "palestine_rank": 1, "origin": "Semitic" },
+      { "name": "Andrew", "qualifier": "his brother", "palestine_rank": null, "origin": "Greek", "note": "rare; qualifier is relational, not disambiguating" },
+      { "name": "James", "qualifier": "son of Zebedee", "palestine_rank": 11, "origin": "Semitic" },
+      { "name": "John", "qualifier": "his brother", "palestine_rank": 5, "origin": "Semitic" },
+      { "name": "Philip", "qualifier": null, "palestine_rank": 61, "origin": "Greek" },
+      { "name": "Bartholomew", "qualifier": null, "palestine_rank": 50, "origin": "Aramaic patronymic" },
+      { "name": "Thomas", "qualifier": null, "palestine_rank": null, "origin": "Aramaic nickname (twin)" },
+      { "name": "Matthew", "qualifier": "the tax collector", "palestine_rank": 9, "origin": "Semitic" },
+      { "name": "James", "qualifier": "son of Alphaeus", "palestine_rank": 11, "origin": "Semitic" },
+      { "name": "Thaddaeus", "qualifier": null, "palestine_rank": 39, "origin": "Greek/Aramaic" },
+      { "name": "Simon", "qualifier": "the Cananaean / Zealot", "palestine_rank": 1, "origin": "Semitic" },
+      { "name": "Judas", "qualifier": "Iscariot, who betrayed him", "palestine_rank": 4, "origin": "Semitic" }
+    ],
+    "ranks_source": "Ranks as cited by Bauckham (Table 6 / text). Huff's talk gives Judas as #3; Bauckham's table has #4. Use Bauckham."
+  },
+  "apocryphal": {
+    "_note": "STUB. Build session: extract named persons from public-domain translations of Gospel of Thomas, Gospel of Philip, Gospel of Mary, Protevangelium of James. Tag each as (a) also in canonical Gospels, (b) Palestinian-typical, (c) atypical/Greco-Egyptian. Keep a source URL per text.",
+    "texts": ["Gospel of Thomas", "Gospel of Philip", "Gospel of Mary", "Protevangelium of James"],
+    "entries": []
+  }
+}

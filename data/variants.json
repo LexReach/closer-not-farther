@@ -1,0 +1,125 @@
+{
+  "_note": "Witness lists are simplified to the major witnesses the UI displays. Confirm each against NA28 apparatus / SBLGNT apparatus before shipping. 'contains' = true means the witness includes the disputed text.",
+  "sources": [
+    "Nestle-Aland 28 apparatus; SBL Greek New Testament apparatus (open)",
+    "Bruce Metzger, A Textual Commentary on the Greek New Testament, 2nd ed.",
+    "Daniel Wallace on variant categories (CSNTM lectures/essays)"
+  ],
+  "witnesses": [
+    { "id": "P66", "label": "P66", "century": 2.9 },
+    { "id": "P75", "label": "P75", "century": 3 },
+    { "id": "01", "label": "Sinaiticus", "century": 4 },
+    { "id": "03", "label": "Vaticanus", "century": 4 },
+    { "id": "02", "label": "Alexandrinus", "century": 5 },
+    { "id": "05", "label": "Bezae", "century": 5 },
+    { "id": "Byz", "label": "Byzantine majority", "century": 9 }
+  ],
+  "passages": [
+    {
+      "id": "john-5-4",
+      "ref": "John 5:3b-4",
+      "title": "The angel who stirred the water",
+      "disputed_text": "...waiting for the moving of the water; for an angel went down at certain seasons into the pool and stirred the water; whoever stepped in first after the stirring was healed of whatever disease he had.",
+      "context_before": "In these lay a multitude of invalids, blind, lame, paralyzed",
+      "context_after": "One man was there who had been an invalid for thirty-eight years.",
+      "contains": { "P66": false, "P75": false, "01": false, "03": false, "02": true, "05": true, "Byz": true },
+      "explanation": "Verse 7 has the man say the water is 'stirred up' with no prior explanation. A marginal gloss explaining the local belief was absorbed into the text in some copies by the 4th-5th century. The earliest witnesses lack it.",
+      "doctrine_impact": "None. Huff's own example: the verse number is retained and the text is in your footnote.",
+      "category": "meaningful, not viable"
+    },
+    {
+      "id": "mark-16",
+      "ref": "Mark 16:9-20",
+      "title": "The longer ending of Mark",
+      "disputed_text": "Now when he rose early on the first day of the week, he appeared first to Mary Magdalene... (twelve verses)",
+      "context_before": "...and they said nothing to anyone, for they were afraid.",
+      "context_after": "(end of Gospel)",
+      "contains": { "P66": null, "P75": null, "01": false, "03": false, "02": true, "05": true, "Byz": true },
+      "explanation": "Sinaiticus and Vaticanus end at 16:8; several later manuscripts mark the ending as doubtful. Vocabulary and style differ from the rest of Mark. Almost all modern Bibles print it with brackets and a note.",
+      "doctrine_impact": "No doctrine rests on it alone; snake-handling and poison-drinking sects have leaned on 16:18.",
+      "category": "meaningful and viable (disputed)"
+    },
+    {
+      "id": "john-8",
+      "ref": "John 7:53-8:11",
+      "title": "The woman caught in adultery",
+      "disputed_text": "...Let him who is without sin among you be the first to throw a stone at her...",
+      "context_before": "John 7:52",
+      "context_after": "John 8:12",
+      "contains": { "P66": false, "P75": false, "01": false, "03": false, "02": false, "05": true, "Byz": true },
+      "explanation": "Absent from every early Greek witness; appears in Bezae (5th c.) and later, and floats to other locations (after Luke 21:38 in some). Likely an authentic early tradition about Jesus that was not originally part of John.",
+      "doctrine_impact": "None; the story's ethic is consistent with the rest of the Gospels.",
+      "category": "meaningful and viable (disputed)"
+    },
+    {
+      "id": "1john-5-7",
+      "ref": "1 John 5:7-8",
+      "title": "The Johannine Comma",
+      "disputed_text": "...in heaven: the Father, the Word, and the Holy Spirit; and these three are one. And there are three that bear witness on earth...",
+      "context_before": "For there are three that testify:",
+      "context_after": "the Spirit and the water and the blood; and these three agree.",
+      "contains": { "P66": null, "P75": null, "01": false, "03": false, "02": false, "05": null, "Byz": false },
+      "explanation": "Found in no Greek manuscript before the 14th century; entered Erasmus's 3rd edition (1522) from a Latin tradition, and from there the KJV. Every modern translation omits it.",
+      "doctrine_impact": "The Trinity is argued from many other passages; no modern theologian rests it on this verse.",
+      "category": "meaningful, not viable"
+    },
+    {
+      "id": "luke-22-43",
+      "ref": "Luke 22:43-44",
+      "title": "The angel and the bloody sweat",
+      "disputed_text": "And there appeared to him an angel from heaven, strengthening him. And being in agony he prayed more earnestly; and his sweat became like great drops of blood falling down to the ground.",
+      "context_before": "Luke 22:42",
+      "context_after": "Luke 22:45",
+      "contains": { "P66": null, "P75": false, "01": true, "03": false, "02": false, "05": true, "Byz": true },
+      "explanation": "Early and geographically wide support on both sides. Modern editions bracket it. Ehrman argues it was added against docetism; others argue it was removed for the same reason.",
+      "doctrine_impact": "None.",
+      "category": "meaningful and viable (disputed)"
+    },
+    {
+      "id": "matt-6-13",
+      "ref": "Matthew 6:13",
+      "title": "The doxology of the Lord's Prayer",
+      "disputed_text": "For yours is the kingdom and the power and the glory, forever. Amen.",
+      "context_before": "...but deliver us from evil.",
+      "context_after": "For if you forgive others their trespasses...",
+      "contains": { "P66": null, "P75": null, "01": false, "03": false, "02": null, "05": false, "Byz": true },
+      "explanation": "A liturgical ending (cf. 1 Chronicles 29:11) that entered the text through use in worship. Absent from the earliest witnesses and from Luke's version.",
+      "doctrine_impact": "None.",
+      "category": "meaningful, not viable"
+    },
+    {
+      "id": "spelling-1",
+      "ref": "Romans 5:1",
+      "title": "One letter: 'we have' vs 'let us have'",
+      "disputed_text": "ἔχομεν (we have peace) vs ἔχωμεν (let us have peace)",
+      "context_before": "Therefore, since we have been justified by faith,",
+      "context_after": "...peace with God through our Lord Jesus Christ.",
+      "contains": { "P66": null, "P75": null, "01": true, "03": true, "02": true, "05": true, "Byz": false },
+      "explanation": "Omicron and omega were pronounced alike; scribes writing from dictation confused them constantly. Even here, where the better manuscripts read 'let us have', editors print 'we have' on internal grounds.",
+      "doctrine_impact": "Negligible.",
+      "category": "spelling / hearing error"
+    },
+    {
+      "id": "spelling-2",
+      "ref": "John 1:18",
+      "title": "'Only Son' vs 'only God'",
+      "disputed_text": "μονογενὴς θεός (only God) vs μονογενὴς υἱός (only Son)",
+      "context_before": "No one has ever seen God;",
+      "context_after": "...who is at the Father's side, he has made him known.",
+      "contains": { "P66": true, "P75": true, "01": true, "03": true, "02": false, "05": null, "Byz": false },
+      "explanation": "Both nouns were abbreviated as two-letter nomina sacra (ΘΣ / ΥΣ), one stroke apart. The earliest papyri read 'God'; the majority read 'Son'.",
+      "doctrine_impact": "Either reading affirms Christ's divinity in John's context; the difference is which word John used to say it.",
+      "category": "meaningful and viable (disputed)"
+    }
+  ],
+  "categories": {
+    "_note": "Approximate shares of the ~400,000 total variants, per Wallace's popular taxonomy. Present as estimates.",
+    "total_variants_estimate": 400000,
+    "breakdown": [
+      { "type": "Spelling and nonsense errors", "share": 0.70, "viable": false, "meaningful": false },
+      { "type": "Synonyms, word order, articles", "share": 0.25, "viable": true, "meaningful": false },
+      { "type": "Meaningful but not viable (late, thin support)", "share": 0.04, "viable": false, "meaningful": true },
+      { "type": "Meaningful and viable", "share": 0.01, "viable": true, "meaningful": true }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_note": "John 1:1-5, SBLGNT (CC BY 4.0, Logos/SBL). Word-level gloss is for the simulator's diff view. Simulator operates on the token array.",
+  "sources": ["SBL Greek New Testament, https://sblgnt.com (CC BY 4.0)"],
+  "reference": "John 1:1-5",
+  "tokens": [
+    { "gk": "Ἐν", "en": "In" }, { "gk": "ἀρχῇ", "en": "beginning" }, { "gk": "ἦν", "en": "was" }, { "gk": "ὁ", "en": "the" }, { "gk": "λόγος,", "en": "Word," },
+    { "gk": "καὶ", "en": "and" }, { "gk": "ὁ", "en": "the" }, { "gk": "λόγος", "en": "Word" }, { "gk": "ἦν", "en": "was" }, { "gk": "πρὸς", "en": "with" }, { "gk": "τὸν", "en": "-" }, { "gk": "θεόν,", "en": "God," },
+    { "gk": "καὶ", "en": "and" }, { "gk": "θεὸς", "en": "God" }, { "gk": "ἦν", "en": "was" }, { "gk": "ὁ", "en": "the" }, { "gk": "λόγος.", "en": "Word." },
+    { "gk": "οὗτος", "en": "He" }, { "gk": "ἦν", "en": "was" }, { "gk": "ἐν", "en": "in" }, { "gk": "ἀρχῇ", "en": "beginning" }, { "gk": "πρὸς", "en": "with" }, { "gk": "τὸν", "en": "-" }, { "gk": "θεόν.", "en": "God." },
+    { "gk": "πάντα", "en": "All things" }, { "gk": "δι’", "en": "through" }, { "gk": "αὐτοῦ", "en": "him" }, { "gk": "ἐγένετο,", "en": "came to be," },
+    { "gk": "καὶ", "en": "and" }, { "gk": "χωρὶς", "en": "without" }, { "gk": "αὐτοῦ", "en": "him" }, { "gk": "ἐγένετο", "en": "came to be" }, { "gk": "οὐδὲ", "en": "not even" }, { "gk": "ἕν.", "en": "one thing." },
+    { "gk": "ὃ", "en": "What" }, { "gk": "γέγονεν", "en": "has come to be" }, { "gk": "ἐν", "en": "in" }, { "gk": "αὐτῷ", "en": "him" }, { "gk": "ζωὴ", "en": "life" }, { "gk": "ἦν,", "en": "was," },
+    { "gk": "καὶ", "en": "and" }, { "gk": "ἡ", "en": "the" }, { "gk": "ζωὴ", "en": "life" }, { "gk": "ἦν", "en": "was" }, { "gk": "τὸ", "en": "the" }, { "gk": "φῶς", "en": "light" }, { "gk": "τῶν", "en": "of" }, { "gk": "ἀνθρώπων·", "en": "men;" },
+    { "gk": "καὶ", "en": "and" }, { "gk": "τὸ", "en": "the" }, { "gk": "φῶς", "en": "light" }, { "gk": "ἐν", "en": "in" }, { "gk": "τῇ", "en": "the" }, { "gk": "σκοτίᾳ", "en": "darkness" }, { "gk": "φαίνει,", "en": "shines," },
+    { "gk": "καὶ", "en": "and" }, { "gk": "ἡ", "en": "the" }, { "gk": "σκοτία", "en": "darkness" }, { "gk": "αὐτὸ", "en": "it" }, { "gk": "οὐ", "en": "not" }, { "gk": "κατέλαβεν.", "en": "overcame." }
+  ],
+  "error_types": [
+    { "id": "spelling", "label": "Spelling / itacism", "weight": 0.6, "how": "swap a vowel (ε/αι, ο/ω, ι/ει) or drop a final ν" },
+    { "id": "omission", "label": "Skipped word (haplography)", "weight": 0.2, "how": "drop a token, more likely when the previous token repeats" },
+    { "id": "harmonization", "label": "Harmonization / substitution", "weight": 0.12, "how": "replace a token with a common synonym, e.g. θεός ↔ κύριος" },
+    { "id": "gloss", "label": "Marginal note absorbed", "weight": 0.08, "how": "insert a short explanatory phrase after a token" }
+  ],
+  "regions": ["Egypt", "Syria", "Asia Minor", "Rome", "North Africa"]
+}

@@ -1,0 +1,19 @@
+{
+  "_note": "Manuscript counts and earliest-copy gaps for classical works, per Clay Jones's 2012/2013 update of the 'bibliographical test'. These are older, contested tallies; label as 'per Jones 2013' and show gap alongside count. NT gap uses P52 (~125-175) vs. John (~90).",
+  "sources": [
+    "Clay Jones, 'The Bibliographical Test Updated', Christian Research Journal 35:3 (2012); web version clayjones.net 2013",
+    "Martin L. West on Homer papyri; Plato Microfilm Project; Virginia Brown on Caesar MSS"
+  ],
+  "works": [
+    { "author": "New Testament (Greek)", "written": "50-100 AD", "manuscripts": 5838, "earliest_copy": "c. 125-175 AD", "gap_years": 50, "gap_note": "P52; substantial copies (P66, P75) within ~125 years" },
+    { "author": "Homer, Iliad", "written": "c. 800 BC", "manuscripts": 1757, "earliest_copy": "c. 400 BC (papyri)", "gap_years": 400 },
+    { "author": "Demosthenes", "written": "c. 350 BC", "manuscripts": 340, "earliest_copy": "1st c. BC (fragments); 9th-10th c. (full)", "gap_years": 1100 },
+    { "author": "Caesar, Gallic War", "written": "58-50 BC", "manuscripts": 251, "earliest_copy": "9th c. AD", "gap_years": 950 },
+    { "author": "Plato", "written": "c. 400 BC", "manuscripts": 210, "earliest_copy": "895 AD", "gap_years": 1300 },
+    { "author": "Pliny the Elder", "written": "c. 77 AD", "manuscripts": 200, "earliest_copy": "late 5th c. (fragment)", "gap_years": 400 },
+    { "author": "Livy", "written": "59 BC-17 AD", "manuscripts": 150, "earliest_copy": "4th c. (fragment)", "gap_years": 400 },
+    { "author": "Herodotus", "written": "c. 440 BC", "manuscripts": 109, "earliest_copy": "1st c. AD (papyri)", "gap_years": 500 },
+    { "author": "Thucydides", "written": "c. 400 BC", "manuscripts": 96, "earliest_copy": "3rd c. BC (papyri)", "gap_years": 200 },
+    { "author": "Tacitus, Annals", "written": "c. 116 AD", "manuscripts": 33, "earliest_copy": "c. 850 AD", "gap_years": 750, "gap_note": "2 primary medieval MSS + 31 fifteenth-century copies" }
+  ]
+}
