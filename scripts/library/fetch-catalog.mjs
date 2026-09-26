@@ -61,40 +61,23 @@ function note(msg) {
 
 // ---------------------------------------------------------------------------
 // Step 1: Wikidata
+//
+// Deliberately NOT one big query with a GROUP BY and six OPTIONAL joins: that
+// version reliably timed out against the Wikidata Query Service at this scale
+// (~5800 items), and a slow/failing query was retried by fetchWithRetry, which
+// only made things slower. Instead we run one simple, fast, unaggregated
+// two-hop query per property (each just "?item wdt:P1577 [] ; wdt:PXXX ?val")
+// and merge them client-side by item QID. If an item has more than one value
+// for a property we just keep the first one seen; that's an acceptable
+// simplification for a catalog like this.
 // ---------------------------------------------------------------------------
-
-const MAIN_QUERY = `
-SELECT ?item ?itemLabel ?ga
-  (SAMPLE(?inceptionTime) AS ?inceptionTime) (SAMPLE(?inceptionPrec) AS ?inceptionPrec)
-  (SAMPLE(?collection) AS ?collection) (SAMPLE(?location) AS ?location)
-  (SAMPLE(?shelfmark) AS ?shelfmark)
-  (SAMPLE(?image) AS ?image) (SAMPLE(?commonscat) AS ?commonscat) (SAMPLE(?iiif) AS ?iiif)
-WHERE {
-  ?item wdt:P1577 ?ga .
-  OPTIONAL {
-    ?item p:P571 ?incStmt .
-    ?incStmt psv:P571 ?incNode .
-    ?incNode wikibase:timeValue ?inceptionTime ;
-             wikibase:timePrecision ?inceptionPrec .
-  }
-  OPTIONAL { ?item wdt:P195 ?collection . }
-  OPTIONAL { ?item wdt:P276 ?location . }
-  OPTIONAL { ?item wdt:P217 ?shelfmark . }
-  OPTIONAL { ?item wdt:P18 ?image . }
-  OPTIONAL { ?item wdt:P373 ?commonscat . }
-  OPTIONAL { ?item wdt:P6108 ?iiif . }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-}
-GROUP BY ?item ?itemLabel ?ga
-ORDER BY ?item
-`;
 
 async function sparql(query, label) {
   const url = `${WD_ENDPOINT}?query=${encodeURIComponent(query)}&format=json`;
   const json = await fetchJSON(url, {
     headers: { Accept: 'application/sparql-results+json' },
-    timeoutMs: 90000,
-    retries: 3,
+    timeoutMs: 60000,
+    retries: 2,
     label,
   });
   return json.results.bindings;
@@ -106,46 +89,115 @@ function qidOf(uri) {
   return m ? m[0] : null;
 }
 
-async function fetchWikidataRows() {
-  note('Querying Wikidata for all items with P1577 (Gregory-Aland number)...');
-  let bindings;
+/** Run a simple "?item wdt:P1577 [] ; wdt:<prop> ?val" query, return Map<qid, raw value string>. */
+async function fetchSimpleProperty(prop, label, { extra = '' } = {}) {
+  const query = `
+SELECT ?item ?val WHERE {
+  ?item wdt:P1577 [] ;
+        wdt:${prop} ?val .
+  ${extra}
+}`;
   try {
-    bindings = await sparql(MAIN_QUERY, 'wikidata main query');
-    note(`  Wikidata main query returned ${bindings.length} bindings.`);
+    const bindings = await sparql(query, label);
+    const map = new Map();
+    for (const b of bindings) {
+      const qid = qidOf(b.item?.value);
+      if (!qid || map.has(qid)) continue;
+      map.set(qid, b.val?.value);
+    }
+    note(`  ${label}: ${bindings.length} bindings, ${map.size} distinct items.`);
+    return map;
   } catch (err) {
-    note(`  Main query failed (${err.message}); falling back to paginated queries.`);
-    bindings = [];
-    const PAGE = 1500;
-    for (let offset = 0; ; offset += PAGE) {
-      const pageQuery = MAIN_QUERY.replace(/\n$/, '') + `\nLIMIT ${PAGE} OFFSET ${offset}\n`;
-      try {
-        const page = await sparql(pageQuery, `wikidata page offset=${offset}`);
-        note(`  page offset=${offset}: ${page.length} rows`);
-        bindings.push(...page);
-        if (page.length < PAGE) break;
-      } catch (err2) {
-        note(`  page offset=${offset} FAILED: ${err2.message}`);
-        break;
-      }
+    note(`  ${label} FAILED: ${err.message}`);
+    return new Map();
+  }
+}
+
+async function fetchGaAndLabels() {
+  const query = `
+SELECT ?item ?ga ?itemLabel WHERE {
+  ?item wdt:P1577 ?ga .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}`;
+  try {
+    const bindings = await sparql(query, 'wikidata: GA numbers + labels');
+    note(`  GA numbers + labels: ${bindings.length} bindings.`);
+    return bindings;
+  } catch (err) {
+    note(`  GA numbers + labels FAILED: ${err.message}; retrying without labels (faster query).`);
+    const bare = `SELECT ?item ?ga WHERE { ?item wdt:P1577 ?ga . }`;
+    try {
+      const bindings = await sparql(bare, 'wikidata: GA numbers (no labels)');
+      note(`  GA numbers (no labels): ${bindings.length} bindings.`);
+      return bindings;
+    } catch (err2) {
+      note(`  GA numbers (no labels) FAILED too: ${err2.message}`);
+      return [];
     }
   }
+}
+
+async function fetchInceptionTimes() {
+  const query = `
+SELECT ?item ?time ?prec WHERE {
+  ?item wdt:P1577 [] .
+  ?item p:P571 ?st .
+  ?st psv:P571 ?val .
+  ?val wikibase:timeValue ?time ;
+       wikibase:timePrecision ?prec .
+}`;
+  try {
+    const bindings = await sparql(query, 'wikidata: inception dates (P571)');
+    const map = new Map();
+    for (const b of bindings) {
+      const qid = qidOf(b.item?.value);
+      if (!qid || map.has(qid)) continue;
+      map.set(qid, { time: b.time?.value, prec: b.prec?.value });
+    }
+    note(`  inception dates: ${bindings.length} bindings, ${map.size} distinct items.`);
+    return map;
+  } catch (err) {
+    note(`  inception dates FAILED: ${err.message}`);
+    return new Map();
+  }
+}
+
+async function fetchWikidataRows() {
+  note('Querying Wikidata for all items with P1577 (Gregory-Aland number)...');
+  const [gaBindings, inceptions, collections, locations, shelfmarks, images, commonscats, iiifs] = await Promise.all([
+    fetchGaAndLabels(),
+    fetchInceptionTimes(),
+    fetchSimpleProperty('P195', 'wikidata: collection (P195)'),
+    fetchSimpleProperty('P276', 'wikidata: location (P276)'),
+    fetchSimpleProperty('P217', 'wikidata: inventory number (P217)'),
+    fetchSimpleProperty('P18', 'wikidata: image (P18)'),
+    fetchSimpleProperty('P373', 'wikidata: Commons category (P373)'),
+    fetchSimpleProperty('P6108', 'wikidata: IIIF manifest (P6108)'),
+  ]);
 
   const rows = new Map(); // ga -> row
   const institutionQids = new Set();
-  for (const b of bindings) {
+  const seenQid = new Set();
+  for (const b of gaBindings) {
     const gaRaw = b.ga?.value;
     const parsed = normalizeGA(gaRaw);
     if (!parsed) continue;
     const qid = qidOf(b.item?.value);
+    if (!qid || seenQid.has(qid)) continue;
+    seenQid.add(qid);
     const label = b.itemLabel?.value;
-    const collectionQid = qidOf(b.collection?.value);
-    const locationQid = qidOf(b.location?.value);
+
+    const collectionQid = qidOf(collections.get(qid));
+    const locationQid = qidOf(locations.get(qid));
     const instQid = collectionQid ?? locationQid;
     if (instQid) institutionQids.add(instQid);
-    const century = parseCenturyFromWikidataTime(b.inceptionTime?.value, b.inceptionPrec?.value);
-    const iiifRaw = b.iiif?.value || null;
-    const commonsCat = b.commonscat?.value || null;
-    const imageUrl = b.image?.value || null;
+
+    const inc = inceptions.get(qid);
+    const century = inc ? parseCenturyFromWikidataTime(inc.time, inc.prec) : null;
+
+    const iiifRaw = iiifs.get(qid) || null;
+    const commonsCat = commonscats.get(qid) || null;
+    const imageUrl = images.get(qid) || null;
     let imageFile = null;
     if (imageUrl) {
       try {
@@ -154,6 +206,7 @@ async function fetchWikidataRows() {
         imageFile = imageUrl.split('/').pop();
       }
     }
+
     rows.set(parsed.ga, {
       ga: parsed.ga,
       cat: parsed.cat,
@@ -162,7 +215,7 @@ async function fetchWikidataRows() {
       c1: century?.c1 ?? null,
       contents: null,
       instQid: instQid ?? null,
-      shelf: b.shelfmark?.value || null,
+      shelf: shelfmarks.get(qid) || null,
       qid: qid ?? null,
       commons: imageFile ?? (commonsCat ? `Category:${commonsCat}` : null),
       iiif: iiifRaw,
