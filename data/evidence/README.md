@@ -3,7 +3,7 @@
 Manuscript-evidence data for every New Testament verse, built by `.github/workflows/data-evidence.yml`
 running scripts in `scripts/evidence/`. See SOURCES.md for provenance/licensing per dataset.
 
-Generated: 2026-09-26T22:10:24.006Z
+Generated: 2026-09-26T22:15:28.163Z
 
 ## Coverage (`coverage/<BOOK>.json`, `coverage/summary.json`)
 
@@ -22,8 +22,8 @@ Generated: 2026-09-26T22:10:24.006Z
 
 ## Apparatus (`apparatus/<BOOK>.json`)
 
-- Books with apparatus entries: 24
-- Total verses with at least one apparatus entry: 256
+- Books with apparatus entries: 27
+- Total verses with at least one apparatus entry: 4468
 
 ## Witness tiers (`witness-tiers.json`)
 
