@@ -182,47 +182,36 @@ async function loadBsbTables() {
     const xlsx = await import("xlsx");
     const XLSX = xlsx.default ?? xlsx;
 
-    // This workbook is tens of MB; a full readFile()+sheet_to_json() over
-    // every sheet (this task only needs the NT ones) is slow. First get
-    // sheet names cheaply, then peek at just a few rows of each sheet to
-    // find which one(s) are the interlinear table, then only fully parse
-    // those.
-    const namesOnly = XLSX.readFile(xlsxPath, { bookSheets: true });
-    console.log(`bsb_tables.xlsx: sheets = ${JSON.stringify(namesOnly.SheetNames)}`);
-
-    const candidateSheets = [];
-    for (const sheetName of namesOnly.SheetNames) {
-      let peek;
-      try {
-        peek = XLSX.readFile(xlsxPath, { sheets: sheetName, sheetRows: 3 });
-      } catch (e) {
-        console.log(`bsb_tables.xlsx: could not peek sheet "${sheetName}" (${e.message})`);
-        continue;
-      }
-      const ws = peek.Sheets[sheetName];
-      if (!ws || !ws["!ref"]) continue;
-      const peekRows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: "" });
-      const header = (peekRows[0] || []).map((h) => String(h).toLowerCase().trim());
-      console.log(`bsb_tables.xlsx: sheet "${sheetName}" header=${JSON.stringify(header)}`);
-      const hasRef = header.some((h) => h.includes("verse") || h.includes("reference") || h.includes("ref"));
-      const hasEnglish = header.some((h) => h.includes("english") || h.includes("translation") || h.includes("bsb"));
-      if (hasRef && hasEnglish) candidateSheets.push(sheetName);
-    }
-    console.log(`bsb_tables.xlsx: candidate sheets = ${JSON.stringify(candidateSheets)}`);
-    if (!candidateSheets.length) throw new Error("No sheet looked like the interlinear table");
+    // One full parse (this is what's fast: ~30s for this ~55MB/750k-row
+    // workbook with SheetJS's default raw values). Re-opening the file
+    // per-sheet, or asking for formatted (raw:false) values, both turned
+    // out much slower - see git history for scripts/bible/build-bsb.mjs.
+    const wb = XLSX.readFile(xlsxPath);
+    console.log(`bsb_tables.xlsx: sheets = ${JSON.stringify(wb.SheetNames)}`);
 
     rows = [];
-    for (const sheetName of candidateSheets) {
-      const wb = XLSX.readFile(xlsxPath, { sheets: sheetName });
+    for (const sheetName of wb.SheetNames) {
       const ws = wb.Sheets[sheetName];
+      if (!ws || !ws["!ref"]) {
+        console.log(`bsb_tables.xlsx: sheet "${sheetName}" is empty, skipping`);
+        continue;
+      }
       const sheetRows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: "" });
-      console.log(`bsb_tables.xlsx: sheet "${sheetName}" fully parsed, rows=${sheetRows.length}`);
-      if (sheetRows.length < 2) continue;
-      const header = sheetRows[0].map((h) => String(h).toLowerCase().trim());
+      const header = (sheetRows[0] || []).map((h) => String(h).toLowerCase().trim());
+      console.log(
+        `bsb_tables.xlsx: sheet "${sheetName}" range=${ws["!ref"]} rows=${sheetRows.length} header=${JSON.stringify(header)}`
+      );
+      const hasRef = header.some((h) => h.includes("verse") || h.includes("reference") || h.includes("ref"));
+      const hasEnglish = header.some((h) => h.includes("english") || h.includes("translation") || h.includes("bsb"));
+      if (!hasRef || !hasEnglish) {
+        console.log(`bsb_tables.xlsx: sheet "${sheetName}" doesn't look like the interlinear table, skipping`);
+        continue;
+      }
       console.log(`bsb_tables.xlsx: sheet "${sheetName}" sample row 1: ${JSON.stringify(sheetRows[1])}`);
       console.log(`bsb_tables.xlsx: sheet "${sheetName}" sample row 2: ${JSON.stringify(sheetRows[2])}`);
       rows.push({ header, data: sheetRows.slice(1) });
     }
+    if (!rows.length) throw new Error("No sheet looked like the interlinear table");
   }
 
   if (Array.isArray(rows) && rows.length && Array.isArray(rows[0])) {
