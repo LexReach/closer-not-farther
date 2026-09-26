@@ -3,7 +3,7 @@
 Manuscript-evidence data for every New Testament verse, built by `.github/workflows/data-evidence.yml`
 running scripts in `scripts/evidence/`. See SOURCES.md for provenance/licensing per dataset.
 
-Generated: 2026-09-26T23:02:01.817Z
+Generated: 2026-09-26T23:54:07.103Z
 
 ## Coverage (`coverage/<BOOK>.json`, `coverage/summary.json`)
 
@@ -17,8 +17,8 @@ Generated: 2026-09-26T23:02:01.817Z
 
 ## Transcriptions (`transcriptions/<GA>/<pageId>.json`)
 
-- Manuscripts with at least one transcribed page: 218
-- Total transcribed pages: 6649
+- Manuscripts with at least one transcribed page: 285
+- Total transcribed pages: 15059
 
 ## Apparatus (`apparatus/<BOOK>.json`)
 
