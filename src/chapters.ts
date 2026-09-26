@@ -359,8 +359,17 @@ export const CHAPTERS: Chapter[] = [
     mount: mountCoincidences,
   },
   {
-    id: 'library',
+    id: 'coverage',
     num: '7',
+    title: 'Every verse, century by century',
+    path: '/why/coverage',
+    lead: 'Put every verse of the New Testament on one map, and light each one when a manuscript that survives today, copied by that century, is known to carry it.',
+    sentence: 'Century by century, the surviving copies cover more of the text, until almost every verse has many witnesses.',
+    mount: (el, opts) => import('./modules/coverage').then((m) => m.mountCoverage(el, opts)),
+  },
+  {
+    id: 'library',
+    num: '8',
     title: 'Here they are',
     path: '/library',
     lead: 'The manuscripts are not a rumor. Thousands are catalogued, and hundreds can be opened page by page from the libraries that hold them.',

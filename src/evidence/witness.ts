@@ -3,6 +3,7 @@
 // rows that move together: the verse as this manuscript writes it, the SBLGNT,
 // and the Berean Standard Bible. Nothing is drawn on the photograph unless a
 // position for it has been recorded.
+import '../styles/library.css';
 import { h, clear } from '../lib/dom';
 import { href } from '../lib/nav';
 import { ADAPTERS, loadOriginal, refLabel, verseId, type Book, type Pos, type Word } from '../reader/bible';
@@ -88,8 +89,10 @@ export async function openWitness(o: WitnessOpts) {
     const api = Viewer(img, `${gaLabel(o.ga)}${page?.folio ? `, page ${page.folio}` : ''}`, {
       folio: page?.folio,
       overlay: overlay ?? undefined,
-      onFolio: (found, label) => {
-        cap.textContent = !page?.folio
+      onFolio: (found, label, paged) => {
+        cap.textContent = !paged
+          ? 'A single photograph from the holder or Wikimedia Commons; it may show a different page from the one transcribed.'
+          : !page?.folio
           ? 'The transcription does not name its page, so the viewer opens at the first page.'
           : found
             ? `Page ${label}, matched by its folio label. ${overlay ? overlay.caption : 'The verse’s place on the page is not marked: no line positions have been recorded for this page yet.'}`
@@ -97,7 +100,6 @@ export async function openWitness(o: WitnessOpts) {
       },
     });
     viewerApi = api;
-    if (!page?.folio) cap.textContent = img.kind === 'commons' ? 'A single photograph from Wikimedia Commons; it may not show this verse.' : cap.textContent;
     imgBox.append(api.el, cap);
   } else {
     imgBox.append(h('p', { class: 'wv__noimg' }, 'No photograph of this manuscript can be streamed here. ', h('a', { href: intfUrl(o.ga), target: '_blank', rel: 'noopener' }, 'Look for it in the INTF workspace'), '.'));

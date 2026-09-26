@@ -1,6 +1,7 @@
 // The coverage map: every verse as a cell, lit once a surviving manuscript
 // copied by the chosen century carries it. Drag the slider through the
 // centuries; tap a cell to read that verse with its witnesses.
+import '../styles/evidence.css';
 import { h, clear, reducedMotion } from '../lib/dom';
 import { navigate } from '../lib/nav';
 import { ModuleHeader, Slider } from '../components';
@@ -245,7 +246,7 @@ export function render(root: HTMLElement) {
         'p',
         { class: 'ev-note' },
         d.NT.basis,
-        ' Dates are the catalogue’s centuries, so a manuscript of the 3rd century counts from the end of that century. Page index: INTF New Testament Virtual Manuscript Room, used for non-commercial study with attribution.',
+        ' A manuscript counts from the end of the latest century its catalogue date allows, so P66 (2nd–3rd century) counts from AD 300. Page index: INTF New Testament Virtual Manuscript Room, used for non-commercial study with attribution.',
       ),
     );
   });
@@ -254,7 +255,6 @@ export function render(root: HTMLElement) {
 
 /** Excerpt for the Why page, present mode and the tour: plays through the centuries. */
 export async function mountCoverage(el: HTMLElement, opts: MountOpts = {}): Promise<ExcerptApi> {
-  await import('../styles/evidence.css');
   const d = await loadCoverage();
   clear(el);
   if (!d?.NT) {

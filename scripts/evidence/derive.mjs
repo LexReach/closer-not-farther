@@ -18,6 +18,9 @@ const cat = JSON.parse(fs.readFileSync('data/library/catalog.json', 'utf8'));
 const books = JSON.parse(fs.readFileSync('data/bible/books.json', 'utf8')).filter((b) => b.testament === 'NT');
 const fi = (f) => cat.fields.indexOf(f);
 const c0 = new Map(cat.rows.map((r) => [r[fi('ga')], r[fi('c0')]]));
+// The coverage map counts a manuscript only from the latest century its date range allows.
+const c1 = new Map(cat.rows.map((r) => [r[fi('ga')], r[fi('c1')] ?? r[fi('c0')]]));
+const placeable = (ga) => !ga.startsWith('P') && !ga.startsWith('l') && !(ga.startsWith('0') && parseInt(ga, 10) >= 46);
 const CENT = Array.from({ length: 15 }, (_, i) => i + 2);
 
 const gaKey = (ga) => [ga.startsWith('P') ? 0 : ga.startsWith('l') ? 3 : ga.startsWith('0') ? 1 : 2, parseInt(ga.replace(/\D/g, ''), 10) || 0];
@@ -76,6 +79,10 @@ for (const b of books) {
       const seen = new Map();
       for (const [ga, pid, lvl] of hits) {
         const level = lvl === 'c' ? 'c' : 'p';
+        // A catalogue's "contains the Gospels" cannot place a fragment on a
+        // verse: leave papyri, lectionaries and the later (mostly fragmentary)
+        // majuscules out of catalogue-level coverage.
+        if (level === 'c' && !placeable(ga)) continue;
         const prev = seen.get(ga);
         if (!prev || (prev.level === 'c' && level === 'p')) seen.set(ga, { pid: pid ?? null, level });
       }
@@ -97,7 +104,7 @@ for (const b of books) {
       const pl = [...seen.values()].filter((x) => x.level === 'p').length;
       if (gas.length) versesWith++;
       sumCh.push([gas.length, oldest, oldest ? c0.get(oldest) * 100 - 50 : null, pl]);
-      tlb.v.push(CENT.map((cc) => gas.filter((g) => c0.get(g) != null && c0.get(g) <= cc).length));
+      tlb.v.push(CENT.map((cc) => gas.filter((g) => c1.get(g) != null && c1.get(g) <= cc).length));
     }
     rows.sort((x, y) => byGa(x[0], y[0]) || x[2] - y[2]);
     write(path.join(out, 'wit', b.id, `${c}.json`), { rows });
@@ -109,6 +116,6 @@ for (const b of books) {
 }
 tl.NT.basis = catHits
   ? 'Coverage comes from the INTF’s page index where it exists, and otherwise from the catalogue’s record of each manuscript’s contents.'
-  : 'Coverage comes from the INTF’s page-by-page index of the manuscripts.';
+  : 'Coverage comes from the INTF’s page-by-page index for the 446 manuscripts fetched so far: nearly all papyri and majuscules, but few later minuscules, so the later centuries undercount.';
 write(path.join(out, 'timeline.json'), tl);
 console.log(JSON.stringify({ totalVerses, versesWith, pageHits, catHits, txPages, txVerses: Object.values(txIndex).reduce((a, x) => a + Object.keys(x).length, 0) }));

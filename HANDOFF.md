@@ -65,5 +65,8 @@ The `data-contents` output (`ranges` per GA) can be merged into raw coverage as 
 5. Add the Hebrew shelf to the Library and the Isaiah 53 Timeline layer.
 
 ## Current status
-- Phase B: in progress (see the top of this file for what is on main).
+- **Phase B: shipped on main.**
+  - Page-level coverage for 446 manuscripts, from `data-evidence` commit 2685e0a.
+  - Panel, Witness view (photograph and links), inline variants, the `/why/coverage` map (also a chapter, a present slide and a tour step) and gutter dots.
+  - Not done: usable transcriptions. The CI job's TEI parser tokenized raw XML: fix `scripts/evidence/build-transcriptions.mjs` on `data-evidence` to parse `<w>` and `<lb>` elements, then re-run `derive.mjs`, which builds `tx/`. Coverage of later minuscules is also still to do.
 - Phases C and D: skipped this session for budget.

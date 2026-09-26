@@ -103,6 +103,15 @@ export const routes: RouteDef[] = [
     load: () => import('./modules/coincidences'),
   },
   {
+    path: '/why/coverage',
+    group: 'why',
+    num: '7',
+    title: 'Every verse, century by century',
+    short: 'Coverage',
+    hook: 'Each verse lights up once a surviving manuscript copied by that century carries it.',
+    load: () => import('./modules/coverage'),
+  },
+  {
     path: '/library',
     group: 'library',
     num: '7',

@@ -30,7 +30,7 @@ function buildSlides(): Slide[] {
       out.push({ id: 'twelve', kicker: `Chapter ${c.num}`, title: 'The Twelve', sentence: 'Common names get a second name; rare names don’t.', mount: (el, o) => mountNames(el, { ...o, part: 'twelve' }) });
       continue;
     }
-    out.push({ id: c.id, kicker: c.num === '7' ? 'Coda' : `Chapter ${c.num}`, title: c.title, sentence: c.sentence, mount: c.mount });
+    out.push({ id: c.id, kicker: c.id === 'library' ? 'Coda' : `Chapter ${c.num}`, title: c.title, sentence: c.sentence, mount: c.mount });
   }
   out.push({
     id: 'read',

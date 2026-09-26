@@ -56,7 +56,7 @@ export interface EvidenceLayer {
   /** Set by the Reader: called when the panel is closed from inside. */
   onClose?: (() => void) | null;
 }
-let evidenceLoader: (() => Promise<EvidenceLayer | null>) | null = null;
+let evidenceLoader: (() => Promise<EvidenceLayer | null>) | null = () => import('../evidence/panel').then((m) => m.createEvidence());
 export function registerEvidence(loader: () => Promise<EvidenceLayer | null>) {
   evidenceLoader = loader;
 }
@@ -394,6 +394,8 @@ export function render(root: HTMLElement) {
           history.replaceState(history.state, '', `${location.pathname}${posHash(st.pos)}`);
           persist();
         };
+      // A verse selected before the layer arrived (a deep link) opens now.
+      if (evidence && st.pos.verse && my === renderToken) evidence.open(st.pos, { version: firstEnglish() });
     }
     if (!evidence || my !== renderToken) return;
     if (evidence.hint && !saved.hinted) {

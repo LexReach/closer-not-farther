@@ -17,7 +17,7 @@ export interface ViewerOpts {
   /** Open the canvas labelled with this folio ("12r"), if the manifest has one. */
   folio?: string;
   /** Called once the manifest is read: whether the folio was found. */
-  onFolio?: (found: boolean, label: string | null) => void;
+  onFolio?: (found: boolean, label: string | null, paged: boolean) => void;
   /** Outlines to draw on the opened page (fractions of the image), only where recorded. */
   overlay?: { boxes: { x: number; y: number; w: number; h: number; kind: string }[] };
 }
@@ -72,8 +72,8 @@ export function Viewer(src: ImageSource, label: string, opts: ViewerOpts = {}): 
     if (opts.folio && canvases.length) {
       const fi = findFolio(canvases, opts.folio);
       if (fi >= 0) opts.page = fi;
-      opts.onFolio?.(fi >= 0, fi >= 0 ? canvases[fi].label : null);
-    } else if (opts.folio) opts.onFolio?.(false, null);
+      opts.onFolio?.(fi >= 0, fi >= 0 ? canvases[fi].label : null, true);
+    } else opts.onFolio?.(false, null, canvases.length > 0);
     const initialIndex = canvases.length ? (opts.page != null && opts.page < canvases.length ? opts.page : firstPage(canvases)) : 0;
     const initial = canvases.length
       ? tileFor(canvases[(index = initialIndex)])

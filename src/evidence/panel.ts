@@ -50,7 +50,7 @@ const byGa = (a: string, b: string) => {
 };
 export function dateLabel(lib: LibraryData, ga: string): string {
   const f = lib.featured.find((x) => x.ga === ga);
-  if (f) return f.date;
+  if (f) return f.date.replace(/\s*\(.*\)\s*$/, '');
   const m = lib.byGa.get(ga);
   return m ? centuryLabel(m) : 'Date unknown';
 }
@@ -97,7 +97,8 @@ export function createEvidence(): EvidenceLayer {
     const vid = verseId(b.id, pos.chapter, v);
     const rows = wit ? witnessesFor(wit.rows, v) : [];
     const tx = txi[key] ?? {};
-    const core = new Set(tiers?.corpora[corpusOf(b.id)] ?? []);
+    const coreList = tiers?.corpora[corpusOf(b.id)];
+    const core = new Set(Array.isArray(coreList) ? coreList : []);
     const pageLevel = rows.filter((r) => r[4] === 'p').length;
     const catLevel = rows.length - pageLevel;
     const s = sum?.chapters[pos.chapter - 1]?.[v - 1];
@@ -219,9 +220,9 @@ export function createEvidence(): EvidenceLayer {
 
     const coverage =
       rows.length === 0
-        ? 'No manuscript in the index is recorded as carrying this verse.'
+        ? 'None of the 446 manuscripts indexed so far is recorded as carrying this verse; later minuscules not yet indexed may.'
         : catLevel === 0
-          ? `Every one is located on a specific page in the INTF’s index of the manuscripts.`
+          ? `Each is located on a specific page in the INTF’s page index. So far the index here covers 446 manuscripts, nearly all the papyri and majuscules but few of the later minuscules, so the full number of copies is higher.`
           : pageLevel === 0
             ? `Counted from the catalogue’s record of what each manuscript contains, not located page by page, so treat the number as an upper bound.`
             : `${n(pageLevel)} are located on a specific page in the INTF’s index; ${n(catLevel)} more are counted from the catalogue’s record of their contents.`;

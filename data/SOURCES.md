@@ -27,3 +27,11 @@ reviewed, and then copied to `main`.
 | Image sources (556) | `library/images.json` | IIIF manifests of the holding libraries; Wikimedia Commons | Rights per holder, recorded per item; images stream from the holders and are never copied | 2026-09-26 | [library/fetch-log.md](library/fetch-log.md) |
 | Featured shelf, module data | `library/featured.json`, `manuscripts.json`, `variants.json`, `names.json`, `coincidences.json`, `p66.json`, `comparison.json` | Compiled from the published works each file cites | Facts with citations | 2026-09 | each file's `sources` field; [../DECISIONS.md](../DECISIONS.md) |
 | Fetched checks | `fetched/` | gnosis.org, New Advent, Wikimedia Commons, INTF Liste | Counts and URLs only; no texts copied | 2026-09-26 | [../DECISIONS.md](../DECISIONS.md) |
+
+## Manuscript evidence (the evidence panel and coverage map)
+
+| Dataset | Files | Source | Licence | Retrieved | Details |
+|---|---|---|---|---|---|
+| Page index (which pages carry which verses) | `evidence/wit/`, `evidence/summary/`, `evidence/timeline.json` (derived) | INTF New Testament Virtual Manuscript Room, ntvmr.uni-muenster.de, metadata API | INTF terms: used for non-commercial study with attribution; the terms are quoted on the `data-evidence` branch in `data/evidence/SOURCES.md` | 2026-09-26 | `scripts/evidence/derive.mjs` |
+| SBLGNT apparatus | `evidence/apparatus/` | github.com/LogosBible/SBLGNT `data/sblgntapp/text` | CC BY 4.0 | 2026-09-26 | `scripts/evidence/sblgnt-apparatus.mjs` |
+| NA28 consistently cited witnesses | `evidence/witness-tiers.json` | Compiled from the NA28 introduction's lists (not fetchable) | Facts, compiled | 2026-09-26 | the file's `_note` |

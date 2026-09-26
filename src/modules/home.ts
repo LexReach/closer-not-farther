@@ -71,12 +71,12 @@ export function render(root: HTMLElement) {
       h(
         'header',
         { class: 'chapter__head' },
-        h('p', { class: 'chapter__num num' }, c.num === '7' ? 'Coda' : `Chapter ${c.num}`),
+        h('p', { class: 'chapter__num num' }, c.id === 'library' ? 'Coda' : `Chapter ${c.num}`),
         h('h2', { id: `ch-${c.id}-h`, class: 'chapter__title' }, c.title),
         h('p', { class: 'chapter__lead' }, c.lead),
       ),
       stage,
-      h('p', { class: 'chapter__close' }, c.sentence, ' ', h('a', { href: href(c.path), 'data-link': true, class: 'chapter__link' }, c.id === 'library' ? 'Open the Library →' : 'Open the full module →')),
+      h('p', { class: 'chapter__close' }, c.sentence, ' ', h('a', { href: href(c.path), 'data-link': true, class: 'chapter__link' }, c.id === 'library' ? 'Open the Library →' : c.id === 'coverage' ? 'Open the map →' : 'Open the full module →')),
     );
   });
 

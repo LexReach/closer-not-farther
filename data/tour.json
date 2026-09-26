@@ -262,6 +262,37 @@
       ]
     },
     {
+      "id": "coverage",
+      "title": "Every verse, century by century",
+      "route": "/why/coverage",
+      "steps": [
+        {
+          "caption": "Each cell is one verse of the New Testament. Start at the end of the second century: only the verses in manuscripts that survive from then are lit.",
+          "ms": 7000,
+          "actions": [
+            {
+              "do": "slider",
+              "label": "Manuscripts copied by the end of the",
+              "to": 0,
+              "ms": 600
+            }
+          ]
+        },
+        {
+          "caption": "Move forward a century at a time. By the fourth century, the great codices carry almost the whole text.",
+          "ms": 9000,
+          "actions": [
+            {
+              "do": "slider",
+              "label": "Manuscripts copied by the end of the",
+              "to": 14,
+              "ms": 7000
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "library",
       "title": "Here they are",
       "route": "/library",
