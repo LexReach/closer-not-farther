@@ -1,0 +1,39 @@
+name: Render film
+
+# Records the guided tour as public/film/*.mp4 on a runner with open internet,
+# so the Library chapter shows real manuscript images. Push to the film-render
+# branch (or run manually); the outputs are committed back to that branch and
+# copied to main after review.
+on:
+  push:
+    branches: [film-render]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  film:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm i --no-save playwright
+      - run: npx playwright install --with-deps chromium
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: npm run build
+        env:
+          BASE: /closer-not-farther/
+      - run: node scripts/render-film.mjs
+      - name: Commit film
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/film
+          git commit -m "Render film ($(date -u +%Y-%m-%dT%H:%M:%SZ))" || echo "nothing to commit"
+          git push
