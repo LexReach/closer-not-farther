@@ -35,3 +35,10 @@ Every judgment call made during the unattended build, in the order it was made.
 - **"Manuscripts available"** is a step function over `count_over_time`: the most recent catalogue figure at or before the selected year, labelled approximate, together with how many of the plotted landmark witnesses are known.
 - **Starting year** is 1516 (the first preset), so the dots fill in as the reader drags forward.
 - **Comparison panel** sorts works by manuscript count and draws count and gap as two separate bar charts with the same row order, so count is never shown alone.
+
+## Module 6: Undesigned coincidences
+- **Verse quotations** come from the World English Bible. ebible.org and bible-api.com were blocked, so the text was taken from a plain-text WEB copy on GitHub (raw.githubusercontent.com/nehemiaharchives/bbl) and trimmed to 30 words or fewer.
+- **Reference fix:** the Pilate item's "Mark 15" (a whole chapter, used to make a point about an absence) now quotes Mark 15:2, 5, with the original kept in `ref_context`.
+- **Graph layout:** fixed, one column per Gospel (Acts sits with Luke), nodes ordered by chapter. Each item links its first reference (the question) to each later reference. Shared passages (John 6:4) become shared nodes, which shows the interlock.
+- **Map inset** is schematic, with approximate coordinates stored in `coincidences.json` → `map_geo`. Bethsaida is placed at et-Tell and labelled as one of two proposed sites.
+- The featured Bethsaida example opens fully expanded; other questions open at step 1 and reveal one step at a time.

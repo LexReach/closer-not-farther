@@ -29,9 +29,8 @@ jobs:
         run: npm run build
         env:
           BASE: /${{ github.event.repository.name }}/
+      # Requires Settings → Pages → Source: GitHub Actions (the workflow token cannot enable Pages).
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
