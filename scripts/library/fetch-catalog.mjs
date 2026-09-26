@@ -416,7 +416,7 @@ function mapColumns(headerCells) {
   // (unambiguous). Prefer the latter: scan for the high-priority keywords
   // first across the whole header row, and only fall back to sign/siglum-style
   // headers if nothing more specific was found.
-  const GA_STRONG = /(gregory[- ]?aland|\bnumber\b|\bno\.?\b|\bga\b)/i;
+  const GA_STRONG = /(gregory[- ]?aland|\bnumber\b|\bno\.?\b|\bga\b|^\s*#\s*$)/i;
   const GA_WEAK = /(siglum|\bsign\b|papyrus|uncial|minuscule|lectionary)/i;
   headerCells.forEach((h, i) => {
     if (map.ga == null && GA_STRONG.test(h)) map.ga = i;

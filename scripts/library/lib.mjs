@@ -93,8 +93,14 @@ export function normalizeGA(raw) {
   if (raw == null) return null;
   let s = String(raw).trim();
   if (!s) return null;
-  // Strip footnote markers, wiki refs, asterisks.
-  s = s.replace(/\[[^\]]*\]/g, '').replace(/\*/g, '').trim();
+  // Strip footnote markers, wiki refs, asterisks, and a leading/trailing "="
+  // some Wikipedia tables use to flag a renumbered/merged manuscript
+  // (e.g. "059=", "=070").
+  s = s
+    .replace(/\[[^\]]*\]/g, '')
+    .replace(/\*/g, '')
+    .replace(/^=+|=+$/g, '')
+    .trim();
   // Normalize special siglum characters to ASCII before anything else.
   s = s.replace(/𝔓/gu, 'P').replace(/ℓ/gu, 'l').replace(/ℵ/gu, '0');
   s = s.replace(/^[("]+|[)":]+$/g, '').trim();
