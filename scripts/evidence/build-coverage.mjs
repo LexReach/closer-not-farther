@@ -5,50 +5,52 @@
  * Builds data/evidence/coverage/<BOOK>.json + coverage/summary.json: for every
  * verse in the New Testament, the list of manuscripts whose pages contain it.
  *
- * Priority (per coordinator direction): real NTVMR page-level coverage, via
- * the metadata/liste/search "indexContent" (OSIS ref) search, matters most —
- * catalogue-level fallback is a last resort, not the main event, and must
- * never overstate a fragmentary manuscript's actual coverage:
+ * Phase B (network, INTF NTVMR, primary — per coordinator direction, real
+ *   page-level coverage matters most): for a PRIORITY subset of manuscripts
+ *   (the 25 featured manuscripts + every one dated wholly before 900 AD,
+ *   ~590 total), query metadata/liste/search/?gaNum=<ga>&detail=page,
+ *   bounded to that one manuscript's own pages (fast and reliably-sized,
+ *   unlike an unbounded whole-corpus indexContent scan per book/chapter,
+ *   which in testing made individual requests slow enough to blow the whole
+ *   workflow's time budget with only a handful of books done). Each page's
+ *   indexContent text is parsed into per-book "c:v" keys (a single page can
+ *   span more than one book) and recorded as a page-verified hit
+ *   ["<GA>", "<pageId>", "<range text>"].
  *
- *  Phase B (network, INTF NTVMR, primary): for each NT book, query
- *    metadata/liste/search/?indexContent=<osis>&detail=page&format=json to get
- *    every page (any manuscript) whose transcribed/indexed content intersects
- *    that book, then place each page's verse range into every verse it
- *    covers, as page-verified hits ["<GA>", "<pageId>", "<range or single c:v>"].
- *
- *  Phase A (no network, restricted fallback): catalogue-level coverage is
- *    added ONLY for minuscules ('m') and lectionaries ('L') NOT already
- *    page-verified for that verse, marked ["<GA>", null, "c"]. It is NEVER
- *    applied to papyri ('P') or majuscules ('M'): those catalogue rows carry
- *    no reliable "this is a complete, unbroken copy" guarantee (many papyri
- *    are single small fragments), so claiming corpus-wide coverage for them
- *    from the 'contents' letter alone would be misleading. If page-level hits
- *    already cover most of a book's verses (>= FALLBACK_DROP_THRESHOLD), the
- *    catalogue fallback is dropped for that book entirely.
+ * Phase A (no network, restricted fallback): catalogue-level coverage is
+ *   added ONLY for minuscules ('m') and lectionaries ('L') NOT already
+ *   page-verified for that verse, marked ["<GA>", null, "c"]. Never applied
+ *   to papyri ('P') or majuscules ('M'): those catalogue rows carry no
+ *   reliable "this is a complete, unbroken copy" guarantee (many papyri are
+ *   single small fragments), so claiming corpus-wide coverage for them from
+ *   the 'contents' letter alone would be misleading. If page-level hits
+ *   already cover most of a book's verses (>= FALLBACK_DROP_THRESHOLD), the
+ *   catalogue fallback is dropped for that book entirely.
  *
  * summary.json's per-verse `count` is the number of manuscripts actually
  * listed for that verse (not the size of the whole catalogue corpus roster).
  *
  * Network access only works from GitHub Actions (see .github/workflows/data-evidence.yml);
- * phase B is skipped (with a log line) if fetches fail, and phase A alone is kept.
+ * phase B is time-boxed (EVIDENCE_COVERAGE_BUDGET_MS) and skipped/truncated
+ * gracefully if it runs out, and phase A alone is kept for whatever it missed.
  */
 
 import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { NT_BOOKS, iterVerses } from './nt-books.mjs';
-import { setCacheDir } from './lib.mjs';
-import { discover } from './ntvmr.mjs';
+import { setCacheDir, runPool } from './lib.mjs';
+import { discover, parseIndexContent, verseKeysByBook } from './ntvmr.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..', '..');
 const OUT_DIR = path.join(ROOT, 'data', 'evidence', 'coverage');
 const CACHE_DIR = path.join(ROOT, '.cache-evidence', 'ntvmr-raw');
 const SKIP_NETWORK = process.env.EVIDENCE_SKIP_NETWORK === '1';
-// Wall-clock budget for the NTVMR fetch phase (books are processed oldest/most-attested
-// first isn't guaranteed, but every book's file is written as soon as it's computed, so
-// running out of time here still leaves a valid, committable result — just with fewer
-// books enriched with real page-level data this run; the rest keep their previous file).
+// Wall-clock budget for the NTVMR fetch phase, checked once per PRIORITY
+// MANUSCRIPT (not once per book) — a much finer grain than the earlier
+// per-book/chapter design, so a slow spot can never eat more than roughly one
+// request's worth of overrun regardless of how large the priority list is.
 const COVERAGE_BUDGET_MS = Number(process.env.EVIDENCE_COVERAGE_BUDGET_MS || 20 * 60 * 1000);
 const START = Date.now();
 
@@ -71,6 +73,15 @@ async function loadCatalog() {
     c1: r[idx.c1],
     contents: r[idx.contents] || '',
   }));
+}
+
+async function loadFeatured() {
+  try {
+    const raw = JSON.parse(await readFile(path.join(ROOT, 'data', 'library', 'featured.json'), 'utf8'));
+    return new Set(raw.manuscripts.map((m) => m.ga));
+  } catch {
+    return new Set();
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -101,7 +112,8 @@ const FALLBACK_DROP_THRESHOLD = 0.5;
 async function main() {
   await mkdir(OUT_DIR, { recursive: true });
   const catalog = await loadCatalog();
-  log(`Loaded ${catalog.length} catalog rows.`);
+  const featured = await loadFeatured();
+  log(`Loaded ${catalog.length} catalog rows, ${featured.size} featured GAs.`);
 
   const byCorpus = buildCatalogueBaseline(catalog);
   // Catalogue-level fallback is restricted to minuscules ('m') and lectionaries
@@ -116,12 +128,52 @@ async function main() {
   }
 
   const catalogByGA = new Map(catalog.map((r) => [r.ga, r]));
+
+  // Priority subset for phase B: pre-900 AD (c0 <= 9) plus every featured GA.
+  const priority = catalog.filter((r) => (r.c0 != null && r.c0 <= 9) || featured.has(r.ga));
+  log(`Priority (pre-900 or featured) manuscripts for page-level lookup: ${priority.length}`);
+
+  // pageDataByBook: bookId -> Map(ga -> Map("c:v" -> {pageId, range}))
+  const pageDataByBook = new Map(NT_BOOKS.map((b) => [b.id, new Map()]));
   let shape = null;
   let phaseBAttempted = false;
+  let manuscriptsFetched = 0;
+  let stoppedEarly = false;
+
   if (!SKIP_NETWORK) {
     phaseBAttempted = true;
-    shape = await discover('P52');
-    if (!shape) log('No confirmed NTVMR page-index shape this run; using catalogue-level (m/L) coverage only.');
+    shape = await discover();
+    if (shape) {
+      log(`--- fetching per-manuscript page data for ${priority.length} priority manuscripts (concurrency 3) ---`);
+      await runPool(
+        priority,
+        async (row) => {
+          if (timeLeft() <= 0) {
+            stoppedEarly = true;
+            return;
+          }
+          const pages = await shape.fetchManuscriptPages(row.ga);
+          for (const pg of pages) {
+            const ranges = parseIndexContent(pg.range);
+            const byBook = verseKeysByBook(ranges);
+            for (const [bookId, keys] of byBook) {
+              if (!keys.length) continue;
+              const bookMap = pageDataByBook.get(bookId);
+              if (!bookMap) continue;
+              if (!bookMap.has(row.ga)) bookMap.set(row.ga, new Map());
+              const m = bookMap.get(row.ga);
+              for (const key of keys) m.set(key, { pageId: pg.pageId, range: pg.range });
+            }
+          }
+          manuscriptsFetched++;
+        },
+        { concurrency: 3, delayMs: 150, onError: (row, err) => log(`  [ntvmr] ${row.ga} failed: ${err.message}`) },
+      );
+      if (stoppedEarly) log(`Coverage time budget (${COVERAGE_BUDGET_MS}ms) exhausted after ${manuscriptsFetched}/${priority.length} manuscripts.`);
+      log(`Page-level data fetched for ${manuscriptsFetched}/${priority.length} priority manuscripts.`);
+    } else {
+      log('No confirmed NTVMR page-index shape this run; using catalogue-level (m/L) coverage only.');
+    }
   } else {
     log('EVIDENCE_SKIP_NETWORK=1: skipping NTVMR phase B, catalogue-level only.');
   }
@@ -132,41 +184,10 @@ async function main() {
   let totalCatalogueFallback = 0;
   let booksWithPageData = 0;
 
-  // Fetch order: John first (the most-discussed book throughout this build, and where
-  // P52/P66/P75 etc. matter most), then the rest of the Gospels + Acts, then everything
-  // else in canonical order — so if the time budget runs out partway, the books most
-  // people will actually look at are the ones most likely to have finished.
-  const FETCH_PRIORITY = ['JHN', 'MAT', 'MRK', 'LUK', 'ACT'];
-  const fetchOrder = [
-    ...FETCH_PRIORITY.map((id) => NT_BOOKS.find((b) => b.id === id)),
-    ...NT_BOOKS.filter((b) => !FETCH_PRIORITY.includes(b.id)),
-  ];
-
-  // Processed one book at a time (not merged into one global structure): verse
-  // keys ("c:v") are only unique WITHIN a book, so a single flat ga->"c:v" map
-  // spanning every book would silently collide (nearly every book has a "1:1").
-  for (const book of fetchOrder) {
+  for (const book of NT_BOOKS) {
     const fallbackRoster = fallbackByCorpus[book.corpus];
     const verseKeys = [...iterVerses(book)];
-
-    // pageData: ga -> Map("c:v" -> {pageId, range}), scoped to this book only.
-    const pageData = new Map();
-    if (shape && timeLeft() <= 0) {
-      log(`  ${book.id}: coverage time budget (${COVERAGE_BUDGET_MS}ms) exhausted; writing catalogue-fallback-only for this book.`);
-    }
-    if (shape && timeLeft() > 0) {
-      try {
-        const rows = await shape.fetchBookPages(book, START + COVERAGE_BUDGET_MS); // [{ga, pageId, folio, verseKeys:["c:v",...], range}]
-        for (const row of rows) {
-          if (!pageData.has(row.ga)) pageData.set(row.ga, new Map());
-          const m = pageData.get(row.ga);
-          for (const vk of row.verseKeys) m.set(vk, { pageId: row.pageId, range: row.range });
-        }
-        log(`  ${book.id}: ${rows.length} page rows from indexContent, ${pageData.size} distinct manuscripts`);
-      } catch (err) {
-        log(`  ${book.id}: indexContent fetch failed: ${err.message}`);
-      }
-    }
+    const pageData = pageDataByBook.get(book.id); // ga -> Map("c:v" -> {pageId, range})
     if (pageData.size) booksWithPageData++;
 
     // Decide whether page-level coverage already reaches "most" of this

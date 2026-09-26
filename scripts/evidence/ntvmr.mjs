@@ -98,7 +98,7 @@ const BOOK_BY_ID = new Map(NT_BOOKS.map((b) => [b.id, b]));
  * "." (seen in an older, non-page field; tolerated defensively). Segments without their
  * own book/chapter reuse the previous segment's (defensive; not observed in practice
  * since real data always repeats the book name per segment). */
-function parseIndexContent(text) {
+export function parseIndexContent(text) {
   if (!text) return [];
   const out = [];
   let curBook = null;
@@ -142,6 +142,23 @@ function verseKeysForBook(ranges, book) {
     for (let v = v0; v <= v1; v++) keys.push(`${r.chapter}:${v}`);
   }
   return keys;
+}
+
+/** Like verseKeysForBook, but grouped per book actually named in `ranges` (a page can span
+ * more than one book, e.g. end of Luke + start of John on the same leaf). */
+export function verseKeysByBook(ranges) {
+  const byBook = new Map(); // BOOK id -> ["c:v", ...]
+  for (const r of ranges) {
+    if (!r.book) continue;
+    if (!byBook.has(r.book.id)) byBook.set(r.book.id, []);
+    const maxV = r.book.verses[r.chapter - 1];
+    if (!maxV) continue;
+    const v0 = Math.max(1, r.v0);
+    const v1 = Math.min(maxV, r.v1);
+    const arr = byBook.get(r.book.id);
+    for (let v = v0; v <= v1; v++) arr.push(`${r.chapter}:${v}`);
+  }
+  return byBook;
 }
 
 function asArray(x) {
@@ -247,7 +264,7 @@ export const CONFIRMED_SHAPE = {
       format: 'json',
       limit: '0',
     })}`;
-    const text = await cachedFetchText(url, { label: `mspages:${ga}`, timeoutMs: 45000, retries: 2 });
+    const text = await cachedFetchText(url, { label: `mspages:${ga}`, timeoutMs: 20000, retries: 1 });
     let json;
     try {
       json = JSON.parse(text);
