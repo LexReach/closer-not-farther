@@ -31,8 +31,9 @@ const NT_BOOK_ORDER = [
 ];
 
 const ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ' };
+// Control characters: one NTVMR page came back with binary bytes in its text.
 const decode = (s) =>
-  s.replace(/&(#x[0-9a-f]+|#\d+|\w+);/gi, (m, e) =>
+  s.replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f\ufffd]/g, '').replace(/&(#x[0-9a-f]+|#\d+|\w+);/gi, (m, e) =>
     e[0] === '#' ? String.fromCodePoint(e[1] === 'x' || e[1] === 'X' ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10)) : ENTITIES[e] ?? m,
   );
 
@@ -131,7 +132,7 @@ for (const [f, e] of [['σταυρωθη', ['στρωθη']], ['σταυρωσο
 /** The full form of a contracted sacred name, or the contraction itself when it is not in the table. */
 export function expandNomenSacrum(s) {
   const k = nsKey(s);
-  return NS[k] ?? k;
+  return (NS[k] ?? k).replace(/σ$/, 'ς');
 }
 
 function verseFromAb(n) {
@@ -220,7 +221,9 @@ export function parseTEIPage(xml, { ga, pageId, folio = null }) {
     if (word) {
       const f = fragFor();
       f.orig += s;
-      if (!app) f.corr += s;
+      // Inside a word, a corrector's letters replace these at </app>; whole
+      // words are paired with the corrector's words at </app> instead.
+      if (!app || !app.inWord) f.corr += s;
       return;
     }
     // Loose text outside <w>: split on spaces (transcriptions without word markup).
