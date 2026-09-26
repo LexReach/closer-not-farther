@@ -59,6 +59,7 @@ All figures come from `data/*.json`. Pages import these files at build time and 
   # FFMPEG=/path/to/ffmpeg if it is not on PATH; `pip install imageio-ffmpeg` provides one
   ```
 
+- The committed film was recorded in GitHub Actions so the Library chapter shows real manuscript images: push `main` to the `film-render` branch (`git push origin main:film-render`) and `.github/workflows/render-film.yml` commits a fresh `public/film/` back to that branch.
 - **OpenGraph cards**: `node scripts/render-og.mjs` renders `public/og/*.png` and `public/og/meta.json`; `postbuild` writes per-route titles, descriptions and og:/twitter: tags into each route's HTML.
 
 ## Data that is fetched rather than typed
