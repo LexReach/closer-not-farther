@@ -6,13 +6,41 @@
     "Daniel Wallace on variant categories (CSNTM lectures/essays)"
   ],
   "witnesses": [
-    { "id": "P66", "label": "P66", "century": 2.9 },
-    { "id": "P75", "label": "P75", "century": 3 },
-    { "id": "01", "label": "Sinaiticus", "century": 4 },
-    { "id": "03", "label": "Vaticanus", "century": 4 },
-    { "id": "02", "label": "Alexandrinus", "century": 5 },
-    { "id": "05", "label": "Bezae", "century": 5 },
-    { "id": "Byz", "label": "Byzantine majority", "century": 9 }
+    {
+      "id": "P66",
+      "label": "P66",
+      "century": 2.9
+    },
+    {
+      "id": "P75",
+      "label": "P75",
+      "century": 3
+    },
+    {
+      "id": "01",
+      "label": "Sinaiticus",
+      "century": 4
+    },
+    {
+      "id": "03",
+      "label": "Vaticanus",
+      "century": 4
+    },
+    {
+      "id": "02",
+      "label": "Alexandrinus",
+      "century": 5
+    },
+    {
+      "id": "05",
+      "label": "Bezae",
+      "century": 5
+    },
+    {
+      "id": "Byz",
+      "label": "Byzantine majority",
+      "century": 9
+    }
   ],
   "passages": [
     {
@@ -22,10 +50,23 @@
       "disputed_text": "...waiting for the moving of the water; for an angel went down at certain seasons into the pool and stirred the water; whoever stepped in first after the stirring was healed of whatever disease he had.",
       "context_before": "In these lay a multitude of invalids, blind, lame, paralyzed",
       "context_after": "One man was there who had been an invalid for thirty-eight years.",
-      "contains": { "P66": false, "P75": false, "01": false, "03": false, "02": true, "05": true, "Byz": true },
+      "contains": {
+        "P66": false,
+        "P75": false,
+        "01": false,
+        "03": false,
+        "02": true,
+        "05": true,
+        "Byz": true
+      },
       "explanation": "Verse 7 has the man say the water is 'stirred up' with no prior explanation. A marginal gloss explaining the local belief was absorbed into the text in some copies by the 4th-5th century. The earliest witnesses lack it.",
       "doctrine_impact": "None. Huff's own example: the verse number is retained and the text is in your footnote.",
-      "category": "meaningful, not viable"
+      "category": "meaningful, not viable",
+      "witness_notes": {
+        "05": "Codex Bezae (D) includes v3b (‘waiting for the moving of the water’) but omits v4 (the angel-stirring explanation) entirely. Counted here as 'true' because it attests part of the disputed span, not the full angel clause.",
+        "02": "Alexandrinus (A) has the full angel explanation of v4, unlike the earliest papyri and great uncials."
+      },
+      "verified": "NA28/SBLGNT apparatus and Metzger, Textual Commentary (2nd ed.), ad loc.: P66 P75 01 03 lack all of 3b-4; 02 (A) has v4 in full; 05 (D) has 3b but not 4 (nuanced, see witness_notes); Byz has the full gloss."
     },
     {
       "id": "mark-16",
@@ -34,10 +75,26 @@
       "disputed_text": "Now when he rose early on the first day of the week, he appeared first to Mary Magdalene... (twelve verses)",
       "context_before": "...and they said nothing to anyone, for they were afraid.",
       "context_after": "(end of Gospel)",
-      "contains": { "P66": null, "P75": null, "01": false, "03": false, "02": true, "05": true, "Byz": true },
+      "contains": {
+        "P66": null,
+        "P75": null,
+        "01": false,
+        "03": false,
+        "02": true,
+        "05": null,
+        "Byz": true
+      },
       "explanation": "Sinaiticus and Vaticanus end at 16:8; several later manuscripts mark the ending as doubtful. Vocabulary and style differ from the rest of Mark. Almost all modern Bibles print it with brackets and a note.",
       "doctrine_impact": "No doctrine rests on it alone; snake-handling and poison-drinking sects have leaned on 16:18.",
-      "category": "meaningful and viable (disputed)"
+      "category": "meaningful and viable (disputed)",
+      "witness_notes": {
+        "01": "Sinaiticus ends the Gospel at 16:8, with a decorative closing flourish, indicating the scribe knew of no further text.",
+        "03": "Vaticanus also ends at 16:8, leaving a blank column/space large enough to suggest the copyist knew of the longer ending but chose not to include it.",
+        "02": "Alexandrinus (A) is a 5th-century witness that includes the longer ending in full.",
+        "05": "Codex Bezae (D) preserves Mark through about 16:15 but has a physical lacuna (lost leaf) covering the remainder of the longer ending and the opening of Luke; its Greek text is not extant for the full disputed unit, so marked null rather than true.",
+        "Byz": "The Byzantine majority text includes 16:9-20 as standard; other witnesses not tracked here (C, W) also include it, though W inserts the extra 'Freer Logion' after v14."
+      },
+      "verified": "NA28 apparatus and Metzger, Textual Commentary (2nd ed.), pp. 102-106: 01 and 03 end at 16:8; 02 (A) and Byz include vv.9-20; 05 (D) is defective (lacuna) for the latter part of the ending so is marked null rather than true; P66/P75 do not extend this far into Mark (both are Johannine/Lukan-heavy papyri and neither preserves Mark) so remain null."
     },
     {
       "id": "john-8",
@@ -46,10 +103,23 @@
       "disputed_text": "...Let him who is without sin among you be the first to throw a stone at her...",
       "context_before": "John 7:52",
       "context_after": "John 8:12",
-      "contains": { "P66": false, "P75": false, "01": false, "03": false, "02": false, "05": true, "Byz": true },
+      "contains": {
+        "P66": false,
+        "P75": false,
+        "01": false,
+        "03": false,
+        "02": null,
+        "05": true,
+        "Byz": true
+      },
       "explanation": "Absent from every early Greek witness; appears in Bezae (5th c.) and later, and floats to other locations (after Luke 21:38 in some). Likely an authentic early tradition about Jesus that was not originally part of John.",
       "doctrine_impact": "None; the story's ethic is consistent with the rest of the Gospels.",
-      "category": "meaningful and viable (disputed)"
+      "category": "meaningful and viable (disputed)",
+      "witness_notes": {
+        "02": "Codex Alexandrinus (A) has a physical lacuna in John: the leaves covering John 6:50-8:52 are lost, so A is simply not extant here. Where the manuscript's reconstructed page/line count has been checked, the space is generally judged too short to have included the pericope, but because the leaf itself is missing this is marked null (not extant) rather than a confirmed false.",
+        "05": "Codex Bezae (D) is the earliest witness to include the pericope adulterae, in its usual Johannine location."
+      },
+      "verified": "NA28 apparatus and Metzger, Textual Commentary (2nd ed.), pp. 187-189: P66 P75 01 03 lack the passage; 02 (A) is lacunose at this point in the manuscript (missing leaves, John 6:50-8:52) and is therefore marked null rather than false, though leaf-count reconstructions suggest it likely did not have room for the pericope; 05 (D) and Byz include it (with wide textual fluidity in wording and location across manuscripts that do include it)."
     },
     {
       "id": "1john-5-7",
@@ -58,10 +128,23 @@
       "disputed_text": "...in heaven: the Father, the Word, and the Holy Spirit; and these three are one. And there are three that bear witness on earth...",
       "context_before": "For there are three that testify:",
       "context_after": "the Spirit and the water and the blood; and these three agree.",
-      "contains": { "P66": null, "P75": null, "01": false, "03": false, "02": false, "05": null, "Byz": false },
+      "contains": {
+        "P66": null,
+        "P75": null,
+        "01": false,
+        "03": false,
+        "02": false,
+        "05": null,
+        "Byz": false
+      },
       "explanation": "Found in no Greek manuscript before the 14th century; entered Erasmus's 3rd edition (1522) from a Latin tradition, and from there the KJV. Every modern translation omits it.",
       "doctrine_impact": "The Trinity is argued from many other passages; no modern theologian rests it on this verse.",
-      "category": "meaningful, not viable"
+      "category": "meaningful, not viable",
+      "witness_notes": {
+        "05": "Codex Bezae (D) does not contain the Catholic Epistles at all (its surviving contents are the Gospels, Acts, and 3 John in Latin only), so it cannot attest 1 John 5:7-8 either way; marked null.",
+        "Byz": "The Byzantine majority text, including most Greek minuscules, also lacks the Comma; it entered the Greek textual tradition only very late (from the 14th-16th centuries in a handful of manuscripts influenced by the Latin Vulgate and Erasmus's edition)."
+      },
+      "verified": "NA28 apparatus and Metzger, Textual Commentary (2nd ed.), pp. 647-649: the Comma is absent from every Greek manuscript before the 14th century and from the Byzantine majority text; P66/P75 do not contain the Catholic Epistles (both are Gospel/Acts papyri) and 05 (D) also lacks the Catholic Epistles entirely, so all three are null rather than false."
     },
     {
       "id": "luke-22-43",
@@ -70,10 +153,24 @@
       "disputed_text": "And there appeared to him an angel from heaven, strengthening him. And being in agony he prayed more earnestly; and his sweat became like great drops of blood falling down to the ground.",
       "context_before": "Luke 22:42",
       "context_after": "Luke 22:45",
-      "contains": { "P66": null, "P75": false, "01": true, "03": false, "02": false, "05": true, "Byz": true },
+      "contains": {
+        "P66": null,
+        "P75": false,
+        "01": true,
+        "03": false,
+        "02": false,
+        "05": true,
+        "Byz": true
+      },
       "explanation": "Early and geographically wide support on both sides. Modern editions bracket it. Ehrman argues it was added against docetism; others argue it was removed for the same reason.",
       "doctrine_impact": "None.",
-      "category": "meaningful and viable (disputed)"
+      "category": "meaningful and viable (disputed)",
+      "witness_notes": {
+        "01": "Sinaiticus's first hand (01*) includes vv.43-44. A early corrector (01ca, roughly contemporary/7th c.) marked the verses with obeli/deletion signs as spurious, effectively removing them; a later corrector (01cb) restored them again. The 'true' value here reflects the original hand (01*).",
+        "P66": "Papyrus 66 does not preserve the Gospel of Luke at all (it contains only John), so it cannot attest this passage; marked null.",
+        "02": "Alexandrinus (A) omits vv.43-44, aligning it with P75, 03 (B), and (in its original form before correction) 01."
+      },
+      "verified": "NA28 apparatus and Metzger, Textual Commentary (2nd ed.), pp. 151-152: P75, 03 (B), and 02 (A) omit; 01* (original hand) and 05 (D) include; Byz includes; the verses have wide but mixed early attestation on both sides, hence editors bracket them. P66 does not contain Luke and is null."
     },
     {
       "id": "matt-6-13",
@@ -82,10 +179,24 @@
       "disputed_text": "For yours is the kingdom and the power and the glory, forever. Amen.",
       "context_before": "...but deliver us from evil.",
       "context_after": "For if you forgive others their trespasses...",
-      "contains": { "P66": null, "P75": null, "01": false, "03": false, "02": null, "05": false, "Byz": true },
+      "contains": {
+        "P66": null,
+        "P75": null,
+        "01": false,
+        "03": false,
+        "02": null,
+        "05": false,
+        "Byz": true
+      },
       "explanation": "A liturgical ending (cf. 1 Chronicles 29:11) that entered the text through use in worship. Absent from the earliest witnesses and from Luke's version.",
       "doctrine_impact": "None.",
-      "category": "meaningful, not viable"
+      "category": "meaningful, not viable",
+      "witness_notes": {
+        "02": "Alexandrinus (A) is lacunose for most of Matthew (missing Matthew 1:1-25:6), so it cannot attest this verse either way; marked null.",
+        "01": "Sinaiticus omits the doxology, agreeing with Vaticanus and Bezae.",
+        "05": "Codex Bezae (D) also omits the doxology."
+      },
+      "verified": "NA28 apparatus and Metzger, Textual Commentary (2nd ed.), pp. 13-14: 01, 03, 05 omit; 02 (A) is physically missing the relevant leaves of Matthew (lacunose 1:1-25:6) and is marked null rather than false; Byz includes it, reflecting its liturgical use (cf. 1 Chronicles 29:11); P66/P75 do not contain Matthew and remain null."
     },
     {
       "id": "spelling-1",
@@ -94,10 +205,27 @@
       "disputed_text": "ἔχομεν (we have peace) vs ἔχωμεν (let us have peace)",
       "context_before": "Therefore, since we have been justified by faith,",
       "context_after": "...peace with God through our Lord Jesus Christ.",
-      "contains": { "P66": null, "P75": null, "01": true, "03": true, "02": true, "05": true, "Byz": false },
+      "contains": {
+        "P66": null,
+        "P75": null,
+        "01": true,
+        "03": true,
+        "02": true,
+        "05": true,
+        "Byz": false
+      },
       "explanation": "Omicron and omega were pronounced alike; scribes writing from dictation confused them constantly. Even here, where the better manuscripts read 'let us have', editors print 'we have' on internal grounds.",
       "doctrine_impact": "Negligible.",
-      "category": "spelling / hearing error"
+      "category": "spelling / hearing error",
+      "contains_label": "true = this witness reads the subjunctive ἔχωμεν, echōmen ('let us have/keep peace'); false = it reads the indicative ἔχομεν, echomen ('we have peace').",
+      "witness_notes": {
+        "01": "Sinaiticus's original hand (01*) reads ἔχωμεν (subjunctive); a later corrector (01c) changed it to ἔχομεν. The 'true' value reflects the original hand.",
+        "03": "Vaticanus's original hand (03*, B*) reads ἔχωμεν; a corrector (B2) altered it to ἔχομεν, as did minuscules F, G, P among others.",
+        "Byz": "The Byzantine majority text is itself mixed/split between the two readings, though the majority of later minuscules read the indicative ἔχομεν; recorded here as 'false' to reflect that majority, but treat this cell as an approximation rather than a unanimous reading.",
+        "P66": "Papyrus 66 does not contain Romans (it is a Gospel of John papyrus), so it is null.",
+        "P75": "Papyrus 75 does not contain Romans (it contains Luke and John), so it is null."
+      },
+      "verified": "NA28 apparatus, Metzger Textual Commentary (2nd ed.), p. 452, and standard critical editions: 01* 02(A) 03* 05(D) read the subjunctive ἔχωμεν; correctors of 01 and 03 (and minuscules F G P) read the indicative ἔχομεν; Byz is genuinely mixed/split with the indicative more common in the later manuscript stream (recorded as false here, an approximation, see witness_notes). Despite the subjunctive's stronger and earlier manuscript support, UBS/NA and most translations print the indicative 'we have' on internal/exegetical grounds. P66 and P75 do not contain Romans and are null."
     },
     {
       "id": "spelling-2",
@@ -106,20 +234,53 @@
       "disputed_text": "μονογενὴς θεός (only God) vs μονογενὴς υἱός (only Son)",
       "context_before": "No one has ever seen God;",
       "context_after": "...who is at the Father's side, he has made him known.",
-      "contains": { "P66": true, "P75": true, "01": true, "03": true, "02": false, "05": null, "Byz": false },
+      "contains": {
+        "P66": true,
+        "P75": true,
+        "01": true,
+        "03": true,
+        "02": false,
+        "05": null,
+        "Byz": false
+      },
       "explanation": "Both nouns were abbreviated as two-letter nomina sacra (ΘΣ / ΥΣ), one stroke apart. The earliest papyri read 'God'; the majority read 'Son'.",
       "doctrine_impact": "Either reading affirms Christ's divinity in John's context; the difference is which word John used to say it.",
-      "category": "meaningful and viable (disputed)"
+      "category": "meaningful and viable (disputed)",
+      "contains_label": "true = this witness reads μονογενής θεός, monogenēs theos ('only God' / 'the only begotten God'); false = it reads μονογενής υἱός, monogenēs huios ('only Son').",
+      "witness_notes": {
+        "05": "Codex Bezae (D) has a lacuna in John covering this region (John 1:16-3:26 is lost), so it cannot attest either reading; marked null."
+      },
+      "verified": "NA28 apparatus and Metzger, Textual Commentary (2nd ed.), pp. 169-170: P66 P75 01 03 read θεός (the earliest and now generally preferred reading, adopted in NA28/UBS5 and modern critical texts); 02 (A) and Byz read υἱός; 05 (D) is lacunose here (missing leaves, John 1:16-3:26) and is null. The two nomina sacra ΘΣ and ΥΣ differ by one stroke, which along with theological sensitivities likely drove the variation."
     }
   ],
   "categories": {
-    "_note": "Approximate shares of the ~400,000 total variants, per Wallace's popular taxonomy. Present as estimates.",
+    "_note": "Approximate shares of the ~400,000 total variants, per Wallace's popular taxonomy; treat all figures on this page (400,000 total and the percentage breakdown) as widely-cited estimates, not precise counts, since no single agreed census of all variants exists.",
     "total_variants_estimate": 400000,
     "breakdown": [
-      { "type": "Spelling and nonsense errors", "share": 0.70, "viable": false, "meaningful": false },
-      { "type": "Synonyms, word order, articles", "share": 0.25, "viable": true, "meaningful": false },
-      { "type": "Meaningful but not viable (late, thin support)", "share": 0.04, "viable": false, "meaningful": true },
-      { "type": "Meaningful and viable", "share": 0.01, "viable": true, "meaningful": true }
+      {
+        "type": "Spelling and nonsense errors",
+        "share": 0.7,
+        "viable": false,
+        "meaningful": false
+      },
+      {
+        "type": "Synonyms, word order, articles",
+        "share": 0.25,
+        "viable": true,
+        "meaningful": false
+      },
+      {
+        "type": "Meaningful but not viable (late, thin support)",
+        "share": 0.04,
+        "viable": false,
+        "meaningful": true
+      },
+      {
+        "type": "Meaningful and viable",
+        "share": 0.01,
+        "viable": true,
+        "meaningful": true
+      }
     ]
   }
 }

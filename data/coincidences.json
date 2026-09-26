@@ -10,76 +10,182 @@
       "question": "Why did Jesus ask Philip where to buy bread?",
       "featured": true,
       "steps": [
-        { "ref": "John 6:5", "point": "Jesus asks Philip, of all people, where to buy bread. John gives no reason." },
-        { "ref": "Luke 9:10", "point": "Luke, in his account of the same feeding, says it happened near Bethsaida. Luke never mentions Philip here." },
-        { "ref": "John 1:44; 12:21", "point": "John elsewhere, in passing, says Philip was from Bethsaida." },
-        { "ref": null, "point": "Put together: Jesus asked the local. Neither author explains this; the explanation only appears when the two are read side by side." }
+        {
+          "ref": "John 6:5",
+          "point": "Jesus asks Philip, of all people, where to buy bread. John gives no reason.",
+          "quote": "Jesus therefore, lifting up his eyes and seeing that a great multitude was coming to him, said to Philip, “Where are we to buy bread, that these may eat?”"
+        },
+        {
+          "ref": "Luke 9:10",
+          "point": "Luke, in his account of the same feeding, says it happened near Bethsaida. Luke never mentions Philip here.",
+          "quote": "The apostles, when they had returned, told him what things they had done. He took them and withdrew apart to a desert region of a city called Bethsaida."
+        },
+        {
+          "ref": "John 1:44; 12:21",
+          "point": "John elsewhere, in passing, says Philip was from Bethsaida.",
+          "quote": "Now Philip was from Bethsaida, the city of Andrew and Peter. / These came to Philip, who was from Bethsaida of Galilee…"
+        },
+        {
+          "ref": null,
+          "point": "Put together: Jesus asked the local. Neither author explains this; the explanation only appears when the two are read side by side."
+        }
       ],
-      "map": { "places": ["Bethsaida", "Capernaum", "Tiberias"], "highlight": "Bethsaida" }
+      "map": {
+        "places": [
+          "Bethsaida",
+          "Capernaum",
+          "Tiberias"
+        ],
+        "highlight": "Bethsaida"
+      }
     },
     {
       "id": "green-grass",
       "question": "Why does Mark mention green grass?",
       "steps": [
-        { "ref": "Mark 6:39", "point": "Mark notes the crowd sat on 'green grass' at the feeding of the 5,000." },
-        { "ref": "John 6:4", "point": "John, independently, says the Passover was near, i.e., spring, the one season Galilee's grass is green." },
-        { "ref": null, "point": "A throwaway color detail in one Gospel matches a calendar note in another." }
+        {
+          "ref": "Mark 6:39",
+          "point": "Mark notes the crowd sat on 'green grass' at the feeding of the 5,000.",
+          "quote": "He commanded them that everyone should sit down in groups on the green grass."
+        },
+        {
+          "ref": "John 6:4",
+          "point": "John, independently, says the Passover was near, i.e., spring, the one season Galilee's grass is green.",
+          "quote": "Now the Passover, the feast of the Jews, was at hand."
+        },
+        {
+          "ref": null,
+          "point": "A throwaway color detail in one Gospel matches a calendar note in another."
+        }
       ]
     },
     {
       "id": "who-struck-you",
       "question": "Why do the guards say 'Prophesy! Who hit you?'",
       "steps": [
-        { "ref": "Matthew 26:67-68", "point": "They strike Jesus and say 'Prophesy to us, Christ: who is it that struck you?' Matthew never says he was blindfolded, so the taunt is odd." },
-        { "ref": "Luke 22:64", "point": "Luke says they blindfolded him first." },
-        { "ref": null, "point": "Luke's detail explains Matthew's taunt." }
+        {
+          "ref": "Matthew 26:67-68",
+          "point": "They strike Jesus and say 'Prophesy to us, Christ: who is it that struck you?' Matthew never says he was blindfolded, so the taunt is odd.",
+          "quote": "Then they spat in his face and beat him with their fists, and some slapped him, saying, “Prophesy to us, you Christ! Who hit you?”"
+        },
+        {
+          "ref": "Luke 22:64",
+          "point": "Luke says they blindfolded him first.",
+          "quote": "Having blindfolded him, they struck him on the face and asked him, “Prophesy! Who is the one who struck you?”"
+        },
+        {
+          "ref": null,
+          "point": "Luke's detail explains Matthew's taunt."
+        }
       ]
     },
     {
       "id": "herod-servants",
       "question": "How would Matthew know what Herod said to his servants?",
       "steps": [
-        { "ref": "Matthew 14:1-2", "point": "Herod tells his servants that Jesus is John the Baptist raised." },
-        { "ref": "Luke 8:3", "point": "Luke lists Joanna, wife of Chuza, Herod's steward, among Jesus' followers." },
-        { "ref": "Acts 13:1", "point": "Luke also names Manaen, a companion of Herod, among the Antioch church." },
-        { "ref": null, "point": "Luke supplies plausible sources for a private conversation Matthew reports without explanation." }
+        {
+          "ref": "Matthew 14:1-2",
+          "point": "Herod tells his servants that Jesus is John the Baptist raised.",
+          "quote": "…Herod the tetrarch heard the report concerning Jesus, and said to his servants, “This is John the Baptizer. He is risen from the dead.”"
+        },
+        {
+          "ref": "Luke 8:3",
+          "point": "Luke lists Joanna, wife of Chuza, Herod's steward, among Jesus' followers.",
+          "quote": "…Joanna, the wife of Chuzas, Herod’s steward; Susanna; and many others who served them from their possessions."
+        },
+        {
+          "ref": "Acts 13:1",
+          "point": "Luke also names Manaen, a companion of Herod, among the Antioch church.",
+          "quote": "…Manaen the foster brother of Herod the tetrarch, and Saul."
+        },
+        {
+          "ref": null,
+          "point": "Luke supplies plausible sources for a private conversation Matthew reports without explanation."
+        }
       ]
     },
     {
       "id": "sons-of-thunder",
       "question": "Why are James and John called 'Sons of Thunder'?",
       "steps": [
-        { "ref": "Mark 3:17", "point": "Mark records the nickname but gives no reason." },
-        { "ref": "Luke 9:54", "point": "Luke has James and John ask to call down fire on a Samaritan village." },
-        { "ref": null, "point": "The temperament Luke shows fits the nickname Mark records." }
+        {
+          "ref": "Mark 3:17",
+          "point": "Mark records the nickname but gives no reason.",
+          "quote": "James the son of Zebedee; and John, the brother of James, (whom he called Boanerges, which means, Sons of Thunder);"
+        },
+        {
+          "ref": "Luke 9:54",
+          "point": "Luke has James and John ask to call down fire on a Samaritan village.",
+          "quote": "…“Lord, do you want us to command fire to come down from the sky and destroy them, just as Elijah did?”"
+        },
+        {
+          "ref": null,
+          "point": "The temperament Luke shows fits the nickname Mark records."
+        }
       ]
     },
     {
       "id": "destroy-temple",
       "question": "Where did the false witnesses get the 'destroy this temple' charge?",
       "steps": [
-        { "ref": "Mark 14:58", "point": "At the trial, witnesses claim Jesus said he would destroy the temple. Mark records no such saying." },
-        { "ref": "John 2:19", "point": "John, years earlier in the narrative, has Jesus say 'Destroy this temple, and in three days I will raise it up.'" },
-        { "ref": null, "point": "John supplies the saying; Mark supplies its garbled afterlife." }
+        {
+          "ref": "Mark 14:58",
+          "point": "At the trial, witnesses claim Jesus said he would destroy the temple. Mark records no such saying.",
+          "quote": "“We heard him say, ‘I will destroy this temple that is made with hands, and in three days I will build another made without hands.’”"
+        },
+        {
+          "ref": "John 2:19",
+          "point": "John, years earlier in the narrative, has Jesus say 'Destroy this temple, and in three days I will raise it up.'",
+          "quote": "“Destroy this temple, and in three days I will raise it up.”"
+        },
+        {
+          "ref": null,
+          "point": "John supplies the saying; Mark supplies its garbled afterlife."
+        }
       ]
     },
     {
       "id": "pilate-galilee",
       "question": "Why does Pilate ask whether Jesus is a Galilean?",
       "steps": [
-        { "ref": "Luke 23:5-7", "point": "Pilate hears 'Galilee' and sends Jesus to Herod Antipas, who governed it." },
-        { "ref": "Luke 3:1", "point": "Luke had earlier set out exactly who ruled which region, so the jurisdictional move makes sense." },
-        { "ref": "Mark 15", "point": "Mark's parallel omits the Herod episode entirely; the jurisdiction detail is Luke's alone and fits known Roman practice." }
+        {
+          "ref": "Luke 23:5-7",
+          "point": "Pilate hears 'Galilee' and sends Jesus to Herod Antipas, who governed it.",
+          "quote": "But when Pilate heard Galilee mentioned, he asked if the man was a Galilean. When he found out that he was in Herod’s jurisdiction, he sent him to Herod…"
+        },
+        {
+          "ref": "Luke 3:1",
+          "point": "Luke had earlier set out exactly who ruled which region, so the jurisdictional move makes sense.",
+          "quote": "…Pontius Pilate being governor of Judea, and Herod being tetrarch of Galilee, and his brother Philip tetrarch of the region of Ituraea and Trachonitis, and Lysanias tetrarch of Abilene."
+        },
+        {
+          "ref": "Mark 15:2, 5",
+          "point": "Mark's parallel omits the Herod episode entirely; the jurisdiction detail is Luke's alone and fits known Roman practice.",
+          "quote": "Pilate asked him, “Are you the King of the Jews?” He answered, “So you say.” …Jesus made no further answer, so that Pilate marveled.",
+          "ref_context": "Mark 15"
+        }
       ]
     },
     {
       "id": "many-coming-going",
       "question": "Why could the disciples not even eat?",
       "steps": [
-        { "ref": "Mark 6:31", "point": "So many were 'coming and going' that the disciples had no leisure to eat." },
-        { "ref": "John 6:4", "point": "John: Passover was near. Pilgrim traffic through Galilee toward Jerusalem peaked then." },
-        { "ref": null, "point": "John's calendar note explains Mark's crowds." }
+        {
+          "ref": "Mark 6:31",
+          "point": "So many were 'coming and going' that the disciples had no leisure to eat.",
+          "quote": "He said to them, “Come away into a deserted place, and rest awhile.” For there were many coming and going, and they had no leisure so much as to eat."
+        },
+        {
+          "ref": "John 6:4",
+          "point": "John: Passover was near. Pilgrim traffic through Galilee toward Jerusalem peaked then.",
+          "quote": "Now the Passover, the feast of the Jews, was at hand."
+        },
+        {
+          "ref": null,
+          "point": "John's calendar note explains Mark's crowds."
+        }
       ]
     }
-  ]
+  ],
+  "translation": "World English Bible (public domain)"
 }

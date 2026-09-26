@@ -1,0 +1,121 @@
+{
+  "_note": "Counterpoints shown in each module's 'What skeptics say' disclosure and collected on /about. Written from SPEC.md section 3; keep them fair and sourced.",
+  "sources": [
+    "Bart Ehrman, Misquoting Jesus (HarperSanFrancisco, 2005)",
+    "'Name Recall in the Synoptic Gospels', New Testament Studies (Cambridge University Press, 2022)",
+    "Gerd Mink and the INTF on the Coherence-Based Genealogical Method (CBGM), https://ntg.uni-muenster.de/",
+    "Brent Nongbri, 'The Use and Abuse of P52' (HTR 98, 2005) and 'The Limits of Palaeographic Dating of Literary Papyri' (MH 71, 2014)",
+    "Bruce Metzger & Bart Ehrman, The Text of the New Testament, 4th ed. (2005)",
+    "Daniel Wallace, CSNTM essays on variant categories",
+    "Brent Nongbri, God's Library: The Archaeology of the Earliest Christian Manuscripts (Yale, 2018)",
+    "James R. Royse, Scribal Habits in Early Greek New Testament Papyri (Brill, 2008)"
+  ],
+  "modules": {
+    "telephone": {
+      "intro": "The simulator is a teaching model, not a reconstruction method. Its limits are real.",
+      "points": [
+        {
+          "text": "The simulation treats every scribe's errors as independent. Real scribes copied from exemplars inside text-families, so shared mistakes travel together and independent lines are fewer than the tree suggests.",
+          "source": "Metzger & Ehrman 2005"
+        },
+        {
+          "text": "The earliest generations, before about 150 AD, have almost no surviving witnesses. The tree is thinnest exactly where it matters most.",
+          "source": "Ehrman, Misquoting Jesus"
+        },
+        {
+          "text": "Majority vote is not how textual criticism works. Editors weigh witnesses by age, family and coherence (for example the CBGM), and sometimes follow a minority reading.",
+          "source": "INTF, CBGM"
+        },
+        {
+          "text": "Some changes were deliberate (harmonizations, doctrinal clarifications), and deliberate changes are more likely to be copied than random slips.",
+          "source": "Ehrman, Misquoting Jesus, chs. 6-7"
+        }
+      ]
+    },
+    "timeline": {
+      "intro": "The chart shows access to earlier witnesses growing over time. What it does not show matters too.",
+      "points": [
+        {
+          "text": "Count is not the same as reliability. Most of the roughly 5,800 manuscripts are medieval, copied more than 800 years after the originals.",
+          "source": "Metzger & Ehrman 2005"
+        },
+        {
+          "text": "The first hundred years after composition still have very few witnesses, and papyrus dates rest on handwriting comparison, which some scholars think is less precise than usually presented.",
+          "source": "Nongbri 2005, 2014"
+        },
+        {
+          "text": "The manuscript counts for other ancient authors come from older, uneven scholarship and change as catalogues are revised; comparisons between them are rough.",
+          "source": "Clay Jones 2012"
+        },
+        {
+          "text": "The figure of about 5,800 counts every catalogued item, including fragments of only a few verses and lectionaries.",
+          "source": "INTF Liste"
+        }
+      ]
+    },
+    "p66": {
+      "intro": "P66 is an early and substantial witness to John. How early, and how careful, are debated.",
+      "points": [
+        {
+          "text": "P66 is usually dated about 200 AD, but some scholars argue for the 3rd or even 4th century on palaeographic grounds.",
+          "source": "Nongbri, God's Library (2018)"
+        },
+        {
+          "text": "Its scribe made many mistakes and corrections, including singular readings found nowhere else. That shows careless copying at one point, and also careful checking at another; it cuts both ways.",
+          "source": "Royse, Scribal Habits in Early Greek NT Papyri (2008)"
+        }
+      ]
+    },
+    "variants": {
+      "intro": "The numbers here are real, and some of them are large.",
+      "points": [
+        {
+          "text": "There are roughly 400,000 textual variants among the Greek manuscripts, more variants than there are words in the New Testament. The app shows this number rather than hiding it.",
+          "source": "Ehrman, Misquoting Jesus"
+        },
+        {
+          "text": "A few variants are theologically interesting: the long ending of Mark and the Johannine Comma (1 John 5:7-8) were read as Scripture for centuries.",
+          "source": "Metzger, Textual Commentary"
+        },
+        {
+          "text": "The category percentages are estimates from popular-level summaries, not a published count of every variant.",
+          "source": "Wallace, CSNTM"
+        }
+      ]
+    },
+    "names": {
+      "intro": "The name statistics are suggestive. The sample is small and the method has critics.",
+      "points": [
+        {
+          "text": "The Gospels and Acts name only dozens of Palestinian Jews, not thousands, so percentages move a lot with each name.",
+          "source": "Bauckham 2017, ch. 4"
+        },
+        {
+          "text": "Bauckham's own arithmetic and his choice of which names to count have been questioned.",
+          "source": "'Name Recall in the Synoptic Gospels', NTS 2022"
+        },
+        {
+          "text": "A good match shows that the tradition came from 1st-century Palestine. It does not by itself show that eyewitnesses wrote the Gospels.",
+          "source": ""
+        }
+      ]
+    },
+    "coincidences": {
+      "intro": "Undesigned coincidences are a cumulative argument, and each link can be challenged.",
+      "points": [
+        {
+          "text": "Some coincidences can be explained by literary dependence: Luke and Matthew knew Mark, so shared details are not always independent.",
+          "source": "Standard synoptic source criticism"
+        },
+        {
+          "text": "There is a selection effect: we notice the pieces that fit and ignore the details that do not interlock.",
+          "source": ""
+        },
+        {
+          "text": "The narrower claim still stands: this kind of interlocking is uncommon in the apocryphal gospels, and that contrast is the actual argument.",
+          "source": "McGrew 2017"
+        }
+      ]
+    }
+  }
+}

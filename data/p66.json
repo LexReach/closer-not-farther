@@ -1,0 +1,848 @@
+{
+  "_note": "Papyrus 66 (P66 / Bodmer II), page 1 (folio 1 recto, numbered 'alpha' by the ancient pagination), containing the opening of the Gospel of John. This file supports a 'Read P66 yourself' view synchronizing (1) a scriptio-continua transcription as the papyrus itself would show it, uppercase, unaccented, with nomina sacra, (2) the modern critical SBLGNT text from data/source-text.json, and (3) an English gloss, for John 1:1-5. The 'words' array links tokens 0-60 of source-text.json (John 1:1-5) to their p66 form/line/box. Lines beyond verse 5 (to fill out roughly the first 14 lines of the page) are given as running text only, with no word-level linkage, since source-text.json stops at verse 5.",
+  "sources": [
+    "Wikipedia, 'Papyrus 66' (manuscript description, date range, holding institution): https://en.wikipedia.org/wiki/Papyrus_66",
+    "Wikimedia Commons, Category:Papyrus 66 (candidate facsimile images): https://commons.wikimedia.org/wiki/Category:Papyrus_66",
+    "SBL Greek New Testament, https://sblgnt.com (CC BY 4.0) -- modern comparison text, already in data/source-text.json",
+    "General scholarly consensus on P66 palaeography (scriptio continua, nomina sacra ΘΣ/ΘΝ/ΘΥ with supralinear stroke, absence of accents/breathings in the first hand) as described in standard NT textual-criticism references (e.g. Comfort & Barrett, 'The Text of the Earliest New Testament Greek Manuscripts'); no internet access was available in this run to confirm an exact published line-by-line transcription of page 1, see line_breaks_source and the image note below."
+  ],
+  "manuscript": {
+    "ga": "P66",
+    "name": "Papyrus Bodmer II",
+    "date": "c. 200 AD (commonly cited range 150-250; some, e.g. Brent Nongbri, argue for a later date)",
+    "holding": "Fondation Martin Bodmer, Cologny (Bibliotheca Bodmeriana), Switzerland",
+    "page": "page 1 (recto, ancient pagination 'alpha'), containing the opening of John 1"
+  },
+  "image": {
+    "available": false,
+    "file": null,
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Papyrus66.jpg",
+    "license": "Public domain (photographic reproduction of a manuscript from c. 200 AD; per Commons, PD in country of origin and in the US as published before 1931) -- stated on the Commons file page, not independently re-verified in this run",
+    "credit": "Fondation Martin Bodmer, Cologny -- via Wikimedia Commons, 'Papyrus66.jpg' (also see File:Papyrus_66_(GA).jpg and the PD-marked File:Papyrus_66.pdf)",
+    "note": "All outbound network access to commons.wikimedia.org / upload.wikimedia.org (and to en.wikipedia.org, and several other reference domains) was blocked by this session's egress policy (curl CONNECT to upload.wikimedia.org returned 403; WebFetch to commons.wikimedia.org / en.wikipedia.org returned EGRESS_BLOCKED), so the image could not be downloaded or its license re-confirmed on the file page in this run. The app renders an SVG facsimile placeholder instead. A person with browser access can download the Commons file manually and save it as public/p66-page1.jpg to enable the real facsimile."
+  },
+  "line_breaks_source": "approximate -- no live network access was available in this run to consult a published line-by-line transcription of P66 page 1 (e.g. IGNTP/ITSEE at iohannes.com, the NTVMR at ntvmr.uni-muenster.de, or Comfort & Barrett's edition), since those hosts were also blocked by the egress policy. The Greek wording per verse is the standard John 1:1-9 text (no invented variant readings), rendered uppercase, without accents/breathings, with nomina sacra (ΘΝ/ΘΣ/ΘΥ) as P66's first hand is known to use; but the actual character-count-per-line and the exact points where words break across lines are a plausible reconstruction (~20-26 letters/line, 14 lines), not a transcription of the real photograph.",
+  "lines": [
+    {
+      "n": 1,
+      "text": "ΕΝΑΡΧΗΗΝΟΛΟΓΟΣΚΑΙΟΛΟΓΟΣΗ",
+      "box": {
+        "x": 12.0,
+        "y": 10.0,
+        "w": 76.0,
+        "h": 4.5
+      }
+    },
+    {
+      "n": 2,
+      "text": "ΝΠΡΟΣΤΟΝΘΝΚΑΙΘΣΗΝΟΛΟΓΟΣΟ",
+      "box": {
+        "x": 12.0,
+        "y": 16.0,
+        "w": 76.0,
+        "h": 4.5
+      }
+    },
+    {
+      "n": 3,
+      "text": "ΥΤΟΣΗΝΕΝΑΡΧΗΠΡΟΣΤΟΝΘΝΠΑΝ",
+      "box": {
+        "x": 12.0,
+        "y": 22.0,
+        "w": 76.0,
+        "h": 4.5
+      }
+    },
+    {
+      "n": 4,
+      "text": "ΤΑΔΙΑΥΤΟΥΕΓΕΝΕΤΟΚΑΙΧΩΡΙΣ",
+      "box": {
+        "x": 12.0,
+        "y": 28.0,
+        "w": 76.0,
+        "h": 4.5
+      }
+    },
+    {
+      "n": 5,
+      "text": "ΑΥΤΟΥΕΓΕΝΕΤΟΟΥΔΕΕΝΟΓΕΓΟΝ",
+      "box": {
+        "x": 12.0,
+        "y": 34.0,
+        "w": 76.0,
+        "h": 4.5
+      }
+    },
+    {
+      "n": 6,
+      "text": "ΕΝΕΝΑΥΤΩΖΩΗΗΝΚΑΙΗΖΩΗΗΝΤΟ",
+      "box": {
+        "x": 12.0,
+        "y": 40.0,
+        "w": 76.0,
+        "h": 4.5
+      }
+    },
+    {
+      "n": 7,
+      "text": "ΦΩΣΤΩΝΑΝΘΡΩΠΩΝΚΑΙΤΟΦΩΣΕΝ",
+      "box": {
+        "x": 12.0,
+        "y": 46.0,
+        "w": 76.0,
+        "h": 4.5
+      }
+    },
+    {
+      "n": 8,
+      "text": "ΤΗΣΚΟΤΙΑΦΑΙΝΕΙΚΑΙΗΣΚΟΤΙ",
+      "box": {
+        "x": 12.0,
+        "y": 52.0,
+        "w": 76.0,
+        "h": 4.5
+      }
+    },
+    {
+      "n": 9,
+      "text": "ΑΑΥΤΟΟΥΚΑΤΕΛΑΒΕΝΕΓΕΝΕΤΟ",
+      "box": {
+        "x": 12.0,
+        "y": 58.0,
+        "w": 76.0,
+        "h": 4.5
+      }
+    },
+    {
+      "n": 10,
+      "text": "ΑΝΘΡΩΠΟΣΑΠΕΣΤΑΛΜΕΝΟΣΠΑΡ",
+      "box": {
+        "x": 12.0,
+        "y": 64.0,
+        "w": 76.0,
+        "h": 4.5
+      }
+    },
+    {
+      "n": 11,
+      "text": "ΑΘΥΟΝΟΜΑΑΥΤΩΙΩΑΝΝΗΣΟΥΤΟ",
+      "box": {
+        "x": 12.0,
+        "y": 70.0,
+        "w": 76.0,
+        "h": 4.5
+      }
+    },
+    {
+      "n": 12,
+      "text": "ΣΗΛΘΕΝΕΙΣΜΑΡΤΥΡΙΑΝΙΝΑΜΑ",
+      "box": {
+        "x": 12.0,
+        "y": 76.0,
+        "w": 76.0,
+        "h": 4.5
+      }
+    },
+    {
+      "n": 13,
+      "text": "ΡΤΥΡΗΣΗΠΕΡΙΤΟΥΦΩΤΟΣΙΝΑΠ",
+      "box": {
+        "x": 12.0,
+        "y": 82.0,
+        "w": 76.0,
+        "h": 4.5
+      }
+    },
+    {
+      "n": 14,
+      "text": "ΑΝΤΕΣΠΙΣΤΕΥΣΩΣΙΝΔΙΑΥΤΟΥ",
+      "box": {
+        "x": 12.0,
+        "y": 88.0,
+        "w": 76.0,
+        "h": 4.5
+      }
+    }
+  ],
+  "words": [
+    {
+      "token": 0,
+      "p66": "ΕΝ",
+      "line": 1,
+      "box": {
+        "x": 12.0,
+        "y": 10.0,
+        "w": 6.33,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 1,
+      "p66": "ΑΡΧΗ",
+      "line": 1,
+      "box": {
+        "x": 18.33,
+        "y": 10.0,
+        "w": 12.67,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 2,
+      "p66": "ΗΝ",
+      "line": 1,
+      "box": {
+        "x": 31.0,
+        "y": 10.0,
+        "w": 6.33,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 3,
+      "p66": "Ο",
+      "line": 1,
+      "box": {
+        "x": 37.33,
+        "y": 10.0,
+        "w": 3.17,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 4,
+      "p66": "ΛΟΓΟΣ",
+      "line": 1,
+      "box": {
+        "x": 40.5,
+        "y": 10.0,
+        "w": 15.83,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 5,
+      "p66": "ΚΑΙ",
+      "line": 1,
+      "box": {
+        "x": 56.33,
+        "y": 10.0,
+        "w": 9.5,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 6,
+      "p66": "Ο",
+      "line": 1,
+      "box": {
+        "x": 65.83,
+        "y": 10.0,
+        "w": 3.17,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 7,
+      "p66": "ΛΟΓΟΣ",
+      "line": 1,
+      "box": {
+        "x": 69.0,
+        "y": 10.0,
+        "w": 15.83,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 8,
+      "p66": "ΗΝ",
+      "line": 1,
+      "box": {
+        "x": 84.83,
+        "y": 10.0,
+        "w": 3.17,
+        "h": 4.5
+      },
+      "continues": true
+    },
+    {
+      "token": 9,
+      "p66": "ΠΡΟΣ",
+      "line": 2,
+      "box": {
+        "x": 15.17,
+        "y": 16.0,
+        "w": 12.67,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 10,
+      "p66": "ΤΟΝ",
+      "line": 2,
+      "box": {
+        "x": 27.83,
+        "y": 16.0,
+        "w": 9.5,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 11,
+      "p66": "ΘΝ",
+      "line": 2,
+      "box": {
+        "x": 37.33,
+        "y": 16.0,
+        "w": 6.33,
+        "h": 4.5
+      },
+      "nomen_sacrum": true
+    },
+    {
+      "token": 12,
+      "p66": "ΚΑΙ",
+      "line": 2,
+      "box": {
+        "x": 43.67,
+        "y": 16.0,
+        "w": 9.5,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 13,
+      "p66": "ΘΣ",
+      "line": 2,
+      "box": {
+        "x": 53.17,
+        "y": 16.0,
+        "w": 6.33,
+        "h": 4.5
+      },
+      "nomen_sacrum": true
+    },
+    {
+      "token": 14,
+      "p66": "ΗΝ",
+      "line": 2,
+      "box": {
+        "x": 59.5,
+        "y": 16.0,
+        "w": 6.33,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 15,
+      "p66": "Ο",
+      "line": 2,
+      "box": {
+        "x": 65.83,
+        "y": 16.0,
+        "w": 3.17,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 16,
+      "p66": "ΛΟΓΟΣ",
+      "line": 2,
+      "box": {
+        "x": 69.0,
+        "y": 16.0,
+        "w": 15.83,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 17,
+      "p66": "ΟΥΤΟΣ",
+      "line": 2,
+      "box": {
+        "x": 84.83,
+        "y": 16.0,
+        "w": 3.17,
+        "h": 4.5
+      },
+      "continues": true
+    },
+    {
+      "token": 18,
+      "p66": "ΗΝ",
+      "line": 3,
+      "box": {
+        "x": 24.67,
+        "y": 22.0,
+        "w": 6.33,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 19,
+      "p66": "ΕΝ",
+      "line": 3,
+      "box": {
+        "x": 31.0,
+        "y": 22.0,
+        "w": 6.33,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 20,
+      "p66": "ΑΡΧΗ",
+      "line": 3,
+      "box": {
+        "x": 37.33,
+        "y": 22.0,
+        "w": 12.67,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 21,
+      "p66": "ΠΡΟΣ",
+      "line": 3,
+      "box": {
+        "x": 50.0,
+        "y": 22.0,
+        "w": 12.67,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 22,
+      "p66": "ΤΟΝ",
+      "line": 3,
+      "box": {
+        "x": 62.67,
+        "y": 22.0,
+        "w": 9.5,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 23,
+      "p66": "ΘΝ",
+      "line": 3,
+      "box": {
+        "x": 72.17,
+        "y": 22.0,
+        "w": 6.33,
+        "h": 4.5
+      },
+      "nomen_sacrum": true
+    },
+    {
+      "token": 24,
+      "p66": "ΠΑΝΤΑ",
+      "line": 3,
+      "box": {
+        "x": 78.5,
+        "y": 22.0,
+        "w": 9.5,
+        "h": 4.5
+      },
+      "continues": true
+    },
+    {
+      "token": 25,
+      "p66": "ΔΙ",
+      "line": 4,
+      "box": {
+        "x": 18.33,
+        "y": 28.0,
+        "w": 6.33,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 26,
+      "p66": "ΑΥΤΟΥ",
+      "line": 4,
+      "box": {
+        "x": 24.67,
+        "y": 28.0,
+        "w": 15.83,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 27,
+      "p66": "ΕΓΕΝΕΤΟ",
+      "line": 4,
+      "box": {
+        "x": 40.5,
+        "y": 28.0,
+        "w": 22.17,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 28,
+      "p66": "ΚΑΙ",
+      "line": 4,
+      "box": {
+        "x": 62.67,
+        "y": 28.0,
+        "w": 9.5,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 29,
+      "p66": "ΧΩΡΙΣ",
+      "line": 4,
+      "box": {
+        "x": 72.17,
+        "y": 28.0,
+        "w": 15.83,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 30,
+      "p66": "ΑΥΤΟΥ",
+      "line": 5,
+      "box": {
+        "x": 12.0,
+        "y": 34.0,
+        "w": 15.83,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 31,
+      "p66": "ΕΓΕΝΕΤΟ",
+      "line": 5,
+      "box": {
+        "x": 27.83,
+        "y": 34.0,
+        "w": 22.17,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 32,
+      "p66": "ΟΥΔΕ",
+      "line": 5,
+      "box": {
+        "x": 50.0,
+        "y": 34.0,
+        "w": 12.67,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 33,
+      "p66": "ΕΝ",
+      "line": 5,
+      "box": {
+        "x": 62.67,
+        "y": 34.0,
+        "w": 6.33,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 34,
+      "p66": "Ο",
+      "line": 5,
+      "box": {
+        "x": 69.0,
+        "y": 34.0,
+        "w": 3.17,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 35,
+      "p66": "ΓΕΓΟΝΕΝ",
+      "line": 5,
+      "box": {
+        "x": 72.17,
+        "y": 34.0,
+        "w": 15.83,
+        "h": 4.5
+      },
+      "continues": true
+    },
+    {
+      "token": 36,
+      "p66": "ΕΝ",
+      "line": 6,
+      "box": {
+        "x": 18.33,
+        "y": 40.0,
+        "w": 6.33,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 37,
+      "p66": "ΑΥΤΩ",
+      "line": 6,
+      "box": {
+        "x": 24.67,
+        "y": 40.0,
+        "w": 12.67,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 38,
+      "p66": "ΖΩΗ",
+      "line": 6,
+      "box": {
+        "x": 37.33,
+        "y": 40.0,
+        "w": 9.5,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 39,
+      "p66": "ΗΝ",
+      "line": 6,
+      "box": {
+        "x": 46.83,
+        "y": 40.0,
+        "w": 6.33,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 40,
+      "p66": "ΚΑΙ",
+      "line": 6,
+      "box": {
+        "x": 53.17,
+        "y": 40.0,
+        "w": 9.5,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 41,
+      "p66": "Η",
+      "line": 6,
+      "box": {
+        "x": 62.67,
+        "y": 40.0,
+        "w": 3.17,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 42,
+      "p66": "ΖΩΗ",
+      "line": 6,
+      "box": {
+        "x": 65.83,
+        "y": 40.0,
+        "w": 9.5,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 43,
+      "p66": "ΗΝ",
+      "line": 6,
+      "box": {
+        "x": 75.33,
+        "y": 40.0,
+        "w": 6.33,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 44,
+      "p66": "ΤΟ",
+      "line": 6,
+      "box": {
+        "x": 81.67,
+        "y": 40.0,
+        "w": 6.33,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 45,
+      "p66": "ΦΩΣ",
+      "line": 7,
+      "box": {
+        "x": 12.0,
+        "y": 46.0,
+        "w": 9.5,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 46,
+      "p66": "ΤΩΝ",
+      "line": 7,
+      "box": {
+        "x": 21.5,
+        "y": 46.0,
+        "w": 9.5,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 47,
+      "p66": "ΑΝΘΡΩΠΩΝ",
+      "line": 7,
+      "box": {
+        "x": 31.0,
+        "y": 46.0,
+        "w": 25.33,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 48,
+      "p66": "ΚΑΙ",
+      "line": 7,
+      "box": {
+        "x": 56.33,
+        "y": 46.0,
+        "w": 9.5,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 49,
+      "p66": "ΤΟ",
+      "line": 7,
+      "box": {
+        "x": 65.83,
+        "y": 46.0,
+        "w": 6.33,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 50,
+      "p66": "ΦΩΣ",
+      "line": 7,
+      "box": {
+        "x": 72.17,
+        "y": 46.0,
+        "w": 9.5,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 51,
+      "p66": "ΕΝ",
+      "line": 7,
+      "box": {
+        "x": 81.67,
+        "y": 46.0,
+        "w": 6.33,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 52,
+      "p66": "ΤΗ",
+      "line": 8,
+      "box": {
+        "x": 12.0,
+        "y": 52.0,
+        "w": 6.61,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 53,
+      "p66": "ΣΚΟΤΙΑ",
+      "line": 8,
+      "box": {
+        "x": 18.61,
+        "y": 52.0,
+        "w": 19.83,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 54,
+      "p66": "ΦΑΙΝΕΙ",
+      "line": 8,
+      "box": {
+        "x": 38.43,
+        "y": 52.0,
+        "w": 19.83,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 55,
+      "p66": "ΚΑΙ",
+      "line": 8,
+      "box": {
+        "x": 58.26,
+        "y": 52.0,
+        "w": 9.91,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 56,
+      "p66": "Η",
+      "line": 8,
+      "box": {
+        "x": 68.17,
+        "y": 52.0,
+        "w": 3.3,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 57,
+      "p66": "ΣΚΟΤΙΑ",
+      "line": 8,
+      "box": {
+        "x": 71.48,
+        "y": 52.0,
+        "w": 16.52,
+        "h": 4.5
+      },
+      "continues": true
+    },
+    {
+      "token": 58,
+      "p66": "ΑΥΤΟ",
+      "line": 9,
+      "box": {
+        "x": 15.3,
+        "y": 58.0,
+        "w": 13.22,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 59,
+      "p66": "ΟΥ",
+      "line": 9,
+      "box": {
+        "x": 28.52,
+        "y": 58.0,
+        "w": 6.61,
+        "h": 4.5
+      }
+    },
+    {
+      "token": 60,
+      "p66": "ΚΑΤΕΛΑΒΕΝ",
+      "line": 9,
+      "box": {
+        "x": 35.13,
+        "y": 58.0,
+        "w": 29.74,
+        "h": 4.5
+      }
+    }
+  ]
+}
