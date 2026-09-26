@@ -17,6 +17,7 @@ interface Witness {
   note?: string;
   year_known_basis?: string;
   verify?: boolean;
+  verify_note?: string;
   added_by_build?: boolean;
 }
 
@@ -49,6 +50,13 @@ export function earliest(year: number): Witness | null {
   return k.reduce((a, b) => (mid(b) < mid(a) ? b : a));
 }
 
+/** INTF Liste link: docIDs are 10000+n (papyri), 20000+n (majuscules), 30000+n (minuscules), 40000+n (lectionaries). */
+export function intfUrl(ga: string): string {
+  const n = (s: string) => parseInt(s.replace(/\D/g, ''), 10);
+  const doc = ga.startsWith('P') ? 10000 + n(ga) : ga.startsWith('l') ? 40000 + n(ga) : ga.startsWith('0') ? 20000 + n(ga) : 30000 + n(ga);
+  return `https://ntvmr.uni-muenster.de/liste?docID=${doc}`;
+}
+
 export const dateRange = (w: Witness) => `c. ${w.date_low}–${w.date_high} AD`;
 
 function witnessTip(w: Witness): HTMLElement {
@@ -61,7 +69,8 @@ function witnessTip(w: Witness): HTMLElement {
     h('p', null, `Known to scholarship: ${w.year_known}`),
     w.found ? h('p', { class: 'tt-muted' }, w.found) : null,
     w.note ? h('p', { class: 'tt-muted' }, w.note) : null,
-    h('p', { class: 'tt-muted' }, `Source: INTF Liste; Metzger & Ehrman 2005${w.verify ? '. Year known is an estimate awaiting a check.' : ''}`),
+    w.verify ? h('p', { class: 'tt-muted' }, `* Year known unconfirmed. ${w.verify_note ?? ''}`) : null,
+    h('p', { class: 'tt-muted' }, `Source: INTF Liste; Metzger & Ehrman 2005${w.year_known_basis ? `. Year known: ${w.year_known_basis}` : ''}`),
   );
 }
 
@@ -443,6 +452,18 @@ export function render(root: HTMLElement) {
         { class: 'chart-note' },
         `${witnesses.length} landmark witnesses from data/manuscripts.json. "Known" means discovered, published, or first used critically; the running total below is approximate. Hover or focus a dot for details.`,
       ),
+      witnesses.some((w) => w.verify)
+        ? h(
+            'p',
+            { class: 'chart-note verify-note' },
+            h('strong', null, '* Unconfirmed. '),
+            'For these manuscripts the year they became known to scholarship is a best estimate that could not be confirmed during the build (each tooltip says what is missing). Check them in the INTF Liste: ',
+            witnesses
+              .filter((w) => w.verify)
+              .map((w, i) => [i ? ', ' : '', h('a', { href: intfUrl(w.ga), target: '_blank', rel: 'noopener' }, `GA ${w.ga}`)]),
+            '.',
+          )
+        : '',
     ),
     h(
       'section',

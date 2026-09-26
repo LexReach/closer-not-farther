@@ -554,3 +554,7 @@
 
 .cmp-row.is-hot .namebar__hit { fill: var(--accent-soft); }
 .chart .cmp-row.is-hot .cmp-label { fill: var(--ink); font-weight: 600; }
+.p66-figwrap { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 10px; }
+.p66-figwrap .p66-fig { position: static; }
+.p66-photo img { width: 100%; height: auto; display: block; border-radius: 4px; background: #000; }
+@media (max-width: 900px) { .p66-figwrap { position: static; max-width: 460px; } }

@@ -14,12 +14,16 @@
     "page": "page 1 (recto, ancient pagination 'alpha'), containing the opening of John 1"
   },
   "image": {
-    "available": false,
-    "file": null,
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Papyrus66.jpg",
-    "license": "Public domain (photographic reproduction of a manuscript from c. 200 AD; per Commons, PD in country of origin and in the US as published before 1931) -- stated on the Commons file page, not independently re-verified in this run",
-    "credit": "Fondation Martin Bodmer, Cologny -- via Wikimedia Commons, 'Papyrus66.jpg' (also see File:Papyrus_66_(GA).jpg and the PD-marked File:Papyrus_66.pdf)",
-    "note": "All outbound network access to commons.wikimedia.org / upload.wikimedia.org (and to en.wikipedia.org, and several other reference domains) was blocked by this session's egress policy (curl CONNECT to upload.wikimedia.org returned 403; WebFetch to commons.wikimedia.org / en.wikipedia.org returned EGRESS_BLOCKED), so the image could not be downloaded or its license re-confirmed on the file page in this run. The app renders an SVG facsimile placeholder instead. A person with browser access can download the Commons file manually and save it as public/p66-page1.jpg to enable the real facsimile."
+    "available": true,
+    "file": "p66/p66-page1.jpg",
+    "kind": "oblique photograph of the codex, folio 1 recto on top",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Geneva,_Bodmer_Lab_Ms_Papyrus_66_(P.Bodmer_II_-_PB_2)_fol._1r.jpg",
+    "license": "Public domain (per Wikimedia Commons)",
+    "credit": "Fondation Martin Bodmer, Cologny (Bodmer Lab), via Wikimedia Commons",
+    "source_page": "https://bodmerlab.unige.ch/fr/constellations/papyri/mirador/1072205287?page=006",
+    "width": 1920,
+    "height": 1643,
+    "note": "Downloaded by .github/workflows/fetch-sources.yml (see data/fetched/p66-image.json). The photograph shows the whole codex at an angle, so the word boxes are drawn on the facsimile rendering, not on the photograph."
   },
   "line_breaks_source": "approximate -- no live network access was available in this run to consult a published line-by-line transcription of P66 page 1 (e.g. IGNTP/ITSEE at iohannes.com, the NTVMR at ntvmr.uni-muenster.de, or Comfort & Barrett's edition), since those hosts were also blocked by the egress policy. The Greek wording per verse is the standard John 1:1-9 text (no invented variant readings), rendered uppercase, without accents/breathings, with nomina sacra (ΘΝ/ΘΣ/ΘΥ) as P66's first hand is known to use; but the actual character-count-per-line and the exact points where words break across lines are a plausible reconstruction (~20-26 letters/line, 14 lines), not a transcription of the real photograph.",
   "lines": [

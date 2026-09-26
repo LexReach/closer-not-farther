@@ -335,3 +335,6 @@ body.is-bare .site-footer { display: none; }
 @media (max-width: 860px) { .site-footer { margin-left: 0; padding-bottom: 96px; } }
 .nf-list { padding-left: 1.1em; max-width: var(--measure); }
 .nf-list li { margin-bottom: 8px; }
+.verify-note { border-left: 2px solid var(--rule); padding-left: 10px; max-width: var(--measure); }
+.verify-note strong { color: var(--ink); }
+.disclosure--plain { margin-top: 16px; }

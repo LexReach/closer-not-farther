@@ -1,0 +1,64 @@
+name: Fetch source data
+
+on:
+  push:
+    branches: [sources-data]
+  workflow_dispatch:
+    inputs:
+      dump_full_text:
+        description: "Print each apocryphal source's stripped text to the job log (diagnostic only; never committed)"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-sources
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: sources-data
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch sources
+        run: node scripts/fetch-sources.mjs
+        env:
+          DUMP_FULL_TEXT: ${{ github.event.inputs.dump_full_text || 'false' }}
+
+      - name: Show what changed
+        run: |
+          echo "---- data/fetched ----"
+          ls -la data/fetched || true
+          echo "---- public/p66 ----"
+          ls -la public/p66 || true
+          echo "---- git status ----"
+          git status --porcelain
+
+      - name: Validate JSON
+        run: |
+          for f in data/fetched/*.json; do
+            echo "Validating $f"
+            node -e "JSON.parse(require('fs').readFileSync('$f', 'utf8'))"
+          done
+
+      - name: Commit and push fetched data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/fetched public/p66
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Fetch source data (apocrypha names, P66 image, verify manuscripts)"
+            git push origin HEAD:sources-data
+          fi

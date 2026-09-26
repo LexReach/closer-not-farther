@@ -142,15 +142,19 @@ export function facsimile(): { svg: SVGSVGElement; overlay: SVGGElement } {
   return { svg, overlay };
 }
 
-function photo(): { el: HTMLElement; overlay: SVGGElement } {
-  const overlay = s('g', { class: 'p66-overlay' });
-  const el = h(
+function photo(): HTMLElement {
+  return h(
     'div',
     { class: 'p66-photo' },
-    h('img', { src: assetUrl(img.file!), alt: 'Photograph of P66 page 1, the opening of the Gospel of John.' }),
-    s('svg', { viewBox: `0 0 ${VW} ${VH}`, preserveAspectRatio: 'none', 'aria-hidden': 'true' }, overlay),
+    h('img', {
+      src: assetUrl(img.file!),
+      width: 1920,
+      height: 1643,
+      loading: 'lazy',
+      decoding: 'async',
+      alt: 'Photograph of the P66 codex at an angle, with folio 1 recto, the opening of the Gospel of John, on top of the stack.',
+    }),
   );
-  return { el, overlay };
 }
 
 /* ---------- Page ---------- */
@@ -158,9 +162,10 @@ function photo(): { el: HTMLElement; overlay: SVGGElement } {
 export function render(root: HTMLElement) {
   let breaks = false;
   let active: number | null = null;
-  const pic = img.available && img.file ? photo() : null;
-  const fac = pic ? null : facsimile();
-  const overlay = pic ? pic.overlay : fac!.overlay;
+  const fac = facsimile();
+  const overlay = fac.overlay;
+  const hasPhoto = img.available && !!img.file;
+  let photoEl: HTMLElement | null = null;
 
   const rowPap = h('div', { class: 'p66-row__text p66-pap', lang: 'grc' });
   const rowGk = h('div', { class: 'p66-row__text p66-gk', lang: 'grc', role: 'toolbar', 'aria-label': 'Modern Greek text. Use the left and right arrow keys to move word by word.' });
@@ -239,18 +244,42 @@ export function render(root: HTMLElement) {
     },
   });
 
-  const caption = pic
-    ? h('figcaption', null, `${img.credit}. ${img.license}. `, h('a', { href: img.commons_url, target: '_blank', rel: 'noopener' }, 'Wikimedia Commons'), '.')
-    : h(
-        'figcaption',
-        null,
-        'Facsimile rendering; photograph pending license. ',
-        'The letters are the text of John 1:1–7 as P66 writes it (capitals, no spaces, ',
-        h('span', { class: 'p66-ns-sample' }, 'ΘΣ'),
-        ' for God). Line breaks are approximate. The photograph is on ',
-        h('a', { href: img.commons_url, target: '_blank', rel: 'noopener' }, 'Wikimedia Commons'),
-        '.',
-      );
+  const facCaption = h(
+    'figcaption',
+    null,
+    'Facsimile rendering of the first lines of page 1: the text of John 1:1–7 as P66 writes it (capitals, no spaces, ',
+    h('span', { class: 'p66-ns-sample' }, 'ΘΣ'),
+    ' for God). Line breaks are approximate; the word boxes are drawn here.',
+  );
+  const photoCaption = h(
+    'figcaption',
+    null,
+    'The codex itself, photographed at an angle, with folio 1 recto on top. ',
+    `${img.credit}. ${img.license}. `,
+    h('a', { href: img.commons_url, target: '_blank', rel: 'noopener' }, 'File page'),
+    ' · ',
+    h('a', { href: (img as { source_page?: string }).source_page ?? img.commons_url, target: '_blank', rel: 'noopener' }, 'Bodmer Lab viewer'),
+    '.',
+  );
+  const figure = h('figure', { class: 'p66-fig' }, fac.svg, facCaption);
+  const viewToggle = hasPhoto
+    ? Toggle<'fac' | 'photo'>({
+        label: 'Image',
+        hideLabel: true,
+        options: [
+          { value: 'fac', label: 'Facsimile' },
+          { value: 'photo', label: 'Photograph' },
+        ],
+        value: 'fac',
+        onChange: (v) => {
+          clear(figure);
+          if (v === 'photo') {
+            photoEl ??= photo();
+            figure.append(photoEl, photoCaption);
+          } else figure.append(fac.svg, facCaption);
+        },
+      }).el
+    : '';
 
   const m = p66.manuscript;
   const sk = skepticsFor('p66');
@@ -263,7 +292,7 @@ export function render(root: HTMLElement) {
     h(
       'div',
       { class: 'p66-grid' },
-      h('figure', { class: 'p66-fig' }, pic ? pic.el : fac!.svg, caption),
+      h('div', { class: 'p66-figwrap' }, viewToggle, figure),
       h(
         'div',
         { class: 'p66-rows' },

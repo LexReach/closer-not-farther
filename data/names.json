@@ -16,7 +16,7 @@
     "male_occurrences": 79,
     "female_occurrences": 18,
     "verify": true,
-    "verify_note": "Could not confirm the exact Table 6 totals (79 male / 18 female) against the book itself in this session: WebFetch to gnosis.org/wikisource/sacred-texts/earlychristianwritings/wikipedia was blocked by the network egress proxy for every domain tried, and WebSearch results discuss Bauckham's onomastic argument and the underlying Ilan totals (2625/447 male, 328/74 female, which match this file's palestine_totals) but do not quote the Gospels+Acts sub-table's exact figures. Left unchanged; flagging for a follow-up check against a physical/library copy of ch. 4, Table 6 (2nd ed., p.84 per one secondary source)."
+    "verify_note": "The Table 6 totals (79 male / 18 female) are unverified: Wikipedia's 'Jesus and the Eyewitnesses' article (fetched via CI, data/fetched/verify-manuscripts.json) is a reception/awards summary of the book and does not reproduce Table 6 or any of its figures (it does note, without numbers, that Bauckham argues the Gospels+Acts name distribution matches Ilan's Palestinian corpus, and that Kamil Gregor and Brian Blais have critiqued this claim). Where to check: Bauckham, Jesus and the Eyewitnesses, 2nd ed., ch. 4, Table 6."
   },
   "male": [
     {
@@ -59,7 +59,7 @@
       "palestine": 71,
       "gospels_acts": 1,
       "verify": true,
-      "verify_note": "palestine:71 is confirmed by WebSearch snippets describing Bauckham's tally of Ilan's data (Jonathan as the 8th-ranked male name at 71 occurrences). gospels_acts:1 could not be independently confirmed against the book itself, but is plausible: Jonathan's only candidate occurrence in the Gospels+Acts corpus is the disputed textual variant at Acts 4:6, where most manuscripts read 'John' (son of Annas) but some (followed by e.g. NEB, Jerusalem Bible) read 'Jonathan' - matching Josephus's report that Annas's son Jonathan became high priest. Left unchanged; this is a judgment call, not a confirmed figure from the book."
+      "verify_note": "palestine:71 is confirmed by WebSearch snippets describing Bauckham's tally of Ilan's data (Jonathan as the 8th-ranked male name at 71 occurrences). gospels_acts:1 is unverified: Wikipedia's 'Jesus and the Eyewitnesses' article (fetched via CI) does not discuss individual name counts at all, so it neither confirms nor refutes this. It is plausible: Jonathan's only candidate occurrence in the Gospels+Acts corpus is the disputed textual variant at Acts 4:6, where most manuscripts read 'John' (son of Annas) but some (followed by e.g. NEB, Jerusalem Bible) read 'Jonathan' - matching Josephus's report that Annas's son Jonathan became high priest - but this is a judgment call, not a confirmed figure from the book. Where to check: Bauckham, Jesus and the Eyewitnesses, 2nd ed., ch. 4, Table 6."
     },
     {
       "name": "Mattathias / Matthew",
@@ -201,7 +201,7 @@
     "ranks_source": "Ranks as given by Bauckham (Table 6 and text). Huff's talk gives Judas as #3; Bauckham's table has #4, which is used here. 'rare' = outside the ranked list."
   },
   "apocryphal": {
-    "_note": "POPULATED. Entries below list every proper personal name found in public-domain English translations of the Gospel of Thomas, Gospel of Philip, Gospel of Mary, and Protevangelium of James (see text_sources for the exact editions), tagged canonical-overlap / palestinian-typical / atypical. See \"method\" for how names were extracted and counts estimated, and the scratchpad notes file for which live fetches failed.",
+    "_note": "Every proper personal name attested in the fetched public-domain English translations of the Gospel of Thomas, Gospel of Philip, Gospel of Mary, and Protevangelium of James (see text_sources), tagged canonical-overlap / palestinian-typical / atypical. Counts are exact mechanical concordance counts (see method), not estimates.",
     "texts": [
       "Gospel of Thomas",
       "Gospel of Philip",
@@ -214,26 +214,31 @@
         "name": "Jesus",
         "mentions": 110,
         "tag": "canonical-overlap",
-        "approx": true,
-        "note": "Speaker attribution (\"Jesus said\") opens nearly every one of the 114 sayings; counted as one name throughout.",
+        "note": "Speaker attribution (\"Jesus said\") opens nearly every one of the 114 sayings.",
         "source_url": "http://gnosis.org/naghamm/gthlamb.html"
       },
       {
         "text": "Gospel of Thomas",
         "name": "Thomas",
-        "mentions": 3,
+        "mentions": 4,
         "tag": "canonical-overlap",
-        "approx": true,
-        "note": "As \"Didymos Judas Thomas\" in the incipit (reputed author) and addressed by name in saying 13.",
+        "note": "Incipit (\"...Didymos Judas Thomas wrote them down\") and saying 13 (addressed by name, twice more).",
         "source_url": "http://gnosis.org/naghamm/gthlamb.html"
       },
       {
         "text": "Gospel of Thomas",
-        "name": "Simon Peter",
+        "name": "Simon",
         "mentions": 2,
         "tag": "canonical-overlap",
-        "approx": true,
-        "note": "Sayings 13 and 114.",
+        "note": "As \"Simon Peter,\" sayings 13 and 114.",
+        "source_url": "http://gnosis.org/naghamm/gthlamb.html"
+      },
+      {
+        "text": "Gospel of Thomas",
+        "name": "Peter",
+        "mentions": 2,
+        "tag": "canonical-overlap",
+        "note": "As \"Simon Peter,\" sayings 13 and 114.",
         "source_url": "http://gnosis.org/naghamm/gthlamb.html"
       },
       {
@@ -241,7 +246,6 @@
         "name": "Matthew",
         "mentions": 1,
         "tag": "canonical-overlap",
-        "approx": true,
         "note": "Saying 13.",
         "source_url": "http://gnosis.org/naghamm/gthlamb.html"
       },
@@ -250,17 +254,15 @@
         "name": "Mary",
         "mentions": 2,
         "tag": "canonical-overlap",
-        "approx": true,
         "note": "Sayings 21 and 114; usually read as Mary Magdalene, text does not disambiguate.",
         "source_url": "http://gnosis.org/naghamm/gthlamb.html"
       },
       {
         "text": "Gospel of Thomas",
         "name": "Salome",
-        "mentions": 2,
+        "mentions": 1,
         "tag": "canonical-overlap",
-        "approx": true,
-        "note": "Saying 61 (dialogue with Jesus at her couch).",
+        "note": "Saying 61 (dialogue with Jesus at her couch); the name is used once, as speaker attribution.",
         "source_url": "http://gnosis.org/naghamm/gthlamb.html"
       },
       {
@@ -268,7 +270,6 @@
         "name": "James",
         "mentions": 1,
         "tag": "canonical-overlap",
-        "approx": true,
         "note": "Saying 12, \"James the righteous\" (James the Just, brother of Jesus).",
         "source_url": "http://gnosis.org/naghamm/gthlamb.html"
       },
@@ -277,44 +278,71 @@
         "name": "Adam",
         "mentions": 2,
         "tag": "canonical-overlap",
-        "approx": true,
-        "note": "Sayings 46 and 85; OT figure, but also named in the canonical genealogy at Luke 3:38.",
+        "note": "Sayings 46 and 85; OT figure, also named in the canonical genealogy at Luke 3:38.",
         "source_url": "http://gnosis.org/naghamm/gthlamb.html"
       },
       {
         "text": "Gospel of Thomas",
-        "name": "John the Baptist",
+        "name": "John",
+        "mentions": 3,
+        "tag": "canonical-overlap",
+        "note": "Saying 46, all three occurrences \"John the Baptist\" (\"from Adam until John the Baptist... no one so superior to John the Baptist... will become superior to John\").",
+        "source_url": "http://gnosis.org/naghamm/gthlamb.html"
+      },
+      {
+        "text": "Gospel of Thomas",
+        "name": "Didymos",
         "mentions": 1,
         "tag": "canonical-overlap",
-        "approx": true,
-        "note": "Saying 46 (\"from Adam to John the Baptist\").",
+        "note": "Incipit, \"Didymos Judas Thomas\" (Didymos = \"twin\"); the same epithet is used for Thomas at John 11:16, 20:24, 21:2 (\"Thomas, called Didymus\").",
+        "source_url": "http://gnosis.org/naghamm/gthlamb.html"
+      },
+      {
+        "text": "Gospel of Thomas",
+        "name": "Judas",
+        "mentions": 1,
+        "tag": "canonical-overlap",
+        "note": "Incipit, \"Didymos Judas Thomas\" — Thomas's given name in this text's attribution.",
+        "source_url": "http://gnosis.org/naghamm/gthlamb.html"
+      },
+      {
+        "text": "Gospel of Thomas",
+        "name": "Caesar",
+        "mentions": 3,
+        "tag": "canonical-overlap",
+        "note": "Saying 100 (\"Give Caesar what belongs to Caesar...\"); parallels Matt 22:21, Mark 12:17, Luke 20:25.",
         "source_url": "http://gnosis.org/naghamm/gthlamb.html"
       },
       {
         "text": "Gospel of Philip",
         "name": "Jesus",
-        "mentions": 15,
+        "mentions": 20,
         "tag": "canonical-overlap",
-        "approx": true,
         "note": "Personal name \"Jesus\" as distinct from the title \"Christ\" (titles excluded from this count).",
         "source_url": "http://gnosis.org/naghamm/gop.html"
       },
       {
         "text": "Gospel of Philip",
         "name": "Mary",
-        "mentions": 3,
+        "mentions": 5,
         "tag": "canonical-overlap",
-        "approx": true,
-        "note": "Mother of Jesus, named in the \"three Marys\" passage (mother / sister / Magdalene, all named Mary).",
+        "note": "Mother of Jesus and/or Mary Magdalene, including the \"three Marys\" passage (mother / sister / companion, all named Mary).",
         "source_url": "http://gnosis.org/naghamm/gop.html"
       },
       {
         "text": "Gospel of Philip",
-        "name": "Mary Magdalene",
-        "mentions": 3,
+        "name": "Magdalene",
+        "mentions": 2,
         "tag": "canonical-overlap",
-        "approx": true,
-        "note": "Named as the Savior's companion, kissed by him \"more than the rest of the disciples.\"",
+        "note": "As \"Mary Magdalene,\" named as the Savior's companion, kissed by him \"more than the rest of the disciples.\"",
+        "source_url": "http://gnosis.org/naghamm/gop.html"
+      },
+      {
+        "text": "Gospel of Philip",
+        "name": "Levi",
+        "mentions": 1,
+        "tag": "canonical-overlap",
+        "note": "Cited in a maxim about worldly possessions; Levi the tax collector is named at Mark 2:14/Luke 5:27.",
         "source_url": "http://gnosis.org/naghamm/gop.html"
       },
       {
@@ -322,244 +350,322 @@
         "name": "Philip",
         "mentions": 1,
         "tag": "canonical-overlap",
-        "approx": true,
-        "note": "\"Philip the apostle said, Joseph the carpenter planted a garden...\" - the apostle appears once inside the text that bears his name.",
+        "note": "\"Philip the apostle said, Joseph the carpenter planted a garden...\" — the apostle appears once inside the text that bears his name.",
         "source_url": "http://gnosis.org/naghamm/gop.html"
       },
       {
         "text": "Gospel of Philip",
         "name": "Joseph",
-        "mentions": 2,
+        "mentions": 1,
         "tag": "canonical-overlap",
-        "approx": true,
         "note": "\"Joseph the carpenter,\" father figure of Jesus, discussed re: the wood of the cross.",
         "source_url": "http://gnosis.org/naghamm/gop.html"
       },
       {
         "text": "Gospel of Philip",
         "name": "Adam",
-        "mentions": 12,
+        "mentions": 9,
         "tag": "canonical-overlap",
-        "approx": true,
         "note": "Central to the text's creation discourse; OT figure also named in Luke 3:38.",
         "source_url": "http://gnosis.org/naghamm/gop.html"
       },
       {
         "text": "Gospel of Philip",
         "name": "Eve",
-        "mentions": 5,
+        "mentions": 2,
         "tag": "atypical",
-        "approx": true,
-        "note": "Paired with Adam in the creation discourse; not named in the four canonical Gospels (cf. Paul, 2 Cor 11:3), and not a name attested for living women in Tal Ilan's Palestinian corpus - treated as mythic/symbolic here.",
+        "note": "Paired with Adam in the creation discourse; not named in the four canonical Gospels/Acts (cf. Paul, 2 Cor 11:3), and not a name attested for living women in Tal Ilan's Palestinian corpus — treated as mythic/symbolic here.",
         "source_url": "http://gnosis.org/naghamm/gop.html"
       },
       {
         "text": "Gospel of Philip",
         "name": "Abraham",
-        "mentions": 2,
+        "mentions": 1,
         "tag": "canonical-overlap",
-        "approx": true,
         "note": "Discussed re: circumcision as a \"sign\"; also named repeatedly in the canonical Gospels (e.g. Matt 1, John 8).",
         "source_url": "http://gnosis.org/naghamm/gop.html"
       },
       {
         "text": "Gospel of Philip",
         "name": "Sophia",
-        "mentions": 4,
+        "mentions": 2,
         "tag": "atypical",
-        "approx": true,
         "note": "Valentinian Gnostic personification of Wisdom, treated in the text almost as a character; Greek theological/philosophical name, not a Palestinian Jewish personal name.",
         "source_url": "http://gnosis.org/naghamm/gop.html"
       },
       {
         "text": "Gospel of Philip",
-        "name": "Echamoth / Echmoth",
+        "name": "Echamoth",
         "mentions": 2,
         "tag": "atypical",
-        "approx": true,
+        "note": "Wordplay pair on \"Wisdom\"/\"Wisdom of death\" used as quasi-personal names for the lower and upper Sophia; Coptic-Gnostic coinage, not a real attested name.",
+        "source_url": "http://gnosis.org/naghamm/gop.html"
+      },
+      {
+        "text": "Gospel of Philip",
+        "name": "Echmoth",
+        "mentions": 2,
+        "tag": "atypical",
         "note": "Wordplay pair on \"Wisdom\"/\"Wisdom of death\" used as quasi-personal names for the lower and upper Sophia; Coptic-Gnostic coinage, not a real attested name.",
         "source_url": "http://gnosis.org/naghamm/gop.html"
       },
       {
         "text": "Gospel of Mary",
-        "name": "Mary",
-        "mentions": 17,
+        "name": "Peter",
+        "mentions": 7,
         "tag": "canonical-overlap",
-        "approx": true,
-        "note": "Protagonist, generally identified as Mary Magdalene; the surviving Coptic/Greek fragments are damaged so exact count is uncertain.",
         "source_url": "http://gnosis.org/library/marygosp.htm"
       },
       {
         "text": "Gospel of Mary",
-        "name": "Peter",
-        "mentions": 9,
+        "name": "Mary",
+        "mentions": 6,
         "tag": "canonical-overlap",
-        "approx": true,
+        "note": "Protagonist, generally identified as Mary Magdalene, though the extant fragment itself never uses the word \"Magdalene.\"",
         "source_url": "http://gnosis.org/library/marygosp.htm"
       },
       {
         "text": "Gospel of Mary",
         "name": "Andrew",
-        "mentions": 3,
+        "mentions": 1,
         "tag": "canonical-overlap",
-        "approx": true,
         "source_url": "http://gnosis.org/library/marygosp.htm"
       },
       {
         "text": "Gospel of Mary",
         "name": "Levi",
-        "mentions": 3,
-        "tag": "canonical-overlap",
-        "approx": true,
-        "note": "Levi the tax collector, identified with Matthew at Mark 2:14/Luke 5:27.",
-        "source_url": "http://gnosis.org/library/marygosp.htm"
-      },
-      {
-        "text": "Gospel of Mary",
-        "name": "Jesus",
         "mentions": 1,
         "tag": "canonical-overlap",
-        "approx": true,
-        "note": "The text overwhelmingly calls him \"the Savior\"/\"the Lord\"; the personal name \"Jesus\" is rare to absent in the surviving pages (the opening pages are lost).",
+        "note": "Levi the tax collector, identified with Matthew at Mark 2:14/Luke 5:27.",
         "source_url": "http://gnosis.org/library/marygosp.htm"
       },
       {
         "text": "Protevangelium of James",
         "name": "Joachim",
-        "mentions": 15,
+        "mentions": 17,
         "tag": "palestinian-typical",
-        "approx": true,
         "note": "Father of Mary; Hebrew name (form of Jehoiachin/Eliakim), well attested in the period though not a canonical-Gospel character.",
         "source_url": "https://www.newadvent.org/fathers/0847.htm"
       },
       {
         "text": "Protevangelium of James",
         "name": "Anna",
-        "mentions": 20,
-        "tag": "palestinian-typical",
-        "approx": true,
-        "note": "Mother of Mary; Hannah/Anna is a common attested Jewish woman's name of the period.",
+        "mentions": 15,
+        "tag": "canonical-overlap",
+        "note": "Mother of Mary; same name as the prophetess Anna of Luke 2:36-38 (a distinct person, but the same name — like this text's Salome — so counted as overlap).",
         "source_url": "https://www.newadvent.org/fathers/0847.htm"
       },
       {
         "text": "Protevangelium of James",
         "name": "Mary",
-        "mentions": 40,
+        "mentions": 29,
         "tag": "canonical-overlap",
-        "approx": true,
         "source_url": "https://www.newadvent.org/fathers/0847.htm"
       },
       {
         "text": "Protevangelium of James",
         "name": "Joseph",
-        "mentions": 30,
+        "mentions": 33,
         "tag": "canonical-overlap",
-        "approx": true,
         "source_url": "https://www.newadvent.org/fathers/0847.htm"
       },
       {
         "text": "Protevangelium of James",
         "name": "Zacharias",
-        "mentions": 12,
+        "mentions": 11,
         "tag": "canonical-overlap",
-        "approx": true,
         "note": "Priest, father of John the Baptist; martyred in the temple in this text's expanded legend.",
         "source_url": "https://www.newadvent.org/fathers/0847.htm"
       },
       {
         "text": "Protevangelium of James",
         "name": "Elizabeth",
-        "mentions": 6,
+        "mentions": 5,
         "tag": "canonical-overlap",
-        "approx": true,
         "source_url": "https://www.newadvent.org/fathers/0847.htm"
       },
       {
         "text": "Protevangelium of James",
         "name": "John",
-        "mentions": 3,
+        "mentions": 2,
         "tag": "canonical-overlap",
-        "approx": true,
         "note": "The infant John the Baptist, hidden with Elizabeth from Herod's soldiers.",
         "source_url": "https://www.newadvent.org/fathers/0847.htm"
       },
       {
         "text": "Protevangelium of James",
         "name": "Herod",
-        "mentions": 4,
+        "mentions": 7,
         "tag": "canonical-overlap",
-        "approx": true,
         "source_url": "https://www.newadvent.org/fathers/0847.htm"
       },
       {
         "text": "Protevangelium of James",
         "name": "Salome",
-        "mentions": 3,
+        "mentions": 11,
         "tag": "canonical-overlap",
-        "approx": true,
         "note": "The skeptical midwife who tests Mary's virginity; same name as the canonical disciple/daughter of Herodias, but a distinct character here.",
         "source_url": "https://www.newadvent.org/fathers/0847.htm"
       },
       {
         "text": "Protevangelium of James",
         "name": "James",
-        "mentions": 3,
+        "mentions": 1,
         "tag": "canonical-overlap",
-        "approx": true,
         "note": "Narrator (\"I, James, wrote this history...\"), presented as Joseph's son, i.e. James the Just / brother of the Lord.",
         "source_url": "https://www.newadvent.org/fathers/0847.htm"
       },
       {
         "text": "Protevangelium of James",
-        "name": "Reuben / Reubel",
-        "mentions": 1,
+        "name": "Rubim",
+        "mentions": 2,
         "tag": "palestinian-typical",
-        "approx": true,
-        "note": "Rebukes Joachim for offering first; Reuben is an attested patriarchal Hebrew name, though less common than the top names in Ilan's lexicon.",
+        "note": "Rebukes Joachim for offering first, and is named again in Anna's song (\"the sons of Rubim\"); this translation's spelling of the name given as \"Reuben\"/\"Reubel\" in others — an attested patriarchal Hebrew name.",
         "source_url": "https://www.newadvent.org/fathers/0847.htm"
       },
       {
         "text": "Protevangelium of James",
         "name": "Simeon",
-        "mentions": 2,
+        "mentions": 1,
         "tag": "canonical-overlap",
-        "approx": true,
-        "note": "Priest chosen by lot after Zacharias's death, told he would not see death until he had seen the Messiah - echoes Luke 2's Simeon; Simon/Simeon is also the single most common male name in the Gospels/Acts corpus.",
+        "note": "Priest chosen by lot after Zacharias's death, told he would not see death until he had seen the Messiah — the same figure and role as Luke 2's Simeon.",
         "source_url": "https://www.newadvent.org/fathers/0847.htm"
       },
       {
         "text": "Protevangelium of James",
         "name": "Annas",
+        "mentions": 2,
+        "tag": "canonical-overlap",
+        "note": "\"Annas the scribe,\" a minor character who reports Zacharias's absence; same name as the high priest Annas of Luke 3:2/John 18/Acts 4.",
+        "source_url": "https://www.newadvent.org/fathers/0847.htm"
+      },
+      {
+        "text": "Protevangelium of James",
+        "name": "Jesus",
+        "mentions": 4,
+        "tag": "canonical-overlap",
+        "note": "The text's own title, two annunciation formulas (\"you shall call His name Jesus\"), and the closing doxology.",
+        "source_url": "https://www.newadvent.org/fathers/0847.htm"
+      },
+      {
+        "text": "Protevangelium of James",
+        "name": "Isaac",
+        "mentions": 3,
+        "tag": "canonical-overlap",
+        "note": "Named in Joachim's genealogical lament and Anna's prayer; also named in the canonical genealogies (Matt 1:2, Luke 3:34).",
+        "source_url": "https://www.newadvent.org/fathers/0847.htm"
+      },
+      {
+        "text": "Protevangelium of James",
+        "name": "Jacob",
         "mentions": 1,
         "tag": "canonical-overlap",
-        "approx": true,
-        "note": "\"Annas the scribe,\" a minor character who reports Zacharias's absence; same name as the high priest Annas of Luke 3:2/John 18/Acts 4.",
+        "note": "Named alongside Isaac in Salome's prayer; also named in the canonical genealogies (Matt 1:2, Luke 3:34) and at John 4:5.",
+        "source_url": "https://www.newadvent.org/fathers/0847.htm"
+      },
+      {
+        "text": "Protevangelium of James",
+        "name": "Samuel",
+        "mentions": 1,
+        "tag": "canonical-overlap",
+        "note": "A priest who serves in Zacharias's place while he is mute; distinct from the prophet Samuel, but the same name — which is itself named at Acts 3:24 and 13:20 (excludes a second raw match that was the inline citation \"1 Samuel 1:11,\" not a character).",
+        "source_url": "https://www.newadvent.org/fathers/0847.htm"
+      },
+      {
+        "text": "Protevangelium of James",
+        "name": "David",
+        "mentions": 2,
+        "tag": "canonical-overlap",
+        "note": "\"The family of David\" — Mary and Joseph's Davidic descent; also named in the canonical genealogies (Matt 1, Luke 3) and elsewhere.",
+        "source_url": "https://www.newadvent.org/fathers/0847.htm"
+      },
+      {
+        "text": "Protevangelium of James",
+        "name": "Augustus",
+        "mentions": 1,
+        "tag": "canonical-overlap",
+        "note": "The census decree; parallels Luke 2:1 (\"a decree from Caesar Augustus\").",
+        "source_url": "https://www.newadvent.org/fathers/0847.htm"
+      },
+      {
+        "text": "Protevangelium of James",
+        "name": "Gabriel",
+        "mentions": 1,
+        "tag": "canonical-overlap",
+        "note": "The \"archangel Gabriel\" who spoke to Mary; named at Luke 1:19, 26.",
+        "source_url": "https://www.newadvent.org/fathers/0847.htm"
+      },
+      {
+        "text": "Protevangelium of James",
+        "name": "Sarah",
+        "mentions": 1,
+        "tag": "palestinian-typical",
+        "note": "Invoked in Anna's prayer (\"as You blessed the womb of Sarah\"); OT matriarch, not named in the four Gospels/Acts.",
+        "source_url": "https://www.newadvent.org/fathers/0847.htm"
+      },
+      {
+        "text": "Protevangelium of James",
+        "name": "Judith",
+        "mentions": 2,
+        "tag": "palestinian-typical",
+        "note": "Anna's maidservant, a minor named character; attested Jewish woman's name of the period.",
+        "source_url": "https://www.newadvent.org/fathers/0847.htm"
+      },
+      {
+        "text": "Protevangelium of James",
+        "name": "Dathan",
+        "mentions": 1,
+        "tag": "atypical",
+        "note": "Cited by the priest as a warning to Joseph (\"remember what the Lord did to Dathan, and Abiram, and Korah,\" Numbers 16); a pre-monarchic wilderness-era name, not typical of Ilan's Roman-period Palestinian corpus.",
+        "source_url": "https://www.newadvent.org/fathers/0847.htm"
+      },
+      {
+        "text": "Protevangelium of James",
+        "name": "Abiram",
+        "mentions": 1,
+        "tag": "atypical",
+        "note": "See Dathan — same citation (Numbers 16).",
+        "source_url": "https://www.newadvent.org/fathers/0847.htm"
+      },
+      {
+        "text": "Protevangelium of James",
+        "name": "Korah",
+        "mentions": 1,
+        "tag": "atypical",
+        "note": "See Dathan — same citation (Numbers 16).",
         "source_url": "https://www.newadvent.org/fathers/0847.htm"
       }
     ],
     "text_sources": {
       "Gospel of Thomas": {
-        "translation": "Thomas O. Lambdin (Nag Hammadi Library, Coptic NHC II,2)",
+        "translation": "Thomas O. Lambdin (Nag Hammadi Library, Coptic NHC II,2), hosted by the Gnostic Society Library",
         "url": "http://gnosis.org/naghamm/gthlamb.html",
         "date_of_text": "2nd century (c. 100-150 CE; possibly incorporates earlier independent sayings tradition)"
       },
       "Gospel of Philip": {
-        "translation": "Wesley W. Isenberg (Nag Hammadi Library, Coptic NHC II,3)",
+        "translation": "Wesley W. Isenberg (Nag Hammadi Library, Coptic NHC II,3), hosted by the Gnostic Society Library",
         "url": "http://gnosis.org/naghamm/gop.html",
         "date_of_text": "3rd century (c. 250-350 CE compilation; Valentinian)"
       },
       "Gospel of Mary": {
-        "translation": "Nag Hammadi Library / Berlin Codex (BG 8502) translation as hosted by the Gnostic Society Library",
+        "translation": "Nag Hammadi Library / Berlin Codex (BG 8502) translation, hosted by the Gnostic Society Library",
         "url": "http://gnosis.org/library/marygosp.htm",
         "date_of_text": "2nd century (c. 150-200 CE; surviving manuscripts are 3rd-5th c. and fragmentary)"
       },
       "Protevangelium of James": {
-        "translation": "Alexander Walker, Ante-Nicene Fathers vol. 8, as hosted by New Advent",
+        "translation": "Alexander Walker, Ante-Nicene Fathers vol. 8, hosted by New Advent",
         "url": "https://www.newadvent.org/fathers/0847.htm",
         "date_of_text": "late 2nd century (c. 150-200 CE)"
       }
     },
-    "method": "Named persons were listed from the English translations linked for each text and tagged by hand; titles (God, Father, Christ, Lord, Savior) are excluded. 'Also in the canonical Gospels' means the same name or character appears there (Old Testament figures named in the Gospels, such as Adam and Abraham, count as borrowed). 'Typical Palestinian' means a common name in Ilan's lexicon; 'not typical' covers mythic or Gnostic figures. Mention counts are approximate: the list was compiled by reading, not by a machine concordance.",
-    "build_note": "Named persons were identified by reading/recalling the standard public-domain English translations linked in text_sources (Lambdin for Thomas, Isenberg for Philip, the Gnostic Society Library text for Mary, and Walker's Ante-Nicene Fathers translation for the Protevangelium). Live WebFetch access to gnosis.org, wikisource.org, sacred-texts.com, earlychristianwritings.com and en.wikipedia.org was blocked by this session's network egress proxy for every domain attempted, so extraction relies on Claude's trained knowledge of these well-known texts, cross-checked against WebSearch result snippets (which quote short passages) where possible. Mention counts are therefore APPROXIMATE (all flagged approx:true) - order-of-magnitude occurrence counts per name, not a verified concordance tally. Tagging: canonical-overlap = the same-named person/character also appears in the four canonical Gospels (and, by extension, Acts); palestinian-typical = not a canonical character but the name is a common attested Jewish personal name in Tal Ilan's Palestine 330 BCE-200 CE lexicon (e.g. Joachim, Anna/Hannah, Reuben); atypical = names that are Greco-Egyptian/Gnostic theological coinages or mythic figures not attested as ordinary 1st-century Palestinian Jewish personal names and not named in the canonical Gospels (e.g. Eve, Sophia, Echamoth/Echmoth in Philip). Titles (God, Father, Holy Spirit, Christ, Lord, Savior, Caesar) are excluded even where they stand in for a name."
+    "provenance": {
+      "Gospel of Thomas": "fetched",
+      "Gospel of Philip": "fetched",
+      "Gospel of Mary": "fetched",
+      "Protevangelium of James": "fetched"
+    },
+    "method": "Each text was fetched from the translation linked below, stripped of page furniture, and searched for a broad list of personal names; the counts were then checked by hand, dropping site menus, bylines and scripture references that are not characters in the text. Titles (Christ, Lord, Savior, Father) are excluded. 'Also in the canonical Gospels' means the same name or character appears there (including Old Testament figures the Gospels name); 'typical Palestinian' means a common name in Ilan's lexicon; 'not typical' covers mythic, angelic or Gnostic figures.",
+    "build_note": "A CI job (scripts/fetch-sources.mjs + scripts/extract-apocrypha-names.mjs) fetched each translation, stripped HTML, and mechanically counted a broad candidate list of biblical/early-Christian personal names plus flagged other capitalized non-sentence-initial words for review (data/fetched/apocrypha-names.json). Those raw whole-page counts were then reviewed by hand against a full-text diagnostic dump printed to the CI job log (never committed) to exclude: (1) site chrome — navigation menus, translator bylines, and funder/copyright footers that happen to repeat a candidate name (e.g. translator \"Thomas O. Lambdin,\" or a \"Gospel of Mary\" page's large pre-text book-recommendation sidebar, which alone accounted for nearly all of that page's raw Mary/Magdalene/Jesus/John/Sophia matches); and (2) inline scripture cross-reference citations New Advent adds to the Protevangelium (e.g. \"Matthew 1:19,\" \"1 Samuel 1:11\") which cite a book, not a character. The counts above are of the real body text only (title through closing doxology/final saying). Titles (Christ, Lord, Savior, Father, God) are excluded throughout. Tagging: canonical-overlap = the same name (not necessarily the same individual — e.g. this text's Salome, Anna, and Samuel are each a different person from their canonical namesake, but the rule counts the NAME) appears in the four canonical Gospels or Acts; palestinian-typical = not a canonical name, but common in Tal Ilan's Palestine 330 BCE-200 CE lexicon; atypical = Gnostic/theological coinages, mythic figures, or pre-monarchic OT names not typical of that Roman-period corpus.",
+    "regenerate": "scripts/extract-apocrypha-names.mjs, run by .github/workflows/fetch-sources.yml; raw counts in data/fetched/apocrypha-names.json"
   }
 }

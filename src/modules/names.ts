@@ -228,6 +228,27 @@ export function render(root: HTMLElement) {
     return `Each bar is a share of its own total: ${t.pal.toLocaleString('en-US')} ${sex} name occurrences among Palestinian Jews (${t.palDistinct} distinct names), and ${t.gos} named ${sex} Palestinian Jews in the Gospels and Acts. Hover or focus a row for raw counts. * = figure flagged for a check against the printed table.`;
   };
   const caption = h('p', { class: 'chart-note' }, captionText());
+  // Footnote: exactly what is unverified and where a reader can check it.
+  const unverified = [...names.male, ...names.female].filter((r) => (r as NameRow).verify) as NameRow[];
+  const totalsFlag = (names.gospels_acts_totals as { verify?: boolean }).verify;
+  const whereToCheck = (n?: string) => (n?.match(/Where to check:\s*(.+?)\.?$/)?.[1] ?? 'Bauckham, Jesus and the Eyewitnesses, 2nd ed., ch. 4, Table 6');
+  const verifyNote =
+    unverified.length || totalsFlag
+      ? h(
+          'p',
+          { class: 'chart-note verify-note' },
+          h('strong', null, '* Unverified. '),
+          [
+            ...unverified.map((r) => `the Gospels + Acts count for ${r.name} (${r.gospels_acts})`),
+            ...(totalsFlag ? [`the Gospels + Acts totals (${names.gospels_acts_totals.male_occurrences} men, ${names.gospels_acts_totals.female_occurrences} women) that every percentage in blue is divided by`] : []),
+          ]
+            .join('; ')
+            .replace(/^./, (c) => c.toUpperCase()),
+          ' could not be checked against the printed table during the build. Where to check: ',
+          h('em', null, whereToCheck(unverified[0]?.verify_note ?? (names.gospels_acts_totals as { verify_note?: string }).verify_note)),
+          '.',
+        )
+      : '';
 
   /* Panel B: the Twelve */
   const topN = TOP_N;
@@ -243,6 +264,8 @@ export function render(root: HTMLElement) {
     entries: ApoEntry[];
     text_sources: Record<string, { translation: string; url: string; date_of_text: string }>;
     method: string;
+    provenance?: Record<string, string>;
+    regenerate?: string;
   };
   const hasApo = apo.entries.length > 0;
   let apoText = apo.texts[0];
@@ -301,12 +324,12 @@ export function render(root: HTMLElement) {
               { class: `chip apo__chip tag-${e.tag}`, title: e.note ?? '' },
               h('span', { class: 'apo__dot', style: { background: TAG_VAR[e.tag] }, 'aria-hidden': 'true' }),
               e.name,
-              h('span', { class: 'muted num' }, `${e.approx ? '≈' : '×'}${e.mentions}`),
+              h('span', { class: 'muted num' }, `×${e.mentions}${e.approx ? '≈' : ''}`),
               h('span', { class: 'visually-hidden' }, `, ${TAG_LABEL[e.tag]}`),
             ),
           ),
       ),
-      src ? h('p', { class: 'chart-note' }, `Translation: ${src.translation}. `, h('a', { href: src.url, rel: 'noopener', target: '_blank' }, 'Text'), '. Mention counts are approximate (≈).') : '',
+      src ? h('p', { class: 'chart-note' }, `Translation: ${src.translation}. `, h('a', { href: src.url, rel: 'noopener', target: '_blank' }, 'Text'), '.') : '',
     );
   }
 
@@ -345,6 +368,7 @@ export function render(root: HTMLElement) {
         ),
         chartWrap,
         caption,
+        verifyNote,
       ),
       h('h3', { class: 'names-stats-h' }, 'Bauckham’s headline comparison, recomputed from the data'),
       statsWrap,
@@ -388,7 +412,19 @@ export function render(root: HTMLElement) {
         h('div', { class: 'names-bar-head' }, apoToggle.el, Legend((Object.keys(TAG_LABEL) as Tag[]).map((t) => ({ label: TAG_LABEL[t], color: TAG_VAR[t] })), 'Name tags')),
         apoWrap,
       ),
-      hasApo ? h('p', { class: 'chart-note measure' }, apo.method) : '',
+      hasApo
+        ? h(
+            'details',
+            { class: 'disclosure disclosure--plain' },
+            h('summary', { class: 'disclosure__summary' }, 'How these names were counted'),
+            h(
+              'div',
+              { class: 'disclosure__body' },
+              h('p', { class: 'measure' }, apo.method),
+              h('p', { class: 'chart-note' }, `Provenance: ${Object.entries(apo.provenance ?? {}).map(([t, v]) => `${t}: ${v === 'fetched' ? 'counted from the fetched text' : 'compiled list'}`).join('; ')}. To regenerate: ${apo.regenerate ?? ''}.`),
+            ),
+          )
+        : '',
     ),
     Disclosure(sk.points, { intro: sk.intro, framing: sk.framing }),
     SourceList(names.sources),
