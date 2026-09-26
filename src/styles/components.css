@@ -308,3 +308,18 @@
 .stub { padding: 40px; border: 1px dashed var(--rule); border-radius: var(--radius); color: var(--muted); font-family: var(--font-ui); }
 .sources__title { font-family: var(--font-ui); font-weight: 600; }
 .card__title { font-size: 1.15rem; font-variation-settings: "opsz" 24; }
+
+/* Skeptic entries */
+.disclosure__count { margin-left: auto; font-weight: 400; font-size: 0.78rem; color: var(--muted); }
+.disclosure__intro { color: var(--muted); max-width: var(--measure); }
+.disclosure__list { list-style: none; padding-left: 0; counter-reset: sk; display: grid; gap: 18px; }
+.sk { counter-increment: sk; position: relative; padding-left: 2.2em; }
+.sk::before { content: counter(sk); position: absolute; left: 0; top: 0.1em; font-family: var(--font-ui); font-size: 0.8rem; font-weight: 600; color: var(--accent-2); width: 1.6em; height: 1.6em; border: 1.5px solid currentColor; border-radius: 50%; display: grid; place-items: center; }
+.sk__claim { margin: 0 0 6px; }
+.sk__reply { margin: 0; padding-left: 12px; border-left: 2px solid var(--rule); color: var(--muted); }
+.sk__label { display: block; font-family: var(--font-ui); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+.sk__src { display: block; font-style: normal; font-family: var(--font-ui); font-size: 0.78rem; color: var(--muted); margin-top: 3px; }
+.sk__src::before { content: "— "; }
+.sk__framing { margin-top: 22px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); max-width: var(--measure); }
+.sk__framing p { margin: 0; }
+.sk__framing .sk__label { margin-bottom: 6px; }

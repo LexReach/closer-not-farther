@@ -1,7 +1,7 @@
 // About: method, sources, limits, credits, and every skeptic point in one place.
 import { h } from '../lib/dom';
 import { ModuleHeader, sourceText as linkify } from '../components';
-import { skeptics, sourceText } from '../data';
+import { skeptics, skepticsFor, sourceText, type ModuleKey } from '../data';
 import { routes } from '../routes';
 import { href } from '../lib/nav';
 import names from '../../data/names.json';
@@ -84,14 +84,40 @@ export function render(root: HTMLElement) {
       'section',
       { class: 'about-sec' },
       h('h2', null, 'What skeptics say, all in one place'),
-      Object.entries(skeptics.modules).map(([key, m]) =>
-        h(
+      h('aside', { class: 'sk__framing' }, h('p', { class: 'sk__label' }, skeptics.framing.title), h('p', null, skeptics.framing.text)),
+      (Object.keys(skeptics.modules) as ModuleKey[]).map((key) => {
+        const m = skepticsFor(key);
+        return h(
           'div',
           { class: 'about-sk' },
           h('h3', null, h('a', { href: href(pathFor(key)), 'data-link': true }, MODULE_TITLE[key] ?? key)),
           h('p', { class: 'muted' }, m.intro),
-          h('ol', null, m.points.map((p) => h('li', null, p.text, p.source ? h('span', { class: 'disclosure__src' }, ` (${p.source})`) : ''))),
-        ),
+          h(
+            'ol',
+            { class: 'disclosure__list' },
+            m.points.map((p) =>
+              h(
+                'li',
+                { class: 'sk' },
+                h('p', { class: 'sk__claim' }, p.text, h('cite', { class: 'sk__src' }, p.source ?? '')),
+                h('p', { class: 'sk__reply' }, h('span', { class: 'sk__label' }, 'Defenders reply'), p.reply ?? '', h('cite', { class: 'sk__src' }, p.replySource ?? '')),
+              ),
+            ),
+          ),
+        );
+      }),
+    ),
+    h(
+      'section',
+      { class: 'about-sec' },
+      h('h2', null, 'Bibliography'),
+      h('p', { class: 'muted' }, 'Every counterpoint and reply above cites one of these works.'),
+      h(
+        'ul',
+        { class: 'about-bib' },
+        Object.values(skeptics.bibliography as Record<string, string>)
+          .sort((a, b) => a.replace(/^['‘]/, '').localeCompare(b.replace(/^['‘]/, '')))
+          .map((x) => h('li', null, linkify(x))),
       ),
     ),
     h(

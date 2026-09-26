@@ -345,7 +345,7 @@ export function render(root: HTMLElement) {
       ),
       hasApo ? h('p', { class: 'chart-note measure' }, apo.method) : '',
     ),
-    Disclosure(sk.points, { intro: sk.intro }),
+    Disclosure(sk.points, { intro: sk.intro, framing: sk.framing }),
     SourceList(names.sources),
   );
 

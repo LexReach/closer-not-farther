@@ -406,7 +406,7 @@ export function render(root: HTMLElement) {
       ),
       h('div', { class: 'panel' }, cmpWrap),
     ),
-    Disclosure(sk.points, { intro: sk.intro }),
+    Disclosure(sk.points, { intro: sk.intro, framing: sk.framing }),
     SourceList([...mss.sources, ...comparison.sources]),
   );
 

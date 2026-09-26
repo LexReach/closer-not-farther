@@ -1,55 +1,101 @@
 {
-  "_note": "Counterpoints shown in each module's 'What skeptics say' disclosure and collected on /about. Written from SPEC.md section 3; keep them fair and sourced.",
+  "_note": "Counterpoints for each module's 'What skeptics say' panel, with a one-line defender reply, and the full bibliography shown on /about. Each point cites a bibliography key plus a location where known. Keep the skeptic case at full strength: no panel may be weaker than the claim it sits under.",
   "sources": [
-    "Bart Ehrman, Misquoting Jesus (HarperSanFrancisco, 2005)",
-    "'Name Recall in the Synoptic Gospels', New Testament Studies (Cambridge University Press, 2022)",
-    "Gerd Mink and the INTF on the Coherence-Based Genealogical Method (CBGM), https://ntg.uni-muenster.de/",
-    "Brent Nongbri, 'The Use and Abuse of P52' (HTR 98, 2005) and 'The Limits of Palaeographic Dating of Literary Papyri' (MH 71, 2014)",
-    "Bruce Metzger & Bart Ehrman, The Text of the New Testament, 4th ed. (2005)",
-    "Daniel Wallace, CSNTM essays on variant categories",
-    "Brent Nongbri, God's Library: The Archaeology of the Earliest Christian Manuscripts (Yale, 2018)",
-    "James R. Royse, Scribal Habits in Early Greek New Testament Papyri (Brill, 2008)"
+    "See 'bibliography' below; every point cites one of these works."
   ],
+  "framing": {
+    "title": "The debate in one paragraph",
+    "text": "Bart Ehrman and Daniel Wallace, the two best-known voices on either side, agree on most of the data: there are hundreds of thousands of variants, most are trivial, a few matter, and the earliest centuries are thinly attested. They disagree about what follows. Ehrman stresses that we lack the originals and early copies and that scribes sometimes changed the text on purpose; Wallace stresses that the wealth of witnesses lets us recover the original wording in almost every place, and that no core belief rests on a disputed passage.",
+    "cite": "stewart2011"
+  },
+  "bibliography": {
+    "ehrman2005": "Bart D. Ehrman, Misquoting Jesus: The Story Behind Who Changed the Bible and Why (HarperSanFrancisco, 2005)",
+    "ehrman1993": "Bart D. Ehrman, The Orthodox Corruption of Scripture (Oxford University Press, 1993; 2nd ed. 2011)",
+    "metzgerehrman2005": "Bruce M. Metzger and Bart D. Ehrman, The Text of the New Testament: Its Transmission, Corruption, and Restoration, 4th ed. (Oxford University Press, 2005)",
+    "metzger1994": "Bruce M. Metzger, A Textual Commentary on the Greek New Testament, 2nd ed. (Deutsche Bibelgesellschaft, 1994)",
+    "stewart2011": "Robert B. Stewart (ed.), The Reliability of the New Testament: Bart D. Ehrman and Daniel B. Wallace in Dialogue (Fortress Press, 2011)",
+    "wallace2011": "Daniel B. Wallace (ed.), Revisiting the Corruption of the New Testament: Manuscript, Patristic, and Apocryphal Evidence (Kregel, 2011)",
+    "gurry2016": "Peter J. Gurry, 'The Number of Variants in the Greek New Testament: A Proposed Estimate', New Testament Studies 62 (2016): 97–121",
+    "wassermangurry2017": "Tommy Wasserman and Peter J. Gurry, A New Approach to Textual Criticism: An Introduction to the Coherence-Based Genealogical Method (SBL Press, 2017)",
+    "mink2004": "Gerd Mink, 'Problems of a Highly Contaminated Tradition: The New Testament', in Studies in Stemmatology II (John Benjamins, 2004)",
+    "nongbri2005": "Brent Nongbri, 'The Use and Abuse of P52: Papyrological Pitfalls in the Dating of the Fourth Gospel', Harvard Theological Review 98 (2005): 23–48",
+    "nongbri2014": "Brent Nongbri, 'The Limits of Palaeographic Dating of Literary Papyri: Some Observations on the Date and Provenance of P.Bodmer II (P66)', Museum Helveticum 71 (2014): 1–35",
+    "nongbri2018": "Brent Nongbri, God's Library: The Archaeology of the Earliest Christian Manuscripts (Yale University Press, 2018)",
+    "orsiniclarysse2012": "Pasquale Orsini and Willy Clarysse, 'Early New Testament Manuscripts and Their Dates: A Critique of Theological Palaeography', Ephemerides Theologicae Lovanienses 88 (2012): 443–474",
+    "hurtado2006": "Larry W. Hurtado, The Earliest Christian Artifacts: Manuscripts and Christian Origins (Eerdmans, 2006)",
+    "royse2008": "James R. Royse, Scribal Habits in Early Greek New Testament Papyri (Brill, 2008)",
+    "fee1965": "Gordon D. Fee, 'The Corrections of Papyrus Bodmer II and Early Textual Transmission', Novum Testamentum 7 (1965): 247–257",
+    "jones2012": "Clay Jones, 'The Bibliographical Test Updated', Christian Research Journal 35:3 (2012)",
+    "intf": "INTF, Kurzgefasste Liste der griechischen Handschriften des Neuen Testaments (online), https://ntvmr.uni-muenster.de/liste",
+    "na28": "Nestle-Aland, Novum Testamentum Graece, 28th ed. (Deutsche Bibelgesellschaft, 2012), critical apparatus",
+    "bauckham2017": "Richard Bauckham, Jesus and the Eyewitnesses: The Gospels as Eyewitness Testimony, 2nd ed. (Eerdmans, 2017)",
+    "nts2022": "'Name Recall in the Synoptic Gospels', New Testament Studies (Cambridge University Press, 2022)",
+    "ilan2002": "Tal Ilan, Lexicon of Jewish Names in Late Antiquity, Part I: Palestine 330 BCE–200 CE (Mohr Siebeck, 2002)",
+    "goodacre2001": "Mark Goodacre, The Synoptic Problem: A Way Through the Maze (Sheffield Academic Press, 2001)",
+    "mcgrew2017": "Lydia McGrew, Hidden in Plain View: Undesigned Coincidences in the Gospels and Acts (DeWard, 2017)",
+    "blunt1847": "J. J. Blunt, Undesigned Coincidences in the Writings Both of the Old and New Testament (1847; public domain)",
+    "ehrman2016": "Bart D. Ehrman, Jesus Before the Gospels: How the Earliest Christians Remembered, Changed, and Invented Their Stories of the Savior (HarperOne, 2016)"
+  },
   "modules": {
     "telephone": {
       "intro": "The simulator is a teaching model, not a reconstruction method. Its limits are real.",
+      "framing": true,
       "points": [
         {
-          "text": "The simulation treats every scribe's errors as independent. Real scribes copied from exemplars inside text-families, so shared mistakes travel together and independent lines are fewer than the tree suggests.",
-          "source": "Metzger & Ehrman 2005"
+          "text": "The simulation treats every scribe's errors as independent. Real scribes copied from exemplars inside text families and often mixed readings from several exemplars, so shared mistakes travel together and there are fewer truly independent lines than the tree suggests.",
+          "cite": "mink2004",
+          "reply": "Mixture is real, and it is the reason the Coherence-Based Genealogical Method was built; applied to the whole tradition it still yields a stable initial text at almost every point of variation.",
+          "reply_cite": "wassermangurry2017"
         },
         {
-          "text": "The earliest generations, before about 150 AD, have almost no surviving witnesses. The tree is thinnest exactly where it matters most.",
-          "source": "Ehrman, Misquoting Jesus"
+          "text": "The earliest generations, before about 150 AD, have almost no surviving witnesses. The tree is thinnest exactly where it matters most, and changes made then could have spread to every surviving line.",
+          "cite": "ehrman2005",
+          "reply": "Second- and third-century papyri, early translations (Latin, Syriac, Coptic) and quotations by early writers are independent windows into that period, and they largely agree with the later text.",
+          "reply_cite": "metzgerehrman2005",
+          "reply_loc": "ch. 2"
         },
         {
-          "text": "Majority vote is not how textual criticism works. Editors weigh witnesses by age, family and coherence (for example the CBGM), and sometimes follow a minority reading.",
-          "source": "INTF, CBGM"
+          "text": "Majority vote is not how textual criticism works. Editors weigh witnesses by age, family and coherence, and sometimes follow a minority reading, so a count of copies can mislead.",
+          "cite": "wassermangurry2017",
+          "reply": "Agreed, and real methods do better than the simulator: weighting early, independent witnesses is how editors can correct even a majority error.",
+          "reply_cite": "metzger1994",
+          "reply_loc": "introduction"
         },
         {
-          "text": "Some changes were deliberate (harmonizations, doctrinal clarifications), and deliberate changes are more likely to be copied than random slips.",
-          "source": "Ehrman, Misquoting Jesus, chs. 6-7"
+          "text": "Some changes were deliberate, made to sharpen doctrine or harmonize the Gospels, and deliberate changes are more likely to be copied than random slips.",
+          "cite": "ehrman1993",
+          "reply": "The deliberate changes that have been documented are detectable because other lines kept the unaltered reading, and none of them is the sole basis for a core belief.",
+          "reply_cite": "stewart2011"
         }
       ]
     },
     "timeline": {
       "intro": "The chart shows access to earlier witnesses growing over time. What it does not show matters too.",
+      "framing": true,
       "points": [
         {
-          "text": "Count is not the same as reliability. Most of the roughly 5,800 manuscripts are medieval, copied more than 800 years after the originals.",
-          "source": "Metzger & Ehrman 2005"
+          "text": "Count is not the same as reliability. Most of the roughly 5,800 manuscripts are medieval, copied a thousand years or more after the originals, and many of them descend from a few late exemplars.",
+          "cite": "ehrman2005",
+          "reply": "The argument rests on the early witnesses, not the medieval bulk; what the timeline shows is the earliest known copy moving back by more than a thousand years since 1516.",
+          "reply_cite": "hurtado2006"
         },
         {
-          "text": "The first hundred years after composition still have very few witnesses, and papyrus dates rest on handwriting comparison, which some scholars think is less precise than usually presented.",
-          "source": "Nongbri 2005, 2014"
+          "text": "Papyrus dates rest on handwriting comparison, which is less precise than often presented. P52, usually dated about 125–175, could be later.",
+          "cite": "nongbri2005",
+          "reply": "Specialists who re-examined the early papyri with that critique in view still date P52 to about 125–175, and even the later datings keep the papyri far closer than anything known in 1611.",
+          "reply_cite": "orsiniclarysse2012"
         },
         {
-          "text": "The manuscript counts for other ancient authors come from older, uneven scholarship and change as catalogues are revised; comparisons between them are rough.",
-          "source": "Clay Jones 2012"
+          "text": "The manuscript counts for other ancient authors come from catalogues of uneven date and change as they are revised; the older tallies repeated for decades in popular apologetics were substantially off.",
+          "cite": "jones2012",
+          "reply": "Updated tallies still put the New Testament far ahead on both count and gap; the comparison survives even generous corrections to the classical figures.",
+          "reply_cite": "jones2012"
         },
         {
-          "text": "The figure of about 5,800 counts every catalogued item, including fragments of only a few verses and lectionaries.",
-          "source": "INTF Liste"
+          "text": "The figure of about 5,800 counts every catalogued item, including fragments of a few verses and lectionaries that reorder the text for reading in church.",
+          "cite": "intf",
+          "reply": "True; continuous-text manuscripts alone number over 3,300 (papyri, majuscules and minuscules in the 2013 tally), and several of the 'fragments' are the oldest witnesses.",
+          "reply_cite": "intf"
         }
       ]
     },
@@ -57,29 +103,40 @@
       "intro": "P66 is an early and substantial witness to John. How early, and how careful, are debated.",
       "points": [
         {
-          "text": "P66 is usually dated about 200 AD, but some scholars argue for the 3rd or even 4th century on palaeographic grounds.",
-          "source": "Nongbri, God's Library (2018)"
+          "text": "P66 is usually dated about 200 AD, but the date rests on handwriting, and one detailed study argues a 4th-century date is possible.",
+          "cite": "nongbri2014",
+          "reply": "Most papyrologists still place it around 200–250, and even a 4th-century date would leave it among the earliest near-complete copies of John.",
+          "reply_cite": "orsiniclarysse2012"
         },
         {
-          "text": "Its scribe made many mistakes and corrections, including singular readings found nowhere else. That shows careless copying at one point, and also careful checking at another; it cuts both ways.",
-          "source": "Royse, Scribal Habits in Early Greek NT Papyri (2008)"
+          "text": "Its scribe made hundreds of mistakes and corrections, including readings found nowhere else, which shows how easily an early copy could go wrong.",
+          "cite": "royse2008",
+          "reply": "Most corrections bring the text back into line with the wider tradition, which shows the copy was checked against another exemplar soon after it was made.",
+          "reply_cite": "fee1965"
         }
       ]
     },
     "variants": {
       "intro": "The numbers here are real, and some of them are large.",
+      "framing": true,
       "points": [
         {
-          "text": "There are roughly 400,000 textual variants among the Greek manuscripts, more variants than there are words in the New Testament. The app shows this number rather than hiding it.",
-          "source": "Ehrman, Misquoting Jesus"
+          "text": "There are hundreds of thousands of textual variants, more than there are words in the New Testament. A careful recent estimate puts the number of non-spelling variants alone around half a million.",
+          "cite": "gurry2016",
+          "reply": "Both sides accept the number; the question is what kind of variants they are, and the great majority are spelling, word order and similar slips that do not change the sense.",
+          "reply_cite": "stewart2011"
         },
         {
-          "text": "A few variants are theologically interesting: the long ending of Mark and the Johannine Comma (1 John 5:7-8) were read as Scripture for centuries.",
-          "source": "Metzger, Textual Commentary"
+          "text": "Some variants are theologically loaded: the long ending of Mark, the woman caught in adultery, and the Johannine Comma were read as Scripture for centuries, and some changes appear to be motivated by doctrinal debate.",
+          "cite": "ehrman1993",
+          "reply": "Those passages are marked in every modern Bible, which is the point of this module, and no doctrine depends on them alone.",
+          "reply_cite": "wallace2011"
         },
         {
-          "text": "The category percentages are estimates from popular-level summaries, not a published count of every variant.",
-          "source": "Wallace, CSNTM"
+          "text": "The category percentages are estimates from popular summaries, not a published count of every variant by type.",
+          "cite": "gurry2016",
+          "reply": "The shares are rough, but every meaningful and viable variant is printed in the critical apparatus, so the claim can be checked passage by passage.",
+          "reply_cite": "na28"
         }
       ]
     },
@@ -87,16 +144,25 @@
       "intro": "The name statistics are suggestive. The sample is small and the method has critics.",
       "points": [
         {
-          "text": "The Gospels and Acts name only dozens of Palestinian Jews, not thousands, so percentages move a lot with each name.",
-          "source": "Bauckham 2017, ch. 4"
+          "text": "The Gospels and Acts name only dozens of Palestinian Jews (79 men and 18 women in the tally used here), so each percentage moves several points with a single name, and a rough fit is easy to get by chance.",
+          "cite": "bauckham2017",
+          "reply": "The pattern that matters most is specific rather than statistical: common names get a qualifier and rare ones don't, which a small sample shows clearly.",
+          "reply_cite": "bauckham2017",
+          "reply_loc": "ch. 4",
+          "loc": "ch. 4, Table 6"
         },
         {
-          "text": "Bauckham's own arithmetic and his choice of which names to count have been questioned.",
-          "source": "'Name Recall in the Synoptic Gospels', NTS 2022"
+          "text": "Bauckham's counts and his choice of which names to include have been questioned, and his printed shares do not all match his own tables (this page shows both).",
+          "cite": "nts2022",
+          "reply": "The recomputed shares differ in detail but keep the same shape: the Gospels' most common names are the population's most common names.",
+          "reply_cite": "ilan2002"
         },
         {
-          "text": "A good match shows that the tradition came from 1st-century Palestine. It does not by itself show that eyewitnesses wrote the Gospels.",
-          "source": ""
+          "text": "A good match shows that the traditions came from first-century Palestine. It does not show that eyewitnesses wrote the Gospels, and later writers with access to Palestinian tradition could match it too.",
+          "cite": "ehrman2016",
+          "reply": "Agreed; the modest claim is that the traditions stayed close to their Palestinian sources, which later gospels written elsewhere mostly do not.",
+          "reply_cite": "bauckham2017",
+          "reply_loc": "ch. 4"
         }
       ]
     },
@@ -104,16 +170,24 @@
       "intro": "Undesigned coincidences are a cumulative argument, and each link can be challenged.",
       "points": [
         {
-          "text": "Some coincidences can be explained by literary dependence: Luke and Matthew knew Mark, so shared details are not always independent.",
-          "source": "Standard synoptic source criticism"
+          "text": "Some coincidences can be explained by literary dependence: Matthew and Luke used Mark, so a detail one explains may simply have been copied and adjusted.",
+          "cite": "goodacre2001",
+          "reply": "The strongest cases cross from the Synoptics to John, where copying is least likely, and dependence does not explain why the source lacks the detail that explains its own story.",
+          "reply_cite": "mcgrew2017"
         },
         {
-          "text": "There is a selection effect: we notice the pieces that fit and ignore the details that do not interlock.",
-          "source": ""
+          "text": "There is a selection effect: we notice the pieces that fit and pass over the many details that do not interlock or that appear to conflict.",
+          "cite": "mcgrew2017",
+          "reply": "The argument needs the fits to be more frequent than chance or invention would produce, and the apocryphal gospels, where such interlocks are rare, provide the comparison.",
+          "reply_cite": "mcgrew2017",
+          "cite_note": "objection as stated and answered in"
         },
         {
-          "text": "The narrower claim still stands: this kind of interlocking is uncommon in the apocryphal gospels, and that contrast is the actual argument.",
-          "source": "McGrew 2017"
+          "text": "At most, interlocking details show that the writers had access to real information. They do not show that every detail in the Gospels is historical.",
+          "cite": "mcgrew2017",
+          "reply": "That is the claim being made: interlocking detail is the fingerprint of independent access to the same events, which is what a reliable report looks like.",
+          "reply_cite": "mcgrew2017",
+          "cite_note": "objection as stated and answered in"
         }
       ]
     }

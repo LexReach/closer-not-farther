@@ -34,27 +34,39 @@ export function Card(o: CardOpts): HTMLAnchorElement {
 export interface SkepticPoint {
   text: string;
   source?: string;
+  reply?: string;
+  replySource?: string;
 }
 
 export function Disclosure(
   points: SkepticPoint[],
-  opts: { title?: string; intro?: string; open?: boolean } = {},
+  opts: { title?: string; intro?: string; open?: boolean; framing?: { title: string; text: string; source: string } } = {},
 ): HTMLDetailsElement {
   const d = h(
     'details',
     { class: 'disclosure' },
-    h('summary', { class: 'disclosure__summary' }, opts.title ?? 'What skeptics say'),
+    h('summary', { class: 'disclosure__summary' }, opts.title ?? 'What skeptics say', h('span', { class: 'disclosure__count' }, `${points.length} points, with replies`)),
     h(
       'div',
       { class: 'disclosure__body' },
-      opts.intro ? h('p', { class: 'muted' }, opts.intro) : null,
+      opts.intro ? h('p', { class: 'disclosure__intro' }, opts.intro) : null,
       h(
         'ol',
         { class: 'disclosure__list' },
         points.map((p) =>
-          h('li', null, p.text, p.source ? h('span', { class: 'disclosure__src' }, ` (${p.source})`) : null),
+          h(
+            'li',
+            { class: 'sk' },
+            h('p', { class: 'sk__claim' }, p.text, p.source ? h('cite', { class: 'sk__src' }, p.source) : null),
+            p.reply
+              ? h('p', { class: 'sk__reply' }, h('span', { class: 'sk__label' }, 'Defenders reply'), p.reply, p.replySource ? h('cite', { class: 'sk__src' }, p.replySource) : null)
+              : null,
+          ),
         ),
       ),
+      opts.framing
+        ? h('aside', { class: 'sk__framing' }, h('p', { class: 'sk__label' }, opts.framing.title), h('p', null, opts.framing.text, h('cite', { class: 'sk__src' }, opts.framing.source)))
+        : null,
     ),
   );
   if (opts.open) d.open = true;

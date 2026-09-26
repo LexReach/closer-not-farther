@@ -307,7 +307,7 @@ export function render(root: HTMLElement) {
     h('div', { class: 'tel-split' }, chainPanel, treePanel),
     results,
     detail,
-    Disclosure(sk.points, { intro: sk.intro }),
+    Disclosure(sk.points, { intro: sk.intro, framing: sk.framing }),
     SourceList([
       ...sourceText.sources,
       'Error types and weights: data/source-text.json (error_types). Simulator: seeded, independent errors per word per copy; majority vote per word.',

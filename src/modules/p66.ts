@@ -279,7 +279,7 @@ export function render(root: HTMLElement) {
         live,
       ),
     ),
-    Disclosure(sk.points, { intro: sk.intro }),
+    Disclosure(sk.points, { intro: sk.intro, framing: sk.framing }),
     SourceList([...sourceText.sources, ...p66.sources.filter((x: string) => !x.startsWith('General scholarly') && !x.includes('sblgnt'))]),
   );
   drawPap();

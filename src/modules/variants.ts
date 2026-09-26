@@ -263,7 +263,7 @@ export function render(root: HTMLElement) {
       h('div', { class: 'var-cats' }, total.el, h('div', { class: 'panel' }, tmWrap)),
       h('p', { class: 'chart-note measure' }, cats._note),
     ),
-    Disclosure(sk.points, { intro: sk.intro }),
+    Disclosure(sk.points, { intro: sk.intro, framing: sk.framing }),
     SourceList(data.sources),
   );
   renderPassage();

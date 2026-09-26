@@ -273,7 +273,7 @@ export function render(root: HTMLElement) {
     ),
     walk,
     h('p', { class: 'chart-note' }, `Quotations: ${data.translation}, trimmed to 30 words or fewer.`),
-    Disclosure(sk.points, { intro: sk.intro }),
+    Disclosure(sk.points, { intro: sk.intro, framing: sk.framing }),
     SourceList([...data.sources, `${data.translation}`, ...data.map_geo.sources]),
   );
   choose(current);

@@ -426,3 +426,6 @@
 .about-src { font-family: var(--font-ui); font-size: 0.85rem; }
 .about-src a { word-break: break-all; }
 .iw[class*="is-"] .iw__en { color: var(--ink); }
+.about-bib { list-style: none; padding-left: 0; font-size: 0.95rem; }
+.about-bib li { padding-left: 1.5em; text-indent: -1.5em; margin-bottom: 0.5em; }
+.about-sec .disclosure__list { padding-left: 0; }
