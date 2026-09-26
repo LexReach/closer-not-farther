@@ -189,7 +189,7 @@
   ],
   "translation": "World English Bible (public domain)",
   "map_geo": {
-    "_note": "Schematic inset only. Coordinates are approximate (decimal degrees); Bethsaida is placed at et-Tell, the most commonly proposed site, which is disputed (el-Araj is the main alternative).",
+    "_note": "Schematic inset drawn from approximate coordinates (decimal degrees) of the shoreline and towns; the harp shape and positions are right to within about a kilometre. Bethsaida is placed at et-Tell, the most commonly proposed site; el-Araj, nearer the shore, is the main alternative.",
     "sources": [
       "Approximate coordinates from standard Bible atlases (e.g. Rasmussen, Zondervan Atlas of the Bible, 2010); Bethsaida identification debated"
     ],
@@ -214,99 +214,139 @@
     },
     "lake": [
       [
-        32.886,
-        35.552
+        32.873,
+        35.548
+      ],
+      [
+        32.88,
+        35.566
       ],
       [
         32.882,
         35.575
       ],
       [
-        32.888,
-        35.6
+        32.887,
+        35.592
       ],
       [
-        32.884,
-        35.626
+        32.893,
+        35.611
       ],
       [
-        32.862,
-        35.641
+        32.894,
+        35.624
       ],
       [
-        32.83,
+        32.887,
+        35.636
+      ],
+      [
+        32.873,
+        35.645
+      ],
+      [
+        32.848,
         35.65
+      ],
+      [
+        32.826,
+        35.652
       ],
       [
         32.8,
         35.655
       ],
       [
-        32.76,
+        32.775,
         35.65
       ],
       [
-        32.722,
-        35.625
+        32.75,
+        35.638
+      ],
+      [
+        32.726,
+        35.622
+      ],
+      [
+        32.711,
+        35.604
       ],
       [
         32.706,
-        35.592
+        35.59
       ],
       [
-        32.714,
-        35.57
+        32.712,
+        35.573
       ],
       [
-        32.75,
-        35.559
+        32.728,
+        35.566
+      ],
+      [
+        32.76,
+        35.553
       ],
       [
         32.79,
         35.54
       ],
       [
-        32.82,
-        35.522
+        32.812,
+        35.528
       ],
       [
-        32.85,
-        35.526
+        32.83,
+        35.518
       ],
       [
-        32.872,
-        35.54
+        32.848,
+        35.521
+      ],
+      [
+        32.862,
+        35.533
       ]
     ],
     "jordan_in": [
       [
-        32.884,
-        35.626
+        32.894,
+        35.624
       ],
       [
         32.905,
-        35.628
+        35.627
       ],
       [
-        32.93,
-        35.62
+        32.918,
+        35.623
+      ],
+      [
+        32.935,
+        35.628
       ],
       [
         32.96,
-        35.628
+        35.625
       ]
     ],
     "jordan_out": [
       [
         32.706,
-        35.592
+        35.59
+      ],
+      [
+        32.697,
+        35.582
       ],
       [
         32.685,
-        35.58
+        35.575
       ],
       [
-        32.66,
+        32.668,
         35.572
       ]
     ]

@@ -20,35 +20,36 @@ interface Witness {
   added_by_build?: boolean;
 }
 
-const witnesses = mss.witnesses as Witness[];
+export const witnesses = mss.witnesses as Witness[];
 const points = mss.count_over_time.points as { year: number; count: number; label: string }[];
-const presets = mss.presets as { year: number; label: string }[];
+export const presets = mss.presets as { year: number; label: string }[];
 const auto = mss.autographs;
-const YEAR_MIN = 1500;
-const YEAR_MAX = Math.max(...presets.map((p) => p.year), new Date().getFullYear());
+export const YEAR_MIN = 1500;
+export const YEAR_MAX = Math.max(...presets.map((p) => p.year), new Date().getFullYear());
 const LEFT_LABEL = new Set(['01', 'P46']);
+const BIG_LABELLED = new Set(['P52', 'P66', '01', '03', '2']);
 const LABELLED = new Set(['P52', 'P66', 'P75', 'P46', '01', '03', '02', '05', '2', 'P1']);
 
-const mid = (w: Witness) => (w.date_low + w.date_high) / 2;
+export const mid = (w: Witness) => (w.date_low + w.date_high) / 2;
 const shortName = (w: Witness) => (w.ga.startsWith('P') ? w.ga : w.name.split(' (')[0]);
 
-function known(year: number) {
+export function known(year: number) {
   return witnesses.filter((w) => w.year_known <= year);
 }
 
-function countAt(year: number) {
+export function countAt(year: number) {
   let cur: (typeof points)[number] | null = null;
   for (const p of points) if (p.year <= year) cur = p;
   return cur;
 }
 
-function earliest(year: number): Witness | null {
+export function earliest(year: number): Witness | null {
   const k = known(year);
   if (!k.length) return null;
   return k.reduce((a, b) => (mid(b) < mid(a) ? b : a));
 }
 
-const dateRange = (w: Witness) => `c. ${w.date_low}–${w.date_high} AD`;
+export const dateRange = (w: Witness) => `c. ${w.date_low}–${w.date_high} AD`;
 
 function witnessTip(w: Witness): HTMLElement {
   return h(
@@ -66,15 +67,17 @@ function witnessTip(w: Witness): HTMLElement {
 
 /* ---------- Scatter + count chart ---------- */
 
-interface ChartApi {
+export interface ChartApi {
   setYear(y: number): void;
   redraw(): void;
 }
 
-function scatter(wrap: HTMLElement, getYear: () => number): ChartApi {
+export function scatter(wrap: HTMLElement, getYear: () => number, opts: { big?: boolean } = {}): ChartApi {
+  const big = !!opts.big;
+  const wasKnown = new Map<string, boolean>();
   let dots: { w: Witness; g: SVGGElement }[] = [];
   let cursor: SVGGElement | null = null;
-  let earliestLine: SVGLineElement | null = null;
+  let earliestG: SVGGElement | null = null;
   let earliestLabel: SVGTextElement | null = null;
   let countCursor: SVGGElement | null = null;
   let x: d3.ScaleLinear<number, number> = d3.scaleLinear();
@@ -89,14 +92,14 @@ function scatter(wrap: HTMLElement, getYear: () => number): ChartApi {
     const W = Math.max(320, wrap.clientWidth || 900);
     const narrow = W < 560;
     narrowNow = narrow;
-    const m = { top: 30, right: narrow ? 14 : 28, bottom: 34, left: narrow ? 44 : 58 };
-    const H = narrow ? 420 : 500;
-    countH = narrow ? 130 : 150;
+    const m = big ? { top: 60, right: 40, bottom: 70, left: 120 } : { top: 30, right: narrow ? 14 : 28, bottom: 34, left: narrow ? 44 : 58 };
+    const H = big ? Math.max(420, Math.min(760, wrap.clientHeight || 640)) : narrow ? 420 : 500;
+    countH = big ? 0 : narrow ? 130 : 150;
     x = d3.scaleLinear().domain([YEAR_MIN, YEAR_MAX]).range([m.left, W - m.right]);
     y = d3.scaleLinear().domain([auto.date_low - 20, 1500]).range([m.top, H - m.bottom]);
 
     const svg = s('svg', {
-      class: 'chart tl-chart',
+      class: `chart tl-chart ${big ? 'chart--big' : ''}`,
       width: W,
       height: H,
       viewBox: `0 0 ${W} ${H}`,
@@ -109,28 +112,29 @@ function scatter(wrap: HTMLElement, getYear: () => number): ChartApi {
     svg.appendChild(s('text', { x: W - m.right - 6, y: y(auto.date_low) + 13, 'text-anchor': 'end', class: 'tl-auto__label' }, narrow ? `NT written ${auto.date_low}–${auto.date_high}` : `${auto.label}, c. ${auto.date_low}–${auto.date_high} AD`));
 
     // Grid + axes.
-    for (const t of y.ticks(narrow ? 6 : 8)) {
+    for (const t of y.ticks(big ? 5 : narrow ? 6 : 8)) {
       if (t < auto.date_low) continue;
       svg.append(
         s('line', { x1: m.left, x2: W - m.right, y1: y(t), y2: y(t), class: 'gridline' }),
-        s('text', { x: m.left - 8, y: y(t) + 4, 'text-anchor': 'end' }, `${t}`),
+        s('text', { x: m.left - (big ? 16 : 8), y: y(t) + (big ? 10 : 4), 'text-anchor': 'end' }, `${t}`),
       );
     }
-    for (const t of x.ticks(narrow ? 4 : 8)) {
+    for (const t of x.ticks(big ? 5 : narrow ? 4 : 8)) {
       svg.append(
         s('line', { x1: x(t), x2: x(t), y1: m.top, y2: H - m.bottom, class: 'gridline gridline--v' }),
-        s('text', { x: x(t), y: H - m.bottom + 16, 'text-anchor': 'middle' }, `${t}`),
+        s('text', { x: x(t), y: H - m.bottom + (big ? 40 : 16), 'text-anchor': 'middle' }, `${t}`),
       );
     }
     svg.append(
-      s('text', { x: m.left, y: 14, class: 'axis-label' }, '↑ Copied (AD, older at top)'),
-      s('text', { x: W - m.right, y: H - 4, 'text-anchor': 'end', class: 'axis-label' }, 'Year it became known to scholarship →'),
+      s('text', { x: big ? 16 : m.left, y: big ? 32 : 14, class: 'axis-label' }, '↑ Copied (AD, older at top)'),
+      s('text', { x: W - m.right, y: H - (big ? 6 : 4), 'text-anchor': 'end', class: 'axis-label' }, 'Year it became known to scholarship →'),
     );
 
     // Earliest-witness line.
-    earliestLine = s('line', { class: 'tl-earliest', x1: m.left, x2: W - m.right, y1: 0, y2: 0 });
-    earliestLabel = s('text', { class: 'tl-earliest__label', x: m.left + 6, y: 0 });
-    svg.append(earliestLine, earliestLabel);
+    earliestG = s('g', { class: 'tl-earliest-g' });
+    earliestLabel = s('text', { class: 'tl-earliest__label', x: W - m.right - 6, y: big ? -12 : -6, 'text-anchor': 'end' });
+    earliestG.append(s('line', { class: 'tl-earliest', x1: m.left, x2: W - m.right, y1: 0, y2: 0 }), earliestLabel);
+    svg.append(earliestG);
 
     // Dots (jitter identical positions).
     const seen = new Map<string, number>();
@@ -149,12 +153,14 @@ function scatter(wrap: HTMLElement, getYear: () => number): ChartApi {
           'aria-label': `${w.name}, GA ${w.ga}: copied ${dateRange(w)}, known since ${w.year_known}. ${w.contents}.`,
         });
         g.append(
+          s('line', { x1: big ? -80 : -36, x2: 0, y1: 0, y2: 0, class: 'tl-dot__trail' }),
           s('line', { x1: 0, x2: 0, y1: y(w.date_low) - y(mid(w)), y2: y(w.date_high) - y(mid(w)), class: 'tl-dot__range' }),
-          s('circle', { r: narrow ? 4.5 : 5.5, class: 'tl-dot__c' }),
+          s('circle', { r: big ? 12 : narrow ? 4.5 : 5.5, class: 'tl-dot__c' }),
         );
-        if (LABELLED.has(w.ga) && !narrow) {
+        if ((big ? BIG_LABELLED : LABELLED).has(w.ga) && !narrow) {
           const left = LEFT_LABEL.has(w.ga);
-          g.appendChild(s('text', { x: left ? -9 : 9, y: left ? -4 : 4, 'text-anchor': left ? 'end' : 'start', class: 'tl-dot__label' }, shortName(w)));
+          const off = big ? 20 : 9;
+          g.appendChild(s('text', { x: left ? -off : off, y: left ? -4 : big ? 10 : 4, 'text-anchor': left ? 'end' : 'start', class: 'tl-dot__label' }, shortName(w)));
         }
         const show = (e?: PointerEvent) => (e ? Tooltip.show(witnessTip(w), e.clientX, e.clientY) : Tooltip.showFor(witnessTip(w), g));
         g.addEventListener('pointermove', (e) => show(e));
@@ -172,6 +178,10 @@ function scatter(wrap: HTMLElement, getYear: () => number): ChartApi {
     wrap.appendChild(svg);
 
     /* Count-over-time chart, same x scale. */
+    if (big) {
+      update(getYear(), false);
+      return;
+    }
     const cm = { top: 22, bottom: 30 };
     const csvg = s('svg', {
       class: 'chart tl-count',
@@ -225,26 +235,32 @@ function scatter(wrap: HTMLElement, getYear: () => number): ChartApi {
     const slow = animate && !reducedMotion();
     for (const d of dots) {
       const on = d.w.year_known <= year;
+      const before = wasKnown.get(d.w.ga) ?? false;
       d.g.classList.toggle('is-known', on);
       d.g.style.transitionDuration = slow ? '' : '0ms';
+      // Newly discovered dots pop in with a short trail back toward the year cursor.
+      if (on && !before && slow) {
+        d.g.classList.remove('is-new');
+        void (d.g as unknown as HTMLElement).getBoundingClientRect();
+        d.g.classList.add('is-new');
+        window.setTimeout(() => d.g.classList.remove('is-new'), 1100);
+      }
+      wasKnown.set(d.w.ga, on);
     }
     const cx = x(year);
     cursor?.setAttribute('transform', `translate(${cx} 0)`);
     const lbl = cursor?.querySelector('text');
     if (lbl) lbl.textContent = String(year);
     countCursor?.setAttribute('transform', `translate(${cx} 0)`);
-    if (earliestLine && earliestLabel) {
+    if (earliestG && earliestLabel) {
       if (e) {
         const yy = y(mid(e));
-        earliestLine.setAttribute('y1', String(yy));
-        earliestLine.setAttribute('y2', String(yy));
-        earliestLine.style.visibility = 'visible';
-        earliestLabel.setAttribute('y', String(yy + 15));
-        earliestLabel.textContent = narrowNow ? `Earliest: ${e.ga}` : `Earliest known in ${year}: ${e.name.split(' (')[0]} (${e.ga})`;
-        earliestLabel.style.visibility = 'visible';
+        earliestG.style.transform = `translateY(${yy}px)`;
+        earliestG.style.transitionDuration = slow ? '' : '0ms';
+        earliestG.style.visibility = 'visible';
+        earliestLabel.textContent = narrowNow ? '' : `Earliest known in ${year}: ${e.name.split(' (')[0]} (${e.ga})`;
       } else {
-        earliestLine.style.visibility = 'hidden';
-        earliestLabel.style.visibility = 'hidden';
+        earliestG.style.visibility = 'hidden';
       }
     }
   }
@@ -348,6 +364,10 @@ export function render(root: HTMLElement) {
 
   let chart: ChartApi;
 
+  // Tiles tween between values so the earliest date visibly counts down.
+  let shownMid = 0;
+  let shownGap = 0;
+  let tweenRaf = 0;
   function setYear(v: number) {
     year = v;
     chart?.setYear(v);
@@ -355,10 +375,24 @@ export function render(root: HTMLElement) {
     const e = earliest(v);
     const k = known(v).length;
     tiles.count.set(c ? `≈ ${fmtInt(c.count)}` : '—', c ? `${c.label} (${c.year}); ${k} of ${witnesses.length} plotted` : `${k} plotted`);
+    cancelAnimationFrame(tweenRaf);
     if (e) {
-      tiles.earliest.set(e.ga, `${e.name.split(' (')[0]}, ${dateRange(e)}`);
-      const gap = Math.round(mid(e) - auto.date_high);
-      tiles.gap.set(`≈ ${fmtInt(gap)} years`, `Earliest copy's midpoint minus ${auto.date_high} AD`);
+      const targetMid = Math.round(mid(e));
+      const targetGap = Math.round(mid(e) - auto.date_high);
+      const fromMid = shownMid || targetMid;
+      const fromGap = shownGap || targetGap;
+      const t0 = performance.now();
+      const dur = reducedMotion() || fromMid === targetMid ? 0 : 600;
+      const step = (now: number) => {
+        const t = dur ? Math.min(1, (now - t0) / dur) : 1;
+        const k2 = 1 - Math.pow(1 - t, 3);
+        shownMid = Math.round(fromMid + (targetMid - fromMid) * k2);
+        shownGap = Math.round(fromGap + (targetGap - fromGap) * k2);
+        tiles.earliest.set(`c. ${shownMid} AD`, `${e.ga}, ${e.name.split(' (')[0]} (${dateRange(e)})`);
+        tiles.gap.set(`≈ ${fmtInt(shownGap)} years`, `Earliest copy's midpoint minus ${auto.date_high} AD`);
+        if (t < 1) tweenRaf = requestAnimationFrame(step);
+      };
+      tweenRaf = requestAnimationFrame(step);
     } else {
       tiles.earliest.set('—', 'No witnesses known yet');
       tiles.gap.set('—', '');

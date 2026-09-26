@@ -23,15 +23,15 @@ interface Word {
   nomen_sacrum?: boolean;
 }
 
-const lines = p66.lines as Line[];
-const words = p66.words as Word[];
+export const lines = p66.lines as Line[];
+export const words = p66.words as Word[];
 const tokens = sourceText.tokens;
 const img = p66.image as { available: boolean; file: string | null; commons_url: string; license: string; credit: string };
 const title = (p66 as { title?: { text: string } }).title;
 
 // Facsimile coordinate system: percent boxes scaled to a 700 × 800 page.
-const VW = 700;
-const VH = 800;
+export const VW = 700;
+export const VH = 800;
 
 interface Seg {
   token: number | null; // null = text after verse 5 (not linked)
@@ -70,17 +70,28 @@ function segments(): Seg[] {
   return segs;
 }
 
-const SEGS = segments();
+export const SEGS = segments();
 const NS = new Set(words.filter((w) => w.nomen_sacrum).map((w) => w.token));
 
-function charBox(line: Line, start: number, len: number): Box {
+export function charBox(line: Line, start: number, len: number): Box {
   const cw = line.box.w / line.text.length;
   return { x: line.box.x + start * cw, y: line.box.y, w: len * cw, h: line.box.h };
 }
 
+/** Highlight rectangles (in facsimile coordinates) for every segment of a token. */
+export function tokenBoxes(tok: number): SVGRectElement[] {
+  const out: SVGRectElement[] = [];
+  for (const seg of SEGS) {
+    if (seg.token !== tok) continue;
+    const b = charBox(lines[seg.line], seg.start, seg.text.length);
+    out.push(s('rect', { x: (b.x / 100) * VW - 3, y: (b.y / 100) * VH - 4, width: (b.w / 100) * VW + 6, height: (b.h / 100) * VH + 8, rx: 4, class: 'p66-box' }));
+  }
+  return out;
+}
+
 /* ---------- Facsimile ---------- */
 
-function facsimile(): { svg: SVGSVGElement; overlay: SVGGElement } {
+export function facsimile(): { svg: SVGSVGElement; overlay: SVGGElement } {
   const svg = s('svg', {
     class: 'p66-fac',
     viewBox: `0 0 ${VW} ${VH}`,
@@ -161,11 +172,7 @@ export function render(root: HTMLElement) {
     root.querySelectorAll<HTMLElement>('[data-tok]').forEach((el) => el.classList.toggle('is-on', tok !== null && Number(el.dataset.tok) === tok));
     clear(overlay);
     if (tok === null) return;
-    for (const seg of SEGS) {
-      if (seg.token !== tok) continue;
-      const b = charBox(lines[seg.line], seg.start, seg.text.length);
-      overlay.appendChild(s('rect', { x: (b.x / 100) * VW - 3, y: (b.y / 100) * VH - 4, width: (b.w / 100) * VW + 6, height: (b.h / 100) * VH + 8, rx: 4, class: 'p66-box' }));
-    }
+    overlay.append(...tokenBoxes(tok));
     const w = words.find((x) => x.token === tok);
     live.textContent = `${tokens[tok].gk}, “${tokens[tok].en}”, written ${w?.p66 ?? ''} on the papyrus, line ${w?.line ?? ''}.`;
   }

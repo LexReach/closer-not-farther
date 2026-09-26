@@ -72,9 +72,37 @@ function buildGraph() {
   return { nodes: [...nodes.values()], edges };
 }
 
+
+/** The stepped walkthrough list for one item, first `shown` steps. Shared with the home page and present mode. */
+export function stepsList(it: Item, shown: number): HTMLOListElement {
+  return h(
+    'ol',
+    { class: 'uc-steps' },
+    it.steps.slice(0, shown).map((st, i) => {
+      const book = st.ref ? bookOf(st.ref) : null;
+      return h(
+        'li',
+        { class: `uc-step ${st.ref ? '' : 'uc-step--conclusion'} ${i === shown - 1 ? 'is-new' : ''}` },
+        h(
+          'div',
+          { class: 'uc-step__head' },
+          h('span', { class: 'uc-step__n num' }, `${i + 1}`),
+          st.ref
+            ? h('span', { class: 'uc-ref', style: { borderColor: BOOK_VAR[book!] } }, st.ref, st.ref_context ? h('span', { class: 'muted' }, ` (${st.ref_context})`) : null)
+            : h('span', { class: 'uc-ref uc-ref--plain' }, 'The answer'),
+        ),
+        st.quote ? h('blockquote', { class: 'uc-quote' }, st.quote) : null,
+        h('p', { class: 'uc-point' }, st.point),
+      );
+    }),
+  );
+}
+
+export { items as coincidenceItems };
+
 /* ---------- Map inset ---------- */
 
-function mapInset(it: Item): SVGSVGElement {
+export function mapInset(it: Item): SVGSVGElement {
   const geo = data.map_geo;
   const Hh = 300;
   const lat0 = 32.64;
@@ -107,6 +135,7 @@ function mapInset(it: Item): SVGSVGElement {
     const hl = name === it.map!.highlight;
     const right = p.lon > 35.6;
     svg.append(
+      hl ? s('circle', { cx: px(p.lon), cy: py(p.lat), r: 12, class: 'map__ring' }) : '',
       s('circle', { cx: px(p.lon), cy: py(p.lat), r: hl ? 5.5 : 4, class: `map__place ${hl ? 'is-hl' : ''}` }),
       s('text', { x: px(p.lon) + (right ? 8 : -8), y: py(p.lat) + 4, 'text-anchor': right ? 'start' : 'end', class: `map__label ${hl ? 'is-hl' : ''}` }, name),
     );
@@ -203,27 +232,7 @@ export function render(root: HTMLElement) {
     clear(walk);
     const it = items.find((i) => i.id === current)!;
     const total = it.steps.length;
-    const stepsEl = h(
-      'ol',
-      { class: 'uc-steps' },
-      it.steps.slice(0, shown).map((st, i) => {
-        const book = st.ref ? bookOf(st.ref) : null;
-        return h(
-          'li',
-          { class: `uc-step ${st.ref ? '' : 'uc-step--conclusion'} ${i === shown - 1 ? 'is-new' : ''}` },
-          h(
-            'div',
-            { class: 'uc-step__head' },
-            h('span', { class: 'uc-step__n num' }, `${i + 1}`),
-            st.ref
-              ? h('span', { class: 'uc-ref', style: { borderColor: BOOK_VAR[book!] } }, st.ref, st.ref_context ? h('span', { class: 'muted' }, ` (${st.ref_context})`) : null)
-              : h('span', { class: 'uc-ref uc-ref--plain' }, 'The answer'),
-          ),
-          st.quote ? h('blockquote', { class: 'uc-quote' }, st.quote) : null,
-          h('p', { class: 'uc-point' }, st.point),
-        );
-      }),
-    );
+    const stepsEl = stepsList(it, shown);
     const next = h('button', { class: 'btn btn--primary', type: 'button' }, shown < total - 1 ? 'Next step' : 'Show the answer');
     next.addEventListener('click', () => {
       shown = Math.min(total, shown + 1);

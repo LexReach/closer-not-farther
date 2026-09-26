@@ -1,139 +1,176 @@
-// Home: the thesis in one screen, plus module cards.
-import { h, s } from '../lib/dom';
-import { Card } from '../components';
-import { routes } from '../routes';
+// Home: the argument as a scroll-driven narrative. An opening frame with a
+// live miniature of Module 1, the film, one chapter per module with a live
+// excerpt of its real component, and a closing frame that ends on the
+// skeptics and the sources.
+import { h } from '../lib/dom';
 import { href } from '../lib/nav';
+import { Hero } from '../home/hero';
+import { CHAPTERS, type ExcerptApi } from '../chapters';
+import { skeptics, skepticsFor, type ModuleKey } from '../data';
+import { sourceText as linkify } from '../components';
 
-const W = 320;
-const H = 140;
-
-function frame(...children: SVGElement[]): SVGSVGElement {
-  return s('svg', { viewBox: `0 0 ${W} ${H}`, preserveAspectRatio: 'xMidYMid meet', class: 'pv' }, ...children);
-}
-
-function previewTelephone(): SVGSVGElement {
-  const els: SVGElement[] = [];
-  // Chain on the left.
-  for (let i = 0; i < 7; i++) {
-    els.push(s('rect', { x: 34, y: 14 + i * 17, width: 70, height: 10, rx: 2, class: i > 3 ? 'pv-bad' : i > 1 ? 'pv-mid' : 'pv-ok' }));
-    if (i) els.push(s('line', { x1: 69, x2: 69, y1: 4 + i * 17 + 7, y2: 14 + i * 17, class: 'pv-link' }));
-  }
-  // Tree on the right.
-  const root = { x: 230, y: 18 };
-  els.push(s('circle', { cx: root.x, cy: root.y, r: 5, class: 'pv-ink' }));
-  const g1 = [175, 230, 285];
-  g1.forEach((x, i) => {
-    els.push(s('line', { x1: root.x, y1: root.y, x2: x, y2: 62, class: 'pv-link' }));
-    [-18, 0, 18].forEach((dx, j) => {
-      els.push(s('line', { x1: x, y1: 62, x2: x + dx, y2: 112, class: 'pv-link' }));
-      els.push(s('circle', { cx: x + dx, cy: 112, r: 5, class: i === 1 && j === 2 ? 'pv-bad' : 'pv-ok' }));
-    });
-    els.push(s('circle', { cx: x, cy: 62, r: 5.5, class: 'pv-ok' }));
-  });
-  return frame(...els);
-}
-
-function previewTimeline(): SVGSVGElement {
-  const pts = [
-    [30, 120], [34, 118], [70, 58], [95, 60], [130, 92], [160, 104], [185, 80], [200, 112], [210, 50], [215, 96], [225, 40], [240, 30], [250, 22], [262, 20], [270, 26], [284, 18],
-  ];
-  const els: SVGElement[] = [s('rect', { x: 20, y: 8, width: 280, height: 8, class: 'pv-band' })];
-  els.push(s('line', { x1: 20, x2: 300, y1: 130, y2: 130, class: 'pv-axis' }));
-  for (const [x, y] of pts) els.push(s('circle', { cx: x, cy: y, r: 4.5, class: 'pv-accent' }));
-  els.push(s('path', { d: 'M24,122 C120,110 200,60 296,18', class: 'pv-trend' }));
-  return frame(...els);
-}
-
-function previewP66(): SVGSVGElement {
-  const els: SVGElement[] = [s('rect', { x: 100, y: 8, width: 120, height: 124, rx: 3, class: 'pv-papyrus' })];
-  for (let i = 0; i < 9; i++) {
-    els.push(s('line', { x1: 112, x2: 208 - (i === 8 ? 40 : 0), y1: 22 + i * 12.5, y2: 22 + i * 12.5, class: 'pv-letters' }));
-  }
-  els.push(s('rect', { x: 136, y: 28, width: 22, height: 12, rx: 2, class: 'pv-box' }));
-  return frame(...els);
-}
-
-function previewVariants(): SVGSVGElement {
-  const els: SVGElement[] = [];
-  const rows = [[30, 260], [30, 120, 150, 280], [30, 200], [30, 90]];
-  rows.forEach((r, i) => {
-    const y = 28 + i * 24;
-    if (r.length === 2) els.push(s('line', { x1: r[0], x2: r[1], y1: y, y2: y, class: 'pv-text' }));
-    else {
-      els.push(s('line', { x1: r[0], x2: r[1], y1: y, y2: y, class: 'pv-text' }));
-      els.push(s('rect', { x: r[1] + 6, y: y - 6, width: r[2] - r[1] + 60, height: 12, rx: 2, class: 'pv-hl' }));
-    }
-  });
-  els.push(s('rect', { x: 30, y: 116, width: 196, height: 14, class: 'pv-tm1' }), s('rect', { x: 228, y: 116, width: 60, height: 14, class: 'pv-tm2' }), s('rect', { x: 290, y: 116, width: 10, height: 14, class: 'pv-tm3' }));
-  return frame(...els);
-}
-
-function previewNames(): SVGSVGElement {
-  const pal = [92, 84, 64, 62, 46, 38];
-  const gos = [100, 74, 14, 62, 62, 25];
-  const els: SVGElement[] = [];
-  pal.forEach((v, i) => {
-    const y = 14 + i * 20;
-    els.push(s('rect', { x: 60, y, width: v * 2.2, height: 7, rx: 1, class: 'pv-muted' }));
-    els.push(s('rect', { x: 60, y: y + 8, width: gos[i] * 2.2, height: 7, rx: 1, class: 'pv-accent' }));
-    els.push(s('rect', { x: 20, y: y + 3, width: 30, height: 6, rx: 1, class: 'pv-text' }));
-  });
-  return frame(...els);
-}
-
-function previewCoincidences(): SVGSVGElement {
-  const cols = [50, 125, 200, 275];
-  const els: SVGElement[] = [];
-  for (const x of cols) els.push(s('line', { x1: x, x2: x, y1: 14, y2: 128, class: 'pv-col' }));
-  const links = [
-    [275, 40, 200, 60],
-    [125, 50, 275, 100],
-    [50, 90, 200, 110],
-    [125, 118, 275, 70],
-  ];
-  links.forEach(([x1, y1, x2, y2], i) => {
-    els.push(s('path', { d: `M${x1},${y1} C${(x1 + x2) / 2},${y1} ${(x1 + x2) / 2},${y2} ${x2},${y2}`, class: i === 0 ? 'pv-edge-on' : 'pv-edge' }));
-    els.push(s('circle', { cx: x1, cy: y1, r: 4.5, class: 'pv-ink' }), s('circle', { cx: x2, cy: y2, r: 4.5, class: 'pv-ink' }));
-  });
-  return frame(...els);
-}
-
-const PREVIEWS: Record<string, () => SVGSVGElement> = {
-  '/telephone': previewTelephone,
-  '/timeline': previewTimeline,
-  '/p66': previewP66,
-  '/variants': previewVariants,
-  '/names': previewNames,
-  '/coincidences': previewCoincidences,
+const MODULE_TITLE: Record<string, string> = {
+  telephone: 'Telephone vs. Tree',
+  timeline: 'Closer, Not Farther',
+  p66: 'Read P66 yourself',
+  variants: 'The 110% puzzle',
+  names: 'Names as fingerprints',
+  coincidences: 'Undesigned coincidences',
 };
 
+function filmSection(): { el: HTMLElement; destroy(): void } {
+  const base = import.meta.env.BASE_URL;
+  const video = h('video', {
+    class: 'film__video',
+    controls: true,
+    preload: 'none',
+    playsinline: true,
+    poster: `${base}film/poster.jpg`,
+    'aria-label': 'The 3-minute version: a guided run through all seven chapters, with captions.',
+  });
+  const tourBtn = h('button', { class: 'btn btn--primary', type: 'button' }, 'Play the argument live');
+  tourBtn.addEventListener('click', async () => {
+    const { startTour } = await import('../tour/tour');
+    startTour();
+  });
+  const el = h(
+    'section',
+    { class: 'film', id: 'film', 'aria-labelledby': 'film-h' },
+    h('h2', { id: 'film-h', class: 'film__h' }, 'Watch the 3-minute version'),
+    h('p', { class: 'film__lede' }, 'A recorded walk through every chapter, with captions. Or let the site drive itself: the live tour moves the real controls in your browser.'),
+    h('div', { class: 'film__frame' }, video),
+    h('div', { class: 'btn-row film__actions' }, tourBtn, h('a', { class: 'btn', href: `${base}film/teaser.mp4`, download: 'closer-not-farther-teaser.mp4' }, 'Download the 20-second teaser')),
+  );
+  // Only load the film when the reader gets near it.
+  const io = new IntersectionObserver(
+    (entries) => {
+      if (!entries.some((e) => e.isIntersecting)) return;
+      io.disconnect();
+      video.appendChild(h('source', { src: `${base}film/closer-not-farther.mp4`, type: 'video/mp4' }));
+      video.appendChild(h('source', { src: `${base}film/closer-not-farther.webm`, type: 'video/webm' }));
+      video.load();
+    },
+    { rootMargin: '400px 0px' },
+  );
+  io.observe(el);
+  return { el, destroy: () => io.disconnect() };
+}
+
 export function render(root: HTMLElement) {
-  const mods = routes.filter((r) => PREVIEWS[r.path]);
+  const hero = Hero();
+  const film = filmSection();
+  const excerpts = new Map<Element, { api?: ExcerptApi; loading?: boolean; visible?: boolean }>();
+
+  const chapterEls = CHAPTERS.map((c) => {
+    const stage = h('div', { class: 'chapter__stage', 'data-chapter': c.id });
+    excerpts.set(stage, {});
+    return h(
+      'section',
+      { class: 'chapter', id: `ch-${c.id}`, 'aria-labelledby': `ch-${c.id}-h` },
+      h(
+        'header',
+        { class: 'chapter__head' },
+        h('p', { class: 'chapter__num num' }, c.num === '7' ? 'Coda' : `Chapter ${c.num}`),
+        h('h2', { id: `ch-${c.id}-h`, class: 'chapter__title' }, c.title),
+        h('p', { class: 'chapter__lead' }, c.lead),
+      ),
+      stage,
+      h('p', { class: 'chapter__close' }, c.sentence, ' ', h('a', { href: href(c.path), 'data-link': true, class: 'chapter__link' }, c.id === 'library' ? 'Open the Library →' : 'Open the full module →')),
+    );
+  });
+
+  const closing = h(
+    'section',
+    { class: 'closing', 'aria-labelledby': 'closing-h' },
+    h('p', { class: 'chapter__num' }, 'The honest part'),
+    h('h2', { id: 'closing-h', class: 'chapter__title' }, 'What skeptics say'),
+    h('p', { class: 'chapter__lead' }, skeptics.framing.text),
+    (Object.keys(skeptics.modules) as ModuleKey[]).map((key) => {
+      const m = skepticsFor(key);
+      return h(
+        'div',
+        { class: 'closing__group' },
+        h('h3', null, MODULE_TITLE[key]),
+        h('ul', null, m.points.map((p) => h('li', null, p.text, h('cite', { class: 'sk__src' }, p.source ?? '')))),
+      );
+    }),
+    h('p', null, 'Each point, with the replies defenders give, is on the ', h('a', { href: href('/about'), 'data-link': true }, 'About page'), '.'),
+    h('h2', { class: 'chapter__title closing__sources-h' }, 'Sources'),
+    h(
+      'ul',
+      { class: 'closing__sources' },
+      Object.values(skeptics.bibliography as Record<string, string>)
+        .sort((a, b) => a.replace(/^['‘]/, '').localeCompare(b.replace(/^['‘]/, '')))
+        .map((x) => h('li', null, linkify(x))),
+    ),
+  );
+
+  const explore = h('a', { class: 'btn btn--primary hero__btn', href: '#ch-telephone' }, 'Explore');
+  explore.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.getElementById('ch-telephone')?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
+
+  root.classList.add('page--home');
   root.append(
     h(
       'section',
-      { class: 'home-hero' },
-      h('p', { class: 'eyebrow' }, 'Why trust the New Testament text?'),
-      h('h1', { class: 'home-title' }, 'As time goes on, we’re not getting farther from the text. We’re getting closer.'),
+      { class: 'hero', 'aria-labelledby': 'hero-h' },
       h(
-        'p',
-        { class: 'lede' },
-        'Six interactive pieces that test that claim against the evidence: how copying works, what has been found, what the papyri say, where the real disputes are, and what the names and details reveal. Each one ends with what skeptics say.',
+        'div',
+        { class: 'hero__text' },
+        h('h1', { id: 'hero-h', class: 'hero__title' }, 'As time goes on, we’re not getting farther from the text. We’re getting closer.'),
+        h('p', { class: 'hero__line' }, 'Watch one text copied two ways: down a single chain, and across a branching tree. Then see what survives, and what can be recovered.'),
+        h('div', { class: 'btn-row hero__actions' }, explore, h('a', { class: 'btn hero__btn', href: href('/present'), 'data-link': true }, 'Present')),
       ),
-      h(
-        'p',
-        { class: 'home-src' },
-        'Based on the case made by Wesley Huff in ',
-        h('a', { href: 'https://www.youtube.com/watch?v=qYsBvzmdxQY', target: '_blank', rel: 'noopener' }, 'this talk'),
-        '. ',
-        h('a', { href: href('/about'), 'data-link': true }, 'Method, sources and limits'),
-        '.',
-      ),
+      hero.el,
+      h('p', { class: 'hero__cue', 'aria-hidden': 'true' }, 'Scroll'),
     ),
-    h(
-      'div',
-      { class: 'cards' },
-      mods.map((r) => Card({ href: href(r.path), eyebrow: `Module ${r.num}`, title: r.title, hook: r.hook, preview: PREVIEWS[r.path]() })),
-    ),
+    film.el,
+    h('div', { class: 'chapters', id: 'chapters' }, chapterEls),
+    closing,
   );
+
+  // Mount each excerpt as it approaches; play while at least a third is visible.
+  const mountIo = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        const st = excerpts.get(e.target);
+        if (!st || !e.isIntersecting || st.api || st.loading) continue;
+        st.loading = true;
+        const c = CHAPTERS.find((x) => x.id === (e.target as HTMLElement).dataset.chapter)!;
+        c.mount(e.target as HTMLElement).then((api) => {
+          st.api = api;
+          if (st.visible) api.play();
+        });
+      }
+    },
+    { rootMargin: '600px 0px' },
+  );
+  const playIo = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        const st = excerpts.get(e.target);
+        if (!st) continue;
+        st.visible = e.isIntersecting;
+        if (!st.api) continue;
+        if (e.isIntersecting) st.api.play();
+        else st.api.pause();
+      }
+    },
+    { threshold: 0.33 },
+  );
+  for (const el of excerpts.keys()) {
+    mountIo.observe(el);
+    playIo.observe(el);
+  }
+
+  return () => {
+    hero.destroy();
+    film.destroy();
+    mountIo.disconnect();
+    playIo.disconnect();
+    for (const st of excerpts.values()) st.api?.destroy();
+    root.classList.remove('page--home');
+  };
 }

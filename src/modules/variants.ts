@@ -35,27 +35,46 @@ interface Passage {
 }
 
 const witnesses = data.witnesses as Witness[];
-const passages = data.passages as unknown as Passage[];
+export const passages = data.passages as unknown as Passage[];
 const cats = data.categories;
 
 const isRef = (t: string) => /^[1-3]?\s?[A-Z][a-z]+ \d+:\d+$/.test(t.trim()) || /^\(.*\)$/.test(t.trim());
 const ordinal = (n: number) => `${n}${n === 1 ? 'st' : n === 2 ? 'nd' : n === 3 ? 'rd' : 'th'}`;
 const centuryLabel = (c: number) => `${ordinal(Math.round(c))} c.`;
 
-function witnessChart(p: Passage, wrap: HTMLElement) {
+
+/** Fill `text` with the passage, the disputed portion included or excluded. */
+export function passageText(text: HTMLElement, p: Passage, include: boolean) {
+  clear(text);
+  const rd = p.readings;
+  const ctx = (t: string) => (isRef(t) ? h('span', { class: 'var-ctx-ref' }, `[${t.replace(/[()]/g, '')}]`) : h('span', { class: 'var-ctx' }, t));
+  let middle: Node;
+  if (rd) {
+    const r = rd.find((x) => x.key === include)!;
+    middle = h('mark', { class: 'var-disputed' }, h('span', { class: 'greek', lang: 'grc' }, r.greek), ` (${r.english})`);
+  } else if (include) {
+    middle = h('mark', { class: 'var-disputed' }, p.disputed_text);
+  } else {
+    middle = h('span', { class: 'var-gap', title: 'Excluded; in most modern Bibles this sits in a footnote' }, '⌃', h('span', { class: 'visually-hidden' }, 'disputed text excluded'));
+  }
+  text.append(ctx(p.context_before), ' ', middle, ' ', ctx(p.context_after));
+}
+
+export function witnessChart(p: Passage, wrap: HTMLElement, opts: { big?: boolean } = {}) {
   clear(wrap);
+  const big = !!opts.big;
   const W = Math.max(300, wrap.clientWidth || 700);
-  const narrow = W < 520;
-  const labelW = narrow ? 104 : 150;
-  const rowH = 28;
-  const top = 42;
+  const narrow = W < 520 && !big;
+  const labelW = big ? 340 : narrow ? 104 : 150;
+  const rowH = big ? 60 : 28;
+  const top = big ? 70 : 42;
   const H = top + witnesses.length * rowH + 8;
-  const x = d3.scaleLinear().domain([2, 10]).range([labelW + 10, W - (narrow ? 12 : 84)]);
+  const x = d3.scaleLinear().domain([2, 10]).range([labelW + 10, W - (big ? 260 : narrow ? 12 : 84)]);
   const reading = p.readings;
   const yes = reading ? reading.find((r) => r.key)!.label : 'Includes it';
   const no = reading ? reading.find((r) => !r.key)!.label : 'Lacks it';
   const svg = s('svg', {
-    class: 'chart wit-chart',
+    class: `chart wit-chart ${big ? 'chart--big' : ''}`,
     width: W,
     height: H,
     viewBox: `0 0 ${W} ${H}`,
@@ -79,10 +98,10 @@ function witnessChart(p: Passage, wrap: HTMLElement) {
     const g = s('g', { class: `wit wit--${state}`, tabindex: 0, role: 'listitem', 'aria-label': `${w.label}, ${centuryLabel(w.century)}: ${stateText}.${note ? ` ${note}` : ''}` });
     g.append(
       s('rect', { x: 0, y: y - rowH / 2 + 1, width: W, height: rowH - 2, class: 'namebar__hit' }),
-      s('text', { x: labelW, y: y + 4, 'text-anchor': 'end', class: 'wit__label' }, `${narrow ? w.label.replace(' majority', '') : w.label}${note ? ' †' : ''}`),
+      s('text', { x: labelW, y: y + (big ? 10 : 4), 'text-anchor': 'end', class: 'wit__label' }, `${narrow ? w.label.replace(' majority', '') : w.label}${note ? ' †' : ''}`),
       s('line', { x1: labelW + 10, x2: cx, y1: y, y2: y, class: 'wit__stem' }),
-      s('circle', { cx, cy: y, r: 7, class: 'wit__dot' }),
-      !narrow ? s('text', { x: cx + 12, y: y + 4, class: 'wit__state' }, stateText) : '',
+      s('circle', { cx, cy: y, r: big ? 14 : 7, class: 'wit__dot' }),
+      !narrow ? s('text', { x: cx + (big ? 26 : 12), y: y + (big ? 10 : 4), class: 'wit__state' }, stateText) : '',
     );
     const tip = () =>
       h(
@@ -205,20 +224,7 @@ export function render(root: HTMLElement) {
       },
     });
     const text = h('p', { class: 'var-text', 'aria-live': 'polite' });
-    const drawText = () => {
-      clear(text);
-      const ctx = (t: string) => (isRef(t) ? h('span', { class: 'var-ctx-ref' }, `[${t.replace(/[()]/g, '')}]`) : h('span', { class: 'var-ctx' }, t));
-      let middle: Node;
-      if (rd) {
-        const r = rd.find((x) => x.key === include)!;
-        middle = h('mark', { class: 'var-disputed' }, h('span', { class: 'greek', lang: 'grc' }, r.greek), ` (${r.english})`);
-      } else if (include) {
-        middle = h('mark', { class: 'var-disputed' }, p.disputed_text);
-      } else {
-        middle = h('span', { class: 'var-gap', title: 'Excluded; in most modern Bibles this sits in a footnote' }, '⌃', h('span', { class: 'visually-hidden' }, 'disputed text excluded'));
-      }
-      text.append(ctx(p.context_before), ' ', middle, ' ', ctx(p.context_after));
-    };
+    const drawText = () => passageText(text, p, include);
     drawText();
     const support = Object.values(p.contains);
     const nYes = support.filter((v) => v === true).length;

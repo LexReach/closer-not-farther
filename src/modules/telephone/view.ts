@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 import { h, s, clear, reducedMotion, fmtPct } from '../../lib/dom';
 import { Disclosure, Legend, ModuleHeader, Slider, SourceList, StatTile, Toggle, Tooltip } from '../../components';
 import { skepticsFor, sourceText } from '../../data';
+import { WordStrip, readingsAt } from './wordstrip';
 import {
   reconstruct,
   readingLabel,
@@ -38,6 +39,7 @@ interface State {
   chain: Copy[];
   tree: Copy[];
   sel: { model: Model; id: number };
+  word: number;
   reconstructed: boolean;
 }
 
@@ -113,18 +115,45 @@ function tooltipFor(model: Model, c: Copy): HTMLElement {
 
 /* ---------- Page ---------- */
 
+/** Settings live in the URL hash so a run can be shared: #seed=7&err=3&loss=50&n=20&k=3&d=4&mix=1111 */
+function readHash(): Partial<typeof DEFAULTS> & { mix?: string } {
+  const q = new URLSearchParams(location.hash.slice(1));
+  const num = (k: string, lo: number, hi: number, scale = 1) => {
+    const v = Number(q.get(k));
+    return q.has(k) && Number.isFinite(v) ? Math.min(hi, Math.max(lo, v / scale)) : undefined;
+  };
+  const out: Partial<typeof DEFAULTS> & { mix?: string } = {};
+  const put = <K extends keyof typeof DEFAULTS>(k: K, v: number | undefined) => {
+    if (v !== undefined) out[k] = (k === 'errorRate' || k === 'loss' ? v : Math.round(v)) as (typeof DEFAULTS)[K];
+  };
+  put('seed', num('seed', 1, 99999));
+  put('errorRate', num('err', 0.5, 8, 100));
+  put('loss', num('loss', 0, 90, 100));
+  put('chainN', num('n', 5, 30));
+  put('treeK', num('k', 1, 4));
+  put('treeDepth', num('d', 3, 6));
+  const mix = q.get('mix');
+  if (mix && /^[01]{4}$/.test(mix)) out.mix = mix;
+  return out;
+}
+
 export function render(root: HTMLElement) {
+  const fromHash = readHash();
   const st: State = {
     p: {
       ...DEFAULTS,
+      ...fromHash,
       mix: Object.fromEntries(ERR_TYPES.map((e) => [e.id, e.weight])) as Record<ErrType, number>,
       regions: REGIONS.length,
     },
-    enabled: { spelling: true, omission: true, harmonization: true, gloss: true },
+    enabled: fromHash.mix
+      ? { spelling: fromHash.mix[0] === '1', omission: fromHash.mix[1] === '1', harmonization: fromHash.mix[2] === '1', gloss: fromHash.mix[3] === '1' }
+      : { spelling: true, omission: true, harmonization: true, gloss: true },
     colorBy: 'corruption',
     chain: [],
     tree: [],
-    sel: { model: 'chain', id: DEFAULTS.chainN - 1 },
+    sel: { model: 'chain', id: (fromHash.chainN ?? DEFAULTS.chainN) - 1 },
+    word: -1,
     reconstructed: false,
   };
 
@@ -151,7 +180,7 @@ export function render(root: HTMLElement) {
   });
 
   const mixBoxes = ERR_TYPES.map((e) => {
-    const input = h('input', { type: 'checkbox', checked: true, value: e.id });
+    const input = h('input', { type: 'checkbox', checked: st.enabled[e.id], value: e.id });
     input.addEventListener('change', () => {
       st.enabled[e.id] = input.checked;
       update({});
@@ -283,6 +312,7 @@ export function render(root: HTMLElement) {
 
   const detail = h('section', { class: 'panel tel-detail', 'aria-live': 'polite', 'aria-labelledby': 'tel-detail-h' });
   const results = h('section', { class: 'tel-results', 'aria-live': 'polite', 'aria-label': 'Reconstruction results' });
+  const wordSec = h('section', { class: 'panel tel-word', 'aria-labelledby': 'tel-word-h' });
 
   const sk = skepticsFor('telephone');
 
@@ -306,6 +336,7 @@ export function render(root: HTMLElement) {
     controls,
     h('div', { class: 'tel-split' }, chainPanel, treePanel),
     results,
+    wordSec,
     detail,
     Disclosure(sk.points, { intro: sk.intro, framing: sk.framing }),
     SourceList([
@@ -718,6 +749,47 @@ export function render(root: HTMLElement) {
 
   /* ----- Update loop ----- */
 
+  function writeHash() {
+    const q = new URLSearchParams({
+      seed: String(st.p.seed),
+      err: String(Math.round(st.p.errorRate * 1000) / 10),
+      loss: String(Math.round(st.p.loss * 100)),
+      n: String(st.p.chainN),
+      k: String(st.p.treeK),
+      d: String(st.p.treeDepth),
+      mix: ERR_TYPES.map((e) => (st.enabled[e.id] ? '1' : '0')).join(''),
+    });
+    history.replaceState(history.state, '', `${location.pathname}${location.search}#${q}`);
+  }
+
+  function renderWord() {
+    clear(wordSec);
+    const rc = reconstruct(st.chain, tokens);
+    const bad = new Set([...rc.wrong.map((w) => w.i), ...rc.ties.map((t) => t.i)]);
+    if (st.word < 0 || st.word >= tokens.length) st.word = bad.size ? Math.min(...bad) : 1;
+    const pick = h(
+      'div',
+      { class: 'tel-word__pick', role: 'group', 'aria-label': 'Choose a word' },
+      tokens.map((t, i) => {
+        const b = h('button', { type: 'button', class: bad.has(i) ? 'is-bad' : '', 'aria-pressed': String(i === st.word), title: `${t.gk} (${t.en})${bad.has(i) ? ': the chain gets this word wrong' : ''}` }, t.gk);
+        b.addEventListener('click', () => {
+          st.word = i;
+          renderWord();
+          wordSec.querySelector<HTMLButtonElement>(`.tel-word__pick button:nth-child(${i + 1})`)?.focus();
+        });
+        return b;
+      }),
+    );
+    const t = tokens[st.word];
+    wordSec.append(
+      h('h2', { id: 'tel-word-h' }, 'Compare a single word'),
+      h('p', { class: 'muted small measure' }, 'Pick any word to see how every surviving copy reads it. Each block is one reading, sized by how many copies have it; the outlined block wins the vote. Words outlined in sienna are ones the chain gets wrong.'),
+      pick,
+      h('p', { class: 'tel-word__src' }, 'Source reads ', h('strong', { class: 'greek', lang: 'grc' }, t.gk), ` (“${t.en === '-' ? 'the' : t.en}”)`),
+      h('div', { class: 'tel-word__strips' }, WordStrip('Telephone', readingsAt(st.chain, st.word, tokens)), WordStrip('Tree', readingsAt(st.tree, st.word, tokens))),
+    );
+  }
+
   function effectiveMix(): Record<ErrType, number> {
     const m = { ...st.p.mix };
     for (const e of ERR_TYPES) m[e.id] = st.enabled[e.id] ? e.weight : 0;
@@ -736,6 +808,8 @@ export function render(root: HTMLElement) {
     drawTree(animate);
     renderDetail();
     renderResults();
+    renderWord();
+    writeHash();
   }
 
   function applyPreset(v: typeof DEFAULTS) {

@@ -1,6 +1,6 @@
 // Module 5: Names as fingerprints.
 import * as d3 from 'd3';
-import { h, s, clear, fmtPct } from '../lib/dom';
+import { h, s, clear, fmtPct, reducedMotion } from '../lib/dom';
 import { Disclosure, Legend, ModuleHeader, SourceList, StatTile, Toggle, Tooltip } from '../components';
 import { skepticsFor } from '../data';
 import names from '../../data/names.json';
@@ -48,48 +48,63 @@ const rows = (sex: Sex): NameRow[] => (sex === 'male' ? names.male : names.femal
 
 /* ---------- Panel A chart ---------- */
 
-function drawNameChart(wrap: HTMLElement, sex: Sex) {
+export interface NameChartOpts {
+  /** Draw Palestine bars first, then Gospel bars, then the expected line. */
+  animate?: boolean;
+  /** Present-mode sizing (28px+ labels, thick marks). */
+  big?: boolean;
+  /** Show only the first n names. */
+  limit?: number;
+}
+
+export function drawNameChart(wrap: HTMLElement, sex: Sex, opts: NameChartOpts = {}) {
   clear(wrap);
-  const data = rows(sex);
+  const big = !!opts.big;
+  const data = rows(sex).slice(0, opts.limit ?? undefined);
   const t = totals(sex);
   const W = Math.max(300, wrap.clientWidth || 700);
-  const narrow = W < 520;
-  const labelW = narrow ? 136 : 170;
-  const rowH = narrow ? 34 : 36;
-  const barH = narrow ? 11 : 12;
-  const top = 26;
+  const narrow = W < 520 && !big;
+  const labelW = big ? 360 : narrow ? 136 : 170;
+  const rowH = big ? 76 : narrow ? 34 : 36;
+  const barH = big ? 26 : narrow ? 11 : 12;
+  const top = big ? 56 : 26;
   const H = top + data.length * rowH + 6;
-  const maxPct = d3.max(data, (d) => Math.max(d.palestine / t.pal, d.gospels_acts / t.gos)) ?? 0.1;
-  const x = d3.scaleLinear().domain([0, Math.ceil(maxPct * 20) / 20]).range([labelW, W - (narrow ? 34 : 44)]);
+  const maxPct = d3.max(rows(sex), (d) => Math.max(d.palestine / t.pal, d.gospels_acts / t.gos)) ?? 0.1;
+  const x = d3.scaleLinear().domain([0, Math.ceil(maxPct * 20) / 20]).range([labelW, W - (big ? 130 : narrow ? 34 : 44)]);
+  const anim = !!opts.animate && !reducedMotion();
 
   const svg = s('svg', {
-    class: `chart ${narrow ? 'chart--narrow' : ''}`,
+    class: `chart names-chart ${narrow ? 'chart--narrow' : ''} ${big ? 'chart--big' : ''} ${anim ? 'is-animating' : ''}`,
     width: W,
     height: H,
     viewBox: `0 0 ${W} ${H}`,
-    role: 'img',
-    'aria-label': `Share of ${sex} name occurrences for the top ${data.length} names: Palestinian Jews 330 BC to 200 AD compared with the Gospels and Acts.`,
+    role: 'list',
+    'aria-label': `Share of ${sex} name occurrences for the top ${data.length} names: Palestinian Jews 330 BC to 200 AD compared with the Gospels and Acts, with the Gospel count expected at population rates.`,
   });
-  const ticks = x.ticks(narrow ? 3 : 5);
+  const ticks = x.ticks(big ? 3 : narrow ? 3 : 5);
   for (const tk of ticks) {
     svg.appendChild(s('line', { x1: x(tk), x2: x(tk), y1: top - 6, y2: H - 4, class: 'gridline' }));
-    svg.appendChild(s('text', { x: x(tk), y: top - 12, 'text-anchor': 'middle' }, `${Math.round(tk * 100)}%`));
+    svg.appendChild(s('text', { x: x(tk), y: top - (big ? 18 : 12), 'text-anchor': 'middle' }, `${Math.round(tk * 100)}%`));
   }
+  const expPts: string[] = [];
   data.forEach((d, i) => {
     const y = top + i * rowH;
     const pp = d.palestine / t.pal;
     const gp = d.gospels_acts / t.gos;
+    const expected = pp * t.gos;
     const g = s('g', { class: 'namebar', tabindex: 0, role: 'listitem' });
-    const label = `${d.name}: ${fmtPct(pp, 1)} of Palestinian ${sex} names (${d.palestine} of ${t.pal}); ${fmtPct(gp, 1)} in the Gospels and Acts (${d.gospels_acts} of ${t.gos}).`;
+    const label = `${d.name}: ${fmtPct(pp, 1)} of Palestinian ${sex} names (${d.palestine} of ${t.pal}); ${fmtPct(gp, 1)} in the Gospels and Acts (${d.gospels_acts} of ${t.gos}); about ${expected.toFixed(1)} expected at population rates.${d.verify ? ' Gospel count unverified.' : ''}`;
     g.setAttribute('aria-label', label);
+    const delay = (base: number) => (anim ? { style: `animation-delay: ${base + i * 50}ms` } : {});
     g.append(
       s('rect', { x: 0, y: y - 2, width: W, height: rowH - 2, class: 'namebar__hit' }),
-      s('text', { x: labelW - 10, y: y + barH + 2, 'text-anchor': 'end', class: 'namebar__label' }, `${narrow ? '' : `${i + 1}. `}${d.name}${d.verify ? ' *' : ''}`),
-      s('rect', { x: labelW, y, width: Math.max(1, x(pp) - labelW), height: barH, class: 'bar-pal', rx: 1.5 }),
-      s('rect', { x: labelW, y: y + barH + 2, width: Math.max(gp ? 1 : 0, x(gp) - labelW), height: barH, class: 'bar-gos', rx: 1.5 }),
-      s('text', { x: x(pp) + 5, y: y + barH - 2, class: 'namebar__val' }, fmtPct(pp, 1)),
-      s('text', { x: x(gp) + 5, y: y + 2 * barH, class: 'namebar__val namebar__val--gos' }, fmtPct(gp, 1)),
+      s('text', { x: labelW - (big ? 20 : 10), y: y + barH + (big ? 8 : 2), 'text-anchor': 'end', class: 'namebar__label' }, `${narrow || big ? '' : `${i + 1}. `}${d.name}${d.verify ? ' *' : ''}`),
+      s('rect', { x: labelW, y, width: Math.max(1, x(pp) - labelW), height: barH, class: 'bar-pal grow', rx: 1.5, ...delay(0) }),
+      s('rect', { x: labelW, y: y + barH + 2, width: Math.max(gp ? 1 : 0, x(gp) - labelW), height: barH, class: 'bar-gos grow', rx: 1.5, ...delay(900) }),
+      s('text', { x: x(pp) + (big ? 10 : 5), y: y + barH - (big ? 4 : 2), class: 'namebar__val fade', ...delay(500) }, fmtPct(pp, 1)),
+      s('text', { x: Math.max(x(gp), x(pp)) + (big ? 10 : 5), y: y + 2 * barH + (big ? 0 : 0), class: 'namebar__val namebar__val--gos fade', ...delay(1400) }, fmtPct(gp, 1)),
     );
+    expPts.push(`${x(pp)},${y + barH + 2 + barH / 2}`);
     const tip = () =>
       h(
         'div',
@@ -97,7 +112,8 @@ function drawNameChart(wrap: HTMLElement, sex: Sex) {
         h('p', null, h('strong', null, d.name)),
         h('p', null, `Palestine: ${d.palestine} of ${t.pal} occurrences (${fmtPct(pp, 1)})`),
         h('p', null, `Gospels + Acts: ${d.gospels_acts} of ${t.gos} (${fmtPct(gp, 1)})`),
-        d.verify ? h('p', { class: 'tt-muted' }, 'Awaiting a check against the printed table.') : null,
+        h('p', null, `Expected at population rates: about ${expected.toFixed(1)}`),
+        d.verify ? h('p', { class: 'tt-muted' }, d.verify_note ?? 'Gospel count awaiting a check against the printed table.') : null,
         h('p', { class: 'tt-muted' }, 'Source: Ilan 2002 via Bauckham 2017, ch. 4'),
       );
     g.addEventListener('pointermove', (e) => Tooltip.show(tip(), e.clientX, e.clientY));
@@ -106,8 +122,60 @@ function drawNameChart(wrap: HTMLElement, sex: Sex) {
     g.addEventListener('blur', () => Tooltip.hide());
     svg.appendChild(g);
   });
-  svg.setAttribute('role', 'list');
+  // Expected line: where each Gospel bar would end if names were drawn at population rates.
+  const exp = s('g', { class: 'expected fade', 'aria-hidden': 'true', ...(anim ? { style: 'animation-delay: 1900ms' } : {}) });
+  exp.appendChild(s('polyline', { points: expPts.join(' '), class: 'expected__line' }));
+  for (const pt of expPts) {
+    const [ex, ey] = pt.split(',').map(Number);
+    exp.appendChild(s('line', { x1: ex, x2: ex, y1: ey - barH * 0.8, y2: ey + barH * 0.8, class: 'expected__tick' }));
+  }
+  svg.appendChild(exp);
   wrap.appendChild(svg);
+}
+
+/* ---------- The Twelve (panel B), reused by the home page and present mode ---------- */
+
+type Apostle = { name: string; qualifier: string | null; palestine_rank: number | null; origin: string; note?: string };
+export const twelve = names.twelve.entries as Apostle[];
+export const TOP_N = names.male.length;
+export const isCommon = (r: number | null) => r !== null && r <= TOP_N;
+
+export function TwelveGrid(opts: { big?: boolean } = {}): { el: HTMLElement; play(): void; reset(): void } {
+  const items = twelve.map((e) =>
+    h(
+      'li',
+      { class: `apostle ${isCommon(e.palestine_rank) ? 'is-common' : 'is-rare'} ${e.qualifier ? 'has-q' : ''}` },
+      h(
+        'div',
+        { class: 'apostle__top' },
+        h('span', { class: 'apostle__name' }, e.name),
+        h('span', { class: 'apostle__rank num', title: 'Rank among Palestinian Jewish male names (Ilan / Bauckham)' }, e.palestine_rank ? `#${e.palestine_rank}` : 'rare'),
+      ),
+      h('div', { class: 'apostle__q' }, e.qualifier ? `“${e.qualifier}”` : 'no qualifier'),
+      opts.big ? null : h('div', { class: 'apostle__origin' }, e.origin, e.note ? `. ${capitalize(e.note)}` : ''),
+    ),
+  );
+  const el = h('ol', { class: `twelve ${opts.big ? 'twelve--big' : ''}` }, items);
+  let timers: number[] = [];
+  const reset = () => {
+    timers.forEach(clearTimeout);
+    timers = [];
+    items.forEach((li) => li.classList.remove('is-lit'));
+    el.classList.remove('is-playing');
+  };
+  return {
+    el,
+    reset,
+    play() {
+      reset();
+      if (reducedMotion()) {
+        items.forEach((li) => li.classList.add('is-lit'));
+        return;
+      }
+      el.classList.add('is-playing');
+      items.forEach((li, i) => timers.push(window.setTimeout(() => li.classList.add('is-lit'), 250 + i * 260)));
+    },
+  };
 }
 
 /* ---------- Headline stats (recomputed) ---------- */
@@ -162,36 +230,12 @@ export function render(root: HTMLElement) {
   const caption = h('p', { class: 'chart-note' }, captionText());
 
   /* Panel B: the Twelve */
-  const twelve = names.twelve.entries as { name: string; qualifier: string | null; palestine_rank: number | null; origin: string; note?: string }[];
-  const topN = names.male.length;
-  const isCommon = (r: number | null) => r !== null && r <= topN;
+  const topN = TOP_N;
   const common = twelve.filter((e) => isCommon(e.palestine_rank));
   const rare = twelve.filter((e) => !isCommon(e.palestine_rank));
   const commonQ = common.filter((e) => e.qualifier).length;
   const rareQ = rare.filter((e) => e.qualifier).length;
-
-  const twelveGrid = h(
-    'ol',
-    { class: 'twelve' },
-    twelve.map((e) =>
-      h(
-        'li',
-        { class: `apostle ${isCommon(e.palestine_rank) ? 'is-common' : 'is-rare'} ${e.qualifier ? 'has-q' : ''}` },
-        h(
-          'div',
-          { class: 'apostle__top' },
-          h('span', { class: 'apostle__name' }, e.name),
-          h(
-            'span',
-            { class: 'apostle__rank num', title: 'Rank among Palestinian Jewish male names (Ilan / Bauckham)' },
-            e.palestine_rank ? `#${e.palestine_rank}` : 'rare',
-          ),
-        ),
-        h('div', { class: 'apostle__q' }, e.qualifier ? `“${e.qualifier}”` : 'no qualifier'),
-        h('div', { class: 'apostle__origin' }, e.origin, e.note ? `. ${capitalize(e.note)}` : ''),
-      ),
-    ),
-  );
+  const twelveGrid = TwelveGrid().el;
 
   /* Panel C: control group */
   const apo = names.apocryphal as unknown as {
@@ -294,6 +338,7 @@ export function render(root: HTMLElement) {
             [
               { label: 'Palestinian Jews, 330 BC–200 AD', color: 'var(--bar-pal)' },
               { label: 'Gospels + Acts', color: 'var(--accent)' },
+              { label: 'Expected at population rates', color: 'var(--ink)', shape: 'line' },
             ],
             'Series',
           ),
