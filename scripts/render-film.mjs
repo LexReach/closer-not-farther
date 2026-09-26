@@ -9,6 +9,7 @@
 // `pip install imageio-ffmpeg` ships one). Outputs to public/film/:
 //   closer-not-farther.mp4   H.264, 1920×1080, target < 20 MB
 //   teaser.mp4               first 12 s (opening frame) + 8 s of the timeline sweep
+//   closer-not-farther.webm  VP9 copy for browsers without H.264
 //   poster.jpg               poster frame for the <video> element
 // If H.264 encoding fails the script falls back to WebM (VP9) and says so.
 import { spawn, spawnSync } from 'node:child_process';
@@ -91,6 +92,8 @@ async function main() {
     }
     const film = ok ? mp4 : join(OUT, 'closer-not-farther.webm');
     ff(['-ss', '7', '-i', film, '-frames:v', '1', '-q:v', '3', join(OUT, 'poster.jpg')]);
+    // A VP9 copy for browsers without H.264 (e.g. some Chromium builds).
+    if (ok) ff(['-i', mp4, '-an', '-c:v', 'libvpx-vp9', '-b:v', '0', '-crf', '42', '-deadline', 'realtime', '-cpu-used', '8', '-row-mt', '1', join(OUT, 'closer-not-farther.webm')]);
     // Teaser: the opening frame, then the timeline sweep.
     const tl = marks.find((m) => m.id === 'timeline');
     const tlStart = tl ? tl.t / 1000 + 6.5 : 60;

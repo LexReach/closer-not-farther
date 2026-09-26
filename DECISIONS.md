@@ -130,3 +130,4 @@ Every judgment call made during the unattended build, in the order it was made.
   - Desktop preset: performance 92–100 and accessibility 100 on every route. The lowest is present mode at 92 (CLS 0.17 from the stage fonts).
 - **Library scroll performance:** 60 fps at 400px with 4× CPU throttling (see section 5b).
 - **Film, final render.** Recorded in GitHub Actions (`render-film.yml` on the `film-render` branch), because the sandbox cannot load the libraries' images: `closer-not-farther.mp4` is 2:54 of 1920×1080 H.264 at 12.9 MB with captions burned in, plus `teaser.mp4` (20 s, 0.8 MB) and `poster.jpg`. The Library chapter shows Codex Ephraemi streaming from Gallica. Chapter start times are in `public/film/film.json`. The earlier sandbox renders (recorded while `dist/` was being rebuilt) are replaced.
+- A VP9 WebM copy of the film (12.6 MB) sits beside the MP4 as a second `<source>`, for browsers without H.264; `render-film.mjs` now writes it too.
