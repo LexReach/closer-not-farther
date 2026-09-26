@@ -551,6 +551,7 @@
 .chart .vbar__note { fill: var(--ink); font-size: 13px; }
 .chart--big .vbar__pull-t, .chart--big .vbar__note { font-size: 30px; }
 .var-cats { grid-template-columns: 220px 1fr; }
+@media (max-width: 900px) { .var-cats { grid-template-columns: 1fr; } }
 
 .cmp-row.is-hot .namebar__hit { fill: var(--accent-soft); }
 .chart .cmp-row.is-hot .cmp-label { fill: var(--ink); font-weight: 600; }

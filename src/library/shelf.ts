@@ -40,7 +40,7 @@ export function Counters(lib: LibraryData, big = false): { el: HTMLElement; set(
     cats.map((c) => {
       const v = h('span', { class: 'lib-counter__n num' }, '0');
       vals.set(c, v);
-      return h('div', { class: `lib-counter lib-counter--${c}` }, v, h('span', { class: 'lib-counter__l' }, CAT_LABEL[c]));
+      return h('div', { class: `lib-counter lib-counter--${c}` }, v, h('span', { class: 'visually-hidden' }, ' '), h('span', { class: 'lib-counter__l' }, CAT_LABEL[c]));
     }),
   );
   let raf = 0;
@@ -87,7 +87,9 @@ export async function mountShelfExcerpt(el: HTMLElement, opts: MountOpts = {}): 
   );
   el.appendChild(box);
   const total = countByCat(lib.rows);
-  counters.set({ P: 0, M: 0, m: 0, L: 0 }, false);
+  // Real numbers from the start; the first play counts up to them once.
+  counters.set(total, false);
+  let counted = false;
   let raf = 0;
   let playing = false;
   let last = 0;
@@ -103,7 +105,11 @@ export async function mountShelfExcerpt(el: HTMLElement, opts: MountOpts = {}): 
   shelf.addEventListener('pointerenter', () => (playing = false));
   return {
     play() {
-      counters.set(total, true);
+      if (!counted && !reducedMotion()) {
+        counted = true;
+        counters.set({ P: 0, M: 0, m: 0, L: 0 }, false);
+        counters.set(total, true);
+      }
       if (reducedMotion()) return;
       playing = true;
       last = 0;

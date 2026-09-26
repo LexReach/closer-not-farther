@@ -192,7 +192,7 @@ export function variantBar(wrap: HTMLElement, opts: { big?: boolean } = {}) {
       s('path', { d: `M${pulled.x0},${barY + barH} L${px},${pullY} M${pulled.x1},${barY + barH} L${px + pw},${pullY}`, class: 'vbar__lead' }),
       s('rect', { x: px, y: pullY, width: pw, height: big ? 64 : 34, rx: 3, class: 'vbar__pull tm--mv' }),
       s('text', { x: px + (big ? 18 : 10), y: pullY + (big ? 44 : 23), class: 'vbar__pull-t' }, `≈ ${fmtPct(pulled.b.share)} · about ${fmtInt(pulled.b.share * total)}`),
-      s('text', { x: px, y: pullY + (big ? 110 : 56), class: 'vbar__note' }, narrow ? 'Change the meaning and could be original.' : 'Change the meaning and could be original. These are the ones in your footnotes.'),
+      s('text', { x: narrow ? 0 : px, y: pullY + (big ? 110 : 56), class: 'vbar__note' }, narrow ? 'Change the meaning and could be original.' : 'Change the meaning and could be original. These are the ones in your footnotes.'),
     );
   }
   wrap.append(
