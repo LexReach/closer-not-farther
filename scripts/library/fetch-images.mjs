@@ -57,9 +57,15 @@ const VATICAN_FONDI = /^(Vat|Pal|Barb|Ottob|Urb|Reg|Chig|Ross|Borg|Capp|Sbath)\.
 
 function vaticanManifestGuess(shelf) {
   if (!shelf) return null;
-  const s = shelf.trim();
+  let s = shelf.trim();
   if (!VATICAN_FONDI.test(s)) return null;
+  // Strip trailing folio/page-range annotations some Wikipedia shelfmarks carry,
+  // e.g. "Vat. gr. 647, ff. 155-338" or "Vat. gr. 1 (fol. 1r-2v)" -> the
+  // DigiVatLib manifest id is keyed on the bare shelfmark, not the range.
+  s = s.replace(/[,(]?\s*(?:ff?|fol(?:io)?s?)\.?\s*\d+[a-z]?(?:[-–]\d+[a-z]?)?\)?\s*$/i, '').trim();
+  s = s.replace(/,\s*$/, '').trim();
   const compact = s.replace(/\s+/g, '');
+  if (!compact) return null;
   return `https://digi.vatlib.it/iiif/MSS_${compact}/manifest.json`;
 }
 
@@ -138,7 +144,7 @@ function extractManifestMeta(manifest) {
 }
 
 async function tryManifest(url) {
-  const json = await fetchJSON(url, { timeoutMs: 30000, retries: 2, label: `manifest ${url}` });
+  const json = await fetchJSON(url, { timeoutMs: 30000, retries: 4, label: `manifest ${url}` });
   const canvasInfo = extractCanvasService(json);
   if (!canvasInfo?.service) return null;
   const meta = extractManifestMeta(json);
@@ -166,7 +172,7 @@ function stripHtml(s) {
 
 async function resolveCommonsCategory(catName) {
   const url = `${COMMONS_API}?action=query&list=categorymembers&cmtitle=${encodeURIComponent(`Category:${catName}`)}&cmtype=file&cmlimit=5&format=json`;
-  const json = await fetchJSON(url, { timeoutMs: 20000, retries: 2, label: `commons category ${catName}` });
+  const json = await fetchJSON(url, { timeoutMs: 20000, retries: 3, label: `commons category ${catName}` });
   const members = json.query?.categorymembers ?? [];
   return members[0]?.title ?? null;
 }
@@ -174,7 +180,7 @@ async function resolveCommonsCategory(catName) {
 async function fetchCommonsInfo(fileTitle) {
   const title = fileTitle.startsWith('File:') ? fileTitle : `File:${fileTitle}`;
   const url = `${COMMONS_API}?action=query&titles=${encodeURIComponent(title)}&prop=imageinfo&iiprop=url|size|extmetadata&format=json`;
-  const json = await fetchJSON(url, { timeoutMs: 20000, retries: 2, label: `commons imageinfo ${title}` });
+  const json = await fetchJSON(url, { timeoutMs: 20000, retries: 3, label: `commons imageinfo ${title}` });
   const pages = json.query?.pages ?? {};
   const page = Object.values(pages)[0];
   const info = page?.imageinfo?.[0];
@@ -288,8 +294,8 @@ async function main() {
       commonsCount++;
     },
     {
-      concurrency: 4,
-      delayMs: 200,
+      concurrency: 3,
+      delayMs: 300,
       onError: (row, err) => note(`  [${row.ga}] Commons error: ${err.message}`),
     },
   );

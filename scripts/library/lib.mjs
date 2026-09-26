@@ -297,6 +297,18 @@ export const INSTITUTION_DICT = [
   [/biblioteca ambrosiana/i, { city: 'Milan', country: 'Italy' }],
   [/biblioteca medicea laurenziana|laurentian library/i, { city: 'Florence', country: 'Italy' }],
   [/biblioteca (nazionale )?marciana/i, { city: 'Venice', country: 'Italy' }],
+  [/biblioteca vallicelliana/i, { city: 'Rome', country: 'Italy' }],
+  [/biblioteca casanatense/i, { city: 'Rome', country: 'Italy' }],
+  [/biblioteca riccardiana/i, { city: 'Florence', country: 'Italy' }],
+  [/national library of france/i, { city: 'Paris', country: 'France' }],
+  [/university of pennsylvania/i, { city: 'Philadelphia', country: 'United States' }],
+  [/leipzig university|universit\w* leipzig/i, { city: 'Leipzig', country: 'Germany' }],
+  // Mount Athos monasteries: a very common holder for Greek minuscules/lectionaries,
+  // usually named individually on Wikipedia rather than just "Mount Athos".
+  [
+    /\b(iviron|vatopedi|dionysiou|stavronikita|karakallou|xeropotamou|docheiariou|philotheou|simonopetra|simonos petra|gregoriou|esphigmenou|(?:agiou )?panteleimonos|konstamonitou|zografou|chilandari|koutloumousiou|kastamonitou|pantokratoros|great lavra|megisti lavra)\b/i,
+    { city: 'Mount Athos', country: 'Greece' },
+  ],
   [/biblioth[eè]que de gen[eè]ve|geneva library/i, { city: 'Geneva', country: 'Switzerland' }],
   [/national library of sweden|kungliga biblioteket/i, { city: 'Stockholm', country: 'Sweden' }],
   [/uppsala university/i, { city: 'Uppsala', country: 'Sweden' }],

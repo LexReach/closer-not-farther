@@ -30,6 +30,7 @@
  */
 
 import { writeFile, mkdir } from 'node:fs/promises';
+import { setTimeout as sleep } from 'node:timers/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { parse as parseHTML } from 'node-html-parser';
@@ -72,12 +73,12 @@ function note(msg) {
 // simplification for a catalog like this.
 // ---------------------------------------------------------------------------
 
-async function sparql(query, label) {
+async function sparql(query, label, { timeoutMs = 60000, retries = 2 } = {}) {
   const url = `${WD_ENDPOINT}?query=${encodeURIComponent(query)}&format=json`;
   const json = await fetchJSON(url, {
     headers: { Accept: 'application/sparql-results+json' },
-    timeoutMs: 60000,
-    retries: 2,
+    timeoutMs,
+    retries,
     label,
   });
   return json.results.bindings;
@@ -230,35 +231,77 @@ async function fetchWikidataRows() {
 async function fetchInstitutions(qids) {
   const list = [...qids];
   const info = new Map();
-  const CHUNK = 80;
+  const CHUNK = 30;
+  // Give WDQS a short breather after the eight parallel property queries above;
+  // this call was seeing 429s and aborts when fired immediately after them.
+  await sleep(5000);
   for (let i = 0; i < list.length; i += CHUNK) {
     const chunk = list.slice(i, i + CHUNK);
     const values = chunk.map((q) => `wd:${q}`).join(' ');
+    // Deliberately simple (no SERVICE wikibase:label, no ?city -> ?cityCountry
+    // chain): just the two raw QID lookups. Labels are resolved separately,
+    // once, over the small set of distinct QIDs actually referenced.
     const query = `
-SELECT ?inst ?instLabel ?city ?cityLabel ?country ?countryLabel ?cityCountry ?cityCountryLabel WHERE {
+SELECT ?inst ?city ?country WHERE {
   VALUES ?inst { ${values} }
   OPTIONAL { ?inst wdt:P131 ?city . }
   OPTIONAL { ?inst wdt:P17 ?country . }
-  OPTIONAL { ?city wdt:P17 ?cityCountry . }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }`;
     try {
-      const bindings = await sparql(query, `institutions chunk ${i}`);
+      const bindings = await sparql(query, `institutions chunk ${i}`, { timeoutMs: 45000, retries: 4 });
       for (const b of bindings) {
         const q = qidOf(b.inst?.value);
         if (!q) continue;
-        info.set(q, {
-          name: b.instLabel?.value || null,
-          city: b.cityLabel?.value || null,
-          country: b.countryLabel?.value || b.cityCountryLabel?.value || null,
-        });
+        info.set(q, { cityQid: qidOf(b.city?.value), countryQid: qidOf(b.country?.value) });
       }
     } catch (err) {
       note(`  Institution chunk at ${i} failed: ${err.message}`);
     }
+    if (i + CHUNK < list.length) await sleep(1500);
   }
-  note(`  Resolved ${info.size}/${list.length} institutions.`);
-  return info;
+  note(`  Resolved ${info.size}/${list.length} institution QID lookups.`);
+
+  // Second pass: resolve labels for every QID involved (institutions + their
+  // cities/countries) in one batch of simple VALUES + label-service queries.
+  const allQids = new Set(list);
+  for (const v of info.values()) {
+    if (v.cityQid) allQids.add(v.cityQid);
+    if (v.countryQid) allQids.add(v.countryQid);
+  }
+  const labels = new Map();
+  const labelList = [...allQids];
+  const LABEL_CHUNK = 150;
+  for (let i = 0; i < labelList.length; i += LABEL_CHUNK) {
+    const chunk = labelList.slice(i, i + LABEL_CHUNK);
+    const values = chunk.map((q) => `wd:${q}`).join(' ');
+    const query = `
+SELECT ?item ?itemLabel WHERE {
+  VALUES ?item { ${values} }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}`;
+    try {
+      const bindings = await sparql(query, `institution labels chunk ${i}`, { timeoutMs: 45000, retries: 3 });
+      for (const b of bindings) {
+        const q = qidOf(b.item?.value);
+        if (q) labels.set(q, b.itemLabel?.value || null);
+      }
+    } catch (err) {
+      note(`  Institution label chunk at ${i} failed: ${err.message}`);
+    }
+    if (i + LABEL_CHUNK < labelList.length) await sleep(1000);
+  }
+  note(`  Resolved ${labels.size}/${allQids.size} institution/city/country labels.`);
+
+  const result = new Map();
+  for (const [qid, v] of info.entries()) {
+    result.set(qid, {
+      name: labels.get(qid) ?? null,
+      city: v.cityQid ? (labels.get(v.cityQid) ?? null) : null,
+      country: v.countryQid ? (labels.get(v.countryQid) ?? null) : null,
+    });
+  }
+  note(`  Built ${result.size}/${list.length} full institution records.`);
+  return result;
 }
 
 // ---------------------------------------------------------------------------
