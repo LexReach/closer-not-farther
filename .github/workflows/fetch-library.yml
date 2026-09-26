@@ -1,0 +1,56 @@
+name: Fetch library data
+
+on:
+  push:
+    branches: [library-data]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-library
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: library-data
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install script dependencies
+        run: npm i --no-save node-html-parser
+
+      - name: Fetch catalog (Wikidata + Wikipedia)
+        run: node scripts/library/fetch-catalog.mjs
+
+      - name: Fetch images (IIIF + Commons)
+        run: node scripts/library/fetch-images.mjs
+
+      - name: Show output sizes
+        run: |
+          echo "--- data/library ---"
+          ls -la data/library
+          echo "--- catalog.json head ---"
+          head -c 2000 data/library/catalog.json || true
+          echo
+          echo "--- fetch-log.md ---"
+          cat data/library/fetch-log.md || true
+
+      - name: Commit and push data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/library
+          if git diff --cached --quiet; then
+            echo "No changes to data/library, nothing to commit."
+            exit 0
+          fi
+          git commit -m "Fetch library data ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+          git push origin HEAD:library-data

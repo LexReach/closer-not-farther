@@ -1,0 +1,263 @@
+{
+  "generated": "2026-09-26T00:00:00Z",
+  "_note": "Hand-curated by the build session from general textual-criticism knowledge (Metzger & Ehrman, INTF Liste, standard manuscript literature), not fetched. Dates are conventional scholarly ranges; institutions are the long-term holding body even where a manuscript is on loan or was formerly split across collections. Facts kept deliberately conservative; see fetch-log.md for the data-fetch pipeline this file is not part of.",
+  "manuscripts": [
+    {
+      "ga": "P52",
+      "name": "Rylands Library Papyrus P52",
+      "date": "c. 125-175 (some scholars argue for a later, 2nd/3rd-century date)",
+      "holding": "John Rylands Library, University of Manchester",
+      "contents": "John 18:31-33, 37-38 (a single small fragment)",
+      "story": "A credit-card-sized scrap bought in Egypt in 1920 and identified only in 1934 by C. H. Roberts, who dated its handwriting to the first half of the 2nd century. If that dating holds, it places a copy of John's gospel within living memory of critical scholarship's usual date for the gospel's composition. Palaeographic dating of undated fragments is inherently a comparative judgment, not a measurement, and later scholars (notably Brent Nongbri) have argued the range should be widened into the 3rd century. Either way, it remains among the earliest known New Testament fragments.",
+      "links": {}
+    },
+    {
+      "ga": "P66",
+      "name": "Bodmer Papyrus II",
+      "date": "c. 200 (some editors argue as early as the mid-2nd century)",
+      "holding": "Fondation Martin Bodmer, Cologny, Switzerland",
+      "contents": "Gospel of John, nearly complete",
+      "story": "One of the Bodmer papyri acquired from Egypt in the 1950s, P66 preserves most of John's gospel in a single papyrus codex. What makes it valuable beyond its age is its visible workshop history: hundreds of corrections in at least two hands, some matching a different exemplar than the one the original scribe copied from. Rather than hiding scribal imperfection, the manuscript shows an ancient reader or corrector actively checking the copy against another text, which is exactly the kind of quality control modern textual criticism looks for evidence of.",
+      "links": {
+        "institution": "https://www.e-codices.unifr.ch"
+      }
+    },
+    {
+      "ga": "P75",
+      "name": "Bodmer Papyrus XIV-XV",
+      "date": "c. 175-225",
+      "holding": "Vatican Apostolic Library (acquired 2007; formerly Bodmer Library)",
+      "contents": "Luke and John, in substantial portions",
+      "story": "P75 is best known for how closely its text agrees with Codex Vaticanus, a manuscript copied roughly a century and a half later. Before P75 was published in the 1960s, some scholars suspected Vaticanus's distinctive readings were a later, polished revision. Finding the same readings already present in a papyrus from around 200 undercut that theory: the text-type behind Vaticanus was not invented in the 4th century but was already circulating, largely unchanged, at least two centuries earlier. It was purchased by the Vatican Library from the Bodmer foundation in 2007.",
+      "links": {
+        "institution": "https://digi.vatlib.it"
+      }
+    },
+    {
+      "ga": "P45",
+      "name": "Chester Beatty Papyrus I",
+      "date": "c. 200-250",
+      "holding": "Chester Beatty Library, Dublin (a few leaves at the University of Michigan)",
+      "contents": "Fragments of all four Gospels and Acts",
+      "story": "Part of a cache of early biblical papyri Alfred Chester Beatty acquired from Egyptian dealers in the 1930s, P45 originally held the four Gospels and Acts bound together in a single codex, only fragments of which survive. Its significance is less any one reading than the fact of the collection itself: by roughly the early 3rd century, the four Gospels and Acts were already being copied and circulated as a unit, not as separate booklets assembled piecemeal generations later, which is a meaningful data point against theories of a slow, late canonical consolidation.",
+      "links": {
+        "institution": "https://chesterbeatty.ie"
+      }
+    },
+    {
+      "ga": "P46",
+      "name": "Chester Beatty Papyrus II",
+      "date": "c. 175-225 (commonly dated to around 200)",
+      "holding": "Chester Beatty Library, Dublin (a majority of leaves at the University of Michigan)",
+      "contents": "Paul's letters, including Hebrews; the Pastoral epistles are absent",
+      "story": "P46 is the earliest surviving collected edition of Paul's letters, a single-quire codex that originally ran to around 104 leaves. It groups Hebrews with Paul's other letters, matching how early Christians received it rather than how modern readers might classify authorship. The Pastoral epistles (1-2 Timothy, Titus) are missing; whether they were never included or simply lost with damaged leaves is debated, and the codex's tight page-count math has been used on both sides of that argument. Either way, it shows Paul's letters being read as a bounded set very early.",
+      "links": {
+        "institution": "https://chesterbeatty.ie"
+      }
+    },
+    {
+      "ga": "P47",
+      "name": "Chester Beatty Papyrus III",
+      "date": "c. 250-300",
+      "holding": "Chester Beatty Library, Dublin",
+      "contents": "Revelation 9:10-17:2",
+      "story": "The earliest substantial witness to the book of Revelation, P47 is a single-quire papyrus codex acquired as part of the same Chester Beatty group as P45 and P46. Its surviving leaves are damaged at the edges, so the visible text is missing occasional words rather than whole passages. Revelation is one of the more textually variable New Testament books in later manuscripts, which makes an early control point like P47 useful: it lets critics check whether a given later variant is an old reading resurfacing or a genuinely new one.",
+      "links": {
+        "institution": "https://chesterbeatty.ie"
+      }
+    },
+    {
+      "ga": "P72",
+      "name": "Bodmer Papyrus VII-IX",
+      "date": "c. 3rd-4th century",
+      "holding": "Bodmer Library, Cologny, Switzerland (bound within a composite \"miscellaneous\" codex)",
+      "contents": "Jude and 1-2 Peter, the earliest surviving copies of both",
+      "story": "P72 preserves the oldest known text of Jude and of 1-2 Peter, but it never circulated alone: it is bound into a small composite codex alongside the Nativity of Mary, an apocryphal correspondence attributed to Paul and the Corinthians, an Ode of Solomon, a homily, and a Psalm, in a mix of canonical and non-canonical material. That combination is itself informative: it shows an early Christian owner reading Peter and Jude alongside devotional and apocryphal texts without necessarily treating them as one undifferentiated category, well before later canon lists formalized the distinction.",
+      "links": {}
+    },
+    {
+      "ga": "P90",
+      "name": "P.Oxy. 3523",
+      "date": "c. 150-200",
+      "holding": "Sackler Library, Oxford (Oxyrhynchus Papyri collection)",
+      "contents": "John 18:36-19:7 (a small fragment)",
+      "story": "Recovered from the Oxyrhynchus rubbish mounds in Egypt and published in 1983, P90 is a modest scrap of John's Passion narrative, but its date puts it among the small handful of 2nd-century New Testament fragments. Its wording lines up closely with the text later found in Codex Vaticanus and Codex Sinaiticus, manuscripts copied well over a century afterward. A fragment this size cannot settle large arguments on its own, but it adds one more early, independent data point suggesting the text of John was already stable rather than still taking shape.",
+      "links": {
+        "institution": "https://www.papyrology.ox.ac.uk"
+      }
+    },
+    {
+      "ga": "P104",
+      "name": "P.Oxy. 4404",
+      "date": "c. 150-200 (the editors floated a date rivaling P52's)",
+      "holding": "Sackler Library, Oxford (Oxyrhynchus Papyri collection)",
+      "contents": "Matthew 21:34-37, 43, 45 (a small fragment)",
+      "story": "Published in 1997 from the Oxyrhynchus papyri, P104 is a tiny fragment of Matthew whose handwriting its first editors compared to documents as early as the 1st century, though most subsequent assessments have settled on the later 2nd century. The gap between those estimates is a useful reminder that dating an undated literary fragment is a comparative judgment about handwriting style, not a laboratory measurement, and that legitimate scholarly disagreement over a fragment's precise age does not translate into doubt about its basic authenticity or content.",
+      "links": {
+        "institution": "https://www.papyrology.ox.ac.uk"
+      }
+    },
+    {
+      "ga": "01",
+      "name": "Codex Sinaiticus",
+      "date": "c. 330-360",
+      "holding": "British Library, London (further leaves at Leipzig University Library, the National Library of Russia, and St. Catherine's Monastery, Sinai)",
+      "contents": "A complete New Testament, plus much of the Greek Old Testament and two early Christian texts (the Epistle of Barnabas and part of the Shepherd of Hermas)",
+      "story": "The oldest complete copy of the New Testament to survive, Sinaiticus was found at St. Catherine's Monastery in the Sinai and brought to wider attention by Constantin von Tischendorf across visits in the 1840s-50s. Several correctors reworked its text over centuries, leaving a visible record of ancient editorial attention rather than a single frozen snapshot. Its four surviving portions, split between four institutions, were reunited digitally in the 2000s so the whole manuscript can now be read as one document again, image by image, for the first time since the pages were separated.",
+      "links": {
+        "institution": "https://codexsinaiticus.org"
+      }
+    },
+    {
+      "ga": "03",
+      "name": "Codex Vaticanus",
+      "date": "c. 300-325 (some place it slightly later, mid-4th century)",
+      "holding": "Vatican Apostolic Library",
+      "contents": "Nearly all of the Greek Old and New Testaments; the later NT books (the Pastoral epistles, Philemon, Revelation) are missing from what survives",
+      "story": "Vaticanus is one of the two oldest near-complete Christian Bibles, and it has been catalogued in the Vatican Library continuously since at least the 15th century, making its custodial history unusually well documented. Its comparatively spare, uncluttered text became the backbone of most modern critical editions once P75 turned up decades of a much older papyrus showing essentially the same readings already circulating around 200. That agreement between a 3rd-century papyrus and a 4th-century codex is a central plank in the argument that this text-type is genuinely old rather than a later scholarly reconstruction.",
+      "links": {
+        "institution": "https://digi.vatlib.it"
+      }
+    },
+    {
+      "ga": "02",
+      "name": "Codex Alexandrinus",
+      "date": "c. 400-440",
+      "holding": "British Library, London",
+      "contents": "Nearly all of the Greek Old and New Testaments, plus 1-2 Clement",
+      "story": "Alexandrinus reached Western Europe as a diplomatic gift: Cyril Lucaris, Patriarch of Constantinople, sent it to King Charles I of England in the 1620s, and it became one of the first great Greek biblical uncials Western scholars could study closely, well before Sinaiticus or Vaticanus were widely accessible. Its text of the Gospels differs somewhat from Vaticanus and Sinaiticus, aligning more with later Byzantine copies, while its text of the rest of the New Testament tracks closer to the older Alexandrian tradition, making it a useful case study in how a manuscript's text-type can vary book by book.",
+      "links": {
+        "institution": "https://www.bl.uk"
+      }
+    },
+    {
+      "ga": "04",
+      "name": "Codex Ephraemi Rescriptus",
+      "date": "c. 450",
+      "holding": "Bibliothèque nationale de France, Paris",
+      "contents": "Fragments of most New Testament books, plus Old Testament fragments; a palimpsest",
+      "story": "In the 12th century, with parchment scarce and expensive, a scribe scraped the biblical text off this codex's pages and reused them to copy sermons of Ephrem the Syrian, leaving only faint traces of the older writing underneath. Scholars first recovered much of the erased text with chemical reagents in the 19th century, a process that damaged the parchment further, and far more completely in the 21st century using multispectral imaging that reads ink no chemical treatment could safely expose. It is a direct illustration of how a single physical object can carry two separate, centuries-apart texts.",
+      "links": {
+        "institution": "https://gallica.bnf.fr"
+      }
+    },
+    {
+      "ga": "05",
+      "name": "Codex Bezae Cantabrigiensis",
+      "date": "c. 400-420",
+      "holding": "Cambridge University Library",
+      "contents": "The Gospels and Acts, in parallel Greek and Latin columns; a notably free, expansive text, especially in Acts",
+      "story": "Codex Bezae is a bilingual, page-facing Greek-Latin manuscript given to Cambridge University by the reformer Theodore Beza in 1581. Its text of Acts runs roughly a tenth longer than the text found in other early manuscripts, adding small narrative details and clarifications not present elsewhere. Rather than being hidden or smoothed over, this variation sits in plain sight in a manuscript that has been continuously studied for centuries, which is itself the point: significant textual variants of this kind were visible to scholars from the start, not something modern criticism uncovered by surprise.",
+      "links": {
+        "institution": "https://cudl.lib.cam.ac.uk"
+      }
+    },
+    {
+      "ga": "032",
+      "name": "Codex Washingtonianus (the Freer Gospels)",
+      "date": "c. late 4th-5th century",
+      "holding": "National Museum of Asian Art (Freer Gallery), Smithsonian Institution, Washington, D.C.",
+      "contents": "The four Gospels, in the unusual order Matthew, John, Luke, Mark",
+      "story": "Purchased in Egypt in 1906 by the collector Charles Lang Freer, this codex is best known for the \"Freer Logion,\" an extra passage inserted after Mark 16:14 in which the risen Jesus answers the disciples' doubt with an expanded dialogue about the age of sin and evil. Jerome, writing around the year 400, already knew of this addition in some Greek copies available to him, so its presence here is not a scribal invention specific to this manuscript but the survival, in physical form, of a variant reading otherwise known only through a patristic aside.",
+      "links": {
+        "institution": "https://asia.si.edu"
+      }
+    },
+    {
+      "ga": "038",
+      "name": "Codex Koridethi",
+      "date": "c. 9th century",
+      "holding": "National Centre of Manuscripts, Tbilisi, Georgia (from Koridethi Monastery)",
+      "contents": "The Gospels",
+      "story": "Koridethi's scribe was evidently more comfortable with a Georgian or Caucasian script tradition than with Greek, and the manuscript is full of irregular, ungainly letterforms and copying slips that mark it as one of the more awkwardly executed Gospel books to survive. Despite that, its underlying text in Mark closely resembles quotations preserved in Origen's and Eusebius's writings from Caesarea some six centuries earlier, part of why scholars group it with a distinct \"Caesarean\" text-type. A clumsy 9th-century hand, in other words, can still be carrying a genuinely old text forward largely intact.",
+      "links": {}
+    },
+    {
+      "ga": "1",
+      "name": "Minuscule 1 (Codex Basiliensis)",
+      "date": "c. 12th century",
+      "holding": "University Library of Basel, Switzerland",
+      "contents": "Gospels, Acts, Paul's letters, and the Catholic epistles (the complete New Testament except Revelation)",
+      "story": "Minuscule 1 gives its name to \"Family 1,\" a cluster of medieval manuscripts that share enough distinctive readings to point back to a common, older ancestor text rather than each descending independently from the Byzantine mainstream. It also has a direct line into print history: manuscripts from this circle held in Basel were among those Erasmus and his associates consulted while assembling the first published Greek New Testament in 1516, meaning specific medieval readings preserved here fed directly into the text underlying the earliest Reformation-era vernacular translations.",
+      "links": {}
+    },
+    {
+      "ga": "2",
+      "name": "Minuscule 2",
+      "date": "c. 12th century",
+      "holding": "University Library of Basel, Switzerland",
+      "contents": "The Gospels",
+      "story": "Held in the same Basel collection as Minuscule 1, this manuscript was one of the small handful of Greek copies Erasmus had on hand in Basel while preparing his 1516 Novum Instrumentum, the first printed Greek New Testament. Its particular readings, transcribed under real deadline pressure from the local manuscripts available rather than a global survey of the best evidence, became part of the base text later called the Textus Receptus, which underlies the King James Version and other early vernacular Bibles, an unusually direct thread from a specific medieval book to modern reading Bibles.",
+      "links": {}
+    },
+    {
+      "ga": "33",
+      "name": "Minuscule 33 (\"Queen of the Cursives\")",
+      "date": "c. 9th century",
+      "holding": "Bibliothèque nationale de France, Paris",
+      "contents": "Gospels, Acts, Paul's letters, and the Catholic epistles",
+      "story": "Nineteenth-century scholars nicknamed Minuscule 33 the \"queen of the cursives\" because its text, despite being written centuries after the great uncials, repeatedly agrees with Codex Vaticanus and other early witnesses against the more standardized Byzantine text found in most minuscules of its own era. It is a clean example of a broader pattern: a manuscript's copying date and the age of the text it carries are two different numbers, and a comparatively late copy can still transmit an old and carefully preserved textual stream.",
+      "links": {
+        "institution": "https://gallica.bnf.fr"
+      }
+    },
+    {
+      "ga": "565",
+      "name": "Minuscule 565",
+      "date": "c. 9th century",
+      "holding": "National Library of Russia, St. Petersburg",
+      "contents": "The Gospels",
+      "story": "A deluxe presentation manuscript, written in gold ink on parchment dyed purple, 565 looks every bit the imperial luxury object it likely was. Underneath the decoration, though, its text of Mark is regularly classed with the same \"Caesarean\" group as Codex Koridethi, a text-type textual critics trace back toward readings used by Origen in the early 3rd century. The manuscript is a reminder that expensive, ornamental books were not necessarily copied carelessly from whatever exemplar was closest to hand; this one preserves a text lineage worth taking seriously.",
+      "links": {}
+    },
+    {
+      "ga": "1739",
+      "name": "Minuscule 1739",
+      "date": "c. 10th century",
+      "holding": "Great Lavra Monastery, Mount Athos, Greece",
+      "contents": "Acts, Paul's letters, and the Catholic epistles",
+      "story": "What sets 1739 apart is its margins: the scribe copied in patristic citations naming earlier authorities, including Origen and Basil of Caesarea, alongside the biblical text, effectively footnoting where particular readings came from. Those notes let modern scholars trace this manuscript's text of Paul's letters back toward an exemplar used in Alexandria or Caesarea centuries before the 10th-century copy was made. It is a rare case where a medieval scribe hands later researchers something close to a documented chain of custody for the text, rather than leaving them to reconstruct one from scratch.",
+      "links": {}
+    },
+    {
+      "ga": "13",
+      "name": "Minuscule 13",
+      "date": "c. 12th-13th century",
+      "holding": "Bibliothèque nationale de France, Paris",
+      "contents": "The Gospels",
+      "story": "Minuscule 13 gives its number to \"Family 13,\" a group of related medieval manuscripts, scattered across different libraries and copied centuries apart, that all share one distinctive quirk: they place the story of the woman caught in adultery (John 7:53-8:11) after Luke 21 rather than in its usual spot in John. A shared oddity like that is a fingerprint, letting textual critics show these manuscripts descend from one common ancestor rather than arriving at the same unusual arrangement independently, and to reconstruct something of that lost ancestor's own textual choices.",
+      "links": {
+        "institution": "https://gallica.bnf.fr"
+      }
+    },
+    {
+      "ga": "P115",
+      "name": "P.Oxy. 4499",
+      "date": "c. 225-275 (3rd century)",
+      "holding": "Sackler Library, Oxford (Oxyrhynchus Papyri collection)",
+      "contents": "Revelation 4:8-9:19, 10:9-11:5, 11:8-12:9 (extensive but damaged fragments)",
+      "story": "Published in 1999, P115 is one of the earliest and most extensive surviving copies of Revelation, an unusually large amount of text for a 3rd-century fragment. Its most-discussed feature is Revelation 13:18: where most later manuscripts give the number of the beast as 666, P115 reads 616, a variant already known from a remark by the 2nd-century writer Irenaeus, who mentioned it only to argue against it. Finding that same minority number in an actual 3rd-century papyrus confirms the variant is genuinely ancient, not a late scribal slip invented long after Irenaeus wrote.",
+      "links": {
+        "institution": "https://www.papyrology.ox.ac.uk"
+      }
+    },
+    {
+      "ga": "0189",
+      "name": "Uncial 0189",
+      "date": "c. 200 (late 2nd/early 3rd century)",
+      "holding": "Egyptian Museum and Papyrus Collection, Berlin",
+      "contents": "Acts 5:3-21 (a single parchment leaf)",
+      "story": "0189 is unusual for its format as much as its age: it is a majuscule fragment written on parchment rather than papyrus, from roughly the same period as papyri like P66 and P75. That combination shows Christian scribes in Egypt already experimenting with parchment codices alongside the far more common papyrus rolls and codices well before parchment became the dominant book material in later centuries. Its surviving text of Acts 5, describing the deaths of Ananias and Sapphira, gives one of the earliest physical witnesses to that specific passage.",
+      "links": {}
+    },
+    {
+      "ga": "892",
+      "name": "Minuscule 892",
+      "date": "c. 9th century",
+      "holding": "British Library, London",
+      "contents": "The Gospels",
+      "story": "Copied in the 9th century in a script that itself imitates an older uncial hand, Minuscule 892 has long stood out to textual critics for how often its readings side with Codex Vaticanus and the earliest papyri against the standardized Byzantine text found in most of its medieval contemporaries. It is one of the clearer working examples of a point this whole collection makes: the date a manuscript was physically copied and the age of the text it carries are not the same number, and closeness to the original can survive a very long chain of copying.",
+      "links": {}
+    }
+  ]
+}
