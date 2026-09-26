@@ -27,3 +27,11 @@ Every judgment call made during the unattended build, in the order it was made.
 - **"Common name"** for the Twelve panel means in the top 12 male names shown in panel A (rank ≤ 12). Ranks come from `twelve.entries`.
 - **Apocryphal names (panel C).** Populated for all four texts (37 entries) inside the ~$10 cap. The source sites were unreachable from the sandbox, so the lists were compiled from knowledge of the standard public-domain translations (Lambdin, Isenberg, the Gnostic Society text of Mary, Walker's ANF Protevangelium), with web search snippets as a check. Mention counts are approximate and flagged `approx`. The build details are kept in `apocryphal.build_note`; the UI shows `method`.
 - **How panel C reads.** Instead of forcing apocryphal names onto the Palestinian frequency chart (their casts are mostly borrowed from the canonical Gospels), the panel shows, per text, how many names are borrowed and how the added ones are tagged. That is the fair version of the test, and it shows the complicating case too: the Protevangelium's additions (Joachim, Anna, Reuben) are ordinary Jewish names.
+
+## Module 2: Closer, Not Farther
+- **Minuscules added.** 17 medieval minuscules were added (`added_by_build: true`) to fill the lower right of the plot. Wikipedia and the INTF Liste were blocked, so dates and "year known" come from web search snippets and standard references; 13 of them carry `verify: true` with a `year_known_basis`.
+- **Corrections to the supplied data:** P1 `year_known` 1897 to 1898 (publication year, matching the convention used for other papyri); minuscule 1739 1879 to 1899 (von der Goltz's publication).
+- **Gap to the autographs** = midpoint of the earliest known witness minus 100 AD (end of the conventional composition window, stored in `manuscripts.json` → `autographs`). This reproduces the 50-year NT gap in `comparison.json`.
+- **"Manuscripts available"** is a step function over `count_over_time`: the most recent catalogue figure at or before the selected year, labelled approximate, together with how many of the plotted landmark witnesses are known.
+- **Starting year** is 1516 (the first preset), so the dots fill in as the reader drags forward.
+- **Comparison panel** sorts works by manuscript count and draws count and gap as two separate bar charts with the same row order, so count is never shown alone.

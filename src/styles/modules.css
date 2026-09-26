@@ -153,3 +153,53 @@
   .names-stats .stat__value { font-size: 1.5rem; }
 }
 .chart--narrow .namebar__label { font-size: 11.5px; }
+
+/* ================= Module 2: Timeline ================= */
+
+.tl-panel { display: flex; flex-direction: column; gap: 16px; }
+.tl-controls { display: grid; gap: 10px; }
+.tl-controls .slider__label { font-size: 0.9rem; }
+.tl-controls .slider__value { font-size: 1.1rem; }
+.tl-presets .btn { font-size: 0.78rem; }
+.tl-stats .stat__value { font-size: 1.6rem; }
+.tl-auto { fill: var(--success-soft); }
+.chart .tl-auto__label { fill: var(--success); font-weight: 600; }
+.chart .gridline--v { stroke-opacity: 0.5; }
+.tl-dot { cursor: default; outline: none; }
+.tl-dot__c { fill: var(--surface); stroke: var(--rule); stroke-width: 1.5; transition: fill 0.45s ease, stroke 0.45s ease, r 0.45s ease; }
+.tl-dot__range { stroke: var(--rule); stroke-width: 1.5; transition: stroke 0.45s ease; }
+.chart .tl-dot__label { fill: var(--rule); font-size: 10.5px; transition: fill 0.45s ease; }
+.tl-dot.is-known .tl-dot__c { fill: var(--accent); stroke: var(--surface); }
+.tl-dot.is-known .tl-dot__range { stroke: var(--muted); }
+.chart .tl-dot.is-known .tl-dot__label { fill: var(--ink); }
+.tl-dot:hover .tl-dot__c, .tl-dot:focus-visible .tl-dot__c { stroke: var(--ink); stroke-width: 2; }
+.tl-cursor line { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 3 3; }
+.chart .tl-cursor__label { fill: var(--accent); font-weight: 600; font-size: 12px; }
+.tl-earliest { stroke: var(--success); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.chart .tl-earliest__label { fill: var(--success); font-size: 11px; font-weight: 600; }
+.tl-count { margin-top: 8px; }
+.tl-count__fill { fill: var(--accent-soft); }
+.tl-count__line { fill: none; stroke: var(--accent); stroke-width: 1.8; }
+.tl-count__pt { fill: var(--accent); stroke: var(--surface); stroke-width: 1.5; outline: none; }
+.tl-count__pt:focus-visible { stroke: var(--ink); }
+
+.cmp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.chart .cmp-title { fill: var(--ink); font-weight: 600; font-size: 12.5px; }
+.chart .cmp-label { fill: var(--ink); font-size: 12px; }
+.cmp-row { outline: none; }
+.cmp-row:hover .namebar__hit, .cmp-row:focus-visible .namebar__hit { fill: var(--accent-soft); }
+.cmp-bar--count { fill: var(--bar-pal); }
+.cmp-bar--gap { fill: color-mix(in srgb, var(--accent-2) 55%, var(--surface)); }
+.cmp-row.is-nt .cmp-bar { fill: var(--accent); }
+.chart .cmp-row.is-nt .cmp-label, .chart .cmp-row.is-nt .cmp-val { fill: var(--accent); font-weight: 600; }
+.chart .cmp-val { font-size: 11px; }
+@media (max-width: 720px) {
+  .cmp-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 560px) {
+  .tl-stats { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .tl-stats .stat { padding: 10px; }
+  .tl-stats .stat__label { font-size: 0.62rem; }
+  .tl-stats .stat__value { font-size: 1.15rem; }
+  .tl-stats .stat__sub { font-size: 0.68rem; }
+}
