@@ -100,6 +100,12 @@ stripped by `scripts/bible/lib/usfm.mjs` for all three ebible.org texts.
     critical-apparatus sigla and disputed-passage words STEPBible's own
     edition flags don't cleanly cover) are left with `strong/morph/gloss: ""`,
     per `data/bible/SCHEMA.md`.
+  - MorphGNT's `master` branch does not include the Pericope Adulterae
+    (John 7:53-8:11), which SBLGNT's own `README.md` says was only added in
+    v1.2 (2023-07-10); BSB (and other translations) do include it, so
+    `data/bible/greek/JHN.json` has no words for those 11 verses (`null`),
+    and `data/bible/text/bsb/JHN.json` still carries their real bsb.txt text
+    as a fully-unlinked segment (`[[text, null]]`) rather than `null`.
 
 ## Greek lexicon — `data/bible/lex-greek.json`
 

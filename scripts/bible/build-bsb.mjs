@@ -126,8 +126,16 @@ if (tableRows) {
       for (let v = 0; v < greek.chapters[c].length; v++) {
         const gWords = greek.chapters[c][v];
         const canonicalText = plain.get(book.id)?.[c]?.[v] ?? null;
-        if (!gWords || canonicalText == null) {
+        if (canonicalText == null) {
+          // bsb.txt itself has nothing here: a genuinely missing verse.
           chapterOut.push(null);
+          continue;
+        }
+        if (!gWords) {
+          // bsb.txt has this verse but our Greek source doesn't (e.g. MorphGNT
+          // predates SBLGNT v1.2 adding the Pericope Adulterae, Jn 7:53-8:11,
+          // which BSB includes). Still emit the verse, just fully unlinked.
+          chapterOut.push([[canonicalText, null]]);
           continue;
         }
         const key = `${book.id}:${c + 1}:${v + 1}`;
