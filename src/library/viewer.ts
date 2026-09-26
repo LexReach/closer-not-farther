@@ -33,7 +33,9 @@ export function Viewer(src: ImageSource, label: string): ViewerApi {
       showNavigationControl: false,
       showNavigator: true,
       navigatorPosition: 'BOTTOM_RIGHT',
-      crossOriginPolicy: 'Anonymous',
+      // Canvas drawing without a CORS requirement: not every image server sends CORS headers.
+      drawer: 'canvas',
+      crossOriginPolicy: false,
       animationTime: 0.6,
       visibilityRatio: 0.6,
       gestureSettingsMouse: { clickToZoom: false, scrollToZoom: true },
@@ -42,7 +44,7 @@ export function Viewer(src: ImageSource, label: string): ViewerApi {
     viewer = v;
     v.addHandler('open', () => status.remove());
     v.addHandler('open-failed', () => {
-      status.textContent = 'The holding library did not serve this image just now. Use the links above to view it at the source.';
+      status.textContent = 'The holding library did not serve this image just now. Use the links below to view it at the source.';
       status.classList.add('is-error');
     });
     zin.addEventListener('click', () => v.viewport.zoomBy(1.5));

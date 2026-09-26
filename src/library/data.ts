@@ -85,7 +85,11 @@ export function loadLibrary(): Promise<LibraryData> {
     const rows: Ms[] = c.rows.map((r, i) => {
       const o: Record<string, unknown> = { i };
       for (const [f, j] of F) o[f] = j >= 0 ? (r[j] ?? null) : null;
-      return o as unknown as Ms;
+      const m = o as unknown as Ms;
+      m.city = tidyCity(m.city);
+      // Papyri are labelled "𝔓66" on Wikidata; the GA number already says that.
+      if (m.name && /^𝔓\s?\d+$/.test(m.name)) m.name = null;
+      return m;
     });
     const byGa = new Map(rows.map((r) => [r.ga, r]));
     const im = img.default as unknown as { items: Record<string, ImageSource>; counts: LibraryData['imageCounts']; sources: string[] };
@@ -106,6 +110,16 @@ export function loadLibrary(): Promise<LibraryData> {
 }
 
 /* ---------- Helpers ---------- */
+
+/** Wikidata sometimes gives a borough or district; show the city a reader knows. */
+function tidyCity(c: string | null): string | null {
+  if (!c) return c;
+  if (/^London Borough of/.test(c) || c === 'City of Westminster') return 'London';
+  const arr = c.match(/arrondissement of (.+)$/);
+  if (arr) return arr[1];
+  if (c === 'England') return null;
+  return c;
+}
 
 const ORD = (n: number) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? 'th' : n % 10 === 1 ? 'st' : n % 10 === 2 ? 'nd' : n % 10 === 3 ? 'rd' : 'th'}`;
 export const centuryLabel = (m: Ms): string =>

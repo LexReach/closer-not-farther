@@ -108,3 +108,4 @@
   .lib-dialog__body { padding: 18px 16px 20px; }
 }
 .lib-dialog[open]:not(:modal) { position: fixed; inset: 16px; margin: auto; z-index: 50; overflow: auto; }
+.osd .openseadragon-message { display: none; }

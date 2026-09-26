@@ -264,6 +264,8 @@ function build(root: HTMLElement, lib: LibraryData): () => void {
     grid.style.height = `${Math.ceil(results.length / cols) * rowH}px`;
   }
 
+  const typeCard = (m: Ms) => h('div', { class: 'lib-tile__type' }, h('span', { class: 'lib-tile__ga' }, gaLabel(m.ga)), h('span', { class: 'lib-tile__cent' }, centuryLabel(m)));
+
   function tile(m: Ms, i: number): HTMLElement {
     const src = lib.images[m.ga];
     const img = thumbUrl(src, 400);
@@ -274,8 +276,16 @@ function build(root: HTMLElement, lib: LibraryData): () => void {
         'div',
         { class: 'lib-tile__media' },
         img
-          ? h('img', { src: img, alt: '', loading: 'lazy', decoding: 'async', referrerpolicy: 'no-referrer' })
-          : h('div', { class: 'lib-tile__type' }, h('span', { class: 'lib-tile__ga' }, gaLabel(m.ga)), h('span', { class: 'lib-tile__cent' }, centuryLabel(m))),
+          ? h('img', {
+              src: img,
+              alt: '',
+              loading: 'lazy',
+              decoding: 'async',
+              referrerpolicy: 'no-referrer',
+              // If the library's server does not answer, fall back to the typographic card.
+              onerror: (e: Event) => (e.target as HTMLElement).replaceWith(typeCard(m)),
+            })
+          : typeCard(m),
         img ? h('span', { class: 'lib-tile__badge' }, 'Images') : '',
       ),
       h(

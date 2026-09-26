@@ -277,7 +277,7 @@
           ]
         },
         {
-          "caption": "Where a library publishes its images, you can open the manuscript itself and zoom in to the letters, streamed from the institution that holds it.",
+          "caption": "Where a library publishes its images, open the manuscript itself and zoom in to the letters. This is Codex Ephraemi, streamed from the Bibliothèque nationale de France.",
           "ms": 10500,
           "actions": [
             {
@@ -289,7 +289,7 @@
             },
             {
               "do": "click",
-              "selector": ".shelf .shelf-card.has-img"
+              "selector": ".shelf .shelf-card[data-ga=\"04\"]"
             },
             {
               "do": "wait",

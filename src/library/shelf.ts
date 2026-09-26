@@ -13,7 +13,9 @@ export function ShelfCard(f: Featured, lib: LibraryData, onOpen?: (ga: string) =
     h(
       'div',
       { class: 'shelf-card__media' },
-      img ? h('img', { src: img, alt: '', loading: 'lazy', decoding: 'async', referrerpolicy: 'no-referrer' }) : h('span', { class: 'shelf-card__ga' }, gaLabel(f.ga)),
+      img
+        ? h('img', { src: img, alt: '', loading: 'lazy', decoding: 'async', referrerpolicy: 'no-referrer', onerror: (e: Event) => (e.target as HTMLElement).replaceWith(h('span', { class: 'shelf-card__ga' }, gaLabel(f.ga))) })
+        : h('span', { class: 'shelf-card__ga' }, gaLabel(f.ga)),
     ),
     h('div', { class: 'shelf-card__body' }, h('span', { class: 'shelf-card__ga-sm num' }, gaLabel(f.ga)), h('span', { class: 'shelf-card__name' }, f.name), h('span', { class: 'shelf-card__date' }, f.date.split(' (')[0])),
   );
