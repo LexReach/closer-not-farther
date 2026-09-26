@@ -62,6 +62,16 @@ const BOOK_NAME_VARIANTS = {
   REV: ['Revelation', 'Rev'],
 };
 
+// Repo file basenames (confirmed via CI job log, 2026-09-26: data/sblgntapp/text/<Name>.txt)
+// -> our BOOK ids. Used as the per-file book hint (see parseApparatusText's bookHint).
+const FILENAME_TO_BOOK = {
+  Matt: 'MAT', Mark: 'MRK', Luke: 'LUK', John: 'JHN', Acts: 'ACT', Rom: 'ROM',
+  '1Cor': '1CO', '2Cor': '2CO', Gal: 'GAL', Eph: 'EPH', Phil: 'PHP', Col: 'COL',
+  '1Thess': '1TH', '2Thess': '2TH', '1Tim': '1TI', '2Tim': '2TI', Titus: 'TIT',
+  Phlm: 'PHM', Heb: 'HEB', Jas: 'JAS', '1Pet': '1PE', '2Pet': '2PE',
+  '1John': '1JN', '2John': '2JN', '3John': '3JN', Jude: 'JUD', Rev: 'REV',
+};
+
 function log(...a) {
   console.log(...a);
 }
@@ -79,18 +89,31 @@ async function discoverTree() {
 }
 
 function pickApparatusFiles(paths) {
-  return paths.filter((p) => /app/i.test(path.basename(p)) && /\.(txt|csv|xml)$/i.test(p));
+  // Real layout (confirmed via CI job log, 2026-09-26): data/sblgntapp/text/<Book>.txt
+  // (plain text, one file per book) and data/sblgntapp/xml/<Book>.xml (structured).
+  // Prefer the plain-text files: they use the same human-readable
+  // "reading WH Treg NIV] reading RP" notation this parser targets. Matched by
+  // directory name ("sblgntapp"), not basename, since individual filenames
+  // (Matt.txt, 1Cor.txt, ...) don't themselves contain "app".
+  const textFiles = paths.filter((p) => /(^|\/)sblgntapp\/text\//i.test(p) && p.endsWith('.txt'));
+  if (textFiles.length) return textFiles;
+  // Fall back to the XML apparatus files if the text/ folder isn't there this run.
+  return paths.filter((p) => /(^|\/)sblgntapp\//i.test(p) && /\.(txt|xml)$/i.test(p));
 }
 
 /**
  * Parse the SBLGNT apparatus plain-text format. Expected shape (one variation
  * unit per logical entry, verse references repeated as needed):
  *   "<Book> <chapter>:<verse> <reading text> WH Treg NIV RP] <alt reading text> RP"
- * Multiple units for the same verse may appear as separate lines or separated
- * by a pipe/bullet; we treat each regex match independently and group by verse.
+ * or, since each source file is already scoped to one book (data/sblgntapp/text/<Book>.txt),
+ * possibly without the leading book name at all:
+ *   "<chapter>:<verse> <reading text> WH Treg NIV RP] <alt reading text> RP"
+ * Both are handled; when no book name is found on the line, `bookHint` (from
+ * the filename) is used. Multiple units for the same verse may appear as
+ * separate lines; we treat each regex match independently and group by verse.
  * Returns Map<"BOOK", Map<"c:v", entries[]>>.
  */
-function parseApparatusText(text, sourceLabel) {
+function parseApparatusText(text, sourceLabel, bookHint) {
   const byBookVerse = new Map();
   const lines = text.split(/\r?\n/);
   let matched = 0;
@@ -101,15 +124,18 @@ function parseApparatusText(text, sourceLabel) {
   }
   variantList.sort((a, b) => b[0].length - a[0].length);
 
-  const refRe = /^([1-3]?\s?[A-Za-z][A-Za-z. ]*?)\s+(\d+):(\d+)\s+(.*)$/;
+  const refRe = /^(?:([1-3]?\s?[A-Za-z][A-Za-z. ]*?)\s+)?(\d+):(\d+)\s+(.*)$/;
 
   for (const rawLine of lines) {
     const line = rawLine.trim();
     if (!line) continue;
     const m = line.match(refRe);
     if (!m) continue;
-    const namePart = m[1].trim().toLowerCase().replace(/\.$/, '');
-    const book = variantList.find(([v]) => namePart === v || namePart.startsWith(v))?.[1];
+    let book = bookHint || null;
+    if (m[1]) {
+      const namePart = m[1].trim().toLowerCase().replace(/\.$/, '');
+      book = variantList.find(([v]) => namePart === v || namePart.startsWith(v))?.[1] || book;
+    }
     if (!book) continue;
     const chapter = m[2];
     const verse = m[3];
@@ -168,8 +194,11 @@ async function main() {
       log(`  failed: ${err.message}`);
       continue;
     }
-    log(`  ${rel}: ${text.length} bytes; first 1000 chars:\n${text.slice(0, 1000)}`);
-    const parsed = parseApparatusText(text, rel);
+    log(`  ${rel}: ${text.length} bytes; first 2500 chars:\n${text.slice(0, 2500)}`);
+    const base = path.basename(rel).replace(/\.(txt|xml)$/i, '');
+    const bookHint = FILENAME_TO_BOOK[base];
+    if (!bookHint) log(`  (no filename->book mapping for "${base}"; relying on in-line book names only)`);
+    const parsed = parseApparatusText(text, rel, bookHint);
     for (const [book, verseMap] of parsed) {
       if (!merged.has(book)) merged.set(book, new Map());
       const dest = merged.get(book);
