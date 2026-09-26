@@ -180,50 +180,76 @@ async function loadBsbTables() {
       xlsxPath
     );
     const xlsx = await import("xlsx");
-    const wb = xlsx.default.readFile(xlsxPath);
-    const sheetName = wb.SheetNames[0];
-    rows = xlsx.default.utils.sheet_to_json(wb.Sheets[sheetName], { header: 1, defval: "" });
+    const XLSX = xlsx.default ?? xlsx;
+    const wb = XLSX.readFile(xlsxPath, { cellFormula: false, cellHTML: false });
+    console.log(`bsb_tables.xlsx: sheets = ${JSON.stringify(wb.SheetNames)}`);
+    rows = [];
+    for (const sheetName of wb.SheetNames) {
+      const ws = wb.Sheets[sheetName];
+      if (!ws || !ws["!ref"]) {
+        console.log(`bsb_tables.xlsx: sheet "${sheetName}" is empty, skipping`);
+        continue;
+      }
+      const sheetRows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: "", raw: false });
+      console.log(
+        `bsb_tables.xlsx: sheet "${sheetName}" range=${ws["!ref"]} rows=${sheetRows.length} header=${JSON.stringify(sheetRows[0])}`
+      );
+      if (sheetRows.length < 2) continue;
+      const header = sheetRows[0].map((h) => String(h).toLowerCase().trim());
+      const hasRef = header.some((h) => h.includes("verse") || h.includes("reference") || h.includes("ref"));
+      const hasEnglish = header.some((h) => h.includes("english") || h.includes("translation") || h.includes("bsb"));
+      if (!hasRef || !hasEnglish) {
+        console.log(`bsb_tables.xlsx: sheet "${sheetName}" doesn't look like the interlinear table, skipping`);
+        continue;
+      }
+      // Data rows only; header handled per-sheet since column order could
+      // vary slightly between sheets (e.g. an OT sheet vs an NT sheet).
+      rows.push({ header, data: sheetRows.slice(1) });
+    }
   }
 
-  console.log(`bsb_tables: ${rows.length} rows. Header: ${JSON.stringify(rows[0])}`);
-  console.log(`bsb_tables: sample row: ${JSON.stringify(rows[1])}`);
-
-  const header = rows[0].map((h) => String(h).toLowerCase().trim());
-  const idx = (...keywords) => header.findIndex((h) => keywords.some((k) => h.includes(k)));
-  const refIdx = idx("verse", "reference", "ref");
-  const strongIdx = idx("strong");
-  const englishIdx = idx("english", "translation", "bsb");
-  const greekIdx = idx("greek", "hebrew", "original");
-
-  if (refIdx === -1 || englishIdx === -1) {
-    throw new Error(
-      `Could not identify reference/english columns in header ${JSON.stringify(header)}`
-    );
+  if (Array.isArray(rows) && rows.length && Array.isArray(rows[0])) {
+    // CSV path: a single flat array of rows, first is the header.
+    console.log(`bsb_tables: ${rows.length} rows. Header: ${JSON.stringify(rows[0])}`);
+    console.log(`bsb_tables: sample row: ${JSON.stringify(rows[1])}`);
+    rows = [{ header: rows[0].map((h) => String(h).toLowerCase().trim()), data: rows.slice(1) }];
   }
-  console.log(
-    `bsb_tables: columns ref=${refIdx} strong=${strongIdx} english=${englishIdx} greek=${greekIdx}`
-  );
+
+  if (!rows.length) throw new Error("No sheet/rows looked like the BSB interlinear table");
 
   const byVerse = new Map();
-  let lastRef = null;
-  for (let i = 1; i < rows.length; i++) {
-    const row = rows[i];
-    if (!row || !row.length) continue;
-    const refCell = row[refIdx];
-    const ref = refCell ? parseRef(refCell) : lastRef;
-    if (!ref) continue;
-    lastRef = ref;
-    const english = String(row[englishIdx] ?? "").trim();
-    if (!english) continue;
-    const strongBase = strongIdx !== -1 ? baseStrong(row[strongIdx]) : null;
-    const key = `${ref.book}:${ref.chapter}:${ref.verse}`;
-    let arr = byVerse.get(key);
-    if (!arr) {
-      arr = [];
-      byVerse.set(key, arr);
+  let totalDataRows = 0;
+  for (const { header, data } of rows) {
+    const idx = (...keywords) => header.findIndex((h) => keywords.some((k) => h.includes(k)));
+    const refIdx = idx("verse", "reference", "ref");
+    const strongIdx = idx("strong");
+    const englishIdx = idx("english", "translation", "bsb");
+    const greekIdx = idx("greek", "hebrew", "original");
+    if (refIdx === -1 || englishIdx === -1) continue;
+    console.log(
+      `bsb_tables: columns ref=${refIdx} strong=${strongIdx} english=${englishIdx} greek=${greekIdx} (of ${header.length})`
+    );
+
+    let lastRef = null;
+    for (const row of data) {
+      totalDataRows++;
+      if (!row || !row.length) continue;
+      const refCell = row[refIdx];
+      const ref = refCell ? parseRef(refCell) : lastRef;
+      if (!ref) continue;
+      lastRef = ref;
+      const english = String(row[englishIdx] ?? "").trim();
+      if (!english) continue;
+      const strongBase = strongIdx !== -1 ? baseStrong(row[strongIdx]) : null;
+      const key = `${ref.book}:${ref.chapter}:${ref.verse}`;
+      let arr = byVerse.get(key);
+      if (!arr) {
+        arr = [];
+        byVerse.set(key, arr);
+      }
+      arr.push({ english, strongBase });
     }
-    arr.push({ english, strongBase });
   }
-  console.log(`bsb_tables: grouped into ${byVerse.size} verses`);
+  console.log(`bsb_tables: ${totalDataRows} data rows total, grouped into ${byVerse.size} verses`);
   return byVerse;
 }

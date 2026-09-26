@@ -10,14 +10,17 @@ refresh the data from the same sources.
 ## English text
 
 ### Berean Standard Bible (BSB) — `data/bible/text/bsb/`
-- Source: bereanbible.com — `bsb.txt` (plain verse text, all 66 books) and
-  `bsb_tables` (the Greek/Hebrew↔English word-alignment spreadsheet, NT books
-  only), fetched by `scripts/bible/build-bsb.mjs`.
-- License: public domain. bereanbible.com states: "The Berean Bible text is
-  in the public domain and may be freely copied, printed, and distributed
-  without restriction."
-- Retrieved: (see the `data-bible` branch's build workflow run for the exact
-  date; each run re-fetches and re-commits).
+- Source: bereanbible.com — `https://bereanbible.com/bsb.txt` (plain verse
+  text, all 66 books) and `https://bereanbible.com/bsb_tables.xlsx` (the
+  Greek/Hebrew↔English word-alignment spreadsheet, NT books only), fetched by
+  `scripts/bible/build-bsb.mjs`.
+- License: public domain. `bsb.txt`'s own header states: "The Holy Bible,
+  Berean Standard Bible, BSB is produced in cooperation with Bible Hub,
+  Discovery Bible, unfoldingWord, [...] This text of God's Word has been
+  dedicated to the public domain. Free resources and databases are available
+  at BereanBible.com [...]"
+- Retrieved: 2026-09-26 (by the `data-bible` branch's build workflow; re-run
+  it to refresh).
 - NT verses are segment arrays `[text, greekIndex]` aligned to
   `data/bible/greek/<BOOK>.json` by matching `bsb_tables` rows to Greek words
   per verse on Strong's number, in the table's own reading order (see
@@ -25,21 +28,37 @@ refresh the data from the same sources.
   `greekIndex: null`. OT verses are plain strings.
 
 ### World English Bible (WEB) — `data/bible/text/web/`
-- Source: ebible.org, `eng-web` USFM download, fetched by
-  `scripts/bible/build-english.mjs`.
-- License: public domain. ebible.org states of the WEB: "This translation is
-  in the public domain, so you are free to copy, distribute, and use this
-  version of the Bible in any way you would like."
+- Source: ebible.org, `https://ebible.org/Scriptures/eng-web_usfm.zip`,
+  fetched by `scripts/bible/build-english.mjs`.
+- License: public domain. From the download's own `copr.htm`: "The World
+  English Bible is in the Public Domain. That means that it is not
+  copyrighted. However, \"World English Bible\" is a Trademark of eBible.org.
+  You may copy, publish, proclaim, distribute, redistribute, sell, give away,
+  quote, memorize, read publicly, broadcast, transmit, share, back up, post
+  on the Internet, print, reproduce, preach, teach from, and use the World
+  English Bible as much as you want [...] All we ask is that if you CHANGE
+  the actual text of the World English Bible in any way, you not call the
+  result the World English Bible any more."
+- Retrieved: 2026-09-26.
 
 ### King James Version (KJV) — `data/bible/text/kjv/`
-- Source: ebible.org, `eng-kjv` USFM download.
-- License: public domain (the KJV text itself; ebible.org distributes it
-  freely, noting "This 1769 King James Version is in the Public Domain.").
+- Source: ebible.org, `https://ebible.org/Scriptures/eng-kjv_usfm.zip`.
+- License: public domain. From the download's own `copr.htm`: "The King
+  James Version or Authorized Version of the Holy Bible, using the
+  standardized text of 1769, with Apocrypha/Deuterocanon[.] Public Domain
+  [...] Letters patent issued by King James with no expiration date means
+  that to print this translation in the United Kingdom or import printed
+  copies into the UK, you need permission. [...] This royal decree has no
+  effect outside of the UK, where this work is firmly in the Public Domain."
+- Retrieved: 2026-09-26.
 
 ### American Standard Version (ASV, 1901) — `data/bible/text/asv/`
-- Source: ebible.org, `eng-asv` USFM download.
-- License: public domain (published 1901; ebible.org states its ASV text
-  "is in the Public Domain.").
+- Source: ebible.org, `https://ebible.org/Scriptures/eng-asv_usfm.zip`.
+- License: public domain. From the download's own `copr.htm`: "The American
+  Standard Version of the Holy Bible, first published in 1901. Public
+  Domain [...] The American Standard Version of the Holy Bible is in the
+  Public Domain. Copy freely."
+- Retrieved: 2026-09-26.
 
 Footnotes, cross-references, Strong's tags and words-of-Jesus markup are
 stripped by `scripts/bible/lib/usfm.mjs` for all three ebible.org texts.
@@ -56,6 +75,7 @@ stripped by `scripts/bible/lib/usfm.mjs` for all three ebible.org texts.
   - MorphGNT tagging license: **CC BY-SA 3.0** — "the morphological parsing
     and lemmatization is made available under a CC-BY-SA License."
     (morphgnt/sblgnt `README.md`).
+  - Retrieved: 2026-09-26, `github.com/morphgnt/sblgnt` `master` branch.
 - Strong's numbers, Robinson-style morphology and short contextual glosses:
   **STEPBible TAGNT** ("Translators Amalgamated Greek NT",
   github.com/STEPBible/STEPBible-Data, files `TAGNT Mat-Jhn ...` and
@@ -65,6 +85,8 @@ stripped by `scripts/bible/lib/usfm.mjs` for all three ebible.org texts.
   - License: **CC BY 4.0** — "Data created by www.STEPBible.org based on
     work at Tyndale House Cambridge (CC BY 4.0)... Include any part of this
     data in software or publications without requesting permission."
+  - Retrieved: 2026-09-26, `github.com/STEPBible/STEPBible-Data` `master`
+    branch.
   - We use TAGNT's own Robinson-style grammar code (e.g. `V-AAI-3S`) as the
     `morph` field, since it is more standard/readable than MorphGNT's
     positional CCAT code and the task's schema example uses that style.
@@ -80,6 +102,8 @@ stripped by `scripts/bible/lib/usfm.mjs` for all three ebible.org texts.
   Strongs for Greek", github.com/STEPBible/STEPBible-Data,
   `Lexicons/TBESG ...txt`), edited from the Abbott-Smith Greek lexicon.
 - License: **CC BY 4.0** (same STEPBible.org license as above).
+- Retrieved: 2026-09-26, `github.com/STEPBible/STEPBible-Data` `master`
+  branch.
 - `count` is computed from `data/bible/greek/*.json` (occurrences of each
   Strong's id across the NT), not taken from the lexicon file.
 
