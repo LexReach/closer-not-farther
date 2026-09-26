@@ -1,0 +1,57 @@
+name: Build Bible data
+
+on:
+  push:
+    branches: [data-bible]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-bible
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data-bible
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install script dependencies
+        run: npm i --no-save xlsx
+
+      - name: Build data/bible
+        run: node scripts/bible/run-all.mjs
+        env:
+          BIBLE_SCRATCH: ${{ runner.temp }}/bible-src
+
+      - name: Show output sizes
+        run: |
+          echo "--- data/bible ---"
+          du -sh data/bible
+          find data/bible -maxdepth 2 -type d -exec du -sh {} \;
+          echo "--- git status ---"
+          git status --porcelain
+
+      - name: Spot-check JHN 1:1, ROM 5:1, MRK 16:9, 1JN 5:7 (KJV)
+        run: node scripts/bible/spot-check.mjs
+
+      - name: Commit and push data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/bible
+          if git diff --cached --quiet; then
+            echo "No changes to data/bible, nothing to commit."
+            exit 0
+          fi
+          git commit -m "Build Bible text/Greek/lexicon data ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+          git push origin HEAD:data-bible
