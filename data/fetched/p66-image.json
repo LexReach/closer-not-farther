@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-26T08:21:47.600Z",
+  "fetched_at": "2026-09-26T08:26:01.228Z",
   "api": "https://commons.wikimedia.org/w/api.php",
   "candidates_considered": [
     {
@@ -636,18 +636,18 @@
   "chosen": {
     "title": "File:Geneva, Bodmer Lab Ms Papyrus 66 (P.Bodmer II - PB 2) fol. 1r.jpg",
     "description_page_url": "https://commons.wikimedia.org/wiki/File:Geneva,_Bodmer_Lab_Ms_Papyrus_66_(P.Bodmer_II_-_PB_2)_fol._1r.jpg",
-    "direct_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Geneva%2C_Bodmer_Lab_Ms_Papyrus_66_%28P.Bodmer_II_-_PB_2%29_fol._1r.jpg/3840px-Geneva%2C_Bodmer_Lab_Ms_Papyrus_66_%28P.Bodmer_II_-_PB_2%29_fol._1r.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "direct_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Geneva%2C_Bodmer_Lab_Ms_Papyrus_66_%28P.Bodmer_II_-_PB_2%29_fol._1r.jpg/1920px-Geneva%2C_Bodmer_Lab_Ms_Papyrus_66_%28P.Bodmer_II_-_PB_2%29_fol._1r.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Geneva%2C_Bodmer_Lab_Ms_Papyrus_66_%28P.Bodmer_II_-_PB_2%29_fol._1r.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
     "license": "Public domain",
     "artist": "Unknown authorUnknown author",
     "credit": "https://bodmerlab.unige.ch/fr/constellations/papyri/mirador/1072205287?page=006",
     "image_description": "Folio 1 recto from Papyrus 66 containing much of the Gospel of John lying on the other folios of the first four quires and some of the fifth quire",
-    "width": 2400,
-    "height": 2054,
+    "width": 1920,
+    "height": 1643,
     "original_width": 6796,
     "original_height": 5817,
     "mime": "image/jpeg",
-    "bytes_downloaded": 1266278,
+    "bytes_downloaded": 416985,
     "saved_to": "public/p66/p66-page1.jpg"
   },
   "downloaded": true
