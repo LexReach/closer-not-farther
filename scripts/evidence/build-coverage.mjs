@@ -156,7 +156,7 @@ async function main() {
     }
     if (shape && timeLeft() > 0) {
       try {
-        const rows = await shape.fetchBookPages(book); // [{ga, pageId, folio, verseKeys:["c:v",...], range}]
+        const rows = await shape.fetchBookPages(book, START + COVERAGE_BUDGET_MS); // [{ga, pageId, folio, verseKeys:["c:v",...], range}]
         for (const row of rows) {
           if (!pageData.has(row.ga)) pageData.set(row.ga, new Map());
           const m = pageData.get(row.ga);

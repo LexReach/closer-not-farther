@@ -189,13 +189,23 @@ function extractPageRows(json, book, unknownGA) {
 export const CONFIRMED_SHAPE = {
   unknownGA: { docIDs: new Set() },
 
-  async fetchBookPages(book) {
+  /** deadline: a Date.now()-style timestamp (default: no deadline). Checked before every
+   * chapter fetch — not just between books — so one book's own chapter loop can't run past
+   * the caller's overall time budget no matter how many chapters it has or how slow any
+   * individual request is. */
+  async fetchBookPages(book, deadline = Infinity) {
     const chapters = Array.from({ length: book.verses.length }, (_, i) => i + 1);
     const seenPageIds = new Set();
     const rows = [];
+    let deadlineHit = false;
     await runPool(
       chapters,
       async (chapter) => {
+        if (Date.now() > deadline) {
+          if (!deadlineHit) console.log(`  [ntvmr] ${book.id}: deadline reached mid-book; skipping remaining chapters.`);
+          deadlineHit = true;
+          return;
+        }
         const url = `${SEARCH_URL}?${new URLSearchParams({
           indexContent: `${book.osis}.${chapter}`,
           detail: 'page',
@@ -208,7 +218,7 @@ export const CONFIRMED_SHAPE = {
           // this bound is about request latency, not the output-size limit (none set).
           limit: '1500',
         })}`;
-        const text = await cachedFetchText(url, { label: `${book.id}.${chapter}`, timeoutMs: 30000, retries: 1 });
+        const text = await cachedFetchText(url, { label: `${book.id}.${chapter}`, timeoutMs: 20000, retries: 1 });
         let json;
         try {
           json = JSON.parse(text);
@@ -223,7 +233,7 @@ export const CONFIRMED_SHAPE = {
           rows.push(row);
         }
       },
-      { concurrency: 3, delayMs: 300, onError: (chapter, err) => console.log(`  [ntvmr] ${book.id}.${chapter} failed: ${err.message}`) },
+      { concurrency: 3, delayMs: 200, onError: (chapter, err) => console.log(`  [ntvmr] ${book.id}.${chapter} failed: ${err.message}`) },
     );
     return rows;
   },
