@@ -18,21 +18,37 @@ function currentPath(): string {
 }
 
 const navLinks = new Map<string, HTMLAnchorElement>();
+const groupLinks = new Map<string, HTMLAnchorElement>();
+
+const TOP: { group: RouteDef['group']; path: string; label: string; icon: string }[] = [
+  { group: 'read', path: '/read', label: 'Read', icon: '¶' },
+  { group: 'library', path: '/library', label: 'Library', icon: '▤' },
+  { group: 'why', path: '/why', label: 'Why', icon: '?' },
+  { group: 'about', path: '/about', label: 'About', icon: '·' },
+];
 
 function buildShell(): HTMLElement {
+  const whyItems = routes.filter((r) => r.group === 'why' && r.path !== '/why');
   const nav = h(
     'ul',
     { class: 'nav' },
-    routes.filter((r) => !r.hidden).map((r) => {
-      const a = h(
-        'a',
-        { href: href(r.path), 'data-link': true },
-        h('span', { class: 'nav__num', 'aria-hidden': 'true' }, r.num),
-        h('span', { class: 'nav__long' }, r.title),
-        h('span', { class: 'nav__short' }, r.short),
-      );
-      navLinks.set(r.path, a);
-      return h('li', null, a);
+    TOP.map((t) => {
+      const a = h('a', { href: href(t.path), 'data-link': true, class: 'nav__top' }, h('span', { class: 'nav__icon', 'aria-hidden': 'true' }, t.icon), h('span', null, t.label));
+      groupLinks.set(t.group, a);
+      const sub =
+        t.group === 'why'
+          ? h(
+              'ul',
+              { class: 'nav__sub' },
+              whyItems.map((r) => {
+                const sa = h('a', { href: href(r.path), 'data-link': true }, h('span', { class: 'nav__num', 'aria-hidden': 'true' }, r.num), h('span', null, r.title));
+                navLinks.set(r.path, sa);
+                return h('li', null, sa);
+              }),
+              h('li', null, h('a', { href: href('/why#film'), 'data-link': true }, h('span', { class: 'nav__num', 'aria-hidden': 'true' }, '◼'), h('span', null, 'The film'))),
+            )
+          : '';
+      return h('li', { class: `nav__item nav__item--${t.group}` }, a, sub);
     }),
   );
   const main = h('main', { id: 'main', class: 'main', tabindex: '-1' });
@@ -42,9 +58,9 @@ function buildShell(): HTMLElement {
     h(
       'nav',
       { class: 'rail', 'aria-label': 'Sections' },
-      h('a', { class: 'rail__brand', href: href('/'), 'data-link': true }, 'Closer, Not Farther', h('small', null, 'How the New Testament text reached us')),
+      h('a', { class: 'rail__brand', href: href('/'), 'data-link': true }, 'Closer, Not Farther', h('small', null, 'The Bible and the manuscripts that carry it')),
       nav,
-      h('p', { class: 'rail__foot' }, 'All figures come from the data files cited on each page.'),
+      h('p', { class: 'rail__foot' }, 'Every figure comes from a data file with its source.'),
     ),
     main,
     h(
@@ -70,6 +86,11 @@ async function render(focus = false) {
     if (p === path) a.setAttribute('aria-current', 'page');
     else a.removeAttribute('aria-current');
   }
+  for (const [g, a] of groupLinks) {
+    if (route && route.group === g) a.setAttribute('aria-current', route.path === a.pathname.replace(BASE, '') || (g === 'read' && route.group === 'read') ? 'page' : 'true');
+    else a.removeAttribute('aria-current');
+  }
+  document.body.dataset.group = route?.group ?? '';
   const token = ++renderToken;
   clear(main);
   const page = h('div', { class: 'page' });
@@ -125,3 +146,10 @@ function init() {
 }
 
 init();
+
+// Offline cache for the Reader (production builds only).
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js?v=${__COMMIT__}`, { scope: import.meta.env.BASE_URL }).catch(() => {});
+  });
+}

@@ -78,7 +78,7 @@ export function render(root: HTMLElement) {
       ].map(([k, v]) => h('div', null, h('dt', null, k), h('dd', null, v))),
     ),
   );
-  const exit = h('a', { class: 'pr-exit', href: href('/'), 'data-link': true }, 'Exit');
+  const exit = h('a', { class: 'pr-exit', href: href('/why'), 'data-link': true }, 'Exit');
   const keysBtn = h('button', { class: 'pr-keys', type: 'button', 'aria-label': 'Show keyboard shortcuts' }, '?');
   keysBtn.addEventListener('click', () => toggleHelp());
   const shell = h('div', { class: 'pr', tabindex: '-1' }, stage, rail, pauseBadge, help, exit, keysBtn, status);

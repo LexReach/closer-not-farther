@@ -341,3 +341,20 @@ body.is-bare .site-footer { display: none; }
 /* Keep the footer below the fold while a route renders, so late content never shifts it into view. */
 .main { min-height: 100vh; min-height: 100svh; }
 .wstrip__seg .wstrip__n { color: var(--ink); opacity: 0.8; }
+
+/* ---------- Navigation: Read · Library · Why · About ---------- */
+.nav__item { display: block; }
+.nav__top { font-weight: 500; font-size: 0.95rem; }
+.nav a.nav__top[aria-current] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.nav__icon { width: 1.1em; flex: none; text-align: center; color: var(--muted); font-size: 0.85rem; }
+.nav a.nav__top[aria-current] .nav__icon { color: var(--accent); }
+.nav__sub { list-style: none; margin: 2px 0 8px; padding: 0 0 0 14px; display: none; flex-direction: column; gap: 1px; border-left: 1px solid var(--rule); margin-left: 18px; }
+body[data-group="why"] .nav__sub { display: flex; }
+.nav__sub a { font-size: 0.84rem; padding: 5px 10px; }
+@media (max-width: 860px) {
+  .nav__sub { display: none !important; }
+  .nav__item { flex: 1 1 0; }
+  .nav a.nav__top { flex-direction: column; align-items: center; gap: 1px; font-size: 0.75rem; padding: 8px 4px 10px; }
+  .nav__icon { font-size: 1rem; }
+  .nav a.nav__top[aria-current] { background: transparent; box-shadow: inset 0 3px 0 var(--accent); }
+}

@@ -39,6 +39,7 @@ function filmSection(): { el: HTMLElement; destroy(): void } {
     h('h2', { id: 'film-h', class: 'film__h' }, 'Watch the 3-minute version'),
     h('p', { class: 'film__lede' }, 'A recorded walk through every chapter, with captions. Or let the site drive itself: the live tour moves the real controls in your browser.'),
     h('div', { class: 'film__frame' }, video),
+    h('p', { class: 'film__note' }, 'Recorded before the Reader was added, so the navigation in the film differs from the site’s.'),
     h('div', { class: 'btn-row film__actions' }, tourBtn, h('a', { class: 'btn', href: `${base}film/teaser.mp4`, download: 'closer-not-farther-teaser.mp4' }, 'Download the 20-second teaser')),
   );
   // Only load the film when the reader gets near it.
@@ -121,7 +122,7 @@ export function render(root: HTMLElement) {
         { class: 'hero__text' },
         h('h1', { id: 'hero-h', class: 'hero__title' }, 'As time goes on, we’re not getting farther from the text. We’re getting closer.'),
         h('p', { class: 'hero__line' }, 'Watch one text copied two ways: down a single chain, and across a branching tree. Then see what survives, and what can be recovered.'),
-        h('div', { class: 'btn-row hero__actions' }, explore, h('a', { class: 'btn hero__btn', href: href('/present'), 'data-link': true }, 'Present')),
+        h('div', { class: 'btn-row hero__actions' }, explore, h('a', { class: 'btn hero__btn', href: href('/present'), 'data-link': true }, 'Present'), h('a', { class: 'btn hero__btn', href: href('/read'), 'data-link': true }, 'Read the text')),
       ),
       hero.el,
       h('p', { class: 'hero__cue', 'aria-hidden': 'true' }, 'Scroll'),
@@ -164,6 +165,8 @@ export function render(root: HTMLElement) {
     mountIo.observe(el);
     playIo.observe(el);
   }
+
+  if (location.hash === '#film') requestAnimationFrame(() => document.getElementById('film')?.scrollIntoView());
 
   return () => {
     hero.destroy();

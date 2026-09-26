@@ -411,7 +411,16 @@ function build(root: HTMLElement, lib: LibraryData): () => void {
     if (src) {
       import('../library/viewer').then(({ Viewer }) => {
         if (openGa !== ga) return;
-        viewer = Viewer(src, m.name ?? gaLabel(m.ga));
+        const pg = Number(new URLSearchParams(location.hash.slice(1)).get('p'));
+        viewer = Viewer(src, m.name ?? gaLabel(m.ga), {
+          page: pg >= 1 ? pg - 1 : null,
+          // Remember the page per manuscript in the URL (#ms=04&p=12).
+          onPage: (i) => {
+            const q = new URLSearchParams(location.hash.slice(1));
+            q.set('p', String(i + 1));
+            history.replaceState(history.state, '', `${location.pathname}${location.search}#${q}`);
+          },
+        });
         body.insertBefore(viewer.el, body.querySelector('.lib-meta'));
       });
     }

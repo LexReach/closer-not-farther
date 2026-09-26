@@ -6,7 +6,7 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
 
 const SITE = process.env.SITE_URL ?? 'https://lexreach.github.io/closer-not-farther/';
-const routes = ['telephone', 'timeline', 'p66', 'variants', 'names', 'coincidences', 'library', 'present', 'about'];
+const routes = ['read', 'why', 'telephone', 'timeline', 'p66', 'variants', 'names', 'coincidences', 'library', 'present', 'about'];
 let html = readFileSync('dist/index.html', 'utf8');
 // Preload the three fonts every page uses first (display, body, UI) so text
 // does not reflow when they arrive.

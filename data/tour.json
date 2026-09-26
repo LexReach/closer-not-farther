@@ -4,7 +4,7 @@
     {
       "id": "intro",
       "title": "The claim",
-      "route": "/",
+      "route": "/why",
       "steps": [
         {
           "caption": "As time goes on, we are not getting farther from the text of the New Testament. We are getting closer. Here is the case, one piece of evidence at a time.",
@@ -314,7 +314,7 @@
     {
       "id": "closing",
       "title": "The honest part",
-      "route": "/",
+      "route": "/why",
       "steps": [
         {
           "caption": "Every piece of this has critics, and their strongest points are on the site next to each chart, with the sources. Check them.",

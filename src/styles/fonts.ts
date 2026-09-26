@@ -10,3 +10,5 @@ import '@fontsource/noto-serif/greek-400.css';
 import '@fontsource/noto-serif/greek-ext-400.css';
 import '@fontsource/noto-serif/greek-600.css';
 import '@fontsource/noto-serif/greek-ext-600.css';
+import '@fontsource/noto-serif-hebrew/hebrew-400.css';
+import '@fontsource/noto-serif-hebrew/hebrew-600.css';

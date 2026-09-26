@@ -1,8 +1,18 @@
 {
   "/": {
     "title": "Closer, Not Farther",
-    "description": "An interactive look at how the New Testament text was copied, found and checked, with what skeptics say at every step.",
+    "description": "A Bible reader in four versions with Greek and Hebrew, where every verse opens its manuscript evidence.",
     "image": "og/home.png"
+  },
+  "/read": {
+    "title": "Read the Bible with the manuscripts that carry it · Closer, Not Farther",
+    "description": "A Bible reader in four versions with Greek and Hebrew, where every verse opens its manuscript evidence.",
+    "image": "og/read.png"
+  },
+  "/why": {
+    "title": "As time goes on, we’re not getting farther from the text. We’re getting closer. · Closer, Not Farther",
+    "description": "An interactive look at how the New Testament text was copied, found and checked, with what skeptics say at every step.",
+    "image": "og/why.png"
   },
   "/telephone": {
     "title": "Telephone vs. Tree · Closer, Not Farther",

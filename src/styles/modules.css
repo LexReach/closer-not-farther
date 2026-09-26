@@ -559,3 +559,4 @@
 .p66-figwrap .p66-fig { position: static; }
 .p66-photo img { width: 100%; height: auto; display: block; border-radius: 4px; background: #000; }
 @media (max-width: 900px) { .p66-figwrap { position: static; max-width: 460px; } }
+.film__note { font-family: var(--font-ui); font-size: 0.8rem; color: var(--muted); margin: -8px 0 14px; }

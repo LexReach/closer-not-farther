@@ -13,7 +13,9 @@ const ROOT = resolve(new URL('..', import.meta.url).pathname);
 const OUT = join(ROOT, 'public/og');
 
 export const PAGES = [
-  { id: 'home', path: '/', kicker: 'Closer, Not Farther', title: 'As time goes on, we’re not getting farther from the text. We’re getting closer.', description: 'An interactive look at how the New Testament text was copied, found and checked, with what skeptics say at every step.' },
+  { id: 'home', path: '/', kicker: 'Closer, Not Farther', title: 'Read the Bible with the manuscripts that carry it', description: 'A Bible reader in four versions with Greek and Hebrew, where every verse opens its manuscript evidence.' },
+  { id: 'read', path: '/read', kicker: 'Read', title: 'Read the Bible with the manuscripts that carry it', description: 'A Bible reader in four versions with Greek and Hebrew, where every verse opens its manuscript evidence.' },
+  { id: 'why', path: '/why', kicker: 'Why trust the text', title: 'As time goes on, we’re not getting farther from the text. We’re getting closer.', description: 'An interactive look at how the New Testament text was copied, found and checked, with what skeptics say at every step.' },
   { id: 'telephone', path: '/telephone', kicker: 'Module 1', title: 'Telephone vs. Tree', description: 'Copy a text through a single chain and through a branching tree, then try to recover the original by majority vote.' },
   { id: 'timeline', path: '/timeline', kicker: 'Module 2', title: 'Closer, Not Farther', description: 'Five centuries of manuscript discovery: the earliest copy scholars can read has moved back more than a thousand years since 1516.' },
   { id: 'p66', path: '/p66', kicker: 'Module 3', title: 'Read P66 yourself', description: 'A papyrus of John from about 200 AD, lined up word by word with a modern Greek edition and an English translation.' },

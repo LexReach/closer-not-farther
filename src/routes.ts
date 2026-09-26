@@ -14,20 +14,43 @@ export interface RouteDef {
   hidden?: boolean;
   /** Full-bleed page without the rail (present mode). */
   bare?: boolean;
+  /** Top-level section in the navigation: Read · Library · Why · About. */
+  group: 'read' | 'library' | 'why' | 'about';
   load: () => Promise<{ render: Render }>;
 }
 
 export const routes: RouteDef[] = [
   {
     path: '/',
-    num: '0',
-    title: 'Home',
-    short: 'Home',
-    hook: '',
+    num: '',
+    title: 'Read',
+    short: 'Read',
+    hook: 'The Bible in four versions, Greek and Hebrew, with the manuscript evidence for every verse.',
+    group: 'read',
+    hidden: true,
+    load: () => import('./reader/reader'),
+  },
+  {
+    path: '/read',
+    num: '',
+    title: 'Read',
+    short: 'Read',
+    hook: 'The Bible in four versions, Greek and Hebrew, with the manuscript evidence for every verse.',
+    group: 'read',
+    load: () => import('./reader/reader'),
+  },
+  {
+    path: '/why',
+    num: '',
+    title: 'Why trust the text',
+    short: 'Why',
+    hook: 'The argument in seven chapters, each with a live chart, ending on what skeptics say.',
+    group: 'why',
     load: () => import('./modules/home'),
   },
   {
     path: '/telephone',
+    group: 'why',
     num: '1',
     title: 'Telephone vs. Tree',
     short: 'Tree',
@@ -36,6 +59,7 @@ export const routes: RouteDef[] = [
   },
   {
     path: '/timeline',
+    group: 'why',
     num: '2',
     title: 'Closer, Not Farther',
     short: 'Timeline',
@@ -44,6 +68,7 @@ export const routes: RouteDef[] = [
   },
   {
     path: '/p66',
+    group: 'why',
     num: '3',
     title: 'Read P66 yourself',
     short: 'P66',
@@ -52,6 +77,7 @@ export const routes: RouteDef[] = [
   },
   {
     path: '/variants',
+    group: 'why',
     num: '4',
     title: 'The 110% puzzle',
     short: 'Variants',
@@ -60,6 +86,7 @@ export const routes: RouteDef[] = [
   },
   {
     path: '/names',
+    group: 'why',
     num: '5',
     title: 'Names as fingerprints',
     short: 'Names',
@@ -68,6 +95,7 @@ export const routes: RouteDef[] = [
   },
   {
     path: '/coincidences',
+    group: 'why',
     num: '6',
     title: 'Undesigned coincidences',
     short: 'Interlocks',
@@ -76,6 +104,7 @@ export const routes: RouteDef[] = [
   },
   {
     path: '/library',
+    group: 'library',
     num: '7',
     title: 'The Library',
     short: 'Library',
@@ -84,6 +113,7 @@ export const routes: RouteDef[] = [
   },
   {
     path: '/present',
+    group: 'why',
     num: '▶',
     title: 'Present',
     short: 'Present',
@@ -94,6 +124,7 @@ export const routes: RouteDef[] = [
   },
   {
     path: '/about',
+    group: 'about',
     num: '·',
     title: 'About',
     short: 'About',
