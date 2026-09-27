@@ -36,10 +36,24 @@
   body.ev-open .page--reader .rd-page, body.ev-open .page--reader .rd-bar { margin-right: calc(var(--ev-w) - 24px); }
 }
 .ev-grab { display: none; }
+/* Collapsed to one line (a deep link): the chapter stays in view. */
+.ev.is-collapsed { top: auto; bottom: 16px; right: 16px; width: min(var(--ev-w), calc(100vw - 32px)); padding: 0; overflow: hidden; border: 1px solid var(--rule); border-radius: 12px; }
+.ev.is-collapsed > :not(.ev-peek):not(.ev-close) { display: none; }
+.ev.is-collapsed .ev-close { top: 50%; transform: translateY(-50%); }
+.ev-peek { display: flex; align-items: center; gap: 10px; width: 100%; padding: 14px 56px 14px 16px; font: inherit; font-size: 0.92rem; text-align: left; color: inherit; background: none; border: 0; cursor: pointer; }
+.ev-peek__text { min-width: 0; }
+.ev-peek__more { margin-left: auto; flex: none; color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+.ev-peek__more::after { content: ' ▴'; }
 .ev-close { position: absolute; top: 12px; right: 12px; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--rule); background: var(--bg); color: var(--ink); font-size: 1.25rem; line-height: 1; cursor: pointer; }
 .ev-ref { margin: 0; font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
 .ev-title { font-family: var(--font-display); font-size: 1.45rem; line-height: 1.2; margin: 4px 44px 6px 0; }
 .ev-oldest { margin: 0 0 6px; font-size: 0.95rem; }
+.ev-how { margin: -6px 0 12px; font-size: 0.82rem; color: var(--muted); }
+.ev-how summary { cursor: pointer; color: var(--accent); width: max-content; }
+.ev-how p { margin: 6px 0 0; line-height: 1.45; }
+.ev-card__tags abbr { text-decoration: underline dotted; cursor: help; }
+.ev-card__art .tx { opacity: 0; transition: opacity 0.25s; }
+.ev-card__art.is-filled .tx { opacity: 1; }
 .ev-cov { margin: 0 0 12px; font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
 .ev-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 0 0 10px; }
 .ev-segs { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; }
@@ -76,6 +90,7 @@
   .ev-strip { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 158px; overflow-x: auto; padding-bottom: 6px; scroll-snap-type: x proximity; }
   .ev-card { scroll-snap-align: start; }
   body.ev-open .page--reader .rd-page { padding-bottom: 60vh; }
+  .ev.is-collapsed { left: 0; right: 0; bottom: 0; width: auto; border-width: 1px 0 0; border-radius: 16px 16px 0 0; padding-bottom: env(safe-area-inset-bottom); }
 }
 
 /* ---- Transcription rendering ---- */

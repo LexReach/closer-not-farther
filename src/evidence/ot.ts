@@ -109,7 +109,7 @@ export async function openOt(b: Book, pos: Pos, close: () => void): Promise<HTML
   });
   return h(
     'aside',
-    { class: 'ev', 'aria-labelledby': 'ev-title', tabindex: '-1' },
+    { class: 'ev', 'aria-labelledby': 'ev-title', tabindex: '-1', 'data-peek': `${n(list.length)} of the 31 listed witnesses${oldest ? ` · oldest ${oldest.name}, ${shortDate(oldest)}` : ''}` },
     h('div', { class: 'ev-grab', 'aria-hidden': 'true' }),
     x,
     h(

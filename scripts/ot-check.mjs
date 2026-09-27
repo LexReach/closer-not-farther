@@ -31,7 +31,10 @@ for (const width of [1280, 400]) {
   check(/[ְ-ֻ]/.test(text), `${tag}: Hebrew is pointed`);
   check(/[֑-֯]/.test(text) && !text.includes('/'), `${tag}: cantillation shown, morpheme dividers removed`);
   check((await page.locator('.rd-row').count()) >= 31, `${tag}: Genesis 1 has 31 rows`);
-  check(await ok(page.waitForSelector('.ev .ev-title', { timeout: 8000 })), `${tag}: evidence panel opens for Genesis 1:1`);
+  check(await ok(page.waitForSelector('.ev.is-collapsed .ev-peek', { timeout: 8000 })), `${tag}: evidence panel opens collapsed for Genesis 1:1`);
+  await page.screenshot({ path: `${out}/ot-gen-1-1-collapsed-${width}.png` });
+  await page.locator('.ev-peek').click();
+  check(await ok(page.waitForSelector('.ev .ev-title', { timeout: 8000 })), `${tag}: evidence panel expands for Genesis 1:1`);
   const title = await page.locator('.ev-title').innerText().catch(() => '');
   const cards = await page.locator('.ev-card[data-ot]').count();
   check(cards >= 2 && (await page.locator('.ev-card[data-ot="leningrad-codex"]').count()) === 1, `${tag}: ${title}; ${cards} witness cards incl. Leningrad`);
@@ -51,6 +54,7 @@ for (const width of [1280, 400]) {
 
   // Isaiah 53:5: the Great Isaiah Scroll, drawn without vowel signs.
   await page.goto(`${base}read/#isa.53.5`, { waitUntil: 'networkidle' });
+  await page.locator('.ev-peek').click({ timeout: 8000 }).catch(() => {});
   check(await ok(page.waitForSelector('.ev-card[data-ot="1QIsaa"]', { timeout: 10000 })), `${tag}: Isaiah 53:5 lists 1QIsaa`);
   const oldest = await page.locator('.ev-oldest').innerText().catch(() => '');
   check(/Isaiah Scroll|1QIsa/i.test(oldest), `${tag}: ${oldest}`);

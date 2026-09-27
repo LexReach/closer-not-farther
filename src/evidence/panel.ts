@@ -80,7 +80,7 @@ export function createEvidence(): EvidenceLayer {
     document.body.classList.remove('ev-open');
   }
 
-  async function open(pos: Pos) {
+  async function open(pos: Pos, collapsed = false) {
     const b = bookById.get(pos.book)!;
     if (!pos.verse) return close();
     const my = ++token;
@@ -92,7 +92,7 @@ export function createEvidence(): EvidenceLayer {
         onClosed?.();
       });
       if (my !== token) return;
-      return mount(el);
+      return mount(el, collapsed);
     }
     const t0 = performance.now();
     const [lib, wit, sum, tiers, txi, app] = await Promise.all([libP, loadWitnesses(b.id, pos.chapter), loadSummary(b.id), loadTiers(), loadTxIndex(b.id), loadApparatus(b.id)]);
@@ -122,7 +122,7 @@ export function createEvidence(): EvidenceLayer {
       { class: 'ev-sort', 'aria-label': 'Sort witnesses' },
       h('option', { value: 'date' }, 'Oldest first'),
       h('option', { value: 'ga' }, 'By number'),
-      h('option', { value: 'tx' }, 'Transcribed first'),
+      h('option', { value: 'tx' }, 'Text available first'),
     );
     sortSel.value = prefs.sort;
     const more = h('button', { type: 'button', class: 'btn ev-more', hidden: true });
@@ -135,36 +135,59 @@ export function createEvidence(): EvidenceLayer {
         for (const e of es) {
           if (!e.isIntersecting) continue;
           io.unobserve(e.target);
-          const el = e.target as HTMLElement;
-          const ga = el.dataset.ga!;
-          const pid = tx[ga];
-          if (pid) {
-            loadTx(ga, pid).then((page) => {
-              if (!page || !el.isConnected) return;
-              const slot = el.querySelector('.ev-card__art')!;
-              clear(slot);
-              slot.appendChild(renderPage(page, { verse: vid, window: 1, papyrus: lib.byGa.get(ga)?.cat === 'P' }));
-            });
-          }
+          preview(e.target as HTMLElement);
         }
       },
       { root: null, rootMargin: '200px' },
     );
+
+    /** The verse's lines from the transcription, faded in once, into a box that already has its size. */
+    function preview(el: HTMLElement) {
+      const ga = el.dataset.ga!;
+      const pid = tx[ga];
+      const slot = el.querySelector<HTMLElement>('.ev-card__art')!;
+      if (!pid) {
+        slot.appendChild(h('span', { class: 'ev-card__ga-big' }, gaLabel(ga)));
+        return;
+      }
+      loadTx(ga, pid).then((page) => {
+        if (!el.isConnected) return;
+        clear(slot);
+        slot.appendChild(page ? renderPage(page, { verse: vid, window: 1, papyrus: lib.byGa.get(ga)?.cat === 'P' }) : h('span', { class: 'ev-card__ga-big' }, gaLabel(ga)));
+        slot.classList.add('is-filled');
+      });
+    }
 
     function card(r: WitRow): HTMLElement {
       const [ga, , , , level] = r;
       const m: Ms | undefined = lib.byGa.get(ga);
       const img = lib.images[ga];
       const hasTx = !!tx[ga];
-      const thumb = !hasTx && img ? thumbUrl(img, 200) : null;
+      // The Library's photograph when there is one; otherwise (or if it fails)
+      // the transcribed lines; otherwise the number.
+      const thumb = img ? thumbUrl(img, 200) : null;
       const art = h(
         'div',
         { class: `ev-card__art ${m?.cat === 'P' ? 'is-papyrus' : 'is-vellum'}` },
-        hasTx ? h('span', { class: 'ev-card__ga-big' }, gaLabel(ga)) : thumb ? h('img', { src: thumb, alt: '', loading: 'lazy', decoding: 'async', onerror: (e: Event) => (e.target as HTMLElement).replaceWith(h('span', { class: 'ev-card__ga-big' }, gaLabel(ga))) }) : h('span', { class: 'ev-card__ga-big' }, gaLabel(ga)),
+        thumb
+          ? h('img', {
+              src: thumb,
+              alt: '',
+              loading: 'lazy',
+              decoding: 'async',
+              onerror: (e: Event) => {
+                const li = (e.target as HTMLElement).closest<HTMLElement>('.ev-card');
+                (e.target as HTMLElement).remove();
+                if (li) preview(li);
+              },
+            })
+          : hasTx
+            ? ''
+            : h('span', { class: 'ev-card__ga-big' }, gaLabel(ga)),
       );
       const btn = h(
         'button',
-        { type: 'button', class: 'ev-card__btn', 'aria-label': `${gaLabel(ga)}${m?.name ? `, ${m.name}` : ''}, ${dateLabel(lib, ga)}${hasTx ? ', transcribed' : ''}` },
+        { type: 'button', class: 'ev-card__btn', 'aria-label': `${gaLabel(ga)}${m?.name ? `, ${m.name}` : ''}, ${dateLabel(lib, ga)}${core.has(ga) ? ', cited in the standard critical edition (NA28)' : ''}${hasTx ? ', text available' : ''}` },
         art,
         h(
           'span',
@@ -172,7 +195,14 @@ export function createEvidence(): EvidenceLayer {
           h('strong', { class: 'ev-card__ga' }, gaLabel(ga)),
           m?.name ? h('span', { class: 'ev-card__name' }, m.name) : '',
           h('span', { class: 'ev-card__date' }, dateLabel(lib, ga)),
-          h('span', { class: 'ev-card__tags' }, m ? CAT_ONE[m.cat] : '', core.has(ga) ? ' · NA28' : '', level === 'c' ? ' · by contents' : '', hasTx ? ' · transcribed' : ''),
+          h(
+            'span',
+            { class: 'ev-card__tags' },
+            m ? CAT_ONE[m.cat] : '',
+            core.has(ga) ? [' · ', h('abbr', { title: 'Cited in the standard critical edition (Nestle–Aland, 28th edition)' }, 'cited in NA28')] : '',
+            level === 'c' ? ' · by contents' : '',
+            hasTx ? ' · text available' : '',
+          ),
         ),
       );
       btn.addEventListener('click', async () => {
@@ -201,7 +231,7 @@ export function createEvidence(): EvidenceLayer {
       for (const r of next) {
         const c = card(r);
         list.appendChild(c);
-        if (tx[r[0]]) io.observe(c);
+        if (tx[r[0]] && !lib.images[r[0]]) io.observe(c);
       }
       shown += next.length;
       more.hidden = shown >= current.length;
@@ -225,11 +255,15 @@ export function createEvidence(): EvidenceLayer {
 
     const coverage =
       rows.length === 0
-        ? 'None of the 446 manuscripts indexed so far is recorded as carrying this verse; later minuscules not yet indexed may.'
+        ? 'None of the 446 manuscripts indexed so far is recorded as carrying this verse.'
+        : 'Counted from a page index of 446 early manuscripts, so the full number of copies is higher.';
+    const howCounted =
+      rows.length === 0
+        ? 'Later minuscules not yet indexed may carry it.'
         : catLevel === 0
-          ? `Each is located on a specific page in the INTF’s page index. So far the index here covers 446 manuscripts, nearly all the papyri and majuscules but few of the later minuscules, so the full number of copies is higher.`
+          ? 'Each manuscript is located on a specific page in the INTF’s page index (Münster). The index here covers 446 manuscripts: nearly all the papyri and majuscules, but few of the later minuscules.'
           : pageLevel === 0
-            ? `Counted from the catalogue’s record of what each manuscript contains, not located page by page, so treat the number as an upper bound.`
+            ? 'Counted from the catalogue’s record of what each manuscript contains, not located page by page, so treat the number as an upper bound.'
             : `${n(pageLevel)} are located on a specific page in the INTF’s index; ${n(catLevel)} more are counted from the catalogue’s record of their contents.`;
 
     const transcribed = Object.keys(tx).length;
@@ -248,7 +282,13 @@ export function createEvidence(): EvidenceLayer {
             ` (${dateLabel(lib, oldest[0])})`,
           )
         : '',
-      h('p', { class: 'ev-cov' }, coverage, transcribed ? ` ${n(transcribed)} ${transcribed === 1 ? 'has' : 'have'} a transcription of this verse.` : ''),
+      h('p', { class: 'ev-cov' }, coverage),
+      h(
+        'details',
+        { class: 'ev-how' },
+        h('summary', null, 'How this is counted'),
+        h('p', null, howCounted, transcribed ? ` ${n(transcribed)} ${transcribed === 1 ? 'has' : 'have'} the text of this verse available here, transcribed by the INTF and IGNTP.` : '', ' A manuscript’s date is its catalogue date; “cited in NA28” marks the witnesses the standard critical edition (Nestle–Aland, 28th edition) cites consistently.'),
+      ),
     );
     const variants = app[key]?.length
       ? h(
@@ -289,14 +329,37 @@ export function createEvidence(): EvidenceLayer {
       h('p', { class: 'ev-notice' }, NTVMR_NOTICE, ' ', h('a', { href: href('/about#evidence'), 'data-link': true }, 'Sources and terms')),
     );
     if (rows.length) fill();
-    mount(el);
+    el.dataset.peek = rows.length ? `Carried by ${n(rows.length)} manuscript${rows.length === 1 ? '' : 's'}${oldest.length ? ` · oldest ${gaLabel(oldest[0])}, ${dateLabel(lib, oldest[0])}` : ''}` : 'No witnesses indexed';
+    mount(el, collapsed);
     el.dataset.ms = String(Math.round(performance.now() - t0));
     void s;
   }
 
-  function mount(el: HTMLElement) {
+  /**
+   * Collapsed (a deep link): one line over the chapter, which has already
+   * painted with its verse lit; tapping the line opens the full panel.
+   */
+  function mount(el: HTMLElement, collapsed = false) {
     sheet?.remove();
     sheet = el;
+    if (collapsed) {
+      el.classList.add('is-collapsed');
+      const bar = h(
+        'button',
+        { type: 'button', class: 'ev-peek', 'aria-expanded': 'false', 'aria-label': `${el.dataset.peek ?? 'Manuscripts for this verse'}. Show the witnesses` },
+        h('span', { class: 'ev-peek__text' }, el.dataset.peek ?? 'Manuscripts for this verse'),
+        h('span', { class: 'ev-peek__more', 'aria-hidden': 'true' }, 'Show'),
+      );
+      bar.addEventListener('click', () => {
+        el.classList.remove('is-collapsed');
+        bar.remove();
+        document.body.classList.add('ev-open');
+        el.focus({ preventScroll: true });
+      });
+      el.prepend(bar);
+      document.body.appendChild(el);
+      return;
+    }
     document.body.appendChild(el);
     document.body.classList.add('ev-open');
   }
@@ -317,7 +380,7 @@ export function createEvidence(): EvidenceLayer {
         return s ? shadeFor(s[2] != null ? Math.ceil(s[2] / 100) : null, s[0]) : null;
       });
     },
-    open: (pos) => open(pos),
+    open: (pos, ctx) => open(pos, !!ctx?.collapsed),
     close,
     set onClose(f: (() => void) | null) {
       onClosed = f;

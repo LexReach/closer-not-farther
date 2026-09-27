@@ -27,11 +27,12 @@ page.on('pageerror', (e) => errors.push(e.message));
 for (const c of CASES) {
   await page.goto(`${base}read/#${c.hash}`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(800);
+  await page.locator('.ev-peek').click({ timeout: 8000 }).catch(() => {});
   const card = page.locator(`.ev-card[data-ga="${c.ga}"] .ev-card__btn`);
   const found = await card.waitFor({ timeout: 15000 }).then(() => true, () => false);
   check(found, `${c.label}: card in the evidence panel`);
   if (!found) continue;
-  check(/transcribed/.test((await card.getAttribute('aria-label')) ?? ''), `${c.label}: card is marked transcribed`);
+  check(/text available/.test((await card.getAttribute('aria-label')) ?? ''), `${c.label}: card is marked text available`);
   await card.scrollIntoViewIfNeeded();
   await card.click();
   const lit = await page.waitForSelector('.wv .wv__page .tx__w.is-spot', { timeout: 15000 }).then(() => true, () => false);
@@ -52,6 +53,7 @@ for (const c of CASES) {
 }
 // A hash change to another place closes the Witness view.
 await page.goto(`${base}read/#john.1.2`, { waitUntil: 'networkidle' });
+await page.locator('.ev-peek').click({ timeout: 8000 }).catch(() => {});
 await page.locator('.ev-card[data-ga="P66"] .ev-card__btn').click();
 await page.waitForSelector('.wv[open]', { timeout: 15000 });
 await page.evaluate(() => (location.hash = '#gen.1.1'));

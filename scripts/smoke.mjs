@@ -44,6 +44,14 @@ for (const [w, hgt, tag] of [[400, 860, 'phone'], [1280, 900, 'desktop']]) {
   await page.waitForTimeout(1500);
   await page.screenshot({ path: `smoke/read-${tag}.png` });
   // Evidence panel, when the build has one.
+  // A deep link paints the chapter with the verse lit, then opens the panel collapsed to one line.
+  const peek = await page.waitForSelector('.ev.is-collapsed .ev-peek', { timeout: 8000 }).then(() => 1, () => 0);
+  if (peek) {
+    check((await page.locator('.rd-row[data-v="1"].is-sel').count()) === 1, `${tag}: deep link lights John 1:1`);
+    check(/Carried by \d+ manuscripts? · oldest/.test(await page.locator('.ev-peek').innerText()), `${tag}: collapsed panel reads "${(await page.locator('.ev-peek__text').innerText()).trim()}"`);
+    await page.screenshot({ path: `smoke/read-collapsed-${tag}.png` });
+    await page.locator('.ev-peek').click();
+  }
   const ev = await page.waitForSelector('.ev .ev-title', { timeout: 8000 }).then(() => 1, () => 0);
   if (ev) {
     check((await page.locator('.ev-title').innerText()).length > 0, `${tag}: evidence panel opens for John 1:1`);

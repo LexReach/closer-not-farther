@@ -53,7 +53,8 @@ function save(s: Saved) {
 /** Hook for the evidence layer (Phase B): gutter shading and the panel. */
 export interface EvidenceLayer {
   shade(book: Book, chapter: number, verses: number): Promise<(string | null)[]>;
-  open(pos: Pos, ctx: { version: VersionId }): void;
+  /** collapsed: a deep link opens the panel as one line, so the chapter stays in view. */
+  open(pos: Pos, ctx: { version: VersionId; collapsed?: boolean }): void;
   close(): void;
   hint?: string;
   /** Set by the Reader: called when the panel is closed from inside. */
@@ -401,7 +402,7 @@ export function render(root: HTMLElement) {
           persist();
         };
       // A verse selected before the layer arrived (a deep link) opens now.
-      if (evidence && st.pos.verse && my === renderToken) evidence.open(st.pos, { version: firstEnglish() });
+      if (evidence && st.pos.verse && my === renderToken) evidence.open(st.pos, { version: firstEnglish(), collapsed: true });
     }
     if (!evidence || my !== renderToken) return;
     if (evidence.hint && !saved.hinted) {
