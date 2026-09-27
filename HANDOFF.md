@@ -73,7 +73,7 @@ The `data-contents` output (`ranges` per GA) can be merged into raw coverage as 
 - **Phase B: shipped on main** (commit 7a9581e; deploy run 29 green, including the live smoke test, which opened the evidence panel for John 1:1).
   - Page-level coverage for 446 manuscripts, from `data-evidence` commit 2685e0a.
   - Panel, Witness view (photograph and links), inline variants, the `/why/coverage` map (also a chapter, a present slide and a tour step) and gutter dots.
-- **Transcriptions: on main** (from `data-evidence` commit 0b7c71c). The Witness view and the panel's cards show the typographic page with the verse spotlit.
+- **Transcriptions: on main** (commit 000bc6c, from `data-evidence` commit 0b7c71c; deploy run 31 green, and its smoke job's new `witness-check.mjs` step passed on the live site for all three pages). The Witness view and the panel's cards show the typographic page with the verse spotlit.
   - What was wrong: the old parser tokenized the whole XML, header included, ignored `<w>`, and looked for verse milestones that NTVMR does not use.
   - The real markup (checked on P66, 01 and 03): `<lb/>` opens each line, mostly without `n`; `<lb break="no"/>` splits a word; `<cb n>` and `<pb n>`; verses are `<ab n="B04K1V1">`, and titles are `<ab>` without `n`; `<supplied reason="unspecified">` for restored letters; `<abbr type="nomSac">`; corrections are `<app><rdg type="orig" hand="firsthand">` plus one `<rdg type="corr" hand="corrector2a">` per hand. The last hand's reading is the "corrected" view.
   - Token schema (`Token` in `src/evidence/data.ts`): `t`, `v` ("JHN.1.1"), `ns` (expanded sacred name), `lac`, `gap` (length of a gap in letters), `j` (continues in the next token: a word split by a line or a lacuna edge), `corr: { hand, t }`.
