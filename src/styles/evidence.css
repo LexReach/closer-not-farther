@@ -106,16 +106,18 @@
 .wv__name { font-weight: 400; }
 .wv__meta, .wv__links { margin: 0; font-size: 0.85rem; color: var(--muted); }
 .wv__body > * { min-width: 0; }
-.wv__body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; min-height: 60vh; }
-.wv__img { border-right: 1px solid var(--rule); display: flex; flex-direction: column; }
-.wv__img .osd-wrap { flex: 1; min-height: 420px; }
+.wv[open] { display: flex; flex-direction: column; height: 94vh; }
+.wv__head { flex: none; }
+.wv__body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; flex: 1 1 auto; min-height: 0; }
+.wv__img { border-right: 1px solid var(--rule); display: flex; flex-direction: column; min-height: 0; overflow: auto; }
+.wv__img .osd-wrap { flex: 1 1 0; min-height: 300px; }
 .wv__img.is-empty { justify-content: center; padding: 24px; }
-.wv__cap { font-size: 0.78rem; color: var(--muted); padding: 8px 14px; margin: 0; }
-.wv__text { padding: 14px 20px 24px; overflow: auto; max-height: calc(94vh - 90px); }
+.wv__cap { flex: none; font-size: 0.78rem; color: var(--muted); padding: 8px 14px; margin: 0; overflow-wrap: anywhere; }
+.wv__text { padding: 14px 20px 24px; overflow: auto; min-height: 0; }
 .wv__label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 0 0 6px; }
 .wv__page .tx { font-size: 1.05rem; }
-.wv__corr { margin: 10px 0 0; }
-.wv__rows { margin-top: 16px; display: grid; gap: 10px; }
+.wv__corr { margin: 0 0 14px; }
+.wv__rows { margin: 0 0 18px; display: grid; gap: 10px; }
 .wv__row { display: grid; grid-template-columns: 88px 1fr; gap: 10px; align-items: baseline; }
 .wv__rowlabel { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
 .wv__rowtext { margin: 0; line-height: 1.9; min-width: 0; overflow-wrap: anywhere; }
@@ -136,6 +138,7 @@
 .osd__box--word { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
 @media (max-width: 860px) {
   .wv { width: 100vw; max-height: 100vh; height: 100%; border-radius: 0; margin: 0; }
+  .wv[open] { display: block; height: auto; overflow: auto; }
   .wv__body { grid-template-columns: 1fr; }
   .wv__img { border-right: 0; border-bottom: 1px solid var(--rule); }
   .wv__img .osd-wrap { min-height: 300px; }

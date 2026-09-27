@@ -235,7 +235,7 @@ export async function openOtWitness(w: OtWitness, b: Book, pos: Pos) {
       'div',
       { class: 'wv__body' },
       imgBox,
-      h('div', { class: 'wv__text' }, h('div', { class: 'wv__page' }, h('p', { class: 'wv__label' }, label), verse.length ? otPage(ch, v, { consonants: kind === 'scroll' || kind === 'samaritan', onWord }) : h('p', { class: 'muted' }, 'This verse is not in the Hebrew data.')), rows),
+      h('div', { class: 'wv__text' }, rows, h('div', { class: 'wv__page' }, h('p', { class: 'wv__label' }, label), verse.length ? otPage(ch, v, { consonants: kind === 'scroll' || kind === 'samaritan', onWord }) : h('p', { class: 'muted' }, 'This verse is not in the Hebrew data.'))),
     ),
   ) as HTMLDialogElement;
   dlg = d;

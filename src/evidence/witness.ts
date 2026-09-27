@@ -68,7 +68,7 @@ export async function openWitness(o: WitnessOpts) {
       ),
       closeBtn,
     ),
-    h('div', { class: 'wv__body' }, imgBox, h('div', { class: 'wv__text' }, pageBox, corrBtn ?? '', rows)),
+    h('div', { class: 'wv__body' }, imgBox, h('div', { class: 'wv__text' }, rows, corrBtn ?? '', pageBox)),
   ) as HTMLDialogElement;
   document.body.appendChild(dlg);
   let viewerApi: { destroy(): void } | null = null;
