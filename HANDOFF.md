@@ -87,4 +87,27 @@ The `data-contents` output (`ranges` per GA) can be merged into raw coverage as 
   - Coverage map: Testament switch (`derive-ot.mjs`). By the end of the 3rd century BC, 224 of 23,145 verses are lit; 2,135 by the 2nd, 6,896 by the 1st, 8,760 by AD 100, 22,438 by AD 400 (Vaticanus, Sinaiticus), and all by AD 1100 (Leningrad).
   - `scripts/ot-check.mjs` (38 checks at 1280 and 400) runs in the smoke job; screenshots go to the `smoke-screenshots` artifact.
   - Lighthouse, `/read#gen.1.1`, mobile preset, on the built site served with gzip: Performance 82, Accessibility 100, Best Practices 100, SEO 100 (FCP 1.4 s, LCP 4.5 s, TBT 20 ms, CLS 0.075). The sandbox proxy blocks Lighthouse on the live URL. The LCP element is the evidence panel's coverage text, which a verse deep link opens after the chapter renders; `/read#john.1.1` scores 84 for the same reason, so this is not an OT regression. To improve it, open the panel before the chapter's secondary loads, or reserve its space.
+- **Live-site fix session (runs 37–43)**. All nine reported items are fixed; each is checked in `smoke.mjs`, `witness-check.mjs` or `ot-check.mjs`, which run after every deploy.
+  1. The first tap selected the wrong verse. The one-time hint is now a fixed toast that fades out and never moves the layout. The smoke test clicks John 1:1 on a fresh profile and asserts `.1`.
+  2. Witness view: the three rows sit under the header, with the transcribed page below them.
+  3. Hash navigation left dialogs open. The router re-rendered the whole Reader on the `popstate` that a hash change fires. It now leaves hash-only changes to the page, and the Reader's hash handler closes dialogs and the meaning card; the panel follows the new hash.
+  4. A deep link paints the chapter first, then opens the panel collapsed to one line with a Show handle. OT chapters load from per-chapter Hebrew files written at build time (`scripts/bible/hebrew-chapters.mjs`, into `dist/bible/hebrew-ch/`). Lighthouse, mobile preset, gzip-served build (the sandbox proxy blocks it on the live URL): `/read#john.1.1` 84 → 92, `/read#gen.1.1` 82 → 93 Final numbers: gen.1.1 Performance 93 (FCP 1.2 s, LCP 3.2 s, TBT 0 ms, CLS 0.019); john.1.1 Performance 94 (FCP 1.4 s, LCP 3.0 s, TBT 80 ms, CLS 0.019); Accessibility, Best Practices and SEO 100 on both.
+  5. Cards show the Library photograph, falling back to the transcribed lines, which fade into a pre-sized box. The sandbox cannot load holder images, so only the fallback was seen locally.
+  6. The panel header is one sentence plus a "How this is counted" disclosure; cards say "cited in NA28" (with a tooltip) and "text available".
+  7. OT witnesses are rebuilt from sources fetched in CI (`data-ot` branch, `.github/workflows/ot-refs.yml`) and kept in `data/evidence/ot/refs/`:
+     - Every biblical row of Wikipedia's *List of the Dead Sea Scrolls* (after Fitzmyer 2008) with exact verse ranges: 237 scrolls (`parse-dss.mjs`). Genesis 1:1 now lists 4QGen^b (4Q2) and 4QGen^g (4Q7).
+     - Codex Alexandrinus, less its lacunae.
+     - Merged by `merge-ot-witnesses.mjs` from `refs/witnesses-compiled.json` (the `data-ot` list), then `derive-ot.mjs`. `main` now holds the authoritative `witnesses.json`; `data-ot`'s copy is stale.
+     - The OT header reads "N of the 244 listed witnesses", then "Thousands of medieval Hebrew copies are not listed."
+  8. The photograph caption wraps inside the pane: the dialog is a flex column at desktop width.
+  9. The chapter header shows the version ("John 1 · BSB") in single-column mode.
+- **Still open from that session:**
+  - Left out because the source doesn't confirm them (logged in `refs/merge-log.txt` and `refs/dss-parsed.json`):
+    - MurXII: the Murabba'at Minor Prophets scroll is not in the table.
+    - 11QPs^a: the table gives no contents.
+    - Masada and Nahal Hever scrolls: the table gives no dates.
+    - About 50 references the parser could not read, or that use Hebrew verse numbering (e.g. Exod 7:28): logged, not guessed. Adding these needs another source, such as the Leon Levy site (JS-rendered; needs a headless fetch in CI) or Ulrich, *The Biblical Qumran Scrolls*.
+  - Psalm references in the DSS table are taken as English numbering; some may be Hebrew numbering (one verse off in titled Psalms).
+  - `data/evidence/ot/coverage-summary.json` is stale and unused at runtime; `timeline.json` is current.
+  - Card photographs (item 5) were verified only through the fallback path here; the live smoke job's screenshots show the real path.
 - Phase C: not started.

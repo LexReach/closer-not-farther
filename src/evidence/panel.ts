@@ -235,7 +235,8 @@ export function createEvidence(): EvidenceLayer {
       }
       shown += next.length;
       more.hidden = shown >= current.length;
-      more.textContent = `Show ${n(Math.min(PAGE, current.length - shown))} more of ${n(current.length - shown)}`;
+      const left = current.length - shown;
+      more.textContent = left <= PAGE ? `Show the last ${n(left)}` : `Show ${n(PAGE)} more of ${n(left)}`;
     }
     more.addEventListener('click', page);
     modeAll.addEventListener('click', () => setMode('all'));
