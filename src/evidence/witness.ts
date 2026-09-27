@@ -137,6 +137,15 @@ export async function openWitness(o: WitnessOpts) {
     );
     const msToEd = new Map(pairs);
     const edToMs = new Map(pairs.map(([a, b]) => [b, a]));
+    // Edition words the page has lost (the editor's restored letters match them) are gaps, not differences.
+    const edLost = new Set<number>();
+    if (tokens.some((t) => t.lac && t.t)) {
+      const all = alignWords(
+        tokens.map((t) => t.ns ?? t.t),
+        ed.map((w) => w[0]),
+      );
+      for (const [mi, ei] of all) if (tokens[mi].lac && !edToMs.has(ei)) edLost.add(ei);
+    }
     const light = (edIdx: number | null, msIdx: number | null) => {
       dlg?.querySelectorAll('.is-link').forEach((x) => x.classList.remove('is-link'));
       if (edIdx == null && msIdx != null) edIdx = msToEd.get(msIdx) ?? null;
@@ -164,7 +173,12 @@ export async function openWitness(o: WitnessOpts) {
         })
       : [h('span', { class: 'muted' }, page ? 'This page’s transcription does not include the verse’s words.' : 'Not transcribed here.')];
     const edRow = ed.map((w, i) => {
-      const b = h('button', { type: 'button', class: `wv__w greek${edToMs.has(i) || !tokens.length ? '' : ' is-diff'}`, 'data-ei': String(i) }, w[0]);
+      const lost = edLost.has(i);
+      const b = h(
+        'button',
+        { type: 'button', class: `wv__w greek${edToMs.has(i) || !tokens.length ? '' : lost ? ' is-lost' : ' is-diff'}`, 'data-ei': String(i), title: lost ? 'Lost from this page' : null },
+        w[0],
+      );
       b.addEventListener('pointerenter', () => light(i, null));
       b.addEventListener('focus', () => light(i, null));
       b.addEventListener('click', () => openEd(i, b));
@@ -181,7 +195,7 @@ export async function openWitness(o: WitnessOpts) {
       row('As written', 'wv__row--ms', msRow),
       row('SBLGNT', 'wv__row--ed', edRow, 'grc'),
       row('BSB', 'wv__row--en', engRow, 'en'),
-      tokens.length ? h('p', { class: 'ev-note' }, 'Words the manuscript writes differently from the SBLGNT are underlined. Spelling differences count, so not every underline is a different reading.') : '',
+      tokens.length ? h('p', { class: 'ev-note' }, 'Words the manuscript writes differently from the SBLGNT are underlined; words lost from the page are faded. Spelling differences count, so not every underline is a different reading.') : '',
     );
     if (o.app.length)
       rows.append(

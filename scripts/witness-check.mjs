@@ -9,7 +9,8 @@ const base = process.argv[2].replace(/\/?$/, '/');
 const out = process.argv[3] ?? 'smoke';
 fs.mkdirSync(out, { recursive: true });
 const CASES = [
-  { hash: 'john.1.1', ga: 'P66', label: 'P66 John 1:1' },
+  { hash: 'john.1.1', ga: 'P66', label: 'P66 John 1:1', clean: true },
+  { hash: 'john.1.1', ga: '01', label: 'Sinaiticus John 1:1', clean: true },
   { hash: 'john.18.1', ga: '01', label: 'Sinaiticus John 18:1' },
   { hash: 'mark.16.8', ga: '03', label: 'Vaticanus Mark 16:8' },
 ];
@@ -40,6 +41,11 @@ for (const c of CASES) {
   check(lit && spot > 0, `${c.label}: verse spotlit on the page (${spot} tokens, ${lines} lines)`);
   check(lines >= 5, `${c.label}: page drawn line by line`);
   check(words >= 3, `${c.label}: "As written" row has ${words} words: ${text}`);
+  if (c.clean) {
+    // Sacred names are expanded and lost words are faded, so neither counts as a difference.
+    const diffs = await page.locator('.wv .wv__row--ed .is-diff, .wv .wv__row--ms .is-diff').allInnerTexts();
+    check(diffs.length === 0, `${c.label}: no differences from the SBLGNT${diffs.length ? ': ' + diffs.join(' ') : ''}`);
+  }
   await page.screenshot({ path: `${out}/witness-${c.ga}-${c.hash}.png` });
   await page.keyboard.press('Escape');
 }

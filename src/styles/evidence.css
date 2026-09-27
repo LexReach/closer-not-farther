@@ -125,6 +125,7 @@
 .wv__w { font: inherit; color: inherit; background: none; border: 0; padding: 0 2px; margin: 0 1px; border-radius: 3px; cursor: pointer; }
 .wv__w.greek { font-family: var(--font-greek); }
 .wv__w.is-part { font-style: italic; opacity: 0.8; }
+.wv__w.is-lost { opacity: 0.55; }
 .wv__w.is-diff { text-decoration: underline wavy color-mix(in srgb, var(--accent-2) 70%, transparent); text-underline-offset: 4px; }
 .wv__w.is-link, .wv__e.is-link { background: var(--accent-soft); outline: 1px solid var(--accent); }
 .wv__e { padding: 0 1px; border-radius: 3px; }
