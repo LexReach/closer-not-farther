@@ -74,6 +74,7 @@ function buildShell(): HTMLElement {
 
 let cleanup: Cleanup;
 let renderToken = 0;
+let renderedPath = '';
 
 async function render(focus = false) {
   const path = currentPath();
@@ -92,6 +93,7 @@ async function render(focus = false) {
   }
   document.body.dataset.group = route?.group ?? '';
   const token = ++renderToken;
+  renderedPath = location.pathname + location.search;
   clear(main);
   const page = h('div', { class: 'page' });
   main.appendChild(page);
@@ -140,7 +142,11 @@ function init() {
     history.pushState(null, '', url.pathname + url.search + url.hash);
     render(true);
   });
-  window.addEventListener('popstate', () => render(false));
+  // A change of hash alone (a verse, a Library item) is the page's to handle;
+  // re-rendering the route here would orphan anything the page had open.
+  window.addEventListener('popstate', () => {
+    if (location.pathname + location.search !== renderedPath) render(false);
+  });
   render(false);
   if (new URLSearchParams(location.search).get('tour') === '1') import('./tour/tour').then((m) => m.maybeAutostart());
 }

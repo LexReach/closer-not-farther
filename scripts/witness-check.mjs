@@ -26,6 +26,7 @@ const errors = [];
 page.on('pageerror', (e) => errors.push(e.message));
 for (const c of CASES) {
   await page.goto(`${base}read/#${c.hash}`, { waitUntil: 'networkidle' });
+  await page.waitForTimeout(800);
   const card = page.locator(`.ev-card[data-ga="${c.ga}"] .ev-card__btn`);
   const found = await card.waitFor({ timeout: 15000 }).then(() => true, () => false);
   check(found, `${c.label}: card in the evidence panel`);
@@ -49,6 +50,14 @@ for (const c of CASES) {
   await page.screenshot({ path: `${out}/witness-${c.ga}-${c.hash}.png` });
   await page.keyboard.press('Escape');
 }
+// A hash change to another place closes the Witness view.
+await page.goto(`${base}read/#john.1.2`, { waitUntil: 'networkidle' });
+await page.locator('.ev-card[data-ga="P66"] .ev-card__btn').click();
+await page.waitForSelector('.wv[open]', { timeout: 15000 });
+await page.evaluate(() => (location.hash = '#gen.1.1'));
+await page.waitForTimeout(800);
+check((await page.locator('dialog[open]').count()) === 0, 'navigating to #gen.1.1 closes the P66 Witness view');
+check(await page.waitForFunction(() => /Genesis 1:1/.test(document.querySelector('.ev .ev-ref')?.textContent ?? ''), null, { timeout: 10000 }).then(() => true, () => false), 'the evidence panel follows to Genesis 1:1');
 check(errors.length === 0, `no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
 await browser.close();
 if (fails.length) {

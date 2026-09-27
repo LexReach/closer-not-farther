@@ -534,7 +534,13 @@ export function render(root: HTMLElement) {
   document.addEventListener('keydown', onKey);
   const onHash = () => {
     const p = parseHash(location.hash);
-    if (p && (p.book !== st.pos.book || p.chapter !== st.pos.chapter || p.verse !== st.pos.verse)) go(p, { replace: true });
+    if (!p || (p.book === st.pos.book && p.chapter === st.pos.chapter && p.verse === st.pos.verse)) return;
+    // A new place closes whatever was open over the old one (the Witness view,
+    // a meaning card); the evidence panel follows the new hash: it reopens for
+    // a verse and closes for a chapter.
+    document.querySelectorAll<HTMLDialogElement>('dialog[open]').forEach((d) => d.close());
+    closeMeaning();
+    go(p, { replace: true });
   };
   window.addEventListener('hashchange', onHash);
 
