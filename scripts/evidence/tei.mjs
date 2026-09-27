@@ -288,11 +288,10 @@ export function parseTEIPage(xml, { ga, pageId, folio = null }) {
         case 'lb':
           if (structural) lineBreak(ev.attrs);
           break;
-        case 'ab': {
-          const v = verseFromAb(ev.attrs.n);
-          if (v) verse = v;
+        case 'ab':
+          // An <ab> without a verse number is a title (incipit, subscriptio): no verse.
+          verse = verseFromAb(ev.attrs.n);
           break;
-        }
         case 'w':
           if (app && !app.inWord && app.rdg !== 'orig') {
             if (app.rdg === 'corr') app.corrText += ' ';
