@@ -41,11 +41,16 @@ The SBLGNT apparatus is `data/evidence/apparatus/`, from `scripts/evidence/sblgn
 | Branch | Workflow | State |
 |---|---|---|
 | `data-bible` | `data-bible.yml` | Done and merged (commit e8388b6). |
-| `data-evidence` | `data-evidence.yml` | Coverage there is catalogue-level only; the NTVMR page index never produced page-level hits because of repeated timeouts (iteration 10 fixed body-read timeouts, result unknown). No transcriptions yet. The raw coverage is 32 MB, so never copy it to main: extract it, then run `derive.mjs`. |
+| `data-evidence` | `data-evidence.yml` | Page-level coverage for 446 manuscripts (iteration 10). Transcriptions: 15,059 pages of 285 manuscripts, parsed by `scripts/evidence/tei.mjs` (iteration 11 and two `[skip ci]` re-parses). The raw page TEI is kept in `data/evidence/tei/<GA>.json.gz` (10 MB), so the parser can be changed and re-run with `node scripts/evidence/reparse-transcriptions.mjs` without fetching again. A commit message containing `[transcripts-only]` skips the 12-minute coverage step. The raw coverage is 32 MB, so never copy it to main: extract it, then run `derive.mjs`. |
 | `data-ot` | `data-ot.yml` | Done, not merged (Phase D). It has 39 books of WLC with glosses (306,774 words), `lex-hebrew.json`, 31 OT witnesses, `coverage-summary.json` and `SOURCES-OT.md`. |
 | `data-contents` | `data-contents.yml` | Started for Wikipedia papyri and uncial verse ranges, a fallback for page-level coverage of early witnesses; it may not exist or may be unfinished. |
 
 ## How to resume
+
+**Transcriptions (done).** To refresh them after a parser change on `data-evidence`:
+1. Re-parse there: `node scripts/evidence/reparse-transcriptions.mjs`, commit with `[skip ci]`.
+2. On main: `git archive origin/data-evidence data/evidence/coverage data/evidence/transcriptions | tar -x -C /tmp/ev`, then `node scripts/evidence/derive.mjs /tmp/ev/data/evidence data/evidence`, then replace `data/evidence/transcriptions` with `/tmp/ev/data/evidence/transcriptions`.
+3. `node scripts/witness-check.mjs <preview url>` checks the Witness view (the deploy's smoke job runs it on the live site).
 
 **B: better coverage.**
 1. Check the `data-evidence` branch README for page-level hits.
@@ -68,5 +73,12 @@ The `data-contents` output (`ranges` per GA) can be merged into raw coverage as 
 - **Phase B: shipped on main** (commit 7a9581e; deploy run 29 green, including the live smoke test, which opened the evidence panel for John 1:1).
   - Page-level coverage for 446 manuscripts, from `data-evidence` commit 2685e0a.
   - Panel, Witness view (photograph and links), inline variants, the `/why/coverage` map (also a chapter, a present slide and a tour step) and gutter dots.
-  - Not done: usable transcriptions. The CI job's TEI parser tokenized raw XML: fix `scripts/evidence/build-transcriptions.mjs` on `data-evidence` to parse `<w>` and `<lb>` elements, then re-run `derive.mjs`, which builds `tx/`. Coverage of later minuscules is also still to do.
-- Phases C and D: skipped this session for budget.
+- **Transcriptions: on main** (from `data-evidence` commit 0b7c71c). The Witness view and the panel's cards show the typographic page with the verse spotlit.
+  - What was wrong: the old parser tokenized the whole XML, header included, ignored `<w>`, and looked for verse milestones that NTVMR does not use.
+  - The real markup (checked on P66, 01 and 03): `<lb/>` opens each line, mostly without `n`; `<lb break="no"/>` splits a word; `<cb n>` and `<pb n>`; verses are `<ab n="B04K1V1">`, and titles are `<ab>` without `n`; `<supplied reason="unspecified">` for restored letters; `<abbr type="nomSac">`; corrections are `<app><rdg type="orig" hand="firsthand">` plus one `<rdg type="corr" hand="corrector2a">` per hand. The last hand's reading is the "corrected" view.
+  - Token schema (`Token` in `src/evidence/data.ts`): `t`, `v` ("JHN.1.1"), `ns` (expanded sacred name), `lac`, `gap` (length of a gap in letters), `j` (continues in the next token: a word split by a line or a lacuna edge), `corr: { hand, t }`.
+  - The numbers: 2.63M tokens, of which 98.1% carry a verse; 87k lacuna tokens, 23k corrections, 78k sacred names.
+  - Verified: P66 John 1:1 (26 lines, 16 words; ΠΑΝΤΑΝ corrected to ΠΑΝΤΑ in 1:9); Sinaiticus John 18:1 (page 258r, 4 columns × 48 lines; in 18:3, corrector 2a deletes ΕΚ ΤΩΝ and 2b restores it, so no net correction); Vaticanus Mark 16:8 (2 columns; the verse ends ΕΦΟΒΟΥΝΤΟ ΓΑΡ, and the subscriptio carries no verse).
+  - Size: 91 MB of JSON over 15,059 files, loaded one page at a time.
+  - Not done: sacred names outside the table in `tei.mjs` keep their contracted form, so they show as differences in the rows. 320 pages carry no verse (titles, lectionary apparatus). Coverage of later minuscules is still to do.
+- Phases C and D: skipped for budget.
