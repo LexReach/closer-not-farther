@@ -154,3 +154,13 @@
 .cov__tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 0.78rem; padding: 4px 8px; border-radius: 4px; white-space: nowrap; z-index: 2; }
 .cov--excerpt .cov__wrap { max-height: 420px; overflow: hidden; }
 .cov--big .cov__wrap { max-height: 58vh; }
+
+/* Hebrew Bible witnesses */
+.tx--hebrew { font-family: var(--font-hebrew); font-size: 1.3rem; letter-spacing: 0; line-height: 2; direction: rtl; }
+.tx--hebrew .tx__line { white-space: normal; }
+.tx--hebrew .tx__n { padding-top: 0.9em; }
+.tx--hebrew .tx__w.is-spot { cursor: pointer; }
+.wv__row--ed .wv__rowtext.hebrew { font-size: 1.3rem; text-align: right; }
+.wv__w.hebrew { font-family: var(--font-hebrew); }
+.wv__outlinks { list-style: none; padding: 0; margin: 10px 0; display: grid; gap: 6px; }
+.wv__outlinks a { font-weight: 600; }

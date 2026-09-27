@@ -1,7 +1,7 @@
 // The meaning card: one original-language word with its lemma, gloss,
 // parsing in plain English, Strong's number and how often the lemma occurs.
 import { h, clear } from '../lib/dom';
-import { loadLex, type Word } from './bible';
+import { hebrewSurface, loadLex, type Word } from './bible';
 import { parseMorph, translitGreek } from './morph';
 
 let card: HTMLElement | null = null;
@@ -37,7 +37,7 @@ export interface MeaningOpts {
 }
 
 const testamentName = (lang: 'grc' | 'hbo') => (lang === 'grc' ? 'New Testament' : 'Hebrew Bible');
-const stripCant = (s: string) => s.replace(/[֑-ֽ֯׀׃]/g, '');
+const stripCant = (s: string) => hebrewSurface(s, false);
 
 export async function openMeaning(o: MeaningOpts) {
   closeMeaning();
@@ -52,7 +52,7 @@ export async function openMeaning(o: MeaningOpts) {
     h('div', { class: 'mc__head' }, h('span', { class: `mc__word ${o.lang === 'hbo' ? 'hebrew' : 'greek'}`, lang: o.lang, dir: o.lang === 'hbo' ? 'rtl' : 'ltr' }, o.lang === 'hbo' ? stripCant(surface) : surface.replace(/[,.;·:]+$/, '')), close),
     body,
   );
-  document.body.appendChild(card);
+  (o.anchor.closest('dialog[open]') ?? document.body).appendChild(card);
   // Desktop: float near the word. Phone: bottom sheet (CSS).
   if (window.matchMedia('(min-width: 721px)').matches) {
     const r = o.anchor.getBoundingClientRect();

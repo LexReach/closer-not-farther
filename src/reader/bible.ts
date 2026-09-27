@@ -46,12 +46,51 @@ export function loadOriginal(book: Book): Promise<Word[][][] | null> {
     const dir = book.testament === 'NT' ? 'greek' : 'hebrew';
     p = fetch(`${DATA}${dir}/${book.id}.json`)
       .then((r) => (r.ok ? r.json() : null))
-      .then((j) => (j ? (j.chapters as Word[][][]) : null))
+      .then((j) => (j ? (j.map ? toEnglishVersification(book, j.chapters, j.map) : (j.chapters as Word[][][])) : null))
       .catch(() => null);
     origCache.set(book.id, p);
   }
   return p;
 }
+
+/**
+ * The Hebrew files keep the Hebrew verse numbers, with a map from English
+ * "c:v" to Hebrew "c:v" where they differ (Psalm titles, Joel 3, Malachi 4).
+ * Re-index to the English numbers the columns share. A Hebrew verse with no
+ * English number (a Psalm's title) joins the verse after it.
+ */
+function toEnglishVersification(book: Book, heb: Word[][][], map: Record<string, string>): Word[][][] {
+  const hebKey = (c: number, v: number) => map[`${c}:${v}`] ?? `${c}:${v}`;
+  const slot = new Map<string, Word[]>();
+  const out = (book.verses ?? heb.map((c) => c.length)).map((n, ci) =>
+    Array.from({ length: n }, (_, vi) => {
+      const k = hebKey(ci + 1, vi + 1);
+      const [hc, hv] = k.split(':').map(Number);
+      const words = [...(heb[hc - 1]?.[hv - 1] ?? [])];
+      slot.set(k, words);
+      return words;
+    }),
+  );
+  let pending: Word[] = [];
+  let last: Word[] | null = null;
+  heb.forEach((ch, ci) =>
+    ch.forEach((ws, vi) => {
+      const target = slot.get(`${ci + 1}:${vi + 1}`);
+      if (!target) return void pending.push(...ws);
+      if (pending.length) target.unshift(...pending);
+      pending = [];
+      last = target;
+    }),
+  );
+  if (pending.length) (last as Word[] | null)?.push(...pending);
+  return out;
+}
+
+/** Hebrew as shown: morpheme dividers removed; cantillation (not the vowel points) optional. */
+export const hebrewSurface = (s: string, cant: boolean) => {
+  const t = s.replace(/\//g, '');
+  return cant ? t : t.replace(/[\u0591-\u05AF\u05BD\u05C0]/g, '');
+};
 
 export interface LexEntry {
   lemma?: string;

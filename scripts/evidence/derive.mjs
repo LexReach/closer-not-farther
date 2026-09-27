@@ -117,5 +117,12 @@ for (const b of books) {
 tl.NT.basis = catHits
   ? 'Coverage comes from the INTF’s page index where it exists, and otherwise from the catalogue’s record of each manuscript’s contents.'
   : 'Coverage comes from the INTF’s page-by-page index for the 446 manuscripts fetched so far: nearly all papyri and majuscules, but few later minuscules, so the later centuries undercount.';
+// The Hebrew Bible block comes from derive-ot.mjs; keep it.
+try {
+  const prev = JSON.parse(fs.readFileSync(path.join(out, 'timeline.json'), 'utf8'));
+  if (prev.OT) tl.OT = prev.OT;
+} catch {
+  /* first run */
+}
 write(path.join(out, 'timeline.json'), tl);
 console.log(JSON.stringify({ totalVerses, versesWith, pageHits, catHits, txPages, txVerses: Object.values(txIndex).reduce((a, x) => a + Object.keys(x).length, 0) }));

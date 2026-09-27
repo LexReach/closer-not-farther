@@ -10,6 +10,7 @@ import {
   BOOKS,
   bookById,
   langOf,
+  hebrewSurface,
   loadOriginal,
   origLabel,
   origShort,
@@ -30,11 +31,13 @@ interface Saved {
   reading?: boolean;
   hinted?: boolean;
   cant?: boolean;
+  /** The reader has chosen columns; until then an OT book opens with the Hebrew beside the BSB. */
+  picked?: boolean;
 }
 function load(): Saved {
   try {
     const s = JSON.parse(localStorage.getItem(STORE) ?? '{}') as Saved;
-    return { versions: Array.isArray(s.versions) && s.versions.length ? s.versions.slice(0, 3) : ['bsb'], pos: s.pos, reading: !!s.reading, hinted: !!s.hinted, cant: s.cant ?? true };
+    return { versions: Array.isArray(s.versions) && s.versions.length ? s.versions.slice(0, 3) : ['bsb'], pos: s.pos, reading: !!s.reading, hinted: !!s.hinted, cant: s.cant ?? true, picked: !!s.picked || (Array.isArray(s.versions) && s.versions.join() !== 'bsb') };
   } catch {
     return { versions: ['bsb'] };
   }
@@ -70,6 +73,7 @@ export function render(root: HTMLElement) {
     versions: saved.versions.filter((v) => v in ADAPTERS || v === 'orig') as VersionId[],
     reading: !!saved.reading,
     cant: saved.cant !== false,
+    picked: !!saved.picked,
   };
   if (!st.versions.length) st.versions = ['bsb'];
   let evidence: EvidenceLayer | null = null;
@@ -94,7 +98,7 @@ export function render(root: HTMLElement) {
   root.append(h('h1', { class: 'visually-hidden', id: 'rd-h' }, 'Read'), toolbar, hint, h('div', { class: 'rd-page', 'aria-labelledby': 'rd-h' }, heads, body, notices, footNav), exitReading);
 
   const book = () => bookById.get(st.pos.book)!;
-  const persist = () => save({ versions: st.versions, pos: posHash(st.pos), reading: st.reading, hinted: saved.hinted, cant: st.cant });
+  const persist = () => save({ versions: st.versions, pos: posHash(st.pos), reading: st.reading, hinted: saved.hinted, cant: st.cant, picked: st.picked });
 
   function setReading(on: boolean) {
     st.reading = on;
@@ -211,6 +215,7 @@ export function render(root: HTMLElement) {
             }
             st.versions = st.versions.filter((v) => v !== id);
           }
+          st.picked = true;
           persist();
           renderChapter(false);
         });
@@ -273,7 +278,7 @@ export function render(root: HTMLElement) {
       return cell;
     }
     words.forEach((w, i) => {
-      const surface = lang === 'hbo' && !st.cant ? w[0].replace(/[֑-ֽ֯׀׃]/g, '') : w[0];
+      const surface = lang === 'hbo' ? hebrewSurface(w[0], st.cant) : w[0];
       cell.append(h('span', { class: 'rd-g', 'data-wi': i, tabindex: 0, role: 'button' }, surface), ' ');
     });
     return cell;
@@ -302,6 +307,7 @@ export function render(root: HTMLElement) {
     bookBtn.setAttribute('aria-label', `${bookBtn.textContent}, choose book and chapter`);
     document.title = `${b.name} ${st.pos.chapter} · Read · Closer, Not Farther`;
     drawStrip();
+    if (!st.picked) st.versions = b.testament === 'OT' ? ['bsb', 'orig'] : ['bsb'];
     const cols = st.versions;
     // The original text is awaited only when it is shown; for the BSB's
     // long-press alignment it loads after the English has rendered.

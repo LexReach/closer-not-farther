@@ -28,7 +28,11 @@ export const loadCoverage = () => (dataP ??= fetch(`${EVD}timeline.json`).then((
 
 const ORD = (n: number) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? 'th' : n % 10 === 1 ? 'st' : n % 10 === 2 ? 'nd' : n % 10 === 3 ? 'rd' : 'th'}`;
 export const centuryName = (c: number) => (c < 0 ? `${ORD(-c)} century BC` : `${ORD(c)} century`);
-const endYear = (c: number) => (c < 0 ? `${(-c - 1) * 100} BC` : `AD ${c * 100}`);
+const endYear = (c: number) => (c === -1 ? '1 BC' : c < 0 ? `${(-c - 1) * 100} BC` : `AD ${c * 100}`);
+const NOTE_TAIL = {
+  NT: ' A manuscript counts from the end of the latest century its catalogue date allows, so P66 (2nd–3rd century) counts from AD 300. Page index: INTF New Testament Virtual Manuscript Room, used for non-commercial study with attribution.',
+  OT: ' A witness counts from the end of the latest century its date allows, so 4QGenb (c. 125–100 BC) counts from the 1st century BC. Dates are the published paleographic estimates; see data/bible/SOURCES-OT.md.',
+};
 const n = (x: number) => x.toLocaleString('en-US');
 
 interface Layout {
@@ -173,9 +177,11 @@ function view(root: HTMLElement, data: CovData, opts: MountOpts & { excerpt?: bo
   let canvasApi: ReturnType<typeof CoverageCanvas> | null = null;
   let slider: ReturnType<typeof Slider> | null = null;
   const sliderBox = h('div', { class: 'cov__slider' });
+  const noteEl = h('p', { class: 'ev-note' });
 
   function build() {
     const t = data[test]!;
+    noteEl.textContent = t.basis + NOTE_TAIL[test];
     canvasApi?.destroy();
     clear(mapBox);
     clear(sliderBox);
@@ -212,7 +218,7 @@ function view(root: HTMLElement, data: CovData, opts: MountOpts & { excerpt?: bo
     });
     switchEl.appendChild(b);
   });
-  root.append(switchEl.children.length > 1 && !opts.excerpt ? switchEl : '', sliderBox, readout, mapBox);
+  root.append(switchEl.children.length > 1 && !opts.excerpt ? switchEl : '', sliderBox, readout, mapBox, opts.excerpt ? '' : noteEl);
   build();
   return {
     step(): boolean {
@@ -241,14 +247,6 @@ export function render(root: HTMLElement) {
       return;
     }
     api = view(body, d);
-    body.append(
-      h(
-        'p',
-        { class: 'ev-note' },
-        d.NT.basis,
-        ' A manuscript counts from the end of the latest century its catalogue date allows, so P66 (2nd–3rd century) counts from AD 300. Page index: INTF New Testament Virtual Manuscript Room, used for non-commercial study with attribution.',
-      ),
-    );
   });
   return () => api?.destroy();
 }

@@ -87,7 +87,12 @@ export function createEvidence(): EvidenceLayer {
     if (b.testament === 'OT') {
       const { openOt } = await import('./ot');
       if (my !== token) return;
-      return mount(await openOt(b, pos, close));
+      const el = await openOt(b, pos, () => {
+        close();
+        onClosed?.();
+      });
+      if (my !== token) return;
+      return mount(el);
     }
     const t0 = performance.now();
     const [lib, wit, sum, tiers, txi, app] = await Promise.all([libP, loadWitnesses(b.id, pos.chapter), loadSummary(b.id), loadTiers(), loadTxIndex(b.id), loadApparatus(b.id)]);
