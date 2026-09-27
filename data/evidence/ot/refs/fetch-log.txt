@@ -1,0 +1,20 @@
+200 https://en.wikipedia.org/wiki/Codex_Alexandrinus 65746
+200 https://en.wikipedia.org/wiki/List_of_Hebrew_Bible_manuscripts 23557
+200 https://en.wikipedia.org/wiki/Dead_Sea_Scrolls 141144
+200 https://en.wikipedia.org/wiki/List_of_Dead_Sea_Scrolls 42
+404 https://en.wikipedia.org/wiki/Biblical_manuscripts_among_the_Dead_Sea_Scrolls 1926
+200 https://en.wikipedia.org/wiki/Great_Isaiah_Scroll 27
+200 https://en.wikipedia.org/wiki/Septuagint_manuscripts 268600
+200 https://en.wikipedia.org/wiki/Nash_Papyrus 7130
+200 leon-levy search 4Q2 32016
+200 leon-levy search 4Q7 32016
+200 leon-levy search 4Q1 32016
+200 leon-levy search 4Q41 32016
+200 leon-levy search 4Q88 32016
+200 leon-levy search 4Q83 32016
+200 leon-levy search 1Q4 32016
+200 leon-levy search 4Q17 32016
+200 leon-levy search 4Q22 32016
+200 leon-levy search 4Q58 32016
+200 leon-levy search 4Q47 32016
+200 leon-levy search 4Q55 32016

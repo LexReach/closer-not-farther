@@ -1,0 +1,165 @@
+{{short description|None}}
+ 
+[[File:LeningradCodex text.jpg|thumb|right|200px|Leningrad/Petrograd Codex text sample, portions of Exodus 15:21-16:3]]
+A '''Hebrew Bible manuscript''' is a handwritten copy of a portion of the text of the [[Hebrew Bible]] (Tanakh) made on papyrus, parchment, or paper, and written in the [[Hebrew language]] (some of the biblical text and notations may be in [[Aramaic]]). The oldest manuscripts were written in a form of scroll, the medieval manuscripts usually were written in a form of [[codex]]. The late manuscripts written after the 9th century use the [[Masoretic Text]]. The important manuscripts are associated with [[Aaron ben Moses ben Asher|Aaron ben Asher]] (especially [[Leningrad Codex|Leningrad/Petrograd Codex]]).<ref>H. Kelley, Daniel Stephen Mynatt, Timothy G. Crawford, [https://books.google.com/books?id=Gh6OHYcIZgkC&pg=PA18 ''The Masorah of Biblia Hebraica Stuttgartensia: introduction and annotated glossary''], Wm. B. Eerdmans Publishing, 1998, p. 18</ref>
+
+The earliest sources (whether oral or written) of the Hebrew Bible disappeared over time because of the fragility of media, wars (especially the [[Solomon's Temple#Destruction by the Babylonians|destruction of the First]] and [[Second Temple#Destruction|Second Temple]]) and other intentional destructions.<ref>Randall Price, [https://books.google.com/books?id=R7ZHjZencgIC&pg=PA45 ''Searching for the Original Bible''], Harvest House Publishers, 2007, p. 45-50</ref> As a result, the lapse of time between the original manuscripts and their surviving copies is much longer than in the case of the [[New Testament]] [[Biblical manuscript#New Testament manuscripts|manuscripts]].
+
+The first list of the [[Old Testament]] manuscripts in Hebrew, made by [[Benjamin Kennicott]] (1718–1783) and published by Oxford in two volumes in 1776 and 1780, listed 615 manuscripts from libraries in England and on the continent.<ref>Thomas Hartwell Horne, [https://books.google.com/books?id=pMUVAAAAYAAJ&pg=RA1-PA5 ''An introduction to the critical study and knowledge of the Holy Scriptures''] (1836), vol. 2, p. 7. Page 6 states: "To Dr. Kennicott's Hebrew Bible, M. De Rossi published an important supplement at Parma (1784–1787), in four volumes..."</ref> [[Giovanni Bernardo de Rossi]] (1742–1831) published a list of 731 manuscripts.<ref name = lakeside>{{usurped|1=[https://web.archive.org/web/20070519144839/http://www.lakesideministries.com/TopicalStudies/Foundations/OldTestament.htm#OLD%20TESTAMENT%20MANUSCRIPTS Old Testament manuscripts]}}</ref> The main manuscript discoveries in modern times are those of the [[Cairo Geniza]] (c. 1890) and the [[Dead Sea Scrolls|Dead Sea/Qumran Caves Scrolls]] (1947). 260,000 Hebrew manuscripts were discovered in an old synagogue in [[Cairo]], 10,000 of which are biblical manuscripts.<ref>[https://web.archive.org/web/20211023041933/https://www.bibliahebraica.com.br/textos/Gueniza_do_Cairo.pdf ''Fragmentos do Gueniza do Cairo'']</ref><ref>David Sinclair, [http://www.davidsinclairmc.com/christianarticles/AN%20OVERVIEW%20OF%20THE%20BIBLE%20-%20Version%20II.pdf#page=15 ''An Overview of the Bible''] {{Webarchive|url=https://web.archive.org/web/20131228151744/http://www.davidsinclairmc.com/christianarticles/AN%20OVERVIEW%20OF%20THE%20BIBLE%20-%20Version%20II.pdf#page=15 |date=28 December 2013 }} (2006)</ref> There are more than 200 biblical manuscripts among the Dead Sea/Qumran Caves Scrolls, some of them were written in the [[Paleo-Hebrew alphabet]]. They were written before 70 CE. 14 scroll manuscripts were discovered in [[Masada]] in 1963–1965.<ref>Würthwein Ernst (1988). ''Der Text des Alten Testaments'', Stuttgart: [[Deutsche Bibelgesellschaft]], pp. 38–39; translated into English and published in 1995 as Wurthwein, ''The Text of the Old Testament'' (2nd rev. ed, 1995, Grand Rapids, Mich., Wm.B. Eerdmans Publg. Co.)(this is the source for most of the dates of the mss listed).</ref>
+
+The largest organized collection of Hebrew Old Testament manuscripts in the world is housed in the [[Russian National Library]] ([[Abraham Firkovich|"Second Firkovitch Collection]]") in [[Saint Petersburg]].<ref name = lakeside/>
+
+The [[Leningrad Codex|Leningrad/Petrograd Codex]] (c. 1008-1010) is the oldest complete manuscript of the Hebrew Bible in Hebrew. The Leningrad/Petrograd codex is the manuscript upon which the Old Testament of most modern English translations of the Bible are based. Manuscripts earlier than the 13th century are very rare. The majority of the manuscripts have survived in a fragmentary condition.
+
+The oldest complete [[Torah]] scroll still in use has been carbon-dated to around 1250 and is owned by the Jewish community of the northern Italian town of [[Biella]].<ref>[[Jewish Telegraphic Agency]] (JTA), [https://www.timesofisrael.com/oldest-torah-scroll-still-in-use-found-in-italy/ Oldest Torah scroll still in use found in Italy], 3 March 2016, accessed 2 August 2019</ref>
+
+==Masorah manuscripts==
+===Proto-Masoretic from Second Temple period (1st century)===
+* [[Severus Scroll]] (named for the Roman Emperor who restored this scroll, reportedly seized from the Temple in Jerusalem, to the Jewish community in 220), a lost manuscript of early 1st century CE, only a few sentences are preserved by [[Rabbinic literature]]
+
+===Proto-Masoretic from "Silent Period" (2nd–10th century)===
+* Codex Hilleli, a lost manuscript of circa 600 CE, destroyed in 1197 in Spain, only a few sentences are preserved by Rabbinic literature<ref>{{cite book |title=The text of the Old Testament: An Introduction to the Biblia Hebraica |last=Würthwein |first=Ernst |year=1995 |publisher=Eerdmans Publishing |isbn=978-0-8028-0788-5 |page=38 |url=https://books.google.com/books?id=FSNKSBObCYwC&pg=PA38}}</ref>
+* Codex Muggeh (or Muga; ="corrected"), lost, cited as a source in [[Masoretic Text|Masoretic]] notations.
+
+===Masoretic (8th–10th century)===
+* Ben Asher Manuscripts, including several of those listed here-below (see Kahle)
+* The [[London Manuscript]] and the [[Ashkar-Gilson Manuscript]], the latter also known as the "Ashkar-Gilson Hebrew Manuscript #2", both from the same scroll, dated to the 7th or 8th century.<ref name="IMJ">{{cite web | url=https://www.imj.org.il/en/exhibitions/piecing-together-past | title=Piecing Together the Past &#124; the Israel Museum, Jerusalem }}</ref> The extant fragments cover Exodus 9:18–13:2 and 13:19–16:1.<ref>{{cite journal|last1=Engel|first1=Edna|last2=Mishor|first2=Mordechay|title=An Ancient Scroll of the Book of Exodus: The Reunion of Two Separate Fragments|journal=Israel Museum Studies in Archaeology|volume=7|pages=24–61|url=https://museum.imj.org.il/journal/archive/2015/images/Ancient%20Scroll.pdf|date=2015}}</ref>
+* [[Codex Orientales 4445]], also known as "London Codex" in the [[British Library]], London,<ref>[http://britishlibrary.typepad.co.uk/asian-and-african/2014/04/45-hebrew-manuscripts-go-digital.html# British Library Asian and African studies blog 10 April 2014]</ref> containing Genesis-Deuteronomy 1:33 (less Numbers 7:47–73 and Numbers 9:12–10:18).<ref name="British">Manuscript written by two different scribes, the older square script believed to be from the 10th century, whereas the newer Yemenite square script was written in the 16th century. See the British Library, [http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Or_4445 Or. 4445] {{Webarchive|url=https://web.archive.org/web/20221208153147/http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Or_4445 |date=2022-12-08 }}.</ref> and dated by colophon to 920-950 CE.<ref>{{Cite web | url=http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Or_4445 | title=Digitised Manuscripts | access-date=1 December 2016 | archive-date=8 December 2022 | archive-url=https://web.archive.org/web/20221208153147/http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Or_4445 | url-status=dead }}</ref>
+* [[Codex Cairensis]] (Prophets), pointed by [[Moses Ben Asher]], dated by a colophon 895 CE, contradicted by [[radiocarbon dating]], which indicated an 11th-century date. It is the oldest manuscript bearing the date of its writing; written in [[Tiberias]], subsequently was in [[Cairo]], now deposited at [[Hebrew University of Jerusalem]].
+* [[Codex Sassoon 1053]], 9th or 10th century, from the collection of [[David Solomon Sassoon]], now in the [[ANU - Museum of the Jewish People]] in Tel Aviv. (missing first 10 pages of Genesis)<ref>{{Cite web |last=Khomami |first=Nadia |date=February 15, 2023 |title=Oldest complete Hebrew Bible expected to break auction records |url=https://www.theguardian.com/books/2023/feb/15/oldest-complete-hebrew-bible-expected-to-break-auction-records |access-date=February 18, 2023 |website=The Bible {{!}} The Guardian |language=en-US}}</ref>
+* [[Codex Babylonicus Petropolitanus]] (Latter Prophets), dated 916 CE, [[Russian National Library]]
+* [[Pentateuch of 929]] (Torah) dated 929 CE, [[Russian National Library]].<ref>{{cite web | url=https://expositions.nlr.ru/eng/ex_manus/firkovich/sobr_second.php | title=Hebrew Manuscripts in the Collections of the National Library of Russia. Second Firkovich Collection }}</ref>
+* [[Aleppo Codex]], 930 CE, written in [[Tiberias]], now deposited at [[Israel Museum]] in [[Jerusalem]] (exhibited in the Shrine of the Book, the Codex was complete, supposedly pointed by [[Aaron ben Moses ben Asher]], partially missing since 1958); this manuscript is the basis of the ''[[Jerusalem Crown]]'' bible.
+* [[Leningrad Codex|Leningrad/Petrograd Codex]] (complete), copied from a Ben Asher manuscript, dated 1008 CE, written in [[Cairo]], now deposited at [[Russian National Library]] in [[Saint Petersburg]]; this manuscript is the basis of the ''[[Biblia Hebraica Stuttgartensia]]'' and other editions and is the oldest complete manuscript of the Hebrew Bible in Hebrew.
+* Michigan Codex (Torah), 10th century<ref>Eleazar Birnbaum, ''The Michigan Codex: An important Hebrew Bible manuscript'', Vetus Testamentum, vol. 17 pages 373-415 (Oct. 1967).</ref>
+* [[Damascus Pentateuch]], 10th century<ref>{{Cite web |url=http://www.wdl.org/en/item/11364/ |title=Damascus Pentateuch |access-date=22 July 2013 |archive-date=21 October 2021 |archive-url=https://web.archive.org/web/20211021172344/http://www.wdl.org/en/item/11364/ |url-status=dead }}</ref>
+* [[Moses Gaster|First Gaster]] Bible in the [[British Library]], 10th century<ref>[https://www.bl.uk/collection-items/gaster-bible] British Library</ref>
+* [[Lailashi Codex]] (Torah), Georgia, 10th or 11th century.<ref>{{cite web |url=https://historyofthebook.mml.ox.ac.uk/lailashi-codex/ |title=Book Launch and Exhibition; The Lailashi Codex: The Crown of Georgian Jewry |date=28 September 2023 |publisher=Oxford University |access-date=6 July 2026}}</ref><ref name="Gomelauri">{{Cite web |last=Gomelauri |first=Thea |date=28 May 2024 |title=The Greatest Medieval Masoretic Pentateuch: The Lailashi Codex—The Crown of Georgian Jewry |url=https://oxfordinterfaithforum.org/thematic-international-interfaith-reading-groups/manuscripts-in-interfaith-contexts/the-greatest-medieval-masoretic-pentateuch-the-lailashi-codex-the-crown-of-georgian-jewry/ |access-date=27 January 2026 |website=Oxford Interfaith Forum {{!}} Interfaith Academia |language=en-US}}</ref>
+
+===Later (11th–17th century)===
+* Codex Yerushalmi, lost, reportedly used in Spain (circa 1010) by [[Jonah ibn Janah]].
+* [[Codex Reuchlinanus]] (Prophets), dated 1105 CE.
+* [[Bologna Torah Scroll]]/Scroll 2, dated CE 1155–1255, University of Bologna Library
+* [[Ms. Eb. 448]] of the [[Vatican Library]], with [[Targum Onkelos]], dated 11–12 century<ref>[https://digi.vatlib.it/view/MSS_Vat.ebr.448 Vat. ebr. 448]</ref>
+* [[Moses Gaster|Second Gaster]] Bible in the [[British Library]], 11th–12th centuries <ref>[https://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Or_9880 British Library collection]</ref>
+* Braginsky Collection Codex Hilleli copy, 1241 Toledo, Spain (housed at Jewish Theological Seminary, New York)<ref>{{cite web |url=https://digitalcollections.jtsa.edu/islandora/object/jts%3A267103#page/24/mode/1up |title=Pentateuch, Codex Hilleli, Bible. Pentateuch. Hebrew. 1241 &#124; Jewish Theological Seminary}}</ref>
+* [[Damascus Crown]], written in Spain in 1260.
+* Madrid Manuscript BH Mss1, called also Madrid Codex M<sup>M1</sup> (Masoretic Madrid Codex 1) or simply M1 (Madrid 1). A manuscript of the entire Hebrew Bible from around 1280 A.D. bought in Toledo (Spain). It is also known to be the manuscript used for the Complutensian Polyglot Bible.<ref>{{cite web |title=Southeastern Baptist Theological Seminary Library |url=https://library.sebts.edu/c.php?g=457318&p=5844281 |accessdate=21 March 2025}}</ref><ref>{{cite web |title=Patrimonio Digital Complutense, de la Universidad Complutense de Madrid |url=https://patrimoniodigital.ucm.es/s/patrimonio/item/22 |accessdate=21 March 2025}}</ref>
+* [[Cloisters Hebrew Bible]]; 1300–1350 CE, before 1366; earliest owner named David ha-Kohen Coutinh[o] on [[Rosh Hashanah]] in 1366; owned by [[Zaradel Synagogue]] in Egypt. Acquired by the [[Metropolitan Museum of Art]] in 2018 under [[The Cloisters]] Collection.<ref>{{cite web |title=Hebrew Bible |url=https://www.metmuseum.org/art/collection/search/773026?searchField=All&amp;sortBy=relevance&amp;ft=hebrew+bible&amp;offset=0&amp;rpp=20&amp;pos=1 |website=www.metmuseum.org |publisher=MET |accessdate=6 February 2019}}</ref>
+* [[Farhi Bible]], written by Elisha Crescas in [[Provence]] between 1366 and 1383.<ref>[https://farhi.org/bible.htm The Farhi Bible]</ref> Purchased by [[David Solomon Sassoon]] in 1913 in [[Aleppo]], Syria.<ref>{{cite journal|last=Rabinowicz|first=H. |title=The Sassoon Treasures |journal=The Jewish Quarterly Review |volume=57 |issue=2 |date=1966|page=141|doi=10.2307/1453413 |jstor=1453413 |language=en}}</ref>
+* [[Rashba Bible]], completed in 1383<ref>[http://www.rashbagen.com/rashba-bible/ Rashba Bible], Info from Sotheby</ref>
+* Erfurt Codices (complete, [[Berlin State Library]]), E1 circa 14th century, E2 possibly 13th century, E3 possibly 11th century
+* Codex Jericho (Pentateuch), lost, cited in the notes to a Massoretic manuscript written circa 1310.
+* [[Al-Ousta Codex]], 14th century. Now at the [[Bibliothèque nationale de France|Bibliothèque Nationale]] in Paris.
+* Merwas Bible (14th century)<ref>{{cite journal|last=Rabinowicz|first=H. |title=The Sassoon Treasures |journal=The Jewish Quarterly Review |volume=57 |issue=2 |date=1966|pages=143–144|doi=10.2307/1453413 |jstor=1453413 |language=en }}</ref>
+* Codex Ezra, lost, C.D. Ginsburg owned a manuscript written in 1474 which purported to have been copied from this.
+* [[Kennicott Bible]], completed by Moses ibn Zabarah in [[A Coruña]], Spain in 1476 and now in the [[Bodleian Library]], Oxford,<ref>{{cite journal |last=González López |first=Emilio |date=1967 |title=Un tesouro de arte galego: A Biblia en hebreo da Universidade de Oxford |url=https://www.cervantesvirtual.com/s3/BVMC_OBRAS/9c0/fb5/0f5/f4f/412/ab9/264/6ea/761/423/aa/mimes/9c0fb50f-5f4f-412a-b926-46ea761423aa.pdf |language=gl |journal=Grial |issue=16 |page=198}}</ref> with exact facsimiles held by several libraries.
+* [[Lisbon Bible]], copied in 1483 in [[Lisbon]], Portugal, the most accomplished codex of the Portuguese school of medieval Hebrew illumination and now in the [[British Library]].<ref>[https://www.bl.uk/collection-items/lisbon-bible-or-2626-8 The Lisbon Bible – 1483<!--Note, May 2024: not available temporarily after Library cyberattack. Possibly URL may change after recovery?-->]{{Dead link|date=May 2026 |bot=InternetArchiveBot }}</ref>
+* Codex Sinai, mentioned in Massoretic notes and reportedly used by [[Elia Levita]] (circa 1540).
+* [[MS. de Rossi 782]], copied in Toledo Spain in 1277.
+* Codex Sanbuki (named for Zambuqi, on the Tigris River), lost, frequently quoted in Massoretic annotations and apparently seen (circa 1600) by [[Menahem Lonzano]].
+* Codex Great Mahzor, lost, mentioned in Massoretic notes (the title suggests that this codex contained only the Pentateuch and those selections from the Prophets that were read during the liturgical year)
+
+==Modern discoveries==
+* [[Ketef Hinnom scrolls]], late 7th or early 6th century BCE, placing them in the First Temple period. Found containing material from Leviticus and Deuteronomy, including the Priestly Blessing, alongside other otherwise unknown material on small rolled silver scrolls
+* [[Nash Papyrus]], dated to the 2nd BCE – 1st CE. A liturgy, potentially a Mezuzah, found with the 10 Commandments followed by the Shema; it is most similar to the [[Septuagint|LXX]]
+* A wine-jar seal held in the Chicago University’s collection quotes Jeremiah 48:11 as a reference to the quality of the wine contained therein. It likely dates to between the Dead Sea/Qumran Caves Scrolls and the major Masoretic texts<ref>{{Cite journal |last=Irwin |first=W. A. |date=1932 |title=An Ancient Biblical Text |url=https://www.jstor.org/stable/528842 |journal=The American Journal of Semitic Languages and Literatures |volume=48 |issue=3 |pages=184–193 |doi=10.1086/370339 |jstor=528842 |issn=1062-0516|url-access=subscription }}</ref>
+* [[En-Gedi Scroll]], fragment of Hebrew parchment dated to 2nd century CE, discovered in 1970 containing portions of the first two chapters of [[Leviticus]]<ref>{{Cite web |last=Lazaro |first=Enrico de |date=2016-09-23 |title=En-Gedi Scroll Finally Deciphered {{!}} Sci.News |url=https://www.sci.news/archaeology/en-gedi-scroll-deciphered-04216.html |access-date=2023-06-23 |website=Sci.News: Breaking Science News |language=en-US}}</ref>
+* [[Cairo Geniza]] fragments contains portions of the Hebrew Bible in Hebrew and Aramaic, discovered in Cairo synagogue, which date from about 4th century CE on
+
+===Dead Sea Scrolls===
+{{See also|List of the Dead Sea Scrolls{{!}}List of the Dead Sea/Qumran Caves Scrolls}}
+Dated Between 250 BCE and 70 CE.<ref>Timothy Lim, ''The Dead Sea Scrolls: A Very Short Introduction'', Oxford University Press, 2005, ''Dating the Scrolls'', [https://books.google.com/books?id=4GwEtg6jnLMC&pg=PT55]</ref>
+* [[Isaiah scroll]], 1Qlsa, contains almost the complete text of the [[Book of Isaiah]] 
+* 4Q17 (portions Exodus and Leviticus dated to 250BCE)
+* 4Q22 (fragments of Genesis and Exodus written in Paleo-Hebrew Script)
+* [[Paleo-Hebrew Leviticus Scroll|11QpaleoLev]] (fragments of Leviticus written in Paleo-Hebrew, recovered from the 11th cave) 
+* [[4Q41|4QDeut<sup>n</sup>]], contains the [[Ten Commandments|Decalogue]].
+* [[4Q106]]
+* [[4Q107]]
+* [[4Q108]]
+* [[4Q240]]
+* [[6Q6]]
+
+====[[List of manuscripts from Qumran Cave 1|Qumran Cave 1]]====
+{{:List of manuscripts from Qumran Cave 1}}
+
+====[[List of manuscripts from Qumran Cave 2|Qumran Cave 2]]====
+{{:List of manuscripts from Qumran Cave 2}}
+
+====[[List of manuscripts from Qumran Cave 3|Qumran Cave 3]]====
+{{:List of manuscripts from Qumran Cave 3}}
+
+====[[List of manuscripts from Qumran Cave 4|Qumran Cave 4]]====
+{{:List of manuscripts from Qumran Cave 4}}
+
+====[[List of manuscripts from Qumran Cave 5|Qumran Cave 5]]====
+{{:List of manuscripts from Qumran Cave 5}}
+
+====[[List of manuscripts from Qumran Cave 6|Qumran Cave 6]]====
+{{:List of manuscripts from Qumran Cave 6}}
+
+====[[List of manuscripts from Qumran Cave 7|Qumran Cave 7]]====
+{{:List of manuscripts from Qumran Cave 7}}
+
+====[[List of manuscripts from Qumran Cave 8|Qumran Cave 8]]====
+{{:List of manuscripts from Qumran Cave 8}}
+<!--
+====[[List of manuscripts from Qumran Cave 9|Qumran Cave 9]]====
+{{:List of manuscripts from Qumran Cave 9}}
+
+====[[List of manuscripts from Qumran Cave 10|Qumran Cave 10]]====
+{{:List of manuscripts from Qumran Cave 10}}
+-->
+
+====[[List of manuscripts from Qumran Cave 11|Qumran Cave 11]]====
+{{:List of manuscripts from Qumran Cave 11}}
+
+== See also ==
+* [[Ancient literature]]
+* [[Biblical manuscript]]s
+* [[Hebrew and Aramaic papyri]]
+* [[List of inscriptions in biblical archaeology]]
+* [[List of the Dead Sea Scrolls|List of the Dead Sea/Qumran Caves Scrolls]]
+* [[Septuagint manuscripts]]
+
+== Notes ==
+{{notelist|30em}}
+{{reflist|group="n"}}
+
+==References==
+<references>
+
+<ref name=":3">{{cite web |url = http://www.deadseascrolls.org.il/explore-the-archive|title = Leon Levy Collection|last1 = |first1 = |last2 = |first2 = |date = |website = Leon Levy Dead Sea Scrolls Digital Library|publisher = [[Israel Antiquities Authority]]|accessdate = 2015-01-22}}</ref>
+<ref name=":0">OakTree Software, Inc. ''Accordance 10: Bible Software''. 2008.</ref>
+
+</references>
+
+==Bibliography==
+*{{Cite book|title = A Guide to the Dead Sea Scrolls and Related Literature|last = Fitzmyer|first = Joseph A.|publisher = William B. Eerdmans Publishing Company| url= https://books.google.com/books?id=TILXeWJ2eNAC | year = 2008|isbn = 9780802862419|location = Grand Rapids, MI}}
+
+== Further reading ==
+* Würthwein Ernst (1988). ''Der Text des Alten Testaments'', Stuttgart: [[Deutsche Bibelgesellschaft]] 1988, p.&nbsp;40–47; English translation [https://books.google.com/books?id=FSNKSBObCYwC&pg=PA0 The text of the Old Testament: an introduction to the Biblia Hebraica]
+* Malcolm C. Davis, Ben Outhwaite, [https://books.google.com/books?id=lZtxUICXIP4C '' Hebrew Bible Manuscripts in the Cambridge Genizah Collections: Taylor-Schechter additional series 32–255, with addenda to previous volumes''], [[Cambridge University Library]] 2003
+* Bernhard Pick, ''Lost Hebrew Manuscripts'', Journal of the Society of Biblical Literature, [http://babel.hathitrust.org/cgi/pt?id=uc1.b3374270;view=1up;seq=342;q1=%22lost%20hebrew%20manuscripts%22;start=1;size=10;page=search;num=122] vol. 2, pages 122-127 (1882).
+* C. David Ginsburg, ''Introduction to the Massoretico-Critical Edition of the Hebrew Bible'' (1897, London: Trinitarian Bible Society), [https://archive.org/details/introductionofma00ginsuoft] especially chapt. XII, History and Description of the Manuscripts, pages 469–778, and elsewhere in the volume for information on lost mss.
+* [[Paul Kahle]], ''The Hebrew Ben Asher Manuscripts'', Vetus Testamentum, vol. 1, pages 161-167 (July 1951); mentions the Leningrad Codex, the Aleppo Codex, the Cairo Prophets (Codex Cairensis), and British Museum Or. 4445.
+* [Emil G. Hirsch],"Bible Manuscripts", ''Jewish  Encyclopedia'' (1902)[http://www.jewishencyclopedia.com/articles/3265-bible-manuscripts] volume 3, pages 178–181, includes information on lost mss.
+* Adolph Neubauer, ''The Introduction of the Square Characters in Biblical Manuscripts and an Account of the Earliest Manuscripts of the Old Testament'', Studia Biblica et Ecclesiastica [http://babel.hathitrust.org/cgi/pt?id=mdp.39015043619827;seq=15;view=1up;num=2](Oxford Univ.), vol. 3, pages 1–36 (1891).
+
+== External links ==
+{{Sister project links|auto=yes}}
+* [http://britishlibrary.typepad.co.uk/asian-and-african/2014/04/45-hebrew-manuscripts-go-digital.html# The London Codex (Or. 4445) and other MSS.], from the [[British Library]] holdings
+* [http://www.deadseascrolls.org.il/explore-the-archive/search#q=%27%27+AND+manuscript_type_parent_en%3A%27Biblical+Compositions%27 Dea Sea Scrolls Digital Library: Biblical compositions (218)]
+
+{{Hebrew language}}
+{{The Bible and history}}
+{{Bible lists}}
+
+{{DEFAULTSORT:Hebrew Bible manuscripts}}
+[[Category:Hebrew Bible manuscripts| ]]
+[[Category:Old Testament-related lists]]
+[[Category:Hebrew manuscripts]]
+[[Category:Textual scholarship]]
+[[Category:Lists of manuscripts]]
+[[Category:Hebrew Bible-related lists]]

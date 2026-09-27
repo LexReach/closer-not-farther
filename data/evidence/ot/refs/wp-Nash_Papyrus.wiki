@@ -1,0 +1,43 @@
+{{short description|Jewish Hebrew manuscript}}
+{{more footnotes needed|date=January 2012}}
+[[File:2nd century Hebrew decalogue.jpg|thumb|Nash papyrus]]
+The '''Nash Papyrus''' is a collection of four [[papyrus]] fragments acquired in [[Egypt]] in 1902,<ref name=cudl/> inscribed with a [[Hebrew]] text which mainly contains the [[Ten Commandments]] and the first part of the [[Shema Yisrael]] prayer,<ref name="Penn1904"/> in a form that differs substantially from the later, canonical [[Masoretic Text]] and is in parts more similar to the chronologically closer [[Septuagint]]. It has been suggested that the text might have been the daily worship of a Jew living in Egypt at the time.<ref name=Burkitt/> The fragments comprise a single sheet and are not part of a scroll. The papyrus is of unknown provenance, although it is allegedly from [[Fayyum]].<ref>{{cite web|title=Encyclopedia Judaica: Nash Papyrus|publisher=American-Israeli Cooperative Enterprise|work=Jewish Virtual Library|url=https://www.jewishvirtuallibrary.org/nash-papyrus}}</ref> The text was first described by [[Stanley Arthur Cook|Stanley A. Cook]] in 1903. Though dated by Cook to the 2nd century CE, subsequent reappraisals have pushed the date of the fragments back to about 150–100 BCE.<ref>{{cite web |url= https://unitedisrael.org/the-nash-papyrus-an-ancient-witness/ |title= The Nash Papyrus – An Ancient Witness|publisher=United Israel World Union|date=20 February 2017}}</ref> The papyrus was by far the oldest [[Hebrew language|Hebrew]] manuscript fragment known at that time, before the discovery of the [[Dead Sea Scrolls]] in 1947.<ref>{{cite encyclopedia |url= https://www.britannica.com/topic/biblical-literature/The-Christian-canon#ref597354 |encyclopedia= Encyclopaedia Britannica |title= The Christian canon |publisher= Encyclopædia Britannica, Inc.}}</ref>
+
+==Discovery==
+The papyrus fragments were acquired by [[Walter Llewellyn Nash|W. L. Nash]], the secretary of the [[Society of Biblical Archaeology]]. He presented them to [[Cambridge University Library]] in 1903.<ref name=cudl>{{cite web |title= Nash Papyrus |url= http://cudl.lib.cam.ac.uk/view/MS-OR-00233 |publisher= Cambridge Digital Library |access-date=18 December 2012}}</ref>
+
+==Contents==
+Twenty-four lines long, with a few letters missing at each edge, the papyrus contains the Ten Commandments in Hebrew and a short middle text, followed by the start of the Shema Yisrael prayer.<ref name="Penn1904">{{cite journal |jstor= 1450510 |title= The Nash Papyrus. A New Photograph |journal= The Jewish Quarterly Review |volume= 16 |issue= 3 |pages= 559–561 |date= April 1904 |publisher= University of Pennsylvania Press |doi= 10.2307/1450510 |author= F. C. Burkitt}}</ref> The text of the Ten Commandments combines parts of the version from [[Book of Exodus|Exodus]] {{bibleverse-nb|Exodus||20:2–17|HE}} with parts from [[Deuteronomy]] {{bibleverse-nb|Deuteronomy||5:6–21|HE}}. A curiosity is its omission of the phrase "house of bondage", used in both versions, about Egypt – perhaps a reflection of where the papyrus was composed.
+
+==Textual basis==
+{{Further|Textual variants in the Hebrew Bible#Exodus 20}}
+Some (but not all) of the papyrus' substitutions from Deuteronomy are also found in the version of Exodus in the Septuagint, a Greek translation of the [[Pentateuch]] from the 3rd–2nd centuries BCE, made in [[Alexandria]]. The Septuagint also interpolates before [[Deuteronomy]] {{bibleverse-nb|Deuteronomy||6:4|HE}} the preamble to the Shema found in the papyrus, and the Septuagint also agrees with a couple of the other variant readings where the papyrus departs from the standard Hebrew Masoretic text. The ordering of the later commandments in the papyrus (Adultery–Murder–Steal, rather than Murder–Adultery–Steal) is also that found in most texts of the Septuagint.{{citation needed|date=November 2022}}
+
+The papyrus preamble before Shema Yisrael, also found in the Septuagint, is taken from {{bibleverse|Deuteronomy|4:45}}, which is the only time the recurring formula "This is the commandment(s) and rules and teachings..." mentions the Exodus from Egypt. The Nash preamble correctly cites [[Moses]] as the speaker rather than God as in the Septuagint. The insertion of Deuteronomy 4:45 before Shema Yisrael in the papyrus and especially the Septuagint, which has two preambles in the same section: {{bibleverse|Deuteronomy|6:1}} and the interpolation to {{bibleverse|Deuteronomy|6:3}}, was probably done to distance the central Shema Yisrael prayer from its context: sections dealing with the entry to the [[Promised Land]] of [[Canaan]].{{citation needed|date=November 2022}}
+
+==Likely use==
+According to the [[Talmud]] it was once customary to read the Ten Commandments before saying the Shema[https://www.sefaria.org/Mishnah%20Tamid.5.1?lang=bi]. As Burkitt put it, "it is therefore reasonable to conjecture that this Papyrus contains the daily worship of a pious Egyptian Jew, who lived before the custom came to an end".<ref name=Burkitt>[[Francis Crawford Burkitt|Burkitt, F.C.]], [http://faculty.gordon.edu/hu/bi/Ted_Hildebrandt/OTeSources/02-Exodus/Text/Articles/Burkitt-10Commands-JQR.pdf The Hebrew Papyrus of the Ten Commandments] {{Webarchive|url=https://web.archive.org/web/20110717170446/http://faculty.gordon.edu/hu/bi/Ted_Hildebrandt/OTeSources/02-Exodus/Text/Articles/Burkitt-10Commands-JQR.pdf |date=2011-07-17 }}, ''[[The Jewish Quarterly Review]]'', '''15''', 392–408 (1903)</ref> It is thus believed that the papyrus probably consisted of a [[Liturgy|liturgical]] document, specifically the constituents of a [[Tefillin|Phylactery]],<ref name=cudl/> which may have purposely synthesised the two versions of the Commandments, rather than directly from Scripture. However, the papyrus' similarities with the Septuagint, support a possibility that a Hebrew text of the Pentateuch was in circulation in Egypt in the 2nd century BCE, and served both the Nash papyrus and the Septuagint translation as source, but which differs significantly from the modern Jewish Masoretic Text.
+
+== Actual location ==
+Currently the manuscript is in the [[Cambridge University Library]] (MS Or.233).<ref name=cudl/>
+
+==See also==
+* [[List of Hebrew Bible manuscripts]]
+
+==References==
+{{Reflist}}
+;Sources
+* Cook, Stanley A. "[[:File:Cook, Stanley A. "A Pre-Massoretic Biblical Papyrus".pdf|A Pre-Massoretic Biblical Papyrus]]." Proceedings of the Society of Biblical Archaeology 25 (1903): 34–56.
+* [[William F. Albright|Albright, William F.]] "A Biblical Fragment from the Maccabean Age: The Nash Papyrus." Journal of Biblical Literature 56 (1937): 145–176.
+
+==External links==
+* [http://cudl.lib.cam.ac.uk/view/MS-OR-00233 Nash Papyrus, Cambridge Digital Library]
+* Greenberg, Moshe, "Nash Papyrus" in ''Encyclopaedia Judaica'', Vol. 14, ed. Skolnik, Fred, et al. (Keter Publishing House, 2007), 783–784.
+
+{{Book of Exodus navbox}}
+
+[[Category:Hebrew Bible manuscripts]]
+[[Category:2nd-century BC biblical manuscripts]]
+[[Category:Papyri from ancient Egypt]]
+[[Category:Hebrew papyri]]
+[[Category:Jewish Ptolemaic history]]

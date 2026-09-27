@@ -1,0 +1,334 @@
+{{Short description|5th-century handwritten Bible copy in Greek}}
+{{Distinguish|Alexandria Codex}}
+{{Use dmy dates|date=May 2022}}
+{{New Testament manuscript infobox
+| form =Uncial
+| number='''02'''
+| image =Codex Alexandrinus f41v - Luke.jpg
+| isize =180
+| caption= Folio 41v from the Codex Alexandrinus contains the end of the [[Gospel of Luke]] with the decorative tailpiece found at the end of each book
+| name =Alexandrinus
+| sign =A
+| text =[[Greek Old Testament]] and Greek [[New Testament]]†
+| script=[[Greek language|Greek]]
+| found =
+| date = c. 400-440
+| now at=[[British Library]]
+| cite =
+| size ={{convert|12.6|xx|10.4|in|cm|0|abbr=on|order=flip}}
+| type =[[Byzantine text-type]] in Gospels, [[Alexandrian text-type|Alexandrian]] in rest of NT
+| cat =III (in Gospels), I (in rest of NT)
+| hand =elegantly written but with errors
+| note =close to {{papyrus link|74}} in Acts, and to {{papyrus link|47}} in Rev
+}}
+
+The '''Codex Alexandrinus''' is a [[manuscript]] of the Greek Bible,<ref group="n">The [[Greek Vulgate|Greek Bible]] in this context refers to the Bible used by Greek-speaking Christians who lived in Egypt and elsewhere during the early history of Christianity. This Bible contained both the [[Greek Old Testament|Old]] and [[New Testament]]s in [[Koine Greek]].</ref> written on [[parchment]]. It is designated by the siglum '''A''' or '''02''' in the [[Biblical manuscript#Gregory-Aland|Gregory-Aland]] numbering of New Testament manuscripts, and δ 4 in the [[Biblical manuscript#Von Soden|von Soden]] numbering of New Testament manuscripts.{{r|Aland}} It contains the majority of the [[Greek Old Testament]] and the Greek New Testament.<ref name="Aland">{{Cite book | first1=Kurt | last1=Aland | author-link1=Kurt Aland | first2=Barbara | last2=Aland | author-link2=Barbara Aland | translator=Erroll F. Rhodes | title=The Text of the New Testament: An Introduction to the Critical Editions and to the Theory and Practice of Modern Textual Criticism | pages=107, 109 | year=1995 | publisher=[[William B. Eerdmans Publishing Company]] | location=Grand Rapids | isbn=978-0-8028-4098-1 | url=https://archive.org/details/textnewtestament00kurt | url-access=limited}}</ref> It is one of the four [[Great uncial codices]] (these being manuscripts which originally contained the whole of both the Old and New Testaments). Along with [[Codex Sinaiticus]] and [[Codex Vaticanus|Vaticanus]], it is one of the earliest and most complete manuscripts of the [[Bible]].{{r|Aland}} Using the study of comparative writing styles ([[palaeography]]), it has been dated to the fifth century.{{r|Aland}} 
+
+It derives its name from the city of [[Alexandria]] (in [[Egypt]]), where it resided for a number of years before it was brought by the [[Eastern Orthodox Church|Eastern Orthodox]] [[Cyril Lucaris|Patriarch Cyril Lucaris]] from Alexandria to [[Constantinople]] (modern day [[Istanbul]] in [[Turkey]]).<ref name="Tregelles">{{Cite book | first=Samuel Prideaux | last=Tregelles | author-link=Samuel Prideaux Tregelles | title=An Introduction to the Critical study and Knowledge of the Holy Scriptures | volume=4 | year=1856 | publisher=Longmans, Green & Co. | location=London | url=https://archive.org/details/anintroductiont00treggoog}}</ref>{{rp|152}} It was then given to [[Charles I of England]] in the 17th century. Bishop [[Brian Walton (bishop)|Brian Walton]] assigned Alexandrinus the capital Latin letter A in the [[Polyglot (book)|Polyglot]] Bible (a multi-language version of the Bible with the different languages placed in parallel columns) of 1657.<ref>{{Cite book | first=Jack | last=Finegan | author-link=Jack Finegan | title=Encountering New Testament Manuscripts: A Working Introduction to Textual Criticism | page=49 | year=1980 | publisher=William B. Eerdmans | location=Grand Rapids, Michigan | isbn=978-0-80281836-2 | url=https://books.google.com/books?id=fIcU1BFiMBgC&pg=PA49}}</ref> This designation was maintained when the New Testament manuscript list system was standardized by [[Swiss people|Swiss]] [[Theology#Christianity|theologian]] and [[Textual criticism of the New Testament|textual critic]] [[Johann Jakob Wettstein|Johann J. Wettstein]] in 1751.{{r|Wettstein}} Thus Alexandrinus held the first position in the manuscript list.<ref name="Greg-Canon">{{Cite book | first=Caspar René | last=Gregory | author-link=Caspar René Gregory | title=Canon and Text of the New Testament | volume=1 | year=1907 | publisher=T. & T. Clark | location=Edinburgh | url=https://archive.org/stream/canonandtextnew00greguoft#page/n357/mode/2up | access-date=25 December 2010}}</ref>{{rp|340}} 
+
+Until the later purchase of [[Codex Sinaiticus]], biblical scholar and textual critic [[Frederick Henry Ambrose Scrivener|Frederick H. A. Scrivener]] described it as the best manuscript of the Greek Bible deposited in Britain.{{r|Scrivener|p=51}} Today, it rests along with Codex Sinaiticus in one of the showcases in the Sir [[John Ritblat]] Gallery of the [[British Library]] in [[London]], [[United Kingdom|U.K]].<ref name="Ehrman">{{Cite book | first=Bruce Manning | last=Metzger | author-link1=Bruce M. Metzger | first2=Bart D. | last2=Ehrman | author-link2=Bart Ehrman | title=The Text of the New Testament: Its Transmission, Corruption, and Restoration | edition=4th | page=67 | year=2005 | publisher=[[Oxford University Press]] | location=New York; Oxford | isbn=0-19-516667-1 | url=https://archive.org/details/textnewtestament00metz | url-access=limited}}</ref><ref name="INTF">{{Cite web | title=Liste Handschriften: Codex Alexandrinus (A) | publisher=Institute for New Testament Textual Research | location=Münster | url=http://intf.uni-muenster.de/vmr/NTVMR/ListeHandschriften.php?ObjID=20002 | access-date=16 March 2013}}</ref> A full photographic reproduction of the New Testament volume (shelf number Royal MS 1. D. V-VIII) is available on the British Library's website.<ref>{{Cite web | title=Codex Alexandrinus at the British Library's Website | url=https://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_D_VIII | url-status=dead | archive-url=https://web.archive.org/web/20200116144428/http://www.bl.uk/manuscripts/Viewer.aspx?ref=royal_ms_1_d_viii_fs001r | archive-date=16 January 2020}}</ref>
+
+==Description==
+[[File:Codex Alexandrinus list of kephalaia.JPG|thumb|left|220px|List of chapters (κεφάλαια) in the [[Gospel of Mark]]]]
+The manuscript is a [[codex]] (precursor to the modern [[book]] format) made from 773 [[vellum]] folios (specific name for pages in a codex) measuring {{convert|12.6|xx|10.4|in|cm}},{{r|Metzger}} bound in [[quarto]] format (parchment leaves placed on top of each other, folded in half vertically, and then folded in half again horizontally, to make a single block, then stitched together with others to create a book), which now comprise four volumes.<ref name="Metzger">{{Cite book | first=Bruce Manning | last=Metzger | author-link=Bruce M. Metzger | title=Manuscripts of the Greek Bible: An Introduction to Greek Palaeography | page=86 | year=1991 | publisher=Oxford University Press | location=New York; Oxford | isbn=978-0-19-502924-6 | quote=Vellum codex of the Bible | url=https://archive.org/details/manuscriptsofgre0000metz/page/86/mode/2up?q=Vellum | url-access=limited}}</ref>{{r|Scrivener|p=52}} Most of the folios were originally gathered into [[paper quire|quires]] of eight leaves each (this being eight parchment leaves placed on top of each other, then folded as per [[quarto]] above). Scholar B. H. Cowper describes the vellum as "thin, fine, and very beautiful".{{r|Montefiore}} In modern times it was rebound into sets of six leaves each.{{r|Montefiore}} Cowper's further description of the pages note they are "often discoloured at the edges", which have been damaged by age and more so through "the ignorance or carelessness of the modern binder, who has not always spared the text, especially at the upper inner margin".<ref name="Montefiore">{{Cite book | first=Thomas Law | last=Montefiore | title=Catechesis Evangelica: Questions and Answers based on the "Textus Receptus" | page=267 | year=1862 | publisher=Longman, Green, Longman, and Roberts | location=London | url=https://books.google.com/books?id=_58CAAAAQAAJ}}</ref> Scrivener noted that "[t]he vellum has fallen into holes in many places, and since the ink peels off for every age whensoever a leaf is touched a little roughly, no one is allowed to handle the manuscript except for good reasons."{{r|Scrivener|p=52}} Three volumes contain the [[Septuagint]] (the Greek version of the Old Testament, also known as the LXX), of which the total count of folios for each volume is 279, 238, and 118 with ten leaves lost.{{r|Metzger|Scrivener|p2=52}} The fourth volume contains the New Testament in the remaining 144 folios, with 31 leaves lost.{{r|Metzger}}<ref name="Scrivener">{{cite book | first=Frederick Henry Ambrose | last=Scrivener | author-link=Frederick Henry Ambrose Scrivener | title=Six Lectures on the Text of the New Testament and the Ancient Manuscripts which contain it | year=1875 | publisher=Deighton, Bell & Co. | location=Cambridge | url=https://archive.org/stream/sixlecturesontex00scri#page/50/mode/2up}}</ref>{{rp|51–52}} In the fourth volume, [[First Epistle of Clement|1]] and [[Second Epistle of Clement|2 Clement]] are also missing leaves, perhaps 3.<ref>E. Maunde Thompson, ed., Facsimile of the Codex Alexandrinus (London: British Museum, 1883), 4:4, cited in {{Cite book | last=Porter | first=Stanley E. | author-link=Stanley E. Porter | title=How We Got the New Testament: Text, Transmission, Translation | publisher=Baker Academic | year=2013 | location=Grand Rapids, MI USA | page=87, note 181 | url=https://books.google.com/books?id=Khe-AgAAQBAJ&pg=PT87 | isbn=9781441242686}}</ref>
+
+The text in the codex is written in two columns in [[uncial script]], with between 49 and 51 lines per column, and 20 to 25 letters per line.{{r|Metzger|Scrivener|Aland|Gregory|p2=52|p3=30}} The beginning lines of each book are written in red ink,{{r|Scrivener|p=53}} and sections within the book are marked by a larger letter set into the margin.{{r|Scrivener|p=52}} The text is written continuously, with no division of words (known as ''[[Scriptio continua]]''), but some pauses are observed in places in which a dot should be between two words.{{r|Scrivener|Tregelles|p1=52|p2=153}} There are no [[Stress (linguistics)|accents]] or [[Greek diacritics|breathing marks]], except a few added by a later hand.{{r|Scrivener|p=52}} The punctuation was written by the first hand.{{r|Metzger}} The poetical books of the Old Testament are written [[Stichometry|stichometrically]] (this being a new verse/phrase starting on a new line).{{r|Metzger}} The Old Testament quotations in the text of New Testament are marked in the margin by the sign 〉(known as a ''diplai'').{{r|Greg-Canon|p=340}}
+
+The only decorations in the codex are tail-pieces at the end of each book (see illustration), and it also shows a tendency to increase the size of the first letter of each sentence. The larger letters at the beginning of the sections stand out in the margin as in codices [[Codex Ephraemi|Ephraemi]] and [[Codex Basilensis A. N. III. 12|Basilensis]].<ref name="Scriv-Intro">{{Cite book | first=Frederick Henry Ambrose | last=Scrivener | author-link=Frederick Henry Ambrose Scrivener | author2=Edward Miller | title=[[A Plain Introduction to the Criticism of the New Testament]] | volume=1 | year=1894 | publisher=[[George Bell & Sons]] | location=London }}</ref>{{rp|132}} Codex Alexandrinus is the oldest manuscript to use larger letters to indicate new sections.{{r|Scrivener|p=52}}<ref name="Nestle-Edie">{{Cite book | first=Eberhard | last=Nestle | author-link=Eberhard Nestle | others=William Edie (trans.) | title=Introduction to the Textual Criticism of the Greek New Testament | year=1901 | publisher=Williams & Norgate | location=London | url=https://archive.org/details/introductiontote00nestrich}}</ref>{{rp|59}}
+
+[[Iotacism|Iotacistic]] errors occur in the text: αὶ is exchanged for ε, εὶ for ὶ and η for ὶ. This is, however, no more than seen in other manuscripts of the same date.{{r|Scriv-Intro|p=104}} The letters [[Nu (Greek)|Ν]] and [[Mu (letter)|Μ]] are occasionally confused, and the cluster {{lang|grc|ΓΓ}} (gg) is substituted with {{lang|grc|ΝΓ}} (ng). This may be an argument which points to Egypt as where the codex was produced,{{r|Tregelles|p=155}} but it is not universally accepted.<ref name="Waltz">{{cite encyclopedia | first=Robert | last=Waltz | title=An Introduction to New Testament Textual Criticism | encyclopedia=A Site Inspired By: The Encyclopedia of New Testament Textual Criticism | url=http://www.skypoint.com/members/waltzmn/ManuscriptsUncials.html#uA | access-date=12 November 2010 }}</ref>
+
+The handwriting from the beginning of Luke to 1 Corinthians 10:8 differs from that in the rest of the manuscript. Some letters have [[Coptic language|Coptic]] shapes (f.e. [[Alpha (letter)|Α (''alpha'')]], [[Mu (letter)|Μ (''mu'')]], [[Delta (letter)|Δ (''delta'')]], and [[Pi (letter)|Π (''pi'')]]). The letters are more widely spaced and are a little larger than elsewhere. Δ has extended base and Π has extended cross-stroke.{{r|Thompson|p=5}} [[Greek numerals|Numerals]] are not expressed by letters except in [[Book of Revelation|Revelation]] 7:4; 21:17.{{r|Scriv-Intro|p=104}} In the past the codex had been judged to have been carelessly written, with many errors of transcription, but not so many as in [[Codex Sinaiticus]], and no more than [[Codex Vaticanus]].{{r|Scriv-Intro|p=104}}
+
+[[File:Codex Alexandrinus 013a Mc 6,27-54.JPG|thumb|right|220px|A vacant space proportionate to the break in the sense follows the end of a paragraph (page with text of Mark 6:27–54)]]
+The [[Capital letter|majuscule letters]] have elegant shape, but a little less simple than those in [[Codex Sinaiticus]] and [[Codex Vaticanus]].{{r|Scrivener|p=52}} At the end of a line, these letters are often very small, and much of the writing is very pale and faint.{{r|Montefiore|Hernandez}} Punctuation is more frequent, usually on a level with the top of the preceding letter, while a vacant space, proportionate to the break in the sense, follows the end of a paragraph.{{r|Scrivener|p=52}} At the end of each book the [[Colophon (publishing)|colophon]] is ornamented by pretty [[volute]]s from the initial copyist.{{r|Scrivener|p=52}} The [[Ammonian Sections]] with references to the [[Eusebian Canons]] (an early system of dividing the four Gospels into different sections, developed by early church writer [[Eusebius of Caesarea]]) stand in the margin of the Gospels.{{r|Metzger|Scrivener|Montefiore|p2=53}} It contains divisions into larger sections (known as {{lang|el|[[kephalaia|κεφάλαια]]}} (''kephalaia''), or ''chapters''), the headings of these sections (known as {{lang|grc|τίτλοι}} / ''titloi'') stand at the top of the pages.{{r|Scrivener|p=53-54}} The places at which sections start are indicated throughout the Gospels, and in Luke and John their numbers are placed in the margin of each column. To all the Gospels (except [[Gospel of Matthew|Matthew]], due to several pages missing at the beginning) is prefixed by a table of contents (also known as {{lang|el|κεφάλαια}}).<ref>{{Cite journal | first=Greg | last=Goswell | title=Early Readers of the Gospels: The Kephalaia and Titloi of Codex Alexandrinus | journal=Journal of Graeco-Roman Christianity and Judaism | volume=6 | pages=134–174 | year=2009 | url=http://www.jgrchj.net/volume6/JGRChJ6-7_Goswell.pdf }}</ref>
+
+The various [[Euthalian Apparatus]] sections into which the Acts, Epistles, and Apocalypse were divided (similar to [[Eusebius of Caesarea|Eusebius']] system for the Gospels) are not indicated in this manuscript. A ''cross'' appears occasionally as a separation in the [[Acts of the Apostles|Book of Acts]]. A larger letter in the margin throughout the New Testament marks the beginning of a paragraph.{{r|Tregelles|p=154}}
+
+The number of scribes who worked on the codex has been disputed. According to biblical and classical scholar [[Frederic G. Kenyon|Frederic Kenyon]] there were five scribes, two scribes in the Old Testament (I and II) and three in the New (III, IV, and V).{{r|Metzger}}<ref name="FKenyon">{{Cite book | first=Frederic | last=Kenyon | title=Our Bible and the Ancient Manuscripts | page=130 | year=1939 | publisher=Eyre and Spottiswoode | location=London | url=https://archive.org/details/ourbibleandanci00kenygoog}}</ref> Subsequently, textual critics [[Theodore Cressy Skeat|Theodore Skeat]] and Milne argued there were only two or possibly three scribes,<ref>{{Cite book | first1=H. J. M. | last1=Milne | first2=Theodore Cressy | last2=Skeat | author2-link=Theodore Cressy Skeat | title=The Codex Sinaiticus and the Codex Alexandrinus | pages=32–34 | year=1938 | publisher=British Museum | location=London | url=https://archive.org/details/codexsinaiticusc0000brit}}</ref>{{r|Metzger}}<ref group="n">Kenyon in 1939 noticed: "this seems to ignore certain marked differences of script". See Kenyon, ''Our Bible and the Ancient Manuscripts''.</ref> a view widely accepted by 20th-21st century scholars(such as biblical scholar and textual critic [[Bruce M. Metzger|Bruce Metzger]], biblical scholar and textual critic [[Kurt Aland]], textual critic Juan Hernández Jr., and textual critic Dirk Jongkind).{{r|Hernandez|prov-Alex|p1=101|p2=119–120}}
+
+Many corrections have been made to the manuscript, some of them by the original scribe, but the majority of them by later hands.{{r|Metzger|Scrivener|p2=55}} The corrected form of the text agrees with that seen in [[Codex Bezae|Codex Bezae (D)]], [[Codex Petropolitanus Purpureus|Codex Petropolitanus Purpureus (N)]], [[Codex Monacensis (X 033)|Codex Monacensis (X)]], [[Codex Macedoniensis|Codex Macedoniensis (Y)]], [[Codex Tischendorfianus IV|Codex Tischendorfianus IV (Γ)]], [[Codex Koridethi|Codex Koridethi (Θ)]], [[Codex Petropolitanus (New Testament)|Codex Petropolitanus (Π)]], [[Codex Rossanensis|Codex Rossanensis (Σ)]], [[Codex Beratinus|Codex Beratinus (Φ)]] and the majority of minuscule manuscripts.{{r|Metzger}} Kenyon observed that Codex Alexandrinus had been "extensively corrected, though much more in some books than in others". In the Pentateuch, whole sentences were erased and a new text substituted. Kings was the least corrected of the books.{{r|FKenyon|p=10}} In the Book of Revelation only 1 of its 84 singular readings was corrected, the rest remained uncorrected. This is in stark contrast with [[Codex Sinaiticus]], in which 120 of the Apocalypse's 201 singular readings were corrected in the 7th century.{{r|Hernandez|pp=102–103}}
+
+Each leaf has Arabic numeration, set in the verso of the lower margin. The first surviving leaf of Matthew has number 26. The 25 leaves now lost must have been extant when that note was written.{{r|Scriv-Intro|p=102}}
+
+==Contents==
+[[File:Texts of the OT.svg|thumb|right|350px|The inter-relationship between various significant ancient manuscripts of the Old Testament (some identified by their siglum). LXX here denotes the original [[Septuagint]]; "A" denotes the Codex Alexandrinus]]
+
+The codex contains a nearly complete copy of the [[Septuagint|LXX]], including the [[deuterocanonical]] books (those books not accepted as authoritative by some [[Christians]], but accepted by certain [[Christian denomination]]s) [[3 Maccabees|3]] and [[4 Maccabees]], [[Psalm 151]] and the [[Book of Odes (Bible)|14 Odes]]. The '''Epistle to Marcellinus''' (attributed to [[Saint Athanasius]]) and the [[Eusebius of Caesarea|Eusebian]] summary of the Psalms are inserted before the Book of Psalms (an overview of the Psalms written by the early Christian writer [[Eusebius of Caesarea]]). It also contains all of the books of the common modern 27-book [[New Testament]], however the pages containing Matthew 1:1–25:5 are not extant. The codex also contains [[First Epistle of Clement|1 Clement]] (lacking 57:7–63; this is a letter attributed to the early Christian writer [[Pope Clement I|Clement of Rome]]) and the homily known as [[Second Epistle of Clement|2 Clement]] (up to 12:5a; another letter attributed to Clement of Rome). The books of the Old Testament are thus distributed: [[Book of Genesis|Genesis]] – 2 Chronicles (first volume), [[Book of Hosea|Hosea]] – 4 Maccabees (second volume), Psalms – Sirach (third volume).<ref name="Swete">{{Cite book | first=Henry Barclay | last=Swete | author-link=Henry Barclay Swete | title=An Introduction to the Old Testament in Greek | page=125 | year=1902 | publisher=Macmillan and Co. | location=Cambridge | url=https://archive.org/stream/anintrotooldtes00swetuoft#page/124/mode/2up }}</ref> The New Testament (fourth volume) books are in the order: [[Gospel]]s, [[Acts of the Apostles]], [[General epistles]], [[Pauline epistles]] ([[Epistle to the Hebrews|Hebrews]] placed between [[Second Epistle to the Thessalonians|2 Thessalonians]] and [[First Epistle to Timothy|1 Timothy]]), [[Book of Revelation]].
+
+There is an appendix marked in the index, which lists the [[Psalms of Solomon]] and probably contained more [[apocryphal]]/[[pseudepigraphical]] books (books written which have been attributed to certain famous people mentioned in the Bible, but likely of unknown authorship), but it has been torn off and the pages containing these books have also been lost.
+
+[[File:Colophon Alexandrinus Jude.JPG|thumb|right|220px|[[Colophon (publishing)|Colophon]] at the end of the Epistle of Jude. According to this colophon Acts of the Apostles follows General epistles]]
+Due to damage and lost folios, various passages are missing or have defects:
+* Lacking: [[1 Samuel|1 Sam]] 12:17–14:9 (1 leaf); [[Psalms|Ps]] 49:20–79:11 (9 leaves);<ref>{{Cite book | last=Würthwein | first=Ernst |title=Der Text des Alten Testaments | publisher=[[Deutsche Bibelgesellschaft]] | edition=2nd | place= Stuttgart | year=1988 | page=85 | isbn=3-438-06006-X}}</ref> [[Gospel of Matthew|Matt]] 1:1-25:6 (26 leaves); [[Gospel of John|John]] 6:50-8:52 (2 leaves); [[2 Corinthians|2 Cor]] 4:13-12:6 (3 leaves);{{r|Aland}} 1 Clement 57:7-63 (1 leaf) and 2 Clement 12:5a-fin. (2 leaves);<ref name="Gregory">{{Cite book | last=Gregory | first=Caspar René | author-link=Caspar René Gregory | title=Textkritik des Neuen Testaments | volume= 1 | publisher=J.C. Hinrichs'sche Buchhandlung | year=1900 | location=Leipzig | url=https://archive.org/stream/textkritikdesne00greggoog#page/n43/mode/2up | access-date=18 March 2010 | language=de}}</ref>{{rp|30}}
+* Damaged: [[Book of Genesis|Gen]] 14:14–17, 15:1–5, 15:16–19, 16:6–9 (lower portion of torn leaf lost);{{r|Gregory|p=29}}
+* Defects due to torn leaves: Genesis 1:20–25, 1:29–2:3, [[Leviticus|Lev]] 8:6,7,16; [[Sirach]] 50:21f, 51:5;{{r|Swete}}
+* [[Lacuna (manuscripts)|Lacunae]] on the edges of almost every page of the [[Book of Revelation|Apocalypse]].<ref name="Hernandez">{{Cite book | first=Juan | last=Hernández | title=Scribal habits and theological influences in the Apocalypse | page=102 | year=2006 | publisher=Mohr Siebeck | location=Tubingen | isbn=978-3-16-149112-2}}</ref>
+* The ornamented [[Colophon (publishing)|colophon]] of the [[Epistle to Philemon]] has been cut out.<ref name="Thompson">{{Cite book | first=Edward Maunde | last=Thompson | title=Facsimile of the Codex Alexandrinus: New Testament and Clementine Epistles | volume=5 | year=1909 | publisher=Oxford University Press | location=London | url=https://archive.org/details/TheCodexAlexandrinusV.5}}</ref>{{rp|4}}
+
+==Textual features==
+[[File:End of 2 Peter and Beginning of 1 John in Alexandrinus.JPG|thumb|left|220px|The end of the 2 Epistle of Peter and the beginning of the [[First Epistle of John|1 Epistle of John]] in the same column]]
+[[Textual criticism|Textual critics]] have had a challenging task in classifying the text of the codex, specifically when it comes to the New Testament; the exact relationship to other [[Textual criticism#New_Testament|text-types]] and manuscript families is still disputed, and as such the Greek text of the codex is considered to be of mixed text-types.{{r|Aland}} The text-types are groups of different New Testament manuscripts which share specific or generally related readings, which then differ from each other group, and thus the conflicting readings can separate the groups. These are then used to determine the original text as published; there are three main groups with names: [[Alexandrian text-type|Alexandrian]], [[Western text-type|Western]], and [[Byzantine text-type|Byzantine]].{{r|Ehrman|pp=205–230}} The codex is a representative of the [[Byzantine text-type]] in the Gospels (the text-type's oldest example),{{r|Ehrman}} and the rest of the New Testament books are of the [[Alexandrian text-type]], with some [[Western text-type|Western]] readings. As the text in the codex is believed to have come from several different traditions, different parts of the codex are not of equal textual value.{{r|Ehrman}} [[Kurt Aland|Aland]] placed it in [[Categories of New Testament manuscripts#Category III|Category III]] in the Gospels, and in [[Categories of New Testament manuscripts#Category I|Category I]] in rest of the books of the New Testament according to his manuscript text classification system.{{r|Aland}} Category III manuscripts are described as having "a small but not a negligible proportion of early readings, with a considerable encroachment of [Byzantine] readings, and significant readings from other sources as  yet unidentified";{{r|Aland|p=335}} Category I manuscripts are depicted as featuring "a very high proportion of the early text, presumably the original text, which has not been preserved in its purity in any one manuscript."{{r|Aland|p=335}} 
+;Text of the Gospels
+The Byzantine text of the Gospels has a number of [[Alexandrian text-type|Alexandrian]] features, with some affinities to the textual [[Family Π]]. Biblical scholar and textual critic [[Hermann von Soden]] associated the text of the gospels with [[Family Π]], though it is not a pure member of this family.<ref>{{Cite book | first=Silva | last=Lake | title=Family Π and the Codex Alexandrinus: The Text According to Mark | year=1936 | publisher=Christophers | location=London | url=https://archive.org/details/MN41429ucmf_4}}</ref> According to biblical scholar and textual critic [[B. H. Streeter|Burnett Streeter]], it is the earliest Greek manuscript which gives us approximately the text of [[Lucian of Antioch|Lucian the Martyr]] (who is believed to have created a critical recension of both the Old and New Testaments), but a small proportion of the readings seem to be earlier.<ref name="Thiessen">{{Cite book | first=Henry Clarence | last=Thiessen | title=Introduction to the New Testament | page=45 | orig-year=1943 | year=1976 | publisher=[[William B. Eerdmans Publishing Company]] | location=Grand Rapids, Michigan}}</ref>
+; Text of the rest of the codex
+Alexandrinus follows the Alexandrian readings through the rest of the New Testament; however, the text goes from closely resembling [[Codex Sinaiticus]] in the [[Pauline epistles]] to more closely resembling the text of a number of [[Papyrus|papyri]] ({{papyrus link|74}} for [[Acts of the Apostles|Acts]], {{papyrus link|47}} for [[Revelation of John|the Apocalypse]]). The text of [[Acts of the Apostles|Acts]] frequently agrees with the biblical quotations made by the 4th century Christian writer [[Athanasius of Alexandria]].<ref>{{Cite journal | first=H. | last=Nordberg | title=The Bible Text of St. Athanasius | journal=Arctos, Acta Philologica Fennica | volume=III | year=1962 | pages=119–141}}</ref> In the Pauline Epistles its text is closer to [[Codex Sinaiticus]] than to [[Codex Vaticanus]]. In the General Epistles it represents a different subtype than [[Codex Sinaiticus]] and [[Codex Vaticanus]].{{r|Waltz}} In [[Book of Revelation|Revelation]] it agrees with [[Codex Ephraemi]] and {{papyrus link|115}} against [[Codex Sinaiticus]] and {{papyrus link|47}}.{{r|Aland}} According to Metzger, in [[Book of Revelation|Revelation]] and in several books of the Old Testament it has the best text of all manuscripts.{{r|Metzger}} In the Old Testament its text often agrees with [[Codex Sinaiticus]].
+
+=== Some Textual Variants ===
+====Old Testament====
+
+{{bibleref|Genesis|5:25}}
+:{{lang|grc|εκατον και '''ογδοηκοντα''' επτα ετη}} (''187 in the marginal notes/ 167 years in the text '') – '''A'''
+:{{lang|grc|εκατον και '''εξηκοντα''' επτα ετη}} (''167 years'') – [[Codex Vaticanus Graecus 1209|B]]
+
+{{bibleref|Genesis|11:13}}
+:{{lang|grc|ἔτη τετρακόσια "τριάκοντα" καὶ ἐγέννησεν}}
+(''430 years'') – '''A'''
+:{{lang|grc|ἔτη τετρακόσια καὶ ἐγέννησεν}} (''400 years'') – [[Codex Vaticanus Graecus 1209|B]]
+
+{{bibleref|Deuteronomy|31:15}}
+:{{lang|grc|εν στυλω}} (''in a pillar'') – '''A'''
+:{{lang|grc|εν νεφελη}} (''in a cloud'') – [[Codex Vaticanus Graecus 1209|B]]<ref name="RahlfsSept">{{Cite book | editor-first=Alfred | editor-last=Rahlfs | editor-link=Alfred Rahlfs | title=Septuaginta | volume=1 | year=1962 | publisher=Wurttemberg Bible Institute | location=Stuttgart | url=https://archive.org/details/septuagintaidest0001unse/page/n1241/mode/2up | url-access=registration}}</ref>{{rp|345}}
+
+{{bibleref|Joshua|10:42}}
+:{{lang|grc|ελαβεν}} (''took'') – '''A'''
+:{{lang|grc|επαταξεν}} (''struck'') – [[Codex Vaticanus Graecus 1209|B]]{{r|RahlfsSept|p=373}}
+
+{{bibleref|Joshua|11:1}}
+:{{lang|grc|μαδων}} (''maroon'') – '''A'''
+:{{lang|grc|μαρρων}} (''mud'') – [[Codex Vaticanus Graecus 1209|B]]{{r|RahlfsSept|p=373}}
+
+{{bibleref|Judges|18:30}}
+:{{lang|grc|υιος Μωυση}} – '''A'''
+:{{lang|grc|υιου Μανασση}} – [[Codex Vaticanus Graecus 1209|B]]{{r|RahlfsSept|p=480}}
+
+{{bibleref|Ezra|10:22}} (9:22 LXX)
+:{{lang|grc|[[Ocidelus|Ωκειδηλος]]}} – '''A'''
+:{{lang|grc|Ωκαιληδος}} – [[Codex Vaticanus Graecus 1209|B]]{{r|RahlfsSept|p=900}}
+
+{{bibleref|Psalm|9:35}}
+:{{lang|grc|κοπον}} (''work'') – '''A'''
+:{{lang|grc|πονον}} (''pain'') – [[Codex Vaticanus Graecus 1209|B]]<ref>{{Cite book | editor-first=Alfred | editor-last=Rahlfs | editor-link=Alfred Rahlfs | title=Septuaginta | volume=2 | page=9 | year=1935 | publisher=Wurttemberg Bible Institute | location=Stuttgart | url=https://archive.org/details/septuaginta0002alfr/page/n5/mode/2up | url-access=registration}}</ref>
+
+====New Testament====
+
+{| class="wikitable"
+| colspan=3| '''Example of differences between Family Π and Codex Alexandrinus in Mark 10:50–51'''
+|-
+! Family Π
+! Codex Alexandrinus
+! Differences
+|-
+| {{lang|grc|ο δε αποβαλων το ιματιον αυτου αναστας <br /> ηλθε προς τον {{overline|ιν}}· και αποκριθεις <br /> ο {{overline|ις}} λεγει αυτω τι σοι θελεις ποιησω; <br /> ο δε τυφλος ειπεν αυτω· ραββουνι ινα αναβλεψω·}}
+| {{lang|grc|ο δε αποβαλων το ιματιον αυτου αναστας}} <br /> '''{{lang|grc|ηλθεν}}''' {{lang|grc|προς τον {{overline|ιν}}· και αποκριθεις <br /> λεγει αυτω}} '''{{lang|grc|ο {{overline|ις}}}}''' {{lang|grc|τι θελεις ποιησω}} '''{{lang|grc|σοι}}'''· <br /> {{lang|grc|ο δε τυφλος ειπεν αυτω· ραββουνι ινα αναβλεψω·}}
+| – <br /> [[Movable nu|Ν εφελκυστικον]] <br /> order of words <br /> – <br />
+|-
+| Having discarded his cloak, standing up <br /> he came towards Jesus. And in response, <br /> Jesus said to him, "What for you do you want me to do?<br /> The blind man said to him, "Rabbi: that I would be able to see."
+| Having discarded his cloak, standing up <br /> he '''came''' towards Jesus. And in response, <br /> said to him '''Jesus''', "What do you want me to do '''for you'''? <br /> The blind man said to him, "Rabbi: that I would be able to see."
+|}
+
+[[Mark 16#Alternate endings|Mark 16:9–20]]
+:incl. – '''A''' [[Codex Ephraemi Rescriptus|C]] [[Codex Bezae|D]] [[Codex Cyprius|K]] [[Codex Washingtonianus|W]] [[Codex Tischendorfianus IV|Γ]] [[Codex Sangallensis 48|Δ]] [[Codex Koridethi|Θ]] [[Family 13|ƒ{{sup|13}}]] [[Minuscule 28|28]] [[Minuscule 33|33]] [[Minuscule 565|565]] [[Minuscule 700|700]] [[Minuscule 892|892]] 1241 1424 '''ℓ''' ''844'' '''ℓ''' ''2211'' Byz
+:omit – {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}} [[Codex Vaticanus Graecus 1209|B]] k sy{{sup|s}} arm<ref name="nestle26">{{Cite book | title=Nestle-Aland Novum Testamentum Graece | editor-first1=Kurt | editor-last1=Aland | editor1-link=Kurt Aland | editor-first2=Matthew | editor-last2=Black | editor2-link=Matthew Black | editor-first3=Carlo M. | editor-last3=Martini | editor3-link=Carlo Maria Martini | editor-first4=Bruce M. | editor-last4=Metzger | editor4-link=Bruce Metzger | editor-first5=Allen | editor-last5=Wikgren | editor5-link=Allen Wikgren | year=1981 | publisher=Deutsche Bibelstiftung | location=Stuttgart | isbn=3-438-051001 | edition=26}} (NA26)</ref>{{rp|148–149}}
+
+{{bibleref|Luke|4:17}}
+:{{lang|grc|ἀνοίξας}} (''opened'') – '''A''' [[Codex Vaticanus Graecus 1209|B]] [[Codex Regius (New Testament)|L]] [[Codex Washingtonianus|W]] [[Codex Zacynthius|Ξ]] [[Minuscule 33|33]] [[Minuscule 892|892]] 1195 1241 '''ℓ''' ''547'' {{proper name|[[Syriac Sinaiticus|syr{{sup|s, }}]]}}{{sup|h, }}{{sup|p}} [[Coptic versions of the Bible#Sahidic|sa]] [[Coptic versions of the Bible#Bohairic|bo]]
+:{{lang|el|ἀναπτύξας}} (''unrolled'') – {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}} [[Codex Bezae|D]]{{sup|c}} [[Codex Cyprius|K]] [[Codex Sangallensis 48|Δ]] [[Codex Koridethi|Θ]] [[Codex Petropolitanus (New Testament)|Π]] [[Codex Athous Lavrensis|Ψ]] [[Family 1|ƒ{{sup|1}}]] [[Family 13|ƒ{{sup|13}}]] [[Minuscule 28|28]] [[Minuscule 565|565]] [[Minuscule 700|700]] 1009 1010 Byz<ref name="Metz-Comm">{{Cite book | first=Bruce Manning | last=Metzger | title=A Textual Commentary on the Greek New Testament | year=2000 | publisher=[[Deutsche Bibelgesellschaft]] | location=Stuttgart }}</ref>{{rp|xiii}}
+
+{{bibleref|John|1:39}}
+:{{lang|grc|ωρα ην ως εκτη}} (''about the sixth hour'') – '''A'''
+:{{lang|grc|ωρα ην ως δεκατη}} (''about the tenth hour'') – Majority of manuscripts{{r|nestle26|p=249}}
+
+{{bibleref|Acts|8:39}}
+:{{lang|grc|πνεῦμα ἅγιον ἐπέπεσεν ἐπὶ τὸν εὐνοῦχον, ἄγγελος δέ κυρίου ἥρπασεν τὸν Φίλιππον}} (''the Holy Spirit fell on the eunuch, and an angel of the Lord caught up Philip'') – '''A''' [[Minuscule 94|94]] [[Minuscule 103|103]] [[Minuscule 307|307]] [[Minuscule 322|322]] [[Minuscule 323|323]] [[Minuscule 385|385]] [[Minuscule 453|453]] [[Minuscule 467|467]] 945 1739 1765 1891 2298 [[Minuscule 2818|2818]] p [[Latin Vulgate|vg]] syr{{sup|h}}
+:{{lang|grc|πνεῦμα κυρίου}} (''spirit of the Lord'') – majority of manuscripts{{r|nestle26|p1=345|Metz-Comm|p2=316}}
+
+{{bibleref|Acts|11:20}}
+:{{lang|grc|Ἔλληνας}} (''Greeks'') – '''A''' {{papyrus link|74}} {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}}{{sup|c}} [[Codex Bezae|D]]
+:{{lang|grc|εὐαγγελιστάς}} (''Evangelists'') – {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}}*
+:{{lang|grc|Ἑλληνιστάς}} (''Hellenists'') – Majority of manuscripts{{r|nestle26|p=461}}
+
+{{bibleref|Acts|15:18}}
+:{{lang|grc|γνωστῶν ἀπ᾿ αἰῶνος τῷ κυρίῳ τὸ ἔργον αὐτοῦ}} – '''A''' {{Papyrus link|74}}
+:{{lang|grc|γνωστὰ ἀπʼ αἰῶνος}} – {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}} [[Codex Vaticanus Graecus 1209|B]] [[Codex Ephraemi Rescriptus|C]] [[Codex Athous Lavrensis|Ψ]] [[Minuscule 33|33]] [[Minuscule 81|81]] [[Minuscule 323|323]] 1175 1505 [[Coptic versions of the Bible|co]]; [[Eusebius|Eus]]
+:{{lang|grc|γνωστὰ ἀπʼ αἰῶνός ἐστιν τῷ θεῷ πάντα τὰ ἔργα αὐτοῦ}} – Majority of manuscripts{{r|nestle26|p=475}}
+
+[[Acts 20:28]]
+:{{lang|grc|του κυριου}} (''of the Lord'') – '''A''' {{papyrus link|74}} [[Codex Ephraemi|C*]] [[Codex Bezae|D]] [[Codex Laudianus|E]] [[Codex Athous Lavrensis|Ψ]] [[Minuscule 33|33]] [[Minuscule 36|36]] [[Minuscule 453|453]] 945 [[Minuscule 1739|1739]] 1891
+:{{lang|grc|του θεου}} (''of God'') – {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}} [[Codex Vaticanus Graecus 1209|B]] [[Minuscule 614|614]] 1175 1505 [[Latin Vulgate|vg]] sy [[Coptic versions of the Bible#Bohairic|bo]]{{sup|ms}}{{r|nestle26|p=384}}<ref group="n">For other variants of this verse see: [[Textual variants in the New Testament#Acts of the Apostles|Textual variants in the Acts of the Apostles]].</ref>
+
+{{bibleref|Romans|2:5}}
+:{{lang|grc|ανταποδοσεως}} (''reward'') – '''A''' (singular reading)
+:{{lang|grc|αποκαλυψεως}} (''revelation'') – Majority of manuscripts{{r|nestle26|p=411}}
+
+{{bibleref|Romans|8:1}}
+:{{lang|grc|Ιησου μη κατα σαρκα περιπατουσιν}} – '''A''' [[Codex Claromontanus|D]]{{sup|1}} [[Codex Athous Lavrensis|Ψ]] [[Minuscule 81|81]] [[Minuscule 629|629]] 2127 [[Latin Vulgate|vg]]
+:{{lang|grc|Ιησου}} – {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}}* [[Codex Vaticanus Graecus 1209|B]] [[Codex Claromontanus|D]]* G 1739 1881 d g [[Coptic versions of the Bible#Sahidic|sa]] [[Coptic versions of the Bible#Bohairic|bo]] eth
+:{{lang|grc|Ιησου μη κατα σαρκα περιπατουσιν αλλα κατα πνευμα}} – Majority of manuscripts<ref name="UBS3">{{Cite book| title=The Greek New Testament | editor-first1=Kurt | editor-last1=Aland | editor1-link=Kurt Aland | editor-first2=Matthew | editor-last2=Black | editor2-link=Matthew Black | editor-first3=Carlo M. | editor-last3=Martini | editor3-link=Carlo Maria Martini | editor-first4=Bruce M. | editor-last4=Metzger | editor4-link=Bruce Metzger | editor-first5=Allen | editor-last5=Wikgren | editor5-link=Allen Wikgren | publisher=United Bible Societies | edition=3rd | location=Stuttgart |year=1983}} (UBS3)</ref>{{rp|548}}
+
+{{bibleref|1 Corinthians|2:1}}
+:{{lang|grc|μυστηριον}} (''mystery'') – '''A''' {{papyrus link|46}}{{sup|(vid)}} {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}}* [[codex Ephraemi Rescriptus|C]] [[Minuscule 88|88]] [[Minuscule 436|436]] a r sy{{sup|p}} [[Coptic versions of the Bible#Bohairic|bo]]
+:{{lang|grc|μαρτυριον}} (''witness'') – Majority of manuscripts{{r|UBS3|p=581}}
+
+{{bibleref|1 Corinthians|7:5}}
+:{{lang|grc|τη προσευχη}} (''prayer'') – '''A''' {{papyrus link|11}}{{sup|(vid)}} {{papyrus link|46}} {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}}* [[Codex Vaticanus Graecus 1209|B]] [[Codex Ephraemi Rescriptus|C]] {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}} [[Codex Boernerianus|G]] [[Codex Porphyrianus|P]] [[Codex Athous Lavrensis|Ψ]] [[Minuscule 33|33]] [[Minuscule 81|81]] [[Minuscule 104|104]] [[Minuscule 181|181]] 630 1962 [[Vetus Latina|it]] [[Latin Vulgate|vg]] [[Coptic versions of the Bible#Sahidic|sa]] [[Coptic versions of the Bible#Bohairic|bo]] arm eth
+:{{lang|grc|τη νηστεια και τη προσευχη}} (''fasting and prayer'') – Majority of manuscripts{{r|UBS3|p=591}}
+
+{{bibleref|Ephesians|1:7}}
+:{{lang|grc|χρηστοτητος}} – '''A''' [[Minuscule 365|365]] [[Coptic versions of the Bible#Bohairic|bo]]
+:{{lang|grc|χαριτος}} – Majority of manuscripts{{r|nestle26|p=504}}
+
+{{bibleref|Ephesians|4:14}}
+:{{lang|grc|του διαβολου}} (''of the devil'') – '''A''' (singular reading)
+:{{lang|grc|της πλανης}} (''of deceit'') – Majority of manuscripts{{r|nestle26|p=509}}
+
+[[First Epistle to Timothy|1 Timothy]] 3:16
+:{{lang|grc|ὃς ἐφανερώθη}} (''who was manifested'') – '''A'''* {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}}* [[Codex Ephraemi|C]]* [[Codex Boernerianus|G]] [[Minuscule 33|33]] [[Minuscule 365|365]] [[Minuscule 442|442]] 2127 '''ℓ''' ''599''
+:{{lang|grc|θεός ἐφανερώθη}} (''God was manifested'') – '''A'''{{sup|2}} {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}}{{sup|e}} [[Codex Ephraemi|C]]{{sup|2}} [[Codex Claromontanus|D]]{{sup|c}} [[Codex Mosquensis I|K]] [[Codex Angelicus|L]] [[Codex Porphyrianus|P]] [[Codex Athous Lavrensis|Ψ]] [[Minuscule 81|81]] [[Minuscule 330|330]] [[Minuscule 630|630]] 1241 [[Minuscule 1739|1739]] Byz{{r|Metz-Comm|nestle26|p1=xiii 573|p2=545}} <ref group="n">Metzger's notation, A{{sup|vid}} (for {{lang|la|vidētur}}), signifies the reading is damaged and cannot be established with certainty.</ref>
+
+{{bibleref|Hebrews|13:21}}
+:{{lang|grc|παντι εργω και λογω αγαθω}} (''every good work and word'') – '''A''' (singular reading)
+:{{lang|grc|παντι εργω αγαθω}} (''every good work'')- Majority of manuscripts{{r|UBS3|p=778}}
+
+{{bibleref|1 John|5:6}}
+:{{lang|grc|δι' ὕδατος καὶ αἵματος καὶ πνεύματος}} (''through water and blood and spirit'') – '''A''' {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}} [[Minuscule 104|104]] [[Minuscule 424|424{{sup|c}}]] [[Minuscule 614|614]] [[Minuscule 1739|1739{{sup|c}}]] 2412 2495 '''ℓ''' ''598''{{sup|m}} sy{{sup|h}} [[Coptic versions of the Bible#Sahidic|sa]] [[Coptic versions of the Bible#Bohairic|bo]]; [[Origen]]
+:{{lang|grc|δι' ὕδατος καὶ αἵματος}} (''through water and blood'') – Majority of manuscripts{{r|UBS3|p=823}} <ref group="n">For other variants of this verse see: [[Textual variants in the New Testament#First Epistle of John|Textual variants in the First Epistle of John]].</ref>
+:New Testament scholar and textual critic [[Bart D. Ehrman|Ehrman]] identified it as Orthodox corrupt reading.<ref>{{Cite book | first=Bart D. | last=Ehrman | author-link=Bart D. Ehrman | title=The Orthodox Corruption of Scripture | page=60 | year=1993 | publisher=Oxford University Press | location=Oxford  | isbn=978-0199739783 }}</ref>
+
+{{bibleref|Revelation|1:17}}
+:{{lang|grc|πρωτοτοκος}} (''firstborn'') – '''A''' (singular reading)
+:{{lang|grc|πρωτος}} (''the first'') – Majority of manuscripts{{r|nestle26|p=634}}
+
+{{bibleref|Revelation|5:9}}
+:{{lang|grc|ἠγόρασας τῷ θεῷ}} (''redeemed to God'') – '''A''' eth
+:{{lang|grc|ἠγόρασας τῷ θεῷ ἡμᾶς}} (''redeemed us to God'') – All other manuscripts containing this verse - {{rp|848}}
+[[File:Codex alexandrinus.jpg|thumb|right|180px|Text of ''Luke 12:54–13:4'' in '''Codex Alexandrinus''']]
+
+===Non-included Verses===
+
+{{bibleref|Mark|15:28}}
+:omit – A {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}} [[Codex Vaticanus Graecus 1209|B]] [[Codex Ephraemi Rescriptus|C]] [[Codex Bezae|D]] [[Codex Athous Lavrensis|Ψ]] Lect [[Codex Bezae|d]] k sy{{sup|s}} [[Coptic versions of the Bible#Sahidic|sa]] [[Coptic versions of the Bible#Bohairic|bo]]
+:incl. – Majority of manuscripts{{r|Metz-Comm|p=99}}
+
+{{bibleref|Luke|22:43–44}} ([[Christ's agony at Gethsemane]])
+:omit – A {{Papyrus link|75}} {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}}* [[Codex Vaticanus Graecus 1209|B]] [[Codex Borgianus|T]] [[Codex Washingtonianus|W]] [[Minuscule 579|579]] 1071 '''ℓ''' ''844'' f sy{{sup|s}} [[Coptic versions of the Bible#Sahidic|sa]] [[Coptic versions of the Bible#Bohairic|bo]]{{sup|pt}}
+:incl. – Majority of manuscripts{{r|Metz-Comm|p=151}}
+
+{{bibleref|Acts|8:37}}
+:incl. – [[Codex Laudianus|E]] [[Minuscule 323|323]] [[Minuscule 453|453]] 945 1739 1891 2818
+:omit – A Majority of manuscripts{{r|Metz-Comm|p=315}}
+
+{{bibleref|Acts|15:34}}
+:incl. – {{papyrus link|127}} [[Codex Ephraemi Rescriptus|C]] [[Minuscule 33|33]] [[Codex Bezae|D]]*{{sup|, 1}} [[Minuscule 323|323]] [[Minuscule 453|453]] [[Minuscule 614|614]] sy{{sup|h**}} [[Coptic versions of the Bible#Sahidic|sa]] [[Coptic versions of the Bible#Bohairic|bo]]{{sup|mss}}
+:omit – A {{papyrus link|74}} {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}} [[Codex Vaticanus Graecus 1209|B]] [[Codex Laudianus|E]] [[Codex Angelicus|L]] [[Codex Athous Lavrensis|Ψ]] [[Minuscule 81|81]] Majority of manuscripts{{r|Metz-Comm|p=388}}
+
+{{bibleref|Acts|24:7}}
+:omit – A {{papyrus link|74}} {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}} [[Codex Vaticanus Graecus 1209|B]] [[Codex Angelicus|L]] [[Codex Porphyrianus|P]] [[Uncial 049|049]] [[Minuscule 81|81]] 1175 1241 p* s [[Latin Vulgate|vg{{sup|st}}]] [[Coptic versions of the Bible|co]]
+:incl. – [[Codex Laudianus|E]] [[Codex Athous Lavrensis|Ψ]] [[Minuscule 33|33]] [[Minuscule 323|323]] [[Minuscule 614|614]] 945 1505 1739 2464 gig sy{{sup|p}}{{r|Metz-Comm|p=434}}
+
+{{bibleref|Acts|28:29}}
+:omit – A {{papyrus link|74}} {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}} [[Codex Vaticanus Graecus 1209|B]] [[Codex Laudianus|E]] [[Codex Athous Lavrensis|Ψ]] [[Uncial 048|048]] [[Minuscule 33|33]] [[Minuscule 81|81]] 1175 1739 2464 s sy{{sup|p}} [[Coptic versions of the Bible|co]]
+:incl. – Majority of manuscripts{{r|Metz-Comm|p=444}}
+
+{{bibleref|Romans|16:24}}
+:omit – A {{papyrus link|46}} {{papyrus link|61}} {{larger|{{script|Hebr|[[Codex Sinaiticus|א]]}}}} [[Codex Vaticanus Graecus 1209|B]] [[Codex Ephraemi Rescriptus|C]] [[Minuscule 81|81]] 1739 2464 b [[Coptic versions of the Bible|co]]
+:incl. – Majority of manuscripts{{r|Metz-Comm|p=476}}
+
+Alexandrinus is an important witness for the absence of ''[[Jesus and the woman taken in adultery|Pericope Adultera]]'' (John 7:53–8:11). [[Caspar René Gregory|Gregory]] asserted in regard to the lost two leaves (John 6:50–8:52), "For by counting the lines we can prove that it was not in the book. There was not room for it".{{r|Gregory|p1=30|Greg-Canon|p2=343}} A similar counting involving missing leaves is done with [[Codex Ephraemi Rescriptus|Codex Ephraemi]].{{r|Metz-Comm|p=187}}
+
+== History ==
+
+=== Place of origin ===
+The codex's original provenance is unknown. [[Cyril Lucaris]] was the first to suggest [[Alexandria]] as its place of origin, which has been the traditional view and is the most probable hypothesis.{{r|Hernandez|p=100}} This popular view is based on an Arabic note on folio 1 (from the 13th or 14th century), which reads: "Bound to the Patriarchal Cell in the Fortress of Alexandria. Whoever removes it thence shall be excommunicated and cut off. Written by Athanasius the humble."{{r|Scot-Dangers|p=6}} "Athanasius the humble" is identified with [[Patriarch Athanasius III of Alexandria|Athanasius III]], Patriarch of Alexandria from 1276 to 1316.<ref name="prov-Alex">{{Cite book | first=T. C. | last=Skeat | contribution=The Provenance of the Codex Alexandrinus | title=The collected biblical writings of T. C. Skeat | date=January 2004 | publisher=BRILL | isbn=9004139206 | url=https://books.google.com/books?id=td_OLXo4RvkC&pg=pl }}</ref>{{rp|119}}
+
+[[Burnett Hillman Streeter]] proposed Caesarea or [[Beirut]] for three reasons: 1) after the New Testament it contains the two Epistles of Clement; 2) it represents an eclectic text in the New Testament (Antiochian in the Gospels and Alexandrian in the Acts and Epistles), suggesting some place where the influence of Antioch and of Alexandria met; 3) the text of the Old Testament appears to be a non-Alexandrian text heavily revised by the [[Hexapla]], as the Old Testament quotations in the New Testament portion more often agree with Alexandrinus against Vaticanus than not.<ref>{{Cite book | first=Burnett Hillman | last=Streeter | author-link=Burnett Hillman Streeter | title=The Four Gospels: A Study of Origins | pages=120–121 | year=1924 | publisher=Macmillan and Co., Ltd | location=London }}</ref>
+
+[[Theodore Cressy Skeat|Theodore C. Skeat]] disputed the notion that the Codex Alexandrinus "had been in Alexandria from time immemorial".<ref name="Skeat">{{Cite journal | last=Skeat | first=Theodore Cressy | date=1955 | title=The Provenance of the Codex Alexandrinus | journal=The Journal of Theological Studies | series=New Series | volume=6 | number=2 | url=https://www.jstor.org/stable/23952726}}</ref>{{rp|p=235}} Instead, he thought that the codex was brought to Alexandria from Constantinople between 1308 and 1316.{{R|Skeat|page=235}} Cyril Lucaris then brought it back to Constantinople in 1621, and it was given to Charles I in 1627.{{R|Skeat|page=235}} 
+
+McKendrick proposed an Ephesian provenance for the codex.{{r|Scot-Dangers|pp=10–11}}
+
+A 17th-century [[Latin]] note on a flyleaf (from the binding in a royal library) states the codex was given to a patriarchate of Alexandria in 1098 (''donum dedit cubicuo Patriarchali anno 814 Martyrum''), although this may well be "merely an inaccurate attempt at deciphering the Arabic note by Athanasius" (possibly the patriarch Athanasius III).<ref>{{Cite book | first=Brook Foss | last=Westcott | author-link=Brook Foss Westcott | title=A General Survey of the History of the Canon of the New Testament| page=Appendix D, XII, 8 | year=1896 | publisher=Macmillan and Co. | location=New York | url=https://archive.org/details/generalsurveyofh00westuoft/page/n7/mode/2up}}</ref> The authority for this statement is unknown.{{r|FKenyon}}
+
+===Date===
+According to an Arabic note on the reverse of the first volume of the manuscript, the manuscript was written by the hand of Thecla, the martyr, a notable lady of Egypt, a little later than the [[First Council of Nicaea|Council of Nicaea]] (A.D. 325).{{r|Greg-Canon|p1=341|Scot-Dangers|p2=5–6}} [[Samuel Prideaux Tregelles|Tregelles]] made another suggestion, the New Testament volume has long been mutilated, and begins now in the twenty-fifth chapter of Matthew, in which chapter the lesson for Thecla's Day stands. "We cannot be sure how the story arose. It may be that the manuscript was written in a monastery dedicated to Thecla."{{r|Greg-Canon|p=341}} Tregelles thought that Thecla's name might have on this account been written in the margin above, which has been cut off, and that therefore the Egyptians imagined that Thecla had written it.{{r|Tregelles|pp=152–153}} [[Cyril Lucaris]] believed in Thecla's authorship, but the codex cannot be older than from late 4th century.{{r|FKenyon|Scot-Dangers|p2=5}}
+
+Codex Alexandrinus contains the Epistle of Athanasius on the Psalms to Marcellinus, so it cannot be considered earlier than A.D. 373 (''[[terminus post quem]]''). In the Acts and Epistles we cannot find such chapter divisions, whose authorship is ascribed to [[Euthalius]], Bishop of Sulci, come into vogue before the middle of the fifth century.{{r|Scrivener|p=102}} It is ''[[terminus ad quem]]''. The presence of [[Epistle of Clement]], which was once read in Churches recalls to a period when the canon of Scripture was in some particulars not quite settled. It is certain that the writing of the manuscript appears to be somewhat more advanced than that of the Vaticanus or Sinaiticus, especially in the enlargement of initial letters. It is also more decorated, though its ornamentations are already found in earlier manuscripts.{{r|FKenyon}}
+
+Codex Alexandrinus was written a generation after codices Sinaiticus and Vaticanus, but it may still belong to the fourth century. It cannot be later than the beginning of the fifth.{{r|Scrivener|p=54}} It is currently dated by the [[INTF]] to the 5th century.{{r|Aland}}
+
+==In Britain==
+[[File:Cyril-lucaris-1.jpg|left|thumb|150px|[[Cyril Lucaris]], one of the former owners of the codex]]
+The codex was brought to [[Constantinople]] in 1621 by [[Cyril Lucaris]] (a patriarch of Alexandria first, then later a patriarch of Constantinople). Lucaris was involved in a complex struggle with the Turkish government, the Catholic Church, and his own subordinates. He was supported by the English government, and presented the codex to [[James I of England|James I]] in 1624, as gratitude for his help.{{r|Waltz}} The codex was presented through the hands of [[Thomas Roe]] (together with [[minuscule 49]]), the English ambassador at the court of the Sultan. James I died before the codex was sent to England, and the offer was transferred to [[Charles I of England|Charles I]] in 1627.<ref name="Scot-Dangers">{{Cite book | editor1-first=Scot | editor1-last=McKendrick | editor2-first=Orlaith A. | editor2-last=O'Sullivan | first=Scot | last=McKendrick | contribution=The Codex Alexandrinus, or The Dangers of Being A Named Manuscript | title=The Bible as Book: The Transmission of the Greek Text | year=2003 | publisher=Oak Knoll Press | location=New Castle, Del | isbn=0-7123-4727-5 | url=https://archive.org/details/bibleasbooktrans0000unse | url-access=registration}}</ref>{{rp|1}}{{r|Scrivener|p=50}} It was saved from the fire at Ashburnham House (the [[Cotton library]]) on 23 October 1731, by the librarian, [[Richard Bentley]]. It became a part of the [[Royal Library, Windsor|Royal Library]] at the [[British Museum]], and since 1973 has been in the [[British Library]].{{r|Scot-Dangers|p=2}}
+
+===Collations and editions===
+[[File:Codex Alexandrinus J 1,1-7.PNG|thumb|right|200px|Fragment from [[Carl Gottfried Woide|Woide]]'s facsimile edition (1786), containing text of John 1:1–7]]
+The text of the Epistles of Clement from the codex was published in 1633 by [[Patrick Young]], the Royal Librarian. A collation was made by [[Alexander Huish]], Prebendary of Wells, for the ''[[London Polyglot|London Polyglot Bible]]'' (1657). The text of the codex was cited in footnotes.{{r|Metzger}} [[Richard Bentley]] made a collation in 1675.
+
+The Old Testament was edited by Ernst Grabe in 1707–1720,<ref name="Kenyon">{{Cite book| first=Frederic G. | last=Kenyon | author-link=Frederic G. Kenyon | title=Handbook to the Textual Criticism of the New Testament | year=1912 | publisher=Macmillan and Co. | location=London | url=https://archive.org/details/handbooktotextua00keny}}</ref>{{rp|73}} and the New Testament by [[Carl Gottfried Woide]] in 1786, in facsimile from wooden type, line for line, without spaces between the words, exactly mimicking the original.<ref name="Horne224">{{Cite book | first=Thomas Hartwell | last=Horne | author-link=Thomas Hartwell Horne | title=An Introduction to the Critical Study and Knowledge of the Holy Scriptures | volume=1 | page=224 | year=1841 | publisher=Longmans, Green, and Co. | location=London }}</ref> For the text in 1 Tim 3:16, the facsimile has {{overline|ΘΣ}} {{lang|grc|ἐφανερόθη}}, and [[Carl Gottfried Woide|Woide]] in his [[prolegomenon]] combats the opinion of [[Johann Jakob Wettstein|Wettstein]],{{r|Wettstein|pp=CDXCVIb-CIXCIXb}} who maintained that {{lang|grc|ος}} {{lang|grc|ἐφανερόθη}} was the original reading, and that the stroke, which in some lights can be seen across part of the Ο, arose from the middle-stroke part of a letter Ε being visible through the vellum.{{r|Tregelles|p=156}} Wettstein's assertion was also disputed by F.H. Scrivener, who found that "Ε cut the Ο indeed . . . but cut it too high to have been reasonably mistaken by a careful observer for the diameter of Θ."{{r|Scriv-Intro|pp=453–454}} Tregelles however agrees with Wettstein's reading of the codex, and states "as the result of repeated examinations, we can say distinctly that Woide was wrong, and Wetstein was right."{{r|Tregelles|p=156}}
+
+Woide's edition contained some typesetting errors, such as in the [[Epistle to Ephesians]] – {{lang|grc|ἐκλήθηθε for ἐκλήθητε}} (4:1) and πραόθητος for πραότητος (4:2).{{r|Tregelles|p=156}} These errors were corrected in 1860 by B. H. Cowper, and E. H. Hansell, with three other manuscripts, in 1860.{{r|Gregory|p=30}}<ref>{{Cite book | first=Benjamin Harris | last=Cowper | title=Notitia codicis Alexandrini, Recud. cur. notasque adjecit | year=1860 | publisher=Williams & Norgate | location=London | url=https://books.google.co.uk/books?id=Wf9YhNlNCxEC&printsec=frontcover#v=onepage&q&f=false}}</ref> The Old Testament portion was also published in three folio volumes by Baber in 1816–1828.{{r|Nestle-Edie|p=58}} In 1879 and 1880, the entire codex was issued in photographic facsimile by the British Museum, under the supervision of [[Edward Maunde Thompson|E. M. Thompson]].{{r|Ehrman|Thompson}} Frederic G. Kenyon edited a photographic facsimile of the New Testament with reduced size in 1909. The text of the Old Testament followed four parts in 1915.{{r|FKenyon}}
+
+===Textual criticism===
+[[File:british library london.jpg|thumb|200px|The [[British Library]] in London]]
+According to Bentley the codex is "the oldest and best in the world". Bentley assumed that by supplementing this manuscript with readings from other manuscripts and from the [[Latin Vulgate]], he could triangulate back to the single recension which he presumed existed at the time of the [[First Council of Nicaea]].<ref>{{Cite book | first=William L. | last=Petersen | contribution=What Text can New Testament Textual Criticism Ultimately Reach | editor1-first=Barbara | editor1-last=Aland | editor1-link=Barbara Aland | editor2-first=J. | editor2-last=Delobel | title=New Testament Textual Criticism, Exegesis and Church History | page=137 | year=1994 | publisher=Kok Pharos Publishing | location=Kampen | isbn=978-9039001059}}</ref><ref>{{Cite book | first=Richard Claverhouse | last=Jebb | author-link=Richard Claverhouse Jebb | title=Richard Bentley | page=163 | year=1882 | publisher=Macmillan & Co. | location=London | url=https://archive.org/details/bentley_00jebbuoft/page/n5/mode/2up}}</ref> Wettstein highly esteemed the codex in 1730, but changed his opinion in 1751 and was no longer a great admirer of it. He came to the conviction that [[Mount Athos|Athos]] was the place of its origin, not Alexandria.<ref name="Wettstein">{{cite book | first=Johann Jakob | last=Wettstein  | author-link=Johann Jakob Wettstein | title=Novum Testamentum Graecum editionis receptae cum lectionibus variantibus codicum manuscripts | publisher=Ex Officina Dommeriana | year=1751 | location=Amsterdam | url=https://archive.org/stream/hekainediatheken00clem#page/10/mode/2up}}</ref>{{rp|10}} Michaelis also did not esteem it highly, either on account of its internal excellence or the value of its readings. The principal charge which has been produced against the manuscript, and which had been urged by Wettstein, was it had been altered from the Latin version.{{r|Horne224}} Michaelis countered that the transcriber who lived in Egypt would not have altered the Greek text from a Latin version, because Egypt belonged to the Greek diocese, and Latin was not understood there. Woide, who defended the Greek manuscripts in general, and the Codex Alexandrinus in particular, from the charge of having been corrupted from the Latin,{{r|Horne224}} discerned two hands in the New Testament.<ref>{{Cite web | title=Codex Alexandrinus | website=Catholic Encyclopedia | url=https://www.newadvent.org/cathen/04080c.htm | access-date=2026-08-27}}</ref>
+
+[[Johann Jakob Griesbach|Griesbach]] agreed with Woide and expanded on Michaelis' point of view. If this manuscript has been corrupted from a version, it is more reasonable to suspect the Coptic, the version of the country in which it was written. Between this manuscript and both the Coptic and Syriac versions there is a remarkable coincidence.{{r|Horne224}} According to Griesbach the manuscript follows three different editions: the Byzantine in the Gospels, the Western in the Acts and General epistles, and the Alexandrian in the Pauline epistles. Griesbach designated the codex by letter '''A'''.{{r|Horne224}}
+
+Tregelles explained the origin of the Arabic inscription, on which Cyril's statement appears to rest, by remarking that the text of the New Testament in the manuscript begins with Matthew 25:6, this lesson (Matthew 25:1–13) being that appointed by the Greek Church for the festival of St. Thecla.{{r|Scrivener|p=102}} {{r|Greg-Canon}}
+
+==Importance==
+It was the first manuscript of great importance and antiquity of which any extensive use was made by textual critics,{{r|FKenyon}} but the value of the codex was differently appreciated by different writers in the past. [[Johann Jakob Wettstein|Wettstein]] created a modern system of catalogization of the New Testament manuscripts. Codex Alexandrinus received symbol '''A''' and opened the list of the NT uncial manuscripts. Wettstein announced in his ''Prolegomena ad Novi Testamenti Graeci'' (1730) that Codex A is the oldest and the best manuscript of the New Testament, and should be the basis in every reconstruction of the New Testament text.<ref>{{Cite book | first=Marvin Richardson | last=Vincent | author-link=Marvin Vincent | title=A History of the Textual Criticism of the New Testament | page=91 | year=1899 | publisher=The Macmillan Company | location=London; New York | url=https://archive.org/details/textualcriticism00vincuoft}}</ref> Codex Alexandrinus became a basis for criticizing the ''[[Textus Receptus]]'' (Wettstein, Woide, Griesbach).
+
+==See also==
+{{Portal|Bible}}
+* [[Biblical manuscript]]
+* [[List of New Testament uncials]]
+* [[Textual criticism]]
+
+==Notes==
+{{Reflist|group="n"}}
+
+== References ==
+{{Reflist}}
+
+==Further reading==
+
+=== Text of the codex ===
+*{{Cite book | first=Frederick G. | last=Kenyon | author-link=Frederic G. Kenyon | title=Codex Alexandrinus in Reduced Photographic Facsimile – Vol. 1: Genesis – Ruth | publisher=London: British Museum (Facsimile edition) | year=1915 | url=https://archive.org/stream/codexalexandrin02unknuoft#page/n5/mode/2up | access-date=2026-08-27}}
+*{{Cite book | first=Frederick G. | last=Kenyon | author-link=Frederic G. Kenyon | title=Codex Alexandrinus in Reduced Photographic Facsimile – Vol. 2: 1 Samuel – 2 Chronicles | publisher=London: British Museum (Facsimile edition) | year=1930 | url=https://archive.org/details/TheCodexAlexandrinusV.2/page/n3/mode/2up | access-date=2026-08-27}}
+*{{Cite book | first=H. J. M. | last=Milne | title=Codex Alexandrinus in Reduced Photographic Facsimile – Vol. 3: Hosea – Judith | publisher=London: British Museum (Facsimile edition) | year=1936 | url=https://archive.org/details/TheCodexAlexandrinusV.3/page/n5/mode/2up }}
+*{{Cite book | first=Theodore Cressy | last=Skeat | author-link=Theodore Cressy Skeat | title=Codex Alexandrinus in Reduced Photographic Facsimile – Vol. 4: 1 Esdras – Ecclesiasticus | publisher=London: British Museum (Facsimile edition) | year=1957 | url=https://archive.org/details/TheCodexAlexandrinusV.4/page/n5/mode/2up | access-date=2026-08-27}}
+*{{Cite book | first=Carl Gottfried | last=Woide | author-link=Carl Gottfried Woide | title=Novum Testamentum Graecum e codice ms. alexandrino | place=London | year=1779–1786 }}
+
+===Other works===
+*{{Cite journal | first1=Francis Crawford | last1=Burkitt | author-link=Francis Crawford Burkitt | title=Codex Alexandrinus | journal=Journal of Theological Studies | volume=XI | issue=4 | pages=663–666 | year=1910 | location=Oxford | doi=10.1093/jts/os-XI.4.603 }}
+*{{Cite book | first=Robert G. | last=Calkins | title=Illuminated Books of the Middle Ages | publisher=Cornell University Press | location=Ithaca, New York | year=1983 }}
+*{{Cite book | first=Siegfried | last=Silberstein | title=Über den ursprung der im Codex alexandrinus und vaticanus des dritten Königsbuches der alexandrinischen übersetzung überlieferten textgestalt | publisher=Giessen : J. Ricker | place=Giessen | year=1893 | url=https://archive.org/details/MN41880ucmf_8}}
+
+==External links==
+{{Commons category|Codex Alexandrinus}}
+{{AmCyc Poster|Alexandrian Codex}}
+* {{Rahlfs catalogue|author=Felix Albrecht|date=4 September 2023}}
+
+===Images===
+* [http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_d_viii Volume 4 (the New Testament)] {{Webarchive|url=https://web.archive.org/web/20170225061719/http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_d_viii |date=25 February 2017 }} on the British Library's [http://www.bl.uk/manuscripts/Default.aspx Digitised Manuscripts] {{Webarchive|url=https://web.archive.org/web/20211007002535/http://www.bl.uk/manuscripts/Default.aspx |date=7 October 2021 }} website
+* [https://web.archive.org/web/20110718225708/http://www.csntm.org/Manuscripts/ManuscriptViewPage.aspx?id=203 Volume 4 (the New Testament)] at the ''[[Center for the Study of New Testament Manuscripts|CSNTM]]'' (facsimile of 1880s edition)
+
+===Articles===
+* [http://www.bl.uk/onlinegallery/sacredtexts/codexalex.html Codex Alexandrinus: information, zoomable image] British Library website
+* {{cite encyclopedia |url=http://www.skypoint.com/members/waltzmn/ManuscriptsUncials.html#uA |title=An Introduction to New Testament Textual Criticism {{ndash}} Codex Alexandrinus|access-date=25 December 2010 |author=Waltz, Robert |encyclopedia=A Site Inspired By: The Encyclopedia of New Testament Textual Criticism}}
+
+===Full Text===
+* Facsimile at Internet Archive: [https://archive.org/details/codex-alexandrinus Four volumes in one pdf] with bookmarks and high quality photos (from 1879–1883 and 1909).
+
+{{Good article}}
+
+{{Authority control}}
+
+{{DEFAULTSORT:Alexandrinus}}
+[[Category:Greek New Testament uncials]]
+[[Category:Illuminated biblical manuscripts]]
+[[Category:5th-century biblical manuscripts]]
+[[Category:Septuagint manuscripts]]
+[[Category:Great uncial codices]]
+[[Category:British Library Royal manuscripts]]
