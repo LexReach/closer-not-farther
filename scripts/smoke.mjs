@@ -23,6 +23,7 @@ for (let i = 0; i < 20 && sha; i++) {
 const browser = await chromium.launch();
 for (const [w, hgt, tag] of [[400, 860, 'phone'], [1280, 900, 'desktop']]) {
   const page = await browser.newPage({ viewport: { width: w, height: hgt } });
+  page.setDefaultTimeout(30000); // fail with a log rather than hang
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
   const rowsFor = async (hash, n) => {

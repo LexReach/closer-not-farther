@@ -22,10 +22,12 @@ const check = (ok, msg) => {
 };
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+page.setDefaultTimeout(30000); // fail with a log rather than hang
 const errors = [];
 page.on('pageerror', (e) => errors.push(e.message));
 for (const c of CASES) {
-  await page.goto(`${base}read/#${c.hash}`, { waitUntil: 'networkidle' });
+  await page.goto('about:blank'); // each case is a fresh load, not a hash change
+  await page.goto(`${base}read/#${c.hash}`, { waitUntil: 'load' });
   await page.waitForTimeout(800);
   await page.locator('.ev-peek').click({ timeout: 8000 }).catch(() => {});
   const card = page.locator(`.ev-card[data-ga="${c.ga}"] .ev-card__btn`);

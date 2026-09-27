@@ -20,6 +20,7 @@ const browser = await chromium.launch();
 for (const width of [1280, 400]) {
   const tag = `${width}px`;
   const page = await browser.newPage({ viewport: { width, height: width > 600 ? 900 : 860 } });
+  page.setDefaultTimeout(30000); // fail with a log rather than hang
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
 
