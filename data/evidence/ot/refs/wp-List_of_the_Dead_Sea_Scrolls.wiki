@@ -1,0 +1,3541 @@
+{{short description|None}} 
+
+{{Infobox artifact
+| name          = List of the Dead Sea Scrolls
+| image         = [[File:Temple Scroll.png|250px]]
+| image2         =
+| image_caption = A view of part of the [[Temple Scroll]] that was found in Qumran Cave 11.
+| material      = [[Papyrus]], Parchment, and [[Bronze]]
+| size          = 
+| writing       = [[Hebrew language|Hebrew]], [[Aramaic language|Aramaic]], [[Greek language|Greek]], and [[Nabataean Aramaic|Nabataean]]
+| created       = c. 408 BC - 318 AD or 250 BC - 115 AD
+| discovered    = 1946/7–1956
+| location      = Various
+| id            =
+}}
+
+The following is a list of the [[Dead Sea Scrolls]] from the [[The Qumran Caves|caves]] near [[Qumran]]. The [[Dead Sea Scrolls]] are a collection of [[manuscript]]s discovered between 1946 and 1956 in the [[West Bank]] near the [[Dead Sea]].
+
+==List of manuscripts==
+
+The content of many scrolls hasn't been fully published. Some resources for more complete information on the scrolls are the book by [[Emanuel Tov]], "Revised Lists of the Texts from the Judaean Desert"<ref>{{Cite book | first=Emanuel | last=Tov | title=Revised Lists of the Texts from the Judaean Desert | year=2010 | publisher=Brill | isbn=9789047443797}}</ref> for a complete list of all of the Dead Sea Scroll texts, as well as the online webpages for the [[Shrine of the Book]]<ref>{{cite web | url=http://dss.collections.imj.org.il | title=Shrine Of The Book - The Digital Dead Sea Scrolls}}</ref> and the Leon Levy Collection,{{r|:3}} both of which present photographs and images of the scrolls and fragments themselves for closer study. Information is not always comprehensive, as content for many scrolls has not yet been fully published.
+
+===Qumran Cave 1===
+{{See also|List of manuscripts from Qumran Cave 1}}
+
+; Description
+Wadi Qumran Cave 1 was discovered for the first time in 1946. The initial discovery, by Bedouin shepherd Muhammed edh-Dhib, his cousin Jum'a Muhammed, and Khalil Musa, took place between November 1946 and February 1947.<ref>{{Cite book | first=Mark | last=Humphries | title=Early Christianity | year=2006 | publisher=Routledge | location=Oxford, UK | isbn=9780415205399}}</ref>{{sfn|Fitzmyer|2008}} The shepherds discovered seven scrolls housed in jars in a cave near what is now known as the Qumran site, and they took them back to the camp to show to their families. None of the scrolls were destroyed in this process.<ref>{{Cite book | first=John C. | last=Trever | title=The Dead Sea Scrolls: A Personal Account | year=2003 | publisher=Gorgias Press LLC | location=Piscataway, NJ | isbn=9781593330422 }}</ref> The original seven [[Dead Sea Scrolls]] from Cave 1 at Qumran are the [[Isaiah scroll|Great Isaiah Scroll]] (1QIsa{{sup|a}}), a second copy of Isaiah ([[1QIsab|1QIsa{{sup|b}}]]), the [[Community Rule]] Scroll (1QS), the [[Habakkuk Commentary|Pesher on Habakkuk]] (1QpHab), the [[War Scroll]] (1QM), the [[Thanksgiving Hymns]] (1QH), and the [[Genesis Apocryphon]] (1QapGen).<ref>{{Cite book | first=Geza | last=Vermes | author-link=Geza Vermes | title=The Complete Dead Sea Scrolls in English | year=1998 | publisher=Penguin | location=London | isbn=0-14-024501-4}}.</ref> One of the pottery jars containing the scrolls from Cave 1 is now kept in the [[British Museum]].<ref>[https://www.britishmuseum.org/collection/object/W_1951-1110-1 British Museum Collection]</ref>
+<onlyinclude>{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference
+|-
+! colspan="8" style="background:#b8c7d6;"|
+Qumran Cave 1
+|-
+| [[Isaiah Scroll|1QIsa{{sup|a}}]] || [[Isaiah Scroll|Great Isaiah Scroll]]
+||| [[Isaiah 1:1]]–31; [[Isaiah 2|2]]:1–22; 3:1–5:30; 6:1–13; 7:1–25; 8:1–23; 9:1–20; 10:1–34; 11:1–45:25; 46:1–66:24
+|| Hebrew
+|356–103 BCE/150–100 BCE||Contains all 66 chapters with occasional lacunae and some missing words at the bottom of some columns ||<ref>[http://dss.collections.imj.org.il/isaiah The Great Isaiah Scroll at The Digital Dead Sea Scrolls]. The Israel Museum, Jerusalem.</ref>{{sfn|Fitzmyer|2008|pp=14–15}}
+|-
+| [[1QIsab|1QIsa{{sup|b}}]] || [[Book of Isaiah|Isaiah]] 
+|cf. 1Q8 || The [[Book of Isaiah]] 
+|| Hebrew
+|Hasmonean/Herodian ||A second copy of portions of the Book of Isaiah ||{{r|1Q8LeonLevy}}{{sfn|Fitzmyer|2008|pp=15–16}}
+|-
+|[[Community Rule|1QS]]
+|[[Community Rule|Serekh ha-Yahad]] or "[[Community Rule]]"
+|||
+|Hebrew||
+| cf. 4QS{{sup|a-j}} = 4Q255–64, 5Q11
+|{{sfn|Fitzmyer|2008|p=18}}
+|-
+| 1QpHab || [[Habakkuk Commentary|Pesher on Habakkuk]]
+||| [[Habakkuk 1]][[Habakkuk 2|–2]]
+|Hebrew || Later half of the 1st century BC
+|Commentary on Habakkuk 1:2–17; 2:1–20||<ref>Bruce, F.F.,[http://www.biblicalstudies.org.uk/pdf/habakkuk_bruce.pdf "The Dead Sea Habakkuk Scroll,"] {{Webarchive|url=https://web.archive.org/web/20200801145424/https://www.biblicalstudies.org.uk/pdf/habakkuk_bruce.pdf |date=2020-08-01 }} The Annual of Leeds University Oriental Society I (1958/59): 5–24.</ref>{{sfn|Fitzmyer|2008|p=16}}
+|-
+| [[War of the Sons of Light Against the Sons of Darkness|1QM]] || [[War Scroll|Milhamah]] or [[War Scroll]]
+|||
+|Hebrew ||
+|cf. 4Q491, 4Q493; 11Q14?||
+|-
+| 1QH{{sup|a}} || [[Thanksgiving Hymns|Hodayot]] or [[Thanksgiving Hymns]]
+|||
+|Hebrew||
+|Some parts are also preserved in 1QH{{sup|b}} and 4QH{{sup|a-f}}
+|{{sfn|Fitzmyer|2008|pp=16–18}}
+|-
+| 1QapGen || [[Genesis Apocryphon]]
+||| [[Book of Genesis|Genesis]] 12:18–15:4
+|[[Aramaic]]
+|25 BCE–50 CE||||<ref>{{Cite book|title = Encyclopedia of the Dead Sea Scrolls|last = Schiffman|first = Lawrence H.|publisher = Oxford University Press|year = 2000|location = New York, N.Y.}}</ref>
+|-
+| CTLevi || [[Cairo Geniza]] or [[Testament of Levi]]
+||| || [[Aramaic]]
+|||||
+|-
+|1QGen||[[Book of Genesis|Genesis]]
+|1Q1|| [[Book of Genesis|Genesis]] 1:18–21; 3:11–14; 22:13–15; 23:17–19; 24:22–24 || Hebrew
+||Herodian||
+|{{sfn|Fitzmyer|2008|p=19}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q1-1 1Q1 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QExod ||[[Book of Exodus|Exodus]]
+|1Q2|| [[Book of Exodus|Exodus]] 16:12–16; 19:24–20:2, 20:5–6; 20:25–21:1; 21:4–5
+|| Hebrew
+|Hellenistic-Roman||
+|{{sfn|Fitzmyer|2008|p=19}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q2-1 1Q2 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QpaleoLev ||[[Book of Leviticus|Leviticus]] – [[Book of Numbers|Numbers]]
+|1Q3|| [[Book of Leviticus|Leviticus]] 11:10–11; 19:30–34; 20:20–24; 21:24–22:6; 23:4–8 and [[Book of Numbers|Numbers]] 1:48–50 || Hebrew
+|Hellenistic-Roman; [[Paleo-Hebrew alphabet|Palaeo-Hebrew script]]||
+|{{sfn|Fitzmyer|2008|p=19}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q3-1 1Q3 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QDeut{{sup|a}}
+|rowspan=2 |[[Book of Deuteronomy|Deuteronomy]]
+|1Q4|| [[Book of Deuteronomy|Deuteronomy]] 1:22–25; 4:47–49; 8:18–19; 9:27–28; 11:27–30; 13:1–6, 13–14; 14:21, 24–25; 16:4, 6–7 ||  Hebrew
+|Hellenistic-Roman||
+|{{sfn|Fitzmyer|2008|p=19}}<ref name=":0">OakTree Software, Inc. ''Accordance 10: Bible Software''. 2008.</ref><ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q4-1 1Q4 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QDeut{{sup|b}}
+|1Q5|| [[Book of Deuteronomy|Deuteronomy]] 1:9–13; 8:8–9; 9:10; 11:30–31; 15:14–15; 17:16; 21:8–9; 24:10–16; 25:13–18; 28:44–48; 29:9–20; 30:19–20; 31:1–10, 12–13; 32:17–29; 33:12–24 ||  Hebrew
+|Hellenistic-Roman||
+|{{sfn|Fitzmyer|2008|p=19}}{{r|:0}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q5-1 1Q5 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QJudg ||[[Book of Judges|Judges]]
+|1Q6|| [[Book of Judges|Judges]] [[Judges 6|6]]:20–22; 8:1(?); 9:2–6, 28–31, 40–43, 48–49 || Hebrew
+|Hellenistic-Roman||
+|{{sfn|Fitzmyer|2008|p=19}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q6-1 1Q6 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QSam ||[[Book of Samuel|Samuel]]
+|1Q7|| [[Book of Samuel|2 Samuel]] 18:17–18; [[2 Samuel 20|20]]:6–10; 21:16–18; 23:9–12 || Hebrew
+|Hellenistic-Roman||
+|{{sfn|Fitzmyer|2008|p=19}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q7-1 1Q7 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| [[1QIsab|1QIsa{{sup|b}}]] ||[[Book of Isaiah|Isaiah]]
+|Parts of 1QIsa{{sup|b}} as 1Q8|| [[Isaiah 7]]:22–25; [[Isaiah 8#Verse 1|8:1]]; [[Isaiah 10|10]]:17–19; 12:3–6; 13:1–8, 16–19; 15:3–9; 16:1–2, 7–11; 19:7–17, 20–25; 20:1; 22:11–18, 24–25; 23:1–4; 24:18–23; 25:1–8; 26:1–5; 28:15–20; 29:1–8; 30:10–14, 21–26; 35:4–5; 37:8–12; 38:12–22; 39:1–8; 40:2–3; 41:3–23; 43:1–13, 23–27; 44:21–28; 45:1–13; 46:3–13; 47:1–14; 48:17–22; 49:1–15; 50:7–11; 51:1–10; 52:7–15; 53:1–12; 54:1–6; 55:2–13; 56:1–12; 57:1–4, 17–21; 58:1–14; 59:1–8, 20–21; 60:1–22; 61:1–2; 62:2–12; 63:1–19; 64:1, 6–8; 65:17–25; 66:1–24 || Hebrew
+|Herodian||
+|<ref name="1Q8LeonLevy">[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q8-1 1Q8 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>{{sfn|Fitzmyer|2008|p=19}}
+|-
+| 1QEzek || [[Book of Ezekiel|Ezekiel]]
+|Parts of 1QIsa{{sup|b}} as 1Q9|| [[Ezekiel 4]]:16–17; 5:1 || Hebrew
+|Hellenistic-Roman|| ||{{sfn|Fitzmyer|2008|p=19}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q9-1 1Q9 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QPs{{sup|a}}
+|rowspan=3 |[[Book of Psalms|Psalms]]
+|1Q10|| [[Psalm 86]]:5–8; [[Psalm 92|92]]:12–14; [[Psalm 94|94]]:16; [[Psalm 95|95]]:11–[[Psalm 96|96]]:2; [[Psalm 119|119]]:31–34, 43–48, 77–79 || Hebrew
+|Hellenistic-Roman|| ||{{sfn|Fitzmyer|2008|p=19}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q10-1 1Q10 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QPs{{sup|b}}
+|1Q11|| [[Psalm 126]]:6; [[Psalm 127|127]]:1–5; [[Psalm 128|128]]:3 || Hebrew
+|Hellenistic-Roman|| ||{{sfn|Fitzmyer|2008|p=19}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q11-1 1Q11 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QPs{{sup|c}}
+|1Q12|| [[Psalm 44]]:3–5, 7, 9, 23–25 || Hebrew
+|Herodian|| ||{{sfn|Fitzmyer|2008|p=19}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q12-1 1Q12 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QPhyl || [[Tefillin|Phylactery]]
+|1Q13|| Deuteronomy 5:23–27; 11:8–11
+|| Hebrew
+|Hellenistic-Roman|| 58 fragments from a [[Tefillin|Phylactery]]  ||{{r|:0}}{{sfn|Fitzmyer|2008|p=20}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q13-1 1Q13 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QpMic || [[Pesher]] on [[Book of Micah|Micah]]
+|1Q14|| || Hebrew
+|Herodian|| ||{{sfn|Fitzmyer|2008|p=20}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q14-1 1Q14 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QpZeph || [[Pesher]] on [[Book of Zephaniah|Zephaniah]]
+|1Q15|| || Hebrew
+|Hellenistic-Roman||
+|{{sfn|Fitzmyer|2008|p=20}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q15-1 1Q15 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QpPs || [[Pesher]] on [[Book of Psalms|Psalms]]
+|1Q16|| || Hebrew
+|Hellenistic-Roman|| ||{{sfn|Fitzmyer|2008|p=20}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q16-1 1Q16 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QJub{{sup|a}}
+|rowspan=2|[[Book of Jubilees|Jubilees]]
+|1Q17||  || Hebrew
+|Hellenistic-Roman|| [[Book of Jubilees|Jubilees]]||{{sfn|Fitzmyer|2008|p=20}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q17-1 1Q17 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QJub{{sup|b}}
+|1Q18|| || Hebrew
+|Hasmonean|| [[Book of Jubilees|Jubilees]]||{{sfn|Fitzmyer|2008|p=20}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q18-1 1Q18 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QNoah || [[Book of Noah]]
+|1Q19|| || Hebrew
+|Herodian|| Parts of the lost [[Book of Noah]] ||{{sfn|Fitzmyer|2008|p=20}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q19-1 1Q19 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QapGen || Fragments of the "[[Genesis Apocryphon]]"
+|1Q20|| || [[Aramaic]] 
+|Herodian||||{{sfn|Fitzmyer|2008|pp=20–21}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q20-1 1Q20 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QTLevi / 1QALD || [[Testament of Levi]]
+|1Q21||  || [[Aramaic]] 
+|Hasmonean||Aramaic Levi Document||{{sfn|Fitzmyer|2008|p=21}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q21-1 1Q21 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| [[Dibrê Moshe|1QDM]] || "Dibrê Moshe" or "Words of Moses"
+|1Q22||  ||Hebrew
+|Hellenistic-Roman|| ||{{sfn|Fitzmyer|2008|p=21}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q22-1 1Q22 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QEnGiants{{sup|a}} || [[Book of Giants]]
+|1Q23||  || [[Aramaic]]
+|Hasmonean||[[Book of Enoch|Enoch]]||{{sfn|Fitzmyer|2008|pp=21–22}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q23-1 1Q23 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QEnGiants{{sup|b}} || [[Book of Giants]]
+|1Q24|| || [[Aramaic]]
+|Hellenistic-Roman||[[Book of Enoch|Enoch]]||{{sfn|Fitzmyer|2008|pp=21–22}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q24-1 1Q24 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1Q Apocr.Prophecy || "Apocryphal Prophecy"
+|1Q25 ||
+|Hebrew
+|Herodian||||{{sfn|Fitzmyer|2008|p=22}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q25-1 1Q25 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1Q Instruction || "Instruction"
+|1Q26 || ||Hebrew
+|Hasmonean||||{{sfn|Fitzmyer|2008|p=22}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q26-1 1Q26 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QMyst || "[[The Book of Mysteries]]"
+|1Q27 || ||Hebrew
+|Hellenistic-Roman ||||{{sfn|Fitzmyer|2008|p=22}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q27-1 1Q27 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QS or [[The Rule of the Congregation|1QS{{sup|a}}]] || "[[The Rule of the Congregation|Rule of the Congregation]]"
+|1Q28 (1Q28a) || ||Hebrew
+|Hasmonean
+|rowspan=2|Fragment from "[[Community Rule]]" ||{{sfn|Fitzmyer|2008|p=22}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q28-2 1Q28 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QS{{sup|b}} || "[[The Rule of the Blessing|Rule of the Blessing]]" or "[[The Rule of the Blessing|Rule of the Benedictions]]"
+|1Q28b|| || Hebrew
+|Hasmonean
+|{{sfn|Fitzmyer|2008|p=22}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q28-3 1Q28 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QapocrMoses B || Apocryphon of Moses
+|1Q29 || ||Hebrew
+|Hellenistic-Roman||"Liturgy of the Three Tongues of Fire"||{{sfn|Fitzmyer|2008|p=22}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q29-2 1Q29 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+
+|-
+| 1Q Liturgical Text(?) A || "Liturgical Text 1"
+|1Q30 || ||Hebrew
+|Hellenistic-Roman||
+|{{sfn|Fitzmyer|2008|p=22}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q30-1 1Q30 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1Q Liturgical Text(?) B || "Liturgical Text 2"
+|1Q31 || ||Hebrew
+|Hellenistic-Roman||
+|{{sfn|Fitzmyer|2008|p=22}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q31-1 1Q31 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QNJ(?) || [[New Jerusalem Dead Sea Scroll|"New Jerusalem"]]
+|1Q32
+|| || [[Aramaic]]
+|Herodian||cf. 11Q18
+|{{sfn|Fitzmyer|2008|p=23}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q32-1 1Q32 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QM || Fragment of the [[War Scroll|1QM]] or "[[War Scroll]]" or [[War Scroll|"Milhamah"]] 
+|1Q33|| Deuteronomy 20:2–5; Numbers 10:9, 24:17–19; [[Isaiah 31]]:8
+|Hebrew
+|30–1 BCE
+Early Herodian
+||||{{r|:0}}{{sfn|Fitzmyer|2008|p=23}}
+|-
+| 1QPrFetes / 1QLitPr || "Liturgical Prayers" or "Festival Prayers"
+|1Q34|| ||Hebrew
+|Herodian||
+|{{sfn|Fitzmyer|2008|p=23}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q34-1 1Q34 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QH{{sup|b}} || "[[Thanksgiving Hymns|Hodayot]]" or "[[Thanksgiving Hymns]]"
+|1Q35||  ||Hebrew
+|Herodian||
+|{{sfn|Fitzmyer|2008|p=23}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q35-1 1Q35 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1Q Hymns || "Hymns"
+|1Q36 || || Hebrew
+|Hellenistic-Roman||
+|{{sfn|Fitzmyer|2008|p=23}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q36-1 1Q36 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1Q Hymnic Composition(?) || "Hymnic Composition"
+|1Q37 || || Hebrew
+|Herodian||
+|{{sfn|Fitzmyer|2008|p=23}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q37-1 1Q37 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1Q Hymnic Composition(?) || "Hymnic Composition"
+|1Q38 || || Hebrew
+|Hellenistic-Roman||
+|{{sfn|Fitzmyer|2008|p=23}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q38-1 1Q38 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1Q Hymnic Composition(?) || "Hymnic Composition"
+|1Q39 || || Hebrew
+|Herodian||
+|{{sfn|Fitzmyer|2008|p=23}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q39-1 1Q39 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1Q Hymnic Composition(?) || "Hymnic Composition"
+|1Q40 || || Hebrew
+|Hellenistic-Roman||
+|{{sfn|Fitzmyer|2008|p=23}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q40-1 1Q40 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1Q41–70 ||
+|1Q41–70 || ||Hebrew 
+||| Unclassified Fragments||{{r|:3}}
+|-
+| 1QDan{{sup|a}}
+|rowspan=2|[[Book of Daniel|Daniel]]
+|1Q71|| [[Daniel 1]]:10–17; [[Daniel 2|2]]:2–6 || Hebrew
+|Hellenistic-Roman||||<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q71-1 1Q71 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 1QDan{{sup|b}}
+|1Q72|| [[Daniel 3]]:22–30 ||Aramaic
+|Hellenistic-Roman||||<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/1Q72-1 1Q72 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|}
+</onlyinclude>
+
+===Qumran Cave 2===
+{{See also|List of manuscripts from Qumran Cave 2}}
+; Description
+Wadi Qumran Cave 2 was discovered in February 1952 and soon the [[Bedouin]] people discovered 30 fragments in it.<ref name="Vanderkam">{{Cite book | first=James C. | last=VanderKam | title=The Dead Sea Scrolls Today | year=1994 | location=Grand Rapids | publisher=Eerdmans}}</ref>{{rp|10–11}} The cave eventually yielded 300 fragments from 33 manuscripts of [[Dead Sea Scrolls]], including fragments of [[Book of Jubilees|Jubilees]] and the [[Wisdom of Sirach]] written in Hebrew.<ref>{{cite web | author=S.S.L. Frantisek Trstensky | title=The Archaeological Site Of Qumran and the Personality Of Roland De Vaux | url=http://www.biblicaltheology.com/Research/TrstenskyF01.pdf | access-date=22 May 2012}}</ref><ref>{{cite web | title=Dead Sea Scrolls: Timetable | publisher=The Gnostic Society Library | url=http://www.gnosis.org/library/dss/dss_timeline.htm | access-date=23 May 2012}}</ref>
+<onlyinclude>{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference
+|-
+! colspan="8" style="background:#b8c7d6;"|
+Qumran Cave 2
+|-
+|2QGen ||[[Book of Genesis|Genesis]]
+|2Q1|| [[Book of Genesis|Genesis]] 19:27–28; 36:6, 35–37
+|rowspan=5| Hebrew
+|rowspan=3| Herodian
+|
+|{{sfn|Fitzmyer|2008|p=25}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q1-1 2Q1 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QExod{{sup|a}}
+|rowspan=3|[[Book of Exodus|Exodus]]
+|2Q2|| [[Book of Exodus|Exodus]] 1:11–14; 7:1–4; 9:27–29; 11:3–7; 12:32–41; 21:18–20(?); 26:11–13; 30:21(?), 23–25; 32:32–34
+|
+|{{sfn|Fitzmyer|2008|p=25}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q2-1 2Q2 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QExod{{sup|b}}
+|2Q3|| [[Book of Exodus|Exodus]] 4:31; 12:26–27(?); 18:21–22; 21:37–22:2, 15–19; 27:17–19; 31:16–17; 19:9; 34:10
+|
+|{{sfn|Fitzmyer|2008|p=25}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q3-1 2Q3 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QExod{{sup|c}}
+|2Q4|| [[Book of Exodus|Exodus]] 5:3–5
+|Hellenistic-Roman
+|
+|{{sfn|Fitzmyer|2008|p=25}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q4-1 2Q4 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QpaleoLev ||[[Book of Leviticus|Leviticus]]
+|2Q5|| [[Book of Leviticus|Leviticus]] 11:22–29
+| Hasmonean; [[Paleo-Hebrew alphabet|Palaeo-Hebrew script]]
+|
+|{{sfn|Fitzmyer|2008|p=25}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q5-1 2Q5 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QNum{{sup|a}}
+|rowspan=4| [[Book of Numbers|Numbers]]
+|2Q6|| [[Book of Numbers|Numbers]] 3:38–41, 51– 4:3
+|rowspan=4| Hebrew
+|rowspan=3| Herodian
+|
+|{{sfn|Fitzmyer|2008|p=25}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q6-1 2Q6 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QNum{{sup|b}}
+|2Q7|| [[Book of Numbers|Numbers]] 33:47–53
+|
+|{{sfn|Fitzmyer|2008|p=25}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q7-1 2Q7 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QNum{{sup|c}}
+|2Q8|| [[Book of Numbers|Numbers]] 7:88
+|
+|{{sfn|Fitzmyer|2008|p=25}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q8-1 2Q8 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QNum{{sup|d?}}
+|2Q9|| [[Book of Numbers|Numbers]] 18:8–9
+|Hellenistic-Roman
+|This fragment may belong to 2Q7; possibly = Leviticus 23:1–3
+|{{sfn|Fitzmyer|2008|p=25}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q9-1 2Q9 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QDeut{{sup|a}}
+|rowspan=3|[[Book of Deuteronomy|Deuteronomy]]
+|2Q10
+|[[Book of Deuteronomy|Deuteronomy]] 1:7–9 ||Hebrew
+|50–25 BCE
+Late Hasmonean or Early Herodian
+|
+|{{sfn|Fitzmyer|2008|p=25}}<ref name=":0"/>
+|-
+| 2QDeut{{sup|b}}
+|2Q11|| [[Book of Deuteronomy|Deuteronomy]] 17:12–15 ||Hebrew
+|30 BCE – 68 CE
+Herodian
+|
+|{{sfn|Fitzmyer|2008|p=25}}{{r|:0}}
+|-
+|2QDeut{{sup|c}}
+|2Q12|| [[Book of Deuteronomy|Deuteronomy]] 10:8–12 ||Hebrew
+|1–68 CE
+Late Herodian
+|
+|{{sfn|Fitzmyer|2008|p=25}}{{r|:0}}
+|-
+|2QJer ||[[Book of Jeremiah|Jeremiah]]
+|2Q13|| [[Book of Jeremiah|Jeremiah]] 42:7–11, 14; 43:8–11; 44:1–3, 12–14; 46:27–47:7; 48:7, 25–39, 43–45; 49:10
+|rowspan=3|Hebrew
+|rowspan=3|Herodian
+|Doubtfully identified fragments: 13:22; 32:24–25; 48:2–4, 41–42
+|{{sfn|Fitzmyer|2008|p=26}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q13-1 2Q13 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QPs || [[Book of Psalms|Psalms]]
+|2Q14|| [[Psalm 103]]:2–11; 104:6–11
+|
+|{{sfn|Fitzmyer|2008|p=26}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q14-1 2Q14 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QJob ||[[Book of Job|Job]]
+|2Q15|| [[Book of Job|Job]] 33:28–30
+|
+|{{sfn|Fitzmyer|2008|p=26}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q15-1 2Q15 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 2QRuth{{sup|a}}
+|rowspan=2|[[Book of Ruth|Ruth]]
+|2Q16|| [[Ruth 2]]:13–23; [[Ruth 3|3]]:1–8; [[Ruth 4|4]]:3–4
+|rowspan=2| Hebrew
+|Herodian
+|
+|{{sfn|Fitzmyer|2008|p=26}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q16-1 2Q16 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QRuth{{sup|b}}
+|2Q17|| [[Ruth 3]]:13–18
+|Hasmonean
+|
+|{{sfn|Fitzmyer|2008|p=26}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q17-1 2Q17 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QSir || "[[Wisdom of Sirach]]" or "[[Sirach|Ecclesiasticus]]"
+|2Q18
+|Sir 6:14–15 (or 1:19–20); 6:20–31
+|Hebrew
+|Herodian
+|Ben Sira
+|{{sfn|Fitzmyer|2008|p=26}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q18-1 2Q18 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QJub{{sup|a}} || [[Book of Jubilees]]
+|2Q19|| [[Book of Genesis|Genesis]] 25:7–9
+|rowspan=2|Hebrew
+|rowspan=2 |Herodian
+|Jub 23:7–8
+|{{sfn|Fitzmyer|2008|p=26}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q19-1 2Q19 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QJub{{sup|b}} || [[Book of Jubilees]]
+|2Q20|| Exodus 1:7; Genesis 50:26, 22 (different order)
+|Jub 46:1–3 
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q20-1 2Q20 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QapMoses /2QapocrMoses(?)|| "[[Apocryphon]] of [[Moses]]"
+|2Q21||
+|Hebrew
+|Herodian
+|Apocryphal writing about Moses
+|{{sfn|Fitzmyer|2008|p=26}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q21-1 2Q21 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QapDavid /2QapocrDavid|| "[[Apocryphon]] of [[David]]"
+|2Q22|| ||Hebrew
+|Herodian
+|Apocryphal writing about David
+|{{sfn|Fitzmyer|2008|pp=26–27}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q22-1 2Q22 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QapProph /2Qapocr.Prophecy || "Apocryphal Prophecy"
+|2Q23|| ||Hebrew
+|Herodian
+|Apocryphal prophetic text in six tiny fragments.
+|{{sfn|Fitzmyer|2008|p=27}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q23-1 2Q23 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 2QNJ || [[New Jerusalem Dead Sea Scroll|"New Jerusalem"]]
+|2Q24
+|| || [[Aramaic]] 
+|Herodian
+|Description of the New Jerusalem. cf. 1Q32 ar, 11Q18 ar
+|{{sfn|Fitzmyer|2008|p=27}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q24-1 2Q24 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 2Q Juridical Text || "Juridical Text"
+|2Q25|| ||Hebrew
+|Herodian
+|A juridical text
+|{{sfn|Fitzmyer|2008|p=27}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q25-1 2Q25 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|2QEnGiants || "[[Book of Giants]]" from "[[Book of Enoch|Enoch]]"
+|2Q26
+|
+|[[Aramaic]] 
+|Herodian
+|Now known as part of the "Book of Giants". cf. 6Q8 ||<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/2Q26-1 2Q26 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 2Q27
+2Q28 2Q29
+
+2Q30 2Q31
+
+2Q32 2Q33
+||
+|2Q27
+2Q28 2Q29
+
+2Q30 2Q31
+
+2Q32 2Q33
+||  ||
+||| Unidentified Texts
+|<ref>{{cite web | url=http://www.deadseascrolls.org.il/explore-the-archive | title=Leon Levy Collection | website=Leon Levy Dead Sea Scrolls Digital Library | publisher=[[Israel Antiquities Authority]] | access-date=2015-01-22}}</ref>{{sfn|Fitzmyer|2008|p=27}}
+|-
+|2QX1
+|
+|2QX1 || || ||
+|Debris in a box
+|{{sfn|Fitzmyer|2008|p=27}}
+|}</onlyinclude>
+
+===Qumran Cave 3===
+{{See also|List of manuscripts from Qumran Cave 3}}
+; Description
+Wadi Qumran Cave 3 was discovered on 14 March 1952 by the [[American Schools of Oriental Research|ASOR]] team. The cave initially yielded fragments of [[Book of Jubilees|Jubilees]] and the [[Copper Scroll]].{{r|Vanderkam}}{{rp|10–11}}
+<onlyinclude>{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference
+|-
+! colspan="8" style="background:#b8c7d6;"|
+Qumran Cave 3
+|-
+| 3QEzek || [[Book of Ezekiel|Ezekiel]]
+|3Q1|| [[Ezekiel 16]]:31–33 ||Hebrew
+|rowspan=3|Herodian
+|
+|{{sfn|Fitzmyer|2008|p=27}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/3Q1-1 3Q1 at Leon Levy Collection]</ref>
+|-
+|3QPs || [[Book of Psalms|Psalms]]
+|3Q2|| [[Psalm 2]]:6–7
+|| Hebrew
+|
+|{{sfn|Fitzmyer|2008|p=28}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/3Q2-1 3Q2 at Leon Levy Collection]</ref>
+|-
+|3QLam || [[Book of Lamentations|Lamentations]]
+|3Q3|| [[Lamentations 1]]:10–12; 3:53–62 || Hebrew
+|
+|{{sfn|Fitzmyer|2008|p=28}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/3Q3-1 3Q3 at Leon Levy Collection]</ref>
+|-
+|3QpIsa || [[Pesher]] on [[Book of Isaiah|Isaiah]]
+|3Q4|| [[Isaiah 1#Verse 1|Isaiah 1:1]]
+|Hebrew
+|Herodian
+|
+|{{sfn|Fitzmyer|2008|p=28}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/3Q4-1 3Q4 at Leon Levy Collection]</ref>
+|-
+|3QJub || [[Book of Jubilees|Jubilees]]
+|3Q5||  || Hebrew
+|Herodian|| [[Book of Jubilees|Jubilees]] 23:6–7, 12–13, 23
+|{{sfn|Fitzmyer|2008|p=28}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/3Q5-1 3Q5 at Leon Levy Collection]</ref>
+|-
+|3QHymn || Unidentified Hymn
+|3Q6|| || Hebrew
+|Herodian|| Hymn of Praise
+|{{sfn|Fitzmyer|2008|p=28}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/3Q6-1 3Q6 at Leon Levy Collection]</ref>
+|-
+|3QTJud(?) || [[Testament of Judah]](?)
+|3Q7|| || Hebrew
+|Herodian|| cf. 4Q484, 4Q538
+|{{sfn|Fitzmyer|2008|p=28}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/3Q7-1 3Q7 at Leon Levy Collection]</ref>
+|-
+|3Q Text Mentioning Angel of Peace || 
+|3Q8|| ||Hebrew
+|Herodian||Text about an Angel of Peace
+|{{sfn|Fitzmyer|2008|p=28}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/3Q8-1 3Q8 at Leon Levy Collection]</ref>
+|-
+|3QSectarian text ||
+|3Q9||
+|Hebrew
+|Herodian || Possible unidentified Sectarian text
+|{{sfn|Fitzmyer|2008|p=28}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/3Q9-1 3Q9 at Leon Levy Collection]</ref>
+|-
+|3QUnc || Unidentified
+|3Q10
+3Q11
+|
+|Hebrew
+|Hellenistic-Roman
+|Unclassified fragments
+|{{sfn|Fitzmyer|2008|p=28}}
+|-
+|3QUncA-B || Unclassified fragments
+|3Q12
+3Q13
+||
+|[[Aramaic]]
+|Hellenistic-Roman|| Unclassified fragments
+|{{sfn|Fitzmyer|2008|pp=28–29}}
+|-
+|3QUncC || Unidentified
+|3Q14||
+|Hebrew?
+|Hellenistic-Roman||21 unclassified fragments
+|{{sfn|Fitzmyer|2008|p=29}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/3Q14-1 3Q14 at Leon Levy Collection]</ref>
+|-
+|[[Copper Scroll|3QCopScr]] || [[Copper Scroll|The Copper Scroll]]
+|[[Copper Scroll|3Q15]]|| || Hebrew
+|Roman|| Copper plaque mentioning buried treasures
+|{{sfn|Fitzmyer|2008|p=29}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/3Q15-1 3Q15 at Leon Levy Collection]</ref>
+|}</onlyinclude>
+
+===Qumran Cave 4===
+{{See also|List of manuscripts from Qumran Cave 4}}
+; Description
+[[File:Qumran.jpeg|thumb|right|250px|Qumran Cave 4, where ninety percent of the scrolls were found.]]
+Wadi Qumran Cave 4 was discovered in August 1952, and was excavated from 22–29 September 1952 by [[Gerald Lankester Harding]], [[Roland de Vaux]], and [[Józef Milik]].<ref>{{Cite book | first=Józef Tadeusz | last=Milik | author-link=Józef Milik | title=Dix ans de découverte dans le désert de Juda | year=1957 | publisher=Éditions du Cerf | location=Paris, FR}}{{Cite book | author1=R. de Vaux | first2=Józef Tadeusz | last2=Milik | author2-link=Józef Milik | title=Discoveries in the Judaean Desert | volume=6 | year=1977 | publisher=Clarendon Press | location=Oxford | isbn=9780198263173}}{{Cite book | first1=Józef Tadeusz | last1=Milik | author1-link=Józef Milik | author2=Matthew Black | title=The Books of Enoch: Aramaic Fragments Qumran Cave 4 | year=1976 | publisher=Clarendon Press | location=Oxford | isbn=9780198263173}}</ref>{{r|Vanderkam}}{{rp|10–11}} Cave 4 is actually two hand-cut caves (4a and 4b), but since the fragments were mixed, they are labeled as 4Q. Cave 4 is the most famous of [[Qumran Caves]] both because of its visibility from the Qumran plateau and its productivity. It is visible from the plateau to the south of the Qumran settlement. It is by far the most productive of all Qumran Caves, producing ninety percent of the [[Dead Sea Scrolls]] and scroll fragments (approx. 15,000 fragments from 500 different texts), including 9–10 copies of [[Jubilees]], along with 21 ''[[tefillin]]'' and 7 ''[[mezuzot]]''.
+;4Q1–4Q100
+<onlyinclude>{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference
+|-
+!colspan="8" style="background:#b8c7d6;"|
+Qumran Cave 4
+|-
+|4QGen-Exod{{sup|a}}|| [[Book of Genesis|Genesis]]–[[Book of Exodus|Exodus]]
+|4Q1
+|Genesis 8:20–21; Exodus 1–4; 5:3–17; 6:4–21,25; 7:5–13,15–20; 8:20–22; 9:8; 22:14; 27:38–39,42–43; 34:17–21
+|Hebrew
+|Hasmonean
+|Fragments from Genesis to Numbers
+|{{sfn|Fitzmyer|2008|p=29}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q1-1 4Q1 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QGen{{sup|b}}
+|rowspan="12"|[[Book of Genesis|Genesis]]
+|4Q2
+|[[Genesis 1:1]]–27; 2:14–19; 4:2–4; 5:13
+|Hebrew
+|Roman
+|Fragment of Genesis
+|{{sfn|Fitzmyer|2008|p=29}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q2-1 4Q2 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QGen{{sup|c}}
+|4Q3
+|Genesis 40–41
+|Hebrew
+|Herodian
+|Fragments of Genesis
+|{{sfn|Fitzmyer|2008|p=29}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q3-1 4Q3 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QGen{{sup|d}}
+|4Q4
+|Genesis 1:18–27
+|Hebrew
+|Hasmonean
+|Fragments of Genesis on the Beginning of Creation
+|{{sfn|Fitzmyer|2008|p=29}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q4-1 4Q4 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QGen{{sup|e}}
+|4Q5
+|Genesis 36–37; 40–43; 49
+|Hebrew
+|Herodian
+|Fragments of Genesis
+|{{sfn|Fitzmyer|2008|p=29}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q5-1 4Q5 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QGen{{sup|f}}
+|4Q6
+|Genesis 48:1–11
+|Hebrew
+|Hasmonean
+|Fragments of Genesis
+|{{sfn|Fitzmyer|2008|p=29}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q6-1 4Q6 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QGen{{sup|g}}
+|4Q7
+|[[Genesis 1:1]]–11,13–22; 2:6–7
+|Hebrew
+|Hasmonean
+|Fragments of Genesis about Creation
+|{{sfn|Fitzmyer|2008|p=29}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q7-1 4Q7 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QGen{{sup|h}}/4QGen{{sup|h1}}
+|4Q8
+|Genesis 1:8–10
+|rowspan=4|Hebrew
+|rowspan=4|Herodian
+|rowspan=2|Fragments of Genesis about the beginning to early mankind.
+|{{sfn|Fitzmyer|2008|p=30}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q8-2 4Q8 4QGen h1 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QGen{{sup|h2}}
+|4Q8a
+|Genesis 2:17–18
+|{{sfn|Fitzmyer|2008|p=30}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q8-3 4Q8 4QGen h2 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QGen{{sup|h-para}}
+|4Q8b
+|Genesis 12:4–5
+|A paraphrase of Genesis
+|{{sfn|Fitzmyer|2008|p=30}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q8-4 4Q8 4QGen h-para at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QGen{{sup|h-title}}
+|4Q8c
+|[[Book of Genesis|Genesis]]
+|The title of a Genesis manuscript
+|{{sfn|Fitzmyer|2008|p=30}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q8-1 4Q8 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QGen{{sup|j}}
+|4Q9
+|Genesis 41–43; 45
+|Hebrew
+|Herodian
+|Fragments of Genesis
+|{{sfn|Fitzmyer|2008|p=30}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q9-1 4Q9 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QGen{{sup|k}}
+|4Q10
+|Genesis 1:9,14–16,27–28; 2:1–3; 3:1–2
+|Hebrew
+|Herodian
+|Fragments of Genesis
+|{{sfn|Fitzmyer|2008|p=30}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q10-1 4Q10 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QpaleoGen-Exod{{sup|l}}|| Paleo-[[Book of Genesis|Genesis]]/[[Book of Exodus|Exodus]]
+|4Q11
+|Genesis 50:26; Exodus 1:1–5; 2:10,22–25; 3:1–4,17–21; 8:13–15, 19–21; 9:25–29, 33–35; 10:1–5; 11:4–10; 12:1–11, 42–46; 14:15–24; 16:2–7, 13–14,18–20,23–25,26–31,33–35; 17:1–3,5–11; 18:17–24; 19:24–25; 20:1–2; 22:23–24; 23:5–16; 25:7–20; 26:29–37; 27:1, 6–14; 28:33–35,40–42; 36:34–36
+|Hebrew
+|Hasmonean; [[Paleo-Hebrew alphabet|Paleo-Hebrew script]]
+|Fragments of Genesis and Exodus
+|{{sfn|Fitzmyer|2008|p=30}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q11-1 4Q11 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QpaleoGen{{sup|m}}
+|[[Book of Genesis|Paleo-Genesis]]
+|4Q12
+|Genesis 26:21–28; Exodus 6:25–30; 7:1–19,29; 8:1,5,12–26; 9:5–16,19–21,35; 10:1–12,19–28; 11:8–10; 12:1–2,6–8,13–15,17–22,31–32,34–39; 13:3–7,12–13; 14:3–5,8–9,25–26; 15:23–27; 16:1,4–5,7–8,31–35; 17:1–16; 18:1–27; 19:1,7–17,23–25; 20:1,18–19; 21:5–6, 13–14,22–32; 22:3–4,6–7,11–13,16–30; 23:15–16,19–31; 24:1–4,6–11; 25:11–12,20–29,31–34; 26:8,15,21–30; 27:1–3,9–14,18–19; 28:3–4,8–12,22–24,26–28,30–43; 29:1–5,20,22–25,31–41; 30:10,12–18,29–31,34–38; 31:1–8,13–15; 32:2–19,25–30; 33:12–23; 34:1–3,10–13,15–18,20–24,27–28; 35:1; 36:21–24; 37:9–16
+|Hebrew
+|Hasmonean; Paleo-Hebrew script
+|Fragment from Genesis
+|{{sfn|Fitzmyer|2008|p=30}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q12-1 4Q12 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QExod{{sup|b}}
+|rowspan=4|[[Book of Exodus|Exodus]]
+|4Q13
+|Exodus 1:1–6,16–12; 2:2–18; 3:13 – 4:8; 5:3–14
+|Hebrew
+|Herodian
+|Fragments of Exodus about Slavery in Egypt
+|{{sfn|Fitzmyer|2008|p=30}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q13-1 4Q13 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QExod{{sup|c}}
+|4Q14
+|Exodus 7:17–19,20–23; 7:26 – 8:1; 8:5–14,16–18,22; 9:10–11,15–20,22–25,27–35; 10:1–5,7–9,12–19,23–24; 11:9–10; 12:12–16,31–48; 13:18 – 14:3; 14:3–13; 17:1 – 18:12
+|Hebrew
+|Herodian
+|Fragments of Exodus
+|{{sfn|Fitzmyer|2008|p=30}}<ref name="deadseascrolls.org.il">[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q14-1 4Q14 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QExod{{sup|d}}
+|4Q15
+|Exodus 13:15–16 followed directly by 15:1
+|Hebrew
+|Hasmonean
+|Fragments of Exodus about the Passover and a Hymn
+|{{sfn|Fitzmyer|2008|p=30}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q15-1 4Q15 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>{{r|Garcia Martinez 1999}}{{rp|246}}
+|-
+|4QExod{{sup|e}}
+|4Q16
+|Exodus 13:3–5,15–16
+|Hebrew
+|Hasmonean
+|Fragments of Exodus about the Passover and a Hymn
+|{{sfn|Fitzmyer|2008|p=30}}{{r|deadseascrolls.org.il}}
+|-
+|4QExod-Lev{{sup|f}}
+|[[Book of Exodus|Exodus]]–[[Book of Leviticus|Leviticus]]
+|4Q17
+|Exodus 38:18–22; 39:3–19, 20–24; 40:8–27; Leviticus 1:13–15, 17–2:1
+|Hebrew
+|Early Hellenistic
+|Fragments of Exodus and Leviticus
+|{{sfn|Fitzmyer|2008|p=31}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q17-1 4Q17 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QExod{{sup|g}}
+|rowspan="4"|[[Book of Exodus|Exodus]]
+|4Q18
+|Exodus 14:21–27
+|Hebrew
+|Hasmonean
+|Fragments of Exodus
+|{{sfn|Fitzmyer|2008|p=31}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q18-1 4Q18 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QExod{{sup|h}}
+|4Q19
+|Exodus 6:3–6<!--Exodus 1:1–5; not listed in the reference Fitzmyer-->
+|Hebrew
+|Herodian
+|Fragments of Exodus
+|{{sfn|Fitzmyer|2008|p=31}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q19-1 4Q19 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QExod{{sup|j}}
+|4Q20
+|Exodus 7:28–8:2
+|Hebrew
+|Herodian|| Fragments of Exodus
+|{{sfn|Fitzmyer|2008|p=31}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q20-1 4Q20 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QExod{{sup|k}}
+|4Q21
+|[[Book of Exodus|Exodus]] 36:9–10
+|Hebrew
+|Roman
+|Fragments of Exodus
+|{{sfn|Fitzmyer|2008|p=31}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q21-1 4Q21 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QpaleoExod{{sup|m}} (olim 4QExα) || [[Book of Exodus|Paleo-Exodus]]
+|4Q22
+|Exodus 6:25–7:19,29–8:1,[5],12–22; 9:5–16, 19–21, 35–10:12, 19–28; 11:8–12:2,6–8, 13–15, 17–22, 31–32, 34–39; 13:3–8, 12–13; ... 37:9–16
+|Hebrew
+|Hasmonean; Paleo-Hebrew script
+|Fragments of Exodus;
+|<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q22-1 4Q22 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>{{sfn|Fitzmyer|2008|p=31}}
+|-
+|4QLev-Num{{sup|a}} || [[Book of Leviticus|Leviticus]]–[[Book of Numbers|Numbers]]
+|4Q23
+|Leviticus 13:32–33; 14:22–34, 40–54; 15:10–11, 19–24; 16:15–29;... 27:5–13;...35:4–5
+|Hebrew
+|Hasmonean
+|Fragments of Leviticus
+|{{sfn|Fitzmyer|2008|p=31}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q23-1 4Q23 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QLev{{sup|b}}
+|rowspan=5|[[Book of Leviticus|Leviticus]]
+|4Q24
+|Leviticus 1:11–17; 2:1–15; 3:1, 8–14; 21:17–20, 24; 22:1–33; 23:1–25, 40; 24:2–23; 25:28–29, 45–49, 51–52
+|Hebrew
+|Hasmonean
+|Fragments of Leviticus
+|{{sfn|Fitzmyer|2008|pp=31–32}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q24-1 4Q24 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QLev{{sup|c}}
+|4Q25
+|Leviticus 1:1–7; 3:16–4:6, 12–14, 23–28; 5:12–13; 8:26–28
+|Hebrew
+|Hellenistic-Roman
+|Fragments of Leviticus
+|{{sfn|Fitzmyer|2008|p=32}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q25-1 4Q25 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QLev{{sup|d}}
+|4Q26
+|Leviticus 14:27–29, 33–36; 15:20–24; 17:2–11
+|Hebrew
+|Hellenistic-Roman
+|Fragments of Leviticus
+|{{sfn|Fitzmyer|2008|p=32}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q26-1 4Q26 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QLev{{sup|e}}
+|4Q26a
+|Leviticus 2:4–6, 11–18; 3:2–4,5–8; 19:34–37; 20:1–3, 27–21:4, 9–12, 21–24; 22:4–6, 11–17
+|Hebrew
+|Hellenistic-Roman
+|Fragments of Leviticus
+|{{r|:3}}{{sfn|Fitzmyer|2008|p=32}}
+|-
+|4QLev{{sup|g}}
+|4Q26b
+|Leviticus 7:19–26
+|Hebrew
+|Hellenistic-Roman
+|Fragments of Leviticus
+|{{r|:3}}{{sfn|Fitzmyer|2008|p=32}}
+<!--|-
+|4QNumLev{{sup|a}}
+|[[Book of Numbers|Numbers]]–[[Book of Leviticus|Leviticus]]
+||| Leviticus 1:36–40; 2:31–32; 3:5–8, 10–18; 4:2–3, 5–11, 40–44, 47; 5:3–4; 8:7–12; 9:3–10, 19–20; 12:4–11; 13:18; ||
+||| Fragments of Numbers and Leviticus
+|{{r|:3}}-->
+|-
+|4QNum{{sup|b}}
+|[[Book of Numbers|Numbers]]
+|4Q27
+|Numbers 11:31–12:11; 13:7–24; 15:41–16:11, 14–16; 17:12–17; 18:25–19:6; 20:12–13,16–17,19–29; 21:1–2,12–13; 22:5–21, 31–34, 37–38, 41–23:6,13–15,21–22, 27–24:10; 25:4–8,16–18; 26:1–5,7–10,12,14–34,62–27:5,7–8,10,18–19,21–23; 28:13–17,28,30–31; 29:10–13,16–18,26–30; 30:1–3,5–9,15–16; 31:2–6, 21–25, 30–33,35–36,38,43–44,46–32:1,7–10,13–17,19,23–30,35,37–39,41; 33:1–4,23,25,28,31,45,47–48,50–52; 34:4–9,19–21,23; 35:3–5,12,14–15,18–25,27–28, 33–36:2,4–7
+|Hebrew
+|Herodian
+|Fragments of Numbers. A few lines are written in red ink
+|{{sfn|Fitzmyer|2008|p=32}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q27-1 4Q27 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QDeut{{sup|a}}
+|rowspan="15"|[[Book of Deuteronomy|Deuteronomy]]
+|4Q28
+|Deuteronomy 23:26–24:8
+|Hebrew
+|175–150 BCE
+Transitional: Archaic to Hasmonean
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=32}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q28-1 4Q28 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QDeut{{sup|b}}
+|4Q29
+|[[Book of Deuteronomy|Deuteronomy]] 29:24–27; 30:3–14; 31:9–17,24–30, 32:1–3
+|Hebrew
+|150–100 BCE
+Early Hasmonean
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=32}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q29-1 4Q29 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QDeut{{sup|c}}
+|4Q30
+|Deuteronomy 3:25–26; 4:13–17,31–32; 7:3–4; 8:1–5; 9:11–12, 17–19,29; 10:1–2,5–8; 11:2–4,9–13,18–19; 12:18–19,26,30–31; 13:5–7,11–12,16; 15:1–5,15–19; 16:2–3,5–11,20–17:7,15–18:1; 26:19— 27:2,24–28:14,18–20,22–25,29–30,48–50,61; 29:17–19; 31:16–19; 32:3
+|Hebrew
+|150–100 BCE
+
+Hasmonean
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|pp=32–33}}
+|-
+|4QDeut{{sup|d}}
+|4Q31
+|Deuteronomy 2:24–33; 3:14–29; 4:1
+|Hebrew
+|124–75 BCE
+
+Middle Hasmonean
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=33}}
+|-
+|4QDeut{{sup|e}}
+|4Q32
+|[[Book of Deuteronomy|Deuteronomy]] 3:24; 7:12–16,21–26; 8:1–16
+|Hebrew
+|50–25 BCE
+Late Hasmonean
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=33}}
+|-
+|4QDeut{{sup|f}}
+|4Q33
+|[[Book of Deuteronomy|Deuteronomy]] 4:23–27; 7:22–26; 8:2–14; 9:6–7; 17:17–18; 18:6–10,18–22; 19:17–21; 20:1–6; 21:4–12; 22:12–19; 23:21–26; 24:2–7; 25:3–9; 26:18–27:10
+|Hebrew
+|75–50 BCE
+Late Hasmonean
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=33}}
+|-
+|4QDeut{{sup|g}}
+|4Q34
+|[[Book of Deuteronomy|Deuteronomy]] 9:12–14; 23:18–20; 24:16–22; 25:1–5,14–19; 26:1–5; 28:21–25,27–29
+|Hebrew
+|1–25 CE
+Middle Herodian
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=33}}
+|-
+|4QDeut{{sup|h}}
+|4Q35
+|[[Book of Deuteronomy|Deuteronomy]] 1:1–17,22–23,29–41,43–2:6,28–30; 19:21; 31:9–11; 33:9–22
+|Hebrew
+|50–1 BCE
+Transitional: Hasmonean to Early Herodian
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=33}}
+|-
+|4QDeut{{sup|i}}
+|4Q36
+|Deuteronomy 20:9–13; 21:23; 22:1–9; 23:6–8, 12–16, 22–26; 24:1
+|Hebrew
+|100–50 BCE
+Late Hasmonean
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=33}}
+|-
+|4QDeut{{sup|j}}
+|4Q37
+|| [[Book of Exodus|Exodus]] 12:43–44, 46–51; 13:1–5; Deuteronomy 5:1–11, 13–15, 21–33; 6:1–3; 8:5–10; 11:6–10, 12–13; 30:17–18; 32:7–8
+|Hebrew
+|50 CE
+Late Herodian
+|Fragments of Exodus and Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=33}}
+|-
+| 4QDeut{{sup|k1}}<!-- or 4QDeut{{sup|k}}-->
+|4Q38
+|Deuteronomy 5:28–31; 11:6–13; 32:17–18, 22–23, 25–27
+|Hebrew
+|30–1 BCE
+Early Herodian
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=33}}{{r|:38}}
+|-
+|4QDeut{{sup|k2}}
+|4Q38a
+|Deuteronomy 19: 8–16; 20: 6–19; 21:16; 23:22–26; 24:1–3; 25:19; 26:1–5, 18–19; 27:1
+|Hebrew
+|30–1 BCE
+Early Herodian
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=33}}{{r|:38}}
+|-
+|4QDeut{{sup|k3}}
+|4Q38b<!--  4QDeut{{sup|u}} = 4Q38d? -->
+|Deuteronomy 30: 16–18
+|Hebrew
+|50 CE
+Late Herodian
+|Fragments of Deuteronomy
+|{{sfn|Fitzmyer|2008|p=34}}<ref name=":38">[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q38-1 4Q38 at the Leon Levy Dead Sea Scrolls Digital Library]. Accessed 20 May 2013</ref>
+|-
+|4QDeut{{sup|l}}
+|4Q39
+|Deuteronomy 10:1,14–15; 28:67–68; 29:2–5; 31:12; 33:1–2; 34:4–6,8
+|Hebrew
+|50 CE
+Late Hasmonean
+|Fragments of Deuteronomy about choosing Life or Death
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=34}}
+|-
+|4QDeut{{sup|m}}
+|4Q40
+|Deuteronomy 3:18–22; 4:32–33; 7:18–22
+|Hebrew
+|50–1 BCE
+Transitional: Hasmonean to Herodian
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=34}}
+|-
+|4QDeut{{sup|n}}
+|[[4Q41|All Souls Deuteronomy]]
+|[[4Q41]]
+|Deuteronomy 5:1–33; 6:1; 8:5–10
+|Hebrew
+|30–1 BCE
+Early Herodian
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=34}}
+|-
+|4QDeut{{sup|o}}
+|rowspan="3"|[[Book of Deuteronomy|Deuteronomy]]
+|4Q42
+|Deuteronomy 2:8; 4:30–34; 5:1–5, 8–9; 28:15–18, 33–36, 47–52, 58–62; 29:22–25
+|Hebrew
+|75–50 BCE
+Late Hasmonean
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=34}}
+|-
+|4QDeut{{sup|p}}
+|4Q43
+|Deuteronomy 6:4–11
+|Hebrew
+|75–50 BCE
+Late Hasmonean
+|Fragments of Deuteronomy about Loving God
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=34}}
+|-
+|4QDeut{{sup|q}}
+|4Q44
+|Deuteronomy 32:9–10, 37–43
+|Hebrew
+|50 BCE–25 CE
+Late Hasmonean or Early Herodian
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=34}}
+|-
+|4QpaleoDeut{{sup|r}}
+|rowspan=2|[[Book of Deuteronomy|Paleo-Deuteronomy]]
+|4Q45
+|Deuteronomy 7:2–7, 16–25; 11:28,30–12:1,11–12; 13:19; 14:19–22, 26–29; 15:5–6, 8–10; 19:2–3; 21:8–9; 22:3–6,12–15; 28:15–18, 20; 30:7–8; 32:2–8,10–11,13–14, 33–35; 33:2–8, 29; 34:1–2
+|Hebrew
+|100–25 BCE
+Paleo-Hebrew script
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=34}}
+|-
+|4QpaleoDeut{{sup|s}}
+|4Q46
+|Deuteronomy 26:14–15
+|Hebrew
+|250–200 BCE
+Archaic Paleo-Hebrew script
+|Fragments of Deuteronomy about giving Tithes
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=34}}
+|-
+|4QJosh{{sup|a}}
+|rowspan="2"|[[Book of Joshua|Joshua]]
+|4Q47
+|Joshua 8:34–35; 5:?,2–7; 6:5–10; 7:12–17; 8:3–14, 18?; 10:2–5, 8–11.
+|rowspan="2"|Hebrew
+|rowspan="2"|Hasmonean
+|rowspan="2"|Fragments of Joshua
+|{{sfn|Fitzmyer|2008|p=34}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q47-1 4Q47 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QJosh{{sup|b}}
+|4Q48
+|Joshua 2:11–12; 3:15–16; 4:1–3; 17:11–15
+|{{sfn|Fitzmyer|2008|pp=34–35}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q48-1 4Q48 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QJudg{{sup|a}}
+|rowspan="2"|[[Book of Judges|Judges]]
+|4Q49
+|Judges 6:2–6, 11–13
+|rowspan="2"|Hebrew
+|rowspan="2"|Herodian
+|rowspan="2"|Fragments of Judges
+|{{sfn|Fitzmyer|2008|p=35}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q49-1 4Q49 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QJudg{{sup|b}}
+|4Q50
+|Judges 19:5–7; 21:12–25
+|{{sfn|Fitzmyer|2008|p=35}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q50-1 4Q50 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|[[The Samuel Scroll|4QSam{{sup|a}}]] || rowspan="3" | [[Books of Samuel|Samuel]]
+|4Q51
+|1 Samuel 1:9, 11–13, 17–18, 22–26, 28; 2:1–10,16–36; 3:1–4,18–21; 4:9–12; 5:8–12; 6:1–7,12–13,16–18,20–21; 7:1; 8:9–20; 9:6–8,11–12,16–24; 10:3–18,25–27; 11:1,7–12; 12:7–8,14–19; 14:24–25,28–34,47–51; 15:24–32; 17:3–6; 24:4–5,8–9,14–23; 25:3–12,20–21,25–26,39–40; 26:10–12,21–23; 27:8–12; 28:1–2,22–25; 30:28–30; 31:2–4; 2 Samuel 2:5–16,25–27,29–32; 3:1–8,23–39; 4:1–4,9–12; 5:1–3,6–16; 6:2–9,12–18; 7:23–29; 8:2–8; 10:4–7,18–19; 11:2–12,16–20; 12:4–5,8–9,13–20,30–31; 13:1–6,13–34,36–39; 14:1–3,18–19; 15:1–6,27–31; 16:1–2,11–13,17–18,21–23; 18:2–7,9–11; 19:7–12; 20:2–3,9–14,23–26; 21:1–2,4–6,15–17; 22:30–51; 23:1–6; 24:16–20
+|Hebrew
+|Herodian
+|Fragments of 1 Samuel and 2 Samuel
+|{{sfn|Fitzmyer|2008|p=35}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q51-1 4Q51 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|[[The Samuel Scroll|4QSam{{sup|b}}]]
+|4Q52
+|1 Samuel 16:1–11; 19:10–17; 20:27–42; 21:1–10; 23:9–17
+|Hebrew
+|Early Hellenistic
+|Fragments of 1 Samuel
+|{{sfn|Fitzmyer|2008|p=35}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q52-1 4Q52 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|[[The Samuel Scroll|4QSam{{sup|c}}]]
+|4Q53
+|1 Samuel 25:30–32; 2 Samuel 14:7–33; 15:1–15
+|Hebrew
+|Hasmonean
+|Fragments of 1 Samuel and 2 Samuel
+|{{sfn|Fitzmyer|2008|p=35}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q53-1 4Q53 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QKgs
+|[[Books of Kings|Kings]]<!--4Q Kgs{{sup|a}} -->
+|4Q54
+|1 Kings 7:31–41; 8:1–9,16–18
+|Hebrew
+|Herodian
+|Fragments of 1 Kings
+|{{sfn|Fitzmyer|2008|p=35}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q54-1 4Q54 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QIsa{{sup|a}}
+|rowspan=13|[[Book of Isaiah|Isaiah]]
+|4Q55
+|[[Isaiah 1]]:1–3; [[Isaiah 2|2]]:7–10; 4:5–6; 6:4–7; 11:12–15; 12:4–6; 13:4–6; 17:9–14; 19:9–14; 20:1–6; 21:1–2,4–16; 22:13–25; 23:1–12
+|Hebrew
+|Hasmonean
+|rowspan=13|Fragments of Isaiah
+|{{sfn|Fitzmyer|2008|p=36}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q55-1 4Q55 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QIsa{{sup|b}}
+|4Q56
+|[[Isaiah 1]]:1–6; [[Isaiah 2|2]]:3–16; [[Isaiah 3|3]]:14–22; [[Isaiah 5|5]]:15–28; 9:10–11; 11:7–9; 12:2; 13:3–18; 17:8–14; 18:1,5–7; 19:1–25; 20:1–4; 21:11–14; 22:24–25; 24:2; 26:1–5,7–19; 35:9–10; 36:1–2; 37:2932; 39:1–8; 40:1–4,22–26; 41:8–11; 43:12–15; 44:19–28; 45:20–25; 46:1–3; 49:21–23; 51:14–16; 52:2,7; 53:11–12; 61:1–3; 64:5–11; 65:1; 66:24
+|Hebrew
+|rowspan=4|Herodian
+|{{sfn|Fitzmyer|2008|p=36}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q56-1 4Q56 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QIsa{{sup|c}}
+|4Q57
+|[[Isaiah 9]]:3–12; 10:23–32; 11:4–11,15–16; 12:1; 14:1–5,13; 22:10–14; 23:8–18; 24:1–15,19–23; 25:1–2,8–12; 30:8–17; 33:2–8,16–23; 45:1–4,6–13; 48:10–13,17–19; 50:7–11; 51:1–16; 52:10–15; 53:1–3,6–8; 54:3–17; 55:1–6; 66:20–24
+|Hebrew
+|{{sfn|Fitzmyer|2008|p=36}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q57-1 4Q57 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QIsa{{sup|d}}
+|4Q58
+|[[Isaiah 46]]:10–13; [[Isaiah 47|47]]:1–6,8–9; [[Isaiah 48|48]]:8–22; [[Isaiah 49|49]]:1–15; 52:4–7; 53:8–12; 54:1–11; 57:9–21; 58:1–3,5–7
+|Hebrew
+|{{sfn|Fitzmyer|2008|p=36}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q58-1 4Q58 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QIsa{{sup|e}}
+|4Q59
+|[[Isaiah 2]]:1–4; 7:17–20; 8:2–14; 9:17–20; 10:1–10; 11:14–15; 12:1–6; 13:1–4; 14:1–13,20–24; 59:15–16
+|Hebrew
+|{{sfn|Fitzmyer|2008|p=36}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q59-1 4Q59 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QIsa{{sup|f}}
+|4Q60
+|[[Isaiah 1]]:10–16,18–31; [[Isaiah 2|2]]:1–3; 5:13–14, 25; 6:3–8,10–13; 7:16–18,23–25; 8:1,4–11; 20:4–6; 22:14–22,25; 24:1–3; 27:1,5–6,8–12; 28:6–9,16–18,22,24; [[Isaiah 29|29]]:8
+|Hebrew
+|Hasmonean
+|{{sfn|Fitzmyer|2008|p=36}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q60-1 4Q60 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QIsa{{sup|g}}
+|4Q61
+|[[Isaiah 42]]:14–25; [[Isaiah 43|43]]:1–4,17–24
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=36}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q61-1 4Q61 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QIsa{{sup|h}}
+|4Q61<!-- or 4Q62-->
+|[[Isaiah 42]]:4–11
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=36}}
+|-
+|4QIsa{{sup|i}}
+|4Q62
+|[[Isaiah 56]]:7–8; [[Isaiah 57|57]]:5–8
+|Hebrew
+|Hasmonean
+|{{sfn|Fitzmyer|2008|p=37}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q62-1 4Q62 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QIsa{{sup|j}}
+|4Q63
+|[[Isaiah 1]]:1–6
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=37}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q63-1 4Q63 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QIsa{{sup|k}}
+|4Q64
+|[[Isaiah 28]]:26–[[Isaiah 29|29]]:9
+|Hebrew
+|Hasmonean
+|{{sfn|Fitzmyer|2008|p=37}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q64-1 4Q64 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QIsa{{sup|l}}
+|4Q65
+|[[Isaiah 7]]:14–15; [[Isaiah 8|8]]:11–14
+|Hebrew
+|Hasmonean
+|{{sfn|Fitzmyer|2008|p=37}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q65-1 4Q65 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QIsa{{sup|m}}
+|4Q66
+|[[Isaiah 60]]:20–[[Isaiah 61|61]]:1,3–6
+|Hebrew
+|Hasmonean
+|{{sfn|Fitzmyer|2008|p=37}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q66-1 4Q66 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QIsa{{sup|n}}
+|rowspan="5"|[[Book of Isaiah|Isaiah]]
+|4Q67
+|[[Isaiah 58]]:13–14
+|rowspan=2|Hebrew
+|rowspan=2|Hasmonean
+|rowspan=5|Fragments of Isaiah, including elements on punishment (4Q67) and God's blessings for his people (4Q67, 4Q69a).
+|{{sfn|Fitzmyer|2008|p=37}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q67-1 4Q67 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QIsa{{sup|o}}
+|4Q68
+|[[Isaiah 14]]:28–[[Isaiah 15|15]]:2
+|{{sfn|Fitzmyer|2008|p=37}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q68-1 4Q68 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QIsa{{sup|p}}
+|4Q69
+|[[Isaiah 5]]:28–30
+|rowspan=3|Hebrew
+|rowspan=3|Hasmonean
+|{{sfn|Fitzmyer|2008|p=37}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q69-1 4Q69 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>{{r|Garcia Martinez 1999}}{{rp|270}}
+|-
+|4QIsa{{sup|q}}
+|4Q69a
+|[[Isaiah 54]]:10–13
+|{{sfn|Fitzmyer|2008|p=37}}{{r|Garcia Martinez 1999}}{{rp|270}}
+|-
+|4QIsa{{sup|r}}
+|4Q69b
+|[[Isaiah 30]]:23
+|{{sfn|Fitzmyer|2008|p=37}}{{r|Garcia Martinez 1999}}{{rp|270}}
+|-
+|4QJer{{sup|a}}
+| rowspan="5" |[[Book of Jeremiah|Jeremiah]]
+|4Q70
+| [[Jeremiah 6]]:30?, 7:1–2, 15–19, 28–9:2, 7–15; 10:9–14, 23; 11:3–6, 19–20; 12:3–7, 13–16, 17; 13:1–7, 22–23? [or 22:3], 27; 14:4–7; 15:1–2; 17:8–26; 18:15–23; 19:1; 20:14–18; 21:1?; 22:3–16; 26:10?
+| rowspan="5" | Hebrew
+| rowspan="5" | 200 BCE – 1 BCE
+| rowspan="5" | Fragments of Jeremiah
+|{{sfn|Fitzmyer|2008|p=37}}<ref name="EotDSS">{{cite book | first1=Lawrence | last1=Schiffman | first2=James | last2=VanderKam | title=Encyclopedia of the Dead Sea Scrolls | year=2008 | publisher=Oxford University Press | isbn=9780195084504 | url=http://www.oxfordreference.com/view/10.1093/acref/9780195084504.001.0001/acref-9780195084504-e-243?rskey=ODbFJc&result=243}}</ref><ref name="TDSS">{{cite book | first=Peter | last=Flint | title=The Dead Sea Scrolls | page=68 | year=2013 | publisher=Abingdon Press | location=Nashville, TN | isbn=9780687494491}}</ref>
+|-
+|4QJer{{sup|b}}
+|4Q71
+|[[Jeremiah 9]]:22–25; [[Jeremiah 10|10]]:1–21
+|{{r|EotDSS|TDSS}}{{sfn|Fitzmyer|2008|p=38}}
+|-
+|4QJer{{sup|c}}
+|4Q72
+|[[Jeremiah 4]]:5, 13–16; 8:1–3, 21–23; 9:1–5; 10:12–13; 19:8–9; 20:2–5, 7–9, 13–15; 21:7–10; 22:4–6, 10–28; 25:7–8,15–17, 24–26; 26:10–13; 27:1–3, 13–15; 30:6–9, [10–17], 17–24; 31:1–14, 19–26; 33:?, 16–20
+|{{r|EotDSS|TDSS}}{{sfn|Fitzmyer|2008|p=38}}
+|-
+|4QJer{{sup|d}} (olim 4QJer{{sup|b}})
+|4Q72a
+|[[Jeremiah 43]]:2–10
+|{{r|EotDSS|TDSS}}{{sfn|Fitzmyer|2008|p=38}}
+|-
+|4QJer{{sup|e}}  (olim 4QJer{{sup|b}})
+|4Q72b
+|[[Jeremiah 50]]:4–6
+|{{r|EotDSS|TDSS}}{{sfn|Fitzmyer|2008|p=38}}
+|-
+|4QEze{{sup|a}}
+|rowspan=3|[[Book of Ezekiel|Ezekiel]]
+|4Q73
+|[[Ezekiel 10]]:5–16, 17–22; 11:1–11; 23:14–15, 17–18, 44–47; 41:3–6
+|rowspan=3|Hebrew
+|rowspan=3|Herodian
+|rowspan=3|Fragments of Ezekiel
+|{{sfn|Fitzmyer|2008|p=38}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q73-1 4Q73 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QEze{{sup|b}}
+|4Q74
+|[[Ezekiel 1]]:10–13, 16–17, 19–24
+|{{sfn|Fitzmyer|2008|p=38}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q74-1 4Q74 at the Leon Levy Dead Sea Scrolls Digital Library]</ref><ref>Sanderson 1997. DJD 15: 215–218.</ref>
+|-
+|4QEze{{sup|c}}
+|4Q75
+|Ezekiel 24:2–3
+|{{sfn|Fitzmyer|2008|p=38}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q75-1 4Q75 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QXII{{sup|a}}
+|rowspan=7|The [[Twelve Minor Prophets]]
+|4Q76
+|[[Zechariah 14]]:18; [[Malachi 2]]:10–3:24; [[Jonah 1]]:1–5, 7–2:1, 7; 3:2
+|rowspan=7|Hebrew
+|rowspan=7|Herodian
+|rowspan=7|Fragments of the Twelve Minor Prophets
+|{{sfn|Fitzmyer|2008|p=38}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q76-1 4Q76 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QXII{{sup|b}}
+|4Q77
+|[[Zephaniah 1]]:1–2; 2:13–15; 3:19–20; [[Haggai 1]]:1–2; 2:2–4
+|{{sfn|Fitzmyer|2008|p=38}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q77-1 4Q77 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QXII{{sup|c}}
+|4Q78
+|[[Hosea 2]]:13–15; 3:2–4; 4:1–19; 5:1; 7:12–13; 13:3–10, 15; 14:1–6; [[Joel 1]]:10–20; 2:1, 8–23; 4:6–21; [[Amos 1]]:1?; 2:11–16; 3:1–15; 4:1–2; 6:13–14; 7:1–16; [[Zephaniah 2]]:15; 3:1–2; [[Malachi 3]]:6–7?<!--; Psalm 38:4–6; part of 4Qps{{sup|a}} (4Q83)-->
+|{{sfn|Fitzmyer|2008|p=38}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q78-1 4Q78 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QXII{{sup|d}}
+|4Q79
+| [[Hosea 1]]:6–2:5
+|{{sfn|Fitzmyer|2008|p=39}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q79-1 4Q79 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QXII{{sup|e}}
+|4Q80
+|[[Haggai 2]]:18–19, 20–21; [[Zechariah 1]]:4–6, 8–10, 13–15; 2:10–14; 3:2–10; 4:1–4; 5:8–6:5; 8:2–4, 6–7, 12:7–12
+|{{sfn|Fitzmyer|2008|p=39}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q80-1 4Q80 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QXII{{sup|f}}
+|4Q81
+|[[Jonah 1]]:6–8, 10–16; [[Micah 5]]:1–2
+|{{sfn|Fitzmyer|2008|p=39}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q81-1 4Q81 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QXII{{sup|g}}
+|4Q82
+|[[Hosea 2]]:1–5,14–19, 22–25; 3:1–5; 4:1, 10–11, 13–14; 6:3–4, 8–11; 7:1, 12–13, 13–16; 8:1; 9:1–4, 9–17; 10:1–14; 11:2–5, 6–11; 12:1–15; 13:1, 6–8?, 11–13; 14:9–10; [[Joel 1]]:12–14; 2:2–13 4:4–9, 11–14, 17, 19–20; [[Amos 1]]:3–15; 2:1, 7–9, 15–16; 3:1–2; 4:4–9; 5:1–2, 9–18; 6:1–4, 6–14; 7:1, 7–12, 14–17; 8:1–5, 11–14; 9:1, 5–6, 14–15; Obadiah 1–5, 8–12, 14–15; [[Jonah 1]]:1–9; 2:3–11; 3:1–3; 4:5–11; [[Micah 1]]:7,
+12–15; 2:3–4; 3:12; 4:1–2; 5:6–7 (7–8); 7:2–3, 20; [[Nahum 1]]:7–9; 2:9–11; 3:1–3, 17; [[Habakkuk 2]]:4?;
+[[Zephaniah 3]]:3–5; [[Zechariah 10]]:11–12; 11:1–2; 12:1–3
+|{{sfn|Fitzmyer|2008|p=39}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q82-1 4Q82 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QPs{{sup|a}}
+|rowspan="15" | [[Book of Psalms|Psalms]]
+|4Q83
+|[[Psalm 5]]:9–13; [[Psalm 6|6]]:1–4; [[Psalm 25|25]]:15; [[Psalm 31|31]]:24–25; [[Psalm 33|33]]:1–12; [[Psalm 35|35]]:2,14–20,26–28; [[Psalm 36|36]]:1–9; [[Psalm 38|38]]:2–12,16–23; [[Psalm 47|47]]:2; [[Psalm 53|53]]:4–7; [[Psalm 54|54]]:1–6; [[Psalm 56|56]]:4; [[Psalm 62|62]]:13; [[Psalm 63|63]]:2–4; [[Psalm 66|66]]:16–20; [[Psalm 67|67]]:1–7; [[Psalm 69|69]]:1–19; [[Psalm 71|71]]:1–14
+|Hebrew
+|Hasmonean
+|rowspan="15"|Fragments of Psalms.
+|{{sfn|Fitzmyer|2008|p=39}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q83-1 4Q83 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QPs{{sup|b}}
+|4Q84
+|[[Psalm 91]]:5–8,12–15; [[Psalm 92|92]]:4–8,13–15; [[Psalm 93|93]]:5; [[Psalm 94|94]]:1–4,8–14,17–18,21–22; [[Psalm 96|96]]:2; [[Psalm 98|98]]:4; [[Psalm 99|99]]:5–6; [[Psalm 100|100]]:1–2; [[Psalm 102|102]]:5,10–29; [[Psalm 103|103]]:1–6,9–14,20–21; [[Psalm 112|112]]:4–5; [[Psalm 113|113]]:1; [[Psalm 115|115]]:2–3; [[Psalm 116|116]]:17–19; [[Psalm 118|118]]:1–3,6–11,18–20,23–26,29 ||Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=39}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q84-1 4Q84 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QPs{{sup|c}} & 4QPs{{sup|t}}<ref group="n">In 2022, D. Longacre and B. Strawn demonstrated this small fragment to be part of the larger manuscript 4QPs{{sup|c}}, as opposed to a separate manuscript of the Psalms.</ref>
+|4Q85 / 4Q98{{sup|c}}
+|[[Psalm 16]]:7–9; [[Psalm 18|18]]:3–14,16–18,33–41; [[Psalm 27|27]]:12–14; [[Psalm 28|28]]:1–2,4; [[Psalm 35|35]]:27–28; [[Psalm 37|37]]:18–19; [[Psalm 45|45]]:8–11; [[Psalm 49|49]]:1–17; [[Psalm 50|50]]:14–23; [[Psalm 51|51]]:1–5; [[Psalm 52|52]]:6–11; [[Psalm 53|53]]:1 [[Psalm 88]]:15–17||Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=39}} {{sfn|Fitzmyer|2008|p=41}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q85-1 4Q85 at the Leon Levy Dead Sea Scrolls Digital Library]</ref><ref>Longacre, Drew, and Brent A. Strawn. "A New Identification of a Psalm Manuscript from Qumran: 4Q85 + 4Q98c", ''Dead Sea Discoveries'', doi: https://doi.org/10.1163/15685179-bja10037</ref>
+|-
+| 4QPs{{sup|d}}
+|4Q86
+|[[Psalm 146]]:10; [[Psalm 147|147]]:1–3,13–17,20; [[Psalm 104|104]]:1–5,8–11,14–15,22–25,33–35 ||Hebrew
+|Hasmonean
+|{{sfn|Fitzmyer|2008|p=40}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q86-1 4Q86 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QPs{{sup|e}}
+|4Q87
+|[[Psalm 76]]:10–12; 77:1; 78:6–7,31–33; 81:2–3; 86:10–11; 88:1–4; 89:44–46,50–53; 104:1–3,20–21; 105:22–24,36–45; 109:13; 115:15–18; 116:1–3; 120:6; 125:2–5; 126:1–5; 129:8; 130:1–3 ||Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=40}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q87-1 4Q87 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QPs{{sup|f}}
+|4Q88
+|[[Psalm 22]]:14–17; [[Psalm 107|107]]:2–4,8–11,13–15,18–19,22–30,35; [[Psalm 109|109]]:4–6, 25–28; Apostrophe to Zion; Apostrophe to Judah; Eschatological Hymn ||Hebrew
+|Hasmonean
+|{{sfn|Fitzmyer|2008|p=40}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q88-1 4Q88 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QPs{{sup|g}}
+|4Q89
+|[[Psalm 119]]:37–43,44–46,49–50,73,81–83,90 ||Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=40}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q89-1 4Q89 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QPs{{sup|h}}
+|4Q90
+|[[Psalm 119]]:10–21 ||Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=40}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q90-1 4Q90 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QPs{{sup|j}}
+|4Q91
+|[[Psalm 48]]:1–7; [[Psalm 49|49]]:6,9–12,15,17 ||Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=40}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q91-1 4Q91 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QPs{{sup|k}}
+|4Q92
+|[[Psalm 26]]:7–12; [[Psalm 27|27]]:1; [[Psalm 30|30]]:9–13; [[Psalm 135|135]]:7–16; ||Hebrew
+|Hasmonean
+|{{sfn|Fitzmyer|2008|p=40}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q92-1 4Q92 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QPs{{sup|l}}
+|4Q93
+|[[Psalm 104]]:3–5,11–12 ||Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=40}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q93-1 4Q93 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QPs{{sup|m}}
+|4Q94
+|[[Psalm 93]]:3–5; 95:3–6; 97:6–9; 98:4–8 ||Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=40}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q94-1 4Q94 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QPs{{sup|n}}
+|4Q95
+|[[Psalm 135]]:6–9,11–12; 136:23–24
+|Hebrew
+|Herodian
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q95-1 4Q95 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>{{sfn|Fitzmyer|2008|p=41}}
+|-
+|4QPs{{sup|o}}
+|4Q96
+|[[Psalm 114]]:7; 115:1–2,4; 116:3, 5, 7–10
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=41}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q96-1 4Q96 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QPs{{sup|p}} (olim 4Q237)
+|4Q97
+|[[Psalm 143]]:2–4, 6–8
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=41}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q97-1 4Q97 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QPs{{sup|q}}
+|rowspan="8"|[[Book of Psalms|Psalms]]
+|4Q98
+|[[Psalm 31]]:24–25; [[Psalm 33|33]]:1–18; [[Psalm 35|35]]:4–20
+|rowspan="8"|Hebrew
+|rowspan="8"|Herodian
+|rowspan="8"|Fragments of Psalms, including elements on putting one's hope in God (4Q98d), the earth shaking at the presence of God (4Q98e), the blessings of God's Children and the struggle of the wicked (4Q98f).
+|{{sfn|Fitzmyer|2008|p=41}}
+|-
+|4QPs{{sup|r}}
+|4Q98a<!-- or 4Q98 -->
+|[[Psalm 26]]:7–12; [[Psalm 27|27]]:1; [[Psalm 30|30]]:9–13
+|{{sfn|Fitzmyer|2008|p=41}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q98-1 4Q98 4QPs{{sup|r}} at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QPs{{sup|s}}
+|4Q98b
+|[[Psalm 5]]:8–13; [[Psalm 6|6]]:1
+|{{sfn|Fitzmyer|2008|p=41}}
+|-
+|*4QPs{{sup|t}} (see 4QPs{{sup|c}})
+|*4Q98c
+|[[Psalm 88]]:15–17
+|{{sfn|Fitzmyer|2008|p=41}}
+|-
+|4QPs{{sup|u}}
+|4Q98d
+|[[Psalm 42]]:5
+|{{sfn|Fitzmyer|2008|p=41}}
+|-
+|4QPs{{sup|v}} (olim 4QPs{{sup|u}} frg. 2)
+|4Q98e
+|[[Psalm 99]]:1
+|{{sfn|Fitzmyer|2008|p=41}}
+|-
+|4QPs{{sup|w}}
+|4Q98f
+|[[Psalm 112]]:1–9
+|{{sfn|Fitzmyer|2008|p=41}}
+|-
+|4QPs{{sup|x}} (olim 4Q236)
+|4Q98g
+|[[Psalm 89]]:20–22, 26, 23, 27–28, 31
+|{{sfn|Fitzmyer|2008|p=41}}
+|-
+|4QJob{{sup|a}}
+|rowspan=2|[[Book of Job|Job]]
+|4Q99
+|Job 31:14–19; 32:3–4; 33:10–11, 24–26, 28–30; 35:16; 36:7–11, 13–27, 32–33; 37:1–5, 14–15
+|rowspan=2|Hebrew
+|Hasmonean
+|rowspan=2|Fragments of Job
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q99-1 4Q99 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+{{sfn|Fitzmyer|2008|p=42}}
+|-
+|4QJob{{sup|b}}
+|4Q100
+|Job 8:15–17; 9:27; 13:4; 14:4–6; 31:20–21
+|Herodian
+|{{sfn|Fitzmyer|2008|p=42}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q100-1 4Q100 at the Leon Levy Dead Sea Scrolls Digital Library]</ref></onlyinclude>
+|}
+
+; 4Q101–4Q200
+{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference<onlyinclude>
+|-
+|4QpaleoJob{{sup|c}}
+|[[Book of Job|Paleo-Job]]
+|4Q101
+|Job 13:18–20, 23–27; 14:13–18
+|Hebrew
+|Early Hellenistic; Paleo-Hebrew script
+|Fragment of Job
+|{{sfn|Fitzmyer|2008|p=42}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q101-1 4Q101 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QProv{{sup|a}}
+|rowspan=2|[[Book of Proverbs|Proverbs]]
+|4Q102
+|Proverbs 1:27–33; 2:1<!--; chapters 14–15 not listed in reference-->
+|Hebrew
+|Herodian
+|rowspan=2|Fragments of Proverbs
+|{{sfn|Fitzmyer|2008|p=42}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q102-1 4Q102 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QProv{{sup|b}}
+|4Q103
+|Proverbs 13:6–9; 14:5–10, 12–13, 31–35; 15:1–8, 19–31; 7:9, 11?
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=42}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q103-1 4Q103 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QRuth{{sup|a}}
+|rowspan=2|[[Book of Ruth|Ruth]]
+|4Q104
+|[[Ruth 1]]:1–12
+|Hebrew
+|Hasmonean
+|rowspan=2|Fragments of Ruth
+|{{sfn|Fitzmyer|2008|p=42}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q104-1 4Q104 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QRuth{{sup|b}}
+|4Q105
+|Ruth 1:1–6, 12–15
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=42}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q105-1 4Q105 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QCant{{sup|a}}
+|rowspan=3|[[Song of Songs|Canticles (Song of Songs)]]
+|[[4Q106]]
+|[[Song of Songs 3]]:4–5, 7–11; [[Song of Songs 4|4]]:1–7; [[Song of Songs 6|6]]:11?–12; [[Song of Songs 7|7]]:1–7
+|Hebrew
+|Herodian
+|rowspan=3|Fragments of Pesher on Song of Songs/Canticles, including an introduction (4Q106).
+|{{sfn|Fitzmyer|2008|p=42}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q106-1 4Q106 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QCant{{sup|b}}
+|[[4Q107]]
+|[[Song of Songs 2]]:9–17; 3:1–2, 5, 9–11; 4:1–3, 8–11, 14–16; [[Song of Songs 5:1|5:1]]
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=42}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q107-1 4Q107 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QCant{{sup|c}}
+|[[4Q108]]
+|[[Song of Songs 3]]:7–8
+|Hebrew
+|Hellenistic-Roman
+|{{sfn|Fitzmyer|2008|p=42}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q108-1 4Q108 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QQoh{{sup|a}}
+|rowspan=2|[[Book of Ecclesiastes|Ecclesiastes]]
+|4Q109
+|Ecclesiastes 5:13–17; 6:1?,3–8,12; 7:1–10,19–20
+|Hebrew
+|Hasmonean
+|rowspan=2|Fragments of Ecclesiastes
+|{{sfn|Fitzmyer|2008|p=43}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q109-1 4Q109 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QQoh{{sup|b}}
+|4Q110
+|Ecclesiastes 1:10–15
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=43}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q110-1 4Q110 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+
+|-
+|4QLam
+|[[Book of Lamentations|Lamentations]]
+|4Q111
+|[[Lamentations 1]]:1–15, 17, 16, 18; 2:5
+|Hebrew
+|Herodian
+|Fragments of Lamentations
+|{{sfn|Fitzmyer|2008|p=43}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q111-1 4Q111 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QDan{{sup|a}}
+|rowspan=5|[[Book of Daniel|Daniel]]
+|4Q112
+|Daniel 1:16–20; 2:9–11, 19–49; 3:1–2; 4:29–30; 5:5–7, 12–14, 16–19; 7:5–7, 25–28; 8:1–5; 10:16–20; 11:13–16
+|Hebrew
+|Hasmonean
+|rowspan=5|Fragments of Daniel
+|{{sfn|Fitzmyer|2008|p=43}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q112-1 4Q112 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QDan{{sup|b}}
+|4Q113
+|Daniel 5:10–12, 14–16, 19–22; 6:8–22, 27–29; 7:1–6, 11?, 26–28; 8:1–8, 13–16
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=43}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q113-1 4Q113 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QDan{{sup|c}}
+|4Q114
+|Daniel 10:5–9, 11–16, 21; 11:1–2, 13–17, 25–29
+|Hebrew
+|Hasmonean
+|{{sfn|Fitzmyer|2008|p=43}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q114-1 4Q114 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QDan{{sup|d}}
+|4Q115
+|Daniel 3:8–10?, 23–25; 4:5–9, 12–16; 7:15–23
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=43}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q115-1 4Q115 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QDan{{sup|e}}
+|4Q116
+|Daniel 9:12–17
+|Hebrew
+|Hasmonean
+|{{sfn|Fitzmyer|2008|p=43}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q116-1 4Q116 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QEzra
+|[[Book of Ezra|Ezra]]
+|4Q117
+|Ezra 4:2–6, 9–11; 5:17; 6:1–5
+|Hebrew
+|Hasmonean
+|Fragments of Ezra-Nehemiah
+|{{sfn|Fitzmyer|2008|p=43}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q117-1 4Q117 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QChr/4QChron
+|[[Books of Chronicles|Chronicles]]
+|4Q118
+|2 Chronicles 28:27; 29:1–3
+|Hebrew
+|Herodian
+|Fragments of 2 Chronicles
+|{{sfn|Fitzmyer|2008|p=43}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q118-1 4Q118 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QLXXLev{{sup|a}} gr
+|rowspan=2|[[Septuagint]] [[Book of Leviticus|Leviticus]]
+|[[4Q119]]
+|Leviticus 26:2–16
+|Greek
+|Hasmonean
+|Fragments of Leviticus
+|{{sfn|Fitzmyer|2008|p=44}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q119-1 4Q119 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QpapLXXLev{{sup|b}}/ pap4QLXXLev{{sup|b}} gr
+|[[4Q120]]
+|Leviticus 1:11; 2:3–5, 7–8?; 3:4, 7, 9–14; 4:3–4, 6–8, 10–11, 18–19, 26–28, 30; 5:6, 8–10, 16–24; [6:1–5]
+|Greek
+|Hasmonean
+|97 fragments of Leviticus. Contains ΙΑΩ for the [[tetragrammaton]]
+|{{sfn|Fitzmyer|2008|p=44}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q120-1 4Q120 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QLXXNum{{sup|b}} gr
+|Septuagint [[Book of Numbers|Numbers]]
+|[[4Q121]]
+|Numbers 3:40–43,50–51?; 4:1?,5–9,11–16; 3:39?
+|Greek
+|Herodian
+|Fragments of Numbers
+|{{sfn|Fitzmyer|2008|p=44}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q121-1 4Q121 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QLXXDeut gr
+|Septuagint [[Book of Deuteronomy|Deuteronomy]]
+|[[4Q122]]
+|Deuteronomy 11:4
+|Greek
+|Early Hellenistic
+|Fragments of Deuteronomy
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=44}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q122-1 4Q122 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QpaleoparaJosh
+|Paraphrase on [[Book of Joshua|Joshua]]
+|4Q123
+|Joshua
+|Hebrew
+|Paleo-Hebrew script
+|"Rewritten Joshua"
+|{{sfn|Fitzmyer|2008|p=44}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q123-1 4Q123 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QUnid gr
+|Unidentified text
+|[[4Q126]]
+| —
+|Greek
+|Herodian
+|Fragmentary religious text
+|<ref>{{cite book | first=Emanuel | last=Tov | author-link=Emanuel Tov | title=Hebrew Bible, Greek Bible and Qumran: Collected Essays | chapter=23 | collaboration=The Greek Biblical Texts from the Judean Desert | series=Texts and Studies in Ancient Judaism | volume=121 | pages=346 | date=2008 | publisher=Mohr Siebeck | isbn=9783161495465 | chapter-url=https://books.google.com/books?id=p6Nb0o3qY6oC&pg=PA346}}</ref><ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q126-1 4Q126 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qpap paraExod / pap4QParaExod gr
+|Paraphrase on Exodus
+|[[4Q127]]
+|Exodus
+|Greek
+|Herodian
+|"Rewritten Exodus"
+|{{sfn|Fitzmyer|2008|p=44}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q127-1 4Q127 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|a}}
+|rowspan="21"|[[Tefillin|Phylactery Scrolls]]<!--  Various [[tefillin]]-->
+|4Q128
+|Deuteronomy 5:1–14,27–6:3; 10:12–11:21; Exodus 12:43–13:7
+|Hebrew
+|Hellenistic-Roman
+|rowspan="19"|Fragments of Deuteronomy and Exodus.
+|{{r|:0}}{{sfn|Fitzmyer|2008|pp=44–45}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q128-1 4Q128 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|b}}
+|4Q129
+|Exodus 13:9–16
+|Hebrew
+|Hellenistic-Roman
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=45}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q129-1 4Q129 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|c}}
+|4Q130
+|Exodus 13:13–16; Deuteronomy 6:4–9; 11:13–21
+|Hebrew
+|Hellenistic-Roman
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=45}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q130-1 4Q130 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|d}}
+|4Q131
+|Deuteronomy 11:13–21
+|Hebrew
+|Hellenistic-Roman
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=45}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q131-1 4Q131 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|e}}
+|4Q132
+|Exodus 13:1–10
+|Hebrew
+|Hellenistic-Roman
+|{{sfn|Fitzmyer|2008|p=45}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q132-1 4Q132 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|f}}
+|4Q133
+|Exodus 13:11–16
+|Hebrew
+|Hellenistic-Roman
+|{{sfn|Fitzmyer|2008|p=45}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q133-1 4Q133 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|g}}
+|4Q134
+|Deuteronomy 5:1–21; Exodus 13:11–12
+|Hebrew
+|Hellenistic-Roman
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=45}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q134-1 4Q134 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|h}}
+|4Q135
+|Deuteronomy 5:22–6:5; Exodus 13:14–16
+|Hebrew
+|Hellenistic-Roman
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=45}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q135-1 4Q135 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|i}}
+|4Q136
+|Deuteronomy 6:6–7; 11:13–21; Exodus 12:43–13:10
+|Hebrew
+|Hellenistic-Roman
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=45}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q136-1 4Q136 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|j}} (olim 4Qphyl{{sup|a}})
+|4Q137
+|Deuteronomy 5:24–32; 6:2–3
+|Hebrew
+|
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=45}}
+|-
+|4Qphyl{{sup|k}}
+|4Q138
+|Deuteronomy 10:12–11:17
+|Hebrew
+|Hellenistic-Roman
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=46}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q138-1 4Q138 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|l}}
+|4Q139
+|Deuteronomy 5:7–24
+|Hebrew
+|Hellenistic-Roman
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=46}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q139-1 4Q139 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|m}}
+|4Q140
+|Exodus 12:44–13:10; Deuteronomy 5:33–6:5
+|Hebrew
+|Hellenistic-Roman
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=46}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q140-1 4Q140 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|n}}
+|4Q141
+|Deuteronomy 32:14–20, 32–33
+|Hebrew
+|Hellenistic-Roman
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=46}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q141-1 4Q141 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|o}}
+|4Q142
+|Deuteronomy 5:1–16, 6:7–9
+|Hebrew
+|Hellenistic-Roman
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=46}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q142-1 4Q142 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|p}}
+|4Q143
+|Deuteronomy 10:22–11:3,18–21
+|Hebrew
+|Hellenistic-Roman
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=46}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q143-1 4Q143 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|q}}
+|4Q144
+|Exodus 13:4–9; Deuteronomy 11:4–18
+|Hebrew
+|Hellenistic-Roman
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=46}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q144-1 4Q144 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|r}}
+|4Q145
+|Exodus 13:1–10
+|Hebrew
+|Hellenistic-Roman
+|{{sfn|Fitzmyer|2008|p=46}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q145-1 4Q145 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QPhyl{{sup|s}}
+|4Q146
+|Deuteronomy 11:19–21
+|Hebrew
+|Hellenistic-Roman
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=46}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q146-1 4Q146 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|t}}
+|4Q147
+|
+|Hebrew
+|Hellenistic-Roman
+|rowspan=2|Could not be deciphered
+|{{sfn|Fitzmyer|2008|p=46}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q147-1 4Q147 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Qphyl{{sup|u}}
+|4Q148
+|
+|Hebrew
+|Hellenistic-Roman
+|{{sfn|Fitzmyer|2008|p=46}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q148-1 4Q148 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QMez{{sup|a}}
+|rowspan=7|[[Mezuzah|Mezuzah Scrolls]]
+|4Q149
+|
+|Hebrew
+|Hasmonean
+|rowspan=7|Fragments of Exodus and Deuteronomy
+|{{sfn|Fitzmyer|2008|pp=46–47}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q149-1 4Q149 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QMez{{sup|b}}
+|4Q150
+|Deuteronomy 6:5–6; 10:14–11:2
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=47}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q150-1 4Q150 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QMez{{sup|c}}
+|4Q151
+|Deuteronomy 5:27–6:9; 10:12–20
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=47}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q151-1 4Q151 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QMez{{sup|d}}
+|4Q152
+|Deuteronomy 6:5–7
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=47}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q152-1 4Q152 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QMez{{sup|e}}
+|4Q153
+|Deuteronomy 11:17–18
+|Hebrew
+|Hellenistic-Roman
+|{{sfn|Fitzmyer|2008|p=47}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q153-1 4Q153 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QMez{{sup|f}}
+|4Q154
+|Deuteronomy 13:1–4
+|Hebrew
+|Hasmonean
+|{{sfn|Fitzmyer|2008|p=47}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q154-1 4Q154 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QMez{{sup|g}}
+|4Q155
+|
+|Hebrew
+|Hellenistic-Roman
+|{{sfn|Fitzmyer|2008|p=47}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q155-1 4Q155 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QtgLev
+|[[Targum]] of [[Book of Leviticus|Leviticus]]
+|4Q156
+|Leviticus 16:12–15,18–21
+|Aramaic
+|Hasmonean
+|Fragments of Leviticus
+|<ref name=":1">{{Cite book|title=The Dead Sea Scrolls: A New Translation|last1=Wise|first1=Michael O.|publisher=HarperCollins Publishers|year=2005|isbn=9780060766627|location=New York|page=[https://archive.org/details/deadseascrollsne00wise/page/577 577]|last2=Abegg|first2=Martin G.|last3=Cook|first3=Edward M.|url-access=registration |url=https://archive.org/details/deadseascrollsne00wise/page/577}}</ref><ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q156-1 4Q156 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QtgJob
+|[[Targum]] of Job
+|4Q157
+|Job 3:5–6; 4:17–5:4
+|Aramaic
+|Herodian
+|Fragments of Job
+|{{r|:1}}{{sfn|Fitzmyer|2008|pp=47–48}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q157-1 4Q157 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QRP{{sup|a}} || [[Torah|Reworked Pentateuch A]]
+|4Q158
+|| Genesis 32:25–30; 32:31 ?; Exodus 3:12; 4:27–28; 19:17–23; 24:4–6; 20:12–17,19–21 (Samaritan), 22–26; 21:15–25, 32–37; 22:1–13; 30:32.34; Deuteronomy 5:30–31; 21:1–10 ||Hebrew
+|Herodian|| Reworked Pentateuch
+|{{r|:0}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q158-1 4Q158 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>{{sfn|Fitzmyer|2008|p=48}}{{r|Garcia Martinez 1999}}{{rp|305}}
+|-
+|4QOrdinances{{sup|a}}
+|Ordinances A
+|4Q159
+|
+|Hebrew
+|Herodian
+|Non-biblical composition
+|{{sfn|Fitzmyer|2008|p=48}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q159-1 4Q159 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QVisSam
+|Vision of Samuel
+|4Q160
+|
+|Hebrew
+|Hasmonean
+|Non-biblical composition
+|{{sfn|Fitzmyer|2008|p=48}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q160-1 4Q160 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QpIsaiah{{sup|a}}
+|rowspan=2|[[Pesher]] on [[Book of Isaiah|Isaiah]]
+|4Q161
+|
+|Hebrew
+|Herodian
+|Non-biblical composition
+|<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q161-1 4Q161 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QpIsaiah{{sup|b}}
+|4Q162<!-- also 4Q163-164-->
+|
+|Hebrew
+|Herodian
+|Non-biblical composition
+|<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q162-1 4Q162 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QpHosA
+|[[Pesher]] on [[Book of Hosea|Hosea]] A
+|4Q166
+|
+|Hebrew
+|Herodian
+|rowspan=2 |Hosea Commentary Scroll
+|<ref name="loc.gov">{{cite web|url=https://www.loc.gov/exhibits/scrolls/scr3.html|title=The Qumran Library: Scrolls|website=[[Library of Congress]]}}</ref>{{sfn|Fitzmyer|2008|p=49}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q166-1 4Q166 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QpHosB
+|Pesher on Hosea B
+|4Q167
+|
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=49}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q167-1 4Q167 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QpMic(?)
+|Pesher on [[Book of Micah|Micah]]?
+|4Q168
+|
+|Hebrew
+|Herodian
+|Micah Commentary?
+|{{sfn|Fitzmyer|2008|p=49}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q168-1 4Q168 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QpNah
+|[[Nahum Commentary|Pesher on Nahum]]
+|[[Nahum Commentary|4Q169]]
+|Nahum 1:3–6; 2:12–14; 3:1–5, 6–9, 10–12, 14
+|Hebrew
+|Herodian
+|Containing the term "[[The Seekers after Smooth Things]]"
+|{{sfn|Fitzmyer|2008|p=49}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q169-1 4Q169 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Q Eschatological Commentary A
+|Florilegium or Midrash on the Last Days
+|4Q174
+|2 Samuel 7:10–14 (1 Chronicles 17:9–13); Exodus 15:17–18; Amos 9:11; Psalm 1:1; Isaiah 8:11; Ezekiel 37:23?; Psalm 2:1; Daniel 12:10; 11:32; Deuteronomy 33:8–11, 12, 19–21
+|Hebrew
+|Herodian
+|Quotations from biblical passages with midrashic commentary
+|{{sfn|Fitzmyer|2008|p=50}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q174-1 4Q174 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QTest
+|[[4Q175|Testimonia]]
+|[[4Q175]]
+|Deuteronomy 5:28–29; 18:18–19; 33:8–11
+Numbers 24:15–17
+Joshua 6:26, quoted in Psalms of Joshua (4Q379, frag. 22)
+|Hebrew
+|Herodian; Hasmonean script
+|A list of quotations; Messianic Anthology or Testimonia
+|{{r|:0}}{{sfn|Fitzmyer|2008|p=50}}<ref>[http://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q175-1 4Q175 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QapocrLamA
+| Apocryphal Lamentations A
+| 4Q179
+| Lamentations
+| Hebrew
+| Herodian
+| cf. 4Q501
+| <ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q179-1 4Q179 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Q Horoscope
+|[[Qumran Physiognomies|Physiognomies]]/[[Qumran "Horoscopes" (4Q186)|Horoscopes]]
+|[[Qumran "Horoscopes" (4Q186)|4Q186]]
+|
+|Hebrew
+|Herodian
+|
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q186-1 4Q186 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QpapTobit{{sup|a}}
+| Tobit
+| 4Q196
+| Tobit
+| Aramaic
+| Hasmonean
+| On [[Papyrus]]. cf. 4Q501
+| <ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q196-1 4Q196 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QTobit{{sup|b}}
+| Tobit
+| 4Q197
+| Tobit
+| Aramaic
+| Herodian
+| cf. 4Q501
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q197-1 4Q197 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QTobit{{sup|c}}
+| Tobit
+| 4Q198
+| Tobit
+| Aramaic
+| Hasmonean
+| cf. 4Q501
+| <ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q198-1 4Q198 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QTobit{{sup|d}}
+| Tobit
+| 4Q199
+| Tobit
+| Aramaic
+| Hasmonean
+| cf. 4Q501
+| <ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q199-1 4Q199 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QTobit{{sup|e}}
+| Tobit
+| 4Q200
+| Tobit
+| Hebrew
+| Herodian
+| cf. 4Q501
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q200-1 4Q200 at the Leon Levy Dead Sea Scrolls Digital Library]</ref></onlyinclude>
+|}
+
+; 4Q201–4Q300
+{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference<onlyinclude>
+|-
+|4QEn{{sup|a}}
+|The Enoch Scroll
+|4Q201{{sup|a}}
+|
+| Aramaic
+| Hasmonean
+|
+|{{r|loc.gov}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q201-1 4Q201 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QALD / 4QLevi{{sup|a-f}} ar
+|[[Testaments of the Twelve Patriarchs#Aramaic Levi Document|The Aramaic Levi Document (ALD)]]
+|4Q213 4Q213a 4Q213b 4Q214 4Q214a 4Q214b
+|
+|Aramaic
+|Hasmonean
+|Multiple compositions
+|{{sfn|Fitzmyer|2008|pp=54–55}}
+|-
+|4QTNaph
+|[[Testament of Naphtali]]
+|4Q215
+|
+|Hebrew
+|Herodian
+|
+|{{sfn|Fitzmyer|2008|p=55}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q215-1 4Q215 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|[[4Q240|4QCant{{sup|a}}]](?)
+|Pesher on Canticles/Song of Songs
+|[[4Q240]]
+|[[Song of Songs]]
+|Hebrew
+|Herodian
+|Included in [[Józef Milik|Milik]]'s original list, but this fragment has never been located
+|<ref>Gault, Brian P. (2010) [https://www.academia.edu/3709177/Fragments_of_Canticles_at_Qumran "Fragments of Canticles at Qumran"]. ''Revue de Qumran''. p.352</ref>
+|-
+|4QapocrDan
+|[[Aramaic]] [[Apocalypse]] or The [[Son of God]] Text
+|[[4Q246]]
+|
+|Aramaic
+|Herodian
+|
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q246-1 4Q246 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QCommentary on Gen A /4QCommGenA
+|rowspan=4|[[Pesher on Genesis|Commentary/Pesher on Genesis]]
+|[[4Q252]]
+|Genesis 6:3; 7:10–8:18; 9:24–27; 11:31; 15:9, 17, 17:20?; 18:31–32 (with Deuteronomy 13:16, 17; 20:11, 14); 22:10–12; 28:3–4; 36:12; 49:3–4, 10 (with Jeremiah 33:17), 20–21
+|Hebrew
+|Herodian
+|rowspan=4|Fragments/ commentary of Genesis.
+|{{sfn|Fitzmyer|2008|p=62}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q252-1 4Q252 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QCommentary on Gen B /4QCommGenB
+|4Q253
+|[[Book of Genesis|Genesis]]
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=62}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q253-2 4Q253 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QCommentary on Gen C /4QCommGenC
+|4Q254
+|[[Book of Genesis|Genesis]] 9:24–25; 22:5?, 17?
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=62}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q254-1 4Q254 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QCommentary on Gen D (olim 4QpGen{{sup|c}})
+|4Q254{{sup|a}}–820
+|[[Book of Genesis|Genesis]] 6:15
+|Hebrew
+|Herodian
+|{{sfn|Fitzmyer|2008|p=62}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q254a-820-1?locale=en_US 4Q254a-820 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QS{{sup|d}}
+| [[Community Rule|Serekh ha-Yahad]] or [[Community Rule]]
+| [[Community Rule|4Q258]]
+|
+| Hebrew
+| Herodian
+| cf. 1QS{{sup|d}}
+| <ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q258-1 4Q258 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QD
+| The [[Damascus Document]]
+| 4Q265–273
+|
+|Hebrew
+|Hasmonean
+| cf. 4QD{{sup|a/g}} = 4Q266/272, 4QD{{sup|a/e}} = 4Q266/270, 5Q12, 6Q15, 4Q265–73
+|{{r|:3}}
+|-
+| 4Q Sefer ha-Milhamah
+| Rule of War
+| 4Q285
+|
+|Hebrew
+|Herodian
+| cf. 11Q14
+| <ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q285-1 4Q285 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QMyst{{sup|a}}
+|rowspan=2| [[The Book of Mysteries|The Book of Mysteries<br>The Book of Secrets]]
+|4Q299
+|
+|Hebrew
+|Herodian
+|
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q299-1 4Q299 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QMyst{{sup|b}}
+| 4Q300
+|
+|Hebrew
+|Herodian
+|
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q300-1 4Q300 at the Leon Levy Dead Sea Scrolls Digital Library]</ref></onlyinclude>
+|}
+
+; 4Q301-
+{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference<onlyinclude>
+|-
+|4QMyst{{sup|c}}
+|[[The Book of Mysteries|The Book of Mysteries<br>The Book of Secrets]]
+|4Q301
+|
+|Hebrew
+|Herodian
+|
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q301-1 4Q301 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QRP{{sup|b}}
+|rowspan="4"|[[Torah|Reworked Pentateuch]]
+|4Q364
+|[[Book of Genesis|Genesis]] 25:18–21; 26:7–8; 27:39; 28:6; 29:32–33; 30:8–14,26–36; 31:47–53; 32:18–20,26–30; 34:2; 35:28; 37:7–8; 38:14–21; 44:30–34; 45:1,21–27; 48:14–15; [[Book of Exodus|Exodus]] 21:14–22; 19:17; 24:12–14,18; 25:1–2; 26:1,33–35; [[Book of Numbers|Numbers]] 14:16–20; 33:31–49; 20:17–18; [[Book of Deuteronomy|Deuteronomy]] 2:8–14, 30–37; 3:2,18–23; 9:6–7,12–18, 21–25,27–29; 10:1–4, 6–7, 10–13,22; 11:1–2,6–9,23–24; 14:24–26
+|Hebrew
+|Late Hasmonean or Herodian
+|rowspan="4"|Reworked Pentateuch
+|{{r|:0|Garcia Martinez 1999}}{{rp|305}}{{sfn|Fitzmyer|2008|p=74}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q364-1 4Q364 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QRP{{sup|c}}<!-- 4Q365a =4QTemple? -->
+|4Q365
+|[[Book of Exodus|Exodus]] 8:13–19; 9:9–12; 10:19–20; 14:10,12–21; 15:6-[21],22–26; 17:3–5; 18:13–16; 26:34–36; 28:16–20; 29:20–22; 30:27–38; 31:1–2; 35:[2]–5; 36:32–38; 37:29; 38:1–7; 39:1–19; [[Book of Leviticus|Leviticus]] 11:1[3],17-[25],32-[33],[39]-[46]; 13:6–8,15-[19],51–52; 16:6–7; 18:[25]-[29]; 23:42–44; 24:1–2; 25:7–9; 26:17–32; 27:34; [[Book of Numbers|Numbers]] 1:1–5; 3:26–30; 4:47–49; 7:1,78–80; 8:11–12; 9:15–23; 10:1-[4]; 13:[11]–25,[28]–30; 15:26-[29]; 17:20–24; 27:11; 36:1–2; [[Book of Deuteronomy|Deuteronomy]] 2:24; 19:20–21; 20:1 ||Hebrew
+|Late Hasmonean/ Early Herodian||{{r|:0|Garcia Martinez 1999}}{{rp|305}}{{sfn|Fitzmyer|2008|p=75}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q365-1 4Q365 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QRP{{sup|d}}
+|4Q366
+|[[Book of Exodus|Exodus]] 21;35–37; 22:1–5; [[Book of Leviticus|Leviticus]] 24:20–22; 25:39–43; [[Book of Numbers|Numbers]] 29:14-[25], 32–39; 30:1; [[Book of Deuteronomy|Deuteronomy]] 16:13–14; 14:[13]–21
+|Hebrew
+|Herodian
+|{{r|:0|Garcia Martinez 1999}}{{rp|305}}{{sfn|Fitzmyer|2008|p=75}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q366-1 4Q366 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QRP{{sup|e}}
+|4Q367
+|[[Book of Leviticus|Leviticus]] 11:47; 12:1–8; 13:1; 15:14–15; 19:1–4,9–15; 20:13; 27:30–34
+|Hebrew
+|Hasmonean
+|{{r|Garcia Martinez 1999}}{{rp|305}}{{sfn|Fitzmyer|2008|p=75}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q367-1 4Q367 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QapocrJosh{{sup|a}}
+| rowspan="2" |[[Apocryphon]] of [[Book of Joshua|Joshua]]
+|4Q378
+|
+|Hebrew
+|Herodian
+|rowspan="2" |Texts drawing on the content of Joshua, Exodus and Numbers.
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q378-1 4Q378 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QapocrJosh{{sup|b}}
+|4Q379
+|
+|Hebrew
+|Hasmonean
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q379-1 4Q379 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QpsEzek
+|[[Pseudo-Ezekiel]]
+|4Q385<br>4Q385b<br>4Q385c<br>4Q386<br>4Q388<br>4Q391
+|
+|Hebrew
+|Herodian
+|
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q385-1 4Q385 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|[[4QMMT]] /4Q Cal.Doc.D
+|[[4QMMT|Miqsat Ma'ase Ha-Torah]] or [[4QMMT|Some Precepts of the Law]] or the [[4QMMT|Halakhic Letter]]
+|4Q394–399
+|
+|Hebrew
+|Herodian
+|
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q394-1 4Q394 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Q Non-Canonical Psalms A
+|[[Songs of the Sabbath Sacrifice|Songs of Sabbath Sacrifice]] or the [[Songs of the Sabbath Sacrifice|Angelic Liturgy]]
+|[[Songs of the Sabbath Sacrifice|4Q400–407]]
+|
+|Hebrew
+|Hasmonean
+|cf. 11Q5–6
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q400-1 4Q400 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|[[4QInstruction]]
+|Sapiential Work A
+|rowspan=2|4Q415–418
+|
+|Hebrew
+|rowspan=2|Herodian
+|
+|rowspan=2|{{r|:3}}
+|-
+| 4QParaphrase
+| Paraphrase of [[Book of Genesis|Genesis]] and [[Book of Exodus|Exodus]]
+|
+|Hebrew
+|
+|-
+|4Q Barkhi Nafshi{{sup|a}}
+|[[Barkhi Nafshi]] – Apocryphal Psalms
+|[[4Q434]]
+|
+|Hebrew
+|Herodian
+|15 fragments: likely hymns of thanksgiving praising God for his power and expressing thanks
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q434-1 4Q434 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4Q Apocr. Psalm and Prayer
+|[[4Q448|Hymn to King Jonathan]] or The Prayer For King Jonathan Scroll
+|[[4Q448]]
+|Psalms 154
+|Hebrew
+|Hasmonean
+|In addition to parts of Psalms 154 it contains a prayer mentioning "[[Alexander Jannaeus|King Jonathan]]".
+|{{r|:3}}
+|-
+| 4QpapGen or papJub || pap-[[Book of Genesis|Genesis]] or pap-[[Book of Jubilees|Jubilees]]
+|4Q483
+|[[Book of Genesis|Genesis]] 1:28–29, or [[Book of Jubilees]] ||Hebrew
+|Herodian|| ||<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q483-1 4Q483 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QShir{{sup|a-b}}
+| Songs of the Sage<br>or Songs of the Maskil
+| [[4Q510–511]]
+|
+| Hebrew
+| Herodian
+|
+|{{r|:3}}
+|-
+| 4Q Messianic Apocalypse
+|  Messianic Apocalypse
+| [[4Q521]]
+|
+| Hebrew
+| Hasmonean
+| Made up of two fragments
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q521-1 4Q521 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4Q Jonathan
+|
+| 4Q523
+|
+| Hebrew
+| Hasmonean
+| MeKleine Fragmente, z.T. gesetzlichen Inhalts; Fragment is legal in content. PAM number, 41.944
+|<ref>Buitenwerf, Rieuwerd, The Gog and Magog Tradition in Revelation 20:8, in, H. J. de Jonge, Johannes Tromp, eds., ''The book of Ezekiel and its influence'', Ashgate Publishing, Ltd., 2007, p.172; scheduled to be published in Charlesworth's edition, volume 9</ref><ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q523-1 4Q523 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|4QTempleScroll{{sup|b}}
+|[[Temple Scroll]]
+|4Q524
+|
+|Hebrew
+|Hasmonean
+|
+|{{r|:3}}{{sfn|Fitzmyer|2008|p=98}}
+|-
+|4QBeatitudes
+|
+|4Q525
+|[[Book of Sirach|Sirach]] 25:10;<ref>{{Cite book | editor1-first=J. | editor1-last=Barton | editor2-first=J. | editor2-last=Muddiman | first=John J. | last=Collins | author-link=John J. Collins | contribution=44. Ecclesiasticus, or The Wisdom of Jesus Son of Sirach | title=The Oxford Bible Commentary | page=684 | year=2001 | publisher=Oxford University Press | location=London | isbn=978-0199277186 | url=https://b-ok.org/dl/946961/8f5f43 | archive-url=https://web.archive.org/web/20171122193211/http://b-ok.org/dl/946961/8f5f43 | archive-date=2017-11-22}}</ref> [[Matthew 5:3]] [[Matthew 5:12|–12]] ([[Beatitudes]])
+|Hebrew
+|Herodian
+|
+|{{r|:3}}
+|-
+| 4Q TJoseph
+| [[Testament of Joseph]]
+|4Q539
+|
+| Aramaic
+| Hasmonean
+|
+| <ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q539-1 4Q539 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QapocrLevi(?){{sup|b}}
+| [[Testament of Levi]]{{sup|d}}
+|4Q541
+|
+| Aramaic
+| Hasmonean
+| Aramaic frag. also called "4QApocryphon of Levi{{sup|b}} ar"
+| <ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q541-1 4Q541 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QTKohath (4QTQahat)
+| [[Testament of Qahat]]
+| [[Testament of Qahat|4Q542]]
+|
+| Aramaic
+| Hasmonean
+|
+| <ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q542-1 4Q542 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QNJ{{sup|c}}
+| [[New Jerusalem Dead Sea Scroll|New Jerusalem]]
+|4Q555
+|
+| Aramaic
+| Herodian
+| cf. 1Q32, 2Q24, 5Q15, 11Q18
+| <ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q555-1 4Q555 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 4QGen{{sup|n}} || [[Book of Genesis|Genesis]]
+|4Q576
+|| [[Book of Genesis|Genesis]] 34:7–10; 50:3 ||Hebrew
+|Hasmonean|| || {{r|:3}}
+|-
+| Unnumbered
+|
+|
+|
+|Hebrew
+|
+| Nine unopened fragments recently rediscovered in storage
+|<ref>{{cite web|url=https://www.timesofisrael.com/nine-tiny-new-dead-sea-scrolls-come-to-light/|title=Uncovered in Jerusalem, 9 tiny unopened Dead Sea Scrolls|work=The Times of Israel}}</ref>
+|}</onlyinclude>
+
+===Qumran Cave 5===
+{{See also|List of manuscripts from Qumran Cave 5}}
+; Description
+Wadi Qumran Cave 5 was discovered alongside Cave 6 in 1952, shortly after the discovery of Cave 4. Cave 5 produced approximately 25 manuscripts.{{r|Vanderkam}}{{rp|10–11}}
+<onlyinclude>{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference
+|-
+! colspan="8" style="background:#b8c7d6;"|
+Qumran Cave 5
+|-
+| 5QDeut
+|[[Book of Deuteronomy|Deuteronomy]]
+|5Q1||  [[Book of Deuteronomy|Deuteronomy]] 7:15–24; 8:5–9:2
+||Hebrew
+|Early Hellenistic|| || {{r|:0}}{{sfn|Fitzmyer|2008|pp=104–105}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/5Q1-1 5Q1 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|5QKgs||[[Books of Kings|Kings]]
+|5Q2||  [[1 Kings 1]]:1,16–17,27–37
+||Hebrew
+|Hasmonean|| ||{{sfn|Fitzmyer|2008|p=105}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/5Q2-1 5Q2 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|5QIsa|| [[Book of Isaiah|Isaiah]]
+|5Q3||  [[Isaiah 40]]:16,18–19
+||Hebrew
+|Herodian|| ||{{sfn|Fitzmyer|2008|p=105}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/5Q3-1 5Q3 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|5QAmos||[[Book of Amos|Amos]]
+|5Q4||  [[Amos 1]]:2–5
+||Hebrew
+||| ||{{sfn|Fitzmyer|2008|p=105}}
+|-
+|5QPs||[[Book of Psalms|Psalms]]
+|5Q5||  [[Psalm 119]]:99–101,104,113–20,138–42
+||Hebrew
+|Herodian|| ||{{sfn|Fitzmyer|2008|p=105}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/5Q5-1 5Q5 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 5QLam{{sup|a}}
+|rowspan=2|[[Book of Lamentations|Lamentations]]
+|5Q6||  [[Lamentations 4]]:5–8,11–16,19–22; [[Lamentations 5|5]]:1–13,16–17
+||Hebrew
+|Herodian|| ||{{sfn|Fitzmyer|2008|p=105}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/5Q6-1 5Q6 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 5QLam{{sup|b}}
+|5Q7||  [[Lamentations 4]]:17–20
+||Hebrew
+|Herodian|| ||{{sfn|Fitzmyer|2008|p=105}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/5Q7-1 5Q7 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 5QPhyl
+|[[Tefillin|Phylactery]]
+|5Q8||  || Hebrew
+|Hellenistic-Roman|| Phylactery in its unopened case
+|{{sfn|Fitzmyer|2008|p=105}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/5Q8-1 5Q8 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 5QapocrJosh or 5QToponyms
+| Toponyms
+|5Q9||  ||Hebrew
+|Herodian || Seven fragments with names of places <!--Joshua ?-->
+||{{sfn|Fitzmyer|2008|p=105}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/5Q9-1 5Q9 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 5QapocrMal
+|Apocryphon of [[Book of Malachi|Malachi]]
+|5Q10||  ||Hebrew
+|Hellenistic-Roman|| Apocryphon of Malachi
+||{{sfn|Fitzmyer|2008|p=105}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/5Q10-1 5Q10 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 5QS
+|| [[Community Rule|Rule of Community (Serek ha-Yahad)]]
+|5Q11
+||  ||Hebrew
+|Herodian|| ||{{sfn|Fitzmyer|2008|p=105}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/5Q11-1 5Q11 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 5QD
+||[[Damascus Document]]
+|5Q12||  ||Hebrew
+|Herodian|| Damascus Document
+||{{sfn|Fitzmyer|2008|p=105}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/5Q12-1 5Q12 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|5QRule or 5QRégle
+|[[Community Rule|Rule of Community]]
+|5Q13
+|
+|Hebrew
+|Hellenistic-Roman
+|Fragments related to 1QS
+|{{sfn|Fitzmyer|2008|p=106}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/5Q13-1 5Q13 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|5QCurses
+|Curses
+|5Q14
+|
+|Hebrew
+|Herodian
+|Liturgical compositions with curses
+|{{sfn|Fitzmyer|2008|p=106}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/5Q14-1 5Q14 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|5QNJ
+|[[New Jerusalem Dead Sea Scroll|New Jerusalem Scroll]]
+|5Q15
+|
+|Aramaic
+|Hellenistic-Roman
+|[[New Jerusalem Dead Sea Scroll|Description of the New Jerusalem]]
+|{{sfn|Fitzmyer|2008|p=106}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/5Q15-1 5Q15 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|5QUnid
+|Unidentified
+|5Q16–5Q24
+|
+|Hebrew
+|Hellenistic-Roman
+|Unidentified fragments
+|{{sfn|Fitzmyer|2008|p=106}}
+|-
+|5QUnc
+|Unclassified
+|5Q25
+|
+|Hebrew
+|Hellenistic-Roman
+|Unclassified fragments <!--5QX1  Leather fragment -->
+|{{sfn|Fitzmyer|2008|p=106}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/5Q25-1 5Q25 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|}</onlyinclude>
+
+===Qumran Cave 6===
+{{See also|List of manuscripts from Qumran Cave 6}}
+; Description
+Wadi Qumran Cave 6 was discovered alongside Cave 5 in 1952, shortly after the discovery of Cave 4. Cave 6 contained fragments of about 31 manuscripts.{{sfn|Fitzmyer|2008}}<ref name="Garcia Martinez 1999">{{Cite book | author1=Florentino Garcia Martinez | author2=Eibert J. C. Tigchelaar | title=The Dead Sea Scrolls Study Edition | volume=1 | year=1995 | publisher=Eerdmans | location=Grand Rapids, MI | isbn=9780802844934}}</ref>{{r|Vanderkam}}{{rp|10–11}}
+<onlyinclude>{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference
+|-
+! colspan="8" style="background:#b8c7d6;"|
+Qumran Cave 6
+|-
+| 6QpaleoGen
+||[[Book of Genesis|Genesis]]
+|6Q1|| [[Book of Genesis|Genesis]] 6:13–21 ||Hebrew
+|Early Hellenistic; [[Paleo-Hebrew alphabet|Palaeo-Hebrew script]]|| ||{{sfn|Fitzmyer|2008|pp=104,106}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q1-1 6Q1 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 6QpaleoLev
+|| [[Book of Leviticus|Leviticus]]
+|6Q2||  [[Book of Leviticus|Leviticus]] 8:12–13
+||Hebrew
+|Early Hellenistic; Palaeo-Hebrew script|| ||{{sfn|Fitzmyer|2008|pp=104,106}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q2-1 6Q2 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| pap6QDeut or 6QpapDeut(?)
+||[[Book of Deuteronomy|Deuteronomy]]
+|6Q3||  [[Book of Deuteronomy|Deuteronomy]] 26:19
+||Hebrew
+|Hellenistic-Roman|| A few letters of Deuteronomy 26:19 on [[papyrus]]||{{sfn|Fitzmyer|2008|pp=104,106}}{{r|:0}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q3-1 6Q3 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 6QpapKgs <!-- or pap6QKgs -->
+|| [[Books of Kings|Kings]]
+|6Q4||  [[1 Kings 3]]:12–14; [[1 Kings 12|12]]:28–31; 22:28–31; 2 Kings 5:26; 6:32; 7:8–10,20; 8:1–5; 9:1–2; 10:19–21
+||Hebrew
+|Hasmonean||Made up of 94 Fragments. ||{{sfn|Fitzmyer|2008|pp=104,106}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q4-1 6Q4 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| pap6QPs or 6QpapPs(?)
+||[[Book of Psalms|Psalms]]
+|6Q5||  [[Psalm 78]]:36–37<!--Possibly Psalms 78:36–37-->
+||Hebrew
+|Herodian|| ||{{sfn|Fitzmyer|2008|p=107}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q5-1 6Q5 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 6QCant
+||[[Song of Songs]]
+|[[6Q6]]||  [[Song of Songs 1]]:1–7
+||Hebrew
+|Herodian|| ||{{sfn|Fitzmyer|2008|p=107}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q6-1 6Q6 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 6QpapDan <!--pap6QDan-->
+|| [[Book of Daniel|Daniel]]
+|6Q7||  [[Daniel 8]]:20–21; 10:8–16; 11:33–36,38; 8:16–17
+|Hebrew
+|Herodian||13 papyrus fragments. ||{{sfn|Fitzmyer|2008|p=107}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q7-1 6Q7 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 6QpapGiants or pap6QEnGiants <!-- or 6QGiants ar-->
+|| [[Book of Giants]] from [[Book of Enoch|Enoch]]
+|6Q8||
+|Aramaic|| Herodian || Part of the "Book of Giants"
+|| {{sfn|Fitzmyer|2008|p=107}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q8-1 6Q8 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 6Qpap apocrSam-Kgs or pap6QapocrSam/Kgs<!-- or 6QApocryphon on Samuel-Kings-->
+||Apocryphon on [[Book of Samuel|Samuel]]–[[Books of Kings|Kings]]
+|6Q9|| 
+|Hebrew|| Hasmonean || Samuel–Kings apocryphon. Written on papyrus.
+|{{sfn|Fitzmyer|2008|p=107}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q9-1 6Q9 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 6QpapaProph or pap6QProph<!-- or 6QProphecy-->
+|| Unidentified prophetic fragment
+|6Q10||  || Hebrew
+|Hasmonean|| Prophetic text. Written in papyrus
+|{{sfn|Fitzmyer|2008|p=107}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q10-1 6Q10 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 6QAllegory <!-- or 6QAllegory of the Vine-->
+|| Allegory of the Vine
+|6Q11|| 
+|rowspan=3| Hebrew
+|Herodian|| Fragment containing an Allegory mentioning a vine
+|{{sfn|Fitzmyer|2008|p=107}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q11-1 6Q11 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 6QapProph<!-- or 6QapocProph-->
+|| An apocryphal prophecy
+|6Q12||
+|Herodian||
+|{{sfn|Fitzmyer|2008|p=107}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q12-1 6Q12 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+| 6QPriestProph
+||Priestly Prophecy
+|6Q13||
+|Herodian||A priestly prophecy
+|{{sfn|Fitzmyer|2008|p=107}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q13-1 6Q13 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|6Q Apocalypse
+|Apocalyptic text
+|6Q14
+|
+|Aramaic
+|Herodian
+|Two fragments with apocalyptic text
+|{{sfn|Fitzmyer|2008|p=107}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q14-1 6Q14 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|6QD
+|[[Damascus Document]]
+|6Q15
+|
+|rowspan=4|Hebrew
+|Herodian
+|[[Damascus Document]] 4:19–21; 5:13–14,18–21; 6:1–2,20–21; 7:1
+|{{sfn|Fitzmyer|2008|p=107}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q15-1 6Q15 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|6QpapBened or pap6QBen<!-- or 6QBenediction-->
+|papBenediction
+|6Q16
+|
+|Herodian
+|Blessings related 1QSb. On papyrus
+|{{sfn|Fitzmyer|2008|p=108}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q16-1 6Q16 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|6QCalDoc<!-- or 6QCalendrical Document-->
+|Calendrical Document
+|6Q17
+|
+|Herodian
+|Calendric fragment
+|{{sfn|Fitzmyer|2008|p=108}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q17-1 6Q17 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|pap6QHymn<!-- or 6QHymn-->
+| Hymn
+|6Q18
+|
+|Herodian
+|Fragment of a hymn, related to 1QM
+|{{sfn|Fitzmyer|2008|p=108}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q18-1 6Q18 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|6Q Text Related to Genesis
+|Genesis
+|6Q19
+|Possibly from Genesis
+|Aramaic
+|Herodian
+|Related to Genesis 10:6,20
+|{{sfn|Fitzmyer|2008|p=108}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q19-1 6Q19 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|6QDeut(?)
+|Deuteronomy
+|6Q20
+|Possibly from Deuteronomy
+|Hebrew
+|Hellenistic-Roman
+|Related to Deuteronomy 11:10
+|{{sfn|Fitzmyer|2008|p=108}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q20-1 6Q20 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|6QfrgProph or 6Q Prophetic Text
+| Possibly prophetic text
+|6Q21
+|
+|Hebrew
+|Herodian
+|Prophetic fragment containing 5 words.
+|{{sfn|Fitzmyer|2008|p=108}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q21-1 6Q21 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|pap6QUnidA
+|Unclassified fragments
+|6Q22
+|
+|Hebrew
+|Herodian
+|
+|{{sfn|Fitzmyer|2008|p=108}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q22-1 6Q22 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|pap6QUnidA ar
+|Unclassified fragments
+|6Q23
+|
+|Aramaic
+|Herodian
+|Related to "Words of the Book of Michael"
+|{{sfn|Fitzmyer|2008|p=108}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q23-1 6Q23 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|6QUnidB
+|Unclassified fragments
+|6Q24
+|
+|Hebrew
+|Hellenistic-Roman
+|
+|{{sfn|Fitzmyer|2008|p=108}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q24-1 6Q24 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|6QUnidB
+|Unclassified fragments
+|6Q25
+|
+|Aramaic
+|Herodian
+|
+|{{sfn|Fitzmyer|2008|p=108}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q25-1 6Q25 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|6QUnidB or 6QpapAccount or Contract
+|Accounts or contracts
+|6Q26
+|
+|Aramaic
+|Hellenistic-Roman
+|
+|{{sfn|Fitzmyer|2008|p=108}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q26-1 6Q26 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|6QUnidB
+| Unclassified fragments
+|6Q27–6Q28
+|
+|Hebrew
+|Hellenistic-Roman
+|
+|{{sfn|Fitzmyer|2008|p=108}}
+|-
+|6QpapProv
+| [[Book of Proverbs|Proverbs]]
+|6Q30
+|Proverbs 11:4b–7a,10b<!--Parts of Proverbs 11:4b-7a; 10b-->
+|Hebrew
+|Roman
+|Single six-line fragment
+|{{sfn|Fitzmyer|2008|p=108}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q30-1 6Q30 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|6QUnidB
+|Unclassified fragments
+|6Q31
+|
+|Aramaic
+|Herodian
+|
+|{{sfn|Fitzmyer|2008|p=108}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/6Q31-1 6Q31 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|}</onlyinclude>
+
+===Qumran Cave 7===
+{{See also|List of manuscripts from Qumran Cave 7}}
+; Description
+Wadi Qumran Cave 7 yielded fewer than 20 fragments of Greek documents, including 7Q2 (the "[[Letter of Jeremiah]]" = [[Baruch (Bible)|Baruch]] 6), [[7Q5]] (which became the subject of much speculation in later decades), and a Greek copy of a scroll of Enoch.<ref>Baillet, Maurice ed. L''es 'Petites Grottes' de Qumrân'' (ed., vol. 3 of Discoveries in the Judaean Desert; Oxford: Oxford University Press, 1962), 144–45, pl. XXX.</ref><ref>Muro, Ernest A., "The Greek Fragments of Enoch from Qumran Cave 7 (7Q4, 7Q8, &7Q12 = 7QEn gr = Enoch 103:3–4, 7–8)," ''Revue de Qumran'' 18 no. 70 (1997).</ref><ref>Puech, Émile, "Sept fragments grecs de la Lettre d'Hénoch (1 Hén 100, 103, 105) dans la grotte 7 de Qumrân (= 7QHén gr)," ''Revue de Qumran'' 18 no. 70 (1997).</ref> Cave 7 also produced several inscribed potsherds and jars.<ref name="ReferenceB">Humbert and Chambon, ''Excavations of Khirbet Qumran and Ain Feshkha'', 67.</ref>{{r|Garcia Martinez 1999}}{{sfn|Fitzmyer|2008|pp=104, 109}}
+<onlyinclude>{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference
+|-
+! colspan="8" style="background:#b8c7d6;"|
+Qumran Cave 7
+|-
+|[[7Q1|7QpapLXXExod]]<!-- or 7QLXXExod gr -->
+|[[Book of Exodus|Exodus]]
+|7Q1|| Exodus 28:4–7 || Greek
+|Hasmonean
+| Greek fragment of Exodus||<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/7Q1-1 7Q1 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|7QpapEpJer<!-- or 7QLXXEpJer -->
+|Letter of Jeremiah
+|7Q2|| Letter of Jeremiah verses 43–44 <!-- or  Jeremiah 43–44? -->|| Greek
+|Hasmonean
+|Epistle of Jeremiah. On papyrus. ||<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/7Q2-1 7Q2 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|7Q3
+|Unidentified
+|7Q3
+|
+|Greek
+|Herodian
+|Unknown biblical text
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/7Q3-1 7Q3 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|7Q4
+|Unidentified
+|7Q4
+|
+|Greek
+|Hasmonean
+|Unknown biblical text
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/7Q4-1 7Q4 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|[[7Q5]]
+|Unidentified
+|[[7Q5]]
+|
+|Greek
+|Herodian
+|Unknown biblical text. Believed by some to be Mark 6:52–53
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/7Q5-1 7Q5 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|7Q6–18
+|Unidentified
+|7Q6–18
+|
+|Greek
+|Hellenistic-Roman; Herodian
+|Very tiny unidentified fragments written on papyrus
+|{{r|:3}}
+|-
+|7Q papImprint
+|Unidentified
+|7Q19
+|
+|Greek
+|Herodian
+|Unidentified papyrus imprint. Very tiny fragments written on papyrus
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/7Q19-1 7Q19 at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|}</onlyinclude>
+
+===Qumran Cave 8===
+{{See also|List of manuscripts from Qumran Cave 8}}
+; Description
+Wadi Qumran Cave 8, along with caves 7 and 9, was one of the only caves that are accessible by passing through the settlement at Qumran. Carved into the southern end of the Qumran plateau, cave 8 was excavated by archaeologists in 1957. Cave 8 produced five fragments: Genesis (8QGen), Psalms (8QPs), a [[tefillin]] fragment (8QPhyl), a [[mezuzah]] (8QMez), and a hymn (8QHymn).<ref>Baillet ed. L''es 'Petites Grottes' de Qumrân'' (ed.), 147–62, pl. XXXIXXXV.</ref> Cave 8 also produced several tefillin cases, a box of leather objects, tons of lamps, jars, and the sole of a leather shoe.{{r|ReferenceB|Garcia Martinez 1999}}{{sfn|Fitzmyer|2008|pp=104, 109}}
+<onlyinclude>{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference
+|-
+!colspan="8" style="background:#b8c7d6;"|
+Qumran Cave 8
+|-
+|8QGen
+|[[Book of Genesis|Genesis]]
+|8Q1
+|Genesis 17:12–13, 15, 18–19; 18:20–22, 24–25<!--Genesis 17:12–19; 18:20–25-->
+|Hebrew
+|Herodian
+|
+|{{r|:3}}
+|-
+|8QPs
+|[[Psalms]]
+|8Q2
+|[[Psalm 17]]:5–9, 14; [[Psalm 18|18]]:5–12<!--Psalm 18:6–9; 18:10–13-->
+|Hebrew
+|Herodian
+|
+|{{r|:3}}
+|-
+|8QPhyl||[[Tefillin|Phylacteries]]
+|8Q3||[[Book of Exodus|Exodus]] 13:1–16; 12:43–51; 20:11
+[[Book of Deuteronomy|Deuteronomy]] 6:4–5; 6:1–3; 10:20–22; 10:12–19; 5:1–14; 10:13; 11:2–3; 10:21–22; 11:1; 11:6–12<!--Exodus 12:43–51 13:1–16; 20:11; Deuteronomy 5:1–14; 6:1–9; 11:13; 10:12–22; 11:1–12 which order is correct?-->
+||Hebrew
+|1–100 CE
+Herodian
+|| Fragments from a "Phylactery" || {{r|:0}}
+|-
+|8QMez||[[Mezuzah]]
+|8Q4||[[Book of Deuteronomy|Deuteronomy]] 10:1–11:21<!--Deuteronomy 10:12–11:21 from a Mezuzah-->||Hebrew
+|30 BCE–68 CE
+Herodian
+|| || {{r|:0}}
+|-
+|8QHymn
+|Unidentified hymn
+|8Q5
+|
+|Hebrew
+|Herodian
+|Non-biblical composition.
+|{{r|:3}}
+|}</onlyinclude>
+
+===Qumran Cave 9===
+{{See also|List of manuscripts from Qumran Cave 9}}
+; Description
+Wadi Qumran Cave 9, along with caves 7 and 8, was one of the only caves that are accessible by passing through the settlement at Qumran. Carved into the southern end of the Qumran plateau, Cave 9 was excavated by archaeologists in 1957. There was only one manuscript fragment found in Cave 9.
+<onlyinclude>{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference
+|-
+! colspan="8" style="background:#b8c7d6;"|
+Qumran Cave 9
+|-
+|9Qpap||Unidentified
+|9Q1||  ||Hebrew
+|Roman|| Written on papyrus.|| <ref>{{cite web | url=https://www.deadseascrolls.org.il/explore-the-archive/search#q=site_en:'Qumran,%20Cave%209' | title=9Q1 at Leon Levy Collection | website=Leon Levy Dead Sea Scrolls Digital Library | publisher=[[Israel Antiquities Authority]] | access-date=2019-02-13}}</ref>
+|}</onlyinclude>
+
+===Qumran Cave 10===
+{{See also|List of manuscripts from Qumran Cave 10}}
+; Description
+In Qumran Cave 10 archaeologists found two [[ostraca]] with writing on them, along with an unknown symbol on a grey stone slab.
+<onlyinclude>
+{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference
+|-
+! colspan="8" style="background:#b8c7d6;"|
+Qumran Cave 10
+|-
+|10QOstracon
+| [[Ostracon]]
+| 10Q1
+|
+| Hebrew
+|
+|Two letters written on a piece of pottery.
+|<ref>Evans, Craig. ''Guide to the Dead Sea Scrolls''. 2010.</ref>
+|}</onlyinclude>
+
+===Qumran Cave 11===
+{{See also|List of manuscripts from Qumran Cave 11}}
+; Description
+Wadi Qumran Cave 11 was discovered in 1956 and yielded 21 texts of the Dead Sea Scrolls, some of which were quite lengthy. The [[Temple Scroll]], so called because more than half of it pertains to the construction of the [[Temple of Jerusalem]], was found in Cave 11, and is by far the longest scroll. It is now 26.7&nbsp;feet (8.15&nbsp;m) long. Its original length may have been over 28&nbsp;feet (8.75&nbsp;m). [[Temple Scroll|The Temple Scroll]] was regarded by scholar [[Yigael Yadin]] as "The Torah According to the Essenes". On the other hand, Hartmut Stegemann, a contemporary and friend of Yadin, believed the scroll was not to be regarded as such, but was a document without exceptional significance. Stegemann notes that it is not mentioned or cited in any known Essene writing.<ref>Stegemann, Hartmut. "The Qumran Essenes: Local Members of the Main Jewish Union in Late Second Temple Times." Pages 83–166 in ''The Madrid Qumran Congress: Proceedings of the International Congress on the Dead Sea Scrolls, Madrid, 18–21 March 1991'', Edited by J. Trebolle Barrera and L. Vegas Montaner. Vol. 11 of Studies on the Texts of the Desert of Judah. Leiden: Brill, 1992.</ref>
+
+Also in Cave 11, an [[eschatology|eschatological]] fragment about the biblical figure [[Melchizedek]] ([[Melchizedek#In the Dead Sea Scroll 11Q13|11Q13]]) was found. Cave 11 also produced a copy of [[Jubilees]].
+
+According to former chief editor of the DSS editorial team [[John Strugnell]], there are at least four privately owned scrolls from Cave 11, that have not yet been made available for scholars. Among them is a complete [[Aramaic Enoch Scroll|Aramaic manuscript of the Book of Enoch]]·.<ref>{{cite web | first=Hershel | last=Shanks | title=An Interview with John Strugnell | url=http://www.bib-arch.org/online-exclusives/dead-sea-scrolls-12.asp | work=Biblical Archaeology Review | date=July–August 1994 | access-date=21 October 2010 | url-status=dead | archive-url=https://web.archive.org/web/20100706065646/https://www.bib-arch.org/online-exclusives/dead-sea-scrolls-12.asp | archive-date=6 July 2010 | df=dmy }}</ref>
+<onlyinclude>{| class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference
+|-
+! colspan="8" style="background:#b8c7d6;"|
+Qumran Cave 11
+|-
+|[[11QpaleoLev]]{{sup|a}}
+|[[Paleo-Hebrew Leviticus scroll|Paleo-Leviticus{{sup|a}}]]
+|11Q1
+|[[Book of Leviticus|Leviticus]] 4:24–26; 10:4–7; 11:27–32; 13:3–9; 13:39–43; 14:16–21; 14:52–15:5; 16:2–4; 16:34–17:5; 18:27–19:4; 20:1–6; 21:6–11; 22:21–27; 23:22–29; 24:9–14; 25:28–36; 26:17–26; 27:11–19
+|Hebrew
+|Herodian/[[Paleo-Hebrew|palaeo-Hebrew]] script
+|
+|{{r|:3}}
+|-
+|11QLev{{sup|b}}
+|[[Book of Leviticus|Leviticus{{sup|b}}]]
+|11Q2
+|[[Book of Leviticus|Leviticus]]
+|Hebrew
+|Herodian/palaeo-Hebrew script
+|
+|{{r|:3}}
+|-
+|11QDeut||[[Book of Deuteronomy|Deuteronomy]]
+|11Q3||Deuteronomy 1:4–5; 2:28–30||Hebrew
+|50 CE
+Late Herodian
+|| || {{r|:0}}
+|-
+|11QEzek
+|[[Book of Ezekiel|Ezekiel]]
+|11Q4
+|[[Book of Ezekiel|Ezekiel]]
+|Hebrew
+|Herodian
+|
+|{{sfn|Fitzmyer|2008|p=110}}<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/11Q4-1 11Q4 - 11QEzek at the Leon Levy Dead Sea Scrolls Digital Library]</ref>
+|-
+|[[The Great Psalms Scroll|11QPs]]
+|[[The Great Psalms Scroll]]
+|[[The Great Psalms Scroll|11Q5]]
+|[[Book of Psalms|Psalms]]
+|Hebrew<!--/Aramaic-->
+|Herodian
+|A unique Psalms scroll with only about a quarter of the Masoretic psalms (in atypical order), three Syriac psalms, one from Ben Sira, and the only known copies of three more unique psalms—Plea for Deliverance, Apostrophe to Zion, and Hymn to the Creator—all of which are unattested by other sources, as well as the short text of David's Compositions.
+|{{r|:3}}
+|-
+|11QPs{{sup|a}}
+| rowspan="5" |[[Psalms]]
+|11Q5
+|
+|Hebrew
+|Herodian
+|
+|{{r|:3}}
+|-
+|11QPs{{sup|b}}
+|11Q6
+|[[Psalm 77]]:18–21; [[Psalm 78|78]]:1; [[Psalm 109|109]]:3–4; 118:1; [[Psalm 118|118]]:15–16; [[Psalm 119|119]]:163–165; [[Psalm 133|133]]:1–3; [[Psalm 141|141]]:10; [[Psalm 144|144]]:1–2
+|Hebrew
+|Herodian
+|
+|{{r|:3}}
+|-
+|11QPs{{sup|c}}
+|11Q7
+|[[Psalm 2]]:1–8; [[Psalm 9|9]]:3–7; [[Psalm 12|12]]:5–9; [[Psalm 13|13]]:1–6; [[Psalm 14|14]]:1–6; [[Psalm 17|17]]:9–15; [[Psalm 18|18]]:1–12; [[Psalm 19|19]]:4–8; [[Psalm 25|25]]:2–7
+|Hebrew
+|Herodian
+|
+|{{r|:3}}
+|-
+|11QPs{{sup|d}}
+|11Q8
+| [[Psalm 6]]:2–4; [[Psalm 9|9]]:3–6; [[Psalm 18|18]]:26–29; 18:39–42; [[Psalm 36|36]]:13; [[Psalm 37|37]]:1–4; [[Psalm 39|39]]:13–14; [[Psalm 40|40]]:1; [[Psalm 43|43]]:1–3; [[Psalm 45|45]]:6–8; [[Psalm 59|59]]:5–8; [[Psalm 68|68]]:1–5; 68:14–18; [[Psalm 78|78]]:5–12; [[Psalm 81|81]]:4–9; [[Psalm 86|86]]:11–14; [[Psalm 115|115]]:16–18; [[Psalm 116|116]]:1
+|Hebrew
+|Herodian
+|
+|{{r|:3}}
+|-
+|11QPs{{sup|e}}
+|11Q9
+|[[Psalm 50]]:3–7
+|Hebrew
+|Herodian
+|
+|{{r|:3}}
+|-
+|11QtgJob
+|[[Targum]] [[Book of Job|Job]]
+|11Q10
+|[[Book of Job|Job]]
+|Aramaic
+|Herodian
+|A unique Aramaic translation of the Book of Job; presents Job somewhat more favourably.
+|{{r|:3}}
+|-
+|11QapocrPs
+|Apocryphal [[Psalms]]
+|11Q11
+|[[Psalm 91]]
+|Hebrew
+|Herodian
+|Apocryphal paraphrase of [[Book of Psalms|Psalms]] 91
+|{{r|:3}}
+|-
+|11QJub
+|[[Book of Jubilees|Jubilees]]
+|11Q12
+|
+|Hebrew
+|Herodian
+|Ethiopic text of [[Book of Jubilees|Jubilees]] 4:6–11; 4:13–14; 4:16–17; 4:29–31; 5:1–2; 12:15–17; 12:28–29
+|{{r|:3}}
+|-
+|[[11Q13|11QMelch]]||[[Melchizedek]]
+|[[11Q13]]||Contains Pesher/commentary on [[Book of Leviticus|Leviticus]] 25:13; [[Book of Deuteronomy|Deuteronomy]] 15:2; [[Psalm 7]]:8–9; [[Psalm 82|82]]:2; [[Isaiah 52]]:7; [[Daniel 9]]:25; [[Book of Leviticus|Leviticus]] 25:9||Hebrew
+|50–25 BCE or 75–50 BCE
+Late Hasmonean or Early Herodian
+||Describes a tenth jubilee and portrays Melchizedek as a messianic agent of salvation, using similar language to that used for Jesus in [[Epistle to the Hebrews|Hebrews]], such as "Heavenly Prince Melchizedek"|| {{r|:3|:0}}
+|-
+|11Q Sefer ha-Milhamah
+|Sefer ha-Milhamah ("The Book of War")
+|11Q14
+|
+|Hebrew
+|Herodian
+|An account of the final eschatological battle of the Israelites and the Kittim (Romans), including a messianic figure named the "Prince of the Congregation."
+|{{r|:3}}
+|-
+|11QHymns{{sup|a}}|| rowspan="2" |Hymns
+|11Q15||  ||Hebrew
+|Herodian|| ||{{r|:3}}
+|-
+|11QHymns{{sup|b}}
+|11Q16
+|
+|Hebrew
+|Herodian
+|
+|{{r|:3}}
+|-
+|11QShirShabb
+|[[Songs of the Sabbath Sacrifice]]
+|11Q17
+|
+|Hebrew
+|Herodian
+|Collection of 13 hymns describing a heavenly temple service.
+|{{r|:3}}
+|-
+|[[11Q18 New Jerusalem|11QNJ]]
+|[[New Jerusalem Dead Sea Scroll|New Jerusalem]]
+|[[11Q18 New Jerusalem|11Q18]]
+|
+|Aramaic
+|Herodian
+|Appears to be an apocalyptic vision, including some architectural details of a very large city (cf. Ezekiel and Revelation)
+|{{r|:3}}
+|-
+| 11QT{{sup|a}}
+| [[Temple Scroll]]
+| 11Q19
+|
+|Hebrew
+|Herodian
+| rowspan="3" |Rephrases the Pentateuch laws in the spirit of Deuteronomy, seeks to resolve biblical legal conflicts and expand ritual laws.
+|{{r|:3}}
+|-
+|11QT{{sup|b}}
+| rowspan="2" |[[Temple Scroll]]
+|11Q20
+|
+|Hebrew
+|Herodian
+|{{r|:3}}
+|-
+|11QT{{sup|c}}
+|11Q21
+|
+|Hebrew
+|Herodian
+|{{r|:3}}
+|-
+| rowspan="7" |11Q Unidentified
+| rowspan="7" |Unidentified
+|11Q22
+|
+|Hebrew
+|Hasmonean
+| rowspan="7" |Unidentified fragments.
+|{{r|:3}}
+|-
+|11Q23
+|
+|Hebrew
+|Hellenistic-Roman
+|{{r|:3}}
+|-
+|11Q24
+|
+|Aramaic
+|Hasmonean
+|{{r|:3}}
+|-
+|11Q25
+|
+|Hebrew
+|Herodian
+|{{r|:3}}
+|-
+|11Q26
+|
+|Hebrew
+|Herodian
+|{{r|:3}}
+|-
+|11Q27
+|
+|Hebrew
+|Hellenistic-Roman
+|{{r|:3}}
+|-
+|11Q28
+|
+|Hebrew
+|Hellenistic-Roman
+|{{r|:3}}
+|-
+|
+|
+|11Q29
+|
+|
+|
+|Serekh ha-Yahad related
+|
+|-
+| 11Q Unidentified
+| Unidentified
+| 11Q30
+|
+|Hebrew
+|Herodian
+|Unidentified fragments.
+|{{r|:3}}
+|-
+| 11Q Unidentified
+| Unidentified
+| 11Q31
+|
+|
+|
+| Unidentified fragment
+|<ref>[https://www.deadseascrolls.org.il/explore-the-archive/manuscript/11Q31-1 11Q31] at the Leon Levy Dead Sea Scrolls Digital Library.</ref>
+|-
+|11Q9999
+|Unidentified
+|
+|
+|
+|Hellenistic-Roman
+|
+|{{r|:3}}
+|}</onlyinclude>
+
+===Wadi Murabba'at Cave 1===
+{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference
+|-
+! colspan="8" style="background:#b8c7d6;"|
+Wadi Murabba'at Cave 1
+|-
+|Mur1||[[Torah|Pentateuch]]
+|Mur1|| [[Book of Genesis|Genesis]] 32:4–5, 30, 33–33:1; 34:5–7, 30–35:1, 4–7
+[[Book of Exodus|Exodus]] 6:5-11 
+||Hebrew
+|Roman||Parts of Genesis, Exodus, and Numbers.|| <ref name=":3">{{cite web |url=http://www.deadseascrolls.org.il/explore-the-archive|title=Leon Levy Collection|website=Leon Levy Dead Sea Scrolls Digital Library|publisher=[[Israel Antiquities Authority]]|access-date=2015-01-22}}</ref>
+|-
+|MurDeut||[[Book of Deuteronomy|Deuteronomy]]
+|Mur2||[[Book of Deuteronomy|Deuteronomy]] 10:1–3||Hebrew
+|20–84 AD
+Roman
+|||| {{r|:3|:0}}
+|-
+|MurIsa
+|[[Book of Isaiah|Isaiah]]
+|Mur3
+|
+|Hebrew
+|Roman
+|
+|{{r|:3}}
+|-
+|MurPhyl
+|[[Tefillin|Phylacteries]]
+|Mur4
+|Contains [[Book of Exodus|Exodus]] 13:1–16;
+[[Book of Deuteronomy|Deuteronomy]] 11:13–21; 6:4–9
+|Hebrew
+|Roman
+|
+|{{r|:3|:0}}
+|-
+|MurMez
+|[[Mezuzah|Mezouza]]
+|Mur5
+|Contains [[Book of Exodus|Exodus]] 13:1–16;
+[[Book of Deuteronomy|Deuteronomy]] 11:13–21; 6:4–9
+|Hebrew
+|Roman
+|
+|{{r|:3|:0}}
+|-
+|Mur6
+|Unidentified literary text
+|Mur6
+|
+|
+|
+|
+|
+|}
+
+===Nahal Hever Cave 8===
+{{See also|Greek Minor Prophets Scroll from Nahal Hever}}
+{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference
+|-
+! colspan="8" style="background:#b8c7d6;"|
+Nahal Hever Cave 8
+|-
+|Nahal Hever Numbers{{sup|a}}
+|Numbers
+|
+|Numbers 19:2-4, 20:6-7
+|Hebrew
+|
+|
+|
+|-
+|Numbers
+|
+|
+|Numbers 27:2-13, 28:11-12
+|Hebrew
+|
+|
+|
+|-
+|Nahal Hever Deuteronomy
+|Deuteronomy
+|
+|Deuteronomy 9:4-7,21-23
+|Hebrew
+|
+|
+|
+|-
+|Nahal Hever Psalms
+|Psalms
+|
+|Psalms 7:12–17; 8:1, 3–9; 9:12–21; 10:1–6, 8–10, 18; 11:1–5; 12:5–8; 13:1–2; 14:2–4; 15:1–5; 16:1; 18:5–12, 16–35, 37–42; 22:3–8; 14–20; 23:2–6; 24:1–2; 25:4–7; 29:2; 30:2; 31:1–21
+|Hebrew
+|
+|
+|
+|-
+|Nahal Hever Greek Minor Prophets
+|Minor Prophets
+|
+|Jonah 1:14–17; 2:1–6; 3:1–10; 4:1–2, 5; Micah 1:1–8; 2:7–8; 3:5–6; 4:3–10; 5:2–7; Nahum 1:13–14; 2:4–11; 3:3–16; Habakkuk 1:5–17; 2:1–8, 13–20; 3:8–15; Zephaniah 1:1–6, 13–18; 2:9–10; 3:6–7; Zechariah 1:1–4, 12–14, 19–21; 2:3–5, 7–8, 12–13; 3:
+|Greek
+|
+|
+|
+|}
+
+===Masada===
+{|class="wikitable collapsible collapsed"
+|-
+! Fragment or scroll identifier
+! Fragment or scroll name
+! Alternative identifier
+! English Bible Association
+! Language
+! Date/script
+! Description
+! Reference
+|-
+! colspan="8" style="background:#b8c7d6;"|
+Masada
+|-
+|Masada Genesis
+|Genesis
+|MasGen
+|Genesis 46:7–11
+|Hebrew
+|
+|
+|
+|-
+|Masada Leviticus{{sup|a}}
+|Leviticus
+|MasLev{{sup|a}}
+|Leviticus 4:3–9
+|Hebrew
+|
+|
+|
+|-
+|Masada Leviticus{{sup|b}}
+|Leviticus
+|MasLev{{sup|b}}
+|Leviticus 8:31, 33–34; 9:1–10, 12–13, 22–24; 10:1, 9–20; 11:1–21, 23–40
+|Hebrew
+|
+|
+|
+|-
+|Masada Deuteronomy
+|Deuteronomy
+|MasDeut
+|Deuteronomy 33:17–24; 34:2–6
+|Hebrew
+|
+|
+|
+|-
+|Masada Psalms{{sup|a}}
+|Psalms
+|MasPsalms{{sup|a}}
+|Psalms 81–85, ending with 85:5
+|Hebrew
+|
+|
+|
+|-
+|Masada Psalms{{sup|b}}
+|Psalms
+|MasPsalms{{sup|b}}
+|Psalms 150
+|Hebrew
+|
+|
+|
+|-
+|Masada Ezekiel
+|Ezekiel
+|MasEzek
+|Ezekiel 35:11–15; 36:1–10, 13–14, 17–35; 37:1–14, 16, 23, 28; 38:1–4, 7–8
+|Hebrew
+|
+|
+|
+|-
+|Masada Sirach
+|Sirach
+|MasSir
+|Sir 39:27–32; 40:8, 11–20, 26–30; 41:1–43:21; 43:23–25, 30; 44:1–15, 17
+|Hebrew
+|Hasmonean
+|
+|<ref>{{Cite web |title=MasSir at the Leon Levy Dead Sea Scrolls Digital Library |url=https://www.deadseascrolls.org.il/explore-the-archive/manuscript/Mas%201h-1}}</ref>
+|}
+
+==See also==
+* [[Biblical manuscripts]]
+* [[Septuagint manuscripts]]
+* [[List of Hebrew Bible manuscripts]]
+
+==Notes==
+{{notelist|30em}}
+{{reflist|group=n}}
+
+==References==
+{{Reflist}}
+
+* {{Cite book | first=Joseph A. | last=Fitzmyer | author-link=Joseph Fitzmyer | title=A Guide to the Dead Sea Scrolls and Related Literature | pages=35–109 | year=2008 | publisher=William B. Eerdmans Publishing Company | location=Grand Rapids, MI | isbn=9780802862419 | url=https://books.google.com/books?id=TILXeWJ2eNAC}}
+
+==External links==
+* [http://paulconway.info/wiki/index.php?title=Dead_Sea_Scrolls Dead Sea Scrolls] by [http://paulconway.info Paul Conway]
+* [https://books.google.com/books?id=i1xqgGLsgdcC&pg=PA66&lpg=PA66 A Catalog of Biblical Passages in the Dead Sea Scrolls] by David Washburn, 2002
+* [https://archive.org/details/textualcriticism00mcca/page/88 Textual Criticism: Recovering the Text of the Hebrew Bible] by [[Peter Kyle McCarter]], 1986
+
+{{Dead Sea Scrolls}}
+
+[[Category:Dead Sea Scrolls| ]]
+[[Category:Archaeology-related lists|Dead Sea Scrolls]]
+[[Category:Palestine religion-related lists]]
+[[Category:Lists of manuscripts|Dead Sea Scrolls]]

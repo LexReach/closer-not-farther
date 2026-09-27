@@ -163,7 +163,7 @@ export function render(root: HTMLElement) {
       { class: 'about-sec', id: 'evidence' },
       h('h2', null, 'Manuscript evidence'),
       h('p', null, 'Which manuscripts carry each verse, and their transcriptions, come from the Institute for New Testament Textual Research (INTF, Münster) through its New Testament Virtual Manuscript Room, and from the International Greek New Testament Project. They are used for non-commercial study with attribution under the terms quoted in ', h('code', null, 'data/SOURCES.md'), '. Photographs are never copied here: they stream from the libraries that hold the manuscripts.'),
-      h('p', null, 'For the Hebrew Bible, the 31 witnesses (the Leningrad and Aleppo codices, the Samaritan Pentateuch, Dead Sea Scrolls and the Septuagint codices Vaticanus and Sinaiticus) are compiled from published inventories, with dates as the usual paleographic estimates and each matched to verses by the range it contains; see ', h('code', null, 'data/bible/SOURCES-OT.md'), '. Their pages are drawn from the Leningrad text, and the photographs are linked at their holders’ sites.'),
+      h('p', null, 'For the Hebrew Bible, the listed witnesses are the Leningrad and Aleppo codices, the Samaritan Pentateuch, the Septuagint codices Vaticanus, Sinaiticus and Alexandrinus, and every biblical Dead Sea Scroll whose contents are published in Wikipedia’s List of the Dead Sea Scrolls (after Fitzmyer 2008), each matched to the verses it is recorded to contain; see ', h('code', null, 'data/evidence/ot/refs'), '. Their pages are drawn from the Leningrad text, and the photographs are linked at their holders’ sites.'),
     ),
     h(
       'section',

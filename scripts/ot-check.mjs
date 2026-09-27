@@ -38,6 +38,9 @@ for (const width of [1280, 400]) {
   const title = await page.locator('.ev-title').innerText().catch(() => '');
   const cards = await page.locator('.ev-card[data-ot]').count();
   check(cards >= 2 && (await page.locator('.ev-card[data-ot="leningrad-codex"]').count()) === 1, `${tag}: ${title}; ${cards} witness cards incl. Leningrad`);
+  const ids = await page.locator('.ev-card[data-ot]').evaluateAll((els) => els.map((e) => e.dataset.ot));
+  check(['4Q2', '4Q7', 'codex-alexandrinus'].every((x) => ids.includes(x)), `${tag}: Genesis 1:1 lists 4QGenb (4Q2), 4QGeng (4Q7) and Alexandrinus (${ids.join(', ')})`);
+  check(/of the \d+ listed witnesses/.test(title), `${tag}: headline counts the listed witnesses`);
   await page.screenshot({ path: `${out}/ot-gen-1-1-${width}.png` });
 
   await page.locator('.ev-card[data-ot="leningrad-codex"] .ev-card__btn').click();

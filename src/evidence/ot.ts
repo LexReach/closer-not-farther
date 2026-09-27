@@ -1,4 +1,4 @@
-// Hebrew Bible evidence: the 31 witnesses compiled on the data-ot branch
+// Hebrew Bible evidence: the witnesses in data/evidence/ot/witnesses.json
 // (Masoretic codices, Dead Sea Scrolls, the Samaritan Pentateuch and the
 // Septuagint codices), matched to a verse by the ranges in their `contents`.
 // The Witness view renders the verse typographically from the Leningrad text
@@ -89,7 +89,6 @@ export async function openOt(b: Book, pos: Pos, close: () => void): Promise<HTML
   const x = h('button', { type: 'button', class: 'ev-close', 'aria-label': 'Close the evidence panel' }, '×');
   x.addEventListener('click', close);
   const oldest = list[0];
-  const scrolls = list.filter((w) => otKind(w) === 'scroll').length;
   const cards = list.map((w) => {
     const kind = otKind(w);
     const btn = h(
@@ -101,33 +100,39 @@ export async function openOt(b: Book, pos: Pos, close: () => void): Promise<HTML
         { class: 'ev-card__meta' },
         h('strong', { class: 'ev-card__ga' }, w.name),
         h('span', { class: 'ev-card__date' }, shortDate(w)),
-        h('span', { class: 'ev-card__tags' }, KIND_LABEL[kind], kind === 'scroll' && !/ISA\.1\.1-ISA\.66\.24/.test(w.contents.join()) ? ' · fragments' : ''),
+        h('span', { class: 'ev-card__tags' }, KIND_LABEL[kind], kind === 'scroll' && w.id !== '1QIsaa' ? ' · fragments' : ''),
       ),
     );
     btn.addEventListener('click', () => openOtWitness(w, b, { ...pos, verse: v }));
     return h('li', { class: `ev-card${kind === 'scroll' && w.id !== '1QIsaa' ? ' is-catalogue' : ''}`, 'data-ot': w.id }, btn);
   });
+  const total = (await loadOt()).length;
+  const count = `${n(list.length)} of the ${n(total)} listed witnesses`;
   return h(
     'aside',
-    { class: 'ev', 'aria-labelledby': 'ev-title', tabindex: '-1', 'data-peek': `${n(list.length)} of the 31 listed witnesses${oldest ? ` · oldest ${oldest.name}, ${shortDate(oldest)}` : ''}` },
+    { class: 'ev', 'aria-labelledby': 'ev-title', tabindex: '-1', 'data-peek': `${count}${oldest ? ` · oldest ${oldest.name}, ${shortDate(oldest)}` : ''}` },
     h('div', { class: 'ev-grab', 'aria-hidden': 'true' }),
     x,
     h(
       'header',
       { class: 'ev-head' },
       h('p', { class: 'ev-ref' }, refLabel({ ...pos, verse: v })),
-      h('h2', { class: 'ev-title', id: 'ev-title' }, `Carried by ${n(list.length)} of the ${list.length ? 'listed ' : ''}witnesses`),
-      oldest ? h('p', { class: 'ev-oldest' }, 'Oldest: ', h('strong', null, oldest.name), ` (${shortDate(oldest)})`) : '',
+      h('h2', { class: 'ev-title', id: 'ev-title' }, count),
+      h('p', { class: 'ev-oldest' }, oldest ? ['Oldest listed: ', h('strong', null, oldest.name), ` (${shortDate(oldest)}). `] : '', 'Thousands of medieval Hebrew copies are not listed.'),
+      h('p', { class: 'ev-cov' }, 'The listed witnesses are the great codices, the Samaritan Pentateuch and every biblical Dead Sea Scroll with published contents.'),
       h(
-        'p',
-        { class: 'ev-cov' },
-        'From a compiled list of 31 key witnesses: the Leningrad and Aleppo codices, the Samaritan Pentateuch, Dead Sea Scrolls and the Septuagint codices, each matched by the verse range it contains. ',
-        scrolls ? 'A scroll’s range runs from its first to its last surviving verse, so a fragmentary scroll (dashed) may have lost this verse. ' : '',
-        'Thousands of later Hebrew manuscripts are not listed.',
+        'details',
+        { class: 'ev-how' },
+        h('summary', null, 'How this is counted'),
+        h(
+          'p',
+          null,
+          'Each witness is matched to the verse by the verses it is recorded to contain. For the Dead Sea Scrolls these are the preserved passages listed in Wikipedia’s List of the Dead Sea Scrolls (after Fitzmyer 2008, with links to the Leon Levy Digital Library); a scroll is shown only where a fragment survives. Scroll dates are the script period, counted from the latest year it allows. The codices are matched by their contents, less their known gaps. Dashed cards are fragments.',
+        ),
       ),
     ),
     h('ol', { class: 'ev-strip', 'aria-label': 'Witnesses' }, cards),
-    h('p', { class: 'ev-notice' }, 'Hebrew text: Westminster Leningrad Codex (OSHB morphhb, CC BY 4.0); word meanings: STEPBible TAHOT (CC BY 4.0). Witness list compiled from published inventories; see data/bible/SOURCES-OT.md.'),
+    h('p', { class: 'ev-notice' }, 'Hebrew text: Westminster Leningrad Codex (OSHB morphhb, CC BY 4.0); word meanings: STEPBible TAHOT (CC BY 4.0). Witness list: data/evidence/ot/witnesses.json and its sources in data/evidence/ot/refs.'),
   );
 }
 
