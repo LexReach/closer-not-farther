@@ -409,7 +409,16 @@ export function render(root: HTMLElement) {
       hint.hidden = false;
       saved.hinted = true;
       persist();
-      window.setTimeout(() => (hint.hidden = true), 9000);
+      // A toast over the page, not a bar in it: showing or dismissing it never
+      // moves the verses under the reader's finger.
+      const dismiss = () => {
+        hint.classList.add('is-gone');
+        window.setTimeout(() => (hint.hidden = true), 400);
+        document.removeEventListener('click', onFirst, true);
+      };
+      const onFirst = () => window.setTimeout(dismiss, 0);
+      document.addEventListener('click', onFirst, true);
+      window.setTimeout(dismiss, 9000);
     }
     const shades = await evidence.shade(b, c, n).catch(() => []);
     if (my !== renderToken) return;

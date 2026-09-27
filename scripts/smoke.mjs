@@ -30,6 +30,12 @@ for (const [w, hgt, tag] of [[400, 860, 'phone'], [1280, 900, 'desktop']]) {
     return page.waitForFunction((k) => document.querySelectorAll('.rd-row').length === k, n, { timeout: 15000 }).then(() => n, async () => page.locator('.rd-row').count());
   };
   check((await rowsFor('#john.1', 51)) === 51, `${tag}: John 1 shows 51 verses`);
+  // First tap on a fresh profile: the one-time hint must not move verse 1 away from the click.
+  await page.waitForTimeout(1200);
+  await page.locator('.rd-row[data-v="1"] .rd-cell').first().click();
+  await page.waitForTimeout(300);
+  const firstHash = await page.evaluate(() => location.hash);
+  check(/\.1\.1$/.test(firstHash), `${tag}: first click on John 1:1 selects verse 1 (${firstHash})`);
   const t0 = Date.now();
   check((await rowsFor('#romans.8', 39)) === 39, `${tag}: Romans 8 shows 39 verses`);
   check((await rowsFor('#genesis.1', 31)) === 31, `${tag}: Genesis 1 shows 31 verses`);
