@@ -23,13 +23,13 @@ jobs:
         run: |
           mkdir -p data/evidence/ot/refs
           cd data/evidence/ot/refs
-          : > fetch-log.txt
-          for t in "Codex_Alexandrinus" "List_of_Hebrew_Bible_manuscripts" "Dead_Sea_Scrolls" "List_of_Dead_Sea_Scrolls" "Biblical_manuscripts_among_the_Dead_Sea_Scrolls" "Great_Isaiah_Scroll" "Septuagint_manuscripts" "Nash_Papyrus"; do
+          touch fetch-log.txt
+          for t in "List_of_the_Dead_Sea_Scrolls" "Isaiah_Scroll" "4Q7" "Genesis_Apocryphon"; do
             code=$(curl -sL -A "closer-not-farther data job (github.com/LexReach/closer-not-farther)" -o "wp-$t.wiki" -w '%{http_code}' "https://en.wikipedia.org/w/index.php?title=$t&action=raw")
             echo "$code https://en.wikipedia.org/wiki/$t $(wc -c < wp-$t.wiki)" >> fetch-log.txt
             [ "$code" = 200 ] || rm -f "wp-$t.wiki"
           done
-          for q in 4Q2 4Q7 4Q1 4Q41 4Q88 4Q83 1Q4 4Q17 4Q22 4Q58 4Q47 4Q55; do
+          for q in; do
             code=$(curl -sL -A "Mozilla/5.0" -o "lldss-$q.html" -w '%{http_code}' "https://www.deadseascrolls.org.il/explore-the-archive/search#q='$q'")
             echo "$code leon-levy search $q $(wc -c < lldss-$q.html)" >> fetch-log.txt
             rm -f "lldss-$q.html"
