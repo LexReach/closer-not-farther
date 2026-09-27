@@ -18,3 +18,7 @@
 200 leon-levy search 4Q58 32016
 200 leon-levy search 4Q47 32016
 200 leon-levy search 4Q55 32016
+200 https://en.wikipedia.org/wiki/List_of_the_Dead_Sea_Scrolls 142104
+200 https://en.wikipedia.org/wiki/Isaiah_Scroll 19319
+404 https://en.wikipedia.org/wiki/4Q7 1927
+200 https://en.wikipedia.org/wiki/Genesis_Apocryphon 28515
