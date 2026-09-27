@@ -83,6 +83,8 @@ export function render(root: HTMLElement) {
 
   root.classList.add('page--reader');
   const bookBtn = h('button', { type: 'button', class: 'rd-bookbtn', 'aria-haspopup': 'dialog' });
+  // The version being read, beside the chapter ("John 1 · BSB"); several columns carry their own headers.
+  const verTag = h('button', { type: 'button', class: 'rd-vertag', 'aria-haspopup': 'dialog' });
   const verBtn = h('button', { type: 'button', class: 'rd-tool', 'aria-haspopup': 'true', title: 'Versions (v)', 'aria-label': 'Versions' }, h('span', { class: 'rd-long' }, 'Versions'), h('span', { class: 'rd-short', 'aria-hidden': 'true' }, 'Ver'));
   const searchBtn = h('button', { type: 'button', class: 'rd-tool', title: 'Search (/)', 'aria-label': 'Search' }, h('span', { class: 'rd-long' }, 'Search'), h('span', { class: 'rd-short', 'aria-hidden': 'true' }, '⌕'));
   const modeBtn = h('button', { type: 'button', class: 'rd-tool', 'aria-pressed': String(st.reading), title: 'Reading mode (m)', 'aria-label': 'Reading mode' }, h('span', { class: 'rd-long' }, 'Reading mode'), h('span', { class: 'rd-short', 'aria-hidden': 'true' }, 'Aa'));
@@ -94,7 +96,7 @@ export function render(root: HTMLElement) {
   const notices = h('div', { class: 'rd-notices' });
   const hint = h('p', { class: 'rd-hint', hidden: true });
   const footNav = h('div', { class: 'rd-footnav' });
-  const toolbar = h('div', { class: 'rd-bar' }, h('div', { class: 'rd-bar__main' }, prevBtn, bookBtn, nextBtn, h('div', { class: 'rd-bar__tools' }, verBtn, searchBtn, modeBtn)), strip);
+  const toolbar = h('div', { class: 'rd-bar' }, h('div', { class: 'rd-bar__main' }, prevBtn, bookBtn, verTag, nextBtn, h('div', { class: 'rd-bar__tools' }, verBtn, searchBtn, modeBtn)), strip);
   const exitReading = h('button', { type: 'button', class: 'rd-exit', 'aria-label': 'Leave reading mode' }, 'Aa');
   root.append(h('h1', { class: 'visually-hidden', id: 'rd-h' }, 'Read'), toolbar, hint, h('div', { class: 'rd-page', 'aria-labelledby': 'rd-h' }, heads, body, notices, footNav), exitReading);
 
@@ -187,6 +189,7 @@ export function render(root: HTMLElement) {
     showChapters(book());
   }
   bookBtn.addEventListener('click', openBooks);
+  verTag.addEventListener('click', () => openVersions());
 
   /* ----- Version picker ----- */
 
@@ -309,6 +312,9 @@ export function render(root: HTMLElement) {
     document.title = `${b.name} ${st.pos.chapter} · Read · Closer, Not Farther`;
     drawStrip();
     if (!st.picked) st.versions = b.testament === 'OT' ? ['bsb', 'orig'] : ['bsb'];
+    verTag.hidden = st.versions.length > 1;
+    verTag.textContent = verShort(st.versions[0]);
+    verTag.setAttribute('aria-label', `Reading the ${verLabel(st.versions[0])}; choose versions`);
     const cols = st.versions;
     // The original text is awaited only when it is shown; for the BSB's
     // long-press alignment it loads after the English has rendered.

@@ -30,6 +30,7 @@ for (const [w, hgt, tag] of [[400, 860, 'phone'], [1280, 900, 'desktop']]) {
     return page.waitForFunction((k) => document.querySelectorAll('.rd-row').length === k, n, { timeout: 15000 }).then(() => n, async () => page.locator('.rd-row').count());
   };
   check((await rowsFor('#john.1', 51)) === 51, `${tag}: John 1 shows 51 verses`);
+  check((await page.locator('.rd-vertag').innerText().catch(() => '')).includes('BSB'), `${tag}: the chapter header names the version (BSB)`);
   // First tap on a fresh profile: the one-time hint must not move verse 1 away from the click.
   await page.waitForTimeout(1200);
   await page.locator('.rd-row[data-v="1"] .rd-cell').first().click();
@@ -40,12 +41,14 @@ for (const [w, hgt, tag] of [[400, 860, 'phone'], [1280, 900, 'desktop']]) {
   check((await rowsFor('#romans.8', 39)) === 39, `${tag}: Romans 8 shows 39 verses`);
   check((await rowsFor('#genesis.1', 31)) === 31, `${tag}: Genesis 1 shows 31 verses`);
   console.log(`     chapter switches took ${Date.now() - t0} ms`);
+  await page.goto('about:blank'); // a real deep link, not a hash change inside the Reader
   await rowsFor('#john.1.1', 51);
   await page.waitForTimeout(1500);
   await page.screenshot({ path: `smoke/read-${tag}.png` });
   // Evidence panel, when the build has one.
   // A deep link paints the chapter with the verse lit, then opens the panel collapsed to one line.
   const peek = await page.waitForSelector('.ev.is-collapsed .ev-peek', { timeout: 8000 }).then(() => 1, () => 0);
+  check(peek === 1, `${tag}: a deep link opens the evidence panel collapsed`);
   if (peek) {
     check((await page.locator('.rd-row[data-v="1"].is-sel').count()) === 1, `${tag}: deep link lights John 1:1`);
     check(/Carried by \d+ manuscripts? · oldest/.test(await page.locator('.ev-peek').innerText()), `${tag}: collapsed panel reads "${(await page.locator('.ev-peek__text').innerText()).trim()}"`);
