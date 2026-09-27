@@ -3,6 +3,7 @@ name: OT data (Hebrew Bible)
 on:
   push:
     branches: [data-ot]
+    paths-ignore: ['.github/workflows/ot-refs.yml', 'data/evidence/ot/refs/**']
   workflow_dispatch:
 
 permissions:

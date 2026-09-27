@@ -1,0 +1,44 @@
+name: OT witness references (raw source pages)
+
+# Saves the raw text of reference pages used to check OT witness ranges
+# (Dead Sea Scrolls contents, Codex Alexandrinus lacunae) into
+# data/evidence/ot/refs/, so the ranges can be checked offline.
+on:
+  push:
+    branches: [data-ot]
+    paths: ['.github/workflows/ot-refs.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data-ot
+      - name: Fetch
+        run: |
+          mkdir -p data/evidence/ot/refs
+          cd data/evidence/ot/refs
+          : > fetch-log.txt
+          for t in "Codex_Alexandrinus" "List_of_Hebrew_Bible_manuscripts" "Dead_Sea_Scrolls" "List_of_Dead_Sea_Scrolls" "Biblical_manuscripts_among_the_Dead_Sea_Scrolls" "Great_Isaiah_Scroll" "Septuagint_manuscripts" "Nash_Papyrus"; do
+            code=$(curl -sL -A "closer-not-farther data job (github.com/LexReach/closer-not-farther)" -o "wp-$t.wiki" -w '%{http_code}' "https://en.wikipedia.org/w/index.php?title=$t&action=raw")
+            echo "$code https://en.wikipedia.org/wiki/$t $(wc -c < wp-$t.wiki)" >> fetch-log.txt
+            [ "$code" = 200 ] || rm -f "wp-$t.wiki"
+          done
+          for q in 4Q2 4Q7 4Q1 4Q41 4Q88 4Q83 1Q4 4Q17 4Q22 4Q58 4Q47 4Q55; do
+            code=$(curl -sL -A "Mozilla/5.0" -o "lldss-$q.html" -w '%{http_code}' "https://www.deadseascrolls.org.il/explore-the-archive/search#q='$q'")
+            echo "$code leon-levy search $q $(wc -c < lldss-$q.html)" >> fetch-log.txt
+            rm -f "lldss-$q.html"
+          done
+          cat fetch-log.txt
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data/evidence/ot/refs
+          git commit -m "OT refs: raw reference pages for witness ranges [skip ci]" || exit 0
+          git push
