@@ -11,7 +11,7 @@ import {
   bookById,
   langOf,
   hebrewSurface,
-  loadOriginal,
+  loadOriginalChapter,
   origLabel,
   origShort,
   parseHash,
@@ -323,14 +323,13 @@ export function render(root: HTMLElement) {
               : Promise.resolve({ verses: [] as VerseValue[], error: 'Not connected' }),
         ),
       ),
-      needOrig ? loadOriginal(b) : Promise.resolve(null),
+      needOrig ? loadOriginalChapter(b, st.pos.chapter) : Promise.resolve(null),
     ]);
     if (my !== renderToken) return;
-    origWords = orig?.[st.pos.chapter - 1] ?? null;
+    origWords = orig ?? null;
     if (!needOrig && cols.includes('bsb')) {
-      const ch = st.pos.chapter;
-      loadOriginal(b).then((o) => {
-        if (my === renderToken) origWords = o?.[ch - 1] ?? null;
+      loadOriginalChapter(b, st.pos.chapter).then((o) => {
+        if (my === renderToken) origWords = o;
       });
     }
     const n = Math.max(...texts.map((t) => t?.verses.length ?? 0), origWords?.length ?? 0, b.verses?.[st.pos.chapter - 1] ?? 0);

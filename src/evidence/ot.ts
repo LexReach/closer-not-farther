@@ -4,7 +4,7 @@
 // The Witness view renders the verse typographically from the Leningrad text
 // (WLC) and links out for the photographs, which cannot be embedded.
 import { h, clear } from '../lib/dom';
-import { ADAPTERS, BOOKS, hebrewSurface, loadOriginal, refLabel, type Book, type Pos, type Word } from '../reader/bible';
+import { ADAPTERS, BOOKS, hebrewSurface, loadOriginalChapter, refLabel, type Book, type Pos, type Word } from '../reader/bible';
 import type { Segment } from '../reader/adapters';
 import { openMeaning } from '../reader/meaning';
 import { EVD } from './data';
@@ -171,8 +171,8 @@ export async function openOtWitness(w: OtWitness, b: Book, pos: Pos) {
   dlg?.close();
   const v = pos.verse!;
   const kind = otKind(w);
-  const [words, bsb] = await Promise.all([loadOriginal(b), ADAPTERS.bsb.getChapter(b.id, pos.chapter).catch(() => null)]);
-  const ch = words?.[pos.chapter - 1] ?? [];
+  const [chapter, bsb] = await Promise.all([loadOriginalChapter(b, pos.chapter), ADAPTERS.bsb.getChapter(b.id, pos.chapter).catch(() => null)]);
+  const ch = chapter ?? [];
   const verse = ch[v - 1] ?? [];
   const eng = (bsb?.verses[v - 1] ?? null) as Segment[] | string | null;
   const closeBtn = h('button', { type: 'button', class: 'ev-close', 'aria-label': 'Close the witness view' }, '×');

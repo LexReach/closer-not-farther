@@ -92,6 +92,27 @@ export const hebrewSurface = (s: string, cant: boolean) => {
   return cant ? t : t.replace(/[\u0591-\u05AF\u05BD\u05C0]/g, '');
 };
 
+/**
+ * One chapter of the original text. For the Hebrew, the build writes a file per
+ * chapter in English numbering (scripts/bible/hebrew-chapters.mjs), so a
+ * chapter opens without the whole book; the whole book is the fallback.
+ */
+const chCache = new Map<string, Promise<Word[][] | null>>();
+export function loadOriginalChapter(book: Book, c: number): Promise<Word[][] | null> {
+  const key = `${book.id}.${c}`;
+  let p = chCache.get(key);
+  if (!p) {
+    p =
+      book.testament === 'NT'
+        ? loadOriginal(book).then((o) => o?.[c - 1] ?? null)
+        : fetch(`${DATA}hebrew-ch/${book.id}/${c}.json`)
+            .then((r) => (r.ok && /json/.test(r.headers.get('content-type') ?? '') ? (r.json() as Promise<Word[][]>) : Promise.reject()))
+            .catch(() => loadOriginal(book).then((o) => o?.[c - 1] ?? null));
+    chCache.set(key, p);
+  }
+  return p;
+}
+
 export interface LexEntry {
   lemma?: string;
   translit?: string;

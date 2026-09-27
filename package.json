@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build && node scripts/postbuild.mjs",
+    "build": "tsc --noEmit && vite build && node scripts/postbuild.mjs && node scripts/bible/hebrew-chapters.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --no-warnings scripts/sim-check.ts && node --experimental-strip-types --no-warnings scripts/reader-check.ts"
