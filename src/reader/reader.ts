@@ -31,15 +31,19 @@ interface Saved {
   reading?: boolean;
   hinted?: boolean;
   cant?: boolean;
-  /** The reader has chosen columns; until then an OT book opens with the Hebrew beside the BSB. */
+  /** The reader has chosen columns; until then an OT book opens with the Hebrew beside the default version. */
   picked?: boolean;
 }
+/** The ESV when the proxy is configured, otherwise the bundled BSB. */
+const DEFAULT_VERSION: VersionId = ADAPTERS.esv.available() ? 'esv' : 'bsb';
 function load(): Saved {
   try {
     const s = JSON.parse(localStorage.getItem(STORE) ?? '{}') as Saved;
-    return { versions: Array.isArray(s.versions) && s.versions.length ? s.versions.slice(0, 3) : ['bsb'], pos: s.pos, reading: !!s.reading, hinted: !!s.hinted, cant: s.cant ?? true, picked: !!s.picked || (Array.isArray(s.versions) && s.versions.join() !== 'bsb') };
+    // A saved lone 'bsb' or 'esv' without `picked` is an old default, not a choice.
+    const unpicked = Array.isArray(s.versions) && ['bsb', 'esv'].includes(s.versions.join());
+    return { versions: Array.isArray(s.versions) && s.versions.length ? s.versions.slice(0, 3) : [DEFAULT_VERSION], pos: s.pos, reading: !!s.reading, hinted: !!s.hinted, cant: s.cant ?? true, picked: !!s.picked || (Array.isArray(s.versions) && !unpicked) };
   } catch {
-    return { versions: ['bsb'] };
+    return { versions: [DEFAULT_VERSION] };
   }
 }
 function save(s: Saved) {
@@ -311,7 +315,7 @@ export function render(root: HTMLElement) {
     bookBtn.setAttribute('aria-label', `${bookBtn.textContent}, choose book and chapter`);
     document.title = `${b.name} ${st.pos.chapter} · Read · Closer, Not Farther`;
     drawStrip();
-    if (!st.picked) st.versions = b.testament === 'OT' ? ['bsb', 'orig'] : ['bsb'];
+    if (!st.picked) st.versions = b.testament === 'OT' ? [DEFAULT_VERSION, 'orig'] : [DEFAULT_VERSION];
     verTag.hidden = st.versions.length > 1;
     verTag.textContent = verShort(st.versions[0]);
     verTag.setAttribute('aria-label', `Reading the ${verLabel(st.versions[0])}; choose versions`);

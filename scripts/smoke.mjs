@@ -31,7 +31,7 @@ for (const [w, hgt, tag] of [[400, 860, 'phone'], [1280, 900, 'desktop']]) {
     return page.waitForFunction((k) => document.querySelectorAll('.rd-row').length === k, n, { timeout: 15000 }).then(() => n, async () => page.locator('.rd-row').count());
   };
   check((await rowsFor('#john.1', 51)) === 51, `${tag}: John 1 shows 51 verses`);
-  check((await page.locator('.rd-vertag').innerText().catch(() => '')).includes('BSB'), `${tag}: the chapter header names the version (BSB)`);
+  check((await page.locator('.rd-vertag').innerText().catch(() => '')).includes('ESV'), `${tag}: the chapter header names the default version (ESV)`);
   // First tap on a fresh profile: the one-time hint must not move verse 1 away from the click.
   await page.waitForTimeout(1200);
   await page.locator('.rd-row[data-v="1"] .rd-cell').first().click();

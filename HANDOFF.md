@@ -14,7 +14,7 @@ picks this up cold. Live site: https://lexreach.github.io/closer-not-farther/
 - Bible data comes from branch `data-bible` (workflow `data-bible.yml`). After re-merging it, run `node scripts/bible/fill-boundaries.mjs`.
 - Details and checks are in DECISIONS.md, "Phase A".
 
-The ESV needs the owner to deploy the Worker in `proxy/` (see `proxy/README.md`), then set `esvProxyUrl` in `data/config.json`.
+The ESV is connected through the `esv-proxy` Worker (`proxy/`, URL in `data/config.json` → `esvProxyUrl`) and is the Reader's default version until a reader picks columns; with no proxy configured the default falls back to the BSB. Long-press word alignment and the Witness view's English row stay BSB-only.
 
 ## Phase B (evidence panel): see "Current status" at the bottom
 
